@@ -22,7 +22,7 @@ export default function About() {
             </div>
             <Image
               src="/sobre1.jpg"
-              alt="Experiencia en psicología y aviación"
+              alt="Experiencia en psicología y aviación canadair cl415 en incendio"
               width={600}
               height={400}
               className="rounded-xl shadow-lg"
