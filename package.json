@@ -8,7 +8,7 @@
     "start": "next start -p 3000"
   },
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "dependencies": {
     "next": "13.4.10",
