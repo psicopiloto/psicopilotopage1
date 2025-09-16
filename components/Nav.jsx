@@ -6,10 +6,10 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-white/95 backdrop-blur z-40 shadow-sm">
+     <header className="fixed w-full bg-white/95 backdrop-blur z-40 shadow-sm">
       <div className="container flex items-center justify-between h-16 px-4 md:px-0">
-        {/* Logo + Nombre */}
-        <div className="flex items-center gap-2 text-2xl font-semibold text-psicopiloto-700">
+        {/* Logo + Nombre, clickeable hacia Inicio */}
+        <Link href="/" className="flex items-center gap-2 text-2xl font-semibold text-psicopiloto-700">
           <Image
             src="/logo.png"
             alt="Logo Psicopiloto"
@@ -17,8 +17,8 @@ export default function Nav() {
             height={32}
             className="rounded"
           />
-          Psicopiloto
-        </div>
+          Psicopiloto<span className="align-super text-xs">®</span>
+        </Link>
 
         {/* Menú escritorio */}
         <nav className="hidden md:flex gap-6 text-gray-700">
