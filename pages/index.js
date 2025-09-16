@@ -28,7 +28,7 @@ export default function Home() {
                 a día, aquí tendrás un espacio para recuperar el control y
                 encontrar herramientas prácticas.
               </p>
-              <Link href="/contact">
+              <Link href="/contacto">
                 <span className="inline-block px-6 py-3 rounded-lg bg-softorange-500 text-white">
                   Reserva tu primera consulta
                 </span>
