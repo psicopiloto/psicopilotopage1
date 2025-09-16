@@ -21,7 +21,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40 z-10" />
           <div className="container mx-auto text-center text-white z-20 relative">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Tu copiloto en el viaje hacia el bienestar
+              Tu Psicólogo en el viaje hacia el bienestar
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               Un espacio seguro, cercano y libre de juicios para recuperar la
