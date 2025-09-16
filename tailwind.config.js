@@ -27,7 +27,10 @@ module.exports = {
           500: '#ff8f2e',
           600: '#e36f1f'
         }
-      }
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
     }
   },
   plugins: [],
