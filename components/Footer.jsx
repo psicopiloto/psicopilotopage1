@@ -1,4 +1,4 @@
-import { FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -27,7 +27,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-softorange-500"
           >
-            <FaXTwitter />
+            <FaTwitter />
           </a>
           <a
             href="https://linkedin.com/in/TU_USUARIO"
@@ -38,7 +38,15 @@ export default function Footer() {
             <FaLinkedin />
           </a>
         </div>
+
+        {/* Aviso Legal */}
+        <div className="text-xs text-gray-500">
+          <a href="/aviso-legal" className="hover:underline">
+            Aviso Legal y Política de Privacidad
+          </a>
+        </div>
       </div>
     </footer>
   );
 }
+
