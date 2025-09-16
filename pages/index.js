@@ -7,7 +7,7 @@ export default function Home(){
     <div className='min-h-screen flex flex-col'>
       <Nav />
       <main className="flex-grow pt-16">
-        <section className="relative h-[62vh] flex items-center" style={{backgroundImage: img src="/fotoinicio1.png')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <section className="relative h-[62vh] flex items-center" style={{backgroundImage: "url('/fotoinicio1.png')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
           <div className="container mx-auto text-white z-10">
             <div className="bg-black/40 p-8 rounded-lg max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-bold mb-4">Tu copiloto en el viaje hacia el bienestar</h1>
