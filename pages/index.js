@@ -4,18 +4,50 @@ import Link from 'next/link'
 
 export default function Home(){
   return (
-    <div className='min-h-screen flex flex-col'>
+   import Image from "next/image";
+import Link from "next/link";
+import Nav from "../components/Nav";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col">
       <Nav />
       <main className="flex-grow pt-16">
-        <section className="relative h-[62vh] flex items-center" style={{backgroundImage: "url('/fotoinicio1.png')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
-          <div className="container mx-auto text-white z-10">
+        <section className="relative h-[62vh] flex items-center justify-center">
+          {/* Imagen de fondo optimizada */}
+          <Image
+            src="/fotoinicio1.png"
+            alt="Psicólogo online en Granada - Psicopiloto"
+            fill
+            style={{ objectFit: "cover" }} // llena todo el espacio, recortando si hace falta
+            priority
+          />
+
+          {/* Capa oscura para contraste */}
+          <div className="absolute inset-0 bg-black/40 z-10" />
+
+          <div className="container mx-auto text-white z-20 relative">
             <div className="bg-black/40 p-8 rounded-lg max-w-3xl">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">Tu copiloto en el viaje hacia el bienestar</h1>
-              <p className="mb-6 text-lg">Si la ansiedad, el estrés o la tristeza hacen turbulento tu día a día, aquí tendrás un espacio para recuperar el control y encontrar herramientas prácticas.</p>
-              <Link href="/contacto"><span className="inline-block px-6 py-3 rounded-lg bg-softorange-500 text-white">Reserva tu primera consulta</span></Link>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                Tu psicólogo en el viaje hacia el bienestar
+              </h1>
+              <p className="mb-6 text-lg">
+                Si la ansiedad, el estrés o la tristeza hacen turbulento tu día
+                a día, aquí tendrás un espacio para recuperar el control y
+                encontrar herramientas prácticas.
+              </p>
+              <Link href="/contacto">
+                <span className="inline-block px-6 py-3 rounded-lg bg-softorange-500 text-white">
+                  Reserva tu primera consulta
+                </span>
+              </Link>
             </div>
           </div>
         </section>
+      </main>
+    </div>
+  );
+}
 
         <section className="py-12 bg-white">
           <div className="container mx-auto">
