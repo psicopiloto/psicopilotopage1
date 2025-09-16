@@ -21,7 +21,7 @@ export default function About() {
               </p>
             </div>
             <Image
-              src="/sobre1.jpg"
+              src="/sobre1.png"
               alt="Experiencia en psicología y aviación canadair cl415 en incendio"
               width={600}
               height={400}
@@ -32,7 +32,7 @@ export default function About() {
           {/* Segundo bloque */}
           <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
             <Image
-              src="/sobre2.jpg"
+              src="/sobre2.png"
               alt="Trayectoria profesional en psicología"
               width={600}
               height={400}
@@ -65,7 +65,7 @@ export default function About() {
               </p>
             </div>
             <Image
-              src="/sobre3.jpg"
+              src="/sobre3.png"
               alt="Vocación en psicología"
               width={600}
               height={400}
