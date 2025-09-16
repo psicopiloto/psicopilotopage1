@@ -7,115 +7,184 @@ export default function SobreMi() {
   return (
     <div className="min-h-screen flex flex-col">
       <Nav />
-      <main className="flex-grow pt-16">
-        {/* HERO */}
-        <section className="relative h-[50vh] flex items-center justify-center">
-          <Image
-            src="/sobre1.jpg"
-            alt="Psicopiloto - Psicología y acompañamiento"
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40 z-10" />
-          <div className="relative z-20 text-center text-white px-6">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Sobre mí</h1>
-            <p className="text-lg max-w-2xl mx-auto">
-              En la vida, como en el vuelo, las turbulencias son inevitables.  
-              Lo importante es no pilotar solo: <strong>estoy aquí para acompañarte</strong>.
-            </p>
-          </div>
-        </section>
+      <main className="flex-grow pt-20 pb-16">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h1 className="text-4xl font-bold mb-10 text-center">
+            Sobre mí y el proyecto Psicopiloto
+          </h1>
 
-        {/* BLOQUE 1 */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-semibold mb-6">Mi recorrido</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Soy <strong>Jose C.R. Retamar</strong>,{" "}
-                <strong>psicólogo con habilitación sanitaria</strong> y{" "}
-                <strong>piloto militar</strong>.  
-                Durante casi dos décadas acumulé más de{" "}
-                <strong>2.500 horas de vuelo</strong> en misiones de{" "}
-                <strong>extinción de incendios</strong>, formando a tripulaciones
-                en habilidades tan humanas como la{" "}
-                <strong>comunicación</strong>, la{" "}
-                <strong>gestión del estrés</strong>, la{" "}
-                <strong>toma de decisiones</strong> y el{" "}
-                <strong>trabajo en equipo</strong>.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Hoy aplico toda esa experiencia a la{" "}
-                <strong>psicología clínica y online</strong>, ofreciendo un
-                espacio cercano, libre de juicios y seguro, donde cada persona
-                puede recuperar el control de su vida.
-              </p>
+          {/* Intro */}
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <p>
+                  Mi nombre es <strong>[Tu Nombre]</strong> y soy{" "}
+                  <strong>psicólogo con Habilitación Sanitaria</strong> y{" "}
+                  <strong>piloto militar</strong>. El proyecto{" "}
+                  <strong>Psicopiloto</strong> nace de la unión de mis dos pasiones: 
+                  la <strong>aviación</strong> y la <strong>psicología</strong>.
+                </p>
+                <p className="mt-4">
+                  A lo largo de mi vida he aprendido que tanto en el aire como en tierra, 
+                  la clave para afrontar las turbulencias está en la{" "}
+                  <strong>preparación mental</strong>, la{" "}
+                  <strong>gestión de las emociones</strong> y la{" "}
+                  <strong>toma de decisiones bajo presión</strong>.
+                </p>
+              </div>
+              <Image
+                src="/sobre1.jpg"
+                alt="Psicopiloto - experiencia en psicología"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md"
+              />
             </div>
-            <div className="relative w-full h-80">
+          </section>
+
+          {/* Fase 1 */}
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
               <Image
                 src="/sobre2.jpg"
-                alt="Psicólogo online en Granada"
-                fill
-                style={{ objectFit: "cover" }}
-                className="rounded-lg shadow"
+                alt="Vocación por la psicología"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md order-2 md:order-1"
               />
+              <div className="order-1 md:order-2">
+                <h2 className="text-2xl font-semibold mb-4">
+                  Fase 1: El inicio – vocación por la psicología
+                </h2>
+                <p>
+                  Me licencié en <strong>Psicología por la Universidad de Granada</strong> en 2003. 
+                  Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, 
+                  lo que me acercó al sufrimiento humano y me mostró la importancia de la{" "}
+                  <strong>escucha y el acompañamiento</strong>.
+                </p>
+                <p className="mt-4">
+                  Tras mi formación inicial, cursé el{" "}
+                  <strong>Curso de Adaptación Pedagógica</strong>, que me permitió adquirir una visión educativa y de orientación.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* BLOQUE 2 */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full h-80 order-2 md:order-1">
+          {/* Fase 2 */}
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">
+                  Fase 2: La aviación – disciplina, liderazgo y seguridad
+                </h2>
+                <p>
+                  En 2007 ingresé en la <strong>Academia General del Aire</strong>, donde me formé como piloto militar. 
+                  Durante casi dos décadas acumulé más de <strong>2.500 horas de vuelo</strong> en aviones como el{" "}
+                  <em>ENAER T-35C Pillán, Aviocar C-212, Canadair CL-215T y CL-415</em>.
+                </p>
+                <ul className="list-disc list-inside mt-4">
+                  <li><strong>Piloto comandante</strong> en misiones de incendios en España, Grecia y Portugal.</li>
+                  <li><strong>Instructor de vuelo y simulador</strong>, formando a nuevas generaciones de pilotos.</li>
+                  <li><strong>Jefe de Crew Resource Management (CRM)</strong>, desarrollando programas de entrenamiento en factores humanos.</li>
+                  <li><strong>Facilitador CRM</strong> e impulsor de <strong>EBT</strong> y <strong>CBTA</strong> en simuladores en Milán.</li>
+                </ul>
+                <p className="mt-4">
+                  Esta etapa me enseñó el valor de la <strong>calma en la adversidad</strong>, 
+                  el <strong>trabajo en equipo</strong> y la <strong>resiliencia</strong>.
+                </p>
+              </div>
               <Image
                 src="/sobre3.jpg"
-                alt="Psicopiloto - Acompañamiento terapéutico"
-                fill
-                style={{ objectFit: "cover" }}
-                className="rounded-lg shadow"
+                alt="Psicología y aviación unidas"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md"
               />
             </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-semibold mb-6">Filosofía de Psicopiloto</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                La aviación me enseñó la importancia de la{" "}
-                <strong>humildad</strong>, la{" "}
-                <strong>claridad</strong> y el{" "}
-                <strong>aprendizaje constante</strong>.  
-                La psicología me mostró que cada persona merece un{" "}
-                <strong>espacio de confianza y calidez</strong>.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                En Psicopiloto encontrarás un{" "}
-                <strong>acompañamiento cercano y humano</strong>, donde el
-                respeto, la escucha activa y la{" "}
-                <strong>confidencialidad total</strong> son la base de cada
-                proceso.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Mi objetivo es que sientas que no estás solo en tu camino. Igual
-                que un copiloto en cabina, estaré a tu lado para ayudarte a
-                superar la turbulencia y recuperar la serenidad.
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        {/* CTA FINAL */}
-        <section className="py-16 bg-white text-center">
-          <h2 className="text-3xl font-semibold mb-6">📩 Da el primer paso</h2>
-          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-            Tu bienestar importa.  
-            Si sientes que es momento de tomar un nuevo rumbo en tu vida, no
-            tienes que hacerlo solo.
-          </p>
-          <Link href="/contacto">
-            <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
-              Agenda tu primera cita
-            </span>
-          </Link>
-        </section>
+          {/* Fase 3 */}
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <Image
+                src="/sobre1.jpg"
+                alt="Psicólogo con habilitación sanitaria"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md order-2 md:order-1"
+              />
+              <div className="order-1 md:order-2">
+                <h2 className="text-2xl font-semibold mb-4">
+                  Fase 3: El regreso a la psicología – volver a la esencia
+                </h2>
+                <p>
+                  En paralelo a mi carrera aeronáutica, retomé mi vocación primera: la psicología. 
+                  Me habilité como <strong>psicólogo con Habilitación Sanitaria</strong> en 2015 y me especialicé en:
+                </p>
+                <ul className="list-disc list-inside mt-4">
+                  <li><strong>Psicología aeronáutica</strong>.</li>
+                  <li><strong>Psicología integradora y terapia breve</strong>.</li>
+                  <li><strong>Trauma y EMDR</strong>.</li>
+                </ul>
+                <p className="mt-4">
+                  Desde 2024 ejerzo como <strong>psicólogo voluntario en Amalgama Social</strong>, atendiendo casos de ansiedad, 
+                  estrés, gestión emocional, duelo, autoestima y trauma.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Fase 4 */}
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">
+                  Fase 4: El voluntariado – la parte más humana
+                </h2>
+                <p>
+                  El voluntariado ha sido siempre un pilar en mi vida. En mi juventud colaboré con{" "}
+                  <strong>Solidarios para el Desarrollo</strong>, trabajando con personas mayores en fases iniciales de demencia.
+                </p>
+                <p className="mt-4">
+                  Más tarde, en 2019, cofundé <strong>Edades Granada</strong>, dedicada al cuidado de personas mayores y ayuda a domicilio.
+                </p>
+                <p className="mt-4">
+                  Estas experiencias me han recordado que detrás de cada historia hay alguien que merece ser escuchado con respeto y cercanía.
+                </p>
+              </div>
+              <Image
+                src="/sobre2.jpg"
+                alt="Voluntariado y atención humana"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md"
+              />
+            </div>
+          </section>
+
+          {/* Hoy */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Hoy: Psicopiloto</h2>
+            <p>
+              Hoy, en <strong>Psicopiloto</strong>, uno lo aprendido en la aviación con la psicología para ofrecer un acompañamiento diferente. 
+              Si en la cabina de un avión entrenábamos la mente para afrontar lo inesperado y mantener la seguridad, 
+              en la terapia aplico esa misma filosofía: ayudarte a ganar <strong>confianza</strong>, manejar la <strong>ansiedad</strong> 
+              y recuperar el <strong>control de tu vida</strong>.
+            </p>
+            <p className="mt-4">
+              Porque todos merecemos <strong>volar con seguridad</strong>, también en su propio camino personal.
+            </p>
+          </section>
+
+          {/* Call to action */}
+          <div className="mt-12 text-center">
+            <Link href="/contacto">
+              <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
+                Reserva tu primera consulta
+              </span>
+            </Link>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
