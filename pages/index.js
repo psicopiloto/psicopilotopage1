@@ -92,8 +92,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FILOSOFÍA */}
+        {/* TERAPIA ONLINE */}
         <section className="py-16 bg-white">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-semibold mb-6">La ventaja de la terapia online</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              En Psicopiloto puedes elegir entre consulta presencial en Granada
+              o <strong>terapia online</strong>.  
+              La modalidad online te ofrece:
+            </p>
+            <ul className="text-gray-700 leading-relaxed space-y-2 mb-6">
+              <li>✔️ Acceso desde cualquier lugar, sin desplazamientos.</li>
+              <li>✔️ Flexibilidad de horarios que se adapta a tu ritmo.</li>
+              <li>✔️ La misma confidencialidad y calidad que en persona.</li>
+              <li>✔️ Un espacio seguro desde la comodidad de tu hogar.</li>
+            </ul>
+            <p className="text-gray-700">
+              La distancia no es un obstáculo para tu bienestar. Con la terapia online, 
+              el acompañamiento llega hasta donde tú estés.
+            </p>
+          </div>
+        </section>
+
+        {/* FILOSOFÍA */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold mb-6">Mi filosofía</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -113,14 +135,14 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-semibold mb-6">
               Da el primer paso hacia tu bienestar
             </h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-              Estoy aquí para escucharte y acompañarte. La primera consulta es la
-              oportunidad de empezar a recuperar la calma y la confianza.
+              Estoy aquí para escucharte y acompañarte.  
+              La primera consulta es la oportunidad de empezar a recuperar la calma y la confianza.
             </p>
             <Link href="/contacto">
               <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
