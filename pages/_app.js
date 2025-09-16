@@ -1,6 +1,13 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import CookiesBanner from "../components/CookiesBanner";
 
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <CookiesBanner />
+    </>
+  );
 }
 
+export default MyApp;
