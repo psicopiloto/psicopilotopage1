@@ -13,8 +13,8 @@ export default function Nav() {
           <Image
             src="/logo.png"
             alt="Logo Psicopiloto"
-            width={32}
-            height={32}
+            width={40}
+            height={40}
             className="rounded"
           />
           Psicopiloto<span className="align-super text-xs">®</span>
