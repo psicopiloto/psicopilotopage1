@@ -1,3 +1,17 @@
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import Image from "next/image";
+import Link from "next/link";   // 👈 Esta línea es la que faltaba
+
+export default function Servicios() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Nav />
+      <main className="flex-grow pt-20 pb-16">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h1 className="text-4xl font-bold mb-10 text-center">
+            Nuestros Servicios
+          </h1>
 {/* SERVICIOS */}
 <section className="py-16 bg-gray-50">
   <div className="container mx-auto max-w-5xl text-center">
