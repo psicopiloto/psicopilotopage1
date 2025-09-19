@@ -10,7 +10,7 @@ export default function QueEsPsicopiloto() {
       <main className="flex-grow pt-20 pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
           <h1 className="text-4xl font-bold mb-10 text-center">
-            Psicopiloto: uniendo aviación y psicología para transformar personas y organizaciones
+            Qué es Psicopiloto
           </h1>
 
           {/* Intro */}
@@ -18,26 +18,24 @@ export default function QueEsPsicopiloto() {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <p>
-                  <strong>Psicopiloto</strong> es un proyecto innovador que nace
-                  de la unión de dos mundos que me definen: la{" "}
-                  <strong>aviación</strong> y la <strong>psicología</strong>.
-                  Después de más de 18 años de experiencia como piloto militar,
-                  comandante en misiones de extinción de incendios forestales y
-                  formador en gestión de tripulaciones (CRM), decidí dar un paso
-                  más: aplicar todos esos aprendizajes en el ámbito de la
-                  psicología y el desarrollo humano.
+                  <strong>Psicopiloto</strong> nace de la unión entre dos pasiones: 
+                  la <strong>aviación</strong> y la <strong>psicología</strong>. 
+                  Soy <strong>Person</strong>, piloto e instructor de vuelo, además de psicólogo. 
+                  Durante años he aprendido que, tanto en la cabina como en la vida, 
+                  la <strong>toma de decisiones bajo presión</strong>, 
+                  la <strong>gestión del riesgo</strong> y la 
+                  <strong>comunicación efectiva</strong> son la clave para llegar a destino con seguridad.
                 </p>
                 <p className="mt-4">
-                  Mi visión es clara: del mismo modo que en la cabina de un avión
-                  cada decisión puede marcar la diferencia, en la vida personal y
-                  profesional también necesitamos herramientas que nos ayuden a
-                  gestionar la presión, tomar decisiones conscientes,
-                  comunicarnos eficazmente y trabajar en equipo.
+                  La idea central de <strong>Psicopiloto</strong> es simple pero poderosa: 
+                  aplicar los principios de seguridad, eficiencia y gestión de factores humanos 
+                  de la aviación a la psicoterapia. El objetivo es que aprendas a 
+                  <strong>“pilotar” tu vida</strong> con control, claridad y confianza.
                 </p>
               </div>
               <Image
                 src="/sobre1.jpg"
-                alt="Psicopiloto - experiencia en psicología"
+                alt="Psicopiloto - aviación y psicología"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-md"
@@ -45,167 +43,119 @@ export default function QueEsPsicopiloto() {
             </div>
           </section>
 
-          {/* Qué aporto */}
+          {/* Misión */}
           <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <Image
-                src="/sobre2.jpg"
-                alt="Qué aporta Psicopiloto"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md order-2 md:order-1"
-              />
-              <div className="order-1 md:order-2">
-                <h2 className="text-2xl font-semibold mb-4">
-                  ¿Qué aporto con Psicopiloto?
-                </h2>
-                <p>
-                  Gracias a mi formación como{" "}
-                  <strong>psicólogo con habilitación sanitaria</strong> y a mi
-                  experiencia en psicoterapia integradora y técnicas como EMDR,
-                  ayudo a las personas a superar bloqueos, gestionar la ansiedad,
-                  fortalecer su autoestima y desarrollar resiliencia.
-                </p>
-                <p className="mt-4">
-                  Pero mi propuesta va más allá: traslado los valores y
-                  metodologías de la aviación —seguridad, humildad, trabajo en
-                  equipo, gestión de errores y amenazas— al mundo de la
-                  psicología y de las empresas.
-                </p>
-                <ul className="list-disc list-inside mt-4">
-                  <li>
-                    Terapia individual: gestión emocional, ansiedad, estrés,
-                    relaciones personales y experiencias traumáticas.
-                  </li>
-                  <li>
-                    Psicología aplicada a empresas: liderazgo, comunicación,
-                    gestión de errores y trabajo en equipo basados en CRM y TEM.
-                  </li>
-                  <li>
-                    Asesoramiento en factores humanos: mejorar eficacia,
-                    seguridad y eficiencia en entornos laborales.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Por qué confiar */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">
-                  ¿Por qué confiar en Psicopiloto?
-                </h2>
-                <p>
-                  Mi recorrido profesional me ha permitido acumular más de{" "}
-                  <strong>2.500 horas de vuelo</strong>, muchas de ellas como
-                  comandante en operaciones de alto riesgo, además de formar a
-                  pilotos y mecánicos en competencias críticas como la toma de
-                  decisiones bajo presión o la gestión del estrés.
-                </p>
-                <p className="mt-4">
-                  Esa experiencia, unida a mi formación como psicólogo licenciado
-                  y especializado en psicología integradora, trauma y psicología
-                  aeronáutica, me permite ofrecer un enfoque único y
-                  diferenciador.
-                </p>
-                <p className="mt-4">
-                  En un mundo donde las personas y las organizaciones se
-                  enfrentan a un ritmo de cambio constante,{" "}
-                  <strong>Psicopiloto</strong> aporta claridad, resiliencia y
-                  herramientas prácticas para avanzar con seguridad.
-                </p>
-              </div>
-              <Image
-                src="/sobre3.jpg"
-                alt="Experiencia en aviación y psicología"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </section>
-
-          {/* Psicopiloto para empresas */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">
-                  Psicopiloto para empresas
-                </h2>
-                <p>
-                  Hoy más que nunca, las empresas necesitan equipos cohesionados,
-                  líderes capaces y culturas organizativas que favorezcan la
-                  confianza y la innovación. Con <strong>Psicopiloto</strong>{" "}
-                  aplico los principios de la aviación al entorno corporativo,
-                  ayudando a:
-                </p>
-                <ul className="list-disc list-inside mt-4">
-                  <li>Reducir errores y mejorar la eficiencia.</li>
-                  <li>Fomentar la comunicación y el liderazgo positivo.</li>
-                  <li>Desarrollar equipos resilientes y colaborativos.</li>
-                  <li>
-                    Generar una “cultura justa” donde aprender del error es la
-                    clave de la mejora.
-                  </li>
-                </ul>
-              </div>
-              <Image
-                src="/sobre2.jpg"
-                alt="Psicología aplicada a empresas"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </section>
-
-          {/* Psicopiloto para ti */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">
-                  Psicopiloto para ti
-                </h2>
-                <p>
-                  Si lo que buscas es un espacio seguro donde trabajar tu
-                  bienestar, la psicología aplicada desde la experiencia práctica
-                  puede marcar la diferencia. Con un enfoque cercano y humano, te
-                  acompaño a descubrir tus propios recursos y a aplicar
-                  herramientas que funcionan en la vida real, igual que en una
-                  cabina de vuelo.
-                </p>
-              </div>
-              <Image
-                src="/sobre1.jpg"
-                alt="Psicopiloto para tu bienestar"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </section>
-
-          {/* CTA final */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-center">
-              Da el primer paso con Psicopiloto
-            </h2>
-            <p className="text-center max-w-3xl mx-auto">
-              Tanto si eres una persona que busca crecer a nivel personal, como
-              si eres una empresa interesada en fortalecer a tu equipo,{" "}
-              <strong>Psicopiloto</strong> es el puente entre la psicología y la
-              aviación que puede ayudarte a alcanzar tus objetivos.
+            <h2 className="text-2xl font-semibold mb-4">Misión</h2>
+            <p>
+              Nuestra misión es <strong>acompañarte en tu viaje personal</strong>, 
+              brindándote apoyo psicológico cercano, práctico y basado en la evidencia. 
+              Queremos que desarrolles habilidades para:
             </p>
-            <div className="mt-8 text-center">
-              <Link href="/contacto">
-                <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
-                  Contacta conmigo hoy mismo
-                </span>
-              </Link>
+            <ul className="list-disc list-inside mt-4">
+              <li>Tomar el control de tus decisiones.</li>
+              <li>Desarrollar estrategias de afrontamiento efectivas.</li>
+              <li>Alcanzar un bienestar duradero.</li>
+            </ul>
+          </section>
+
+          {/* Visión */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-semibold mb-4">Visión</h2>
+            <p>
+              Ser un referente en <strong>psicología integradora</strong>, reconocido por un enfoque 
+              <strong>humano y práctico</strong>, que inspire a las personas a 
+              <strong>vivir con confianza y resiliencia</strong>, superando cualquier turbulencia emocional.
+            </p>
+          </section>
+
+          {/* Metáfora */}
+          <section className="mb-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">
+                  La Metáfora: Aviación + Psicología
+                </h2>
+                <p>
+                  Imagina tu vida como un vuelo. A veces el cielo está despejado, 
+                  otras veces surgen tormentas inesperadas. 
+                  En <strong>Psicopiloto</strong> aplicamos estrategias de seguridad de la aviación 
+                  para que desarrolles:
+                </p>
+                <ul className="list-disc list-inside mt-4">
+                  <li><strong>Conciencia situacional</strong>: reconocer tus emociones y pensamientos.</li>
+                  <li><strong>Comunicación efectiva</strong>: expresar lo que sientes y crear relaciones sanas.</li>
+                  <li><strong>Gestión de amenazas y errores (TEM)</strong>: anticipar y manejar retos de la vida.</li>
+                  <li><strong>Toma de decisiones</strong>: elegir el mejor rumbo para tu bienestar.</li>
+                  <li><strong>Resiliencia</strong>: recuperarte y crecer tras la adversidad.</li>
+                  <li><strong>Trabajo en equipo</strong>: fortalecer vínculos personales y profesionales.</li>
+                </ul>
+              </div>
+              <Image
+                src="/sobre2.jpg"
+                alt="Metáfora aviación y psicología"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md"
+              />
             </div>
           </section>
+
+          {/* Metodología */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-semibold mb-4">Nuestra Metodología</h2>
+            <p>
+              En <strong>Psicopiloto</strong> aplicamos un modelo de 
+              <strong>terapia integradora</strong>, combinando enfoques como:
+            </p>
+            <ul className="list-disc list-inside mt-4">
+              <li>Terapia cognitivo-conductual.</li>
+              <li>Terapia humanista.</li>
+              <li>Terapia sistémica.</li>
+              <li>EMDR y otros enfoques basados en evidencia científica.</li>
+            </ul>
+            <p className="mt-4">
+              Nuestro enfoque es <strong>práctico y eficaz</strong>, 
+              con estrategias aplicables a tu vida diaria. 
+              No nos quedamos en la teoría: te acompañamos en cambios reales.
+            </p>
+          </section>
+
+          {/* Resultados */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-semibold mb-4">Resultados que Puedes Esperar</h2>
+            <ul className="list-disc list-inside">
+              <li>Mayor autoconocimiento y gestión emocional.</li>
+              <li>Herramientas efectivas contra estrés y ansiedad.</li>
+              <li>Relaciones más sanas y equilibradas.</li>
+              <li>Mejora en autoestima y confianza.</li>
+              <li>Capacidad de tomar las riendas de tu vida con seguridad.</li>
+            </ul>
+          </section>
+
+          {/* Ética */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-semibold mb-4">Nuestro Compromiso Ético</h2>
+            <p>
+              En <strong>Psicopiloto</strong> garantizamos un 
+              <strong>espacio seguro y confidencial</strong>, regido por los estándares 
+              del <strong>Colegio Oficial de la Psicología de Madrid</strong>. 
+              Nuestro compromiso es brindarte un acompañamiento ético, respetuoso y transparente.
+            </p>
+          </section>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <Link href="/servicios">
+              <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
+                Conoce nuestros servicios
+              </span>
+            </Link>
+            <Link href="/contacto">
+              <span className="ml-4 px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
+                Contacta con nosotros
+              </span>
+            </Link>
+          </div>
         </div>
       </main>
       <Footer />
