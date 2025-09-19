@@ -2,10 +2,18 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function QueEsPsicopiloto() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Head>
+        <title>Psicopiloto | Psicología innovadora con enfoque en aviación</title>
+        <meta
+          name="description"
+          content="Psicopiloto integra aviación y psicología para ayudarte a tomar el control de tu vida. Descubre nuestra misión, visión y metodología práctica para tu bienestar."
+        />
+      </Head>
       <Nav />
       <main className="flex-grow pt-20 pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
