@@ -123,7 +123,7 @@ export default function Home() {
               tomar mejores decisiones y recuperar el rumbo. 
               La vida no siempre es un vuelo estable, pero con acompañamiento se hace más seguro y llevadero.
             </p>
-            <Link href="/proyecto">
+            <Link href="/que-es-psicopiloto">
               <span className="px-6 py-2 bg-softorange-500 text-white rounded-lg font-medium shadow hover:bg-softorange-600 transition">
                 Descubre la filosofía
               </span>
