@@ -56,6 +56,23 @@ export default function Home() {
           </div>
         </section>
 
+{/* FILOSOFÍA */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Filosofía</h2>
+            <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
+              Igual que un copiloto apoya al piloto en momentos de turbulencia, yo estaré a tu lado para ayudarte a ver con más claridad, 
+              tomar mejores decisiones y recuperar el rumbo. 
+              La vida no siempre es un vuelo estable, pero con acompañamiento se hace más seguro y llevadero.
+            </p>
+            <Link href="/que-es-psicopiloto" legacyBehavior>
+              <a className="px-6 py-2 bg-psicopiloto-blue-500 text-white rounded-lg font-medium shadow hover:bg-psicopiloto-blue-600 transition">
+                Descubre la filosofía
+              </a>
+            </Link>
+          </div>
+        </section>
+
         {/* SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
@@ -117,22 +134,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FILOSOFÍA */}
-        <section className="py-16 bg-psicopiloto-sand-50">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Filosofía</h2>
-            <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-              Igual que un copiloto apoya al piloto en momentos de turbulencia, yo estaré a tu lado para ayudarte a ver con más claridad, 
-              tomar mejores decisiones y recuperar el rumbo. 
-              La vida no siempre es un vuelo estable, pero con acompañamiento se hace más seguro y llevadero.
-            </p>
-            <Link href="/que-es-psicopiloto" legacyBehavior>
-              <a className="px-6 py-2 bg-psicopiloto-honey-500 text-white rounded-lg font-medium shadow hover:bg-psicopiloto-honey-600 transition">
-                Descubre la filosofía
-              </a>
-            </Link>
-          </div>
-        </section>
 
         {/* TERAPIA ONLINE */}
         <section className="py-16 bg-white">
