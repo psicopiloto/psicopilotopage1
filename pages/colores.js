@@ -1,16 +1,4 @@
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-
-export default function Colores() {
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <Nav />
-      <main className="flex-grow container mx-auto px-4 py-16">
-        <h1 className="text-3xl font-bold text-center mb-10">
-          Guía de colores Psicopiloto
-        </h1>
-
-        // pages/colores.js
+// pages/colores.js
 export default function Colores() {
   const palette = [
     { name: "Green (CTA)", color: "bg-psicopiloto-green-500" },
@@ -46,10 +34,4 @@ export default function Colores() {
       </div>
     </div>
   )
-}
-
-      </main>
-      <Footer />
-    </div>
-  );
 }
