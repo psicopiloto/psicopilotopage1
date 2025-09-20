@@ -92,28 +92,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TERAPIA ONLINE */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6">Psicología online</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              La terapia online no es un sustituto: es una alternativa igual de eficaz que la presencial, avalada por la experiencia y la evidencia científica. 
-              Permite conectarte desde cualquier lugar, con horarios flexibles y la misma calidad profesional.
-            </p>
-            <ul className="text-gray-700 mb-6 list-disc list-inside text-left inline-block">
-              <li>Comodidad: conéctate desde tu casa o tu oficina.</li>
-              <li>Flexibilidad horaria y continuidad incluso en viajes.</li>
-              <li>Confidencialidad total con plataformas seguras.</li>
-              <li>Accesibilidad para personas en cualquier lugar.</li>
-            </p>
-            <Link href="/servicios#online">
-              <span className="px-6 py-2 bg-softorange-500 text-white rounded-lg font-medium shadow hover:bg-softorange-600 transition">
-                Quiero una consulta online
-              </span>
-            </Link>
-          </div>
-        </section>
-
         {/* FILOSOFÍA */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto max-w-4xl text-center">
@@ -126,6 +104,28 @@ export default function Home() {
             <Link href="/que-es-psicopiloto">
               <span className="px-6 py-2 bg-softorange-500 text-white rounded-lg font-medium shadow hover:bg-softorange-600 transition">
                 Descubre la filosofía
+              </span>
+            </Link>
+          </div>
+        </section>
+
+        {/* TERAPIA ONLINE */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-semibold mb-6">Psicología online</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              La terapia online no es un sustituto: es una alternativa igual de eficaz que la presencial, avalada por la experiencia y la evidencia científica. 
+              Permite conectarte desde cualquier lugar, con horarios flexibles y la misma calidad profesional.
+            </p>
+            <ul className="text-gray-700 mb-6 list-disc list-inside text-left mx-auto max-w-md">
+              <li>Comodidad: conéctate desde tu casa o tu oficina.</li>
+              <li>Flexibilidad horaria y continuidad incluso en viajes.</li>
+              <li>Confidencialidad total con plataformas seguras.</li>
+              <li>Accesibilidad para personas en cualquier lugar.</li>
+            </ul>
+            <Link href="/servicios#online">
+              <span className="px-6 py-2 bg-softorange-500 text-white rounded-lg font-medium shadow hover:bg-softorange-600 transition">
+                Quiero una consulta online
               </span>
             </Link>
           </div>
