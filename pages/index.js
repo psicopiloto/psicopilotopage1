@@ -40,11 +40,11 @@ export default function Home() {
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold mb-6">Sobre mí</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Soy psicólogo clínico con una trayectoria poco común: antes fui piloto militar e instructor. 
+              Soy psicólogo con una trayectoria poco común: antes fui piloto militar de los aviones apagafuegos del 43 Grupo de FF.AA. 
               De la aviación aprendí valores como la humildad, el trabajo en equipo y la gestión de errores. 
               Ahora los aplico a la psicología para acompañarte en tu propio viaje vital.
             </p>
-            <Link href="/sobre">
+            <Link href="/sobre-mi">
               <span className="px-6 py-2 bg-softorange-500 text-white rounded-lg font-medium shadow hover:bg-softorange-600 transition">
                 Conóceme mejor
               </span>
@@ -105,7 +105,7 @@ export default function Home() {
               <li>Flexibilidad horaria y continuidad incluso en viajes.</li>
               <li>Confidencialidad total con plataformas seguras.</li>
               <li>Accesibilidad para personas en cualquier lugar.</li>
-            </ul>
+            </p>
             <Link href="/servicios#online">
               <span className="px-6 py-2 bg-softorange-500 text-white rounded-lg font-medium shadow hover:bg-softorange-600 transition">
                 Quiero una consulta online
