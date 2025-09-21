@@ -59,7 +59,7 @@ export default function Servicios() {
           {/* CTA */}
           <div className="text-center mt-12">
             <Link href="/contacto">
-              <span className="px-6 py-3 bg-psicopiloto-blue-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-psicopiloto-blue-600 transition">
+              <span className="px-6 py-3 bg-psicopiloto-green-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-psicopiloto-green-600 transition">
                 Agenda tu primera cita
               </span>
             </Link>
