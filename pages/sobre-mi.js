@@ -156,9 +156,11 @@ export default function SobreMi() {
                   <li><strong>Psicología integradora y terapia breve</strong>.</li>
                   <li><strong>Trauma y EMDR</strong>.</li>
                 </ul>
-                <p className="mt-4">
-                  Desde 2024 ejerzo como <strong>psicólogo voluntario en Amalgama Social</strong>, atendiendo casos de ansiedad, 
-                  estrés, gestión emocional, duelo, autoestima y trauma.
+                 <p className="mt-4">
+                  Más tarde, en 2019, colaboré con la creación de <strong>Edades Granada</strong>, dedicada al cuidado de personas mayores y 
+                  ayuda a domicilio., desde entonces, tambien asesoro a dicha empresa en la gestión del trabajo y manejo de errores, basandome en mi experiencia como
+                    piloto e instructor de CRM. Dándome cuenta que todo lo aprendido en aviacón y la foma de trabajar es saplicable a las empresas
+                      para mejorar su eficacia y su eficiencia.
                 </p>
               </div>
             </div>
@@ -175,8 +177,9 @@ export default function SobreMi() {
                   El voluntariado ha sido siempre un pilar en mi vida. En mi juventud colaboré con{" "}
                   <strong>Solidarios para el Desarrollo</strong>, trabajando con personas mayores en fases iniciales de demencia.
                 </p>
-                <p className="mt-4">
-                  Más tarde, en 2019, cofundé <strong>Edades Granada</strong>, dedicada al cuidado de personas mayores y ayuda a domicilio.
+                    <p className="mt-4">
+                  Desde 2024 ejerzo como <strong>psicólogo voluntario en Amalgama Social</strong>, atendiendo casos de ansiedad, 
+                  estrés, gestión emocional, duelo, autoestima y trauma.
                 </p>
                 <p className="mt-4">
                   Estas experiencias me han recordado que detrás de cada historia hay alguien que merece ser escuchado con respeto y cercanía.
