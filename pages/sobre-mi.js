@@ -209,8 +209,8 @@ export default function SobreMi() {
           {/* Call to action */}
           <div className="mt-12 text-center">
             <Link href="/contacto">
-              <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
-                Reserva tu primera consulta
+              <span className="px-6 py-3 bg-psicopiloto-green-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-psicopiloto-green-600 transition">
+               👉 Reserva tu primera consulta
               </span>
             </Link>
           </div>
