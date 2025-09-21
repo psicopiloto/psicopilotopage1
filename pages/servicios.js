@@ -1,23 +1,43 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Link from "next/link";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 export default function Servicios() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
-      <Head>
-        <title>Servicios de Psicología | Psicopiloto</title>
-        <meta
-          name="description"
-          content="Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja y trauma. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto."
-        />
-        <meta
-          name="keywords"
-          content="psicología, ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma, EMDR, psicoterapia online"
-        />
-        <meta name="author" content="Psicopiloto" />
-      </Head>
+      <NextSeo
+        title="Servicios de Psicología | Psicopiloto"
+        description="Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja y trauma. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto."
+        canonical="https://psicopiloto.com/servicios"
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "psicología, ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma, EMDR, psicoterapia online",
+          },
+          {
+            name: "author",
+            content: "Psicopiloto",
+          },
+        ]}
+        openGraph={{
+          url: "https://psicopiloto.com/servicios",
+          title: "Servicios de Psicología | Psicopiloto",
+          description:
+            "Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja y trauma. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto.",
+          images: [
+            {
+              url: "https://psicopiloto.com/images/seo/servicios.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Servicios de Psicología - Psicopiloto",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Psicopiloto",
+        }}
+      />
 
       <Nav />
       <main className="flex-grow pt-16">
