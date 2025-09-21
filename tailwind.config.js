@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         psicopiloto: {
-          green: { 500: "#2e7d6c", 600: "#256659" },
+          green: { 500: "#4eae9b", 600: "#2a8371" },
           blue: { 500: "#5aa6c8", 600: "#3f89aa" },
           sand: { 50: "#f9f5f1" },
           gray: { 700: "#374151", 500: "#6b7280" },
