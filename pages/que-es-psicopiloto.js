@@ -45,10 +45,11 @@ export default function QueEsPsicopiloto() {
       <Nav />
 
       {/* ✅ Cabecera con imagen de fondo, coherente con index */}
-      <PageHeader
-        title="Psicopiloto: uniendo aviación y psicología para transformar personas y organizaciones"   
-        backgroundImage="/header-quees.jpg"
-      />
+     <PageHeader
+  title="Psicopiloto: uniendo aviación y psicología"
+  subtitle="Un enfoque que combina la experiencia aeronáutica con la psicología para ayudarte a crecer a nivel personal o como empresa."
+  backgroundImage="/header-quees.jpg"
+/>
 
       <main className="flex-grow pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
