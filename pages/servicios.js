@@ -41,19 +41,19 @@ export default function Servicios() {
 
       <Nav />
       <main className="flex-grow pt-16">
-        {/* HERO */}
-        <section className="py-16 bg-white text-center">
-          <div className="container mx-auto max-w-4xl">
-            <h1 className="text-4xl font-bold mb-6 text-psicopiloto-blue-700">
-              Servicios de Psicología
-            </h1>
-            <p className="text-psicopiloto-gray-600 leading-relaxed">
-              En <strong>Psicopiloto</strong> encontrarás un espacio seguro y
-              cercano, donde trabajaremos juntos para recuperar el equilibrio y
-              afrontar los retos de la vida con confianza y serenidad.
-            </p>
-          </div>
-        </section>
+      {/* HERO */}
+<section className="py-16 bg-white text-center">
+  <div className="container mx-auto max-w-4xl">
+    <h1 className="text-4xl font-bold mb-10 text-center text-psicopiloto-green-600">
+      Servicios de Psicología
+    </h1>
+    <p className="text-psicopiloto-gray-600 leading-relaxed">
+      En <strong>Psicopiloto</strong> encontrarás un espacio seguro y
+      cercano, donde trabajaremos juntos para recuperar el equilibrio y
+      afrontar los retos de la vida con confianza y serenidad.
+    </p>
+  </div>
+</section>
 
         {/* LISTA DE SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
