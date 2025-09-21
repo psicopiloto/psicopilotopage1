@@ -2,10 +2,44 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 export default function QueEsPsicopiloto() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
+      <NextSeo
+        title="¿Qué es Psicopiloto? | Psicología y aviación para transformar vidas"
+        description="Psicopiloto une la psicología con la aviación para ofrecer terapia individual, programas de empresa y consultoría en factores humanos. Un enfoque único para crecer personal y profesionalmente."
+        canonical="https://psicopiloto.com/que-es-psicopiloto"
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "qué es Psicopiloto, psicología aviación, psicólogo Granada, terapia individual, psicología empresas, factores humanos, CRM, TEM, desarrollo personal",
+          },
+          {
+            name: "author",
+            content: "Psicopiloto",
+          },
+        ]}
+        openGraph={{
+          url: "https://psicopiloto.com/que-es-psicopiloto",
+          title: "¿Qué es Psicopiloto? | Psicología y aviación para transformar vidas",
+          description:
+            "Psicopiloto une la psicología con la aviación para ofrecer terapia individual, programas de empresa y consultoría en factores humanos.",
+          images: [
+            {
+              url: "https://psicopiloto.com/images/seo/que-es.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Qué es Psicopiloto - Psicología y aviación",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Psicopiloto",
+        }}
+      />
+
       <Nav />
       <main className="flex-grow pt-20 pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
