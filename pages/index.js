@@ -2,13 +2,46 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
+      <NextSeo
+        title="Psicólogo online y presencial en Granada | Psicopiloto"
+        description="Psicopiloto ofrece psicoterapia online y presencial en Granada: ansiedad, estrés, depresión, autoestima, trauma, EMDR y terapia de pareja. Acompaño tu viaje hacia el bienestar emocional."
+        canonical="https://psicopiloto.com/"
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora",
+          },
+          {
+            name: "author",
+            content: "Psicopiloto",
+          },
+        ]}
+        openGraph={{
+          url: "https://psicopiloto.com/",
+          title: "Psicólogo online y presencial en Granada | Psicopiloto",
+          description:
+            "Psicopiloto ofrece psicoterapia online y presencial en Granada: ansiedad, estrés, depresión, autoestima, trauma, EMDR y terapia de pareja.",
+          images: [
+            {
+              url: "https://psicopiloto.com/images/seo/home.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Psicólogo online y presencial en Granada - Psicopiloto",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Psicopiloto",
+        }}
+      />
+
       <Nav />
       <main className="flex-grow pt-16">
-        
         {/* HERO */}
         <section className="relative h-[70vh] flex items-center justify-center">
           <Image
