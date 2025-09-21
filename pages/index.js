@@ -145,7 +145,7 @@ export default function Home() {
                 { title: "Autoestima y apego", desc: "Inseguridad, dificultad para poner límites." },
                 { title: "Terapia de pareja", desc: "Conflictos, discusiones, pérdida de confianza." },
                 { title: "Trauma y experiencias difíciles", desc: "Recuerdos dolorosos, bloqueos emocionales, EMDR." },
-                { title: "Si eres empresa", desc: "mejorar la eficacia y eficiencia, liderazgo, gestion del trabajo y de errores, inspirados en valores de la aviación." }
+                { title: "Si eres empresa", desc: "Liderazgo, gestión del trabajo y los errores. Mejorar la eficacia y eficiencia es posible. Inspirado en la aviación, una visión nueva de la organización." }
               ].map((s, i) => (
                 <div
                   key={i}
