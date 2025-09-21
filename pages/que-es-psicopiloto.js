@@ -46,7 +46,7 @@ export default function QueEsPsicopiloto() {
 
       {/* ✅ Cabecera con imagen de fondo, coherente con index */}
       <PageHeader
-        title="Psicopiloto: uniendo aviación y psicología"
+        title="Psicopiloto: uniendo aviación y psicología para transformar personas y organizaciones"   
         backgroundImage="/header-quees.jpg"
       />
 
