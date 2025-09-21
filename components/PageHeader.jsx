@@ -1,29 +1,32 @@
 import Image from "next/image";
 
-export default function PageHeader({ title, subtitle, image }) {
+export default function PageHeader({ title, subtitle, backgroundImage }) {
   return (
-    <div className="relative w-full h-[40vh] md:h-[50vh] flex items-center justify-center text-center">
+    <section className="relative h-[70vh] flex items-center justify-center">
       {/* Imagen de fondo */}
       <Image
-        src={image}
+        src={backgroundImage}
         alt={title}
         fill
+        style={{ objectFit: "cover" }}
         priority
-        className="object-cover brightness-50"
       />
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-psicopiloto-green-900/40" />
-      {/* Texto */}
-      <div className="relative z-10 max-w-3xl px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+
+      {/* Capa oscura encima */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
+
+      {/* Contenido de texto */}
+      <div className="container mx-auto text-center text-white z-20 relative px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
           {title}
         </h1>
+
         {subtitle && (
-          <p className="mt-4 text-lg md:text-xl text-white/90 drop-shadow">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow">
             {subtitle}
           </p>
         )}
       </div>
-    </div>
+    </section>
   );
 }
