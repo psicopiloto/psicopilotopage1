@@ -6,19 +6,19 @@ import { NextSeo } from "next-seo";
 
 export default function SobreMi() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white text-gray-800">
       <NextSeo
         title="Sobre mí | Psicopiloto"
-        description="Soy psicólogo con habilitación sanitaria y piloto militar. En Psicopiloto uno la aviación y la psicología para ayudarte a manejar la ansiedad, el estrés, el trauma y recuperar tu confianza."
+        description="Soy psicólogo con habilitación sanitaria y piloto militar. En Psicopiloto uno aviación y psicología para ayudarte a manejar la ansiedad, el estrés y recuperar tu confianza."
         canonical="https://www.psicopiloto.com/sobre-mi"
         openGraph={{
           url: "https://www.psicopiloto.com/sobre-mi",
           title: "Sobre mí | Psicopiloto",
           description:
-            "Conoce mi trayectoria como psicólogo y piloto militar. Descubre cómo combino aviación y psicología para ofrecerte un enfoque único en ansiedad, autoestima, trauma y terapia.",
+            "Conoce mi trayectoria como psicólogo y piloto militar. Descubre cómo combino aviación y psicología para un enfoque único en ansiedad, autoestima, trauma y terapia.",
           images: [
             {
-              url: "https://www.psicopiloto.com/og-sobre-mi.jpg", // ⚡ pon aquí tu imagen OG real
+              url: "https://www.psicopiloto.com/og-sobre-mi.jpg",
               width: 1200,
               height: 630,
               alt: "Sobre mí - Psicopiloto",
@@ -36,16 +36,16 @@ export default function SobreMi() {
       />
 
       <Nav />
-      <main className="flex-grow pt-20 pb-16">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h1 className="text-4xl font-bold mb-10 text-center text-psicopiloto-green-600">
+      <main className="flex-grow pt-24 pb-16">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-psicopiloto-green-600">
             Sobre mí
           </h1>
 
           {/* Intro */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
+          <section className="mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="leading-relaxed">
                 <p>
                   Mi nombre es <strong>[Tu Nombre]</strong> y soy{" "}
                   <strong>psicólogo con Habilitación Sanitaria</strong> y{" "}
@@ -67,23 +67,23 @@ export default function SobreMi() {
                 alt="Psicopiloto - experiencia en psicología"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md"
+                className="rounded-2xl shadow-lg"
               />
             </div>
           </section>
 
- {/* Fase 1 */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Fase 1 */}
+          <section className="mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <Image
                 src="/sobre2.jpg"
                 alt="Vocación por la psicología"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md order-2 md:order-1"
+                className="rounded-2xl shadow-lg order-2 md:order-1"
               />
-              <div className="order-1 md:order-2">
-                <h2 className="text-2xl font-semibold mb-4">
+              <div className="order-1 md:order-2 leading-relaxed">
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
                   Fase 1: El inicio – vocación por la psicología
                 </h2>
                 <p>
@@ -101,10 +101,10 @@ export default function SobreMi() {
           </section>
 
           {/* Fase 2 */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">
+          <section className="mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="leading-relaxed">
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
                   Fase 2: La aviación – disciplina, liderazgo y seguridad
                 </h2>
                 <p>
@@ -112,7 +112,7 @@ export default function SobreMi() {
                   Durante casi dos décadas acumulé más de <strong>2.500 horas de vuelo</strong> en aviones como el{" "}
                   <em>ENAER T-35C Pillán, Aviocar C-212, Canadair CL-215T y CL-415</em>.
                 </p>
-                <ul className="list-disc list-inside mt-4">
+                <ul className="list-disc list-inside mt-4 space-y-2">
                   <li><strong>Piloto comandante</strong> en misiones de incendios en España, Grecia y Portugal.</li>
                   <li><strong>Instructor de vuelo y simulador</strong>, formando a nuevas generaciones de pilotos.</li>
                   <li><strong>Jefe de Crew Resource Management (CRM)</strong>, desarrollando programas de entrenamiento en factores humanos.</li>
@@ -128,30 +128,30 @@ export default function SobreMi() {
                 alt="Psicología y aviación unidas"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md"
+                className="rounded-2xl shadow-lg"
               />
             </div>
           </section>
 
           {/* Fase 3 */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
+          <section className="mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <Image
                 src="/sobre1.jpg"
                 alt="Psicólogo con habilitación sanitaria"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md order-2 md:order-1"
+                className="rounded-2xl shadow-lg order-2 md:order-1"
               />
-              <div className="order-1 md:order-2">
-                <h2 className="text-2xl font-semibold mb-4">
+              <div className="order-1 md:order-2 leading-relaxed">
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
                   Fase 3: El regreso a la psicología – volver a la esencia
                 </h2>
                 <p>
                   En paralelo a mi carrera aeronáutica, retomé mi vocación primera: la psicología. 
                   Me habilité como <strong>psicólogo con Habilitación Sanitaria</strong> en 2015 y me especialicé en:
                 </p>
-                <ul className="list-disc list-inside mt-4">
+                <ul className="list-disc list-inside mt-4 space-y-2">
                   <li><strong>Psicología aeronáutica</strong>.</li>
                   <li><strong>Psicología integradora y terapia breve</strong>.</li>
                   <li><strong>Trauma y EMDR</strong>.</li>
@@ -165,10 +165,10 @@ export default function SobreMi() {
           </section>
 
           {/* Fase 4 */}
-          <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">
+          <section className="mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="leading-relaxed">
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
                   Fase 4: El voluntariado – la parte más humana
                 </h2>
                 <p>
@@ -187,14 +187,16 @@ export default function SobreMi() {
                 alt="Voluntariado y atención humana"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md"
+                className="rounded-2xl shadow-lg"
               />
             </div>
           </section>
 
           {/* Hoy */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Hoy: Psicopiloto</h2>
+          <section className="mb-20 leading-relaxed">
+            <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
+              Hoy: Psicopiloto
+            </h2>
             <p>
               Hoy, en <strong>Psicopiloto</strong>, uno lo aprendido en la aviación con la psicología para ofrecer un acompañamiento diferente. 
               Si en la cabina de un avión entrenábamos la mente para afrontar lo inesperado y mantener la seguridad, 
@@ -209,12 +211,11 @@ export default function SobreMi() {
           {/* Call to action */}
           <div className="mt-12 text-center">
             <Link href="/contacto">
-              <span className="px-6 py-3 bg-psicopiloto-green-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-               👉 Reserva tu primera consulta
+              <span className="px-6 py-3 bg-psicopiloto-green-500 text-white rounded-xl text-lg font-semibold shadow hover:bg-psicopiloto-green-600 transition">
+                👉 Reserva tu primera consulta
               </span>
             </Link>
           </div>
-
         </div>
       </main>
       <Footer />
