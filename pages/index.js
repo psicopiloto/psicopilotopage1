@@ -137,7 +137,7 @@ export default function Home() {
         {/* ÁREAS DE TRABAJO */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Áreas de trabajo</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Servicios</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 { title: "Ansiedad y estrés", desc: "Insomnio, tensión, preocupaciones constantes." },
@@ -145,6 +145,7 @@ export default function Home() {
                 { title: "Autoestima y apego", desc: "Inseguridad, dificultad para poner límites." },
                 { title: "Terapia de pareja", desc: "Conflictos, discusiones, pérdida de confianza." },
                 { title: "Trauma y experiencias difíciles", desc: "Recuerdos dolorosos, bloqueos emocionales, EMDR." },
+                { title: "Si eres empresa", desc: "mejorar la eficacia y eficiencia, liderazgo, gestion del trabajo y de errores, inspirados en valores de la aviación." }
               ].map((s, i) => (
                 <div
                   key={i}
