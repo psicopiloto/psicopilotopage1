@@ -2,6 +2,7 @@ import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import { NextSeo } from "next-seo";
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -30,7 +31,8 @@ export default function Contacto() {
         setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
       } else {
         setStatus(
-          "Error: " + (data?.error || "No se pudo enviar. Revisa la configuración.")
+          "Error: " +
+            (data?.error || "No se pudo enviar. Revisa la configuración.")
         );
       }
     } catch (err) {
@@ -40,14 +42,36 @@ export default function Contacto() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* SEO */}
+      <NextSeo
+        title="Contacto | Psicopiloto"
+        description="Ponte en contacto con Psicopiloto. Consulta psicológica online y presencial en Granada. Rellena el formulario y te responderé lo antes posible."
+        openGraph={{
+          url: "https://www.psicopiloto.com/contacto",
+          title: "Contacto | Psicopiloto",
+          description:
+            "Consulta psicológica online y presencial en Granada. Rellena el formulario y te responderé lo antes posible.",
+          images: [
+            {
+              url: "https://www.psicopiloto.com/images/seo/contacto-og.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Formulario de contacto Psicopiloto",
+            },
+          ],
+        }}
+      />
+
       <Nav />
       <main className="flex-grow pt-16">
         <section className="py-16 bg-white">
           <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Columna izquierda: texto + formulario */}
             <div>
-              <h1 className="text-3xl font-bold mb-4">Contacto</h1>
-              <p className="text-gray-700 mb-6">
+              <h1 className="text-4xl font-bold mb-10 text-center text-psicopiloto-green-600">
+                Contacto
+              </h1>
+              <p className="text-psicopiloto-gray-600 mb-6 text-center md:text-left">
                 Rellena el formulario y te responderé lo antes posible. Consulta
                 online y presencial en Granada.
               </p>
@@ -96,7 +120,7 @@ export default function Contacto() {
                 ></textarea>
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-softorange-500 text-white rounded-lg"
+                  className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
                 >
                   Enviar
                 </button>
@@ -105,14 +129,21 @@ export default function Contacto() {
               <div className="mt-6 text-sm text-gray-500">
                 <strong>Protección de datos:</strong> Los datos que envíes serán
                 tratados con confidencialidad y se usarán solo para responder a tu
-                petición. Consulta la política de privacidad en /aviso-legal.
+                petición. Consulta la política de privacidad en{" "}
+                <a
+                  href="/aviso-legal"
+                  className="text-psicopiloto-green-600 underline"
+                >
+                  aviso legal
+                </a>
+                .
               </div>
             </div>
 
             {/* Columna derecha: imagen ilustrativa */}
             <div className="relative w-full h-[500px] hidden md:block">
               <Image
-                src="/ponaquituimagen.jpg"
+                src="/images/contacto.jpg"
                 alt="Consulta psicológica - Psicopiloto"
                 fill
                 style={{ objectFit: "cover" }}
