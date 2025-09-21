@@ -160,7 +160,7 @@ export default function Home() {
             </div>
             <div className="mt-8">
               <Link href="/servicios" legacyBehavior>
-                <a className="px-5 py-3 bg-psicopiloto-blue-500 text-white rounded-lg shadow hover:bg-psicopiloto-blue-600 transition">
+               <a className="px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg font-medium shadow hover:bg-psicopiloto-green-600 transition">
                   Descubre todos los servicios
                 </a>
               </Link>
