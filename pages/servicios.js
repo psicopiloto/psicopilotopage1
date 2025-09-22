@@ -187,6 +187,47 @@ export default function Servicios() {
                 </span>
               </Link>
             </div>
+
+{/* Psicopiloto para Empresas */}
+<div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition md:col-span-2">
+  <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
+    Psicopiloto para Empresas
+  </h2>
+  <p className="mb-4">
+    En un entorno empresarial cada vez más competitivo y cambiante, los equipos
+    necesitan <strong>cohesión, confianza y liderazgo positivo</strong> para
+    alcanzar sus objetivos. En <strong>Psicopiloto</strong>, aplicamos los
+    principios de la aviación —como la gestión de recursos, el trabajo en
+    equipo y la prevención de errores— al desarrollo organizacional.
+  </p>
+  <p className="mb-4">
+    Nuestros programas de <strong>psicología aplicada a empresas</strong> ayudan
+    a reducir errores, mejorar la eficiencia y fomentar una comunicación clara
+    y honesta. Trabajamos con modelos probados como el{" "}
+    <em>Crew Resource Management (CRM)</em> y el{" "}
+    <em>Threat and Error Management (TEM)</em> para potenciar tanto a líderes
+    como a equipos.
+  </p>
+  <ul className="list-disc list-inside text-gray-700 mb-4">
+    <li>Desarrollar líderes resilientes y con visión estratégica.</li>
+    <li>Crear equipos colaborativos y cohesionados.</li>
+    <li>Implantar una <strong>cultura justa</strong> basada en el aprendizaje,
+        no en la culpa.</li>
+    <li>Impulsar el rendimiento empresarial reduciendo costes derivados de errores
+        y falta de coordinación.</li>
+  </ul>
+  <p className="mb-4">
+    Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden
+    transformar también tu empresa, aportando seguridad, confianza y eficiencia.
+  </p>
+  <Link href="/contacto">
+    <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
+      🚀 Fortalece tu equipo hoy: solicita una sesión de asesoramiento
+    </span>
+  </Link>
+</div>
+
+                  
           </div>
         </section>
       </main>
@@ -194,3 +235,4 @@ export default function Servicios() {
     </div>
   );
 }
+
