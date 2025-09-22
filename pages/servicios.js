@@ -150,27 +150,35 @@ export default function Servicios() {
             </div>
 
             {/* Trauma y Experiencias Difíciles */}
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
-              <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
-                Trauma y Experiencias Difíciles
-              </h2>
-              <p className="mb-4">
-                Las experiencias dolorosas pueden dejar{" "}
-                <strong>huellas profundas</strong> en la memoria y en el cuerpo:
-                bloqueos, recuerdos intrusivos o emociones intensas que parecen
-                imposibles de manejar.
-              </p>
-              <p className="mb-4">
-                En <strong>Psicopiloto</strong> aplico enfoques basados en la
-                evidencia como la <strong>terapia EMDR</strong>, que ayudan a
-                procesar y liberar esas memorias de manera segura y progresiva.
-              </p>
-              <Link href="/contacto">
-                <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  👉 Empieza a sanar tu historia: agenda tu sesión de terapia
-                </span>
-              </Link>
-            </div>
+<div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+  <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
+    Trauma y Experiencias Difíciles
+  </h2>
+  <p className="mb-4">
+    Las <strong>experiencias dolorosas del pasado</strong> pueden dejar
+    <strong> huellas profundas</strong> en la memoria y en el cuerpo. A veces
+    aparecen en forma de <strong>bloqueos emocionales</strong>, recuerdos
+    intrusivos o una sensación constante de alerta que impide vivir con calma.
+  </p>
+  <p className="mb-4">
+    En <strong>Psicopiloto</strong> utilizo enfoques como la{" "}
+    <strong>terapia EMDR</strong> y técnicas de regulación emocional que
+    permiten <strong>procesar y liberar memorias traumáticas</strong> de una
+    manera <strong>segura y progresiva</strong>. El objetivo es que puedas
+    mirar al pasado sin que condicione tu presente y recuperar tu serenidad.
+  </p>
+  <p className="mb-4">
+    Con este acompañamiento aprenderás a <strong>gestionar las emociones
+    intensas</strong>, a desarrollar recursos internos y a fortalecer tu
+    capacidad de resiliencia. De esta forma, podrás avanzar con mayor
+    confianza y construir una vida más estable y equilibrada.
+  </p>
+  <Link href="/contacto">
+    <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
+      🌱 Empieza hoy tu proceso de sanación: agenda tu sesión de terapia
+    </span>
+  </Link>
+</div>
 
             {/* Psicopiloto para Empresas */}
             <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
