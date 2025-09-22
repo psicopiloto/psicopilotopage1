@@ -1,41 +1,27 @@
-import Image from "next/image";
+<header class="relative w-full h-screen">
+  <!-- Imagen de fondo -->
+  <img 
+    src="tu-imagen.jpg" 
+    alt="Imagen de cabecera"
+    class="w-full h-full object-contain md:object-cover"
+  />
 
-export default function PageHeader({ title, subtitle, backgroundImage }) {
-  return (
-    <section
-      className="
-        relative 
-        h-[55vh] md:h-[70vh]   /* móvil un poco más bajo */
-        flex items-center justify-center
-      "
+  <!-- Capa oscura encima de la imagen -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <!-- Contenido centrado -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">
+      Bienvenido a Mi Página
+    </h1>
+    <p class="text-lg md:text-xl max-w-2xl">
+      Psicología online para tu bienestar emocional y crecimiento personal.
+    </p>
+    <a 
+      href="#contacto" 
+      class="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg shadow-lg text-lg font-medium transition"
     >
-      {/* Imagen de fondo */}
-      <Image
-        src={backgroundImage}
-        alt={title}
-        fill
-        className="
-          object-cover 
-          object-bottom md:object-center   /* móvil abajo, desktop centrado */
-        "
-        priority
-      />
-
-      {/* Capa oscura encima */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-
-      {/* Contenido de texto */}
-      <div className="container mx-auto text-center text-white z-20 relative px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-          {title}
-        </h1>
-
-        {subtitle && (
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow">
-            {subtitle}
-          </p>
-        )}
-      </div>
-    </section>
-  );
-}
+      Contáctame
+    </a>
+  </div>
+</header>
