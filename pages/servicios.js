@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
+import PageHeader from "../components/PageHeader"; // ✅ usamos PageHeader
 
 export default function Servicios() {
   return (
@@ -41,19 +42,12 @@ export default function Servicios() {
 
       <Nav />
       <main className="flex-grow pt-16">
-      {/* HERO */}
-<section className="py-16 bg-white text-center">
-  <div className="container mx-auto max-w-4xl">
-    <h1 className="text-4xl font-bold mb-10 text-center text-psicopiloto-green-600">
-      Servicios de Psicología
-    </h1>
-    <p className="text-psicopiloto-gray-600 leading-relaxed">
-      En <strong>Psicopiloto</strong> encontrarás un espacio seguro y
-      cercano, donde trabajaremos juntos para recuperar el equilibrio y
-      afrontar los retos de la vida con confianza y serenidad.
-    </p>
-  </div>
-</section>
+        {/* ✅ PageHeader coherente con index */}
+        <PageHeader
+          title="Servicios de Psicología"
+          subtitle="Un espacio seguro para recuperar el equilibrio, crecer personalmente y afrontar tus retos con confianza. Si eres empresa, también te acompaño con formación en factores humanos, liderazgo y gestión de equipos inspirada en la aviación."
+          backgroundImage="/header-servicios.jpg" // 👈 CORREGIDO
+        />
 
         {/* LISTA DE SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
@@ -164,7 +158,7 @@ export default function Servicios() {
             </div>
 
             {/* Trauma y Experiencias Difíciles */}
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition md:col-span-2">
+            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
               <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
                 Trauma y Experiencias Difíciles
               </h2>
@@ -189,7 +183,7 @@ export default function Servicios() {
             </div>
 
 {/* Psicopiloto para Empresas */}
-<div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition md:col-span-2">
+<div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
   <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
     Psicopiloto para Empresas
   </h2>
@@ -208,14 +202,6 @@ export default function Servicios() {
     <em>Threat and Error Management (TEM)</em> para potenciar tanto a líderes
     como a equipos.
   </p>
-  <ul className="list-disc list-inside text-gray-700 mb-4">
-    <li>Desarrollar líderes resilientes y con visión estratégica.</li>
-    <li>Crear equipos colaborativos y cohesionados.</li>
-    <li>Implantar una <strong>cultura justa</strong> basada en el aprendizaje,
-        no en la culpa.</li>
-    <li>Impulsar el rendimiento empresarial reduciendo costes derivados de errores
-        y falta de coordinación.</li>
-  </ul>
   <p className="mb-4">
     Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden
     transformar también tu empresa, aportando seguridad, confianza y eficiencia.
