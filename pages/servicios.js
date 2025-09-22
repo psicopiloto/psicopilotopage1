@@ -45,8 +45,9 @@ export default function Servicios() {
         {/* ✅ PageHeader coherente con index */}
         <PageHeader
           title="Servicios de Psicología"
-          subtitle="Un espacio seguro para recuperar el equilibrio, crecer personalmente y afrontar tus retos con confianza. Si eres empresa, también te acompaño con formación en factores humanos, liderazgo y gestión de equipos inspirada en la aviación."
-          backgroundImage="/header-servicios.jpg"
+          subtitle="Un espacio seguro para recuperar el equilibrio y afrontar tus retos con confianza. 
+            Si eres empresa, también te acompaño con formación en factores humanos, liderazgo y gestión de equipos inspirada en la aviación."
+          backgroundImage="/header-servicios.webp"
         />
 
         {/* LISTA DE SERVICIOS PARA PERSONAS */}
