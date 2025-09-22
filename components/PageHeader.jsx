@@ -8,7 +8,7 @@ export default function PageHeader({ title, subtitle, backgroundImage }) {
         src={backgroundImage}
         alt={title}
         fill
-        className="object-contain md:object-cover"
+        style={{ objectFit: "cover" }}
         priority
       />
 
@@ -30,3 +30,4 @@ export default function PageHeader({ title, subtitle, backgroundImage }) {
     </section>
   );
 }
+
