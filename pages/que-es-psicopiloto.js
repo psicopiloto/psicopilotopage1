@@ -48,7 +48,7 @@ export default function QueEsPsicopiloto() {
      <PageHeader
   title="Psicopiloto — Uniendo aviación y psicología"
   subtitle="Un enfoque que combina la experiencia aeronáutica con la psicología para ayudarte a crecer a nivel personal o como empresa."
-  backgroundImage="/header-quees.jpg"
+  backgroundImage="/header-quees.webp"
 />
 
       <main className="flex-grow pb-16">
@@ -79,7 +79,7 @@ export default function QueEsPsicopiloto() {
                 </p>
               </div>
               <Image
-                src="/sobre1.jpg"
+                src="/sobre1.webp"
                 alt="Qué es Psicopiloto"
                 width={600}
                 height={400}
@@ -92,7 +92,7 @@ export default function QueEsPsicopiloto() {
           <section className="mb-16">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <Image
-                src="/sobre2.jpg"
+                src="/sobre2.webp"
                 alt="Misión y visión Psicopiloto"
                 width={600}
                 height={400}
@@ -208,7 +208,7 @@ export default function QueEsPsicopiloto() {
                 </p>
               </div>
               <Image
-                src="/sobre3.jpg"
+                src="/sobre3.webp"
                 alt="Psicopiloto para empresas"
                 width={600}
                 height={400}
