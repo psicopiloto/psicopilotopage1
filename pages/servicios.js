@@ -49,30 +49,31 @@ export default function Servicios() {
           backgroundImage="/header-servicios.jpg"
         />
 
-        {/* LISTA DE SERVICIOS */}
-        <section className="py-16 bg-psicopiloto-sand-50">
-          <div className="container mx-auto max-w-5xl grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
-
-            {/* Ansiedad y Estrés */}
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
-              <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
-                Ansiedad y Estrés
-              </h2>
-              <p className="mb-4">
-                La <strong>ansiedad</strong> y el <strong>estrés</strong> son respuestas naturales, pero cuando se vuelven constantes pueden causar <strong>insomnio</strong>, <strong>tensión muscular</strong> y la sensación de estar siempre en alerta.
-              </p>
-              <p className="mb-4">
-                En <strong>Psicopiloto</strong> te acompaño a comprender lo que ocurre y a desarrollar <strong>herramientas prácticas</strong> para gestionar la presión, mejorar tu descanso y recuperar la calma en tu día a día.
-              </p>
-              <p className="mb-4">
-                Aprenderás técnicas de <strong>regulación emocional</strong> y estrategias para afrontar tus retos con más claridad, fortaleciendo tu confianza y tu capacidad de resiliencia.
-              </p>
-              <Link href="/contacto">
-                <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  👉 Da el primer paso y transforma tu relación con el estrés
-                </span>
-              </Link>
-            </div>
+        {/* LISTA DE SERVICIOS PARA PERSONAS */}
+<section className="py-16 bg-psicopiloto-sand-50">
+  <div className="container mx-auto max-w-5xl">
+    <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-700 mb-12">
+      Psicopiloto para Ti
+    </h2>
+    <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
+      
+      {/* Ansiedad y Estrés */}
+      <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+        <h3 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
+          Ansiedad y Estrés
+        </h3>
+        <p className="mb-4">
+          La <strong>ansiedad</strong> y el <strong>estrés</strong> son respuestas naturales del cuerpo, pero cuando se vuelven constantes pueden causar <strong>insomnio</strong>, <strong>tensión muscular</strong> y una sensación de estar siempre en alerta.
+        </p>
+        <p className="mb-4">
+          En <strong>Psicopiloto</strong> te acompaño a comprender lo que te ocurre y a desarrollar <strong>herramientas prácticas</strong> para reducir la ansiedad, mejorar tu descanso y recuperar la calma en tu día a día.
+        </p>
+        <Link href="/contacto">
+          <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
+            👉 Da el primer paso y transforma tu relación con el estrés
+          </span>
+        </Link>
+      </div>
 
             {/* Depresión y Ánimo Bajo */}
             <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
@@ -156,31 +157,42 @@ export default function Servicios() {
                   🌱 Empieza hoy tu proceso de sanación: agenda tu sesión de terapia
                 </span>
               </Link>
-            </div>
-
-            {/* Psicopiloto para Empresas */}
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
-              <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
-                Psicopiloto para Empresas
-              </h2>
-              <p className="mb-4">
-                En un entorno empresarial competitivo, los equipos necesitan <strong>cohesión, confianza y liderazgo positivo</strong> para alcanzar sus objetivos. En <strong>Psicopiloto</strong> aplicamos los principios de la aviación al desarrollo organizacional.
-              </p>
-              <p className="mb-4">
-                Nuestros programas de <strong>psicología aplicada a empresas</strong> ayudan a reducir errores, mejorar la eficiencia y fomentar una <strong>comunicación clara</strong>, potenciando tanto a líderes como a equipos.
-              </p>
-              <p className="mb-4">
-                Los mismos principios que hacen que un vuelo sea seguro pueden transformar también tu empresa, aportando <strong>seguridad, confianza y eficiencia</strong>.
-              </p>
-              <Link href="/contacto">
-                <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  🚀 Fortalece tu equipo hoy: solicita una sesión de asesoramiento
-                </span>
-              </Link>
-            </div>
-
-          </div>
-        </section>
+              </div>
+  </div>
+</section>
+          
+{/* BLOQUE DIFERENCIADO PARA EMPRESAS */}
+<section className="py-20 bg-psicopiloto-blue-50">
+  <div className="container mx-auto max-w-5xl">
+    <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-700 mb-12">
+      Psicopiloto para Empresas
+    </h2>
+    <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
+      
+      {/* Psicopiloto para Empresas */}
+      <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+        <h3 className="font-semibold text-xl mb-2 text-psicopiloto-blue-600">
+          Desarrollo Organizacional y Liderazgo
+        </h3>
+        <p className="mb-4">
+          En un entorno empresarial competitivo, los equipos necesitan <strong>cohesión, confianza y liderazgo positivo</strong> para alcanzar sus objetivos. En <strong>Psicopiloto</strong> aplicamos los principios de la aviación al desarrollo organizacional.
+        </p>
+        <p className="mb-4">
+          Nuestros programas de <strong>psicología aplicada a empresas</strong> ayudan a reducir errores, mejorar la eficiencia y fomentar una <strong>comunicación clara</strong>, potenciando tanto a líderes como a equipos.
+        </p>
+        <p className="mb-4">
+          Los mismos principios que hacen que un vuelo sea seguro pueden transformar también tu empresa, aportando <strong>seguridad, confianza y eficiencia</strong>.
+        </p>
+        <Link href="/contacto">
+          <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-blue-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-blue-600 transition">
+            🚀 Fortalece tu equipo hoy: solicita una sesión de asesoramiento
+          </span>
+        </Link>
+      </div>
+      
+    </div>
+  </div>
+</section>
       </main>
       <Footer />
     </div>
