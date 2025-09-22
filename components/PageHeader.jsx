@@ -2,13 +2,22 @@ import Image from "next/image";
 
 export default function PageHeader({ title, subtitle, backgroundImage }) {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center">
+    <section
+      className="
+        relative 
+        h-[55vh] md:h-[70vh]   /* móvil un poco más bajo */
+        flex items-center justify-center
+      "
+    >
       {/* Imagen de fondo */}
       <Image
         src={backgroundImage}
         alt={title}
         fill
-        style={{ objectFit: "cover" }}
+        className="
+          object-cover 
+          object-bottom md:object-center   /* móvil abajo, desktop centrado */
+        "
         priority
       />
 
