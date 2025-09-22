@@ -69,7 +69,7 @@ export default function SobreMi() {
                 </p>
               </div>
               <Image
-                src="/sobre1.jpg"
+                src="/sobre1.webp"
                 alt="Psicopiloto - experiencia en psicología"
                 width={600}
                 height={400}
@@ -82,7 +82,7 @@ export default function SobreMi() {
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <Image
-                src="/sobre2.jpg"
+                src="/sobre2.webp"
                 alt="Vocación por la psicología"
                 width={600}
                 height={400}
@@ -130,7 +130,7 @@ export default function SobreMi() {
                 </p>
               </div>
               <Image
-                src="/sobre3.jpg"
+                src="/sobre3.webp"
                 alt="Psicología y aviación unidas"
                 width={600}
                 height={400}
@@ -143,7 +143,7 @@ export default function SobreMi() {
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <Image
-                src="/sobre1.jpg"
+                src="/sobre1.webp"
                 alt="Psicólogo con habilitación sanitaria"
                 width={600}
                 height={400}
@@ -191,7 +191,7 @@ export default function SobreMi() {
                 </p>
               </div>
               <Image
-                src="/sobre2.jpg"
+                src="/sobre2.webp"
                 alt="Voluntariado y atención humana"
                 width={600}
                 height={400}
