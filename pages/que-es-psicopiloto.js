@@ -48,7 +48,7 @@ export default function QueEsPsicopiloto() {
      <PageHeader
   title="Psicopiloto — Uniendo aviación y psicología"
   subtitle="Un enfoque que combina la experiencia aeronáutica con la psicología para ayudarte a crecer a nivel personal o como empresa."
-  backgroundImage="/header-quees.jpg"
+  backgroundImage="/header-quees.webp"
 />
 
       <main className="flex-grow pb-16">
