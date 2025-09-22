@@ -191,16 +191,12 @@ export default function Servicios() {
     En un entorno empresarial cada vez más competitivo y cambiante, los equipos
     necesitan <strong>cohesión, confianza y liderazgo positivo</strong> para
     alcanzar sus objetivos. En <strong>Psicopiloto</strong>, aplicamos los
-    principios de la aviación —como la gestión de recursos, el trabajo en
-    equipo y la prevención de errores— al desarrollo organizacional.
+    principios de la aviación.
   </p>
   <p className="mb-4">
     Nuestros programas de <strong>psicología aplicada a empresas</strong> ayudan
     a reducir errores, mejorar la eficiencia y fomentar una comunicación clara
-    y honesta. Trabajamos con modelos probados como el{" "}
-    <em>Crew Resource Management (CRM)</em> y el{" "}
-    <em>Threat and Error Management (TEM)</em> para potenciar tanto a líderes
-    como a equipos.
+    y honesta para potenciar tanto a líderes como a equipos.
   </p>
   <p className="mb-4">
     Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden
