@@ -3,28 +3,30 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
+import PageHeader from "../components/PageHeader"; // ✅ coherencia con otras páginas
 
 export default function SobreMi() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-800">
+    <div className="min-h-screen flex flex-col font-sans">
       <NextSeo
         title="Sobre mí | Psicopiloto"
         description="Soy psicólogo con habilitación sanitaria y piloto militar. En Psicopiloto uno aviación y psicología para ayudarte a manejar la ansiedad, el estrés y recuperar tu confianza."
-        canonical="https://www.psicopiloto.com/sobre-mi"
+        canonical="https://psicopiloto.com/sobre-mi"
         openGraph={{
-          url: "https://www.psicopiloto.com/sobre-mi",
+          url: "https://psicopiloto.com/sobre-mi",
           title: "Sobre mí | Psicopiloto",
           description:
             "Conoce mi trayectoria como psicólogo y piloto militar. Descubre cómo combino aviación y psicología para un enfoque único en ansiedad, autoestima, trauma y terapia.",
           images: [
             {
-              url: "https://www.psicopiloto.com/og-sobre-mi.jpg",
+              url: "https://psicopiloto.com/images/seo/sobre-mi.jpg",
               width: 1200,
               height: 630,
               alt: "Sobre mí - Psicopiloto",
+              type: "image/jpeg",
             },
           ],
-          siteName: "Psicopiloto",
+          site_name: "Psicopiloto",
         }}
         additionalMetaTags={[
           {
@@ -36,16 +38,20 @@ export default function SobreMi() {
       />
 
       <Nav />
-      <main className="flex-grow pt-24 pb-16">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-psicopiloto-green-600">
-            Sobre mí
-          </h1>
 
+      {/* ✅ Cabecera coherente con el resto del site */}
+      <PageHeader
+        title="Sobre mí"
+        subtitle="Una trayectoria entre la aviación y la psicología para ayudarte a volar con seguridad en tu vida."
+        backgroundImage="/header-sobremi.jpg"
+      />
+
+      <main className="flex-grow py-16">
+        <div className="container mx-auto px-6 max-w-5xl leading-relaxed text-gray-800">
           {/* Intro */}
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="leading-relaxed">
+              <div>
                 <p>
                   Mi nombre es <strong>[Tu Nombre]</strong> y soy{" "}
                   <strong>psicólogo con Habilitación Sanitaria</strong> y{" "}
@@ -82,8 +88,8 @@ export default function SobreMi() {
                 height={400}
                 className="rounded-2xl shadow-lg order-2 md:order-1"
               />
-              <div className="order-1 md:order-2 leading-relaxed">
-                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
+              <div className="order-1 md:order-2">
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
                   Fase 1: El inicio – vocación por la psicología
                 </h2>
                 <p>
@@ -103,8 +109,8 @@ export default function SobreMi() {
           {/* Fase 2 */}
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="leading-relaxed">
-                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
                   Fase 2: La aviación – disciplina, liderazgo y seguridad
                 </h2>
                 <p>
@@ -143,8 +149,8 @@ export default function SobreMi() {
                 height={400}
                 className="rounded-2xl shadow-lg order-2 md:order-1"
               />
-              <div className="order-1 md:order-2 leading-relaxed">
-                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
+              <div className="order-1 md:order-2">
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
                   Fase 3: El regreso a la psicología – volver a la esencia
                 </h2>
                 <p>
@@ -158,9 +164,8 @@ export default function SobreMi() {
                 </ul>
                  <p className="mt-4">
                   Más tarde, en 2019, colaboré con la creación de <strong>Edades Granada</strong>, dedicada al cuidado de personas mayores y 
-                  ayuda a domicilio., desde entonces, tambien asesoro a dicha empresa en la gestión del trabajo y manejo de errores, basandome en mi experiencia como
-                    piloto e instructor de CRM. Dándome cuenta que todo lo aprendido en aviacón y la foma de trabajar es saplicable a las empresas
-                      para mejorar su eficacia y su eficiencia.
+                  ayuda a domicilio. Desde entonces asesoro a dicha empresa en la gestión del trabajo y manejo de errores, 
+                  aplicando lo aprendido en aviación y factores humanos para mejorar la eficacia y eficiencia.
                 </p>
               </div>
             </div>
@@ -169,15 +174,15 @@ export default function SobreMi() {
           {/* Fase 4 */}
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="leading-relaxed">
-                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
                   Fase 4: El voluntariado – la parte más humana
                 </h2>
                 <p>
                   El voluntariado ha sido siempre un pilar en mi vida. En mi juventud colaboré con{" "}
                   <strong>Solidarios para el Desarrollo</strong>, trabajando con personas mayores en fases iniciales de demencia.
                 </p>
-                    <p className="mt-4">
+                <p className="mt-4">
                   Desde 2024 ejerzo como <strong>psicólogo voluntario en Amalgama Social</strong>, atendiendo casos de ansiedad, 
                   estrés, gestión emocional, duelo, autoestima y trauma.
                 </p>
@@ -196,8 +201,8 @@ export default function SobreMi() {
           </section>
 
           {/* Hoy */}
-          <section className="mb-20 leading-relaxed">
-            <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-500">
+          <section className="mb-20">
+            <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
               Hoy: Psicopiloto
             </h2>
             <p>
@@ -221,6 +226,7 @@ export default function SobreMi() {
           </div>
         </div>
       </main>
+
       <Footer />
     </div>
   );
