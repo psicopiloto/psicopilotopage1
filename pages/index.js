@@ -45,7 +45,7 @@ export default function Home() {
         {/* HERO */}
         <section className="relative h-[70vh] flex items-center justify-center">
           <Image
-            src="/fotoinicio1.jpg"
+            src="/fotoinicio1.webp"
             alt="Psicólogo online en Granada - Psicopiloto"
             fill
             style={{ objectFit: "cover" }}
