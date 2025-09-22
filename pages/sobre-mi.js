@@ -43,7 +43,7 @@ export default function SobreMi() {
       <PageHeader
         title="Sobre mí"
         subtitle="Una trayectoria entre la aviación y la psicología para ayudarte a volar con seguridad en tu vida."
-        backgroundImage="/header-sobremi.jpg"
+        backgroundImage="/header-sobremi.webp"
       />
 
       <main className="flex-grow py-16">
