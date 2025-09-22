@@ -9,13 +9,13 @@ export default function Servicios() {
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
       <NextSeo
         title="Servicios de Psicología | Psicopiloto"
-        description="Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja y trauma. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto."
+        description="Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma y formación para empresas. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto."
         canonical="https://psicopiloto.com/servicios"
         additionalMetaTags={[
           {
             name: "keywords",
             content:
-              "psicología, ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma, EMDR, psicoterapia online",
+              "psicología, ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma, EMDR, psicoterapia online, psicología para empresas",
           },
           {
             name: "author",
@@ -26,7 +26,7 @@ export default function Servicios() {
           url: "https://psicopiloto.com/servicios",
           title: "Servicios de Psicología | Psicopiloto",
           description:
-            "Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja y trauma. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto.",
+            "Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma y formación para empresas. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto.",
           images: [
             {
               url: "https://psicopiloto.com/images/seo/servicios.jpg",
@@ -46,7 +46,7 @@ export default function Servicios() {
         <PageHeader
           title="Servicios de Psicología"
           subtitle="Un espacio seguro para recuperar el equilibrio, crecer personalmente y afrontar tus retos con confianza. Si eres empresa, también te acompaño con formación en factores humanos, liderazgo y gestión de equipos inspirada en la aviación."
-          backgroundImage="/header-servicios.jpg" // 👈 CORREGIDO
+          backgroundImage="/header-servicios.jpg"
         />
 
         {/* LISTA DE SERVICIOS */}
@@ -59,23 +59,21 @@ export default function Servicios() {
                 Ansiedad y Estrés
               </h2>
               <p className="mb-4">
-                La ansiedad y el estrés son respuestas naturales del cuerpo ante
-                las exigencias de la vida. Sin embargo, cuando se vuelven
-                constantes, pueden generar un gran desgaste: insomnio, tensión
-                muscular, dificultad para concentrarse o la sensación de estar
-                siempre en alerta.
+                La <strong>ansiedad</strong> y el <strong>estrés</strong> son
+                respuestas naturales del cuerpo, pero cuando se vuelven
+                constantes pueden causar <strong>insomnio</strong>,{" "}
+                <strong>tensión muscular</strong> y la sensación de estar siempre
+                en alerta.
               </p>
               <p className="mb-4">
-                En Psicopiloto, te ofrezco un espacio seguro para aprender a
-                comprender lo que te ocurre, poner nombre a tus emociones y
-                desarrollar herramientas que te permitan recuperar el
-                equilibrio. Juntos trabajaremos en estrategias prácticas para
-                reducir la ansiedad, mejorar tu descanso y volver a sentir calma
-                en tu día a día.
+                En <strong>Psicopiloto</strong> te acompaño a comprender lo que
+                te ocurre y a desarrollar <strong>herramientas prácticas</strong>{" "}
+                para reducir la ansiedad, mejorar tu descanso y recuperar la
+                calma en tu día a día.
               </p>
               <Link href="/contacto">
                 <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  👉 Da el primer paso y comienza a transformar tu relación con el estrés
+                  👉 Da el primer paso y transforma tu relación con el estrés
                 </span>
               </Link>
             </div>
@@ -86,22 +84,20 @@ export default function Servicios() {
                 Depresión y Ánimo Bajo
               </h2>
               <p className="mb-4">
-                Sentirse sin energía, desmotivado o con tristeza persistente no
-                es simplemente “estar de bajón”. La depresión puede afectar a la
-                manera en que piensas, sientes y te relacionas con los demás.
-                Quizás te cuesta disfrutar de lo que antes te llenaba o te
-                resulta difícil levantarte cada mañana con ilusión.
+                Sentirse sin energía, desmotivado o con <strong>tristeza
+                persistente</strong> no es simplemente “estar de bajón”. La{" "}
+                <strong>depresión</strong> afecta a la manera en que piensas,
+                sientes y te relacionas con los demás.
               </p>
               <p className="mb-4">
-                Con un enfoque respetuoso y cercano, trabajaremos para que
-                puedas reconectar contigo mismo, recuperar el sentido de tu vida
-                y redescubrir tus fortalezas. No tienes por qué recorrer este
-                camino en soledad: la ayuda profesional puede marcar la
-                diferencia.
+                Con un enfoque <strong>respetuoso y cercano</strong>, trabajaremos
+                para que puedas reconectar contigo mismo, recuperar el sentido de
+                tu vida y redescubrir tus fortalezas. La{" "}
+                <strong>ayuda profesional</strong> puede marcar la diferencia.
               </p>
               <Link href="/contacto">
                 <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  👉 Contacta ahora y empecemos a recuperar tu bienestar emocional
+                  👉 Contacta ahora y recupera tu bienestar emocional
                 </span>
               </Link>
             </div>
@@ -113,20 +109,19 @@ export default function Servicios() {
               </h2>
               <p className="mb-4">
                 ¿Te cuesta poner límites? ¿Sientes que tu valor depende de la
-                aprobación de los demás? La autoestima baja y los patrones de
-                apego inseguros suelen generar relaciones complicadas y mucho
-                malestar interno.
+                aprobación de los demás? Una <strong>autoestima baja</strong> y
+                patrones de <strong>apego inseguro</strong> suelen generar
+                relaciones complicadas y mucho malestar.
               </p>
               <p className="mb-4">
-                En terapia, aprenderás a reconocer tus propias necesidades, a
-                fortalecer tu confianza y a establecer vínculos más sanos y
-                equilibrados. El objetivo es que puedas mirarte con respeto y
-                cariño, y construir relaciones que te nutran en lugar de
-                desgastarte.
+                En terapia aprenderás a <strong>fortalecer tu confianza</strong>,
+                reconocer tus necesidades y establecer vínculos sanos. El
+                objetivo es que puedas mirarte con respeto y construir
+                relaciones que te nutran en lugar de desgastarte.
               </p>
               <Link href="/contacto">
                 <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  👉 Atrévete a priorizarte y empieza a construir una autoestima sólida
+                  👉 Atrévete a priorizarte y construye una autoestima sólida
                 </span>
               </Link>
             </div>
@@ -137,22 +132,19 @@ export default function Servicios() {
                 Terapia de Pareja
               </h2>
               <p className="mb-4">
-                Las relaciones de pareja pueden atravesar momentos difíciles:
-                discusiones frecuentes, pérdida de confianza, falta de
-                comunicación o distanciamiento emocional. Estas dificultades, si
-                no se abordan, pueden convertirse en un muro que separa a los
-                dos miembros de la pareja.
+                Las <strong>relaciones de pareja</strong> pueden atravesar
+                momentos difíciles: discusiones frecuentes, pérdida de confianza
+                o distanciamiento emocional. Si no se abordan, estas dificultades
+                pueden convertirse en un muro que separa.
               </p>
               <p className="mb-4">
-                La terapia de pareja es una oportunidad para reencontrarse,
-                comprender el origen de los conflictos y abrir nuevos canales de
-                comunicación. A través de un acompañamiento neutral y empático,
-                os ayudaré a recuperar la conexión y a tomar decisiones
-                conscientes sobre el futuro de vuestra relación.
+                La <strong>terapia de pareja</strong> ofrece un espacio neutral y
+                empático para abrir nuevos canales de comunicación, resolver
+                conflictos y recuperar la conexión.
               </p>
               <Link href="/contacto">
                 <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-                  👉 Si queréis reconectar, reservad una cita y comencemos juntos este proceso
+                  👉 Recuperad vuestra conexión: reservad una cita hoy
                 </span>
               </Link>
             </div>
@@ -163,17 +155,15 @@ export default function Servicios() {
                 Trauma y Experiencias Difíciles
               </h2>
               <p className="mb-4">
-                Las experiencias dolorosas del pasado pueden dejar huellas
-                profundas en la memoria y en el cuerpo, apareciendo en forma de
+                Las experiencias dolorosas pueden dejar{" "}
+                <strong>huellas profundas</strong> en la memoria y en el cuerpo:
                 bloqueos, recuerdos intrusivos o emociones intensas que parecen
                 imposibles de manejar.
               </p>
               <p className="mb-4">
-                En Psicopiloto, utilizo enfoques basados en la evidencia como la
-                terapia EMDR, que ayudan a procesar y liberar esas memorias
-                traumáticas de una manera segura y progresiva. El objetivo es
-                que puedas mirar al pasado sin que condicione tu presente, y
-                recuperar tu capacidad de vivir con libertad y serenidad.
+                En <strong>Psicopiloto</strong> aplico enfoques basados en la
+                evidencia como la <strong>terapia EMDR</strong>, que ayudan a
+                procesar y liberar esas memorias de manera segura y progresiva.
               </p>
               <Link href="/contacto">
                 <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
@@ -182,34 +172,35 @@ export default function Servicios() {
               </Link>
             </div>
 
-{/* Psicopiloto para Empresas */}
-<div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
-  <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
-    Psicopiloto para Empresas
-  </h2>
-  <p className="mb-4">
-    En un entorno empresarial cada vez más competitivo y cambiante, los equipos
-    necesitan <strong>cohesión, confianza y liderazgo positivo</strong> para
-    alcanzar sus objetivos. En <strong>Psicopiloto</strong>, aplicamos los
-    principios de la aviación.
-  </p>
-  <p className="mb-4">
-    Nuestros programas de <strong>psicología aplicada a empresas</strong> ayudan
-    a reducir errores, mejorar la eficiencia y fomentar una comunicación clara
-    y honesta para potenciar tanto a líderes como a equipos.
-  </p>
-  <p className="mb-4">
-    Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden
-    transformar también tu empresa, aportando seguridad, confianza y eficiencia.
-  </p>
-  <Link href="/contacto">
-    <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
-      🚀 Fortalece tu equipo hoy: solicita una sesión de asesoramiento
-    </span>
-  </Link>
-</div>
-
-                  
+            {/* Psicopiloto para Empresas */}
+            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <h2 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">
+                Psicopiloto para Empresas
+              </h2>
+              <p className="mb-4">
+                En un entorno empresarial competitivo, los equipos necesitan{" "}
+                <strong>cohesión, confianza y liderazgo positivo</strong> para
+                alcanzar sus objetivos. En <strong>Psicopiloto</strong> aplicamos
+                los principios de la aviación al desarrollo organizacional.
+              </p>
+              <p className="mb-4">
+                Nuestros programas de{" "}
+                <strong>psicología aplicada a empresas</strong> ayudan a reducir
+                errores, mejorar la eficiencia y fomentar una{" "}
+                <strong>comunicación clara</strong>, potenciando tanto a líderes
+                como a equipos.
+              </p>
+              <p className="mb-4">
+                Los mismos principios que hacen que un vuelo sea seguro pueden
+                transformar también tu empresa, aportando{" "}
+                <strong>seguridad, confianza y eficiencia</strong>.
+              </p>
+              <Link href="/contacto">
+                <span className="inline-block mt-2 px-6 py-2 bg-psicopiloto-green-500 text-white rounded-lg text-sm font-semibold shadow hover:bg-psicopiloto-green-600 transition">
+                  🚀 Fortalece tu equipo hoy: solicita una sesión de asesoramiento
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
@@ -217,4 +208,3 @@ export default function Servicios() {
     </div>
   );
 }
-
