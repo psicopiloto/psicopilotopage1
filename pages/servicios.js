@@ -52,7 +52,7 @@ export default function Servicios() {
         {/* LISTA DE SERVICIOS PARA PERSONAS */}
 <section className="py-16 bg-psicopiloto-sand-50">
   <div className="container mx-auto max-w-5xl">
-    <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-700 mb-12">
+    <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
       Psicopiloto para Ti
     </h2>
     <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
@@ -157,14 +157,14 @@ export default function Servicios() {
                   🌱 Empieza hoy tu proceso de sanación: agenda tu sesión de terapia
                 </span>
               </Link>
-              </div>
+              
   </div>
 </section>
           
 {/* BLOQUE DIFERENCIADO PARA EMPRESAS */}
 <section className="py-20 bg-psicopiloto-blue-50">
   <div className="container mx-auto max-w-5xl">
-    <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-700 mb-12">
+    <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-12">
       Psicopiloto para Empresas
     </h2>
     <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
