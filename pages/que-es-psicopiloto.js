@@ -3,56 +3,30 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
-import PageHeader from "../components/PageHeader"; // ✅ nuevo import
+import PageHeader from "../components/PageHeader";
+import BackgroundLogo from "../components/BackgroundLogo"; // ✅ importamos logo
 
 export default function QueEsPsicopiloto() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="¿Qué es Psicopiloto? | Psicología y aviación para transformar vidas"
-        description="Psicopiloto une la psicología con la aviación para ofrecer terapia individual, programas de empresa y consultoría en factores humanos. Un enfoque único para crecer personal y profesionalmente."
+        description="Psicopiloto une la psicología con la aviación para ofrecer terapia individual, programas de empresa y consultoría en factores humanos."
         canonical="https://psicopiloto.com/que-es-psicopiloto"
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "qué es Psicopiloto, psicología aviación, psicólogo Granada, terapia individual, psicología empresas, factores humanos, CRM, TEM, desarrollo personal",
-          },
-          {
-            name: "author",
-            content: "Psicopiloto",
-          },
-        ]}
-        openGraph={{
-          url: "https://psicopiloto.com/que-es-psicopiloto",
-          title:
-            "¿Qué es Psicopiloto? | Psicología y aviación para transformar vidas",
-          description:
-            "Psicopiloto une la psicología con la aviación para ofrecer terapia individual, programas de empresa y consultoría en factores humanos.",
-          images: [
-            {
-              url: "https://psicopiloto.com/images/seo/que-es.jpg",
-              width: 1200,
-              height: 630,
-              alt: "Qué es Psicopiloto - Psicología y aviación",
-              type: "image/jpeg",
-            },
-          ],
-          site_name: "Psicopiloto",
-        }}
       />
+
+      <BackgroundLogo /> {/* ✅ logo fijo */}
 
       <Nav />
 
-      {/* Cabecera con imagen de fondo */}
       <PageHeader
         title="Psicopiloto — Uniendo aviación y psicología"
         subtitle="Un enfoque que combina la experiencia aeronáutica con la psicología para ayudarte a crecer a nivel personal o como empresa."
         backgroundImage="/header-quees.webp"
       />
 
-      <main className="flex-grow pb-16">
-        <div className="container mx-auto px-4 max-w-5xl bg-white/80 p-8 rounded-2xl shadow-lg">
+      <main className="flex-grow pb-16 relative z-10">
+        <div className="container mx-auto px-4 max-w-5xl bg-white/60 p-8 rounded-2xl shadow-lg">
           {/* ¿Qué es Psicopiloto? */}
           <section className="mb-16 grid md:grid-cols-2 gap-10 items-center">
             <div>
