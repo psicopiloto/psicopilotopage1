@@ -6,7 +6,7 @@ import AnimatedCTA from "../components/AnimatedCTA";
 
 export default function SobreMi() {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
       <NextSeo
         title="Sobre mí | Psicopiloto"
         description="Soy psicólogo con habilitación sanitaria y piloto militar. En Psicopiloto uno aviación y psicología para ayudarte a manejar la ansiedad, el estrés y recuperar tu confianza."
@@ -46,7 +46,7 @@ export default function SobreMi() {
       />
 
       <main className="flex-grow py-16">
-        <div className="container mx-auto px-6 max-w-5xl leading-relaxed">
+        <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/80 p-8 rounded-2xl shadow-lg">
           {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
