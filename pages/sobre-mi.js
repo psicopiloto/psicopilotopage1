@@ -104,3 +104,51 @@ export default function SobreMi() {
               img: "/sobre2.webp",
               content: [
                 "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
+              ],
+            },
+          ].map((fase, i) => (
+            <section key={i} className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+              <div className={i % 2 === 0 ? "md:order-1" : "md:order-2"}>
+                <img
+                  src={fase.img}
+                  alt={fase.title}
+                  className="rounded-2xl shadow-lg w-full h-auto"
+                />
+              </div>
+              <div className={i % 2 === 0 ? "md:order-2" : "md:order-1"}>
+                <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">{fase.title}</h2>
+                {fase.content.map((p, idx) => (
+                  <p key={idx} className="mt-4">{p}</p>
+                ))}
+                {fase.list && (
+                  <ul className="list-disc list-inside mt-4 space-y-2">
+                    {fase.list.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          ))}
+
+          {/* Hoy */}
+          <section className="mb-20">
+            <h2 className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">Hoy: Psicopiloto</h2>
+            <p>
+              Hoy, en <strong>Psicopiloto</strong>, uno lo aprendido en aviación con la psicología para ofrecer un acompañamiento diferente. 
+              Si en la cabina de un avión entrenábamos la mente para afrontar lo inesperado, en la terapia aplico la misma filosofía: ayudarte a ganar <strong>confianza</strong>, manejar la <strong>ansiedad</strong> y recuperar el <strong>control de tu vida</strong>.
+            </p>
+            <p className="mt-4">Porque todos merecemos <strong>volar con seguridad</strong>, también en nuestro propio camino personal.</p>
+          </section>
+
+          {/* Call to action */}
+          <div className="mt-12 text-center">
+            <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
