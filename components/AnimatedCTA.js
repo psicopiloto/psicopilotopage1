@@ -1,22 +1,9 @@
 import Link from "next/link";
 
-/**
- * AnimatedCTA
- *
- * Componente reutilizable para botones/CTAs animados.
- * Props:
- * - href: URL de destino
- * - text: texto a mostrar
- * - color: "green" | "blue"
- * - className: clases adicionales opcionales
- *
- * Uso:
- * <AnimatedCTA href="/contacto" text="Reserva tu consulta" color="green" />
- */
 export default function AnimatedCTA({ href, text, color = "green", className = "" }) {
   const colors = {
     green: "bg-psicopiloto-green-500 hover:bg-psicopiloto-green-600 focus:ring-psicopiloto-green-400",
-    blue: "bg-psicopiloto-blue-500 hover:bg-psicopiloto-blue-600 focus:ring-psicopiloto-blue-400",
+    blue: "bg-psicopiloto-blue-500 hover:bg-psicopiloto-blue-600 focus:ring-psicopiloto-blue-400"
   };
 
   return (
