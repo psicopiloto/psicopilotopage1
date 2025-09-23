@@ -21,7 +21,7 @@ body {
 /* ✅ Ajuste especial para móviles */
 @media (max-width: 640px) {
   body {
-    font-size: 18px; /* subimos aún más en móvil */
+    font-size: 19px; /* subimos aún más en móvil */
     line-height: 1.7;
   }
 }
