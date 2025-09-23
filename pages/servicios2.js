@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 
 export default function Servicios() {
   const serviciosPersonas = [ /* ... tu array de personas ... */ ];
