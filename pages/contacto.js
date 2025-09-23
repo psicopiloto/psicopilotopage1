@@ -74,8 +74,11 @@ export default function Contacto() {
         backgroundImage="/header-contacto.webp"
       />
 
-      <main className="flex-grow py-16">
-        <section className="container mx-auto grid md:grid-cols-3 gap-12 items-start">
+      <main className="flex-grow pt-16 relative">
+        {/* Fondo translúcido global */}
+        <div className="absolute inset-0 bg-psicopiloto-sand-50/70 backdrop-blur-sm -z-10"></div>
+
+        <section className="relative container mx-auto grid md:grid-cols-3 gap-12 items-start">
           {/* Columna 1: Formulario */}
           <div className="md:col-span-2">
             <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
