@@ -1,6 +1,7 @@
 import Image from "next/image";
+import AnimatedCTA from "./AnimatedCTA";
 
-export default function PageHeader({ title, subtitle, backgroundImage }) {
+export default function PageHeader({ title, subtitle, backgroundImage, cta }) {
   return (
     <section
       className="relative h-[70vh] flex items-center justify-center"
@@ -29,6 +30,10 @@ export default function PageHeader({ title, subtitle, backgroundImage }) {
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow">
             {subtitle}
           </p>
+        )}
+
+        {cta && (
+          <AnimatedCTA href={cta.href} text={cta.text} color={cta.color} />
         )}
       </div>
     </section>
