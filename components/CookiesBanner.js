@@ -44,13 +44,20 @@ export default function CookiesBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50 shadow-lg">
+    <div
+      className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50 shadow-lg"
+      role="region"
+      aria-label="Banner de cookies"
+    >
       {!settingsOpen ? (
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm">
             Usamos cookies para mejorar tu experiencia. Puedes aceptar todas,
             rechazarlas o personalizar tu elección. Más información en{" "}
-            <a href="/aviso-legal" className="underline text-softorange-400">
+            <a
+              href="/aviso-legal"
+              className="underline text-softorange-400 focus:outline-none focus:ring-1 focus:ring-softorange-400 rounded"
+            >
               nuestra política de cookies
             </a>
             .
@@ -60,7 +67,7 @@ export default function CookiesBanner() {
               onClick={() =>
                 saveConsent({ necessary: true, analytics: true, marketing: true })
               }
-              className="px-4 py-2 bg-green-600 rounded-md text-sm"
+              className="px-4 py-2 bg-green-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
             >
               Aceptar todas
             </button>
@@ -68,13 +75,13 @@ export default function CookiesBanner() {
               onClick={() =>
                 saveConsent({ necessary: true, analytics: false, marketing: false })
               }
-              className="px-4 py-2 bg-red-600 rounded-md text-sm"
+              className="px-4 py-2 bg-red-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400"
             >
               Rechazar todas
             </button>
             <button
               onClick={() => setSettingsOpen(true)}
-              className="px-4 py-2 bg-gray-600 rounded-md text-sm"
+              className="px-4 py-2 bg-gray-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
             >
               Personalizar
             </button>
@@ -112,19 +119,15 @@ export default function CookiesBanner() {
           <div className="flex gap-2 mt-4">
             <button
               onClick={() =>
-                saveConsent({
-                  necessary: true,
-                  analytics,
-                  marketing,
-                })
+                saveConsent({ necessary: true, analytics, marketing })
               }
-              className="px-4 py-2 bg-blue-600 rounded-md text-sm"
+              className="px-4 py-2 bg-blue-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               Guardar configuración
             </button>
             <button
               onClick={() => setSettingsOpen(false)}
-              className="px-4 py-2 bg-gray-500 rounded-md text-sm"
+              className="px-4 py-2 bg-gray-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
             >
               Volver
             </button>
