@@ -65,7 +65,7 @@ export default function Servicios() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
+    <div className="relative min-h-screen flex flex-col font-sans text-psicopiloto-gray-700">
       <NextSeo
         title="Servicios de Psicología | Psicopiloto"
         description="Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma y formación para empresas. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto."
@@ -96,6 +96,15 @@ export default function Servicios() {
         }}
       />
 
+      {/* Logo de fondo fijo */}
+      <div className="fixed inset-0 z-0 overflow-hidden">
+        <img
+          src="/logo.webp"
+          alt="Logo Psicopiloto"
+          className="w-full h-full object-contain opacity-10 select-none pointer-events-none"
+        />
+      </div>
+
       <Nav />
 
       <PageHeader
@@ -104,9 +113,10 @@ export default function Servicios() {
         backgroundImage="/header-servicios.webp"
       />
 
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-16 relative z-10">
+
         {/* Servicios para personas */}
-        <section className="py-16 container mx-auto max-w-6xl">
+        <section className="py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg">
           <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
             Psicopiloto para Ti
           </h2>
@@ -114,20 +124,14 @@ export default function Servicios() {
             {serviciosPersonas.map((s, i) => (
               <div
                 key={i}
-                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full"
+                className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full backdrop-blur-sm"
               >
                 <div className="flex items-center mb-4">
-                  <div className="text-3xl text-psicopiloto-green-600 mr-3">
-                    {s.icon}
-                  </div>
-                  <h3 className="font-semibold text-2xl text-psicopiloto-green-600">
-                    {s.title}
-                  </h3>
+                  <div className="text-3xl text-psicopiloto-green-600 mr-3">{s.icon}</div>
+                  <h3 className="font-semibold text-2xl text-psicopiloto-green-600">{s.title}</h3>
                 </div>
                 <p className="mb-3 leading-relaxed">{s.desc}</p>
-                <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
-                  {s.extra}
-                </p>
+                <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">{s.extra}</p>
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} />
                 </div>
@@ -136,11 +140,11 @@ export default function Servicios() {
           </div>
         </section>
 
-               {/* Divider más compacto */}
+        {/* Divider */}
         <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-8 rounded"></div>
 
         {/* Servicios para empresas */}
-        <section className="py-12 md:py-16 bg-psicopiloto-blue-50 container mx-auto max-w-6xl">
+        <section className="py-12 md:py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg">
           <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-10">
             Psicopiloto para Empresas
           </h2>
@@ -148,20 +152,14 @@ export default function Servicios() {
             {serviciosEmpresas.map((s, i) => (
               <div
                 key={i}
-                className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full"
+                className="p-6 bg-white/80 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full backdrop-blur-sm"
               >
                 <div className="flex items-center mb-4">
-                  <div className="text-3xl text-psicopiloto-blue-600 mr-3">
-                    {s.icon}
-                  </div>
-                  <h3 className="font-semibold text-2xl text-psicopiloto-blue-600">
-                    {s.title}
-                  </h3>
+                  <div className="text-3xl text-psicopiloto-blue-600 mr-3">{s.icon}</div>
+                  <h3 className="font-semibold text-2xl text-psicopiloto-blue-600">{s.title}</h3>
                 </div>
                 <p className="mb-3 leading-relaxed">{s.desc}</p>
-                <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
-                  {s.extra}
-                </p>
+                <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">{s.extra}</p>
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
                 </div>
