@@ -8,7 +8,7 @@ import BackgroundLogo from "../components/BackgroundLogo"; // ✅ importamos log
 
 export default function QueEsPsicopiloto() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-60 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="¿Qué es Psicopiloto? | Psicología y aviación para transformar vidas"
         description="Psicopiloto une la psicología con la aviación para ofrecer terapia individual, programas de empresa y consultoría en factores humanos."
@@ -26,7 +26,7 @@ export default function QueEsPsicopiloto() {
       />
 
       <main className="flex-grow pb-16 relative z-10">
-        <div className="container mx-auto px-4 max-w-5xl bg-white/50 p-8 rounded-2xl shadow-lg">
+        <div className="container mx-auto px-4 max-w-5xl bg-white/40 p-8 rounded-2xl shadow-lg">
           {/* ¿Qué es Psicopiloto? */}
           <section className="mb-16 grid md:grid-cols-2 gap-10 items-center">
             <div>
