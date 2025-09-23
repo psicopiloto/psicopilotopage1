@@ -40,10 +40,8 @@ export default function Home() {
           title="Psicopiloto — Acompaño tu viaje hacia el bienestar"
           subtitle="Un espacio seguro, cercano y profesional para que recuperes control, calma y sentido en tu vida. Aquí encontrarás escucha, empatía y herramientas prácticas para afrontar tus retos con confianza."
           backgroundImage="/fotoinicio1.webp"
+          cta={{ href: "/contacto", text: "Agenda tu primera cita", color: "green" }}
         />
-        <div className="absolute inset-x-0 bottom-16 text-center z-30">
-          <AnimatedCTA href="/contacto" text="Agenda tu primera cita" color="green" />
-        </div>
 
         {/* SOBRE MÍ */}
         <section className="py-16 bg-white">
