@@ -4,23 +4,10 @@ import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="mt-16 py-8 bg-gray-50 border-t">
-      <div className="container flex flex-col items-center justify-center gap-4 text-sm text-gray-600">
-
+      <div className="container flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-600">
         {/* Logo */}
-        <div className="mb-4">
-          <Image
-            src="/logo.webp"
-            alt="Psicopiloto Logo"
-            width={150}
-            height={50}
-            priority
-          />
-        </div>
-
-        {/* Marca */}
-        <div className="font-semibold text-gray-800 text-center">
-          © {new Date().getFullYear()} Psicopiloto
-          <span className="align-super text-xs">®</span>. Todos los derechos reservados.
+        <div className="flex items-center gap-2">
+          <Image src="/logo.webp" alt="Psicopiloto" width={120} height={40} />
         </div>
 
         {/* Redes sociales */}
@@ -65,23 +52,21 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Enlaces útiles */}
-        <div className="flex flex-col md:flex-row gap-2 md:gap-4 text-xs text-gray-500 text-center">
+        {/* Enlaces legales */}
+        <div className="flex flex-col items-center text-xs text-gray-500 mt-4 md:mt-0">
           <a
             href="/contacto"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded"
           >
             Contacto
           </a>
-          <span>·</span>
           <a
             href="/aviso-legal"
-            className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded"
+            className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded mt-1"
           >
             Aviso Legal y Política de Privacidad
           </a>
         </div>
-
       </div>
     </footer>
   );
