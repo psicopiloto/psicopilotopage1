@@ -4,6 +4,16 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 
+// Iconos
+import {
+  FaBrain,
+  FaSadTear,
+  FaHeart,
+  FaUsers,
+  FaHeadSideVirus,
+  FaBuilding,
+} from "react-icons/fa";
+
 export default function Servicios() {
   const serviciosPersonas = [
     {
@@ -11,30 +21,35 @@ export default function Servicios() {
       desc: "La ansiedad y el estrés son respuestas naturales del cuerpo, pero cuando se vuelven constantes pueden causar insomnio, tensión muscular y sensación de alerta.",
       extra: "En Psicopiloto te acompaño a comprender lo que te ocurre y a desarrollar herramientas prácticas para reducir la ansiedad, mejorar tu descanso y recuperar la calma.",
       cta: "Da el primer paso y transforma tu relación con el estrés",
+      icon: <FaBrain />,
     },
     {
       title: "Depresión y Ánimo Bajo",
       desc: "Sentirse sin energía, desmotivado o con tristeza persistente no es simplemente “estar de bajón”. La depresión puede afectar a tu manera de pensar, sentir y relacionarte.",
       extra: "Encontrarás un acompañamiento cercano y respetuoso para recuperar motivación y bienestar en tu día a día.",
       cta: "Contacta ahora y recupera tu bienestar emocional",
+      icon: <FaSadTear />,
     },
     {
       title: "Autoestima y Apego",
       desc: "Una autoestima baja o patrones de apego inseguro pueden generar relaciones complicadas y malestar interno.",
       extra: "Aprenderás a reconocer tus necesidades, poner límites sanos y fortalecer tu confianza.",
       cta: "Atrévete a priorizarte y construye una autoestima sólida",
+      icon: <FaHeart />,
     },
     {
       title: "Terapia de Pareja",
       desc: "Las relaciones de pareja pueden atravesar conflictos, pérdida de confianza o distanciamiento emocional.",
       extra: "La terapia de pareja ofrece un espacio empático para abrir canales de comunicación y recuperar la conexión.",
       cta: "Recuperad vuestra conexión: reservad una cita hoy",
+      icon: <FaUsers />,
     },
     {
       title: "Trauma y Experiencias Difíciles",
       desc: "Las experiencias dolorosas del pasado pueden dejar huellas profundas en la memoria y en el cuerpo.",
       extra: "Aplicamos EMDR y técnicas de regulación que ayudan a procesar y liberar memorias traumáticas de manera segura.",
       cta: "Empieza hoy tu proceso de sanación: agenda tu sesión de terapia",
+      icon: <FaHeadSideVirus />,
     },
   ];
 
@@ -45,6 +60,7 @@ export default function Servicios() {
       extra: "Programas de psicología aplicada a empresas que reducen errores, mejoran eficiencia y fomentan comunicación clara.",
       cta: "Fortalece tu equipo hoy: solicita una sesión de asesoramiento",
       color: "blue",
+      icon: <FaBuilding />,
     },
   ];
 
@@ -88,22 +104,26 @@ export default function Servicios() {
         backgroundImage="/header-servicios.webp"
       />
 
-      <main className="flex-grow pt-20">
-
+      <main className="flex-grow pt-16">
         {/* Servicios para personas */}
-        <section className="py-20 container mx-auto max-w-6xl px-6">
-          <h2 className="text-4xl font-bold text-center text-psicopiloto-green-700 mb-14">
+        <section className="py-16 container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
             Psicopiloto para Ti
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 gap-10">
             {serviciosPersonas.map((s, i) => (
               <div
                 key={i}
-                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col"
+                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full"
               >
-                <h3 className="font-semibold text-2xl mb-3 text-psicopiloto-green-600">
-                  {s.title}
-                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl text-psicopiloto-green-600 mr-3">
+                    {s.icon}
+                  </div>
+                  <h3 className="font-semibold text-2xl text-psicopiloto-green-600">
+                    {s.title}
+                  </h3>
+                </div>
                 <p className="mb-3 leading-relaxed">{s.desc}</p>
                 <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
                   {s.extra}
@@ -116,34 +136,37 @@ export default function Servicios() {
           </div>
         </section>
 
-        {/* Divider elegante */}
-        <div className="w-32 h-1 bg-gradient-to-r from-psicopiloto-green-400 via-psicopiloto-blue-400 to-psicopiloto-green-400 mx-auto my-20 rounded-full"></div>
+        {/* Divider */}
+        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-12 rounded"></div>
 
         {/* Servicios para empresas */}
-        <section className="py-20 bg-psicopiloto-blue-50">
-          <div className="container mx-auto max-w-6xl px-6">
-            <h2 className="text-4xl font-bold text-center text-psicopiloto-blue-700 mb-14">
-              Psicopiloto para Empresas
-            </h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {serviciosEmpresas.map((s, i) => (
-                <div
-                  key={i}
-                  className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col"
-                >
-                  <h3 className="font-semibold text-2xl mb-3 text-psicopiloto-blue-600">
+        <section className="py-16 bg-psicopiloto-blue-50 container mx-auto max-w-6xl rounded-2xl">
+          <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-12">
+            Psicopiloto para Empresas
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            {serviciosEmpresas.map((s, i) => (
+              <div
+                key={i}
+                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl text-psicopiloto-blue-600 mr-3">
+                    {s.icon}
+                  </div>
+                  <h3 className="font-semibold text-2xl text-psicopiloto-blue-600">
                     {s.title}
                   </h3>
-                  <p className="mb-3 leading-relaxed">{s.desc}</p>
-                  <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
-                    {s.extra}
-                  </p>
-                  <div className="mt-auto">
-                    <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
-                  </div>
                 </div>
-              ))}
-            </div>
+                <p className="mb-3 leading-relaxed">{s.desc}</p>
+                <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
+                  {s.extra}
+                </p>
+                <div className="mt-auto">
+                  <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </main>
