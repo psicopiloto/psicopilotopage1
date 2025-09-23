@@ -136,19 +136,19 @@ export default function Servicios() {
           </div>
         </section>
 
-        {/* Divider */}
-        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-12 rounded"></div>
+               {/* Divider más compacto */}
+        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-8 rounded"></div>
 
         {/* Servicios para empresas */}
-        <section className="py-16 bg-psicopiloto-blue-50 container mx-auto max-w-6xl rounded-2xl">
-          <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-12">
+        <section className="py-12 md:py-16 bg-psicopiloto-blue-50 container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-10">
             Psicopiloto para Empresas
           </h2>
           <div className="grid md:grid-cols-2 gap-10">
             {serviciosEmpresas.map((s, i) => (
               <div
                 key={i}
-                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full"
+                className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full"
               >
                 <div className="flex items-center mb-4">
                   <div className="text-3xl text-psicopiloto-blue-600 mr-3">
@@ -169,6 +169,7 @@ export default function Servicios() {
             ))}
           </div>
         </section>
+
       </main>
 
       <Footer />
