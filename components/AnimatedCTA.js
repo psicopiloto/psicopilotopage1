@@ -7,9 +7,11 @@ export default function AnimatedCTA({ href, text, color = "green", className = "
   };
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <a
         className={`inline-block px-6 py-3 text-white rounded-xl text-lg font-semibold shadow transform transition-transform duration-300 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 ${colors[color]} ${className}`}
+        role="button"
+        aria-label={text}
       >
         {text}
       </a>
