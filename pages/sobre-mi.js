@@ -46,7 +46,7 @@ export default function SobreMi() {
       />
 
       <main className="flex-grow py-16">
-        <div className="container mx-auto px-6 max-w-5xl leading-relaxed">
+        <div className="container mx-auto px-6 max-w-5xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg leading-relaxed">
           {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
