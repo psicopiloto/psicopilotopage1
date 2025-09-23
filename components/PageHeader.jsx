@@ -2,17 +2,21 @@ import Image from "next/image";
 
 export default function PageHeader({ title, subtitle, backgroundImage }) {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center">
-      {/* Imagen de fondo */}
+    <section
+      className="relative h-[70vh] flex items-center justify-center"
+      role="banner"
+      aria-label={title}
+    >
+      {/* Imagen de fondo optimizada */}
       <Image
-        src={backgroundImage}
+        src={backgroundImage.endsWith(".webp") ? backgroundImage : backgroundImage.replace(/\.\w+$/, ".webp")}
         alt={title}
         fill
         style={{ objectFit: "cover" }}
         priority
       />
 
-      {/* Capa oscura encima */}
+      {/* Capa oscura encima para mejorar contraste */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Contenido de texto */}
@@ -30,4 +34,3 @@ export default function PageHeader({ title, subtitle, backgroundImage }) {
     </section>
   );
 }
-
