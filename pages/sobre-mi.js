@@ -3,39 +3,18 @@ import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
+import BackgroundLogo from "../components/BackgroundLogo"; // ✅ importamos logo de fondo
 
 export default function SobreMi() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="Sobre mí | Psicopiloto"
         description="Soy psicólogo con habilitación sanitaria y piloto militar. En Psicopiloto uno aviación y psicología para ayudarte a manejar la ansiedad, el estrés y recuperar tu confianza."
         canonical="https://psicopiloto.com/sobre-mi"
-        openGraph={{
-          url: "https://psicopiloto.com/sobre-mi",
-          title: "Sobre mí | Psicopiloto",
-          description:
-            "Conoce mi trayectoria como psicólogo y piloto militar. Descubre cómo combino aviación y psicología para un enfoque único en ansiedad, autoestima, trauma y terapia.",
-          images: [
-            {
-              url: "/header-sobremi.webp",
-              width: 1200,
-              height: 630,
-              alt: "Sobre mí - Psicopiloto",
-              type: "image/webp",
-            },
-          ],
-          site_name: "Psicopiloto",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "psicólogo Granada, psicólogo online, ansiedad, autoestima, trauma, terapia EMDR, psicología aeronáutica, piloto militar",
-          },
-          { name: "author", content: "Jose Carlos Rodríguez Retamar" },
-        ]}
       />
+      
+      <BackgroundLogo /> {/* ✅ añadimos el logo fijo */}
 
       <Nav />
 
@@ -45,8 +24,8 @@ export default function SobreMi() {
         backgroundImage="/header-sobremi.webp"
       />
 
-      <main className="flex-grow py-16">
-        <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/80 p-8 rounded-2xl shadow-lg">
+      <main className="flex-grow py-16 relative z-10">
+        <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/60 p-8 rounded-2xl shadow-lg">
           {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
