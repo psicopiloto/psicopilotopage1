@@ -2,44 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estructura base */
-html, body, #__next {
-  height: 100%;
-  scroll-behavior: smooth; /* Mejora UX para anclas */
-}
+html, body, #__next { height: 100%; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: white; }
+.container { max-width: 1100px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: white;
-  color: #374151; /* Texto principal consistente con palette */
-  font-family: 'Nunito', system-ui, sans-serif; /* Consistencia tipográfica */
-  line-height: 1.6; /* Mejora legibilidad */
-}
-
-.container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* Accesibilidad: focus-visible para navegación por teclado */
-:focus-visible {
-  outline: 2px solid #4eae9b;
-  outline-offset: 2px;
-}
-/* Cambios realizados:
-- Añadido scroll-behavior: smooth para UX más fluida.
-- Definido color de texto y line-height para legibilidad y consistencia visual.
-- Aplicada fuente Nunito globalmente para coherencia con tailwind.config.js.
-- Añadido estilo focus-visible accesible (P0).
-- Comentarios claros sobre cada mejora.
-- Mantiene estructura original y compatibilidad con Tailwind.
-*/
-
-/* Sugerencias opcionales:
-- Considerar variables CSS para colores y spacing si se planea escalabilidad futura.
-- Se podría añadir un modo oscuro con prefers-color-scheme.
-*/

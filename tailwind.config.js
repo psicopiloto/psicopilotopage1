@@ -1,22 +1,26 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}"
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
       colors: {
-        "psicopiloto-green-50": "#E8F6F2",
-        "psicopiloto-green-500": "#00A88F",
-        "psicopiloto-green-600": "#00806B",
-        "psicopiloto-blue-50": "#EAF4FF",
-        "psicopiloto-blue-500": "#1D7CF2",
-        "psicopiloto-blue-600": "#145CCB",
-        "psicopiloto-gray-700": "#374151",
-        "psicopiloto-sand-50": "#FFF8F0"
-      }
-    }
+        psicopiloto: {
+          green: { 500: "#4eae9b", 600: "#2a8371" },
+          blue: { 500: "#5aa6c8", 600: "#3f89aa" },
+          sand: { 50: "#f9f5f1" },
+          gray: { 700: "#374151", 500: "#6b7280" },
+          honey: { 500: "#f4b860", 600: "#d99842" },
+          peach: { 500: "#f2a9a1" },
+        },
+      },
+      fontFamily: {
+        sans: ["Nunito", "system-ui", "sans-serif"], // Cambié Inter por Nunito
+      },
+    },
   },
-  plugins: []
-};
+  plugins: [],
+}
+
