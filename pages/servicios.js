@@ -88,19 +88,26 @@ export default function Servicios() {
         backgroundImage="/header-servicios.webp"
       />
 
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-20">
 
         {/* Servicios para personas */}
-        <section className="py-16 container mx-auto max-w-5xl">
-          <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
+        <section className="py-20 container mx-auto max-w-6xl px-6">
+          <h2 className="text-4xl font-bold text-center text-psicopiloto-green-700 mb-14">
             Psicopiloto para Ti
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {serviciosPersonas.map((s, i) => (
-              <div key={i} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition flex flex-col h-full">
-                <h3 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">{s.title}</h3>
-                <p className="mb-4">{s.desc}</p>
-                <p className="mb-4">{s.extra}</p>
+              <div
+                key={i}
+                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col"
+              >
+                <h3 className="font-semibold text-2xl mb-3 text-psicopiloto-green-600">
+                  {s.title}
+                </h3>
+                <p className="mb-3 leading-relaxed">{s.desc}</p>
+                <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
+                  {s.extra}
+                </p>
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} />
                 </div>
@@ -110,27 +117,35 @@ export default function Servicios() {
         </section>
 
         {/* Divider elegante */}
-        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-12 rounded"></div>
+        <div className="w-32 h-1 bg-gradient-to-r from-psicopiloto-green-400 via-psicopiloto-blue-400 to-psicopiloto-green-400 mx-auto my-20 rounded-full"></div>
 
         {/* Servicios para empresas */}
-        <section className="py-16 bg-psicopiloto-blue-50 container mx-auto max-w-5xl rounded-lg">
-          <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-12">
-            Psicopiloto para Empresas
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {serviciosEmpresas.map((s, i) => (
-              <div key={i} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition flex flex-col h-full">
-                <h3 className={`font-semibold text-xl mb-2 text-psicopiloto-blue-600`}>{s.title}</h3>
-                <p className="mb-4">{s.desc}</p>
-                <p className="mb-4">{s.extra}</p>
-                <div className="mt-auto">
-                  <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
+        <section className="py-20 bg-psicopiloto-blue-50">
+          <div className="container mx-auto max-w-6xl px-6">
+            <h2 className="text-4xl font-bold text-center text-psicopiloto-blue-700 mb-14">
+              Psicopiloto para Empresas
+            </h2>
+            <div className="grid md:grid-cols-2 gap-10">
+              {serviciosEmpresas.map((s, i) => (
+                <div
+                  key={i}
+                  className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col"
+                >
+                  <h3 className="font-semibold text-2xl mb-3 text-psicopiloto-blue-600">
+                    {s.title}
+                  </h3>
+                  <p className="mb-3 leading-relaxed">{s.desc}</p>
+                  <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">
+                    {s.extra}
+                  </p>
+                  <div className="mt-auto">
+                    <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
