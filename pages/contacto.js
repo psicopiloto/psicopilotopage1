@@ -80,8 +80,9 @@ export default function Contacto() {
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid md:grid-cols-3 gap-12 items-start">
-           
-              {/* Protección de datos */}
+            
+            {/* Columna 1: Protección de datos */}
+            <div>
               <p className="mt-4 text-sm text-gray-500">
                 <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
                 <a href="/aviso-legal" className="text-psicopiloto-green-600 underline">
@@ -102,7 +103,9 @@ export default function Contacto() {
                   <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
                 </ul>
               </div>
-                 {/* Columna 1: Formulario */}
+            </div>
+
+            {/* Columna 3: Formulario */}
             <div className="md:col-span-2">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
                 Reserva tu primera consulta
@@ -164,7 +167,7 @@ export default function Contacto() {
               </form>
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
 
-              <div className="bg-white/40 p-6 rounded-xl shadow-md space-y-4">
+              <div className="bg-white/40 p-6 rounded-xl shadow-md space-y-4 mt-8">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
                   Contacto directo
                 </h3>
@@ -173,7 +176,7 @@ export default function Contacto() {
                 <p>✉️ Email: <a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600">info@psicopiloto.com</a></p>
               </div>
 
-              <div className="bg-white/40 p-6 rounded-xl shadow-md">
+              <div className="bg-white/40 p-6 rounded-xl shadow-md mt-8">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">Horarios de atención</h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700">
                   <li>Lunes a viernes: 10:00 – 20:00</li>
