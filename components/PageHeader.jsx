@@ -19,17 +19,13 @@ export default function PageHeader({ title, subtitle, backgroundImage }) {
       />
 
       {/* Capa oscura encima para contraste */}
-      <div
-        className="absolute inset-0 bg-black/40 z-10"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-black/40 z-10" aria-hidden="true" />
 
       {/* Contenido de texto */}
       <div className="container mx-auto text-center text-white z-20 relative px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
           {title}
         </h1>
-
         {subtitle && (
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow">
             {subtitle}
@@ -40,12 +36,10 @@ export default function PageHeader({ title, subtitle, backgroundImage }) {
   );
 }
 
-/* Cambios y optimizaciones aplicadas:
-- Mantiene role="banner" y aria-label para accesibilidad.
-- Imagen decorativa con alt="" y sizes="100vw" para responsive y LCP.
-- Capa oscura con aria-hidden para no interferir con screen readers.
-- Añadida clase z-0 a la imagen para claridad en capas.
-Sugerencias opcionales:
-- Breadcrumbs debajo del título para mejorar navegación y SEO.
-- Microdata/JSON-LD de tipo WebPage en <Head> con el título de la página.
+/* Notas:
+- Usa className y comentarios JSX para evitar errores de compilación.
+- La imagen usa fill + objectFit cover para LCP optimizado y responsive.
+- La capa oscura mejora contraste para accesibilidad.
+- role y aria-label para screen readers.
+- Para mejorar SEO opcionalmente se puede añadir JSON-LD tipo WebPage en <Head>.
 */
