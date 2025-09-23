@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Redes sociales */}
         <div className="flex gap-6 text-xl" aria-label="Redes sociales">
           <a
-            href="https://instagram.com/TU_USUARIO"
+            href="https://instagram.com/psicopi_loto"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
@@ -23,7 +23,7 @@ export default function Footer() {
             <FaInstagram />
           </a>
           <a
-            href="https://x.com/TU_USUARIO"
+            href="https://x.com/@jcrr78"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
@@ -32,7 +32,7 @@ export default function Footer() {
             <FaTwitter />
           </a>
           <a
-            href="https://linkedin.com/in/TU_USUARIO"
+            href="https://linkedin.com/in/jose-carlos-rodríguez-retamar"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
@@ -49,7 +49,7 @@ export default function Footer() {
             href="mailto:josecarlos@psicopiloto.com"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded"
           >
-            josecarlos@psicopiloto.com
+            joseretamar@psicopiloto.com
           </a>
         </div>
 
