@@ -88,40 +88,49 @@ export default function Servicios() {
         backgroundImage="/header-servicios.webp"
       />
 
-      {/* Servicios para personas */}
       <main className="flex-grow pt-16">
+
+        {/* Servicios para personas */}
         <section className="py-16 container mx-auto max-w-5xl">
           <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
             Psicopiloto para Ti
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {serviciosPersonas.map((s, i) => (
-              <div key={i} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div key={i} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition flex flex-col h-full">
                 <h3 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">{s.title}</h3>
                 <p className="mb-4">{s.desc}</p>
                 <p className="mb-4">{s.extra}</p>
-                <AnimatedCTA href="/contacto" text={s.cta} />
+                <div className="mt-auto">
+                  <AnimatedCTA href="/contacto" text={s.cta} />
+                </div>
               </div>
             ))}
           </div>
         </section>
 
+        {/* Divider elegante */}
+        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-12 rounded"></div>
+
         {/* Servicios para empresas */}
-        <section className="py-20 bg-psicopiloto-blue-50 container mx-auto max-w-5xl">
+        <section className="py-16 bg-psicopiloto-blue-50 container mx-auto max-w-5xl rounded-lg">
           <h2 className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-12">
             Psicopiloto para Empresas
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {serviciosEmpresas.map((s, i) => (
-              <div key={i} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+              <div key={i} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition flex flex-col h-full">
                 <h3 className={`font-semibold text-xl mb-2 text-psicopiloto-blue-600`}>{s.title}</h3>
                 <p className="mb-4">{s.desc}</p>
                 <p className="mb-4">{s.extra}</p>
-                <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
+                <div className="mt-auto">
+                  <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
+                </div>
               </div>
             ))}
           </div>
         </section>
+
       </main>
 
       <Footer />
