@@ -1,4 +1,4 @@
-import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -7,8 +7,7 @@ export default function Footer() {
         {/* Marca */}
         <div className="font-semibold text-gray-800">
           © {new Date().getFullYear()} Psicopiloto
-          <span className="align-super text-xs">®</span>. Todos los derechos
-          reservados.
+          <span className="align-super text-xs">®</span>. Todos los derechos reservados.
         </div>
 
         {/* Redes sociales */}
@@ -17,7 +16,7 @@ export default function Footer() {
             href="https://instagram.com/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
+            className="hover:text-psicopiloto-green-500 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-500 rounded"
             aria-label="Instagram Psicopiloto"
           >
             <FaInstagram />
@@ -26,7 +25,7 @@ export default function Footer() {
             href="https://x.com/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
+            className="hover:text-psicopiloto-green-500 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-500 rounded"
             aria-label="Twitter Psicopiloto"
           >
             <FaTwitter />
@@ -35,16 +34,30 @@ export default function Footer() {
             href="https://linkedin.com/in/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
+            className="hover:text-psicopiloto-green-500 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-500 rounded"
             aria-label="LinkedIn Psicopiloto"
           >
             <FaLinkedin />
           </a>
         </div>
 
+        {/* Email de contacto */}
+        <div className="flex items-center gap-2 text-psicopiloto-green-600">
+          <FaEnvelope className="text-base" />
+          <a
+            href="mailto:joseretamar@psicopiloto.com"
+            className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-500 rounded"
+          >
+            joseretamar@psicopiloto.com
+          </a>
+        </div>
+
         {/* Aviso Legal */}
         <div className="text-xs text-gray-500">
-          <a href="/aviso-legal" className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded">
+          <a
+            href="/aviso-legal"
+            className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded"
+          >
             Aviso Legal y Política de Privacidad
           </a>
         </div>
