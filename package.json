@@ -6,12 +6,12 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start -p 3000",
-    "lint": "next lint",          // agregado para revisar código y accesibilidad
-    "format": "prettier --write .", // agregado para mantener consistencia de estilo
-    "analyze": "ANALYZE=true next build" // opcional para análisis de rendimiento
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "analyze": "ANALYZE=true next build"
   },
   "engines": {
-    "node": ">=18.0.0"  // recomendado cambiar a >=18 para compatibilidad con Next 13+
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "next": "13.4.10",
@@ -24,8 +24,8 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.4.7",
-    "prettier": "^3.0.0",         // agregado para formateo consistente
-    "eslint": "^8.0.0",           // agregado para calidad y accesibilidad
-    "eslint-config-next": "^13.4.10" // integración con Next.js
+    "prettier": "^3.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^13.4.10"
   }
 }
