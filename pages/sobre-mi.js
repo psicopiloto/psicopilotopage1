@@ -6,7 +6,7 @@ import AnimatedCTA from "../components/AnimatedCTA";
 
 export default function SobreMi() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
+    <div className="min-h-screen flex flex-col font-sans">
       <NextSeo
         title="Sobre mí | Psicopiloto"
         description="Soy psicólogo con habilitación sanitaria y piloto militar. En Psicopiloto uno aviación y psicología para ayudarte a manejar la ansiedad, el estrés y recuperar tu confianza."
