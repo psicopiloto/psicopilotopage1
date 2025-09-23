@@ -26,7 +26,7 @@ export default function QueEsPsicopiloto() {
       />
 
       <main className="flex-grow pb-16 relative z-10">
-        <div className="container mx-auto px-4 max-w-5xl bg-white/60 p-8 rounded-2xl shadow-lg">
+        <div className="container mx-auto px-4 max-w-5xl bg-white/50 p-8 rounded-2xl shadow-lg">
           {/* ¿Qué es Psicopiloto? */}
           <section className="mb-16 grid md:grid-cols-2 gap-10 items-center">
             <div>
