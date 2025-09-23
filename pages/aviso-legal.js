@@ -28,7 +28,7 @@ export default function AvisoLegal() {
           {/* Logo centrado */}
           <div className="flex justify-center mb-6">
             <Image
-              src="/logo-psicopiloto.png"
+              src="/logo.webp"
               alt="Psicopiloto"
               width={150}
               height={50}
