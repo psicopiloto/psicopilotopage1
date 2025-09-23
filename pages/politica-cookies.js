@@ -1,13 +1,32 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Image from "next/image";
+import { NextSeo } from "next-seo";
 
 export default function PoliticaCookies() {
   return (
     <div className="min-h-screen flex flex-col">
+      <NextSeo
+        title="Política de Cookies | Psicopiloto"
+        description="Política de Cookies de Psicopiloto. Información sobre el uso de cookies propias y de terceros en nuestra web."
+        canonical="https://psicopiloto.com/politica-cookies"
+      />
+
       <Nav />
+
       <main className="flex-grow pt-16">
-        <section className="container mx-auto py-12 px-6 prose prose-gray">
-          <h1 className="text-3xl font-bold mb-6">Política de Cookies</h1>
+        <section className="max-w-4xl mx-auto px-6 py-12 prose prose-gray">
+          {/* Logo centrado */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo.webp"
+              alt="Psicopiloto"
+              width={150}
+              height={50}
+            />
+          </div>
+
+          <h1 className="text-3xl font-bold mb-6 text-center">Política de Cookies</h1>
 
           <p>
             En <strong>Psicopiloto®</strong> utilizamos cookies propias y de
@@ -83,6 +102,7 @@ export default function PoliticaCookies() {
           </p>
         </section>
       </main>
+
       <Footer />
     </div>
   );
