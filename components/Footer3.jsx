@@ -7,7 +7,8 @@ export default function Footer() {
         {/* Marca */}
         <div className="font-semibold text-gray-800">
           © {new Date().getFullYear()} Psicopiloto
-          <span className="align-super text-xs">®</span>. Todos los derechos reservados.
+          <span className="align-super text-xs">®</span>. Todos los derechos
+          reservados.
         </div>
 
         {/* Redes sociales */}
@@ -16,7 +17,7 @@ export default function Footer() {
             href="https://instagram.com/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-psicopiloto-green-500 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-500 rounded"
+            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
             aria-label="Instagram Psicopiloto"
           >
             <FaInstagram />
@@ -25,7 +26,7 @@ export default function Footer() {
             href="https://x.com/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-psicopiloto-green-500 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-500 rounded"
+            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
             aria-label="Twitter Psicopiloto"
           >
             <FaTwitter />
@@ -34,7 +35,7 @@ export default function Footer() {
             href="https://linkedin.com/in/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-psicopiloto-green-500 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-500 rounded"
+            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
             aria-label="LinkedIn Psicopiloto"
           >
             <FaLinkedin />
@@ -42,13 +43,13 @@ export default function Footer() {
         </div>
 
         {/* Email de contacto */}
-        <div className="flex items-center gap-2 text-psicopiloto-green-600">
+        <div className="flex items-center gap-2 text-gray-700">
           <FaEnvelope className="text-base" />
           <a
-            href="mailto:joseretamar@psicopiloto.com"
-            className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-500 rounded"
+            href="mailto:josecarlos@psicopiloto.com"
+            className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded"
           >
-            joseretamar@psicopiloto.com
+            josecarlos@psicopiloto.com
           </a>
         </div>
 
