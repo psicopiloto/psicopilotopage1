@@ -1,12 +1,15 @@
+// pages/index.js
+
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
+import BackgroundLogo from "../components/BackgroundLogo"; // ✅ importamos logo de fondo
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="Psicólogo online y presencial en Granada | Psicopiloto"
         description="Psicopiloto ofrece psicoterapia online y presencial en Granada: ansiedad, estrés, depresión, autoestima, trauma, EMDR y terapia de pareja. Acompaño tu viaje hacia el bienestar emocional."
@@ -32,9 +35,11 @@ export default function Home() {
         }}
       />
 
+      <BackgroundLogo /> {/* ✅ logo fijo de fondo */}
+
       <Nav />
 
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-16 relative z-10">
         {/* HERO */}
         <PageHeader
           title="Psicopiloto — Acompaño tu viaje hacia el bienestar"
@@ -44,7 +49,7 @@ export default function Home() {
         />
 
         {/* SOBRE MÍ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Sobre mí</h2>
             <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
@@ -57,7 +62,7 @@ export default function Home() {
         </section>
 
         {/* FILOSOFÍA */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Filosofía</h2>
             <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
@@ -104,7 +109,7 @@ export default function Home() {
                 { title: "Trauma y experiencias difíciles", desc: "Recuerdos dolorosos, bloqueos emocionales, EMDR." },
                 { title: "Si eres empresa", desc: "Formación en liderazgo, gestión de equipos y factores humanos adaptada a tus necesidades." }
               ].map((s, i) => (
-                <div key={i} className="p-6 bg-white rounded-lg shadow-sm border border-psicopiloto-gray-500/10">
+                <div key={i} className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10">
                   <h3 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">{s.title}</h3>
                   <p className="text-psicopiloto-gray-500">{s.desc}</p>
                 </div>
@@ -117,7 +122,7 @@ export default function Home() {
         </section>
 
         {/* TERAPIA ONLINE */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Psicología online</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -149,7 +154,7 @@ export default function Home() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white/40">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Da el primer paso</h2>
             <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
