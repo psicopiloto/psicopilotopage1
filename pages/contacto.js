@@ -80,7 +80,29 @@ export default function Contacto() {
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid md:grid-cols-3 gap-12 items-start">
-            {/* Columna 1: Formulario */}
+           
+              {/* Protección de datos */}
+              <p className="mt-4 text-sm text-gray-500">
+                <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
+                <a href="/aviso-legal" className="text-psicopiloto-green-600 underline">
+                  política de privacidad
+                </a>
+                .
+              </p>
+            </div>
+
+            {/* Columna 2: Beneficios + CTA */}
+            <div className="space-y-8">
+              <div className="bg-white/40 p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
+                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
+                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
+                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
+                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
+                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
+                </ul>
+              </div>
+                 {/* Columna 1: Formulario */}
             <div className="md:col-span-2">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
                 Reserva tu primera consulta
@@ -141,28 +163,6 @@ export default function Contacto() {
                 </button>
               </form>
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
-
-              {/* Protección de datos */}
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
-                <a href="/aviso-legal" className="text-psicopiloto-green-600 underline">
-                  política de privacidad
-                </a>
-                .
-              </p>
-            </div>
-
-            {/* Columna 2: Beneficios + CTA */}
-            <div className="space-y-8">
-              <div className="bg-white/40 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
-                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
-                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
-                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
-                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
-                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
-                </ul>
-              </div>
 
               <div className="bg-white/40 p-6 rounded-xl shadow-md space-y-4">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
