@@ -12,12 +12,13 @@ export default function Footer() {
         </div>
 
         {/* Redes sociales */}
-        <div className="flex gap-6 text-xl">
+        <div className="flex gap-6 text-xl" aria-label="Redes sociales">
           <a
             href="https://instagram.com/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-softorange-500"
+            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
+            aria-label="Instagram Psicopiloto"
           >
             <FaInstagram />
           </a>
@@ -25,7 +26,8 @@ export default function Footer() {
             href="https://x.com/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-softorange-500"
+            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
+            aria-label="Twitter Psicopiloto"
           >
             <FaTwitter />
           </a>
@@ -33,7 +35,8 @@ export default function Footer() {
             href="https://linkedin.com/in/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-softorange-500"
+            className="hover:text-softorange-500 focus:outline-none focus:ring-2 focus:ring-softorange-500 rounded"
+            aria-label="LinkedIn Psicopiloto"
           >
             <FaLinkedin />
           </a>
@@ -41,7 +44,7 @@ export default function Footer() {
 
         {/* Aviso Legal */}
         <div className="text-xs text-gray-500">
-          <a href="/aviso-legal" className="hover:underline">
+          <a href="/aviso-legal" className="hover:underline focus:outline-none focus:ring-1 focus:ring-gray-400 rounded">
             Aviso Legal y Política de Privacidad
           </a>
         </div>
@@ -49,4 +52,3 @@ export default function Footer() {
     </footer>
   );
 }
-
