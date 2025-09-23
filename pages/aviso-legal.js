@@ -5,7 +5,7 @@ export default function AvisoLegal() {
   return (
     <div className="min-h-screen flex flex-col">
       <Nav />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-16" id="main">
         <section className="max-w-4xl mx-auto px-6 py-12 text-gray-700">
           <h1 className="text-3xl font-bold mb-6">Aviso Legal y Política de Privacidad</h1>
 
@@ -15,10 +15,11 @@ export default function AvisoLegal() {
 
           <h2 className="text-xl font-semibold mt-6 mb-2">Titular de la web</h2>
           <p className="mb-4">
-            Nombre completo / Razón social <br />
+            Nombre completo: Jose Carlos Rodríguez Retamar <br />
             NIF/CIF: XXXXXXXX <br />
             Dirección: Calle Ejemplo nº 123, Granada <br />
-            Email de contacto: tuemail@ejemplo.com
+            Teléfono: <a href="tel:+34651435033" className="hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400">+34 651 435 033</a> <br />
+            Email de contacto: <a href="mailto:joseretamar@psicopiloto.com" className="hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400">joseretamar@psicopiloto.com</a>
           </p>
 
           <h2 className="text-xl font-semibold mt-6 mb-2">Protección de datos</h2>
@@ -37,3 +38,13 @@ export default function AvisoLegal() {
     </div>
   );
 }
+
+/*
+Cambios realizados:
+- Sustituidos datos de contacto por los reales: nombre, teléfono y email.
+- Enlaces de teléfono y email con formato clicable (tel: y mailto:) y estilos de focus/hover consistentes.
+- Añadido id="main" al <main> para que funcione un "skip link" en navegación accesible.
+Sugerencia opcional:
+- Completar NIF/CIF y dirección real si aplica.
+- Incluir enlace a política de cookies en el texto para mayor UX y cumplimiento legal.
+*/

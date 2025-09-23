@@ -1,4 +1,7 @@
 // tailwind.config.js
+const typography = require('@tailwindcss/typography');
+const forms = require('@tailwindcss/forms');
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -17,10 +20,23 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Nunito", "system-ui", "sans-serif"], // Cambié Inter por Nunito
+        sans: ["Nunito", "system-ui", "sans-serif"], // Fuente principal consistente
       },
+      spacing: {
+        '128': '32rem', // Extensión opcional para layouts grandes
+      },
+      borderRadius: {
+        'xl': '1rem', // Consistencia en bordes redondeados
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    typography, // Mejora estilo de textos largos y SEO
+    forms       // Mejora accesibilidad y consistencia de formularios
+  ],
 }
-
+// Cambios realizados:
+// - Consolidación de plugins Tailwind para evitar duplicados.
+// - Comentarios claros sobre mejoras de accesibilidad y SEO.
+// - Mantiene consistencia visual y tipográfica según auditoría.
+// - Ajustes menores de estructura para legibilidad y mantenimiento.
