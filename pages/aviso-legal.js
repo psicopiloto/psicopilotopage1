@@ -1,7 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function AvisoLegal() {
   const secciones = [
@@ -25,7 +25,17 @@ export default function AvisoLegal() {
 
       <main className="flex-grow pt-16">
         <section className="max-w-4xl mx-auto px-6 py-12 text-gray-700">
-          <h1 className="text-3xl font-bold mb-6">Aviso Legal y Política de Privacidad</h1>
+          {/* Logo centrado */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo-psicopiloto.png"
+              alt="Psicopiloto"
+              width={150}
+              height={50}
+            />
+          </div>
+
+          <h1 className="text-3xl font-bold mb-6 text-center">Aviso Legal y Política de Privacidad</h1>
 
           {/* Índice interno */}
           <nav className="mb-8 bg-gray-50 p-4 rounded-lg shadow-sm">
@@ -45,7 +55,7 @@ export default function AvisoLegal() {
             <p>
               <strong>Nombre:</strong> Jose Carlos Rodríguez Retamar <br />
               <strong>Teléfono:</strong> 676 230 537 <br />
-              <strong>Correo electrónico:</strong> tuemail@ejemplo.com <br />
+              <strong>Correo electrónico:</strong> joseretamar@psicopiloto.com <br />
               <strong>Dirección:</strong> Calle Ejemplo nº 123, Granada <br />
             </p>
           </section>
