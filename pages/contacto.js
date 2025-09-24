@@ -206,40 +206,7 @@ export default function Contacto() {
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
             </div>
           </section>
-
-
-<div className="relative bg-white shadow-lg rounded-xl p-8 max-w-3xl mx-auto mt-16">
-  {/* Imagen flotante a la izquierda */}
-  <div className="absolute -left-24 top-1/2 -translate-y-1/2 hidden md:block">
-    <img
-      src="/telefono.png"
-      alt="Teléfono contacto"
-      className="w-48 h-48 object-contain drop-shadow-2xl"
-    />
-  </div>
-
-  {/* Contenido del cuadro */}
-  <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
-    ¿Necesitas ayuda?
-  </h2>
-  <p className="text-gray-700 leading-relaxed mb-6 text-center md:text-left">
-    Has dado el paso más difícil, desde ahora, aquí encontrarás un espacio
-    seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu
-    proceso y ayudarte a recuperar la calma.
-  </p>
-
-  {/* CTA */}
-  <div className="text-center md:text-left">
-    <Link href="/contacto">
-      <span className="px-6 py-3 bg-softorange-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-softorange-600 transition">
-        Ponte en contacto hoy mismo
-      </span>
-    </Link>
-  </div>
-</div>
-
-
-               
+       
           {/* Imagen ilustrativa full-width */}
           <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
             <Image
