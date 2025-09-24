@@ -6,7 +6,7 @@ import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo"; 
-import CuadroContacto from "../components/CuadroContacto"; // ✅ import nuevo componente
+
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -163,9 +163,6 @@ export default function Contacto() {
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
             </div>
           </section>
-
-          {/* 👉 Cuadro motivacional separado */}
-          <CuadroContacto />
 
           {/* Imagen ilustrativa full-width */}
           <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
