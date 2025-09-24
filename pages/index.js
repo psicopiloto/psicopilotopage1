@@ -247,43 +247,38 @@ export default function Home() {
             </div>
           </div>
         </section>
+{/* CTA FINAL */}
+<section className="py-16 bg-white/40 relative overflow-visible">
+  <div className="container mx-auto max-w-5xl relative">
+    {/* Imagen sobresaliente */}
+    <Image
+      src="/telefono.png"
+      alt="Da el primer paso"
+      width={800}
+      height={800}
+      className={`
+        w-[300px] h-auto mx-auto mb-6
+        md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 
+        md:w-[500px] md:h-auto
+        lg:w-[600px] lg:-left-32
+      `}
+    />
 
-        {/* CTA FINAL */}
-        <section className="py-16 bg-white/40 relative overflow-visible">
-          <div className="container mx-auto max-w-5xl relative">
-            {/* Imagen sobresaliente */}
-            <Image
-              src="/telefono.png"
-              alt="Da el primer paso"
-              width={800}
-              height={800}
-              className={`
-                absolute 
-                top-1/2 -translate-y-1/2
-                left-0
-                w-[450px] h-auto
-                object-contain
-                md:w-[600px] md:left-0
-                sm:w-[350px] sm:left-5 sm:top-[30%]
-              `}
-            />
-            {/* Grid solo para el texto */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
-              <div className="col-span-1 md:col-start-2 text-center md:text-left">
-                <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
-                  Da el primer paso
-                </h2>
-                <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-                  Has dado el paso más difícil, llegar hasta aquí. Tras una
-                  llamada o un mensaje encontrarás un espacio seguro y cercano
-                  donde ser escuchado. Estoy aquí para acompañarte en tu proceso
-                  y ayudarte a recuperar la calma.
-                </p>
-                <AnimatedCTA href="/contacto" text="Contacta" color="green" />
-              </div>
-            </div>
-          </div>
-        </section>
+    {/* Grid solo para el texto */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
+      <div className="col-span-1 md:col-start-2 text-center md:text-left">
+        <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
+          Da el primer paso
+        </h2>
+        <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
+          Has dado el paso más difícil: llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu proceso y ayudarte a recuperar la calma.
+        </p>
+        <AnimatedCTA href="/contacto" text="Contacta" color="green" />
+      </div>
+    </div>
+  </div>
+</section>
+
       </main>
 
       <Footer />
