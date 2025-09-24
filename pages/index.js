@@ -87,7 +87,7 @@ export default function Home() {
                 },
                 {
                   title: "Si eres empresa",
-                  desc: "liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa.",
+                  desc: "Liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa.",
                 },
               ].map((s, i) => (
                 <div
@@ -260,11 +260,11 @@ export default function Home() {
               className={`
                 absolute 
                 top-1/2 -translate-y-1/2
-                -left-10
+                left-10
                 w-[450px] h-auto
                 object-contain
-                md:w-[600px] md:-left-32
-                sm:w-[350px] sm:-left-16 sm:top-[30%]
+                md:w-[600px] md:left-0
+                sm:w-[350px] sm:left-5 sm:top-[30%]
               `}
             />
             {/* Grid solo para el texto */}
@@ -290,3 +290,4 @@ export default function Home() {
     </div>
   );
 }
+
