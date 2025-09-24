@@ -125,9 +125,8 @@ export default function Home() {
               <div className="order-2 md:order-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Filosofía</h2>
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-                  Igual que un copiloto apoya al piloto en momentos de turbulencia, yo estaré a tu lado para ayudarte a ver con más claridad,
-                  tomar mejores decisiones y recuperar el rumbo. La vida no siempre es un vuelo estable, pero con acompañamiento se hace más seguro y llevadero.
-                </p>
+                  Hoy combino todo lo aprendido —en la aviación, en la psicología y en el voluntariado— para acompañar a quienes buscan recuperar el control de su vida.
+No hay dos personas iguales: cada proceso es único, con su propio ritmo y sus tiempos. Mi compromiso es ofrecerte un espacio seguro, de confianza y confidencialidad total, donde juntos podamos trabajar para que vuelvas a pilotar tu vida con calma y dirección.
                 <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
               </div>
             </div>
