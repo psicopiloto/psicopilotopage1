@@ -76,7 +76,7 @@ export default function Home() {
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Servicios</h2>
-            <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-green-700">
+            <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-green-500">
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-psicopiloto-green-600">Terapia individual</h3>
                 <p>Ansiedad, estrés, duelo, autoestima. Sesiones de 45–60 minutos en modalidad online o presencial.</p>
