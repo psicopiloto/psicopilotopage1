@@ -48,29 +48,6 @@ export default function Home() {
           cta={{ href: "/contacto", text: "Agenda tu primera cita", color: "green" }}
         />
 
-         {/* SERVICIOS */}
-        <section className="py-16 bg-psicopiloto-sand-50">
-          <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">Servicios</h2>
-            <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-honey-500">Terapia individual</h3>
-                <p>Ansiedad, estrés, duelo, autoestima. Sesiones de 45–60 minutos en modalidad online o presencial.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-honey-500">Terapia de pareja</h3>
-                <p>Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-honey-500">Si eres empresa</h3>
-                <p>Programas de bienestar, liderazgo consciente y prevención de errores, inspirados en valores de la aviación.</p>
-              </div>
-            </div>
-            <div className="mt-8">
-              <AnimatedCTA href="/servicios" text="Ver todos los servicios" color="green" />
-            </div>
-          </div>
-        </section>
 
         {/* SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
@@ -92,7 +69,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8">
-              <AnimatedCTA href="/servicios" text="Descubre todos los servicios" color="green" />
+              <AnimatedCTA href="/servicios" text="Descubre todos los servicios" color="honey" />
             </div>
           </div>
         </section>
@@ -100,7 +77,7 @@ export default function Home() {
         {/* TERAPIA ONLINE */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-peach">Psicología online</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">Psicología online</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 "Comodidad: conéctate desde casa, oficina o de viaje.",
@@ -160,7 +137,7 @@ export default function Home() {
             <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
               No tienes que hacerlo todo hoy ni solo. A veces lo más difícil es animarse a empezar, pero también es el paso que abre nuevas posibilidades. Estoy aquí para escucharte y acompañarte en tu viaje.
             </p>
-            <AnimatedCTA href="/contacto" text="Contacta" color="honey" />
+            <AnimatedCTA href="/contacto" text="Contacta" color="green" />
           </div>
         </section>
       </main>
