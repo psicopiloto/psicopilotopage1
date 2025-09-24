@@ -163,7 +163,7 @@ export default function Home() {
           </div>
         </section>
 
-      {/* CTA FINAL */}
+     {/* CTA FINAL */}
 <section className="py-16 bg-white/40">
   <div className="container mx-auto max-w-5xl">
     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md overflow-visible">
@@ -172,27 +172,33 @@ export default function Home() {
       <Image
         src="/telefono.png"
         alt="Da el primer paso"
-        width={400} // 👈 ajusta aquí el tamaño base
-        height={400}
-       className="absolute -left-1 top-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain"
+        width={800} // para Next.js, optimización
+        height={800}
+        className="
+          absolute 
+          top-1/2 -translate-y-1/2 
+          -left-16 w-[400px] h-auto object-contain 
+          md:-left-32 md:w-[500px] 
+          sm:static sm:translate-y-0 sm:mx-auto sm:mb-6 sm:w-[300px]"
       />
 
-      {/* Texto en la columna derecha */}
+      {/* Texto en la columna derecha / debajo en móvil */}
       <div className="col-span-1 md:col-start-2 text-center md:text-left">
         <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
           Da el primer paso
         </h2>
         <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-          
-  Has dado el paso más difícil, llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio
-    seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu
-    proceso y ayudarte a recuperar la calma.
+          No tienes que hacerlo todo hoy ni solo. A veces lo más difícil
+          es animarse a empezar, pero también es el paso que abre nuevas
+          posibilidades. Estoy aquí para escucharte y acompañarte en tu
+          viaje.
         </p>
         <AnimatedCTA href="/contacto" text="Contacta" color="green" />
       </div>
     </div>
   </div>
 </section>
+
 
       </main>
 
