@@ -63,7 +63,79 @@ export default function Contacto() {
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Formulario (izquierda en escritorio, 2º en móvil) */}
+            {/* Columna derecha en escritorio (izquierda en móvil) → Motivación + Contacto + Horarios + Protección de datos */}
+            <div className="order-1 md:order-2 space-y-6">
+              {/* Motivación */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h3 className="text-2xl font-bold text-psicopiloto-blue-900 mb-4">
+                  Tu bienestar emocional es lo primero
+                </h3>
+                <p className="text-lg text-psicopiloto-gray-700">
+                  Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
+                </p>
+              </div>
+
+              {/* Contacto directo */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2">
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600">
+                  Contacto directo
+                </h3>
+                <p>
+                  📞 Teléfono:{" "}
+                  <a href="tel:+34676230537" className="underline text-psicopiloto-green-600">
+                    676 230 537
+                  </a>
+                </p>
+                <p>
+                  💬 WhatsApp:{" "}
+                  <a
+                    href="https://wa.me/34676230537"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-psicopiloto-green-600"
+                  >
+                    Chatea ahora
+                  </a>
+                </p>
+                <p>
+                  ✉️ Email:{" "}
+                  <a
+                    href="mailto:info@psicopiloto.com"
+                    className="underline text-psicopiloto-green-600"
+                  >
+                    info@psicopiloto.com
+                  </a>
+                </p>
+              </div>
+
+              {/* Horarios */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600">
+                  Horarios de atención
+                </h3>
+                <ul className="list-disc list-inside text-psicopiloto-gray-700">
+                  <li>Lunes a viernes: 10:00 – 20:00</li>
+                  <li>Sábados: 10:00 – 14:00</li>
+                  <li>Domingos y festivos: cerrado</li>
+                </ul>
+              </div>
+
+              {/* Protección de datos */}
+              <div className="text-sm text-gray-500">
+                <p>
+                  <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
+                  <a
+                    href="/aviso-legal"
+                    className="text-psicopiloto-green-600 underline"
+                  >
+                    política de privacidad
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+
+            {/* Columna izquierda en escritorio (derecha en móvil) → Formulario */}
             <div className="order-2 md:order-1 bg-white/70 p-6 rounded-xl shadow-md">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
                 Reserva tu primera consulta
@@ -125,96 +197,12 @@ export default function Contacto() {
               </form>
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
             </div>
-
-            {/* Motivación + contacto + horarios + protección de datos (derecha en escritorio, primero en móvil) */}
-    
-            <div className="space-y-8">
-              <div className="bg-white/40 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
-                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
-                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
-                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
-                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
-                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
-                </ul>
-              </div>
-
-            <div className="order-1 md:order-2 space-y-8">
-              {/* Motivación */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold text-psicopiloto-blue-900 mb-4">
-                  Tu bienestar emocional es lo primero
-                </h3>
-                <p className="text-lg text-psicopiloto-gray-700">
-                  Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
-                </p>
-              </div>
-
-              {/* Contacto directo */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-4">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600">
-                  Contacto directo
-                </h3>
-                <p>
-                  📞 Teléfono:{" "}
-                  <a href="tel:+34676230537" className="underline text-psicopiloto-green-600">
-                    676 230 537
-                  </a>
-                </p>
-                <p>
-                  💬 WhatsApp:{" "}
-                  <a
-                    href="https://wa.me/34676230537"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-psicopiloto-green-600"
-                  >
-                    Chatea ahora
-                  </a>
-                </p>
-                <p>
-                  ✉️ Email:{" "}
-                  <a
-                    href="mailto:info@psicopiloto.com"
-                    className="underline text-psicopiloto-green-600"
-                  >
-                    info@psicopiloto.com
-                  </a>
-                </p>
-              </div>
-
-              {/* Horarios */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600">
-                  Horarios de atención
-                </h3>
-                <ul className="list-disc list-inside text-psicopiloto-gray-700">
-                  <li>Lunes a viernes: 10:00 – 20:00</li>
-                  <li>Sábados: 10:00 – 14:00</li>
-                  <li>Domingos y festivos: cerrado</li>
-                </ul>
-              </div>
-
-              {/* Protección de datos */}
-              <div className="text-sm text-gray-500">
-                <p>
-                  <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
-                  <a
-                    href="/aviso-legal"
-                    className="text-psicopiloto-green-600 underline"
-                  >
-                    política de privacidad
-                  </a>
-                  .
-                </p>
-              </div>
-            </div>
           </section>
 
           {/* Imagen ilustrativa full-width */}
           <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/public/contacto.webp"
+              src="/contacto.webp"
               alt="Consulta psicológica - Psicopiloto"
               fill
               style={{ objectFit: "cover" }}
@@ -228,3 +216,4 @@ export default function Contacto() {
     </div>
   );
 }
+
