@@ -116,8 +116,8 @@ export default function Home() {
                 <Image
                   src="sobre2.webp"
                   alt="Filosofía Psicopiloto"
-                  width={500}
-                  height={350}
+                  width={300}
+                  height={200}
                   className="rounded-lg w-full h-auto object-cover"
                 />
               </div>
@@ -176,8 +176,8 @@ export default function Home() {
       className={`
         absolute 
         top-1/2 -translate-y-1/2    /* centra verticalmente */
-        -left-35                     /* cuánto sobresale a la izquierda */
-        w-[500px] h-auto             /* tamaño de la imagen */
+        -left-30                     /* cuánto sobresale a la izquierda */
+        w-[450px] h-auto             /* tamaño de la imagen */
         object-contain
         md:w-[600px] md:-left-32     /* tablet */
         sm:w-[350px] sm:-left-16 sm:top-[30%] /* móvil */
@@ -192,10 +192,9 @@ export default function Home() {
           Da el primer paso
         </h2>
         <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-          No tienes que hacerlo todo hoy ni solo. A veces lo más difícil
-          es animarse a empezar, pero también es el paso que abre nuevas
-          posibilidades. Estoy aquí para escucharte y acompañarte en tu
-          viaje.
+  Has dado el paso más difícil, llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio
+    seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu
+    proceso y ayudarte a recuperar la calma.
         </p>
         <AnimatedCTA href="/contacto" text="Contacta" color="green" />
       </div>
