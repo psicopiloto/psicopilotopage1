@@ -2,7 +2,8 @@ import "../styles/globals.css";
 import CookiesBanner from "../components/CookiesBanner";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config"; 
-import BackgroundLogo from "../components/BackgroundLogo"; // 👈 importamos el nuevo componente
+import BackgroundLogo from "../components/BackgroundLogo"; 
+import WhatsAppButton from "../components/WhatsAppButton"; // 👈 nuevo import
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         <div className="relative z-10">
           <Component {...pageProps} />
           <CookiesBanner />
+          <WhatsAppButton /> {/* 👈 Botón flotante en todas las páginas */}
         </div>
       </div>
     </>
