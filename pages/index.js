@@ -177,7 +177,7 @@ No hay dos personas iguales: cada proceso es único, con su propio ritmo y sus t
       className={`
         absolute 
         top-1/2 -translate-y-1/2    /* centra verticalmente */
-        -left-10                     /* cuánto sobresale a la izquierda */
+        -left-0                     /* cuánto sobresale a la izquierda */
         w-[450px] h-auto             /* tamaño de la imagen */
         object-contain
         md:w-[600px] md:-left-32     /* tablet */
