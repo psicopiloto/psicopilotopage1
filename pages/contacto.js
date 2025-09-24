@@ -1,5 +1,4 @@
 // pages/contacto.js
-
 import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -63,25 +62,9 @@ export default function Contacto() {
 
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
-          <section className="grid md:grid-cols-3 gap-12 items-start">
-            
-            {/* Columna 1: Beneficios (Móvil primero) */}
-            <div className="order-1 md:order-1 space-y-8">
-              <div className="bg-white/40 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
-                  Por qué contactarme
-                </h3>
-                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
-                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
-                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
-                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
-                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Columna 2: Formulario */}
-            <div className="order-2 md:order-2 md:col-span-1">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* Formulario (izquierda en escritorio, 2º en móvil) */}
+            <div className="order-2 md:order-1 bg-white/70 p-6 rounded-xl shadow-md">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
                 Reserva tu primera consulta
               </h2>
@@ -143,9 +126,20 @@ export default function Contacto() {
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
             </div>
 
-            {/* Columna 3: Contacto directo + horarios + protección de datos */}
-            <div className="order-3 md:order-3 space-y-8">
-              <div className="bg-white/40 p-6 rounded-xl shadow-md space-y-4">
+            {/* Motivación + contacto + horarios + protección de datos (derecha en escritorio, primero en móvil) */}
+            <div className="order-1 md:order-2 space-y-8">
+              {/* Motivación */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h3 className="text-2xl font-bold text-psicopiloto-blue-900 mb-4">
+                  Tu bienestar emocional es lo primero
+                </h3>
+                <p className="text-lg text-psicopiloto-gray-700">
+                  Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
+                </p>
+              </div>
+
+              {/* Contacto directo */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-4">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
                   Contacto directo
                 </h3>
@@ -177,7 +171,8 @@ export default function Contacto() {
                 </p>
               </div>
 
-              <div className="bg-white/40 p-6 rounded-xl shadow-md">
+              {/* Horarios */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
                   Horarios de atención
                 </h3>
@@ -188,8 +183,9 @@ export default function Contacto() {
                 </ul>
               </div>
 
-              <div>
-                <p className="mt-4 text-sm text-gray-500">
+              {/* Protección de datos */}
+              <div className="text-sm text-gray-500">
+                <p>
                   <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
                   <a
                     href="/aviso-legal"
@@ -206,7 +202,7 @@ export default function Contacto() {
           {/* Imagen ilustrativa full-width */}
           <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/images/contacto.webp"
+              src="/public/contacto.webp"
               alt="Consulta psicológica - Psicopiloto"
               fill
               style={{ objectFit: "cover" }}
