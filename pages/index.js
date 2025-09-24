@@ -260,7 +260,7 @@ export default function Home() {
               className={`
                 absolute 
                 top-1/2 -translate-y-1/2
-                left-10
+                left-0
                 w-[450px] h-auto
                 object-contain
                 md:w-[600px] md:left-0
