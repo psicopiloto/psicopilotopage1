@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
-import BackgroundLogo from "../components/BackgroundLogo"; // ✅ logo de fondo
+import BackgroundLogo from "../components/BackgroundLogo"; 
+import CuadroContacto from "../components/CuadroContacto"; // ✅ import nuevo componente
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -49,8 +50,7 @@ export default function Contacto() {
         canonical="https://www.psicopiloto.com/contacto"
       />
 
-      <BackgroundLogo /> {/* ✅ logo fijo de fondo */}
-
+      <BackgroundLogo /> 
       <Nav />
 
       {/* Cabecera */}
@@ -63,7 +63,7 @@ export default function Contacto() {
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Columna derecha en escritorio (izquierda en móvil) → Motivación + Contacto + Horarios + Protección de datos */}
+            {/* Columna derecha → Motivación + Contacto + Horarios */}
             <div className="order-1 md:order-2 space-y-6">
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
@@ -73,7 +73,7 @@ export default function Contacto() {
                 <p className="text-lg text-psicopiloto-gray-700">
                   Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
                 </p>
-               <br />
+                <br />
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
                   <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
@@ -132,10 +132,7 @@ export default function Contacto() {
               <div className="text-sm text-gray-500">
                 <p>
                   <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
-                  <a
-                    href="/aviso-legal"
-                    className="text-psicopiloto-green-600 underline"
-                  >
+                  <a href="/aviso-legal" className="text-psicopiloto-green-600 underline">
                     política de privacidad
                   </a>
                   .
@@ -143,7 +140,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* Columna izquierda en escritorio (derecha en móvil) → Formulario */}
+            {/* Columna izquierda → Formulario */}
             <div className="order-2 md:order-1 bg-white/70 p-6 rounded-xl shadow-md">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
                 Reserva tu primera consulta
@@ -154,59 +151,22 @@ export default function Contacto() {
               </p>
 
               <form onSubmit={handleSubmit} className="grid gap-4">
-                <input
-                  required
-                  name="nombre"
-                  value={form.nombre}
-                  onChange={update}
-                  placeholder="Nombre completo *"
-                  className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                />
-                <input
-                  required
-                  name="edad"
-                  value={form.edad}
-                  onChange={update}
-                  type="number"
-                  placeholder="Edad *"
-                  className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                />
-                <input
-                  required
-                  name="email"
-                  value={form.email}
-                  onChange={update}
-                  type="email"
-                  placeholder="Email *"
-                  className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                />
-                <input
-                  name="telefono"
-                  value={form.telefono}
-                  onChange={update}
-                  placeholder="Teléfono"
-                  className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                />
-                <textarea
-                  required
-                  name="motivo"
-                  value={form.motivo}
-                  onChange={update}
-                  placeholder="Cuéntame brevemente tu motivo de consulta *"
-                  rows="5"
-                  className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
-                >
+                <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"></textarea>
+                <button type="submit" className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors">
                   Enviar consulta
                 </button>
               </form>
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
             </div>
           </section>
-       
+
+          {/* 👉 Cuadro motivacional separado */}
+          <CuadroContacto />
+
           {/* Imagen ilustrativa full-width */}
           <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
             <Image
