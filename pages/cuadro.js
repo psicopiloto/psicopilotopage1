@@ -16,7 +16,7 @@ export default function TestCuadroContacto() {
           <img
             src="/telefono.png"
             alt="Teléfono contacto"
-            className="w-48 mt-6 ml-12"
+            className="w-48 mt-6 mr-12"
           />
         </div>
 
