@@ -163,32 +163,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA FINAL */}
-        <section className="py-16 bg-white/40">
-          <div className="container mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
-              {/* Imagen izquierda */}
-              <div className="order-1 md:order-1">
-                <Image
-                  src="/telefono.png"
-                  alt="Da el primer paso"
-                  width={500}
-                  height={350}
-                  className="rounded-lg w-full h-auto object-cover"
-                />
-              </div>
-              {/* Texto */}
-              <div className="order-2 md:order-2 text-center md:text-left">
-                <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">Da el primer paso</h2>
-                <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-                  No tienes que hacerlo todo hoy ni solo. A veces lo más difícil es animarse a empezar, pero también es el paso que abre nuevas posibilidades. 
-                  Estoy aquí para escucharte y acompañarte en tu viaje.
-                </p>
-                <AnimatedCTA href="/contacto" text="Contacta" color="green" />
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* CTA FINAL */}
+<section className="py-16 bg-white/40">
+  <div className="container mx-auto max-w-5xl">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md overflow-visible">
+      
+      {/* Imagen sobresaliendo */}
+      <Image
+        src="/telefono.png"
+        alt="Da el primer paso"
+        width={400} // 👈 ajusta aquí el tamaño base
+        height={400}
+        className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-auto object-contain"
+      />
+
+      {/* Texto en la columna derecha */}
+      <div className="col-span-1 md:col-start-2 text-center md:text-left">
+        <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
+          Da el primer paso
+        </h2>
+        <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
+          No tienes que hacerlo todo hoy ni solo. A veces lo más difícil
+          es animarse a empezar, pero también es el paso que abre nuevas
+          posibilidades. Estoy aquí para escucharte y acompañarte en tu
+          viaje.
+        </p>
+        <AnimatedCTA href="/contacto" text="Contacta" color="green" />
+      </div>
+    </div>
+  </div>
+</section>
+
       </main>
 
       <Footer />
