@@ -174,7 +174,7 @@ export default function Home() {
         alt="Da el primer paso"
         width={800} // 👈 ajusta aquí el tamaño base
         height={800}
-        className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-auto object-contain"
+        className="absolute -left-10 top-1/2 -translate-y-1/2 w-80 h-auto object-contain"
       />
 
       {/* Texto en la columna derecha */}
