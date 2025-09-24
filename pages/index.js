@@ -171,21 +171,22 @@ export default function Home() {
     <Image
       src="/telefono.png"
       alt="Da el primer paso"
-      width={800}   // ✅ para Next.js, optimización
-      height={800}  // ✅ para Next.js, optimización
+      width={800}   // optimización Next.js
+      height={800}  // optimización Next.js
       className={`
         absolute 
         top-1/2 -translate-y-1/2    /* centra verticalmente */
-        -left-32                     /* distancia de la izquierda: puedes cambiar a -left-20, -left-40, -left-[120px] */
-        w-[500px] h-auto             /* tamaño de la imagen: w-[...] controla el ancho, h-auto mantiene proporción */
+        -left-40                     /* cuánto sobresale a la izquierda */
+        w-[550px] h-auto             /* tamaño de la imagen */
         object-contain
-        sm:static sm:translate-y-0 sm:mx-auto sm:mb-6 sm:w-[300px] /* responsive móvil */
+        md:w-[500px] md:-left-32     /* tablet */
+        sm:w-[350px] sm:-left-16 sm:top-[30%] /* móvil */
       `}
     />
 
     {/* Grid solo para el texto */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
-      {/* Texto */}
+      {/* Texto a la derecha / debajo en móvil */}
       <div className="col-span-1 md:col-start-2 text-center md:text-left">
         <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
           Da el primer paso
@@ -201,6 +202,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 
 
 
