@@ -118,7 +118,7 @@ export default function Home() {
                   alt="Filosofía Psicopiloto"
                   width={300}
                   height={200}
-                  className="rounded-lg w-full h-auto object-cover"
+                  className="rounded-lg w-250 h-auto object-cover"
                 />
               </div>
               {/* Texto */}
