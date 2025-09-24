@@ -1,17 +1,33 @@
 import Image from "next/image";
+import Link from "next/link"; // ✅ Importar Link de Next.js
 import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="mt-16 py-8 bg-gray-50 border-t">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-6 text-base md:text-lg text-gray-700">
-        {/* Logo */}
+        {/* Logo con enlace a la home */}
         <div className="flex items-center gap-2">
-          <Image src="/logo.webp" alt="Psicopiloto" width={120} height={40} />
+          <Link
+            href="/"
+            aria-label="Ir a la página de inicio"
+            className="transition transform hover:scale-105 hover:shadow-md"
+          >
+            <Image
+              src="/logo.webp"
+              alt="Psicopiloto"
+              width={120}
+              height={40}
+              priority
+            />
+          </Link>
         </div>
 
         {/* Redes sociales */}
-        <div className="flex gap-6 text-2xl md:text-3xl text-psicopiloto-green-500" aria-label="Redes sociales">
+        <div
+          className="flex gap-6 text-2xl md:text-3xl text-psicopiloto-green-500"
+          aria-label="Redes sociales"
+        >
           <a
             href="https://instagram.com/psicopi_loto"
             target="_blank"
