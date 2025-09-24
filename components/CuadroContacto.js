@@ -4,12 +4,12 @@ import Link from "next/link";
 export default function CuadroContacto() {
   return (
     <div className="relative bg-white/80 shadow-lg rounded-2xl p-10 max-w-3xl mx-auto mt-20 overflow-visible">
-      {/* Imagen flotante en la esquina superior derecha */}
-      <div className="absolute -top-12 -right-12 hidden md:block z-0">
+      {/* Imagen flotante en la esquina inferior derecha */}
+      <div className="absolute -bottom-12 -right-12 hidden md:block z-0">
         <img
           src="/telefono.png" // 📌 pon aquí tu imagen (mejor .png con transparencia)
           alt="Teléfono contacto Psicopiloto"
-          className="w-48 h-48 object-contain drop-shadow-xl opacity-90"
+          className="w-55 h-55 object-contain drop-shadow-xl opacity-90"
         />
       </div>
 
