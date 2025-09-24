@@ -176,8 +176,8 @@ export default function Home() {
       className={`
         absolute 
         top-1/2 -translate-y-1/2    /* centra verticalmente */
-        -left-40                     /* cuánto sobresale a la izquierda */
-        w-[550px] h-auto             /* tamaño de la imagen */
+        -left-35                     /* cuánto sobresale a la izquierda */
+        w-[500px] h-auto             /* tamaño de la imagen */
         object-contain
         md:w-[600px] md:-left-32     /* tablet */
         sm:w-[350px] sm:-left-16 sm:top-[30%] /* móvil */
