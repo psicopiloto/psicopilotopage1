@@ -78,7 +78,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">Servicios</h2>
             <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-700">
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-green-600">Terapia individual</h3>
+                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-honey-500">Terapia individual</h3>
                 <p>Ansiedad, estrés, duelo, autoestima. Sesiones de 45–60 minutos en modalidad online o presencial.</p>
               </div>
               <div>
@@ -86,7 +86,7 @@ export default function Home() {
                 <p>Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión.</p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-honey-600">Si eres empresa</h3>
+                <h3 className="text-xl font-semibold mb-2 text-psicopiloto-honey-500">Si eres empresa</h3>
                 <p>Programas de bienestar, liderazgo consciente y prevención de errores, inspirados en valores de la aviación.</p>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function Home() {
         {/* ÁREAS DE TRABAJO */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">Áreas de trabajo</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">Áreas de trabajo</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 { title: "Ansiedad y estrés", desc: "Insomnio, tensión, preocupaciones constantes." },
@@ -110,7 +110,7 @@ export default function Home() {
                 { title: "Si eres empresa", desc: "liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa." }
               ].map((s, i) => (
                 <div key={i} className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10">
-                  <h3 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">{s.title}</h3>
+                  <h3 className="font-semibold text-xl mb-2 text-psicopiloto-honey-500">{s.title}</h3>
                   <p className="text-psicopiloto-gray-500">{s.desc}</p>
                 </div>
               ))}
