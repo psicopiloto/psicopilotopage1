@@ -7,6 +7,7 @@ import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image"; // ✅ necesario para las imágenes
+import CuadroContacto from "../components/CuadroContacto"; // ✅ import nuevo componente
 
 export default function Home() {
   return (
