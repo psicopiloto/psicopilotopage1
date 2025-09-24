@@ -48,14 +48,14 @@ export default function WhatsAppButton() {
         <div className="absolute -bottom-1 right-4 w-2 h-2 bg-gray-800 rotate-45"></div>
       </div>
 
-      {/* Botón con aparición retrasada y rebote */}
+      {/* Botón con aparición retrasada y rebote corto */}
       <a
         href="https://wa.me/34676230537"
         target="_blank"
         rel="noopener noreferrer"
         className={`bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition transform ${
           showButton
-            ? "scale-100 animate-bounce"
+            ? "scale-100 animate-bounce-once"
             : "scale-0 opacity-0"
         }`}
         aria-label="Contactar por WhatsApp"
