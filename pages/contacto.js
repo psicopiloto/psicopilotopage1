@@ -73,8 +73,7 @@ export default function Contacto() {
                 <p className="text-lg text-psicopiloto-gray-700">
                   Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
                 </p>
-              </div>
-              div className="bg-white/40 p-6 rounded-xl shadow-md">
+             
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
                   <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
