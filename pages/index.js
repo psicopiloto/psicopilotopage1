@@ -181,7 +181,7 @@ No hay dos personas iguales: cada proceso es único, con su propio ritmo y sus t
         w-[450px] h-auto             /* tamaño de la imagen */
         object-contain
         md:w-[600px] md:-left-32     /* tablet */
-        sm:w-[350px] sm:-left-16 sm:top-[30%] /* móvil */
+        sm:w-[350px] sm:-left-16 sm:top [30%] /* móvil */
       `}
     />
 
