@@ -147,7 +147,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <p className="text-sm text-psicopiloto-gray-500 mb-4">¿Te interesa la comodidad y eficacia de la terapia online?</p>
+              <p className="text-xl text-psicopiloto-gray-500 mb-4">¿Te interesa la comodidad y eficacia de la terapia online?</p>
               <AnimatedCTA href="/servicios#online" text="Quiero una consulta online" color="green" />
             </div>
           </div>
