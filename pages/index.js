@@ -76,7 +76,7 @@ export default function Home() {
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Servicios</h2>
-            <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-gray-500">
+            <div className="grid md:grid-cols-2 gap-8 text-psicopiloto-green-700">
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-psicopiloto-green-600">Terapia individual</h3>
                 <p>Ansiedad, estrés, duelo, autoestima. Sesiones de 45–60 minutos en modalidad online o presencial.</p>
@@ -105,9 +105,9 @@ export default function Home() {
                 { title: "Ansiedad y estrés", desc: "Insomnio, tensión, preocupaciones constantes." },
                 { title: "Depresión y ánimo bajo", desc: "Falta de motivación, tristeza o apatía." },
                 { title: "Autoestima y apego", desc: "Inseguridad, dificultad para poner límites." },
-                { title: "Terapia de pareja", desc: "Conflictos, discusiones, pérdida de confianza." },
+                { title: "Terapia de pareja", desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión." },
                 { title: "Trauma y experiencias difíciles", desc: "Recuerdos dolorosos, bloqueos emocionales, EMDR." },
-                { title: "Si eres empresa", desc: "Formación en liderazgo, gestión de equipos y factores humanos adaptada a tus necesidades." }
+                { title: "Si eres empresa", desc: "liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa." }
               ].map((s, i) => (
                 <div key={i} className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10">
                   <h3 className="font-semibold text-xl mb-2 text-psicopiloto-green-600">{s.title}</h3>
