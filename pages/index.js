@@ -188,9 +188,9 @@ export default function Home() {
                   Filosofía
                 </h2>
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-                  Igual que un copiloto apoya al piloto en momentos de
-                  turbulencia, yo estaré a tu lado para ayudarte a ver con más
-                  claridad, tomar mejores decisiones y recuperar el rumbo. La
+                  Igual que un copiloto apoya al piloto durante el vuelo y en momentos de
+                  turbulencia, yo estaré a tu lado para ayudarte a reconocer tus
+                  emocioines mejorando la relacion contigo mismo y recuperar el rumbo. La
                   vida no siempre es un vuelo estable, pero con acompañamiento
                   se hace más seguro y llevadero.
                 </p>
