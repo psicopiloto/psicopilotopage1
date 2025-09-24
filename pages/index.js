@@ -177,7 +177,7 @@ export default function Home() {
         className="
           absolute 
           top-1/2 -translate-y-1/2 
-          left-32 w-[500px] h-auto object-contain 
+          -left-32 w-[500px] h-auto object-contain 
           md:-left-32 md:w-[500px] 
           sm:static sm:translate-y-0 sm:mx-auto sm:mb-6 sm:w-[300px]"
       />
