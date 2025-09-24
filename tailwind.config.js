@@ -22,14 +22,14 @@ module.exports = {
       keyframes: {
         bounceOnce: {
           "0%, 100%": { transform: "translateY(0)" },
-          "20%": { transform: "translateY(-30%)" },
+          "20%": { transform: "translateY(-40%)" },
           "40%": { transform: "translateY(0)" },
-          "60%": { transform: "translateY(-15%)" },
+          "60%": { transform: "translateY(-30%)" },
           "80%": { transform: "translateY(0)" },
         },
       },
       animation: {
-        "bounce-once": "bounceOnce 4.5s ease-out 1",
+        "bounce-once": "bounceOnce 5.5s ease-out 1",
       },
     },
   },
