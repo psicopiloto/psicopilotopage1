@@ -127,6 +127,18 @@ export default function Contacto() {
             </div>
 
             {/* Motivación + contacto + horarios + protección de datos (derecha en escritorio, primero en móvil) */}
+    
+            <div className="space-y-8">
+              <div className="bg-white/40 p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
+                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
+                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
+                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
+                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
+                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
+                </ul>
+              </div>
+
             <div className="order-1 md:order-2 space-y-8">
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
