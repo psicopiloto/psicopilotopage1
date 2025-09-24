@@ -172,8 +172,8 @@ export default function Home() {
       <Image
         src="/telefono.png"
         alt="Da el primer paso"
-        width={400} // 👈 ajusta aquí el tamaño base
-        height={400}
+        width={800} // 👈 ajusta aquí el tamaño base
+        height={800}
         className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-auto object-contain"
       />
 
