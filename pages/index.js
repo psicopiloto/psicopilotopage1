@@ -174,9 +174,8 @@ export default function Home() {
         alt="Da el primer paso"
         width={400} // 👈 ajusta aquí el tamaño base
         height={400}
-       className="absolute -left-10 top-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain"
+       className="absolute -left-1 top-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain"
       />
-
 
       {/* Texto en la columna derecha */}
       <div className="col-span-1 md:col-start-2 text-center md:text-left">
@@ -184,10 +183,10 @@ export default function Home() {
           Da el primer paso
         </h2>
         <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-          No tienes que hacerlo todo hoy ni solo. A veces lo más difícil
-          es animarse a empezar, pero también es el paso que abre nuevas
-          posibilidades. Estoy aquí para escucharte y acompañarte en tu
-          viaje.
+          
+  Has dado el paso más difícil, llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio
+    seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu
+    proceso y ayudarte a recuperar la calma.
         </p>
         <AnimatedCTA href="/contacto" text="Contacta" color="green" />
       </div>
