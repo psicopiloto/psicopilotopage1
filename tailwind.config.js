@@ -29,7 +29,7 @@ module.exports = {
         },
       },
       animation: {
-        "bounce-once": "bounceOnce 2.5s ease-out 1",
+        "bounce-once": "bounceOnce 4.5s ease-out 1",
       },
     },
   },
