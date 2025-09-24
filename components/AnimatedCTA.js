@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function AnimatedCTA({ href, text, color = "green", className = "" }) {
   const colors = {
     green: "bg-psicopiloto-green-500 hover:bg-psicopiloto-green-600 focus:ring-psicopiloto-green-400",
-    blue: "bg-psicopiloto-blue-500 hover:bg-psicopiloto-blue-600 focus:ring-psicopiloto-blue-400"
+    blue: "bg-psicopiloto-blue-500 hover:bg-psicopiloto-blue-600 focus:ring-psicopiloto-blue-400",
     honey: "bg-psicopiloto-honey-500 hover:bg-psicopiloto-honey-600 focus:ring-psicopiloto-honey-400"
   };
 
