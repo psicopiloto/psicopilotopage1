@@ -163,26 +163,29 @@ export default function Home() {
           </div>
         </section>
 
-     {/* CTA FINAL */}
-<section className="py-16 bg-white/40">
-  <div className="container mx-auto max-w-5xl">
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md overflow-visible">
-      
-      {/* Imagen sobresaliendo */}
-      <Image
-        src="/telefono.png"
-        alt="Da el primer paso"
-        width={800} // para Next.js, optimización
-        height={800}
-        className="
-          absolute 
-          top-1/2 -translate-y-1/2 
-          -left-32 w-[500px] h-auto object-contain 
-          md:-left-32 md:w-[500px] 
-          sm:static sm:translate-y-0 sm:mx-auto sm:mb-6 sm:w-[300px]"
-      />
+  {/* CTA FINAL */}
+<section className="py-16 bg-white/40 relative overflow-visible">
+  <div className="container mx-auto max-w-5xl relative">
 
-      {/* Texto en la columna derecha / debajo en móvil */}
+    {/* Imagen sobresaliente */}
+    <Image
+      src="/telefono.png"
+      alt="Da el primer paso"
+      width={800}   // ✅ para Next.js, optimización
+      height={800}  // ✅ para Next.js, optimización
+      className={`
+        absolute 
+        top-1/2 -translate-y-1/2    /* centra verticalmente */
+        -left-32                     /* distancia de la izquierda: puedes cambiar a -left-20, -left-40, -left-[120px] */
+        w-[500px] h-auto             /* tamaño de la imagen: w-[...] controla el ancho, h-auto mantiene proporción */
+        object-contain
+        sm:static sm:translate-y-0 sm:mx-auto sm:mb-6 sm:w-[300px] /* responsive móvil */
+      `}
+    />
+
+    {/* Grid solo para el texto */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
+      {/* Texto */}
       <div className="col-span-1 md:col-start-2 text-center md:text-left">
         <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
           Da el primer paso
@@ -198,6 +201,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 
 
       </main>
