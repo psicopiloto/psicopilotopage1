@@ -48,31 +48,7 @@ export default function Home() {
           cta={{ href: "/contacto", text: "Agenda tu primera cita", color: "green" }}
         />
 
-        {/* SOBRE MÍ */}
-        <section className="py-16 bg-white/40">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">Sobre mí</h2>
-            <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-              Soy psicólogo con una trayectoria poco común: antes fui <strong>piloto militar de los aviones apagafuegos del 43 Grupo de FF.AA.</strong> 
-              De la aviación aprendí valores como la humildad, el trabajo en equipo y la gestión de errores. 
-              Ahora los aplico a la psicología para acompañarte en tu propio viaje vital, combinando mi formación en <strong>psicología integradora</strong>, <strong>trauma</strong> y <strong>EMDR</strong> con una visión clara: cada persona es única y merece ser escuchada con respeto y cercanía.
-            </p>
-            <AnimatedCTA href="/sobre-mi" text="Conóceme mejor" color="blue" />
-          </div>
-        </section>
-
-        {/* FILOSOFÍA */}
-        <section className="py-16 bg-white/40">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">Filosofía</h2>
-            <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-              Igual que un copiloto apoya al piloto en momentos de turbulencia, yo estaré a tu lado para ayudarte a ver con más claridad, tomar mejores decisiones y recuperar el rumbo. La vida no siempre es un vuelo estable, pero con acompañamiento se hace más seguro y llevadero.
-            </p>
-            <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
-          </div>
-        </section>
-
-        {/* SERVICIOS */}
+         {/* SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">Servicios</h2>
@@ -96,10 +72,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ÁREAS DE TRABAJO */}
+        {/* SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">Áreas de trabajo</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">Servicios</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 { title: "Ansiedad y estrés", desc: "Insomnio, tensión, preocupaciones constantes." },
@@ -153,14 +129,38 @@ export default function Home() {
           </div>
         </section>
 
+ {/* SOBRE MÍ */}
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Sobre mí</h2>
+            <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
+              Soy psicólogo con una trayectoria poco común: antes fui <strong>piloto militar de los aviones apagafuegos del 43 Grupo de FF.AA.</strong> 
+              De la aviación aprendí valores como la humildad, el trabajo en equipo y la gestión de errores. 
+              Ahora los aplico a la psicología para acompañarte en tu propio viaje vital, combinando mi formación en <strong>psicología integradora</strong>, <strong>trauma</strong> y <strong>EMDR</strong> con una visión clara: cada persona es única y merece ser escuchada con respeto y cercanía.
+            </p>
+            <AnimatedCTA href="/sobre-mi" text="Conóceme mejor" color="blue" />
+          </div>
+        </section>
+
+        {/* FILOSOFÍA */}
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Filosofía</h2>
+            <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
+              Igual que un copiloto apoya al piloto en momentos de turbulencia, yo estaré a tu lado para ayudarte a ver con más claridad, tomar mejores decisiones y recuperar el rumbo. La vida no siempre es un vuelo estable, pero con acompañamiento se hace más seguro y llevadero.
+            </p>
+            <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
+          </div>
+        </section>
+
         {/* CTA FINAL */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-gray-700">Da el primer paso</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">Da el primer paso</h2>
             <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
               No tienes que hacerlo todo hoy ni solo. A veces lo más difícil es animarse a empezar, pero también es el paso que abre nuevas posibilidades. Estoy aquí para escucharte y acompañarte en tu viaje.
             </p>
-            <AnimatedCTA href="/contacto" text="Contacta" color="blue" />
+            <AnimatedCTA href="/contacto" text="Contacta" color="honey" />
           </div>
         </section>
       </main>
