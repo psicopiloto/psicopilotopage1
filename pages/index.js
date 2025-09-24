@@ -77,7 +77,7 @@ export default function Home() {
         {/* TERAPIA ONLINE */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">Psicología online</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">Psicología online</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 "Comodidad: conéctate desde casa, oficina o de viaje.",
