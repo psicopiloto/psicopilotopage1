@@ -114,7 +114,7 @@ export default function Home() {
               {/* Imagen izquierda */}
               <div className="order-1 md:order-1">
                 <Image
-                  src="/filosofia.webp"
+                  src="sobre2.webp"
                   alt="Filosofía Psicopiloto"
                   width={500}
                   height={350}
@@ -152,7 +152,7 @@ export default function Home() {
               {/* Imagen derecha */}
               <div className="order-1 md:order-2">
                 <Image
-                  src="/sobre-mi.webp"
+                  src="/filosofia.webp"
                   alt="Sobre mí Psicopiloto"
                   width={500}
                   height={350}
