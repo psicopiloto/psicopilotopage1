@@ -172,10 +172,11 @@ export default function Home() {
       <Image
         src="/telefono.png"
         alt="Da el primer paso"
-        width={800} // 👈 ajusta aquí el tamaño base
-        height={800}
-        className="absolute -left-10 top-1/2 -translate-y-1/2 w-80 h-auto object-contain"
+        width={400} // 👈 ajusta aquí el tamaño base
+        height={400}
+       className="absolute -left-10 top-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain"
       />
+
 
       {/* Texto en la columna derecha */}
       <div className="col-span-1 md:col-start-2 text-center md:text-left">
