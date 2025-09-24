@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
-import BackgroundLogo from "../components/BackgroundLogo"; // ✅ importamos logo de fondo
+import BackgroundLogo from "../components/BackgroundLogo"; // ✅ logo de fondo
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -34,9 +34,7 @@ export default function Contacto() {
         setStatus("✅ Enviado correctamente. Te responderé pronto.");
         setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
       } else {
-        setStatus(
-          "❌ Error: " + (data?.error || "No se pudo enviar. Revisa la configuración.")
-        );
+        setStatus("❌ Error: " + (data?.error || "No se pudo enviar."));
       }
     } catch (err) {
       setStatus("❌ Error de red: " + String(err));
@@ -50,20 +48,6 @@ export default function Contacto() {
         title="Contacto | Psicopiloto"
         description="Contacta con Psicopiloto y mejora tu bienestar emocional. Consulta online y presencial en Granada. Rellena el formulario o llama/WhatsApp directamente."
         canonical="https://www.psicopiloto.com/contacto"
-        openGraph={{
-          url: "https://www.psicopiloto.com/contacto",
-          title: "Contacto | Psicopiloto",
-          description:
-            "Consulta psicológica online y presencial en Granada. Rellena el formulario o llama/WhatsApp directamente.",
-          images: [
-            {
-              url: "https://www.psicopiloto.com/images/seo/contacto-og.jpg",
-              width: 1200,
-              height: 630,
-              alt: "Formulario de contacto Psicopiloto",
-            },
-          ],
-        }}
       />
 
       <BackgroundLogo /> {/* ✅ logo fijo de fondo */}
@@ -81,21 +65,12 @@ export default function Contacto() {
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid md:grid-cols-3 gap-12 items-start">
             
-            {/* Columna 1: Protección de datos */}
-            <div>
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
-                <a href="/aviso-legal" className="text-psicopiloto-green-600 underline">
-                  política de privacidad
-                </a>
-                .
-              </p>
-            </div>
-
-            {/* Columna 2: Beneficios + CTA */}
-            <div className="space-y-8">
+            {/* Columna 1: Beneficios (Móvil primero) */}
+            <div className="order-1 md:order-1 space-y-8">
               <div className="bg-white/40 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
+                  Por qué contactarme
+                </h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
                   <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
                   <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
@@ -105,8 +80,8 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* Columna 3: Formulario */}
-            <div className="md:col-span-2">
+            {/* Columna 2: Formulario */}
+            <div className="order-2 md:order-2 md:col-span-1">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
                 Reserva tu primera consulta
               </h2>
@@ -166,23 +141,64 @@ export default function Contacto() {
                 </button>
               </form>
               {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
+            </div>
 
-              <div className="bg-white/40 p-6 rounded-xl shadow-md space-y-4 mt-8">
+            {/* Columna 3: Contacto directo + horarios + protección de datos */}
+            <div className="order-3 md:order-3 space-y-8">
+              <div className="bg-white/40 p-6 rounded-xl shadow-md space-y-4">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
                   Contacto directo
                 </h3>
-                <p>📞 Teléfono: <a href="tel:+34676230537" className="underline text-psicopiloto-green-600">676 230 537</a></p>
-                <p>💬 WhatsApp: <a href="https://wa.me/34676230537" target="_blank" rel="noopener noreferrer" className="underline text-psicopiloto-green-600">Chatea ahora</a></p>
-                <p>✉️ Email: <a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600">info@psicopiloto.com</a></p>
+                <p>
+                  📞 Teléfono:{" "}
+                  <a href="tel:+34676230537" className="underline text-psicopiloto-green-600">
+                    676 230 537
+                  </a>
+                </p>
+                <p>
+                  💬 WhatsApp:{" "}
+                  <a
+                    href="https://wa.me/34676230537"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-psicopiloto-green-600"
+                  >
+                    Chatea ahora
+                  </a>
+                </p>
+                <p>
+                  ✉️ Email:{" "}
+                  <a
+                    href="mailto:info@psicopiloto.com"
+                    className="underline text-psicopiloto-green-600"
+                  >
+                    info@psicopiloto.com
+                  </a>
+                </p>
               </div>
 
-              <div className="bg-white/40 p-6 rounded-xl shadow-md mt-8">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600">Horarios de atención</h3>
+              <div className="bg-white/40 p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600">
+                  Horarios de atención
+                </h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700">
                   <li>Lunes a viernes: 10:00 – 20:00</li>
                   <li>Sábados: 10:00 – 14:00</li>
                   <li>Domingos y festivos: cerrado</li>
                 </ul>
+              </div>
+
+              <div>
+                <p className="mt-4 text-sm text-gray-500">
+                  <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
+                  <a
+                    href="/aviso-legal"
+                    className="text-psicopiloto-green-600 underline"
+                  >
+                    política de privacidad
+                  </a>
+                  .
+                </p>
               </div>
             </div>
           </section>
