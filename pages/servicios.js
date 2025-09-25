@@ -56,7 +56,13 @@ export default function Servicios() {
   const serviciosEmpresas = [
     {
       title: "Desarrollo Organizacional y Liderazgo",
-      desc: "Los equipos necesitan cohesión, confianza y liderazgo positivo para alcanzar sus objetivos. Aplicamos principios de aviación al desarrollo organizacional.",
+      desc: "Los equipos necesitan cohesión, confianza y liderazgo positivo para alcanzar sus objetivos. Aplicamos principios de aviación al desarrollo organizacional. En un mundo empresarial cada vez más complejo, los equipos necesitan confianza, cohesión y liderazgo positivo. Desde Psicopiloto ayudamos a las organizaciones a:
+Reducir errores y aumentar la eficiencia.
+Fomentar una comunicación clara y honesta.
+Desarrollar líderes resilientes y equipos colaborativos.
+Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.
+👉 Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden transformar también tu empresa, impulsando su rendimiento y reduciendo costes derivados de errores y falta de coordinación.
+.",
       extra: "Programas de psicología aplicada a empresas que reducen errores, mejoran eficiencia y fomentan comunicación clara.",
       cta: "Fortalece tu equipo hoy: solicita una sesión de asesoramiento",
       color: "blue",
