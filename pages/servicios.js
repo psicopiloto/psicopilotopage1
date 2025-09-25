@@ -56,13 +56,16 @@ export default function Servicios() {
   const serviciosEmpresas = [
     {
       title: "Desarrollo Organizacional y Liderazgo",
-      desc: "Los equipos necesitan cohesión, confianza y liderazgo positivo para alcanzar sus objetivos. Aplicamos principios de aviación al desarrollo organizacional. En un mundo empresarial cada vez más complejo, los equipos necesitan confianza, cohesión y liderazgo positivo. Desde Psicopiloto ayudamos a las organizaciones a:
-Reducir errores y aumentar la eficiencia.
-Fomentar una comunicación clara y honesta.
-Desarrollar líderes resilientes y equipos colaborativos.
-Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.
-👉 Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden transformar también tu empresa, impulsando su rendimiento y reduciendo costes derivados de errores y falta de coordinación.
-.",
+      desc: `Los equipos necesitan cohesión, confianza y liderazgo positivo para alcanzar sus objetivos. 
+Aplicamos principios de aviación al desarrollo organizacional. En un mundo empresarial cada vez más complejo, los equipos necesitan confianza, cohesión y liderazgo positivo. 
+Desde Psicopiloto ayudamos a las organizaciones a:
+
+- Reducir errores y aumentar la eficiencia.  
+- Fomentar una comunicación clara y honesta.  
+- Desarrollar líderes resilientes y equipos colaborativos.  
+- Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.  
+
+👉 Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden transformar también tu empresa, impulsando su rendimiento y reduciendo costes derivados de errores y falta de coordinación.`,
       extra: "Programas de psicología aplicada a empresas que reducen errores, mejoran eficiencia y fomentan comunicación clara.",
       cta: "Fortalece tu equipo hoy: solicita una sesión de asesoramiento",
       color: "blue",
@@ -111,7 +114,6 @@ Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.
       />
 
       <main className="flex-grow pt-16 relative z-10">
-
         {/* Servicios para personas */}
         <section className="py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg">
           <h2 className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
@@ -155,7 +157,7 @@ Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.
                   <div className="text-3xl text-psicopiloto-blue-600 mr-3">{s.icon}</div>
                   <h3 className="font-semibold text-2xl text-psicopiloto-blue-600">{s.title}</h3>
                 </div>
-                <p className="mb-3 leading-relaxed">{s.desc}</p>
+                <p className="mb-3 leading-relaxed whitespace-pre-line">{s.desc}</p>
                 <p className="mb-6 leading-relaxed text-psicopiloto-gray-600">{s.extra}</p>
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
@@ -164,7 +166,6 @@ Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.
             ))}
           </div>
         </section>
-
       </main>
 
       <Footer />
