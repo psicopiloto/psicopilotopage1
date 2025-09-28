@@ -7,7 +7,6 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo"; 
 
-
 export default function Contacto() {
   const [form, setForm] = useState({
     nombre: "",
@@ -63,8 +62,47 @@ export default function Contacto() {
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Columna derecha → Motivación + Contacto + Horarios */}
-            <div className="order-1 md:order-2 space-y-6">
+            {/* Columna izquierda → Formulario + Calendario */}
+            <div className="order-1 md:order-1 space-y-6">
+              {/* Formulario */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
+                  Reserva tu primera consulta
+                </h2>
+                <p className="text-psicopiloto-gray-600 mb-6">
+                  Completa este formulario y te responderé lo antes posible. 
+                  Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
+                </p>
+
+                <form onSubmit={handleSubmit} className="grid gap-4">
+                  <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                  <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                  <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                  <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
+                  <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"></textarea>
+                  <button type="submit" className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors">
+                    Enviar consulta
+                  </button>
+                </form>
+                {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
+              </div>
+
+              {/* Calendario Google */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
+                  Agenda tu cita directamente
+                </h3>
+                <iframe
+                  src="https://calendar.google.com/calendar/embed?src=joseretamar%40psicopiloto.com&ctz=Europe%2FMadrid"
+                  style={{ border: 0, width: "100%", height: "600px" }}
+                  frameBorder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Columna derecha → Motivación + Contacto directo + Horarios */}
+            <div className="order-2 md:order-2 space-y-6">
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h3 className="text-2xl font-bold text-psicopiloto-blue-900 mb-4">
@@ -139,29 +177,6 @@ export default function Contacto() {
                 </p>
               </div>
             </div>
-
-            {/* Columna izquierda → Formulario */}
-            <div className="order-2 md:order-1 bg-white/70 p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
-                Reserva tu primera consulta
-              </h2>
-              <p className="text-psicopiloto-gray-600 mb-6">
-                Completa este formulario y te responderé lo antes posible. 
-                Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
-              </p>
-
-              <form onSubmit={handleSubmit} className="grid gap-4">
-                <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"></textarea>
-                <button type="submit" className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors">
-                  Enviar consulta
-                </button>
-              </form>
-              {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
-            </div>
           </section>
 
           {/* Imagen ilustrativa full-width */}
@@ -181,4 +196,3 @@ export default function Contacto() {
     </div>
   );
 }
-
