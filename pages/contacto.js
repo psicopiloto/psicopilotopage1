@@ -87,19 +87,22 @@ export default function Contacto() {
                 {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
               </div>
 
-              {/* Calendario Google */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
-                  Agenda tu cita directamente
-                </h3>
-                <iframe
-                  src="https://calendar.google.com/calendar/embed?src=joseretamar%40psicopiloto.com&ctz=Europe%2FMadrid"
-                  style={{ border: 0, width: "100%", height: "600px" }}
-                  frameBorder="0"
-                  scrolling="no"
-                ></iframe>
-              </div>
-            </div>
+ {/* Calendario Google */}
+<div className="bg-white/70 p-6 rounded-xl shadow-md">
+  <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
+    Agenda tu cita directamente
+  </h3>
+  <div className="w-full h-[400px] md:h-[600px] overflow-auto">
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src=6tupu8l1k2p4fphmf3qfc8rmlgsogcl0%40import.calendar.google.com&ctz=Europe%2FMadrid"
+      style={{ border: 0, width: "100%", height: "100%" }}
+      frameBorder="0"
+      scrolling="auto"
+    ></iframe>
+  </div>
+</div>
+
+
 
             {/* Columna derecha → Motivación + Contacto directo + Horarios */}
             <div className="order-2 md:order-2 space-y-6">
@@ -196,3 +199,5 @@ export default function Contacto() {
     </div>
   );
 }
+
+<iframe src="https://calendar.google.com/calendar/embed?src=6tupu8l1k2p4fphmf3qfc8rmlgsogcl0%40import.calendar.google.com&ctz=Europe%2FMadrid" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
