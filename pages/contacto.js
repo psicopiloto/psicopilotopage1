@@ -62,8 +62,26 @@ export default function Contacto() {
       <main className="flex-grow pt-16 relative z-10">
         <div className="container mx-auto p-6 bg-white/40 rounded-2xl shadow-lg">
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Columna izquierda → Formulario + Calendario */}
+            {/* Columna izquierda → Motivación + Formulario + Calendario */}
             <div className="order-1 md:order-1 space-y-6">
+              {/* Motivación */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h3 className="text-2xl font-bold text-psicopiloto-blue-900 mb-4">
+                  Tu bienestar emocional es lo primero
+                </h3>
+                <p className="text-lg text-psicopiloto-gray-700">
+                  Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
+                </p>
+                <br />
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
+                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
+                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
+                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
+                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
+                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
+                </ul>
+              </div>
+
               {/* Formulario */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
@@ -87,42 +105,24 @@ export default function Contacto() {
                 {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
               </div>
 
-{/* Google Calendar Appointment Scheduling */}
-<div className="bg-white/70 p-6 rounded-xl shadow-md">
-  <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
-    Agenda tu cita directamente
-  </h3>
-  <div className="w-full h-[400px] md:h-[600px] overflow-auto">
-    <iframe
-      src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
-      style={{ border: 0, width: "100%", height: "100%" }}
-      frameBorder="0"
-      scrolling="auto"
-    ></iframe>
-  </div>
-</div>
-
-
-            {/* Columna derecha → Motivación + Contacto directo + Horarios */}
-            <div className="order-2 md:order-2 space-y-6">
-              {/* Motivación */}
+              {/* Google Calendar Appointment Scheduling */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold text-psicopiloto-blue-900 mb-4">
-                  Tu bienestar emocional es lo primero
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
+                  Agenda tu cita directamente
                 </h3>
-                <p className="text-lg text-psicopiloto-gray-700">
-                  Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
-                </p>
-                <br />
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Por qué contactarme</h3>
-                <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
-                  <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
-                  <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
-                  <li>💬 Apoyo online y presencial, flexible y cercano.</li>
-                  <li>✈️ Enfoque único inspirado en psicología y aviación.</li>
-                </ul>
+                <div className="w-full h-[400px] md:h-[600px] overflow-auto">
+                  <iframe
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
+                    style={{ border: 0, width: "100%", height: "100%" }}
+                    frameBorder="0"
+                    scrolling="auto"
+                  ></iframe>
+                </div>
               </div>
+            </div>
 
+            {/* Columna derecha → Contacto directo + Horarios */}
+            <div className="order-2 md:order-2 space-y-6">
               {/* Contacto directo */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
@@ -198,5 +198,3 @@ export default function Contacto() {
     </div>
   );
 }
-
-<iframe src="https://calendar.google.com/calendar/embed?src=6tupu8l1k2p4fphmf3qfc8rmlgsogcl0%40import.calendar.google.com&ctz=Europe%2FMadrid" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
