@@ -87,21 +87,20 @@ export default function Contacto() {
                 {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
               </div>
 
- {/* Calendario Google */}
+{/* Google Calendar Appointment Scheduling */}
 <div className="bg-white/70 p-6 rounded-xl shadow-md">
   <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
     Agenda tu cita directamente
   </h3>
   <div className="w-full h-[400px] md:h-[600px] overflow-auto">
     <iframe
-      src="https://calendar.google.com/calendar/embed?src=6tupu8l1k2p4fphmf3qfc8rmlgsogcl0%40import.calendar.google.com&ctz=Europe%2FMadrid"
+      src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
       style={{ border: 0, width: "100%", height: "100%" }}
       frameBorder="0"
       scrolling="auto"
     ></iframe>
   </div>
 </div>
-
 
 
             {/* Columna derecha → Motivación + Contacto directo + Horarios */}
