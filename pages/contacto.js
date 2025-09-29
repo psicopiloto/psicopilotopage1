@@ -82,81 +82,84 @@ export default function Contacto() {
                 </ul>
               </div>
 
-              {/* Formulario */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
-                  Reserva tu primera consulta
-                </h2>
-                <p className="text-psicopiloto-gray-600 mb-6">
-                  Completa este formulario y te responderé lo antes posible. 
-                  Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
-                </p>
+              {/* Formulario + Calendario en escritorio */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Formulario */}
+                <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                  <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
+                    Reserva tu primera consulta
+                  </h2>
+                  <p className="text-psicopiloto-gray-600 mb-6">
+                    Completa este formulario y te responderé lo antes posible. 
+                    Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
+                  </p>
 
-                <form onSubmit={handleSubmit} className="grid gap-4">
-                  <input
-                    required
-                    name="nombre"
-                    value={form.nombre}
-                    onChange={update}
-                    placeholder="Nombre completo *"
-                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                  />
-                  <input
-                    required
-                    name="edad"
-                    value={form.edad}
-                    onChange={update}
-                    type="number"
-                    placeholder="Edad *"
-                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                  />
-                  <input
-                    required
-                    name="email"
-                    value={form.email}
-                    onChange={update}
-                    type="email"
-                    placeholder="Email *"
-                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                  />
-                  <input
-                    name="telefono"
-                    value={form.telefono}
-                    onChange={update}
-                    placeholder="Teléfono"
-                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                  />
-                  <textarea
-                    required
-                    name="motivo"
-                    value={form.motivo}
-                    onChange={update}
-                    placeholder="Cuéntame brevemente tu motivo de consulta *"
-                    rows="5"
-                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
-                  ></textarea>
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
-                  >
-                    Enviar consulta
-                  </button>
-                </form>
-                {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
-              </div>
+                  <form onSubmit={handleSubmit} className="grid gap-4">
+                    <input
+                      required
+                      name="nombre"
+                      value={form.nombre}
+                      onChange={update}
+                      placeholder="Nombre completo *"
+                      className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                    />
+                    <input
+                      required
+                      name="edad"
+                      value={form.edad}
+                      onChange={update}
+                      type="number"
+                      placeholder="Edad *"
+                      className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                    />
+                    <input
+                      required
+                      name="email"
+                      value={form.email}
+                      onChange={update}
+                      type="email"
+                      placeholder="Email *"
+                      className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                    />
+                    <input
+                      name="telefono"
+                      value={form.telefono}
+                      onChange={update}
+                      placeholder="Teléfono"
+                      className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                    />
+                    <textarea
+                      required
+                      name="motivo"
+                      value={form.motivo}
+                      onChange={update}
+                      placeholder="Cuéntame brevemente tu motivo de consulta *"
+                      rows="5"
+                      className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
+                    >
+                      Enviar consulta
+                    </button>
+                  </form>
+                  {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
+                </div>
 
-              {/* Google Calendar */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
-                  Agenda tu cita directamente
-                </h3>
-                <div className="w-full h-[400px] md:h-[600px] overflow-auto">
-                  <iframe
-                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
-                    style={{ border: 0, width: "100%", height: "100%" }}
-                    frameBorder="0"
-                    scrolling="auto"
-                  ></iframe>
+                {/* Google Calendar */}
+                <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                  <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
+                    Agenda tu cita directamente
+                  </h3>
+                  <div className="w-full h-[400px] md:h-[600px] overflow-auto">
+                    <iframe
+                      src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
+                      style={{ border: 0, width: "100%", height: "100%" }}
+                      frameBorder="0"
+                      scrolling="auto"
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
