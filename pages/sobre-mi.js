@@ -9,6 +9,37 @@ import Image from "next/image";
 
 export default function SobreMi() {
   const fasesTrayectoria = [ // Renombramos 'fases' a 'fasesTrayectoria' para claridad
+      {/* Fases de trayectoria */}
+          {fasesTrayectoria.map((fase, i) => (
+            <section 
+                key={i} 
+                className="mb-20 grid md:grid-cols-2 gap-12 items-center"
+                aria-labelledby={`fase-title-${i}`} 
+            >
+              {/* ... (Div de la imagen) ... */}
+              
+              <div className={i % 2 === 0 ? "md:order-2" : "md:order-1"}>
+                <h3 id={`fase-title-${i}`} className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
+                  {fase.title}
+                </h3>
+                {fase.content.map((p, idx) => (
+                  <p 
+                    key={idx} 
+                    className="mt-4"
+                    // ✨ CORRECCIÓN CLAVE: Usamos dangerouslySetInnerHTML para renderizar el <strong>
+                    dangerouslySetInnerHTML={{ __html: p }} 
+                  />
+                ))}
+                {fase.list && (
+                  <ul className="list-disc list-inside mt-4 space-y-2">
+                    {fase.list.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          ))}
     {
       title: "Fase 1: El inicio – vocación por la psicología",
       img: "/sobre2.webp",
