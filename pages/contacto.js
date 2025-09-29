@@ -195,18 +195,6 @@ export default function Contacto() {
                 </p>
               </div>
 
-              {/* Horarios */}
-              <div className="bg-white/70 p-6 rounded-xl shadow-md order-3 md:order-2">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600">
-                  Horarios de atención
-                </h3>
-                <ul className="list-disc list-inside text-psicopiloto-gray-700">
-                  <li>Lunes a viernes: 10:00 – 20:00</li>
-                  <li>Sábados: 10:00 – 14:00</li>
-                  <li>Domingos y festivos: cerrado</li>
-                </ul>
-              </div>
-
               {/* Protección de datos */}
               <div className="text-sm text-gray-500">
                 <p>
