@@ -150,7 +150,7 @@ export default function Contacto() {
               {/* Google Calendar */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:order-3">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
-                  Agenda tu cita directamente
+                  Agenda tu cita ONLINE directamente
                 </h3>
                 <div className="w-full h-[400px] md:h-[600px] overflow-auto">
                   <iframe
