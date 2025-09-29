@@ -159,7 +159,7 @@ export default function Home() {
                 ¿Te interesa la comodidad y eficacia de la terapia online?
               </p>
               <AnimatedCTA
-                href="/servicios#online"
+                href="/contacto"
                 text="Quiero una consulta online"
                 color="green"
               />
@@ -167,44 +167,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FILOSOFÍA */}
-        <section className="py-16 bg-white/40">
-          <div className="container mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
-              {/* Imagen izquierda centrada */}
-              <div className="order-1 md:order-1 flex justify-center">
-                <Image
-                  src="sobre2.webp"
-                  alt="Filosofía Psicopiloto"
-                  width={300}
-                  height={200}
-                  className="rounded-lg w-auto h-auto object-cover"
-                />
-              </div>
-              {/* Texto */}
-              <div className="order-2 md:order-2 text-center md:text-left">
-                <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
-                  Filosofía
-                </h2>
-                <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-                  Hoy combino todo lo aprendido —en la aviación, en la psicología
-                  y en el voluntariado— para acompañar a quienes buscan recuperar
-                  el control de su vida. No hay dos personas iguales: cada
-                  proceso es único, con su propio ritmo y sus tiempos. Mi
-                  compromiso es ofrecerte un espacio seguro, de confianza y
-                  confidencialidad total, donde juntos podamos trabajar para que
-                  vuelvas a pilotar tu vida con calma y dirección.
-                </p>
-                <AnimatedCTA
-                  href="/que-es-psicopiloto"
-                  text="Descubre la filosofía"
-                  color="blue"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
+       
         {/* SOBRE MÍ */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
@@ -247,6 +210,45 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+ {/* FILOSOFÍA */}
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto max-w-5xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
+              {/* Imagen izquierda centrada */}
+              <div className="order-1 md:order-1 flex justify-center">
+                <Image
+                  src="sobre2.webp"
+                  alt="Filosofía Psicopiloto"
+                  width={300}
+                  height={200}
+                  className="rounded-lg w-auto h-auto object-cover"
+                />
+              </div>
+              {/* Texto */}
+              <div className="order-2 md:order-2 text-center md:text-left">
+                <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
+                  Filosofía
+                </h2>
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
+                  Hoy combino todo lo aprendido —en la aviación, en la psicología
+                  y en el voluntariado— para acompañar a quienes buscan recuperar
+                  el control de su vida. No hay dos personas iguales: cada
+                  proceso es único, con su propio ritmo y sus tiempos. Mi
+                  compromiso es ofrecerte un espacio seguro, de confianza y
+                  confidencialidad total, donde juntos podamos trabajar para que
+                  vuelvas a pilotar tu vida con calma y dirección.
+                </p>
+                <AnimatedCTA
+                  href="/que-es-psicopiloto"
+                  text="Descubre la filosofía"
+                  color="blue"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
 {/* CTA FINAL */}
 <section className="py-16 bg-white/40 relative overflow-visible">
   <div className="container mx-auto max-w-5xl relative">
