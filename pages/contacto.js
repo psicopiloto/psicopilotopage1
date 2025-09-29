@@ -93,19 +93,59 @@ export default function Contacto() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="grid gap-4">
-                  <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                  <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                  <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                  <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                  <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"></textarea>
-                  <button type="submit" className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors">
+                  <input
+                    required
+                    name="nombre"
+                    value={form.nombre}
+                    onChange={update}
+                    placeholder="Nombre completo *"
+                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                  />
+                  <input
+                    required
+                    name="edad"
+                    value={form.edad}
+                    onChange={update}
+                    type="number"
+                    placeholder="Edad *"
+                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                  />
+                  <input
+                    required
+                    name="email"
+                    value={form.email}
+                    onChange={update}
+                    type="email"
+                    placeholder="Email *"
+                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                  />
+                  <input
+                    name="telefono"
+                    value={form.telefono}
+                    onChange={update}
+                    placeholder="Teléfono"
+                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                  />
+                  <textarea
+                    required
+                    name="motivo"
+                    value={form.motivo}
+                    onChange={update}
+                    placeholder="Cuéntame brevemente tu motivo de consulta *"
+                    rows="5"
+                    className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
+                  ></textarea>
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
+                  >
                     Enviar consulta
                   </button>
                 </form>
                 {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
               </div>
 
-              {/* Google Calendar Appointment Scheduling */}
+              {/* Google Calendar */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
                   Agenda tu cita directamente
