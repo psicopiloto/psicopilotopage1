@@ -17,6 +17,7 @@ export default function SobreMi() {
       alt: "Jose Carlos Rodríguez estudiando psicología en la Universidad de Granada",
       content: [
         "Me licencié en Psicología por la Universidad de Granada en 2003. Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, aprendiendo la importancia de la escucha y el acompañamiento.",
+        "Fui voluntario durante 4 años trabajando personas mayores en fases iniciales de demencia con terapias como la Terapia de la Reminiscencia, ayudándoles y acompañándoles a trabajar así la memoria y las emociones ",
         "Cursé el Curso de Adaptación Pedagógica, adquiriendo visión educativa y de orientación.",
       ],
     },
