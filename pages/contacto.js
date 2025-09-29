@@ -48,9 +48,9 @@ export default function Contacto() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // OPTIMIZACIÓN A: Title enfocado en la acción y la PVU
-        title="Agenda tu Cita o Consulta \| Psicólogo Online, EMDR y Liderazgo (CRM)"
-        description="Elige tu modo de contacto: Agendamiento directo, WhatsApp o formulario. Inicia tu Plan de Vuelo Personal para recuperar el Control Ejecutivo sobre tu bienestar emocional."
+        // OPTIMIZACIÓN A: Title enfocado en la acción y el profesionalismo
+        title="Contacto Profesional: Agenda tu Cita de Psicoterapia en Granada u Online"
+        description="Elige tu vía de contacto: Agendamiento directo, WhatsApp o formulario. Confidencialidad y rigor profesional para iniciar tu proceso de bienestar."
         canonical="https://www.psicopiloto.com/contacto"
       />
 
@@ -58,9 +58,9 @@ export default function Contacto() {
       <Nav />
 
       <PageHeader
-        // OPTIMIZACIÓN B: H1 que promueve la acción dual
-        title="Inicia tu Plan de Vuelo: Contacto y Agendamiento"
-        subtitle="Ya sea personal o empresarial, da el primer paso para trazar una ruta de precisión. Elige la vía de contacto que te resulte más cómoda."
+        // OPTIMIZACIÓN B: H1 que promueve la decisión (el inicio del proceso)
+        title="Toma la Decisión: Inicia tu Proceso de Consulta"
+        subtitle="Confidencialidad, rigor y cercanía para tu bienestar. Elige la vía de contacto que te resulte más cómoda."
         backgroundImage="/header-contacto.webp"
       />
 
@@ -72,34 +72,34 @@ export default function Contacto() {
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h3 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4"> 
-                  Toma el Control Ejecutivo de tu Proceso
+                  Mi Compromiso Profesional Contigo
                 </h3>
                 <p className="text-lg text-psicopiloto-gray-700">
-                  Contactar es el paso más importante en cualquier **Plan de Vuelo**. Aquí encontrarás un espacio de rigor y confidencialidad para ayudarte a recuperar el **control, la calma y la seguridad** en tu ruta personal.
+                  Contactar es una decisión de alto valor. Yo me comprometo a ofrecerte un espacio de **máxima confidencialidad** y **rigor ético y metodológico**.
                 </p>
                 <br />
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
-                  Tu Proceso de Precisión:
+                  Lo que te ofrezco:
                 </h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
-                  {/* OPTIMIZACIÓN C: Refuerzo de PVU */}
-                  <li>🎯 **Análisis Transdiagnóstico:** No tratamos síntomas, sino los procesos causales.</li>
-                  <li>🧠 **Entrenamiento Mental:** Te dotamos de habilidades no técnicas (asertividad, liderazgo personal).</li>
-                  <li>🗺️ **Plan de Ruta Flexible:** Terapia adaptada a tu ritmo, con objetivos medibles.</li>
-                  <li>⭐ **Autoridad Clínica:** Formación avanzada en EMDR, ACT y Factores Humanos (CRM).</li>
+                  {/* OPTIMIZACIÓN C: Títulos profesionales y habilidades reales */}
+                  <li>🎯 **Rigor Metodológico:** Terapia basada en la evidencia (EMDR, ACT, Terapia Integradora).</li>
+                  <li>🧠 **Comprensión Profunda:** Análisis de apego, trauma y procesos causales (no solo síntomas).</li>
+                  <li>✈️ **Habilidades No Técnicas:** Desarrollo de la asertividad, regulación emocional y liderazgo personal.</li>
+                  <li>⭐ **Autoridad Sanitaria:** Psicólogo General Sanitario Colegiado.</li>
                 </ul>
               </div>
 
               {/* Formulario */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">
-                  Formulario: Describe tu Turbulencia
+                  Formulario: Envía tu Consulta Confidencial
                 </h2>
                 <p className="text-psicopiloto-gray-600 mb-6">
-                  Completa este formulario con tu información esencial. Te responderé personalmente lo antes posible para trazar tu **primera ruta de consulta** (Online o Presencial en Granada).
+                  Completa este formulario con tu información. Te responderé personalmente para coordinar tu primera sesión (Online o Presencial en Granada).
                 </p>
 
-                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta"> 
+                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de consulta profesional confidencial"> 
                   
                   <label htmlFor="nombre" className="sr-only">Nombre completo *</label>
                   <input
@@ -146,14 +146,14 @@ export default function Contacto() {
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
                   
-                  <label htmlFor="motivo" className="sr-only">Cuéntame brevemente tu motivo de consulta *</label>
+                  <label htmlFor="motivo" className="sr-only">Motivo de consulta *</label>
                   <textarea
                     id="motivo"
                     required
                     name="motivo"
                     value={form.motivo}
                     onChange={update}
-                    placeholder="Cuéntame brevemente tu motivo de consulta *"
+                    placeholder="Motivo de consulta *"
                     rows="5"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   ></textarea>
@@ -163,7 +163,7 @@ export default function Contacto() {
                     className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
                     disabled={status === "Enviando..."} 
                   >
-                    {status === "Enviando..." ? "Enviando..." : "Enviar Plan de Ruta"}
+                    {status === "Enviando..." ? "Enviando..." : "Confirmar Envío"}
                   </button>
                 </form>
                 {status && <p className={`mt-4 text-sm ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>} 
@@ -175,9 +175,9 @@ export default function Contacto() {
               {/* Contacto directo */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2 order-2 md:order-1">
                 <h3 className="text-xl font-semibold text-psicopiloto-blue-600">
-                  Opciones de Contacto Rápido
+                  Opciones de Contacto Directo
                 </h3>
-                {/* OPTIMIZACIÓN D: Uso de lenguaje CTA */}
+                {/* OPTIMIZACIÓN D: Uso de lenguaje CTA profesional */}
                 <p>
                   📞 Teléfono Directo:{" "}
                   <a href="tel:+34676230537" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">
@@ -185,14 +185,14 @@ export default function Contacto() {
                   </a>
                 </p>
                 <p>
-                  💬 WhatsApp Inmediato:{" "}
+                  💬 WhatsApp Profesional:{" "}
                   <a
                     href="https://wa.me/34676230537"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded"
                   >
-                    Enviar mensaje
+                    Enviar mensaje (Respuesta rápida)
                   </a>
                 </p>
                 <p>
@@ -209,7 +209,7 @@ export default function Contacto() {
               {/* Google Calendar */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:order-3">
                 <h3 className="text-xl font-semibold text-psicopiloto-blue-600 mb-4">
-                  Agendamiento Online (Selecciona tu Slot)
+                  Agendamiento Online (Selecciona tu Horario)
                 </h3>
                 <div className="w-full h-[400px] md:h-[600px] overflow-auto">
                   <iframe
@@ -224,9 +224,9 @@ export default function Contacto() {
               {/* Protección de datos (Contraste) */}
               <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2">
                 <p>
-                  <strong>Seguridad y Confidencialidad:</strong> Tus datos serán tratados bajo la máxima discreción y ética profesional (M-30360). Consulta nuestra{" "}
+                  <strong>Seguridad y Ética Profesional:</strong> Tus datos son confidenciales y solo se utilizarán para responder a tu consulta. Mi práctica se adhiere a la ética del **Colegio Oficial de Psicología de Andalucía Oriental (M-30360)**. Consulta nuestra{" "}
                   <a href="/aviso-legal" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700 focus:ring-1 focus:ring-psicopiloto-green-400 rounded">
-                    política de privacidad y aviso legal
+                    política de privacidad
                   </a>
                   .
                 </p>
@@ -234,17 +234,7 @@ export default function Contacto() {
 
             </div>
           </section>
-
-          {/* Imagen ilustrativa full-width */}
-          <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src="/contacto.webp"
-              alt="Despacho de psicología para terapia presencial en Granada con enfoque de alto rendimiento"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
+                
         </div>
       </main>
 
