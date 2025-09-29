@@ -6,20 +6,22 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Image from "next/image"; // ✅ necesario para las imágenes
+import Image from "next/image"; // ✅ Necesario para las imágenes
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
+        // --- CAMBIO A: SEO TITLE (Mantiene la longitud óptima) ---
         title="Psicólogo online y presencial en Granada | Psicopiloto"
-        description="Psicopiloto ofrece psicoterapia online y presencial en Granada: ansiedad, estrés, depresión, autoestima, trauma, EMDR y terapia de pareja. Acompaño tu viaje hacia el bienestar emocional."
+        // --- CAMBIO B: META DESCRIPTION (Se acorta y se añade CTA) ---
+        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita." // (Aprox. 158 caracteres)
         canonical="https://psicopiloto.com/"
         additionalMetaTags={[
           {
             name: "keywords",
             content:
-              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora",
+              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
           },
           { name: "author", content: "Jose Carlos Rodríguez Retamar" },
         ]}
@@ -33,7 +35,8 @@ export default function Home() {
               url: "/fotoinicio1.webp",
               width: 1200,
               height: 630,
-              alt: "Psicólogo online y presencial en Granada - Psicopiloto",
+              // --- CORRECCIÓN: ALT de la imagen principal para OpenGraph ---
+              alt: "Psicólogo online y presencial en Granada - Jose Carlos Rodríguez Retamar",
               type: "image/webp",
             },
           ],
@@ -47,7 +50,8 @@ export default function Home() {
       <main className="flex-grow pt-16 relative z-10">
         {/* HERO */}
         <PageHeader
-          title="Psicopiloto — Acompaño tu viaje hacia el bienestar"
+          // --- CAMBIO C: H1 (Se añade la palabra clave principal de forma visible) ---
+          title="Psicólogo online y presencial en Granada | Acompaño tu viaje hacia el bienestar"
           subtitle="Un espacio seguro, cercano y profesional para que recuperes control, calma y sentido en tu vida. Aquí encontrarás escucha, empatía y herramientas prácticas para afrontar tus retos con confianza."
           backgroundImage="/fotoinicio1.webp"
           cta={{
@@ -65,25 +69,26 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
+                // --- CAMBIO D: Contenido - Enfoque en Beneficio (Mejora UX/Conversión) ---
                 {
                   title: "Ansiedad y estrés",
-                  desc: "Insomnio, tensión, preocupaciones constantes.",
+                  desc: "Insomnio, tensión, preocupaciones constantes. Recupera el control y la calma diaria con herramientas prácticas.", // Beneficio añadido
                 },
                 {
                   title: "Depresión y ánimo bajo",
-                  desc: "Falta de motivación, tristeza o apatía.",
+                  desc: "Falta de motivación, tristeza o apatía. Vuelve a encontrar el sentido y la dirección en tu vida.", // Beneficio añadido
                 },
                 {
                   title: "Autoestima y apego",
-                  desc: "Inseguridad, dificultad para poner límites.",
+                  desc: "Inseguridad, dificultad para poner límites. Fortalece tu identidad y establece relaciones sanas.", // Beneficio añadido
                 },
                 {
                   title: "Terapia de pareja",
-                  desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión.",
+                  desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión perdida.",
                 },
                 {
                   title: "Trauma y experiencias difíciles",
-                  desc: "Recuerdos dolorosos, bloqueos emocionales, EMDR.",
+                  desc: "Recuerdos dolorosos, bloqueos emocionales. Procesamiento con EMDR para sanar el pasado.", // Detalle EMDR añadido
                 },
                 {
                   title: "Si eres empresa",
@@ -139,6 +144,7 @@ export default function Home() {
                       stroke="currentColor"
                       strokeWidth="2"
                       viewBox="0 0 24 24"
+                      // --- CORRECCIÓN E: ARIA para accesibilidad ---
                       aria-hidden="true"
                     >
                       <path
@@ -167,7 +173,7 @@ export default function Home() {
           </div>
         </section>
 
-       
+        
         {/* SOBRE MÍ */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
@@ -201,7 +207,8 @@ export default function Home() {
               <div className="order-1 md:order-2 flex justify-center">
                 <Image
                   src="/filosofia.webp"
-                  alt="Sobre mí Psicopiloto"
+                  // --- CORRECCIÓN F: ALT descriptivo para SEO/A11Y ---
+                  alt="Psicólogo experto en EMDR y trauma con pasado de piloto militar"
                   width={500}
                   height={350}
                   className="rounded-lg w-full h-auto object-cover"
@@ -211,7 +218,7 @@ export default function Home() {
           </div>
         </section>
 
- {/* FILOSOFÍA */}
+      {/* FILOSOFÍA */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
@@ -219,7 +226,8 @@ export default function Home() {
               <div className="order-1 md:order-1 flex justify-center">
                 <Image
                   src="sobre2.webp"
-                  alt="Filosofía Psicopiloto"
+                  // --- CORRECCIÓN G: ALT descriptivo para SEO/A11Y ---
+                  alt="Jose Carlos Rodríguez aplicando filosofía de la aviación a la terapia"
                   width={300}
                   height={200}
                   className="rounded-lg w-auto h-auto object-cover"
@@ -255,12 +263,13 @@ export default function Home() {
     {/* Imagen sobresaliente */}
     <Image
       src="/telefono.png"
-      alt="Da el primer paso"
+      // --- CORRECCIÓN H: ALT más descriptivo ---
+      alt="Contacto telefónico para iniciar terapia psicológica online"
       width={800}
       height={800}
       className={`
         w-[300px] h-auto mx-auto mb-6
-        md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 
+        md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
         md:w-[500px] md:h-auto
         lg:w-[600px] lg:-left-32
       `}
@@ -287,4 +296,3 @@ export default function Home() {
     </div>
   );
 }
-
