@@ -53,7 +53,7 @@ export default function Contacto() {
 
       <PageHeader
         title="Contacto"
-        subtitle="Rellena el formulario o contacta directamente y empieza a recuperar tu bienestar hoy."
+        subtitle="Rellena el formulario, agenda tu cita online o contacta directamente y empieza a recuperar tu bienestar hoy."
         backgroundImage="/header-contacto.webp"
       />
 
