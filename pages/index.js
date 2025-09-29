@@ -6,37 +6,36 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Image from "next/image"; // ✅ Necesario para las imágenes
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // --- CAMBIO A: SEO TITLE (Mantiene la longitud óptima) ---
-        title="Psicólogo online y presencial en Granada | Psicopiloto"
-        // --- CAMBIO B: META DESCRIPTION (Se acorta y se añade CTA) ---
-        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita." // (Aprox. 158 caracteres)
+        // --- OPTIMIZACIÓN A: SEO TITLE (Fusión de Keywords de servicio, ubicación y autoridad) ---
+        title="Psicólogo General Sanitario en Granada | Terapia EMDR y CRM/TEM | Psicopiloto"
+        // --- OPTIMIZACIÓN B: META DESCRIPTION (Destaca el PVU y el alcance dual) ---
+        description="Entrenamiento para la alta complejidad. Terapia EMDR, apego y ACT para trauma y ansiedad. Consultoría de Factores Humanos (CRM/TEM) para liderazgo y seguridad operacional. ¡Recupera el control!"
         canonical="https://psicopiloto.com/"
         additionalMetaTags={[
           {
             name: "keywords",
             content:
-              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
+              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, trauma, EMDR, terapia de pareja, psicología integradora, gestión de crisis, CRM, TEM, liderazgo",
           },
           { name: "author", content: "Jose Carlos Rodríguez Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/",
-          title: "Psicólogo online y presencial en Granada | Psicopiloto",
+          title: "Psicólogo General Sanitario en Granada | Terapia EMDR y CRM/TEM | Psicopiloto",
           description:
-            "Psicopiloto ofrece psicoterapia online y presencial en Granada: ansiedad, estrés, depresión, autoestima, trauma, EMDR y terapia de pareja.",
+            "Psicopiloto ofrece psicoterapia online y consultoría: ansiedad, trauma, EMDR, liderazgo y gestión de errores basados en factores humanos de aviación.",
           images: [
             {
               url: "/fotoinicio1.webp",
               width: 1200,
               height: 630,
-              // --- CORRECCIÓN: ALT de la imagen principal para OpenGraph ---
-              alt: "Psicólogo online y presencial en Granada - Jose Carlos Rodríguez Retamar",
+              alt: "Psicólogo General Sanitario y experto en CRM/TEM - Jose Carlos Rodríguez Retamar",
               type: "image/webp",
             },
           ],
@@ -50,13 +49,15 @@ export default function Home() {
       <main className="flex-grow pt-16 relative z-10">
         {/* HERO */}
         <PageHeader
-          // --- CAMBIO C: H1 (Se añade la palabra clave principal de forma visible) ---
-          title="Psicólogo online y presencial en Granada | Acompaño tu viaje hacia el bienestar"
-          subtitle="Un espacio seguro, cercano y profesional para que recuperes control, calma y sentido en tu vida. Aquí encontrarás escucha, empatía y herramientas prácticas para afrontar tus retos con confianza."
+          // --- OPTIMIZACIÓN C: H1 (El Slogan de mayor impacto) ---
+          title="PSICOPILOTO: Dirige tu Vida y tu Empresa con la Precisión del Vuelo de Alta Seguridad"
+          // --- OPTIMIZACIÓN C: Subtítulo (Establece el dolor y la autoridad dual) ---
+          subtitle="¿Experimentando Turbulencias Personales u Organizacionales? Fusionamos 18 años de experiencia aeronáutica (CRM/TEM) con la Psicoterapia Integradora para que recuperes la eficacia y el control ejecutivo en entornos complejos."
           backgroundImage="/fotoinicio1.webp"
           cta={{
             href: "/contacto",
-            text: "Agenda tu primera cita",
+            // --- OPTIMIZACIÓN C: CTA de Mayor Impacto ---
+            text: "Empieza a volar sin miedo",
             color: "green",
           }}
         />
@@ -64,35 +65,21 @@ export default function Home() {
         {/* SERVICIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">
-              Servicios
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-600">
+              Nuestras Rutas de Vuelo: Dos Ejes de Transformación
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
-                // --- CAMBIO D: Contenido - Enfoque en Beneficio (Mejora UX/Conversión) ---
+                // --- OPTIMIZACIÓN D: Contenido - Enfoque en Beneficio y Técnicas ---
                 {
-                  title: "Ansiedad y estrés",
-                  desc: "Insomnio, tensión, preocupaciones constantes. Recupera el control y la calma diaria con herramientas prácticas.", // Beneficio añadido
+                  title: "Psicopiloto para Ti: Bienestar y Regulación Emocional",
+                  desc: "Terapia enfocada en superar **ansiedad, estrés, depresión y trauma** (APEGO). Utilizamos **EMDR, ACT** y técnicas de mentalización para lograr cambios profundos y duraderos en tu vida personal.",
+                  link: "/servicios",
                 },
                 {
-                  title: "Depresión y ánimo bajo",
-                  desc: "Falta de motivación, tristeza o apatía. Vuelve a encontrar el sentido y la dirección en tu vida.", // Beneficio añadido
-                },
-                {
-                  title: "Autoestima y apego",
-                  desc: "Inseguridad, dificultad para poner límites. Fortalece tu identidad y establece relaciones sanas.", // Beneficio añadido
-                },
-                {
-                  title: "Terapia de pareja",
-                  desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión perdida.",
-                },
-                {
-                  title: "Trauma y experiencias difíciles",
-                  desc: "Recuerdos dolorosos, bloqueos emocionales. Procesamiento con EMDR para sanar el pasado.", // Detalle EMDR añadido
-                },
-                {
-                  title: "Si eres empresa",
-                  desc: "Liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa.",
+                  title: "Psicopiloto para Empresas: Liderazgo y Factores Humanos (CRM)",
+                  desc: "Consultoría especializada en **liderazgo consciente, toma de decisiones** y **gestión de errores (TEM)**. Aplicamos el rigor y la metodología de la aviación para mejorar la **seguridad operacional** de tu equipo.",
+                  link: "/servicios",
                 },
               ].map((s, i) => (
                 <div
@@ -102,25 +89,26 @@ export default function Home() {
                   <h3 className="font-semibold text-xl mb-2 text-psicopiloto-honey-500">
                     {s.title}
                   </h3>
-                  <p className="text-psicopiloto-gray-500">{s.desc}</p>
+                  {/* --- CORRECCIÓN UX: Se sube el contraste del texto a gray-600 --- */}
+                  <p className="text-psicopiloto-gray-600">{s.desc}</p>
                 </div>
               ))}
             </div>
             <div className="mt-8">
               <AnimatedCTA
                 href="/servicios"
-                text="Descubre todos los servicios"
+                text="Ver todas las Rutas de Vuelo y enfoques"
                 color="honey"
               />
             </div>
           </div>
         </section>
 
-        {/* TERAPIA ONLINE */}
+        {/* TERAPIA ONLINE (El contenido es excelente, solo se ajusta el H2) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
-              Psicología online
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
+              Psicología Online: Tu Consulta, Tu Espacio Seguro
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
@@ -137,14 +125,13 @@ export default function Home() {
                   key={i}
                   className="flex items-start gap-4 p-4 bg-psicopiloto-sand-50 rounded-lg shadow-sm hover:shadow-md transition"
                 >
-                  <span className="flex-none w-10 h-10 rounded-full bg-psicopiloto-green-500 text-white inline-flex items-center justify-center">
+                  <span className="flex-none w-10 h-10 rounded-full bg-psicopiloto-green-600 text-white inline-flex items-center justify-center">
                     <svg
                       className="w-5 h-5"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
                       viewBox="0 0 24 24"
-                      // --- CORRECCIÓN E: ARIA para accesibilidad ---
                       aria-hidden="true"
                     >
                       <path
@@ -154,52 +141,44 @@ export default function Home() {
                       />
                     </svg>
                   </span>
-                  <p className="leading-relaxed text-psicopiloto-gray-500">
+                  <p className="leading-relaxed text-psicopiloto-gray-600">
                     {item}
                   </p>
                 </div>
               ))}
             </div>
             <div className="mt-8 text-center">
-              <p className="text-xl text-psicopiloto-gray-500 mb-4">
-                ¿Te interesa la comodidad y eficacia de la terapia online?
+              <p className="text-xl text-psicopiloto-gray-600 mb-4">
+                ¿Listo para iniciar tu viaje de bienestar, estés donde estés?
               </p>
               <AnimatedCTA
                 href="/contacto"
-                text="Quiero una consulta online"
+                text="Reservar mi sesión online"
                 color="green"
               />
             </div>
           </div>
         </section>
 
-        
-        {/* SOBRE MÍ */}
+        {/* SOBRE MÍ (Sección de Autoridad) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
               {/* Texto */}
               <div className="order-2 md:order-1 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
-                  Sobre mí
+                  Mi Propuesta de Valor Única
                 </h2>
-                <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-                  Soy psicólogo con una trayectoria poco común: antes fui{" "}
-                  <strong>
-                    piloto militar de los aviones apagafuegos del 43 Grupo de
-                    FF.AA.
-                  </strong>
-                  . De la aviación aprendí valores como la humildad, el trabajo
-                  en equipo y la gestión de errores. Ahora los aplico a la
-                  psicología para acompañarte en tu propio viaje vital,
-                  combinando mi formación en <strong>psicología integradora</strong>,{" "}
-                  <strong>trauma</strong> y <strong>EMDR</strong> con una visión
-                  clara: cada persona es única y merece ser escuchada con respeto
-                  y cercanía.
+                {/* --- OPTIMIZACIÓN E: Texto de Persuasión y Autoridad (E-A-T) --- */}
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-600">
+                  Soy **Psicólogo General Sanitario** (M-30360) con una trayectoria atípica: fui **Piloto Militar Comandante e Instructor de CRM** durante 18 años. De la aviación aprendí la **gestión de amenazas (TEM)** y la toma de decisiones bajo presión.
+                  <br />
+                  <br />
+                  Ahora aplico ese rigor a la **Psicoterapia Integradora** (EMDR, ACT, Apego) para ayudarte a **recuperar el control ejecutivo** de tu vida. Mi objetivo es que aprendas a **pilotar tus emociones** con la precisión de un profesional.
                 </p>
                 <AnimatedCTA
                   href="/sobre-mi"
-                  text="Conóceme mejor"
+                  text="Conóceme a fondo"
                   color="blue"
                 />
               </div>
@@ -207,8 +186,7 @@ export default function Home() {
               <div className="order-1 md:order-2 flex justify-center">
                 <Image
                   src="/filosofia.webp"
-                  // --- CORRECCIÓN F: ALT descriptivo para SEO/A11Y ---
-                  alt="Psicólogo experto en EMDR y trauma con pasado de piloto militar"
+                  alt="Psicólogo experto en EMDR, trauma y psicología aeronáutica - Jose Carlos Rodríguez Retamar"
                   width={500}
                   height={350}
                   className="rounded-lg w-full h-auto object-cover"
@@ -218,16 +196,15 @@ export default function Home() {
           </div>
         </section>
 
-      {/* FILOSOFÍA */}
+        {/* FILOSOFÍA (Sección de Conexión) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
               {/* Imagen izquierda centrada */}
               <div className="order-1 md:order-1 flex justify-center">
                 <Image
-                  src="sobre2.webp"
-                  // --- CORRECCIÓN G: ALT descriptivo para SEO/A11Y ---
-                  alt="Jose Carlos Rodríguez aplicando filosofía de la aviación a la terapia"
+                  src="/sobre2.webp"
+                  alt="Filosofía de Psicopiloto: combinar la calma y el rigor de la aviación con la terapia"
                   width={300}
                   height={200}
                   className="rounded-lg w-auto h-auto object-cover"
@@ -236,20 +213,18 @@ export default function Home() {
               {/* Texto */}
               <div className="order-2 md:order-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
-                  Filosofía
+                  Mi Filosofía: El Control Ejecutivo Flexible
                 </h2>
-                <p className="leading-relaxed mb-4 text-psicopiloto-gray-500">
-                  Hoy combino todo lo aprendido —en la aviación, en la psicología
-                  y en el voluntariado— para acompañar a quienes buscan recuperar
-                  el control de su vida. No hay dos personas iguales: cada
-                  proceso es único, con su propio ritmo y sus tiempos. Mi
-                  compromiso es ofrecerte un espacio seguro, de confianza y
-                  confidencialidad total, donde juntos podamos trabajar para que
-                  vuelvas a pilotar tu vida con calma y dirección.
+                {/* --- OPTIMIZACIÓN F: Texto con foco en Metáfora --- */}
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-600">
+                  Mi enfoque se basa en la **humildad, el rigor y la seguridad operacional**. Cada persona, como cada vuelo, es única y requiere un **Plan de Vuelo Personalizado**.
+                  <br />
+                  <br />
+                  Te ofrezco un espacio seguro y confidencial donde, juntos, trazaremos la ruta para que puedas enfrentar cualquier **turbulencia** (ansiedad, trauma, crisis) y realizar un **aterrizaje seguro** en la calma y el sentido.
                 </p>
                 <AnimatedCTA
                   href="/que-es-psicopiloto"
-                  text="Descubre la filosofía"
+                  text="Descubre la filosofía completa"
                   color="blue"
                 />
               </div>
@@ -257,39 +232,37 @@ export default function Home() {
           </div>
         </section>
 
-{/* CTA FINAL */}
-<section className="py-16 bg-white/40 relative overflow-visible">
-  <div className="container mx-auto max-w-5xl relative">
-    {/* Imagen sobresaliente */}
-    <Image
-      src="/telefono.png"
-      // --- CORRECCIÓN H: ALT más descriptivo ---
-      alt="Contacto telefónico para iniciar terapia psicológica online"
-      width={800}
-      height={800}
-      className={`
-        w-[300px] h-auto mx-auto mb-6
-        md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
-        md:w-[500px] md:h-auto
-        lg:w-[600px] lg:-left-32
-      `}
-    />
+        {/* CTA FINAL */}
+        <section className="py-16 bg-white/40 relative overflow-visible">
+          <div className="container mx-auto max-w-5xl relative">
+            {/* Imagen sobresaliente */}
+            <Image
+              src="/telefono.png"
+              alt="Contacto telefónico para iniciar terapia psicológica online con Psicopiloto"
+              width={800}
+              height={800}
+              className={`
+                w-[300px] h-auto mx-auto mb-6
+                md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
+                md:w-[500px] md:h-auto
+                lg:w-[600px] lg:-left-32
+              `}
+            />
 
-    {/* Grid solo para el texto */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
-      <div className="col-span-1 md:col-start-2 text-center md:text-left">
-        <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
-          Da el primer paso
-        </h2>
-        <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-          Has dado el paso más difícil: llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu proceso y ayudarte a recuperar la calma.
-        </p>
-        <AnimatedCTA href="/contacto" text="Contacta" color="green" />
-      </div>
-    </div>
-  </div>
-</section>
-
+            {/* Grid solo para el texto */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
+              <div className="col-span-1 md:col-start-2 text-center md:text-left">
+                <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
+                  Inicia tu Plan de Vuelo
+                </h2>
+                <p className="leading-relaxed mb-6 text-psicopiloto-gray-600">
+                  Has dado el paso más difícil: llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio seguro y cercano donde ser escuchado. Estoy aquí para acompañarte en tu proceso y ayudarte a **recuperar el mando y la dirección** de tu vida.
+                </p>
+                <AnimatedCTA href="/contacto" text="Contacta y Agenda tu Cita" color="green" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
