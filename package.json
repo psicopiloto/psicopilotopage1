@@ -12,6 +12,7 @@
     "node": "22.x"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "next": "13.4.10",
     "next-seo": "^6.8.0",
     "react": "18.2.0",
