@@ -4,8 +4,7 @@ import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    // ✨ CORRECCIÓN A: Usar color de marca para el fondo si existe (ej: sand-50) o mantener un color neutro.
-    // Usamos el gris más neutro de la paleta para el texto general: psicopiloto-gray-700.
+    // Se mantiene la estructura con el rol de accesibilidad y colores de marca.
     <footer className="mt-16 py-8 bg-psicopiloto-sand-50 border-t border-psicopiloto-gray-500/10" role="contentinfo">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-6 text-base md:text-lg text-psicopiloto-gray-700">
         
@@ -13,25 +12,26 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <Link
             href="/"
-            aria-label="Ir a la página de inicio de Psicopiloto" // ✨ CORRECCIÓN B: Label más específico.
+            aria-label="Ir a la página de inicio de Psicopiloto"
             className="transition transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-600 rounded"
           >
             <Image
               src="/logo.webp"
-              alt="Logotipo de Psicopiloto" // ✨ CORRECCIÓN C: Alt descriptivo.
+              alt="Logotipo de Psicopiloto" 
               width={120}
               height={40}
-              priority
+              // ✅ MUY BIEN: 'priority' es adecuado para un logo que siempre se ve, aunque 'loading="lazy"' también podría funcionar bien en el footer.
+              priority 
             />
           </Link>
         </div>
 
         {/* Redes sociales */}
         <div
-          className="flex gap-6 text-2xl md:text-3xl text-psicopiloto-green-600" // Usar 600 para mejor contraste visual
-          aria-label="Redes sociales de Psicopiloto" // ✨ CORRECCIÓN B: Label más específico.
+          className="flex gap-6 text-2xl md:text-3xl text-psicopiloto-green-600"
+          aria-label="Redes sociales de Psicopiloto"
         >
-          {/* ✅ MUY BIEN: Los enlaces tienen focus states y aria-labels claros. */}
+          {/* Los enlaces de redes sociales son PERFECTOS en accesibilidad (aria-label y aria-hidden). */}
           <a
             href="https://instagram.com/psicopi_loto"
             target="_blank"
@@ -41,7 +41,6 @@ export default function Footer() {
           >
             <FaInstagram aria-hidden="true" />
           </a>
-          {/* ✨ CORRECCIÓN D: Asegurar que los iconos sean puramente decorativos para A11Y. */}
           <a
             href="https://x.com/@jcrr78"
             target="_blank"
@@ -67,16 +66,14 @@ export default function Footer() {
           <FaEnvelope className="text-lg md:text-xl" aria-hidden="true" />
           <a
             href="mailto:info@psicopiloto.com"
-            className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded" // Focus ring de marca
+            className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded"
           >
             info@psicopiloto.com
           </a>
         </div>
 
-        {/* Enlaces legales */}
-        {/* ✨ CORRECCIÓN E: Usar la etiqueta <nav> para la lista de enlaces legales */}
+        {/* Enlaces legales (NAVEGACIÓN SEMÁNTICA) */}
         <nav aria-label="Enlaces legales y política" className="flex flex-col items-center text-xs text-psicopiloto-gray-600 mt-4 md:mt-0 gap-1">
-          {/* ✨ CORRECCIÓN F: Se usa psicopiloto-gray-600 para mejor contraste que el gray-500 original. */}
           <a
             href="/aviso-legal"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded"
