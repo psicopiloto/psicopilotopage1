@@ -38,8 +38,7 @@ export default function QueEsPsicopiloto() {
               </h2>
               <p className="text-psicopiloto-gray-700 leading-relaxed"> 
                 Psicopiloto es un proyecto único que nace de la unión de mis
-                dos grandes pasiones: la <strong>aviación</strong> y la 
-                <strong>psicología</strong>. Tras más de 18 años de
+                dos grandes pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>. Tras más de 18 años de
                 experiencia como piloto militar, comandante en misiones de
                 alto riesgo, instructor de vuelo y formador en gestión de
                 recursos de tripulación (CRM) y factores humanos, decidí dar
