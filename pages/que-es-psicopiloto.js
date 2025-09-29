@@ -5,15 +5,14 @@ import Link from "next/link";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo";
+// ✨ CORRECCIÓN CRÍTICA: Se añade la importación faltante
+import AnimatedCTA from "../components/AnimatedCTA"; 
 
 export default function QueEsPsicopiloto() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative"> 
-      {/* ✨ CORRECCIÓN A: Coherencia de Color de Fondo (sand-50 vs sand-60) */}
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // ✨ CORRECCIÓN B: SEO Title mejorado (se añade la palabra clave "filosofía" y la diferenciación)
         title="Filosofía Psicopiloto: Psicología y Aviación Aplicada | Jose Carlos Rodríguez"
-        // ✨ CORRECCIÓN B: Meta Description - más concisa y enfocada en el UVP
         description="Descubre la filosofía de Psicopiloto. Unimos la experiencia aeronáutica (CRM, Liderazgo) con la psicología para ayudarte a gestionar la presión, tomar decisiones y volar con seguridad."
         canonical="https://psicopiloto.com/que-es-psicopiloto"
       />
@@ -23,7 +22,6 @@ export default function QueEsPsicopiloto() {
       <Nav />
 
       <PageHeader
-        // ✨ CORRECCIÓN C: H1 optimizado. El PageHeader es el H1 de la página.
         title="La Filosofía de Psicopiloto: Uniendo Aviación y Psicología"
         subtitle="Un enfoque que combina la experiencia aeronáutica con la psicología para ayudarte a crecer a nivel personal o como empresa."
         backgroundImage="/header-quees.webp"
@@ -35,7 +33,6 @@ export default function QueEsPsicopiloto() {
           {/* ¿Qué es Psicopiloto? (Se convierte en H2) */}
           <section className="mb-16 grid md:grid-cols-2 gap-10 items-center" aria-labelledby="que-es-title">
             <div>
-              {/* ✨ CORRECCIÓN D: Semántica - Usar H2 para esta subsección */}
               <h2 id="que-es-title" className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
                 ¿Qué es Psicopiloto?
               </h2>
@@ -58,7 +55,6 @@ export default function QueEsPsicopiloto() {
               </p>
             </div>
             <div>
-              {/* ✨ CORRECCIÓN E: Migración a Next/Image para optimización (Rendimiento) */}
               <Image
                 src="/sobre1.webp"
                 alt="Jose Carlos Rodríguez aplicando principios de aviación a la psicología"
@@ -81,7 +77,6 @@ export default function QueEsPsicopiloto() {
               />
             </div>
             <div className="order-1 md:order-2">
-              {/* ✨ CORRECCIÓN F: Usar H2. NO debe haber dos H2s en la misma columna si el tema es relacionado. */}
               <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
                 Misión y Visión
               </h2>
@@ -111,7 +106,6 @@ export default function QueEsPsicopiloto() {
             <h2 id="que-ofrece-title" className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
               ¿Qué te ofrece Psicopiloto?
             </h2>
-            {/* Se mantienen las listas, son semánticamente correctas */}
             <ul className="list-disc list-inside space-y-3 text-psicopiloto-gray-700 leading-relaxed">
               <li>
                 <strong>Terapia individual:</strong> un espacio seguro para
@@ -143,7 +137,6 @@ export default function QueEsPsicopiloto() {
               La aviación me enseñó principios que hoy aplico en psicoterapia y
               consultoría empresarial:
             </p>
-            {/* Se mantienen las listas con strong, son semánticamente correctas */}
             <ul className="list-disc list-inside space-y-3 mt-4 text-psicopiloto-gray-700 leading-relaxed">
               <li>
                 <strong>Humildad:</strong> aprender siempre y reconocer los
@@ -218,7 +211,6 @@ export default function QueEsPsicopiloto() {
 
           {/* CTA */}
           <section className="text-center">
-            {/* ✨ CORRECCIÓN G: Semántica - Usar H2 para el CTA final para consistencia */}
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
               Da el primer paso
             </h2>
@@ -227,8 +219,7 @@ export default function QueEsPsicopiloto() {
               Psicopiloto es el puente entre la psicología y la aviación que te
               ayudará a alcanzar tus objetivos.
             </p>
-            {/* ✨ CORRECCIÓN H: CTA Optimizado (Usar AnimatedCTA para consistencia con el resto del sitio) */}
-             <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
+            <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
           </section>
         </div>
       </main>
