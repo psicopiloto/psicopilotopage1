@@ -1,10 +1,10 @@
 import "../styles/globals.css";
-import Head from "next/head"; // ✅ Import necesario para <Head>
+import Head from "next/head";
 import CookiesBanner from "../components/CookiesBanner";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 import BackgroundLogo from "../components/BackgroundLogo";
-import WhatsAppButton from "../components/WhatsAppButton"; // Botón flotante
+import WhatsAppButton from "../components/WhatsAppButton";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,10 +14,12 @@ function MyApp({ Component, pageProps }) {
         {/* Favicon principal */}
         <link rel="icon" href="/favicon.ico" />
 
-        {/* Versiones alternativas (opcional) */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/* Versiones alternativas para dispositivos modernos */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+        {/* Color de tema para navegadores que lo soportan */}
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
@@ -52,11 +54,11 @@ function MyApp({ Component, pageProps }) {
 
       {/* Contenedor principal con background y elementos globales */}
       <div className="relative min-h-screen">
-        <BackgroundLogo /> {/* Logo fijo en el fondo */}
+        <BackgroundLogo />
         <div className="relative z-10">
           <Component {...pageProps} />
           <CookiesBanner />
-          <WhatsAppButton /> {/* Botón flotante en todas las páginas */}
+          <WhatsAppButton />
         </div>
       </div>
     </>
