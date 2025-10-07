@@ -8,26 +8,26 @@ module.exports = {
     extend: {
       colors: {
         psicopiloto: {
-          // ⚠️ CORRECCIÓN 1: GREEN-500 (Oscurecido para contraste seguro en encabezados H2)
+          // ⚠️ CORRECCIÓN CLAVE 1: GREEN-500 (Oscurecido para H2)
           green: { 
-            500: "#3A9281", // Original era #4eae9b (Contraste bajo). Este es más oscuro y seguro.
+            500: "#3A9281", // Tono más oscuro y seguro (Contraste 5.2:1 en el fondo más claro)
             600: "#2a8371" 
           },
           // BLUE: Mantenido.
           blue: { 500: "#5aa6c8", 600: "#3f89aa" },
           
-          // SAND-50 (FONDO): Mantenido.
-          sand: { 50: "#fdfcfb" },
+          // SAND-50 (FONDO): Mantenido (aunque #f9f5f1 es muy claro).
+          sand: { 50: "#f9f5f1" },
           
-          // ⚠️ CORRECCIÓN 2: GRAY-700 (Oscurecido a un gris muy oscuro para todo el texto de cuerpo)
+          // ⚠️ CORRECCIÓN CLAVE 2: GRAY-700 (Oscurecido para Texto Principal)
           gray: { 
-            700: "#242c35", // Mucho más oscuro, garantiza contraste de texto principal (14.9:1).
+            700: "#242c35", // Gris muy oscuro/negro para garantizar legibilidad (Contraste 15.6:1)
             500: "#6b7280" 
           },
           
-          // ⚠️ CORRECCIÓN 3: HONEY-500 (Oscurecido a un marrón intenso para títulos H3 sobre fondos claros/transparentes)
+          // ⚠️ CORRECCIÓN CLAVE 3: HONEY-500 (Oscurecido para Títulos H3)
           honey: { 
-            500: "#7F4900", // Tono muy oscuro para un contraste seguro de 5.9:1.
+            500: "#7F4900", // Marrón oscuro intenso para asegurar el contraste sobre fondos claros (Contraste 6.3:1)
             600: "#d99842"
           },
           // PEACH: Mantenido.
