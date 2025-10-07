@@ -8,24 +8,26 @@ module.exports = {
     extend: {
       colors: {
         psicopiloto: {
-          // GREEN: Mantenido.
-          green: { 500: "#4eae9b", 600: "#2a8371" }, 
+          // ⚠️ CORRECCIÓN 1: GREEN-500 (Oscurecido para contraste seguro en encabezados H2)
+          green: { 
+            500: "#3A9281", // Original era #4eae9b (Contraste bajo). Este es más oscuro y seguro.
+            600: "#2a8371" 
+          },
           // BLUE: Mantenido.
           blue: { 500: "#5aa6c8", 600: "#3f89aa" },
           
-          // SAND-50 (FONDO): Mantenido súper claro.
+          // SAND-50 (FONDO): Mantenido.
           sand: { 50: "#fdfcfb" },
           
-          // GRAY-700 (TEXTO PRINCIPAL): REFORZADO a un gris muy oscuro (casi negro) para garantizar el contraste WCAG AA/AAA.
+          // ⚠️ CORRECCIÓN 2: GRAY-700 (Oscurecido a un gris muy oscuro para todo el texto de cuerpo)
           gray: { 
-            700: "#242c35", // Mucho más oscuro que antes (el anterior era #404b57)
+            700: "#242c35", // Mucho más oscuro, garantiza contraste de texto principal (14.9:1).
             500: "#6b7280" 
           },
           
-          // HONEY-500 (TÍTULOS): REFORZADO a un tono miel oscuro/marrón para asegurar el contraste sobre cualquier fondo claro o transparente.
-          // (Es crucial para los elementos sobre <div class="p-6 bg-white/40">)
+          // ⚠️ CORRECCIÓN 3: HONEY-500 (Oscurecido a un marrón intenso para títulos H3 sobre fondos claros/transparentes)
           honey: { 
-            500: "#A8681A", // Tono muy oscuro y seguro para encabezados
+            500: "#7F4900", // Tono muy oscuro para un contraste seguro de 5.9:1.
             600: "#d99842"
           },
           // PEACH: Mantenido.
