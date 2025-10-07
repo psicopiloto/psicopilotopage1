@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import Script from "next/script"; // ⬅️ IMPORTACIÓN NECESARIA
 import CookiesBanner from "../components/CookiesBanner";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
@@ -26,8 +27,9 @@ function MyApp({ Component, pageProps }) {
       {/* Configuración SEO global */}
       <DefaultSeo {...SEO} />
 
-      {/* JSON-LD para que Google entienda la organización y el logo */}
-      <script
+      {/* 🚀 OPTIMIZACIÓN: Usar next/script para JSON-LD (Práctica recomendada en Next.js) 🚀 */}
+      <Script
+        id="schema-organization" 
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
