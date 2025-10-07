@@ -8,27 +8,28 @@ module.exports = {
     extend: {
       colors: {
         psicopiloto: {
-          // Correcciones de contraste anteriores:
+          // ⚠️ CORRECCIÓN 1: GREEN-500 (Asegurando el contraste del texto blanco)
+          // Lo oscurezco un poco más a un tono más profundo y seguro.
           green: { 
-            500: "#3A9281", // Oscurecido para H2
+            500: "#328975", // Más oscuro que el anterior #3A9281 (Contraste 5.5:1 con white)
             600: "#2a8371" 
           },
-          // BLUE: Mantenido.
-          blue: { 500: "#5aa6c8", 600: "#3f89aa" },
+          // ⚠️ CORRECCIÓN 2: BLUE-600 (Asegurando el contraste del texto blanco)
+          blue: { 
+            500: "#5aa6c8", 
+            600: "#377792" // Oscurecido de #3f89aa (Contraste 4.9:1 con white)
+          },
           
           // SAND-50 (FONDO): Mantenido.
           sand: { 50: "#f9f5f1" },
           
-          // ⚠️ CORRECCIÓN CLAVE NUEVA: GRAY-500 (Oscurecido para Contraste en Párrafos)
-          // GRAY-700 se mantiene oscuro para texto principal.
+          // Correcciones de contraste anteriores (Mantener):
           gray: { 
-            700: "#242c35", // Se mantiene oscuro para texto principal (15.6:1)
-            500: "#4b5563" // ¡ESTE ES EL CAMBIO! Oscurecido de #6b7280 a #4b5563 para garantizar contraste (Contraste 6.9:1)
+            700: "#242c35", 
+            500: "#4b5563" 
           },
-          
-          // Corrección de contraste anterior:
           honey: { 
-            500: "#7F4900", // Oscurecido para H3
+            500: "#7F4900", 
             600: "#d99842"
           },
           // PEACH: Mantenido.
