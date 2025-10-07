@@ -2,12 +2,11 @@
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { NextSeo } from "next-seo"; // <-- Mantenemos NextSeo para el SEO de la página
+import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Image from "next/image"; 
-// 🚨 NO ES NECESARIO IMPORTAR HEAD NI SCRIPT AQUÍ.
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -279,9 +278,8 @@ export default function Home() {
         </p>
         <AnimatedCTA href="/contacto" text="Contacta" color="green" />
       </div>
-        </div>
-      </div>
     </div>
+  </div>
 </section>
 
       </main>
