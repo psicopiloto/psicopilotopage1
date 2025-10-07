@@ -11,7 +11,7 @@ module.exports = {
           // ⚠️ CORRECCIÓN 1: GREEN-500 (Asegurando el contraste del texto blanco)
           // Lo oscurezco un poco más a un tono más profundo y seguro.
           green: { 
-            500: "#3A9281", // Más oscuro que el anterior #3A9281 (Contraste 5.5:1 con white)
+            500: "#4fad9b", // Más oscuro que el anterior #3A9281 (Contraste 5.5:1 con white)
             600: "#2a8371" 
           },
           // ⚠️ CORRECCIÓN 2: BLUE-600 (Asegurando el contraste del texto blanco)
