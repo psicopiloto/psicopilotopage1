@@ -85,12 +85,12 @@ export default function SobreMi() {
             <div>
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al diván</h2>
               <p>
-                Mi nombre es <strong>Jose Carlos Rodríguez Retamar</strong> y soy <strong>psicólogo con Habilitación Sanitaria</strong> y <strong>piloto militar</strong>. 
-                <strong>Psicopiloto</strong> nace de la unión de mis dos pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>.
+                Mi nombre es <strong>Jose Carlos Rodríguez Retamar</strong> y soy <strong>psicólogo colegiado nº AO14457 con Habilitación Sanitaria</strong> y <strong>piloto militar</strong>. 
+               He aprendido que tanto en el aire como en tierra, la clave para afrontar las turbulencias está en la <strong>preparación mental</strong>, 
+                la <strong>gestión de las emociones</strong> y la <strong>toma de decisiones bajo presión</strong>.
               </p>
               <p className="mt-4">
-                He aprendido que tanto en el aire como en tierra, la clave para afrontar las turbulencias está en la <strong>preparación mental</strong>, 
-                la <strong>gestión de las emociones</strong> y la <strong>toma de decisiones bajo presión</strong>.
+                   <strong>Psicopiloto</strong> nace de la unión de mis dos pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>.
               </p>
             </div>
             <div className="flex justify-center">
