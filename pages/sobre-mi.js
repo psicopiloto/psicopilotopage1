@@ -41,8 +41,10 @@ export default function SobreMi() {
       alt: "Psicólogo con habilitación sanitaria, especializado en trauma y EMDR",
       content: [
         // ✅ Contenido con <strong>
-        "Retomé mi vocación en psicología, habilitándome como <strong>Psicólogo con Habilitación Sanitaria</strong> en 2015 y especializándome en psicología aeronáutica, integradora, terapia breve, trauma y <strong>EMDR</strong>.",
-        "Colaboré en la creación de Edades Granada, asesorando en gestión y manejo de errores aplicando lo aprendido en aviación.",
+        "Retomé mi vocación en psicología, habilitándome como <strong>Psicólogo con Habilitación Sanitaria</strong> en 2015 en Madrid y especializándome en psicología aeronáutica, integradora, terapia breve, trauma y <strong>EMDR</strong>.",
+        "Colaboré en la creación de Edades Granada, asesorando en gestión y manejo de errores aplicando lo aprendido en aviación."
+        "El 1 de septiembre del 2025 decidí volver a mi tierra, Granada y, dedicarme de lleno a la psicología, fusionandola con lo aprendido como piloto militar apagando incendios y como instructor de vuelo."
+        "<strong>PSICOPILOTO</strong> nace de la union de mis dos pasiones: la <strong>Psicología</strong> y la <strong>aviación</strong>.",
       ],
     },
     {
@@ -90,9 +92,6 @@ export default function SobreMi() {
               <p className="mt-4">
                    A lo largo de estos años he aprendido que tanto en el aire como en tierra, la clave para afrontar las turbulencias está en la <strong>preparación mental</strong>, 
                 la <strong>gestión de las emociones</strong>,la <strong>toma de decisiones bajo presión</strong> y, <strong>la humildad</strong>.
-              </p>
-                  <p className="mt-4">
-                   <strong>PSICOPILOTO</strong> nace de la unión de mis dos pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>.
               </p>
             </div>
             <div className="flex justify-center">
