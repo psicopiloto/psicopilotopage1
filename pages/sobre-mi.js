@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Image from "next/image"; // Importación correcta
+import Image from "next/image"; // ✅ Importación de Image (necesaria)
 
 export default function SobreMi() {
   // ======================================================
