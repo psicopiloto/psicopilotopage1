@@ -1,40 +1,32 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
-  return (
-    <Html lang="es">
-      <Head>
-        {/* 🚀 OPTIMIZACIÓN: Preconexión para Google Fonts 🚀 */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+  return (
+    <Html lang="es">
+      <Head>
+        {/* Favicons */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
-        {/* ✅ SOLUCIÓN AL ERROR DE COMPILACIÓN: Carga segura de la fuente con <link> */}
-        <link 
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" 
-            rel="stylesheet"
-        />
-        
-        {/* OPTIMIZACIÓN: Preconexión para Terceros */}
-        <link rel="preconnect" href="https://www.gstatic.com" />
-        <link rel="preconnect" href="https://www.google.com" />
+        {/* Apple Touch Icon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-        {/* Favicons y otros metadatos */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        {/* Web manifest para PWA */}
+        <link rel="manifest" href="/site.webmanifest" />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* Theme color para navegadores móviles */}
+        <meta name="theme-color" content="#ffffff" />
 
-        <meta name="theme-color" content="#ffffff" />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
+        {/* Mejora de SEO y accesibilidad */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
 }
