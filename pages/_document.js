@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 
-        {/* 🚀 CORRECCIÓN DE ERROR: Carga segura de la fuente con 'display=swap' */}
+        {/* ✅ SOLUCIÓN AL ERROR DE COMPILACIÓN: Carga segura de la fuente con <link> */}
         <link 
             href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" 
             rel="stylesheet"
@@ -18,7 +18,7 @@ export default function Document() {
         <link rel="preconnect" href="https://www.gstatic.com" />
         <link rel="preconnect" href="https://www.google.com" />
 
-        {/* Favicons y otros metadatos (Se mantienen) */}
+        {/* Favicons y otros metadatos */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
