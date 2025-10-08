@@ -2,17 +2,17 @@
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "next-seo"; // <-- Mantenemos NextSeo
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Image from "next/image";
+import Image from "next/image"; 
+// 🛑 NO HAY import Head from 'next/head'; (Correcto)
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // --- CONTENIDO SEO CORRECTO ---
         title="Psicólogo online y presencial en Granada | Psicopiloto"
         description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita."
         canonical="https://psicopiloto.com/"
