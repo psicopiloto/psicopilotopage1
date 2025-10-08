@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); /* 🚀 CORRECCIÓN: Importación de fuente con 'display=swap' */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,31 +7,31 @@
 html,
 body,
 #__next {
-  height: 100%;
+  height: 100%;
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
 
-  /* ✅ Tamaño de fuente base más legible */
-  font-size: 17px; /* un poco más grande que el default (~16px) */
-  line-height: 1.65;
+  /* ✅ Tamaño de fuente base más legible */
+  font-size: 17px; /* un poco más grande que el default (~16px) */
+  line-height: 1.65;
 }
 
 /* ✅ Ajuste especial para móviles */
 @media (max-width: 640px) {
-  body {
-    font-size: 19px; /* subimos aún más en móvil */
-    line-height: 1.7;
-  }
+  body {
+    font-size: 19px; /* subimos aún más en móvil */
+    line-height: 1.7;
+  }
 }
 
 .container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
