@@ -6,8 +6,8 @@ import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Head from 'next/head'; // ⬅️ NECESARIO PARA OPTIMIZACIÓN
-import Script from 'next/script'; // ⬅️ NECESARIO PARA OPTIMIZACIÓN DE TERCEROS
+// 🛑 ELIMINADA: import Head from 'next/head'; (Causaba el conflicto global)
+import Script from 'next/script'; // ⬅️ SE MANTIENE SOLO PARA OPTIMIZACIÓN DE TERCEROS
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -50,10 +50,9 @@ export default function Contacto() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
-      
-      {/* 🚀 OPTIMIZACIÓN: Carga diferida de scripts de terceros (reCAPTCHA) 🚀 */}
-      {/* Esto reduce drásticamente el TBT y las tareas largas en el hilo principal. */}
-      <Script 
+      
+      {/* 🚀 OPTIMIZACIÓN: Carga diferida de scripts de terceros (reCAPTCHA) 🚀 */}
+      <Script 
         src="https://www.google.com/recaptcha/api.js?render=6LeQgtsaA...&trustedtypes=true" // ⚠️ Reemplaza '6LeQgtsaA...' con tu clave real
         strategy="lazyOnload" // Carga después de que la página sea interactiva
       />
@@ -80,7 +79,7 @@ export default function Contacto() {
             <div className="space-y-6">
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4"> 
+                <h3 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4"> 
                   Tu bienestar emocional es lo primero
                 </h3>
                 <p className="text-lg text-psicopiloto-gray-700">
@@ -234,7 +233,7 @@ export default function Contacto() {
               <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2">
                 <p>
                   <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
-                  <a href="/aviso-legal" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700 focus:ring-1 focus:ring-psicopiloto-green-400 rounded">
+                  <a href="/aviso-legal" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:ring-1 focus:ring-psicopiloto-green-400 rounded">
                     política de privacidad
                   </a>
                   .
@@ -244,7 +243,7 @@ export default function Contacto() {
             </div>
           </section>
 
-        
+        
         </div>
       </main>
 
