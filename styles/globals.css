@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); /* 🚀 CORRECCIÓN DE SINTAXIS FINAL: Debe ser la primera línea y usar comillas dobles. */
+@import "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"; /* 🚀 CORRECCIÓN DE SINTAXIS FINAL: Forma más robusta para Next.js/Webpack */
 
 /* --- DIRECTIVAS DE TAILWIND --- */
 @tailwind base;
