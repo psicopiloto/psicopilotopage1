@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); /* 🚀 CORRECCIÓN: Importación de fuente con 'display=swap' */
+@import "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"; /* 🚀 CORRECCIÓN DE SINTAXIS: Se eliminó 'url()' y se usaron comillas dobles y punto y coma. */
 
 @tailwind base;
 @tailwind components;
