@@ -155,7 +155,7 @@ export default function Home() {
         </section>
 
         
-        {/* SOBRE MÍ */}
+        {/* === SOBRE MÍ (SECCIÓN RESTAURADA) === */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
@@ -198,7 +198,7 @@ export default function Home() {
           </div>
         </section>
 
-      {/* FILOSOFÍA */}
+      {/* === FILOSOFÍA (SECCIÓN RESTAURADA) === */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white rounded-lg shadow-md">
@@ -236,7 +236,7 @@ export default function Home() {
           </div>
         </section>
 
-{/* CTA FINAL (NUEVA CORRECCIÓN: IMAGEN SOBRESALIENTE) */}
+{/* CTA FINAL (CON LA CORRECCIÓN DEL EFECTO 3D MANTENIDA) */}
 <section className="py-16 bg-white/40 relative overflow-visible">
   <div className="container mx-auto max-w-5xl relative">
     {/* Imagen sobresaliente - Z-INDEX ALTO y SHADOW para el efecto 3D */}
@@ -250,8 +250,8 @@ export default function Home() {
         md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
         md:w-[350px] md:h-auto
         lg:w-[400px] lg:-left-20
-        z-30 // AHORA EN LA CAPA SUPERIOR
-        drop-shadow-xl // Para el efecto 3D
+        z-30 
+        drop-shadow-xl 
       `}
     />
 
