@@ -268,6 +268,61 @@ export default function Home() {
           </div>
         </section>
 
+  {/* SERVICIOS */}
+        <section className="py-16 bg-psicopiloto-sand-50">
+          <div className="container mx-auto max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">
+              Servicios
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                // --- CAMBIO D: Contenido - Enfoque en Beneficio (Mejora UX/Conversión) ---
+                {
+                  title: "Ansiedad y estrés",
+                  desc: "Insomnio, tensión, preocupaciones constantes. Recupera el control y la calma diaria con herramientas prácticas.", // Beneficio añadido
+                },
+                {
+                  title: "Depresión y ánimo bajo",
+                  desc: "Falta de motivación, tristeza o apatía. Vuelve a encontrar el sentido y la dirección en tu vida.", // Beneficio añadido
+                },
+                {
+                  title: "Autoestima y apego",
+                  desc: "Inseguridad, dificultad para poner límites. Fortalece tu identidad y establece relaciones sanas.", // Beneficio añadido
+                },
+                {
+                  title: "Terapia de pareja",
+                  desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión perdida.",
+                },
+                {
+                  title: "Trauma y experiencias difíciles",
+                  desc: "Recuerdos dolorosos, bloqueos emocionales. Procesamiento con EMDR para sanar el pasado.", // Detalle EMDR añadido
+                },
+                {
+                  title: "Si eres empresa",
+                  desc: "Liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa.",
+                },
+              ].map((s, i) => (
+                <div
+                  key={i}
+                  className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10"
+                >
+                  <h3 className="font-semibold text-xl mb-2 text-psicopiloto-honey-500">
+                    {s.title}
+                  </h3>
+                  <p className="text-psicopiloto-gray-500">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <AnimatedCTA
+                href="/servicios"
+                text="Descubre todos los servicios"
+                color="honey"
+              />
+            </div>
+          </div>
+        </section>
+
 
         {/* CTA FINAL (CON LA CORRECCIÓN DEL EFECTO 3D MANTENIDA) */}
         <section className="py-16 bg-psicopiloto-sand-50 relative overflow-visible">
