@@ -46,100 +46,95 @@ export default function Home() {
           }}
         />
 
-        {/* SECCIÓN 1: SERVICIOS */}
-        <section className="py-16 bg-psicopiloto-sand-50">
-          <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">
-              Servicios
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Ansiedad y estrés",
-                  desc: "Insomnio, tensión, preocupaciones constantes. Recupera el control y la calma diaria con herramientas prácticas.", 
-                },
-                {
-                  title: "Depresión y ánimo bajo",
-                  desc: "Falta de motivación, tristeza o apatía. Vuelve a encontrar el sentido y la dirección en tu vida.", 
-                },
-                {
-                  title: "Autoestima y apego",
-                  desc: "Inseguridad, dificultad para poner límites. Fortalece tu identidad y establece relaciones sanas.", 
-                },
-                {
-                  title: "Terapia de pareja",
-                  desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión perdida.",
-                },
-                {
-                  title: "Trauma y experiencias difíciles",
-                  desc: "Recuerdos dolorosos, bloqueos emocionales. Procesamiento con EMDR para sanar el pasado.", 
-                },
-                {
-                  title: "Si eres empresa",
-                  desc: "Liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa.",
-                },
-              ].map((s, i) => (
-                <div
-                  key={i}
-                  className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10"
-                >
-                  <h3 className="font-semibold text-xl mb-2 text-psicopiloto-honey-500">
-                    {s.title}
-                  </h3>
-                  <p className="text-psicopiloto-gray-500">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <AnimatedCTA
-                href="/servicios"
-                text="Descubre todos los servicios"
-                color="honey"
-              />
-            </div>
-          </div>
+        {/* === SECCIÓN 1: ÉNFASIS EN EL PROBLEMA Y LA SOLUCIÓN (RESTAURADA) === */}
+        <section className="py-16 bg-white/40"> 
+          <div className="container mx-auto px-4 max-w-5xl text-center"> 
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600"> 
+              ¿Te sientes así? 
+            </h2> 
+            <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto"> 
+              La ansiedad no tiene por qué pilotar tu vida. Te ofrezco un espacio 
+              seguro para transformar tus preocupaciones y recuperar tu bienestar. 
+            </p> 
+
+            <div className="grid md:grid-cols-3 gap-8 text-left"> 
+              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition"> 
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500"> 
+                  Ansiedad y Estrés 
+                </h3> 
+                <p className="text-psicopiloto-gray-700"> 
+                  Preocupación constante, tensión muscular, insomnio y la sensación 
+                  de que algo malo va a pasar. Juntos podemos desactivar el 
+                  "modo alerta". 
+                </p> 
+                <a href="/ansiedad" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Saber más sobre ansiedad →</a> 
+              </div> 
+              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition"> 
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500"> 
+                  Trauma y EMDR 
+                </h3> 
+                <p className="text-psicopiloto-gray-700"> 
+                  Recuerdos intrusivos, reacciones exageradas y el peso de 
+                  experiencias pasadas. Con la terapia EMDR y un enfoque 
+                  integrador, es posible sanar. 
+                </p> 
+                <a href="/servicios" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Descubre el EMDR →</a> 
+              </div> 
+              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition"> 
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500"> 
+                  Autoestima y Liderazgo 
+                </h3> 
+                <p className="text-psicopiloto-gray-700"> 
+                  Dificultad para poner límites, inseguridad, o un síndrome del 
+                  impostor. Gana autoconfianza para pilotar tu vida con decisión. 
+                </p> 
+                <a href="/sobre-mi" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Mi filosofía →</a> 
+              </div> 
+            </div> 
+          </div> 
+        </section> 
+
+        {/* === SECCIÓN 2: TÍTULO Y ENFOQUE (RESTAURADA) === */}
+        <section className="py-16 bg-psicopiloto-sand-50"> 
+          <div className="container mx-auto px-4 max-w-5xl"> 
+            <div className="grid md:grid-cols-2 gap-10 items-center"> 
+              {/* Contenido de texto */} 
+              <div> 
+                <h2 className="text-3xl font-semibold mb-4 text-psicopiloto-green-600"> 
+                  Un enfoque que te devuelve el control 
+                </h2> 
+                <p className="text-psicopiloto-gray-700 leading-relaxed mb-4"> 
+                  Como psicólogo y ex-piloto, sé lo que significa{" "} 
+                  <strong>gestionar la presión, tomar decisiones difíciles</strong>{" "} 
+                  y actuar con seguridad. Aplico esta filosofía a tu proceso 
+                  terapéutico. 
+                </p> 
+                <p className="text-psicopiloto-gray-700 leading-relaxed mb-6"> 
+                  Mi terapia es <strong>integradora</strong>, adaptando las mejores herramientas 
+                  (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades 
+                  únicas, para que puedas <strong>recuperar la calma y la claridad</strong>. 
+                </p> 
+                <AnimatedCTA 
+                  href="/servicios" 
+                  text="Descubre mis servicios" 
+                  color="blue" 
+                /> 
+              </div> 
+
+              {/* Imagen */} 
+              <div className="hidden md:block"> 
+                <Image 
+                  src="/filosofia.webp" 
+                  alt="Psicopiloto, uniendo psicología y aviación para un enfoque integrador" 
+                  width={600} 
+                  height={400} 
+                  className="rounded-lg shadow-xl" 
+                /> 
+              </div> 
+            </div> 
+          </div> 
         </section>
 
-        {/* SECCIÓN 2: TÍTULO Y ENFOQUE */}
-        <section className="py-16 bg-psicopiloto-sand-50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              {/* Contenido de texto */}
-              <div>
-                <h2 className="text-3xl font-semibold mb-4 text-psicopiloto-green-600">
-                  Un enfoque que te devuelve el control
-                </h2>
-                <p className="text-psicopiloto-gray-700 leading-relaxed mb-4">
-                  Como psicólogo y ex-piloto, sé lo que significa{" "}
-                  <strong>gestionar la presión, tomar decisiones difíciles</strong>{" "}
-                  y actuar con seguridad. Aplico esta filosofía a tu proceso
-                  terapéutico.
-                </p>
-                <p className="text-psicopiloto-gray-700 leading-relaxed mb-6">
-                  Mi terapia es <strong>integradora</strong>, adaptando las mejores herramientas
-                  (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades
-                  únicas, para que puedas <strong>recuperar la calma y la claridad</strong>.
-                </p>
-                <AnimatedCTA
-                  href="/servicios"
-                  text="Descubre mis servicios"
-                  color="blue"
-                />
-              </div>
-
-              {/* Imagen */}
-              <div className="hidden md:block">
-                <Image
-                  src="/filosofia.webp"
-                  alt="Psicopiloto, uniendo psicología y aviación para un enfoque integrador"
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-xl"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* SECCIÓN 3: TERAPIA ONLINE / PRESENCIAL (Potenciando ONLINE) */}
         <section className="py-16 bg-white/40">
@@ -220,16 +215,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* === NUEVA SECCIÓN COMPACTA: SOBRE EL PROYECTO (CON ENLACES CLAVE) === */}
+        {/* === NUEVA SECCIÓN COMPACTA: SOBRE EL PROYECTO (CON ENLACES CLAVE Y ALINEACIÓN) === */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl font-semibold mb-8 text-center text-psicopiloto-blue-600">
                 Conoce el Proyecto
             </h2>
+            {/* Usamos flex flex-col h-full para empujar los botones al final de cada columna */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-xl">
               
-              {/* Columna 1: Sobre el Psicólogo (Enlace a /sobre-mi) */}
-              <div>
+              {/* Columna 1: Sobre el Psicólogo (Alineada) */}
+              <div className="flex flex-col h-full"> 
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">
                   Sobre el Psicólogo
                 </h3>
@@ -238,30 +234,34 @@ export default function Home() {
                   (gestión de crisis, factores humanos y liderazgo) se integra en
                   la terapia para ofrecerte un enfoque sólido y práctico, basado en la humildad y la toma de decisiones consciente.
                 </p>
-                <AnimatedCTA
-                  href="/sobre-mi"
-                  text="Conóceme mejor"
-                  color="blue"
-                  className="mt-4"
-                />
+                <div className="mt-auto"> 
+                  <AnimatedCTA
+                    href="/sobre-mi"
+                    text="Conóceme mejor"
+                    color="blue"
+                  />
+                </div>
               </div>
 
-              {/* Columna 2: Filosofía del Proyecto (Enlace a /que-es-psicopiloto) */}
-              <div>
+              {/* Columna 2: Filosofía del Proyecto (Alineada y Ajustada) */}
+              <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">
                   La Filosofía Psicopiloto
                 </h3>
+                {/* 🚀 TEXTO AJUSTADO PARA IGUALAR LA LONGITUD DE LA CAJA ANTERIOR 🚀 */}
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">
                   El objetivo es que vuelvas a pilotar tu vida con seguridad y dirección. Mi
                   compromiso es ofrecerte un espacio de confianza, utilizando
                   terapia integradora y EMDR para que recuperes el control de tus emociones.
+                  La filosofía de Psicopiloto aplica los valores de la aviación: resiliencia, trabajo en equipo y una cultura de aprendizaje constante.
                 </p>
-                <AnimatedCTA
-                  href="/que-es-psicopiloto"
-                  text="Descubre la filosofía"
-                  color="blue"
-                  className="mt-4"
-                />
+                <div className="mt-auto"> 
+                  <AnimatedCTA
+                    href="/que-es-psicopiloto"
+                    text="Descubre la filosofía"
+                    color="blue"
+                  />
+                </div>
               </div>
             </div>
           </div>
