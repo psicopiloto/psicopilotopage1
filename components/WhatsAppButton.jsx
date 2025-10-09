@@ -9,17 +9,17 @@ export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    // ✨ CAMBIO: Reducir el delay para aparecer más rápido (de 3s a 1.5s)
+    // Mostrar el botón a los 1.5s
     const buttonTimer = setTimeout(() => {
       setShowButton(true);
     }, 1500); 
 
-    // Mostrar el tooltip (de 5s a 2.5s)
+    // Mostrar el tooltip a los 2.5s
     const tooltipTimer = setTimeout(() => {
       setShowTooltip(true);
     }, 2500); 
 
-    // Ocultar el tooltip (después de 6s de visibilidad)
+    // Ocultar el tooltip a los 8.5s
     const hideTooltipTimer = setTimeout(() => {
       setShowTooltip(false);
     }, 8500); 
@@ -33,7 +33,7 @@ export default function WhatsAppButton() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-50"
+      className="fixed bottom-6 right-6 z-50 flex flex-col items-end"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
         {/* Flecha */}
         <div 
            className="absolute -bottom-1 right-4 w-2 h-2 bg-psicopiloto-gray-700 rotate-45"
-           aria-hidden="true" 
+           aria-hidden="true"
         ></div>
       </div>
 
@@ -68,6 +68,8 @@ export default function WhatsAppButton() {
           hover:bg-psicopiloto-green-600 
           focus:outline-none focus:ring-4 focus:ring-psicopiloto-green-300 focus:ring-opacity-75
           transform
+          // ✨ CAMBIO CRÍTICO: Añadimos Flexbox para centrar el icono y corregir el aspecto "partido"
+          flex items-center justify-center 
           ${showButton
             ? "scale-100 animate-bounce-once"
             : "scale-0 opacity-0"
