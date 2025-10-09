@@ -14,7 +14,7 @@ export default function SobreMi() {
     {
       title: "Fase 1: El inicio – vocación por la psicología",
       img: "/sobre2.webp",
-      alt: "Jose Carlos Rodríguez estudiando psicología en la Universidad de Granada",
+      alt: "Jose Carlos Rodríguez Retamar estudiando psicología en la Universidad de Granada",
       content: [
         "Me licencié en Psicología por la Universidad de Granada en 2003. Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, aprendiendo la importancia de la escucha y el acompañamiento.",
         "Fui voluntario durante 4 años trabajando con personas mayores en fases iniciales de demencia con terapias como la Terapia de la Reminiscencia, ayudándoles y acompañándoles a trabajar así la memoria y las emociones ",
@@ -48,11 +48,11 @@ export default function SobreMi() {
       ],
     },
     {
-      title: "Fase 4: El voluntariado – la parte más humana",
+      title: "Fase 4: El voluntariado",
       img: "/sobre2.webp",
-      alt: "Jose Carlos Rodríguez haciendo voluntariado en Amalgama Social",
+      alt: "Jose Carlos Rodríguez Retamar haciendo voluntariado en Amalgama Social",
       content: [
-        "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
+        "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo trabajandocon personas mayores y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
       ],
     },
   ];
@@ -60,7 +60,7 @@ export default function SobreMi() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        title="Jose Carlos Rodríguez, Psicólogo y Piloto Militar | Psicopiloto"
+        title="Jose Carlos Rodríguez Retamar, Psicólogo y Piloto Militar | Psicopiloto"
         description="Conoce la trayectoria de Jose Carlos Rodríguez, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR. Experiencia única."
         canonical="https://psicopiloto.com/sobre-mi"
         openGraph={{
@@ -75,7 +75,7 @@ export default function SobreMi() {
       <Nav />
 
       <PageHeader
-        title="Conoce al Psicopiloto: Jose Carlos Rodríguez Retamar" 
+        title="Conóceme: Jose Carlos Rodríguez Retamar" 
         subtitle="Una trayectoria entre la aviación y la psicología para ayudarte a volar con seguridad en tu vida."
         backgroundImage="/header-sobremi.webp"
       />
