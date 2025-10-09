@@ -6,6 +6,7 @@ import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo"; 
+import Script from "next/script"; // ✨ CAMBIO: Importar Script para scripts de terceros
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -47,6 +48,14 @@ export default function Contacto() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
+      {/* 🚀 OPTIMIZACIÓN: Carga diferida de scripts de terceros (ej: reCAPTCHA) 🚀 */}
+      {/* Si implementas reCAPTCHA, el script va aquí con lazyOnLoad */}
+      {/*
+      <Script 
+        src="https://www.google.com/recaptcha/api.js?render=6LeQgtsaA...&trustedtypes=true"
+        strategy="lazyOnLoad"
+      />
+      */}
       <NextSeo
         title="Contacto | Psicopiloto"
         description="Contacta con Psicopiloto y mejora tu bienestar emocional. Consulta online y presencial en Granada. Rellena el formulario o llama/WhatsApp directamente."
@@ -69,9 +78,10 @@ export default function Contacto() {
             <div className="space-y-6">
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4"> {/* ✨ CORRECCIÓN A: Coherencia de color (blue-600) */}
+                {/* ✨ CAMBIO CRÍTICO (ACCESIBILIDAD): Cambiado de h3 a h2 para mantener la secuencia de encabezados */}
+                <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4"> 
                   Tu bienestar emocional es lo primero
-                </h3>
+                </h2>
                 <p className="text-lg text-psicopiloto-gray-700">
                   Estoy aquí para acompañarte en tu proceso. Da el primer paso y descubre cómo la psicología puede ayudarte a recuperar tu equilibrio.
                 </p>
@@ -80,7 +90,6 @@ export default function Contacto() {
                   Por qué contactarme
                 </h3>
                 <ul className="list-disc list-inside text-psicopiloto-gray-700 space-y-2">
-                  {/* ✅ MUY BIEN: Refuerzo de UVP con emojis */}
                   <li>📈 Terapia personalizada y centrada en tus objetivos.</li>
                   <li>🧘‍♀️ Reducción de ansiedad, estrés y mejora de autoestima.</li>
                   <li>💬 Apoyo online y presencial, flexible y cercano.</li>
@@ -97,9 +106,9 @@ export default function Contacto() {
                   Completa este formulario y te responderé lo antes posible. Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
                 </p>
 
-                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta"> {/* ✨ CORRECCIÓN B: ARIA Label en formulario */}
+                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
                   
-                  {/* ✨ CORRECCIÓN C: Accesibilidad (A11Y) - Añadir etiquetas <label> */}
+                  {/* ✨ MEJORA: Etiquetas de accesibilidad (sr-only) para inputs */}
                   <label htmlFor="nombre" className="sr-only">Nombre completo *</label>
                   <input
                     id="nombre"
@@ -160,12 +169,12 @@ export default function Contacto() {
                   <button
                     type="submit"
                     className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
-                    disabled={status === "Enviando..."} // ✨ CORRECCIÓN D: Deshabilitar el botón durante el envío
+                    disabled={status === "Enviando..."}
                   >
                     {status === "Enviando..." ? "Enviando..." : "Enviar consulta"}
                   </button>
                 </form>
-                {status && <p className={`mt-4 text-sm ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>} {/* ✨ CORRECCIÓN E: Estilo de mensaje de estado */}
+                {status && <p className={`mt-4 text-sm ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>}
               </div>
             </div>
 
@@ -176,7 +185,6 @@ export default function Contacto() {
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
                   Contacto directo
                 </h3>
-                {/* ✨ CORRECCIÓN F: Añadir focus states a los enlaces directos */}
                 <p>
                   📞 Teléfono:{" "}
                   <a href="tel:+34676230537" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">
@@ -212,17 +220,17 @@ export default function Contacto() {
                 </h3>
                 <div className="w-full h-[400px] md:h-[600px] overflow-auto">
                   <iframe
-                    title="Calendario de citas online de Psicopiloto" // ✨ CORRECCIÓN G: Añadir título para accesibilidad
+                    title="Calendario de citas online de Psicopiloto"
                     src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
                     style={{ border: 0, width: "100%", height: "100%" }}
                     frameBorder="0"
-                    // scrolling="auto" // ✨ CORRECCIÓN H: 'scrolling' está obsoleto en HTML5; se maneja con CSS.
+                    loading="lazy" // ✨ MEJORA: Carga perezosa para el iframe
                   ></iframe>
                 </div>
               </div>
               
               {/* Protección de datos (Contraste) */}
-              <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2"> {/* ✨ CORRECCIÓN I: Mejorar contraste del texto */}
+              <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2">
                 <p>
                   <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
                   <a href="/aviso-legal" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700 focus:ring-1 focus:ring-psicopiloto-green-400 rounded">
@@ -239,7 +247,6 @@ export default function Contacto() {
           <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
             <Image
               src="/contacto.webp"
-              // ✨ CORRECCIÓN J: Alt más descriptivo
               alt="Sala de espera o despacho de psicología para terapia presencial en Granada"
               fill
               style={{ objectFit: "cover" }}
