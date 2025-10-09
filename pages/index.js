@@ -216,11 +216,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA FINAL (FIXED IMAGE OVERLAP) */}
-        <section className="py-16 bg-white/40 relative overflow-visible">
+      {/* CTA FINAL (CON LA CORRECCIÓN DEL EFECTO 3D MANTENIDA) */}
+        <section className="py-16 bg-psicopiloto-sand-50 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
-            
-            {/* Imagen sobresaliente - FIX: Se ajusta el tamaño y la posición para que NO choque con el texto. */}
+            {/* Imagen sobresaliente - Z-INDEX ALTO y SHADOW para el efecto 3D */}
             <Image
               src="/telefono.png"
               alt="Contacto telefónico para iniciar terapia psicológica online"
@@ -231,12 +230,13 @@ export default function Home() {
                 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
                 md:w-[350px] md:h-auto
                 lg:w-[400px] lg:-left-20
-                z-10 // Se asegura que esté por debajo del texto
+                z-30 
+                drop-shadow-xl 
               `}
             />
 
-            {/* Grid solo para el texto - FIX: Usamos 3 columnas y empezamos en la 2 para dejar espacio a la imagen. */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-white/90 rounded-2xl shadow-xl backdrop-blur-sm relative z-20"> 
+            {/* Grid solo para el texto - Z-INDEX MEDIO */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-white rounded-2xl shadow-xl relative z-20"> 
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
                   Da el primer paso
@@ -253,7 +253,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
