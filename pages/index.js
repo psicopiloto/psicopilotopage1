@@ -6,29 +6,27 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import Image from "next/image"; // ✅ Necesario para las imágenes
+import Image from "next/image"; 
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // --- SEO TITLE: Mantiene el foco en online ---
-        title="Psicólogo online experto en ansiedad y trauma | Psicopiloto"
-        // --- META DESCRIPTION: Foco en online y beneficios ---
-        description="Psicólogo online especializado en superar ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. Terapia desde casa, con flexibilidad y privacidad. ¡Agenda tu cita!"
+        title="Psicólogo online y presencial en Granada | Psicopiloto"
+        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita." 
         canonical="https://psicopiloto.com/"
         additionalMetaTags={[
           {
             name: "keywords",
             content:
-              "psicólogo online, terapia ansiedad online, psicólogo online Granada, depresión, autoestima, trauma, EMDR, psicología integradora",
+              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
           },
           { name: "author", content: "Jose Carlos Rodríguez Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/",
-          title: "Psicólogo online experto en ansiedad y trauma | Psicopiloto",
-          description: "Psicólogo online especializado en superar ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. Terapia desde casa, con flexibilidad y privacidad. ¡Agenda tu cita!",
+          title: "Psicólogo online y presencial en Granada | Psicopiloto",
+          description: "Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita.",
         }}
       />
 
@@ -38,60 +36,66 @@ export default function Home() {
       <main className="flex-grow pt-16 relative z-10">
         {/* HERO/HEADER */}
         <PageHeader
-          title="Psicólogo online y presencial en Granada"
-          subtitle="Supera el estrés, la ansiedad o un trauma con un enfoque integrador. Recupera la calma, la autoconfianza y el control de tu vida."
+          title="Psicólogo online y presencial en Granada | Acompaño tu viaje hacia el bienestar"
+          subtitle="Un espacio seguro, cercano y profesional para que recuperes control, calma y sentido en tu vida. Aquí encontrarás escucha, empatía y herramientas prácticas para afrontar tus retos con confianza."
           backgroundImage="/fotoinicio1.webp"
           cta={{
             href: "/contacto",
-            text: "Quiero agendar mi cita",
+            text: "Agenda tu primera cita",
             color: "green",
           }}
         />
 
-        {/* SECCIÓN 1: ÉNFASIS EN EL PROBLEMA Y LA SOLUCIÓN */}
-        <section className="py-16 bg-white/40">
-          <div className="container mx-auto px-4 max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
-              ¿Te sientes así?
+        {/* SECCIÓN 1: SERVICIOS */}
+        <section className="py-16 bg-psicopiloto-sand-50">
+          <div className="container mx-auto max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">
+              Servicios
             </h2>
-            <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">
-              La ansiedad no tiene por qué pilotar tu vida. Te ofrezco un espacio
-              seguro para transformar tus preocupaciones y recuperar tu bienestar.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition">
-                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">
-                  Ansiedad y Estrés
-                </h3>
-                <p className="text-psicopiloto-gray-700">
-                  Preocupación constante, tensión muscular, insomnio y la sensación
-                  de que algo malo va a pasar. Juntos podemos desactivar el
-                  "modo alerta".
-                </p>
-                <a href="/ansiedad" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Saber más sobre ansiedad →</a>
-              </div>
-              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition">
-                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">
-                  Trauma y EMDR
-                </h3>
-                <p className="text-psicopiloto-gray-700">
-                  Recuerdos intrusivos, reacciones exageradas y el peso de
-                  experiencias pasadas. Con la terapia EMDR y un enfoque
-                  integrador, es posible sanar.
-                </p>
-                <a href="/servicios" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Descubre el EMDR →</a>
-              </div>
-              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition">
-                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">
-                  Autoestima y Liderazgo
-                </h3>
-                <p className="text-psicopiloto-gray-700">
-                  Dificultad para poner límites, inseguridad, o un síndrome del
-                  impostor. Gana autoconfianza para pilotar tu vida con decisión.
-                </p>
-                <a href="/sobre-mi" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Mi filosofía →</a>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Ansiedad y estrés",
+                  desc: "Insomnio, tensión, preocupaciones constantes. Recupera el control y la calma diaria con herramientas prácticas.", 
+                },
+                {
+                  title: "Depresión y ánimo bajo",
+                  desc: "Falta de motivación, tristeza o apatía. Vuelve a encontrar el sentido y la dirección en tu vida.", 
+                },
+                {
+                  title: "Autoestima y apego",
+                  desc: "Inseguridad, dificultad para poner límites. Fortalece tu identidad y establece relaciones sanas.", 
+                },
+                {
+                  title: "Terapia de pareja",
+                  desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión perdida.",
+                },
+                {
+                  title: "Trauma y experiencias difíciles",
+                  desc: "Recuerdos dolorosos, bloqueos emocionales. Procesamiento con EMDR para sanar el pasado.", 
+                },
+                {
+                  title: "Si eres empresa",
+                  desc: "Liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa.",
+                },
+              ].map((s, i) => (
+                <div
+                  key={i}
+                  className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10"
+                >
+                  <h3 className="font-semibold text-xl mb-2 text-psicopiloto-honey-500">
+                    {s.title}
+                  </h3>
+                  <p className="text-psicopiloto-gray-500">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <AnimatedCTA
+                href="/servicios"
+                text="Descubre todos los servicios"
+                color="honey"
+              />
             </div>
           </div>
         </section>
@@ -112,9 +116,9 @@ export default function Home() {
                   terapéutico.
                 </p>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-6">
-                  Mi terapia es **integradora**, adaptando las mejores herramientas
+                  Mi terapia es <strong>integradora</strong>, adaptando las mejores herramientas
                   (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades
-                  únicas, para que puedas **recuperar la calma y la claridad**.
+                  únicas, para que puedas <strong>recuperar la calma y la claridad</strong>.
                 </p>
                 <AnimatedCTA
                   href="/servicios"
@@ -161,7 +165,7 @@ export default function Home() {
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-psicopiloto-gray-500">
                   <li>Acceso desde cualquier parte del mundo.</li>
-                  <li>**Ahorro total de tiempo y costes de desplazamiento.**</li>
+                  <li><strong>Ahorro total de tiempo y costes de desplazamiento.</strong></li>
                   <li>Máxima privacidad y sensación de control en tu propio entorno.</li>
                   <li>Sesiones flexibles y ajustadas a tu ritmo de vida.</li>
                   <li>Misma eficacia y herramientas que la terapia presencial.</li>
@@ -216,7 +220,55 @@ export default function Home() {
           </div>
         </section>
 
-      {/* CTA FINAL (CON LA CORRECCIÓN DEL EFECTO 3D MANTENIDA) */}
+        {/* === NUEVA SECCIÓN COMPACTA: SOBRE EL PROYECTO (CON ENLACES CLAVE) === */}
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-psicopiloto-blue-600">
+                Conoce el Proyecto
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-xl">
+              
+              {/* Columna 1: Sobre el Psicólogo (Enlace a /sobre-mi) */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">
+                  Sobre el Psicólogo
+                </h3>
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">
+                  Soy Jose Carlos Rodríguez, psicólogo y ex-piloto militar. Mi experiencia en aviación
+                  (gestión de crisis, factores humanos y liderazgo) se integra en
+                  la terapia para ofrecerte un enfoque sólido y práctico, basado en la humildad y la toma de decisiones consciente.
+                </p>
+                <AnimatedCTA
+                  href="/sobre-mi"
+                  text="Conóceme mejor"
+                  color="blue"
+                  className="mt-4"
+                />
+              </div>
+
+              {/* Columna 2: Filosofía del Proyecto (Enlace a /que-es-psicopiloto) */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">
+                  La Filosofía Psicopiloto
+                </h3>
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">
+                  El objetivo es que vuelvas a pilotar tu vida con seguridad y dirección. Mi
+                  compromiso es ofrecerte un espacio de confianza, utilizando
+                  terapia integradora y EMDR para que recuperes el control de tus emociones.
+                </p>
+                <AnimatedCTA
+                  href="/que-es-psicopiloto"
+                  text="Descubre la filosofía"
+                  color="blue"
+                  className="mt-4"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* CTA FINAL (CON LA CORRECCIÓN DEL EFECTO 3D MANTENIDA) */}
         <section className="py-16 bg-psicopiloto-sand-50 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
             {/* Imagen sobresaliente - Z-INDEX ALTO y SHADOW para el efecto 3D */}
@@ -253,6 +305,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </main>
 
       <Footer />
