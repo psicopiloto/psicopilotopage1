@@ -4,9 +4,8 @@ import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    // Se mantiene la estructura con el rol de accesibilidad y colores de marca.
     <footer className="mt-16 py-8 bg-psicopiloto-sand-50 border-t border-psicopiloto-gray-500/10" role="contentinfo">
-      <div className="container flex flex-col md:flex-row items-center justify-between gap-6 text-base md:text-lg text-psicopiloto-gray-700">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-base md:text-lg text-psicopiloto-gray-700 px-4">
         
         {/* Logo con enlace a la home */}
         <div className="flex items-center gap-2">
@@ -20,41 +19,40 @@ export default function Footer() {
               alt="Logotipo de Psicopiloto" 
               width={120}
               height={40}
-              // ✅ MUY BIEN: 'priority' es adecuado para un logo que siempre se ve, aunque 'loading="lazy"' también podría funcionar bien en el footer.
-              priority 
+              priority
             />
           </Link>
         </div>
 
         {/* Redes sociales */}
         <div
-          className="flex gap-6 text-2xl md:text-3xl text-psicopiloto-green-600"
+          className="flex gap-6 text-2xl text-psicopiloto-gray-700"
           aria-label="Redes sociales de Psicopiloto"
         >
-          {/* Los enlaces de redes sociales son PERFECTOS en accesibilidad (aria-label y aria-hidden). */}
+          {/* ✨ MEJORA: Estandarizar focus ring a color Green */}
           <a
-            href="https://instagram.com/psicopi_loto"
+            href="https://www.instagram.com/psicopiloto"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
-            aria-label="Instagram de Psicopiloto"
+            className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
+            aria-label="Instagram de Jose Carlos Rodríguez (Psicopiloto)"
           >
             <FaInstagram aria-hidden="true" />
           </a>
           <a
-            href="https://x.com/@jcrr78"
+            href="https://twitter.com/jcrodriguezret"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
+            className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
             aria-label="Twitter de Jose Carlos Rodríguez (Psicopiloto)"
           >
             <FaTwitter aria-hidden="true" />
           </a>
           <a
-            href="https://linkedin.com/in/jose-carlos-rodríguez-retamar"
+            href="https://www.linkedin.com/in/jcrodriguezret"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
+            className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
             aria-label="LinkedIn de Jose Carlos Rodríguez (Psicopiloto)"
           >
             <FaLinkedin aria-hidden="true" />
@@ -74,6 +72,7 @@ export default function Footer() {
 
         {/* Enlaces legales (NAVEGACIÓN SEMÁNTICA) */}
         <nav aria-label="Enlaces legales y política" className="flex flex-col items-center text-xs text-psicopiloto-gray-600 mt-4 md:mt-0 gap-1">
+          {/* ✨ MEJORA: Estandarizar focus ring a color Blue */}
           <a
             href="/aviso-legal"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded"
@@ -87,6 +86,11 @@ export default function Footer() {
             Política de Cookies
           </a>
         </nav>
+      </div>
+      
+      {/* Copyright */}
+      <div className="container mx-auto text-center mt-6 pt-4 border-t border-psicopiloto-gray-500/10 text-xs text-psicopiloto-gray-500 px-4">
+        &copy; {new Date().getFullYear()} Psicopiloto®. Todos los derechos reservados.
       </div>
     </footer>
   );
