@@ -12,23 +12,23 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // --- CAMBIO A: SEO TITLE (Mantiene la longitud óptima) ---
-        title="Psicólogo online y presencial en Granada | Psicopiloto"
-        // --- CAMBIO B: META DESCRIPTION (Se acorta y se añade CTA) ---
-        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita." // (Aprox. 158 caracteres)
+        // --- SEO TITLE: Mantiene el foco en online ---
+        title="Psicólogo online experto en ansiedad y trauma | Psicopiloto"
+        // --- META DESCRIPTION: Foco en online y beneficios ---
+        description="Psicólogo online especializado en superar ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. Terapia desde casa, con flexibilidad y privacidad. ¡Agenda tu cita!"
         canonical="https://psicopiloto.com/"
         additionalMetaTags={[
           {
             name: "keywords",
             content:
-              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
+              "psicólogo online, terapia ansiedad online, psicólogo online Granada, depresión, autoestima, trauma, EMDR, psicología integradora",
           },
           { name: "author", content: "Jose Carlos Rodríguez Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/",
-          title: "Psicólogo online y presencial en Granada | Psicopiloto",
-          description: "Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita.",
+          title: "Psicólogo online experto en ansiedad y trauma | Psicopiloto",
+          description: "Psicólogo online especializado en superar ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. Terapia desde casa, con flexibilidad y privacidad. ¡Agenda tu cita!",
         }}
       />
 
@@ -137,36 +137,40 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN 3: TERAPIA ONLINE / PRESENCIAL */}
+        {/* SECCIÓN 3: TERAPIA ONLINE / PRESENCIAL (Potenciando ONLINE) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
-              Terapia donde la necesitas
+              Terapia online: Comodidad y máxima eficacia
             </h2>
             <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">
-              Te ofrezco la flexibilidad para hacer terapia desde la comodidad de
-              tu casa o en mi consulta privada en Granada.
+              Mi enfoque es la terapia online, dándote la flexibilidad de hacer terapia
+              desde la comodidad de tu casa, sin barreras geográficas.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              {/* Columna 1: Online */}
+            {/* Se usa grid-cols-1 y max-w para centrar la única columna visible. */}
+            <div className="grid md:grid-cols-1 gap-8 text-left max-w-xl mx-auto"> 
+              
+              {/* Columna 1: Online (Potenciada con más beneficios) */}
               <div className="p-8 border-t-4 border-psicopiloto-green-500 bg-white/80 rounded-lg shadow-xl">
                 <h3 className="text-2xl font-bold mb-3 text-psicopiloto-gray-700">
-                  Terapia Online
+                  Terapia Online (Mi enfoque principal)
                 </h3>
                 <p className="mb-4 text-psicopiloto-gray-500">
-                  Ideal si vives fuera de Granada, viajas mucho o prefieres la
-                  comodidad. Total privacidad y flexibilidad horaria.
+                  Ideal para ahorrar tiempo y costes. Mi experiencia garantiza la misma calidad y cercanía que la sesión presencial.
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-psicopiloto-gray-500">
-                  <li>Desde casa, oficina o donde te sientas cómodo.</li>
-                  <li>Misma eficacia que la terapia presencial.</li>
-                  <li>Adaptada a tu horario y ritmo de vida.</li>
+                  <li>Acceso desde cualquier parte del mundo.</li>
+                  <li>**Ahorro total de tiempo y costes de desplazamiento.**</li>
+                  <li>Máxima privacidad y sensación de control en tu propio entorno.</li>
+                  <li>Sesiones flexibles y ajustadas a tu ritmo de vida.</li>
+                  <li>Misma eficacia y herramientas que la terapia presencial.</li>
                 </ul>
               </div>
 
-              {/* Columna 2: Presencial */}
-              <div className="p-8 border-t-4 border-psicopiloto-blue-500 bg-white/80 rounded-lg shadow-xl">
+              {/* Columna 2: Presencial (OCULTA) */}
+              {/* ⚠️ Para activar la opción presencial, simplemente elimina la clase 'hidden' del div contenedor. */}
+              <div className="p-8 border-t-4 border-psicopiloto-blue-500 bg-white/80 rounded-lg shadow-xl hidden"> 
                 <h3 className="text-2xl font-bold mb-3 text-psicopiloto-gray-700">
                   Terapia Presencial (Granada)
                 </h3>
@@ -185,34 +189,55 @@ export default function Home() {
             <div className="mt-10">
                 <AnimatedCTA
                     href="/contacto"
-                    text="Elige tu modalidad y agenda"
+                    text="Empieza tu terapia online hoy"
                     color="blue"
                 />
             </div>
           </div>
         </section>
+        
+        {/* SECCIÓN 4: SERVICIOS PARA EMPRESAS (NUEVA) */}
+        <section className="py-16 bg-psicopiloto-sand-50">
+          <div className="container mx-auto px-4 max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
+              Psicopiloto para Empresas
+            </h2>
+            <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">
+              Transfiere la mentalidad de cabina (CRM, Liderazgo, Gestión del Estrés) a tu equipo. Mejora la comunicación, toma de decisiones bajo presión y el bienestar de tu organización.
+            </p>
 
-        {/* CTA FINAL */}
-        <section className="py-16 bg-psicopiloto-sand-50 relative overflow-visible">
+            <div className="md:w-2/3 mx-auto">
+              <AnimatedCTA
+                href="/servicios" // Enlace a la sección de servicios para empresas
+                text="Ver servicios de consultoría y formación"
+                color="honey"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL (FIXED IMAGE OVERLAP) */}
+        <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
-            {/* Imagen sobresaliente */}
+            
+            {/* Imagen sobresaliente - FIX: Se ajusta el tamaño y la posición para que NO choque con el texto. */}
             <Image
               src="/telefono.png"
-              // --- CORRECCIÓN H: ALT más descriptivo ---
               alt="Contacto telefónico para iniciar terapia psicológica online"
-              width={800}
-              height={800}
+              width={400}
+              height={400}
               className={`
-                w-[300px] h-auto mx-auto mb-6
+                w-[200px] h-auto mx-auto mb-6
                 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
-                md:w-[500px] md:h-auto
-                lg:w-[600px] lg:-left-32
+                md:w-[350px] md:h-auto
+                lg:w-[400px] lg:-left-20
+                z-10 // Se asegura que esté por debajo del texto
               `}
             />
 
-            {/* Grid solo para el texto */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 bg-white/90 rounded-2xl shadow-xl backdrop-blur-sm">
-              <div className="col-span-1 md:col-start-2 text-center md:text-left">
+            {/* Grid solo para el texto - FIX: Usamos 3 columnas y empezamos en la 2 para dejar espacio a la imagen. */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-white/90 rounded-2xl shadow-xl backdrop-blur-sm relative z-20"> 
+              <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
                   Da el primer paso
                 </h2>
