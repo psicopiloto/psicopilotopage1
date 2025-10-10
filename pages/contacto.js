@@ -243,16 +243,7 @@ export default function Contacto() {
             </div>
           </section>
 
-          {/* Imagen ilustrativa full-width */}
-          <div className="mt-16 relative h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src="/contacto.webp"
-              alt="Sala de espera o despacho de psicología para terapia presencial en Granada"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
+         
         </div>
       </main>
 
