@@ -1,24 +1,24 @@
+// components/Footer.jsx
+
 import Image from "next/image";
-import Link from "next/link"; 
+import Link from "next/link";
 import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="mt-16 py-8 bg-psicopiloto-sand-50 border-t border-psicopiloto-gray-500/10" role="contentinfo">
+      {/* SECCIÓN SUPERIOR: Logo, Redes y Email */}
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-base md:text-lg text-psicopiloto-gray-700 px-4">
-
-
-        
-        {/* Logo con enlace a la home */}
+        {/* Logo */}
         <div className="flex items-center gap-2">
           <Link
             href="/"
             aria-label="Ir a la página de inicio de Psicopiloto"
-            className="transition transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-600 rounded"
+            className="transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-600 rounded"
           >
             <Image
               src="/logo.webp"
-              alt="Logotipo de Psicopiloto" 
+              alt="Logotipo de Psicopiloto"
               width={120}
               height={40}
               priority
@@ -26,22 +26,17 @@ export default function Footer() {
           </Link>
         </div>
 
-             <div className="text-center text-sm text-psicopiloto-gray-600 mb-4">
-  <p>Psicopiloto® | Jose Carlos Rodríguez Retamar - Psicólogo online con servicio en Granada.</p>
-</div>
-
         {/* Redes sociales */}
         <div
           className="flex gap-6 text-2xl text-psicopiloto-gray-700"
           aria-label="Redes sociales de Psicopiloto"
         >
-          {/* ✨ MEJORA: Estandarizar focus ring a color Green */}
           <a
             href="https://www.instagram.com/psicopiloto"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
-            aria-label="Instagram de Jose Carlos Rodríguez (Psicopiloto)"
+            aria-label="Instagram de Psicopiloto"
           >
             <FaInstagram aria-hidden="true" />
           </a>
@@ -50,7 +45,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
-            aria-label="Twitter de Jose Carlos Rodríguez (Psicopiloto)"
+            aria-label="Twitter de Jose Carlos Rguez. Retamar"
           >
             <FaTwitter aria-hidden="true" />
           </a>
@@ -59,7 +54,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
-            aria-label="LinkedIn de Jose Carlos Rodríguez (Psicopiloto)"
+            aria-label="LinkedIn de Jose Carlos Rguez. Retamar"
           >
             <FaLinkedin aria-hidden="true" />
           </a>
@@ -75,16 +70,24 @@ export default function Footer() {
             info@psicopiloto.com
           </a>
         </div>
+      </div>
 
-        {/* Enlaces legales (NAVEGACIÓN SEMÁNTICA) */}
-        <nav aria-label="Enlaces legales y política" className="flex flex-col items-center text-xs text-psicopiloto-gray-600 mt-4 md:mt-0 gap-1">
-          {/* ✨ MEJORA: Estandarizar focus ring a color Blue */}
+      {/* ✨ SECCIÓN INFERIOR: SEO Local y Enlaces Legales (REESTRUCTURADA) ✨ */}
+      <div className="container mx-auto text-center mt-10 pt-6 border-t border-psicopiloto-gray-500/10 px-4">
+        {/* Línea de SEO Local con el nombre corregido */}
+        <div className="text-sm text-psicopiloto-gray-600 mb-4">
+          <p>Psicopiloto® | Jose Carlos Rguez. Retamar - Psicólogo online con servicio en Granada.</p>
+        </div>
+
+        {/* Enlaces legales en una sola línea */}
+        <nav aria-label="Enlaces legales y política" className="flex justify-center items-center gap-2 text-xs text-psicopiloto-gray-600">
           <a
             href="/aviso-legal"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded"
           >
             Aviso Legal y Política de Privacidad
           </a>
+          <span className="text-gray-400 select-none">|</span>
           <a
             href="/politica-cookies"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded"
@@ -92,11 +95,11 @@ export default function Footer() {
             Política de Cookies
           </a>
         </nav>
-      </div>
-      
-      {/* Copyright */}
-      <div className="container mx-auto text-center mt-6 pt-4 border-t border-psicopiloto-gray-500/10 text-xs text-psicopiloto-gray-500 px-4">
-        &copy; {new Date().getFullYear()} Psicopiloto®. Todos los derechos reservados.
+
+        {/* Copyright */}
+        <div className="mt-6 text-xs text-psicopiloto-gray-500">
+          &copy; {new Date().getFullYear()} Psicopiloto®. Todos los derechos reservados.
+        </div>
       </div>
     </footer>
   );
