@@ -258,8 +258,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        */}
-
+        
         {/* CTA FINAL */}
         <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
