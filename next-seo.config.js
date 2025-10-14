@@ -1,69 +1,43 @@
-// pages/_app.js
+// next-seo.config.js
+export default {
+  title: "Psicopiloto | Psicólogo online en Granada — Terapia, EMDR y Liderazgo",
+  description:
+    "Acompaño tu viaje hacia el bienestar con psicoterapia integradora, EMDR y enfoque basado en factores humanos. Recupera el control y la calma en tu vida.",
 
-import "../styles/globals.css";
-import Head from "next/head";
-import CookiesBanner from "../components/CookiesBanner";
-import { DefaultSeo } from "next-seo";
-import SEO from "../next-seo.config";
-import BackgroundLogo from "../components/BackgroundLogo";
-import WhatsAppButton from "../components/WhatsAppButton";
-// ✨ MEJORA 1: Importar la fuente 'Nunito' con next/font
-import { Nunito } from "next/font/google";
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://www.psicopiloto.com/",
+    siteName: "Psicopiloto",
+    images: [
+      {
+        // ✨ MEJORA: Usar el logo optimizado .webp
+        url: "https://www.psicopiloto.com/logo.webp",
+        width: 512,
+        height: 512,
+        alt: "Logo Psicopiloto, uniendo psicología y aviación",
+      },
+      {
+        // Esta es la imagen principal para redes sociales.
+        // Asegúrate de tener un archivo 'og-image.jpg' en tu carpeta /public
+        url: "https://www.psicopiloto.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Psicopiloto — Psicólogo especialista en estrés, ansiedad y trauma",
+      },
+    ],
+  },
+  twitter: {
+    handle: "@jcrodriguezret",
+    site: "@jcrodriguezret",
+    cardType: "summary_large_image",
+  },
 
-// ✨ MEJORA 2: Configurar la fuente para usarla en toda la web
-const nunito = Nunito({
-  subsets: ["latin"],
-  display: "swap", // Clave para el rendimiento: evita que la fuente bloquee la carga
-  variable: "--font-nunito", // La usaremos como variable CSS en Tailwind
-});
-
-function MyApp({ Component, pageProps }) {
-  return (
-    // ✨ MEJORA 3: Aplicar la variable de la fuente al contenedor principal
-    <div className={`${nunito.variable} relative min-h-screen font-sans`}>
-      {/* Head global simplificado (los favicons los gestiona next-seo) */}
-      <Head>
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
-
-      {/* Configuración SEO global */}
-      <DefaultSeo {...SEO} />
-
-      {/* JSON-LD con la ruta del logo corregida */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Psicopiloto",
-            url: "https://www.psicopiloto.com",
-            // ✨ MEJORA 4: Usar el logo optimizado .webp
-            logo: "https://www.psicopiloto.com/logo.webp",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+34 676 230 537",
-              contactType: "customer service",
-              areaServed: "ES",
-              availableLanguage: ["Spanish", "English"],
-            },
-            sameAs: [
-              "https://www.instagram.com/psicopiloto",
-              "https://www.linkedin.com/in/jcrodriguezret",
-              "https://twitter.com/jcrodriguezret",
-            ],
-          }),
-        }}
-      />
-
-      {/* Contenedor principal con elementos globales */}
-      <div className="relative z-10">
-        <Component {...pageProps} />
-        <CookiesBanner />
-        <WhatsAppButton />
-      </div>
-    </div>
-  );
-}
-
-export default MyApp;
+  additionalLinkTags: [
+    { rel: "icon", href: "/favicon.ico" },
+    { rel: "icon", href: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    { rel: "icon", href: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    { rel: "icon", href: "/favicon-64x64.png", sizes: "64x64", type: "image/png" },
+    { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+  ],
+};
