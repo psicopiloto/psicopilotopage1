@@ -2,15 +2,72 @@
 import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-// ✨ CAMBIO: Ya no se necesita 'useState'
+import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Script from "next/script";
 
 export default function Contacto() {
-  // ✨ CAMBIO: Toda la lógica de 'useState' y 'handleSubmit' ha sido eliminada
-  // para simplificar el componente, ya que Formspree gestionará el envío.
+  const [form, setForm] = useState({
+    nombre: "",
+    edad: "",
+    email: "",
+    telefono: "",
+    motivo: "",
+  });
+  const [status, setStatus] = useState("");
+
+  const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    // ✨ VALIDACIÓN AVANZADA ANTES DE ENVIAR ✨
+    if (form.nombre.trim().length < 3) {
+      setStatus("❌ El nombre debe tener al menos 3 caracteres.");
+      return;
+    }
+    const age = parseInt(form.edad, 10);
+    if (isNaN(age) || age < 16 || age > 99) {
+      setStatus("❌ Por favor, introduce una edad válida (entre 16 y 99).");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setStatus("❌ Por favor, introduce un email con un formato válido.");
+      return;
+    }
+    // El teléfono es opcional, pero si se escribe, se valida
+    if (form.telefono && !/^[6789]\d{8}$/.test(form.telefono.replace(/\s/g, ''))) {
+      setStatus("❌ Por favor, introduce un número de teléfono español válido (9 dígitos).");
+      return;
+    }
+    if (form.motivo.trim().length < 10) {
+      setStatus("❌ El motivo de consulta debe ser un poco más detallado (mín. 10 caracteres).");
+      return;
+    }
+    // ✨ FIN DE LA VALIDACIÓN ✨
+
+    setStatus("Enviando...");
+
+    try {
+      const res = await fetch("https://formspree.io/f/xzzjybkg", { // Tu URL de Formspree
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus("✅ Enviado correctamente. Te responderé pronto.");
+        setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
+      } else {
+        setStatus("❌ Error: No se pudo enviar el mensaje. Inténtalo de nuevo.");
+      }
+    } catch (err) {
+      setStatus("❌ Error de red. Comprueba tu conexión e inténtalo de nuevo.");
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
@@ -60,21 +117,17 @@ export default function Contacto() {
                   Reserva tu primera consulta
                 </h2>
                 <p className="text-psicopiloto-gray-600 mb-6">
-                  Completa este formulario y te responderé lo antes posible. Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
+                  Completa este formulario y te responderé lo antes posible. Consulta online en Granada y para toda España, adaptada a tu ritmo y necesidades.
                 </p>
 
-                {/* ✨ CAMBIO CRÍTICO: El formulario ahora apunta a tu endpoint de Formspree */}
-                <form
-                  action="https://formspree.io/f/xzzjybkg" // 👈 PEGA TU URL DE FORMSPREE AQUÍ
-                  method="POST"
-                  className="grid gap-4"
-                  aria-label="Formulario de contacto para primera consulta"
-                >
+                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
                   <label htmlFor="nombre" className="sr-only">Nombre completo *</label>
                   <input
                     id="nombre"
                     required
                     name="nombre"
+                    value={form.nombre}
+                    onChange={update}
                     placeholder="Nombre completo *"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
@@ -84,17 +137,20 @@ export default function Contacto() {
                     id="edad"
                     required
                     name="edad"
+                    value={form.edad}
+                    onChange={update}
                     type="number"
                     placeholder="Edad *"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
 
-                  {/* El 'name' del email es importante para que Formspree pueda usarlo en 'Reply-To' */}
                   <label htmlFor="email" className="sr-only">Email *</label>
                   <input
                     id="email"
                     required
                     name="email"
+                    value={form.email}
+                    onChange={update}
                     type="email"
                     placeholder="Email *"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
@@ -104,7 +160,9 @@ export default function Contacto() {
                   <input
                     id="telefono"
                     name="telefono"
-                    placeholder="Teléfono"
+                    value={form.telefono}
+                    onChange={update}
+                    placeholder="Teléfono (opcional)"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
 
@@ -113,6 +171,8 @@ export default function Contacto() {
                     id="motivo"
                     required
                     name="motivo"
+                    value={form.motivo}
+                    onChange={update}
                     placeholder="Cuéntame brevemente tu motivo de consulta *"
                     rows="5"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
@@ -121,17 +181,17 @@ export default function Contacto() {
                   <button
                     type="submit"
                     className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
+                    disabled={status === "Enviando..."}
                   >
-                    Enviar consulta
+                    {status === "Enviando..." ? "Enviando..." : "Enviar consulta"}
                   </button>
                 </form>
-                {/* ✨ CAMBIO: El mensaje de estado ya no es necesario */}
+                {status && <p className={`mt-4 text-sm ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>}
               </div>
             </div>
 
             {/* Columna derecha (sin cambios) */}
             <div className="space-y-6">
-              {/* Contacto directo */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2 order-2 md:order-1">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">
                   Contacto directo
@@ -164,7 +224,6 @@ export default function Contacto() {
                 </p>
               </div>
 
-              {/* Google Calendar */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:order-3">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">
                   Agenda tu cita ONLINE directamente
@@ -179,7 +238,7 @@ export default function Contacto() {
                   ></iframe>
                 </div>
               </div>
-              
+
               <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2">
                 <p>
                   <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
@@ -189,7 +248,6 @@ export default function Contacto() {
                   .
                 </p>
               </div>
-
             </div>
           </section>
         </div>
