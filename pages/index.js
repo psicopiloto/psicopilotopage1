@@ -196,7 +196,7 @@ export default function Home() {
         // ===================================================================
         */}
         
-        {/*
+      
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">
@@ -229,7 +229,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        */}
+       
 
         {/* SECCIÓN 4: SERVICIOS PARA EMPRESAS */}
         <section className="py-16 bg-psicopiloto-sand-50">
