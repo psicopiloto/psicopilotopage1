@@ -64,7 +64,7 @@ export default function SobreMi() {
         description="Conoce la trayectoria de Jose Carlos Rodríguez, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR. Experiencia única."
         canonical="https://psicopiloto.com/sobre-mi"
         openGraph={{
-          title: "Jose Carlos Rodríguez, Psicólogo y Piloto Militar | Psicopiloto",
+          title: "Jose Carlos Rguez Retamar, Psicólogo y Piloto Militar | Psicopiloto",
           description: "Psicólogo con Habilitación Sanitaria y ex-piloto militar...",
           images: [{ url: "/sobre1.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rodríguez" }],
         }}
@@ -75,7 +75,7 @@ export default function SobreMi() {
       <Nav />
 
       <PageHeader
-        title="Conóceme: Jose Carlos Rodríguez Retamar" 
+        title="Conóceme: Jose Carlos Rguez Retamar" 
         subtitle="Una trayectoria entre la aviación y la psicología para ayudarte a volar con seguridad en tu vida."
         backgroundImage="/header-sobremi.webp"
       />
