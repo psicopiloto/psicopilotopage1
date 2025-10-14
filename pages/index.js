@@ -225,7 +225,7 @@ export default function Home() {
         // ===================================================================
         */}
         
-        {/*
+   
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">
@@ -275,7 +275,7 @@ export default function Home() {
                 lg:w-[400px] lg:-left-20
                 z-30
                 drop-shadow-xl
-              `}
+        
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20">
