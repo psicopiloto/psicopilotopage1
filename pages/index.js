@@ -143,8 +143,7 @@ export default function Home() {
               Terapia online: Comodidad y máxima eficacia
             </h2>
             <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">
-              Mi enfoque es la terapia online, dándote la flexibilidad de hacer terapia
-              desde la comodidad de tu casa, sin barreras geográficas.
+              Mi enfoque es la terapia online, dándote la flexibilidad de hacer terapia desde la comodidad de tu casa en Granada, o desde donde tú elijas... 
             </p>
 
             {/* Se usa grid-cols-1 y max-w para centrar la única columna visible. */}
