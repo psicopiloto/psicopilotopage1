@@ -7,9 +7,7 @@ export default function Footer() {
     <footer className="mt-16 py-8 bg-psicopiloto-sand-50 border-t border-psicopiloto-gray-500/10" role="contentinfo">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-base md:text-lg text-psicopiloto-gray-700 px-4">
 
-     <div className="text-center text-sm text-psicopiloto-gray-600 mb-4">
-  <p>Psicopiloto® | Jose Carlos Rodríguez Retamar - Psicólogo online con servicio en Granada.</p>
-</div>
+
         
         {/* Logo con enlace a la home */}
         <div className="flex items-center gap-2">
@@ -27,6 +25,10 @@ export default function Footer() {
             />
           </Link>
         </div>
+
+             <div className="text-center text-sm text-psicopiloto-gray-600 mb-4">
+  <p>Psicopiloto® | Jose Carlos Rodríguez Retamar - Psicólogo online con servicio en Granada.</p>
+</div>
 
         {/* Redes sociales */}
         <div
