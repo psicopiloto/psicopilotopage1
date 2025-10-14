@@ -50,7 +50,7 @@ export default function Footer() {
             <FaTwitter aria-hidden="true" />
           </a>
           <a
-            href="https://www.linkedin.com/in/jcrodriguezret"
+            href="https://www.linkedin.com/in/psicopiloto/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
