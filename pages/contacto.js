@@ -2,60 +2,18 @@
 import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { useState } from "react";
+// ✨ CAMBIO: Ya no se necesita 'useState'
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
-import BackgroundLogo from "../components/BackgroundLogo"; 
-import Script from "next/script"; // ✨ CAMBIO: Importar Script para scripts de terceros
+import BackgroundLogo from "../components/BackgroundLogo";
+import Script from "next/script";
 
 export default function Contacto() {
-  const [form, setForm] = useState({
-    nombre: "",
-    edad: "",
-    email: "",
-    telefono: "",
-    motivo: "",
-  });
-  const [status, setStatus] = useState("");
-
-  const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setStatus("Enviando...");
-    // Validación básica antes de enviar (ejemplo)
-    if (!form.nombre || !form.email || !form.motivo) {
-        setStatus("❌ Por favor, completa los campos obligatorios.");
-        return;
-    }
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setStatus("✅ Enviado correctamente. Te responderé pronto.");
-        setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
-      } else {
-        setStatus("❌ Error: " + (data?.error || "No se pudo enviar."));
-      }
-    } catch (err) {
-      setStatus("❌ Error de red: " + String(err));
-    }
-  }
+  // ✨ CAMBIO: Toda la lógica de 'useState' y 'handleSubmit' ha sido eliminada
+  // para simplificar el componente, ya que Formspree gestionará el envío.
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
-      {/* 🚀 OPTIMIZACIÓN: Carga diferida de scripts de terceros (ej: reCAPTCHA) 🚀 */}
-      {/* Si implementas reCAPTCHA, el script va aquí con lazyOnLoad */}
-      {/*
-      <Script 
-        src="https://www.google.com/recaptcha/api.js?render=6LeQgtsaA...&trustedtypes=true"
-        strategy="lazyOnLoad"
-      />
-      */}
       <NextSeo
         title="Contacto | Psicopiloto"
         description="Contacta con Psicopiloto y mejora tu bienestar emocional. Consulta online y presencial en Granada. Rellena el formulario o llama/WhatsApp directamente."
@@ -78,8 +36,7 @@ export default function Contacto() {
             <div className="space-y-6">
               {/* Motivación */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                {/* ✨ CAMBIO CRÍTICO (ACCESIBILIDAD): Cambiado de h3 a h2 para mantener la secuencia de encabezados */}
-                <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4"> 
+                <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4">
                   Tu bienestar emocional es lo primero
                 </h2>
                 <p className="text-lg text-psicopiloto-gray-700">
@@ -106,79 +63,73 @@ export default function Contacto() {
                   Completa este formulario y te responderé lo antes posible. Consulta online o presencial en Granada, adaptada a tu ritmo y necesidades.
                 </p>
 
-                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
-                  
-                  {/* ✨ MEJORA: Etiquetas de accesibilidad (sr-only) para inputs */}
+                {/* ✨ CAMBIO CRÍTICO: El formulario ahora apunta a tu endpoint de Formspree */}
+                <form
+                  action="https://formspree.io/f/xzzjybkg" // 👈 PEGA TU URL DE FORMSPREE AQUÍ
+                  method="POST"
+                  className="grid gap-4"
+                  aria-label="Formulario de contacto para primera consulta"
+                >
                   <label htmlFor="nombre" className="sr-only">Nombre completo *</label>
                   <input
                     id="nombre"
                     required
                     name="nombre"
-                    value={form.nombre}
-                    onChange={update}
                     placeholder="Nombre completo *"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
-                  
+
                   <label htmlFor="edad" className="sr-only">Edad *</label>
                   <input
                     id="edad"
                     required
                     name="edad"
-                    value={form.edad}
-                    onChange={update}
                     type="number"
                     placeholder="Edad *"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
-                  
+
+                  {/* El 'name' del email es importante para que Formspree pueda usarlo en 'Reply-To' */}
                   <label htmlFor="email" className="sr-only">Email *</label>
                   <input
                     id="email"
                     required
                     name="email"
-                    value={form.email}
-                    onChange={update}
                     type="email"
                     placeholder="Email *"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
-                  
+
                   <label htmlFor="telefono" className="sr-only">Teléfono</label>
                   <input
                     id="telefono"
                     name="telefono"
-                    value={form.telefono}
-                    onChange={update}
                     placeholder="Teléfono"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   />
-                  
+
                   <label htmlFor="motivo" className="sr-only">Cuéntame brevemente tu motivo de consulta *</label>
                   <textarea
                     id="motivo"
                     required
                     name="motivo"
-                    value={form.motivo}
-                    onChange={update}
                     placeholder="Cuéntame brevemente tu motivo de consulta *"
                     rows="5"
                     className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"
                   ></textarea>
-                  
+
                   <button
                     type="submit"
                     className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors"
-                    disabled={status === "Enviando..."}
                   >
-                    {status === "Enviando..." ? "Enviando..." : "Enviar consulta"}
+                    Enviar consulta
                   </button>
                 </form>
-                {status && <p className={`mt-4 text-sm ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>}
+                {/* ✨ CAMBIO: El mensaje de estado ya no es necesario */}
               </div>
             </div>
 
-            {/* Columna derecha */}
+            {/* Columna derecha (sin cambios) */}
             <div className="space-y-6">
               {/* Contacto directo */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2 order-2 md:order-1">
@@ -224,12 +175,11 @@ export default function Contacto() {
                     src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true"
                     style={{ border: 0, width: "100%", height: "100%" }}
                     frameBorder="0"
-                    loading="lazy" // ✨ MEJORA: Carga perezosa para el iframe
+                    loading="lazy"
                   ></iframe>
                 </div>
               </div>
               
-              {/* Protección de datos (Contraste) */}
               <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2">
                 <p>
                   <strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}
@@ -242,8 +192,6 @@ export default function Contacto() {
 
             </div>
           </section>
-
-         
         </div>
       </main>
 
