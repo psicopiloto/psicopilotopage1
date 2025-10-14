@@ -10,8 +10,6 @@ import Image from "next/image";
 
 // ======================================================
 // 1. DATOS DE LOS TESTIMONIOS
-// Cuando tengas reseñas reales de Google, simplemente edita este bloque.
-// Puedes añadir o quitar testimonios fácilmente.
 // ======================================================
 const testimonialsData = [
   {
@@ -24,16 +22,10 @@ const testimonialsData = [
     text: "Llevaba años lidiando con un bloqueo a raíz de una experiencia difícil. La terapia EMDR con Jose Carlos ha sido transformadora. Es un terapeuta cercano, empático y muy profesional. Por primera vez siento que he podido procesar y dejar atrás el pasado.",
     author: "David R.",
   },
-  // Puedes añadir un tercer testimonio aquí si quieres
-  // {
-  //   stars: 5,
-  //   text: "Texto del tercer testimonio...",
-  //   author: "Nombre Apellido",
-  // },
 ];
 
 export default function Home() {
-  const googleReviewsLink = "https://share.google/7GKlTrF0YTfa8pGSq"; // Tu enlace de Google
+  const googleReviewsLink = "https://share.google/7GKlTrF0YTfa8pGSq";
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
@@ -47,7 +39,8 @@ export default function Home() {
             content:
               "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
           },
-          { name: "author", content: "Jose Carlos Rodríguez Retamar" },
+          // ✨ CAMBIO: Nombre de autor actualizado
+          { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/",
@@ -72,7 +65,7 @@ export default function Home() {
           }}
         />
 
-        {/* === SECCIÓN 1: ÉNFASIS EN EL PROBLEMA Y LA SOLUCIÓN === */}
+        {/* SECCIÓN 1: ÉNFASIS EN EL PROBLEMA Y LA SOLUCIÓN */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
@@ -120,7 +113,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* === SECCIÓN 2: TÍTULO Y ENFOQUE === */}
+        {/* SECCIÓN 2: TÍTULO Y ENFOQUE */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -185,47 +178,25 @@ export default function Home() {
                   <li>Misma eficacia y herramientas que la terapia presencial.</li>
                 </ul>
               </div>
-
-              <div className="p-8 border-t-4 border-psicopiloto-blue-500 bg-white/80 rounded-lg shadow-xl hidden">
-                <h3 className="text-2xl font-bold mb-3 text-psicopiloto-gray-700">
-                  Terapia Presencial (Granada)
-                </h3>
-                <p className="mb-4 text-psicopiloto-gray-500">
-                  Un espacio físico dedicado, discreto y acogedor en el centro de
-                  Granada para una conexión más directa y personal.
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-psicopiloto-gray-500">
-                  <li>Consulta privada en zona céntrica.</li>
-                  <li>Ideal para quienes prefieren el contacto directo.</li>
-                  <li>Fácil acceso y ambiente tranquilo.</li>
-                </ul>
-              </div>
             </div>
-
+            
             <div className="mt-10">
-              <AnimatedCTA
-                href="/contacto"
-                text="Empieza tu terapia online hoy"
-                color="blue"
-              />
+                <AnimatedCTA
+                    href="/contacto"
+                    text="Empieza tu terapia online hoy"
+                    color="blue"
+                />
             </div>
           </div>
         </section>
-
-        {/* ... (Otras secciones como Empresas, Conoce el Proyecto, Servicios se mantienen igual) ... */}
         
         {/*
         // ===================================================================
         // ✨ NUEVA SECCIÓN DE TESTIMONIOS (OCULTA POR DEFECTO) ✨
         // ===================================================================
-        // Para ACTIVAR esta sección cuando tengas reseñas:
-        // 1. Edita los datos de ejemplo en 'testimonialsData' al principio de este archivo.
-        // 2. BORRA la línea de comentario de abajo que empieza con '{/*'
-        // 3. BORRA la línea de comentario de abajo que empieza con '*}'
-        // ===================================================================
         */}
         
-   
+        {/*
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">
@@ -258,7 +229,102 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+        */}
+
+        {/* SECCIÓN 4: SERVICIOS PARA EMPRESAS */}
+        <section className="py-16 bg-psicopiloto-sand-50">
+          <div className="container mx-auto px-4 max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
+              Psicopiloto para Empresas
+            </h2>
+            <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">
+              Transfiere la mentalidad de cabina (CRM, Liderazgo, Gestión del Estrés) a tu equipo. Mejora la comunicación, toma de decisiones bajo presión y el bienestar de tu organización.
+            </p>
+            <div className="md:w-2/3 mx-auto">
+              <AnimatedCTA
+                href="/servicios"
+                text="Ver servicios de consultoría y formación"
+                color="honey"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN COMPACTA: SOBRE EL PROYECTO */}
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-psicopiloto-blue-600">
+                Conoce el Proyecto
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-xl">
+              <div className="flex flex-col h-full">
+                <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">
+                  Sobre el Psicólogo
+                </h3>
+                {/* ✨ CAMBIO: Nombre de autor actualizado */}
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">
+                  Soy Jose Carlos Rguez. Retamar, psicólogo y ex-piloto militar. Mi experiencia en aviación
+                  (gestión de crisis, factores humanos y liderazgo) se integra en
+                  la terapia para ofrecerte un enfoque sólido y práctico, basado en la humildad y la toma de decisiones consciente.
+                </p>
+                <div className="mt-auto">
+                  <AnimatedCTA
+                    href="/sobre-mi"
+                    text="Conóceme mejor"
+                    color="blue"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col h-full">
+                <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">
+                  La Filosofía Psicopiloto
+                </h3>
+                <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">
+                  El objetivo es que vuelvas a pilotar tu vida con seguridad y dirección. Mi
+                  compromiso es ofrecerte un espacio de confianza, utilizando
+                  terapia integradora y EMDR para que recuperes el control de tus emociones.
+                  La filosofía de Psicopiloto aplica los valores de la aviación: resiliencia, trabajo en equipo y una cultura de aprendizaje constante.
+                </p>
+                <div className="mt-auto">
+                  <AnimatedCTA
+                    href="/que-es-psicopiloto"
+                    text="Descubre la filosofía"
+                    color="blue"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICIOS (Resumen) */}
+        <section className="py-16 bg-psicopiloto-sand-50">
+          <div className="container mx-auto max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-honey-500">
+              Servicios
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                { title: "Ansiedad y estrés", desc: "Insomnio, tensión, preocupaciones constantes. Recupera el control y la calma diaria con herramientas prácticas." },
+                { title: "Depresión y ánimo bajo", desc: "Falta de motivación, tristeza o apatía. Vuelve a encontrar el sentido y la dirección en tu vida." },
+                { title: "Autoestima y apego", desc: "Inseguridad, dificultad para poner límites. Fortalece tu identidad y establece relaciones sanas." },
+                { title: "Terapia de pareja", desc: "Espacio para mejorar la comunicación, reconstruir la confianza y recuperar la conexión perdida." },
+                { title: "Trauma y experiencias difíciles", desc: "Recuerdos dolorosos, bloqueos emocionales. Procesamiento con EMDR para sanar el pasado." },
+                { title: "Si eres empresa", desc: "Liderazgo consciente y prevención de errores, gestión de equipos y factores humanos adaptada a las necesidades de tu empresa." },
+              ].map((s, i) => (
+                <div key={i} className="p-6 bg-white/40 rounded-lg shadow-sm border border-psicopiloto-gray-500/10">
+                  <h3 className="font-semibold text-xl mb-2 text-psicopiloto-honey-500">{s.title}</h3>
+                  <p className="text-psicopiloto-gray-500">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <AnimatedCTA href="/servicios" text="Descubre todos los servicios" color="honey" />
+            </div>
+          </div>
+        </section>
+
         {/* CTA FINAL */}
         <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
@@ -267,14 +333,7 @@ export default function Home() {
               alt="Contacto telefónico para iniciar terapia psicológica online"
               width={400}
               height={400}
-              className={`
-                w-[200px] h-auto mx-auto mb-6
-                md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10
-                md:w-[350px] md:h-auto
-                lg:w-[400px] lg:-left-20
-                z-30
-                drop-shadow-xl
-        
+              className={`w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl`}
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20">
@@ -294,7 +353,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
