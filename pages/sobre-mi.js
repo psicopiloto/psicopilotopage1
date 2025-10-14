@@ -75,7 +75,7 @@ export default function SobreMi() {
       <Nav />
 
       <PageHeader
-        title="Conóceme: Jose Carlos Rguez Retamar" 
+        title="Conóceme: Jose Carlos Rguez. Retamar" 
         subtitle="Una trayectoria entre la aviación y la psicología para ayudarte a volar con seguridad en tu vida."
         backgroundImage="/header-sobremi.webp"
       />
