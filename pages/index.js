@@ -329,7 +329,7 @@ export default function Home() {
           <div className="container mx-auto max-w-5xl relative">
             {/* Imagen sobresaliente - Z-INDEX ALTO y SHADOW para el efecto 3D */}
             <Image
-              src="/telefono.png"
+              src="/telefono.webp"
               alt="Contacto telefónico para iniciar terapia psicológica online"
               width={400}
               height={400}
