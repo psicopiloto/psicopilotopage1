@@ -8,7 +8,7 @@ export default function CuadroContacto() {
       {/* Imagen flotante en la esquina inferior derecha */}
       <div className="absolute -bottom-12 -left-50 hidden md:block z-0">
         <Image // ✨ CAMBIO CRÍTICO: Usar <Image> en lugar de <img>
-          src="/telefono.png" // 📌 pon aquí tu imagen (mejor .png con transparencia)
+          src="/telefono.webp" // 📌 pon aquí tu imagen (mejor .png con transparencia)
           alt="Teléfono contacto Psicopiloto"
           width={220} // Se estima un tamaño
           height={220} // Se estima un tamaño
