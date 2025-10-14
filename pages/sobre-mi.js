@@ -85,7 +85,7 @@ export default function SobreMi() {
           {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al diván</h2>
+              <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
                 Mi nombre es Jose Carlos Rodríguez Retamar y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>piloto militar</strong>. 
               </p>
