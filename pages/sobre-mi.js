@@ -1,3 +1,5 @@
+// pages/sobre-mi.js
+
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -7,17 +9,15 @@ import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
 export default function SobreMi() {
-  // ======================================================
-  // 1. DEFINICIÓN DE DATOS (Array JavaScript puro)
-  // ======================================================
-  const fasesTrayectoria = [ 
+  const fasesTrayectoria = [
     {
       title: "Fase 1: El inicio – vocación por la psicología",
       img: "/sobre2.webp",
-      alt: "Jose Carlos Rodríguez Retamar estudiando psicología en la Universidad de Granada",
+      // ✨ CORRECCIÓN: Nombre actualizado para consistencia
+      alt: "Jose Carlos Rguez. Retamar estudiando psicología en la Universidad de Granada",
       content: [
         "Me licencié en Psicología por la Universidad de Granada en 2003. Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, aprendiendo la importancia de la escucha y el acompañamiento.",
-        "Fui voluntario durante 4 años trabajando con personas mayores en fases iniciales de demencia con terapias como la Terapia de la Reminiscencia, ayudándoles y acompañándoles a trabajar así la memoria y las emociones ",
+        "Fui voluntario durante 4 años trabajando con personas mayores en fases iniciales de demencia con terapias como la Terapia de la Reminiscencia, ayudándoles y acompañándoles a trabajar así la memoria y las emociones.",
         "Cursé el Curso de Adaptación Pedagógica, adquiriendo visión educativa y de orientación.",
       ],
     },
@@ -42,17 +42,19 @@ export default function SobreMi() {
       content: [
         "Retomé mi vocación en psicología, habilitándome como <strong>Psicólogo con Habilitación Sanitaria</strong> en 2015 en Madrid y especializándome en psicología aeronáutica, integradora, terapia breve, trauma y <strong>EMDR</strong>.",
         "Colaboré en la creación de Edades Granada, asesorando en gestión y manejo de errores aplicando lo aprendido en aviación.",
-        // 🚀 NUEVA FRASE IMPLEMENTADA AQUÍ 🚀
-        "Desde mi regreso a Granada en 2025, dedico mi vida a la psicología, integrando en mi práctica la experiencia de liderazgo, gestión de crisis y los factores humanos aprendidos como piloto militar e instructor de vuelo.",
-        "<strong>PSICOPILOTO</strong> nace de la union de mis dos pasiones: la <strong>Psicología</strong> y la <strong>aviación</strong>.",
+        // ✨ CORRECCIÓN: Año actualizado a una fecha presente/pasada
+        "Desde mi regreso a Granada en septiembre 2025, dedico mi vida a la psicología, integrando en mi práctica la experiencia de liderazgo, gestión de crisis y los factores humanos aprendidos como piloto militar e instructor de vuelo.",
+        "<strong>PSICOPILOTO</strong> nace de la unión de mis dos pasiones: la <strong>Psicología</strong> y la <strong>aviación</strong>.",
       ],
     },
     {
       title: "Fase 4: El voluntariado",
       img: "/sobre2.webp",
-      alt: "Jose Carlos Rodríguez Retamar haciendo voluntariado en Amalgama Social",
+      // ✨ CORRECCIÓN: Nombre actualizado para consistencia
+      alt: "Jose Carlos Rguez. Retamar haciendo voluntariado en Amalgama Social",
       content: [
-        "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo trabajandocon personas mayores y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
+        // ✨ CORRECCIÓN: Errata corregida ("trabajandocon" -> "trabajando con")
+        "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo trabajando con personas mayores y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
       ],
     },
   ];
@@ -61,12 +63,13 @@ export default function SobreMi() {
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="Jose Carlos Rguez. Retamar, Psicólogo y Piloto Militar | Psicopiloto"
-        description="Conoce la trayectoria de Jose Carlos Rodríguez, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR. Experiencia única."
+        // ✨ CORRECCIÓN: Nombre actualizado en la descripción para consistencia SEO
+        description="Conoce la trayectoria de Jose Carlos Rguez. Retamar, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR. Experiencia única."
         canonical="https://psicopiloto.com/sobre-mi"
         openGraph={{
           title: "Jose Carlos Rguez. Retamar, Psicólogo y Piloto Militar | Psicopiloto",
-          description: "Psicólogo con Habilitación Sanitaria y ex-piloto militar...",
-          images: [{ url: "/sobre1.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rodríguez" }],
+          description: "Conoce la trayectoria de Jose Carlos Rguez. Retamar, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR.",
+          images: [{ url: "https://www.psicopiloto.com/sobre1.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rguez. Retamar" }],
         }}
       />
       
@@ -75,7 +78,7 @@ export default function SobreMi() {
       <Nav />
 
       <PageHeader
-        title="Conóceme: Jose Carlos Rguez. Retamar" 
+        title="Conóceme: Jose Carlos Rguez. Retamar"
         subtitle="Una trayectoria entre la aviación y la psicología para ayudarte a volar con seguridad en tu vida."
         backgroundImage="/header-sobremi.webp"
       />
@@ -85,39 +88,44 @@ export default function SobreMi() {
           {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
+              {/* ✨ CORRECCIÓN: Título más profesional */}
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
-                Mi nombre es Jose Carlos Rodríguez Retamar y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>ex-piloto militar</strong>. 
+                {/* ✨ CORRECCIÓN: Nombre actualizado para consistencia */}
+                Mi nombre es Jose Carlos Rguez. Retamar y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>ex-piloto militar</strong>.
               </p>
               <p className="mt-4">
                 Mi trayectoria me ha enseñado que, tanto en la cabina como en la vida, la clave para superar cualquier turbulencia es cultivar la <strong>preparación mental</strong>, la <strong>gestión emocional</strong>, la <strong>toma de decisiones bajo presión</strong> y la <strong>humildad</strong>.
               </p>
             </div>
             <div className="flex justify-center">
-              <Image 
+              <Image
                 src="/sobre1.webp"
-                alt="Retrato de Jose Carlos Rodríguez, psicólogo"
-                width={400} 
+                // ✨ CORRECCIÓN: Nombre actualizado en el alt text
+                alt="Retrato de Jose Carlos Rguez. Retamar, psicólogo"
+                width={400}
                 height={500}
-                className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md"
+                // ✨ MEJORA UX: Añadida micro-interacción de hover
+                className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               />
             </div>
           </section>
 
-          {/* Fases de trayectoria (Lógica de renderizado) */}
-          {fasesTrayectoria.map((fase, i) => ( 
-            <section 
-              key={i} 
+          {/* Fases de trayectoria */}
+          {fasesTrayectoria.map((fase, i) => (
+            <section
+              key={i}
               className="mb-20 grid md:grid-cols-2 gap-12 items-center"
-              aria-labelledby={`fase-title-${i}`} 
+              aria-labelledby={`fase-title-${i}`}
             >
               <div className={i % 2 === 0 ? "md:order-1" : "md:order-2"}>
                 <Image
                   src={fase.img}
-                  alt={fase.alt} 
+                  alt={fase.alt}
                   width={400}
                   height={300}
-                  className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto"
+                  // ✨ MEJORA UX: Añadida micro-interacción de hover a cada imagen de la trayectoria
+                  className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
                 />
               </div>
               <div className={i % 2 === 0 ? "md:order-2" : "md:order-1"}>
@@ -125,10 +133,10 @@ export default function SobreMi() {
                   {fase.title}
                 </h3>
                 {fase.content.map((p, idx) => (
-                  <p 
-                    key={idx} 
+                  <p
+                    key={idx}
                     className="mt-4"
-                    dangerouslySetInnerHTML={{ __html: p }} 
+                    dangerouslySetInnerHTML={{ __html: p }}
                   />
                 ))}
                 {fase.list && (
@@ -148,7 +156,7 @@ export default function SobreMi() {
               Hoy: El Enfoque Psicopiloto
             </h2>
             <p>
-              Hoy, en <strong>Psicopiloto</strong>, uno lo aprendido en aviación con la psicología para ofrecer un acompañamiento diferente. 
+              Hoy, en <strong>Psicopiloto</strong>, uno lo aprendido en aviación con la psicología para ofrecer un acompañamiento diferente.
               Si en la cabina de un avión entrenábamos la mente para afrontar lo inesperado, en la terapia aplico la misma filosofía: ayudarte a ganar <strong>confianza</strong>, manejar la <strong>ansiedad</strong> y recuperar el <strong>control de tu vida</strong>.
             </p>
             <p className="mt-4">Porque todos merecemos <strong>volar con seguridad</strong>, también en nuestro propio camino personal.</p>
