@@ -16,7 +16,6 @@ import {
 } from "react-icons/fa";
 
 export default function Servicios() {
-  // ✨ CORRECCIÓN: Sintaxis de negrita cambiada de Markdown (**) a HTML (<strong>)
   const serviciosPersonas = [
     {
       title: "Ansiedad y Estrés",
@@ -100,7 +99,8 @@ export default function Servicios() {
 
       <PageHeader
         title="Servicios de Psicología"
-        subtitle="Herramientas prácticas para pilotar tu vida. Terapia individual y formación para empresas con un enfoque directo y resolutivo, inspirado en la aviación."
+        // ✨ CORRECCIÓN DE TONO: Subtítulo ajustado para ser más natural y menos técnico
+        subtitle="Un enfoque práctico y resolutivo para la terapia individual y la formación de empresas, inspirado en los principios de la aviación."
         backgroundImage="/header-servicios.webp"
       />
 
@@ -122,7 +122,6 @@ export default function Servicios() {
                   <div className="text-3xl text-psicopiloto-green-600 mr-3">{s.icon}</div>
                   <h3 className="font-semibold text-2xl text-psicopiloto-green-600">{s.title}</h3>
                 </div>
-                {/* ✨ CORRECCIÓN: Usar dangerouslySetInnerHTML para renderizar las etiquetas <strong> */}
                 <p className="mb-6 leading-relaxed text-psicopiloto-gray-700" dangerouslySetInnerHTML={{ __html: s.desc }}></p>
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} color="green" />
@@ -151,14 +150,12 @@ export default function Servicios() {
                   <div className="text-3xl text-psicopiloto-blue-600 mr-3">{s.icon}</div>
                   <h3 className="font-semibold text-2xl text-psicopiloto-blue-600">{s.title}</h3>
                 </div>
-                
                 <p className="mb-3 leading-relaxed">{s.desc}</p>
                 <ul className="list-disc list-inside mb-6 ml-4 space-y-2 text-psicopiloto-gray-700">
-                    {s.listaPuntos && s.listaPuntos.map((punto, index) => (
-                        <li key={index} className="leading-relaxed">{punto}</li>
-                    ))}
+                  {s.listaPuntos && s.listaPuntos.map((punto, index) => (
+                    <li key={index} className="leading-relaxed">{punto}</li>
+                  ))}
                 </ul>
-                
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} color={s.color} />
                 </div>
