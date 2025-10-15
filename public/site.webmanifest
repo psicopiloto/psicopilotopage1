@@ -1,0 +1,21 @@
+{
+  "name": "Psicopiloto",
+  "short_name": "Psicopiloto",
+  "description": "Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9f5f1",
+  "theme_color": "#4fad9b",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
