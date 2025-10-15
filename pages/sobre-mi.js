@@ -13,7 +13,6 @@ export default function SobreMi() {
     {
       title: "Fase 1: El inicio – vocación por la psicología",
       img: "/sobre2.webp",
-      // ✨ CORRECCIÓN: Nombre actualizado para consistencia
       alt: "Jose Carlos Rguez. Retamar estudiando psicología en la Universidad de Granada",
       content: [
         "Me licencié en Psicología por la Universidad de Granada en 2003. Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, aprendiendo la importancia de la escucha y el acompañamiento.",
@@ -42,18 +41,16 @@ export default function SobreMi() {
       content: [
         "Retomé mi vocación en psicología, habilitándome como <strong>Psicólogo con Habilitación Sanitaria</strong> en 2015 en Madrid y especializándome en psicología aeronáutica, integradora, terapia breve, trauma y <strong>EMDR</strong>.",
         "Colaboré en la creación de Edades Granada, asesorando en gestión y manejo de errores aplicando lo aprendido en aviación.",
-        // ✨ CORRECCIÓN: Año actualizado a una fecha presente/pasada
-        "Desde mi regreso a Granada en septiembre 2025, dedico mi vida a la psicología, integrando en mi práctica la experiencia de liderazgo, gestión de crisis y los factores humanos aprendidos como piloto militar e instructor de vuelo.",
+        // ✨ CORRECCIÓN Y TONO DE VOZ: Fecha corregida e integrada con tu contexto profesional
+        "Tras la intensa campaña de incendios forestales de 2025, una de las más exigentes de la historia reciente de España, regresé a Granada en septiembre para volcarme de lleno en la psicología, integrando la experiencia de liderazgo y gestión de crisis aprendida como piloto.",
         "<strong>PSICOPILOTO</strong> nace de la unión de mis dos pasiones: la <strong>Psicología</strong> y la <strong>aviación</strong>.",
       ],
     },
     {
       title: "Fase 4: El voluntariado",
       img: "/sobre2.webp",
-      // ✨ CORRECCIÓN: Nombre actualizado para consistencia
       alt: "Jose Carlos Rguez. Retamar haciendo voluntariado en Amalgama Social",
       content: [
-        // ✨ CORRECCIÓN: Errata corregida ("trabajandocon" -> "trabajando con")
         "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo trabajando con personas mayores y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
       ],
     },
@@ -63,7 +60,6 @@ export default function SobreMi() {
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="Jose Carlos Rguez. Retamar, Psicólogo y Piloto Militar | Psicopiloto"
-        // ✨ CORRECCIÓN: Nombre actualizado en la descripción para consistencia SEO
         description="Conoce la trayectoria de Jose Carlos Rguez. Retamar, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR. Experiencia única."
         canonical="https://psicopiloto.com/sobre-mi"
         openGraph={{
@@ -88,7 +84,6 @@ export default function SobreMi() {
           {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
-              {/* ✨ CORRECCIÓN: Título más profesional */}
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
                 {/* ✨ CORRECCIÓN: Nombre actualizado para consistencia */}
@@ -101,11 +96,9 @@ export default function SobreMi() {
             <div className="flex justify-center">
               <Image
                 src="/sobre1.webp"
-                // ✨ CORRECCIÓN: Nombre actualizado en el alt text
                 alt="Retrato de Jose Carlos Rguez. Retamar, psicólogo"
                 width={400}
                 height={500}
-                // ✨ MEJORA UX: Añadida micro-interacción de hover
                 className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               />
             </div>
@@ -124,7 +117,6 @@ export default function SobreMi() {
                   alt={fase.alt}
                   width={400}
                   height={300}
-                  // ✨ MEJORA UX: Añadida micro-interacción de hover a cada imagen de la trayectoria
                   className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
                 />
               </div>
