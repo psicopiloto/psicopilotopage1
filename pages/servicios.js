@@ -1,10 +1,11 @@
+// pages/servicios.js
+
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 
-// Iconos
 import {
   FaBrain,
   FaSadTear,
@@ -15,57 +16,51 @@ import {
 } from "react-icons/fa";
 
 export default function Servicios() {
+  // ✨ CAMBIO DE TONO: Textos reescritos para ser más directos, activos y orientados a resultados ("Voz de Piloto")
   const serviciosPersonas = [
     {
       title: "Ansiedad y Estrés",
-      // ✨ CORRECCIÓN A: Contenido - Enfoque en Beneficio.
-      desc: "La ansiedad y el estrés son respuestas naturales, pero constantes pueden causar insomnio, tensión y alerta. Te acompaño a desarrollar herramientas prácticas para **reducir la ansiedad y recuperar la calma**.",
-      cta: "Da el primer paso y transforma tu relación con el estrés",
-      icon: <FaBrain aria-hidden="true" />, // ✨ CORRECCIÓN B: Iconos como decoración
+      desc: "La ansiedad constante te mantiene en 'modo alerta', causando insomnio y tensión. Te enseño técnicas prácticas y directas para reducir los síntomas, gestionar tus pensamientos y recuperar la calma.",
+      cta: "Agenda una sesión y toma el control",
+      icon: <FaBrain aria-hidden="true" />,
     },
     {
       title: "Depresión y Ánimo Bajo",
-      desc: "Sentirse sin energía, desmotivado o con tristeza persistente afecta tu manera de pensar, sentir y relacionarte. Encontrarás un acompañamiento cercano para **recuperar motivación y bienestar**.",
-      cta: "Contacta ahora y recupera tu bienestar emocional",
+      desc: "La falta de energía y motivación afecta a cómo piensas y sientes. Diseñaremos un plan de acción para que recuperes el impulso, la motivación y el bienestar en tu día a día.",
+      cta: "Recupera tu motivación",
       icon: <FaSadTear aria-hidden="true" />,
     },
     {
       title: "Autoestima y Apego",
-      desc: "Una autoestima baja o patrones de apego inseguro generan relaciones complicadas y malestar interno. Aprenderás a **reconocer tus necesidades, poner límites sanos y fortalecer tu confianza**.",
-      cta: "Atrévete a priorizarte y construye una autoestima sólida",
+      desc: "Una autoestima baja genera relaciones complicadas. Aprenderás a identificar tus necesidades, a establecer límites firmes y a construir la confianza que necesitas para liderar tu vida.",
+      cta: "Construye una autoestima sólida",
       icon: <FaHeart aria-hidden="true" />,
     },
     {
       title: "Terapia de Pareja",
-      desc: "Las relaciones pueden atravesar conflictos, pérdida de confianza o distanciamiento emocional. Ofrecemos un espacio empático para **abrir canales de comunicación y recuperar la conexión**.",
-      cta: "Recuperad vuestra conexión: reservad una cita hoy",
+      desc: "Cuando la comunicación falla, aparecen los conflictos y la distancia. Ofrezco un espacio neutral para identificar los problemas de raíz, abrir canales de comunicación y reconstruir la conexión.",
+      cta: "Recuperad vuestra conexión",
       icon: <FaUsers aria-hidden="true" />,
     },
     {
       title: "Trauma y Experiencias Difíciles",
-      desc: "Las experiencias dolorosas del pasado pueden dejar huellas profundas. Aplicamos **EMDR** y técnicas de regulación que ayudan a **procesar y liberar memorias traumáticas de manera segura**.",
-      cta: "Empieza hoy tu proceso de sanación: agenda tu sesión de terapia",
+      desc: "Las heridas del pasado pueden limitar tu presente. Mediante EMDR y otras técnicas de regulación, trabajaremos para procesar y liberar esas memorias de forma segura y controlada.",
+      cta: "Inicia tu proceso de sanación",
       icon: <FaHeadSideVirus aria-hidden="true" />,
     },
   ];
 
   const serviciosEmpresas = [
     {
-      title: "Desarrollo Organizacional y Liderazgo",
-      // ✨ CORRECCIÓN C: Contenido - Se ha limpiado la redundancia y se ha estructurado como HTML semántico.
-      desc: `Aplicamos principios de aviación al desarrollo organizacional y de liderazgo. En un mundo empresarial complejo, los equipos necesitan confianza, cohesión y liderazgo positivo.
-      
-      Los mismos principios que hacen que un vuelo sea seguro y exitoso pueden transformar también tu empresa, impulsando su rendimiento y reduciendo costes.
-
-      Nuestros programas ayudan a las organizaciones a:
-      `,
-      listaPuntos: [ // ✨ CORRECCIÓN D: Creación de un array para lista.
-          "Reducir errores y aumentar la eficiencia.",
-          "Fomentar una comunicación clara y honesta.",
-          "Desarrollar líderes resilientes y equipos colaborativos.",
-          "Implantar una cultura organizacional basada en el aprendizaje, no en la culpa.",
+      title: "Formación y Consultoría para Empresas",
+      desc: `Aplicamos los principios de la aviación (CRM, Factores Humanos) para potenciar a tus equipos. En un entorno complejo, la cohesión, el liderazgo y la gestión de errores son críticos para el éxito.`,
+      listaPuntos: [
+        "Reducir errores operativos y aumentar la eficiencia.",
+        "Fomentar una comunicación clara y directa.",
+        "Desarrollar líderes resilientes y equipos cohesionados.",
+        "Implantar una 'Cultura Justa', basada en el aprendizaje y no en la culpa.",
       ],
-      cta: "Fortalece tu equipo hoy: solicita una sesión de asesoramiento",
+      cta: "Fortalece a tu equipo",
       color: "blue",
       icon: <FaBuilding aria-hidden="true" />,
     },
@@ -74,30 +69,26 @@ export default function Servicios() {
   return (
     <div className="relative min-h-screen flex flex-col font-sans text-psicopiloto-gray-700">
       <NextSeo
-        // ✨ CORRECCIÓN E: SEO - Title más específico y comercial (Max. 60 caracteres)
         title="Terapia para Ansiedad, Trauma y Pareja | Psicólogo Online y Empresas"
-        // ✨ CORRECCIÓN E: SEO - Description (Aprox. 155 caracteres).
         description="Servicios de psicoterapia online y presencial para Ansiedad, Depresión, Trauma (EMDR) y Terapia de Pareja. También ofrecemos formación en Liderazgo y Factores Humanos para empresas."
         canonical="https://psicopiloto.com/servicios"
         additionalMetaTags={[
           {
             name: "keywords",
-            content:
-              "psicología, ansiedad, depresión, terapia de pareja, trauma, EMDR, psicoterapia online, psicología para empresas, liderazgo",
+            content: "psicología, ansiedad, depresión, terapia de pareja, trauma, EMDR, psicoterapia online, psicología para empresas, liderazgo",
           },
-          { name: "author", content: "Jose Carlos Rodríguez Retamar" },
+          // ✨ CORRECCIÓN: Nombre de autor actualizado para consistencia
+          { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/servicios",
           title: "Servicios de Psicología | Psicopiloto",
-          description:
-            "Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma y formación para empresas. Un espacio seguro para recuperar tu bienestar emocional con Psicopiloto.",
+          description: "Psicoterapia para ansiedad, estrés, depresión, autoestima, terapia de pareja, trauma y formación para empresas.",
           images: [
             {
-              url: "/header-servicios.webp",
+              url: "https://www.psicopiloto.com/header-servicios.webp",
               width: 1200,
               height: 630,
-              // ✨ CORRECCIÓN F: ALT más descriptivo.
               alt: "Psicólogo revisando programas de terapia para ansiedad, depresión y empresas",
               type: "image/webp",
             },
@@ -109,35 +100,36 @@ export default function Servicios() {
       <Nav />
 
       <PageHeader
-        // ✨ CORRECCIÓN G: H1 - Se mantiene la claridad, ya tiene un buen H1.
         title="Servicios de Psicología"
-        subtitle="Un espacio seguro para recuperar el equilibrio y afrontar tus retos con confianza. Si eres empresa, también te acompaño con formación en factores humanos, liderazgo y gestión de equipos inspirada en la aviación."
+        // ✨ CAMBIO DE TONO: Subtítulo más directo y orientado a la acción
+        subtitle="Herramientas prácticas para pilotar tu vida. Terapia individual y formación para empresas con un enfoque directo y resolutivo, inspirado en la aviación."
         backgroundImage="/header-servicios.webp"
       />
 
       <main className="flex-grow pt-16 relative z-10">
         {/* Servicios para personas */}
-        <section 
-            className="py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
-            aria-labelledby="servicios-personas-title" // ✨ CORRECCIÓN H: Accesibilidad
+        <section
+          className="py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
+          aria-labelledby="servicios-personas-title"
         >
           <h2 id="servicios-personas-title" className="text-3xl font-semibold text-center text-psicopiloto-green-600 mb-12">
             Psicopiloto para Ti
           </h2>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviciosPersonas.map((s, i) => (
               <div
                 key={i}
+                // ✨ MEJORA UX: Las clases de hover ya estaban, se mantienen por ser correctas.
                 className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full backdrop-blur-sm"
               >
                 <div className="flex items-center mb-4">
                   <div className="text-3xl text-psicopiloto-green-600 mr-3">{s.icon}</div>
                   <h3 className="font-semibold text-2xl text-psicopiloto-green-600">{s.title}</h3>
-                  {/* ✨ CORRECCIÓN I: Eliminamos s.extra, lo hemos integrado en s.desc para mejor flujo */}
                 </div>
-                <p className="mb-6 leading-relaxed text-psicopiloto-gray-700">{s.desc}</p> 
+                {/* Usamos dangerouslySetInnerHTML para renderizar el <strong> */}
+                <p className="mb-6 leading-relaxed text-psicopiloto-gray-700" dangerouslySetInnerHTML={{ __html: s.desc }}></p>
                 <div className="mt-auto">
-                  <AnimatedCTA href="/contacto" text={s.cta} color="green" /> {/* ✨ CORRECCIÓN J: Asegurar el color de marca */}
+                  <AnimatedCTA href="/contacto" text={s.cta} color="green" />
                 </div>
               </div>
             ))}
@@ -145,17 +137,17 @@ export default function Servicios() {
         </section>
 
         {/* Divider */}
-        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-8 rounded"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-16 rounded"></div>
 
         {/* Servicios para empresas */}
-        <section 
-            className="py-12 md:py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
-            aria-labelledby="servicios-empresas-title"
+        <section
+          className="pb-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
+          aria-labelledby="servicios-empresas-title"
         >
           <h2 id="servicios-empresas-title" className="text-3xl font-semibold text-center text-psicopiloto-blue-600 mb-10">
             Psicopiloto para Empresas
           </h2>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 gap-10 max-w-3xl mx-auto">
             {serviciosEmpresas.map((s, i) => (
               <div
                 key={i}
@@ -166,7 +158,6 @@ export default function Servicios() {
                   <h3 className="font-semibold text-2xl text-psicopiloto-blue-600">{s.title}</h3>
                 </div>
                 
-                {/* ✨ CORRECCIÓN D/K: Contenido - Se usa la nueva estructura para la lista */}
                 <p className="mb-3 leading-relaxed">{s.desc}</p>
                 <ul className="list-disc list-inside mb-6 ml-4 space-y-2 text-psicopiloto-gray-700">
                     {s.listaPuntos && s.listaPuntos.map((punto, index) => (
