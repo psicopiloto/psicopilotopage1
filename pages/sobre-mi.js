@@ -41,7 +41,6 @@ export default function SobreMi() {
       content: [
         "Retomé mi vocación en psicología, habilitándome como <strong>Psicólogo con Habilitación Sanitaria</strong> en 2015 en Madrid y especializándome en psicología aeronáutica, integradora, terapia breve, trauma y <strong>EMDR</strong>.",
         "Colaboré en la creación de Edades Granada, asesorando en gestión y manejo de errores aplicando lo aprendido en aviación.",
-        // ✨ CORRECCIÓN Y TONO DE VOZ: Fecha corregida e integrada con tu contexto profesional
         "Tras la intensa campaña de incendios forestales de 2025, una de las más exigentes de la historia reciente de España, regresé a Granada en septiembre para volcarme de lleno en la psicología, integrando la experiencia de liderazgo y gestión de crisis aprendida como piloto.",
         "<strong>PSICOPILOTO</strong> nace de la unión de mis dos pasiones: la <strong>Psicología</strong> y la <strong>aviación</strong>.",
       ],
@@ -81,13 +80,11 @@ export default function SobreMi() {
 
       <main className="flex-grow py-16 relative z-10">
         <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/40 p-8 rounded-2xl shadow-lg">
-          {/* Intro */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
-                {/* ✨ CORRECCIÓN: Nombre actualizado para consistencia */}
-                Mi nombre es Jose Carlos Rguez. Retamar y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>ex-piloto militar</strong>.
+                Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong> y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>ex-piloto militar</strong>.
               </p>
               <p className="mt-4">
                 Mi trayectoria me ha enseñado que, tanto en la cabina como en la vida, la clave para superar cualquier turbulencia es cultivar la <strong>preparación mental</strong>, la <strong>gestión emocional</strong>, la <strong>toma de decisiones bajo presión</strong> y la <strong>humildad</strong>.
@@ -104,7 +101,6 @@ export default function SobreMi() {
             </div>
           </section>
 
-          {/* Fases de trayectoria */}
           {fasesTrayectoria.map((fase, i) => (
             <section
               key={i}
@@ -142,7 +138,6 @@ export default function SobreMi() {
             </section>
           ))}
 
-          {/* Hoy */}
           <section className="mb-20" aria-labelledby="hoy-psicopiloto-title">
             <h2 id="hoy-psicopiloto-title" className="text-2xl font-semibold mb-4 text-psicopiloto-blue-600">
               Hoy: El Enfoque Psicopiloto
@@ -154,7 +149,6 @@ export default function SobreMi() {
             <p className="mt-4">Porque todos merecemos <strong>volar con seguridad</strong>, también en nuestro propio camino personal.</p>
           </section>
 
-          {/* Call to action */}
           <div className="mt-12 text-center">
             <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
           </div>
