@@ -87,7 +87,7 @@ export default function SobreMi() {
             <div>
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
-                Mi nombre es Jose Carlos Rodríguez Retamar y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>piloto militar</strong>. 
+                Mi nombre es Jose Carlos Rodríguez Retamar y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>ex-piloto militar</strong>. 
               </p>
               <p className="mt-4">
                 Mi trayectoria me ha enseñado que, tanto en la cabina como en la vida, la clave para superar cualquier turbulencia es cultivar la <strong>preparación mental</strong>, la <strong>gestión emocional</strong>, la <strong>toma de decisiones bajo presión</strong> y la <strong>humildad</strong>.
