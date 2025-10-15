@@ -139,8 +139,8 @@ export default function PoliticaCookies() {
 
           <p className="mt-8">
             Si tiene dudas sobre el uso de cookies en nuestra web, puede contactar con el responsable del tratamiento en{" "}
-            <a href="mailto:joseretamar@psicopiloto.com" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-blue-600 transition-colors duration-200">
-              joseretamar@psicopiloto.com
+            <a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-blue-600 transition-colors duration-200">
+              info@psicopiloto.com
             </a>.
           </p>
         </section>
