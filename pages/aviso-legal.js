@@ -21,7 +21,6 @@ export default function AvisoLegal() {
         title="Aviso Legal y Política de Privacidad | Psicopiloto"
         description="Aviso Legal y Política de Privacidad de Psicopiloto. Psicólogo online y presencial en Granada."
         canonical="https://psicopiloto.com/aviso-legal"
-        // ✨ CORRECCIÓN: Añadido metadato de autor para consistencia
         additionalMetaTags={[
           { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
@@ -42,12 +41,10 @@ export default function AvisoLegal() {
 
           <h1 className="text-3xl font-bold mb-6 text-center">Aviso Legal y Política de Privacidad</h1>
 
-          {/* Índice interno */}
           <nav className="mb-8 bg-gray-50 p-4 rounded-lg shadow-sm">
             <ul className="space-y-2">
               {secciones.map((sec) => (
                 <li key={sec.id}>
-                  {/* ✨ MEJORA UX: Añadida transición para suavizar el efecto hover */}
                   <a href={`#${sec.id}`} className="text-psicopiloto-green-600 hover:underline transition-colors duration-200">
                     {sec.label}
                   </a>
@@ -59,7 +56,6 @@ export default function AvisoLegal() {
           <section id="titular" className="mb-8">
             <h2 className="text-xl font-semibold mb-2">Titular de la web</h2>
             <p>
-              {/* ✨ CORRECCIÓN: Nombre y dirección actualizados */}
               <strong>Nombre:</strong> Jose Carlos Rguez. Retamar <br />
               <strong>Teléfono:</strong> 676 230 537 <br />
               <strong>Correo electrónico:</strong> joseretamar@psicopiloto.com <br />
@@ -73,18 +69,31 @@ export default function AvisoLegal() {
             </p>
           </section>
 
-          <section id="proteccion-datos" className="mb-8">
-            <h2 className="text-xl font-semibold mb-2">Protección de datos personales</h2>
+          {/* ✨ CORRECCIÓN: Contenido actualizado para cumplir con el RGPD */}
+          <section id="proteccion-datos" className="mb-8 space-y-4">
+            <h2 className="text-xl font-semibold mb-2">Protección de Datos Personales</h2>
             <p>
-              Los datos que facilites a través de los formularios de contacto serán tratados de forma confidencial y con la finalidad exclusiva de responder a tus consultas o prestarte los servicios solicitados. 
-              Se aplicarán las medidas técnicas y organizativas necesarias para garantizar su seguridad.
+              De conformidad con el Reglamento (UE) 2016/679 (RGPD), le informamos de que los datos personales que nos facilite a través de los formularios de esta web serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con la finalidad de gestionar su consulta y/o prestarle el servicio solicitado.
+            </p>
+            <p>
+              <strong>Base Jurídica del Tratamiento:</strong> El tratamiento de sus datos se basa en el consentimiento explícito que usted otorga al enviar el formulario.
+            </p>
+            <p>
+              <strong>Plazo de Conservación:</strong> Sus datos se conservarán mientras sean necesarios para atender su solicitud o mientras no solicite su supresión. Posteriormente, se conservarán durante los plazos legales aplicables.
+            </p>
+            <p>
+              <strong>Comunicación de Datos:</strong> Sus datos no serán cedidos a terceros, salvo obligación legal. No obstante, para el correcto funcionamiento de la web, podrán tener acceso a ellos nuestros proveedores de servicios (Encargados del Tratamiento), como el proveedor de hosting (Vercel), el gestor de formularios (Formspree) y otros proveedores de herramientas analíticas o de comunicación (Google), siempre bajo nuestro control y con las debidas garantías de seguridad.
             </p>
           </section>
 
-          <section id="derechos" className="mb-8">
+          {/* ✨ CORRECCIÓN: Contenido actualizado para cumplir con el RGPD */}
+          <section id="derechos" className="mb-8 space-y-4">
             <h2 className="text-xl font-semibold mb-2">Derechos de los usuarios</h2>
             <p>
-              Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de tus datos contactando con el titular mediante los datos proporcionados anteriormente.
+              Usted puede ejercer en cualquier momento sus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de sus datos, contactando con el titular a través de los datos de contacto proporcionados en esta página.
+            </p>
+            <p>
+              Asimismo, si considera que el tratamiento de sus datos no se ajusta a la normativa, tiene derecho a presentar una reclamación ante la Autoridad de Control competente (en España, la <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer" className="text-psicopiloto-green-600 hover:underline">Agencia Española de Protección de Datos</a>).
             </p>
           </section>
 
@@ -98,12 +107,12 @@ export default function AvisoLegal() {
           <section id="cookies" className="mb-8">
             <h2 className="text-xl font-semibold mb-2">Cookies</h2>
             <p>
-              Esta web utiliza cookies propias y de terceros únicamente con fines analíticos y funcionales. Puedes gestionar tus preferencias mediante el aviso de cookies que se muestra al acceder.
+              Esta web utiliza cookies propias y de terceros con fines analíticos y funcionales. Puede aceptar, rechazar o configurar su uso a través del banner de cookies. Para más información, consulte nuestra <a href="/politica-cookies" className="text-psicopiloto-green-600 hover:underline">Política de Cookies</a>.
             </p>
           </section>
 
           <p className="mt-6 text-sm text-gray-500">
-            Última actualización: septiembre 2025.
+            Última actualización: octubre 2025.
           </p>
         </section>
       </main>
