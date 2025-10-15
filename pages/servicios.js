@@ -16,35 +16,35 @@ import {
 } from "react-icons/fa";
 
 export default function Servicios() {
-  // ✨ CAMBIO DE TONO: Textos reescritos para ser más directos, activos y orientados a resultados ("Voz de Piloto")
+  // ✨ CORRECCIÓN: Sintaxis de negrita cambiada de Markdown (**) a HTML (<strong>)
   const serviciosPersonas = [
     {
       title: "Ansiedad y Estrés",
-      desc: "La ansiedad constante te mantiene en 'modo alerta', causando insomnio y tensión. Te enseño técnicas prácticas y directas para reducir los síntomas, gestionar tus pensamientos y recuperar la calma.",
+      desc: "La ansiedad constante te mantiene en 'modo alerta', causando insomnio y tensión. Te enseño <strong>técnicas prácticas y directas</strong> para reducir los síntomas, gestionar tus pensamientos y recuperar la calma.",
       cta: "Agenda una sesión y toma el control",
       icon: <FaBrain aria-hidden="true" />,
     },
     {
       title: "Depresión y Ánimo Bajo",
-      desc: "La falta de energía y motivación afecta a cómo piensas y sientes. Diseñaremos un plan de acción para que recuperes el impulso, la motivación y el bienestar en tu día a día.",
+      desc: "La falta de energía y motivación afecta a cómo piensas y sientes. Diseñaremos un <strong>plan de acción</strong> para que recuperes el impulso, la motivación y el bienestar en tu día a día.",
       cta: "Recupera tu motivación",
       icon: <FaSadTear aria-hidden="true" />,
     },
     {
       title: "Autoestima y Apego",
-      desc: "Una autoestima baja genera relaciones complicadas. Aprenderás a identificar tus necesidades, a establecer límites firmes y a construir la confianza que necesitas para liderar tu vida.",
+      desc: "Una autoestima baja genera relaciones complicadas. Aprenderás a <strong>identificar tus necesidades</strong>, a establecer <strong>límites firmes</strong> y a construir la confianza que necesitas para liderar tu vida.",
       cta: "Construye una autoestima sólida",
       icon: <FaHeart aria-hidden="true" />,
     },
     {
       title: "Terapia de Pareja",
-      desc: "Cuando la comunicación falla, aparecen los conflictos y la distancia. Ofrezco un espacio neutral para identificar los problemas de raíz, abrir canales de comunicación y reconstruir la conexión.",
+      desc: "Cuando la comunicación falla, aparecen los conflictos y la distancia. Ofrezco un espacio neutral para <strong>identificar los problemas de raíz</strong>, abrir canales de comunicación y <strong>reconstruir la conexión</strong>.",
       cta: "Recuperad vuestra conexión",
       icon: <FaUsers aria-hidden="true" />,
     },
     {
       title: "Trauma y Experiencias Difíciles",
-      desc: "Las heridas del pasado pueden limitar tu presente. Mediante EMDR y otras técnicas de regulación, trabajaremos para procesar y liberar esas memorias de forma segura y controlada.",
+      desc: "Las heridas del pasado pueden limitar tu presente. Mediante <strong>EMDR</strong> y otras técnicas de regulación, trabajaremos para <strong>procesar y liberar esas memorias</strong> de forma segura y controlada.",
       cta: "Inicia tu proceso de sanación",
       icon: <FaHeadSideVirus aria-hidden="true" />,
     },
@@ -77,7 +77,6 @@ export default function Servicios() {
             name: "keywords",
             content: "psicología, ansiedad, depresión, terapia de pareja, trauma, EMDR, psicoterapia online, psicología para empresas, liderazgo",
           },
-          // ✨ CORRECCIÓN: Nombre de autor actualizado para consistencia
           { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
         openGraph={{
@@ -101,13 +100,11 @@ export default function Servicios() {
 
       <PageHeader
         title="Servicios de Psicología"
-        // ✨ CAMBIO DE TONO: Subtítulo más directo y orientado a la acción
         subtitle="Herramientas prácticas para pilotar tu vida. Terapia individual y formación para empresas con un enfoque directo y resolutivo, inspirado en la aviación."
         backgroundImage="/header-servicios.webp"
       />
 
       <main className="flex-grow pt-16 relative z-10">
-        {/* Servicios para personas */}
         <section
           className="py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
           aria-labelledby="servicios-personas-title"
@@ -119,14 +116,13 @@ export default function Servicios() {
             {serviciosPersonas.map((s, i) => (
               <div
                 key={i}
-                // ✨ MEJORA UX: Las clases de hover ya estaban, se mantienen por ser correctas.
                 className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col h-full backdrop-blur-sm"
               >
                 <div className="flex items-center mb-4">
                   <div className="text-3xl text-psicopiloto-green-600 mr-3">{s.icon}</div>
                   <h3 className="font-semibold text-2xl text-psicopiloto-green-600">{s.title}</h3>
                 </div>
-                {/* Usamos dangerouslySetInnerHTML para renderizar el <strong> */}
+                {/* ✨ CORRECCIÓN: Usar dangerouslySetInnerHTML para renderizar las etiquetas <strong> */}
                 <p className="mb-6 leading-relaxed text-psicopiloto-gray-700" dangerouslySetInnerHTML={{ __html: s.desc }}></p>
                 <div className="mt-auto">
                   <AnimatedCTA href="/contacto" text={s.cta} color="green" />
@@ -136,10 +132,8 @@ export default function Servicios() {
           </div>
         </section>
 
-        {/* Divider */}
         <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-16 rounded"></div>
 
-        {/* Servicios para empresas */}
         <section
           className="pb-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
           aria-labelledby="servicios-empresas-title"
