@@ -49,12 +49,13 @@ export default function Footer() {
           >
             <FaTwitter aria-hidden="true" />
           </a>
+          {/* ✨ CORRECCIÓN: URL de LinkedIn y aria-label actualizados a la versión de marca */}
           <a
             href="https://www.linkedin.com/in/psicopiloto/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
-            aria-label="LinkedIn de Jose Carlos Rguez. Retamar"
+            aria-label="LinkedIn de Psicopiloto"
           >
             <FaLinkedin aria-hidden="true" />
           </a>
@@ -72,11 +73,11 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ✨ SECCIÓN INFERIOR: SEO Local y Enlaces Legales (REESTRUCTURADA) ✨ */}
+      {/* SECCIÓN INFERIOR: SEO Local y Enlaces Legales */}
       <div className="container mx-auto text-center mt-10 pt-6 border-t border-psicopiloto-gray-500/10 px-4">
-        {/* Línea de SEO Local con el nombre corregido */}
+        {/* Línea de SEO Local con el nombre y número de colegiado */}
         <div className="text-sm text-psicopiloto-gray-600 mb-4">
-          <p>Psicopiloto® | Jose Carlos Rguez. Retamar - Psicólogo online con servicio en Granada.</p>
+          <p>Psicopiloto® | Jose Carlos Rguez. Retamar - Psicólogo online con servicio en Granada | Col. AO14457</p>
         </div>
 
         {/* Enlaces legales en una sola línea */}
