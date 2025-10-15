@@ -64,7 +64,7 @@ export default function AvisoLegal() {
             <p className="space-y-1">
               <strong>Nombre:</strong> Jose Carlos Rguez. Retamar (Psicopiloto) <br />
               <strong>Teléfono:</strong> 676 230 537 <br />
-              <strong>Correo electrónico:</strong> joseretamar@psicopiloto.com <br />
+              <strong>Correo electrónico:</strong> info@psicopiloto.com <br />
               <strong>Colegiado:</strong> AO14457
             </p>
           </section>
@@ -147,7 +147,7 @@ export default function AvisoLegal() {
           <section id="fuero" className="mb-8">
             <h2 className="text-2xl font-semibold mb-3 border-b pb-1">9. Fuero y Legislación Aplicable</h2>
             <p>
-              El presente Aviso Legal se rige por la legislación española vigente. Para cualquier controversia que pudiera derivarse de la utilización del Sitio Web o de los servicios ofrecidos, las partes se someten a la jurisdicción y competencia de los tribunales de la ciudad de **Granada**, siempre que ello fuese legalmente posible. En caso contrario, se aplicará el fuero legal correspondiente.
+              El presente Aviso Legal se rige por la legislación española vigente. Para cualquier controversia que pudiera derivarse de la utilización del Sitio Web o de los servicios ofrecidos, las partes se someten a la jurisdicción y competencia de los tribunales de la ciudad de <strong>Granada</strong>, siempre que ello fuese legalmente posible. En caso contrario, se aplicará el fuero legal correspondiente.
             </p>
           </section>
 
