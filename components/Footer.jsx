@@ -77,7 +77,8 @@ export default function Footer() {
       <div className="container mx-auto text-center mt-10 pt-6 border-t border-psicopiloto-gray-500/10 px-4">
         {/* Línea de SEO Local con el nombre y número de colegiado */}
         <div className="text-sm text-psicopiloto-gray-600 mb-4">
-          <p>Psicopiloto® | Jose Carlos Rguez. Retamar - Psicólogo online con habilitación sanitaria y servicio en Granada | Col. AO14457</p>
+          {/* ✨ CAMBIO CRÍTICO: Uso de la frase legalmente precisa "Psicólogo con Habilitación Sanitaria" */}
+          <p>Psicopiloto® | Jose Carlos Rguez. Retamar - Psicólogo con Habilitación Sanitaria online con servicio en Granada | Col. AO14457</p>
         </div>
 
         {/* Enlaces legales en una sola línea */}
