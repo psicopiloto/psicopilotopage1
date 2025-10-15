@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Script from "next/script"; 
 
 // ID de Google Analytics (CRÍTICO: REEMPLAZAR con tu ID, ej: G-XXXXXXXXX)
-const GA_TRACKING_ID = "TU_ID_DE_GOOGLE_ANALYTICS";
+const GA_TRACKING_ID = "G-WRQSWV9QHZ";
 
 // Función de bloqueo preventivo de Google Analytics (GDPR)
 const disableAnalytics = () => {
