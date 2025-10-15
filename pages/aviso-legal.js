@@ -1,3 +1,5 @@
+// pages/aviso-legal.js
+
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -19,13 +21,16 @@ export default function AvisoLegal() {
         title="Aviso Legal y Política de Privacidad | Psicopiloto"
         description="Aviso Legal y Política de Privacidad de Psicopiloto. Psicólogo online y presencial en Granada."
         canonical="https://psicopiloto.com/aviso-legal"
+        // ✨ CORRECCIÓN: Añadido metadato de autor para consistencia
+        additionalMetaTags={[
+          { name: "author", content: "Jose Carlos Rguez. Retamar" },
+        ]}
       />
 
       <Nav />
 
       <main className="flex-grow pt-16">
         <section className="max-w-4xl mx-auto px-6 py-12 text-gray-700">
-          {/* Logo centrado */}
           <div className="flex justify-center mb-6">
             <Image
               src="/logo.webp"
@@ -42,7 +47,8 @@ export default function AvisoLegal() {
             <ul className="space-y-2">
               {secciones.map((sec) => (
                 <li key={sec.id}>
-                  <a href={`#${sec.id}`} className="text-psicopiloto-green-600 hover:underline">
+                  {/* ✨ MEJORA UX: Añadida transición para suavizar el efecto hover */}
+                  <a href={`#${sec.id}`} className="text-psicopiloto-green-600 hover:underline transition-colors duration-200">
                     {sec.label}
                   </a>
                 </li>
@@ -53,10 +59,10 @@ export default function AvisoLegal() {
           <section id="titular" className="mb-8">
             <h2 className="text-xl font-semibold mb-2">Titular de la web</h2>
             <p>
-              <strong>Nombre:</strong> Jose Carlos Rodríguez Retamar <br />
+              {/* ✨ CORRECCIÓN: Nombre y dirección actualizados */}
+              <strong>Nombre:</strong> Jose Carlos Rguez. Retamar <br />
               <strong>Teléfono:</strong> 676 230 537 <br />
               <strong>Correo electrónico:</strong> joseretamar@psicopiloto.com <br />
-              <strong>Dirección:</strong> Calle Ejemplo nº 123, Granada <br />
             </p>
           </section>
 
