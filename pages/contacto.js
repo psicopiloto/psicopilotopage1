@@ -61,7 +61,7 @@ export default function Contacto() {
       });
 
       if (res.ok) {
-        setStatus("✅ Enviado correctamente. Te responderé pronto.");
+        setStatus("✅ ¡Mensaje recibido! Gracias por contactar. Te responderé personalmente en un plazo de 24-48 horas.");
         setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
       } else {
         // Mejora: Muestra el código de error si falla para tener más pistas
