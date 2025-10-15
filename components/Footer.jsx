@@ -49,7 +49,7 @@ export default function Footer() {
           >
             <FaTwitter aria-hidden="true" />
           </a>
-          {/* ✨ CORRECCIÓN: URL de LinkedIn y aria-label actualizados a la versión de marca */}
+          {/* URL de LinkedIn y aria-label actualizados a la versión de marca */}
           <a
             href="https://www.linkedin.com/in/psicopiloto/"
             target="_blank"
@@ -76,13 +76,14 @@ export default function Footer() {
       {/* SECCIÓN INFERIOR: SEO Local y Enlaces Legales */}
       <div className="container mx-auto text-center mt-10 pt-6 border-t border-psicopiloto-gray-500/10 px-4">
         {/* Línea de SEO Local con el nombre y número de colegiado */}
-        <div className="text-sm text-psicopiloto-gray-600 mb-4">
-          {/* ✨ CAMBIO CRÍTICO: Uso de la frase legalmente precisa "Psicólogo con Habilitación Sanitaria" */}
+        <div className="text-base md:text-lg text-psicopiloto-gray-600 mb-4">
+          {/* ✨ CORRECCIÓN DE TAMAÑO DE FUENTE: Cambiado de text-sm a text-base md:text-lg */}
           <p>Psicopiloto® | Jose Carlos Rguez. Retamar - Psicólogo con Habilitación Sanitaria online con servicio en Granada | Col. AO14457</p>
         </div>
 
         {/* Enlaces legales en una sola línea */}
-        <nav aria-label="Enlaces legales y política" className="flex justify-center items-center gap-2 text-xs text-psicopiloto-gray-600">
+        <nav aria-label="Enlaces legales y política" className="flex justify-center items-center gap-2 text-sm text-psicopiloto-gray-600">
+          {/* ✨ CORRECCIÓN DE TAMAÑO DE FUENTE: Cambiado de text-xs a text-sm */}
           <a
             href="/aviso-legal"
             className="hover:underline focus:outline-none focus:ring-1 focus:ring-psicopiloto-blue-500 rounded"
