@@ -1,6 +1,7 @@
 // next-seo.config.js
 export default {
-  title: "Psicopiloto | Psicólogo online en Granada — Terapia, EMDR y Liderazgo",
+  // 💡 CAMBIO CRÍTICO: Añadido 'Sanitario' para acentuar el tono clínico
+  title: "Psicopiloto | Psicólogo Sanitario Online en Granada — Terapia, EMDR y Liderazgo",
   description:
     "Acompaño tu viaje hacia el bienestar con psicoterapia integradora, EMDR y enfoque basado en factores humanos. Recupera el control y la calma en tu vida.",
 
@@ -30,5 +31,5 @@ export default {
     cardType: "summary_large_image",
   },
 
-  // ✨ CAMBIO: El array 'additionalLinkTags' con los favicons duplicados ha sido eliminado.
+  // El array 'additionalLinkTags' ha sido eliminado correctamente para evitar duplicados.
 };
