@@ -13,7 +13,6 @@ export default function QueEsPsicopiloto() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        // ✨ CORRECCIÓN: Nombre y título actualizados para SEO
         title="Filosofía Psicopiloto: Psicología y Aviación | Jose Carlos Rguez. Retamar"
         description="Descubre la filosofía de Psicopiloto. Aplico la experiencia aeronáutica (CRM, Liderazgo) a la psicología para enseñarte a gestionar la presión, tomar decisiones y volar con seguridad."
         canonical="https://psicopiloto.com/que-es-psicopiloto"
@@ -23,7 +22,6 @@ export default function QueEsPsicopiloto() {
       <Nav />
 
       <PageHeader
-        // ✨ CAMBIO DE TONO: Título y subtítulo más directos y potentes
         title="Filosofía Psicopiloto: Psicología con mentalidad de piloto"
         subtitle="Cómo aplico los principios de la aviación —disciplina, gestión de la presión y toma de decisiones— para ayudarte a tomar el control."
         backgroundImage="/header-quees.webp"
@@ -40,18 +38,17 @@ export default function QueEsPsicopiloto() {
               <p className="text-psicopiloto-gray-700 leading-relaxed">
                 Psicopiloto es mi proyecto personal, donde fusiono mis dos grandes pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>. Tras más de 18 años como piloto militar, comandante en misiones de alto riesgo e instructor de vuelo, decidí aplicar todo ese conocimiento sobre factores humanos, CRM y gestión de la presión al campo de la psicología.
               </p>
+              {/* ✨ CORRECCIÓN: Sintaxis de negrita cambiada de Markdown (**) a HTML (<strong>) */}
               <p className="mt-4 text-psicopiloto-gray-700 leading-relaxed">
-                En la cabina de un avión, cada decisión es crítica. En la vida y en la empresa, también. Mi trabajo es darte las herramientas para **gestionar la presión**, **comunicarte eficazmente** y **tomar decisiones conscientes**.
+                En la cabina de un avión, cada decisión es crítica. En la vida y en la empresa, también. Mi trabajo es darte las herramientas para <strong>gestionar la presión</strong>, <strong>comunicarte eficazmente</strong> y <strong>tomar decisiones conscientes</strong>.
               </p>
             </div>
             <div>
               <Image
                 src="/sobre1.webp"
-                // ✨ CORRECCIÓN: Nombre actualizado para consistencia
                 alt="Jose Carlos Rguez. Retamar aplicando principios de aviación a la psicología"
                 width={600}
                 height={400}
-                // ✨ MEJORA UX: Añadida micro-interacción de hover
                 className="rounded-xl shadow-lg w-full h-auto object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               />
             </div>
@@ -64,7 +61,6 @@ export default function QueEsPsicopiloto() {
                 alt="Principios de aviación aplicados a la misión de Psicopiloto"
                 width={600}
                 height={400}
-                // ✨ MEJORA UX: Añadida micro-interacción de hover
                 className="rounded-xl shadow-lg w-full h-auto object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               />
             </div>
@@ -72,13 +68,10 @@ export default function QueEsPsicopiloto() {
               <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
                 Misión y Visión
               </h2>
-              
-              {/* ✨ CAMBIO DE TONO: Textos más directos y personales */}
               <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">Mi Misión</h3>
               <p className="text-psicopiloto-gray-700 leading-relaxed">
                 Enseñar a personas y equipos las herramientas de la psicología y la aviación para que afronten sus retos con seguridad, confianza y un plan claro.
               </p>
-              
               <h3 className="text-2xl font-semibold mt-8 mb-3 text-psicopiloto-green-600">Mi Visión</h3>
               <p className="text-psicopiloto-gray-700 leading-relaxed">
                 Ser un referente en psicología aplicada, demostrando que los principios que garantizan un vuelo seguro pueden ayudarte a navegar las turbulencias de la vida y la empresa.
@@ -86,21 +79,14 @@ export default function QueEsPsicopiloto() {
             </div>
           </section>
 
-          {/* ✨ CAMBIO DE TONO: Título y contenido más orientados a la acción */}
           <section className="mb-16" aria-labelledby="que-ofrece-title">
             <h2 id="que-ofrece-title" className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
               Mi Plan de Vuelo para Ti
             </h2>
             <ul className="list-disc list-inside space-y-3 text-psicopiloto-gray-700 leading-relaxed">
-              <li>
-                <strong>Terapia individual directa:</strong> Un plan de acción para gestionar ansiedad, estrés, autoestima o trauma, usando técnicas probadas como la Terapia Cognitivo-Conductual, Humanista, Sistémica y EMDR.
-              </li>
-              <li>
-                <strong>Entrenamiento para empresas:</strong> Programas de liderazgo, comunicación y gestión de errores basados en los modelos CRM y TEM de la aviación para optimizar el rendimiento de tu equipo.
-              </li>
-              <li>
-                <strong>Consultoría en Factores Humanos:</strong> Aplicación de metodologías aeronáuticas para mejorar la seguridad, la eficiencia y la cultura de tu organización.
-              </li>
+              <li><strong>Terapia individual directa:</strong> Un plan de acción para gestionar ansiedad, estrés, autoestima o trauma, usando técnicas probadas como la Terapia Cognitivo-Conductual, Humanista, Sistémica y EMDR.</li>
+              <li><strong>Entrenamiento para empresas:</strong> Programas de liderazgo, comunicación y gestión de errores basados en los modelos CRM y TEM de la aviación para optimizar el rendimiento de tu equipo.</li>
+              <li><strong>Consultoría en Factores Humanos:</strong> Aplicación de metodologías aeronáuticas para mejorar la seguridad, la eficiencia y la cultura de tu organización.</li>
             </ul>
           </section>
 
@@ -143,7 +129,6 @@ export default function QueEsPsicopiloto() {
                 alt="Consultoría de factores humanos y liderazgo para empresas"
                 width={600}
                 height={400}
-                // ✨ MEJORA UX: Añadida micro-interacción de hover
                 className="rounded-xl shadow-lg w-full h-auto object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               />
             </div>
