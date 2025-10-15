@@ -13,6 +13,9 @@ import {
   FaUsers,
   FaHeadSideVirus,
   FaBuilding,
+  // ✨ CAMBIO: Añadidos nuevos iconos para los nuevos servicios
+  FaBalanceScale,
+  FaFire,
 } from "react-icons/fa";
 
 export default function Servicios() {
@@ -47,6 +50,20 @@ export default function Servicios() {
       cta: "Inicia tu proceso de sanación",
       icon: <FaHeadSideVirus aria-hidden="true" />,
     },
+    // ✨ CAMBIO: Añadido el nuevo servicio de Gestión de la Ira
+    {
+      title: "Gestión de la Ira",
+      desc: "Las explosiones de ira pueden dañar tus relaciones y tu bienestar. Te enseñaré a <strong>identificar los detonantes</strong>, a gestionar la frustración y a canalizar esa energía de una manera <strong>constructiva y asertiva</strong>.",
+      cta: "Aprende a gestionar tu ira",
+      icon: <FaFire aria-hidden="true" />,
+    },
+    // ✨ CAMBIO: Añadido el nuevo servicio de TCA
+    {
+      title: "Trastornos de la Conducta Alimentaria (TCA)",
+      desc: "La relación con la comida puede volverse una fuente de ansiedad y control. Juntos, trabajaremos para sanar esta relación, entender las emociones subyacentes y construir <strong>hábitos saludables y sostenibles</strong> sin culpa.",
+      cta: "Sana tu relación con la comida",
+      icon: <FaBalanceScale aria-hidden="true" />,
+    },
   ];
 
   const serviciosEmpresas = [
@@ -74,7 +91,8 @@ export default function Servicios() {
         additionalMetaTags={[
           {
             name: "keywords",
-            content: "psicología, ansiedad, depresión, terapia de pareja, trauma, EMDR, psicoterapia online, psicología para empresas, liderazgo",
+            // ✨ CAMBIO: Añadidas nuevas keywords para los nuevos servicios
+            content: "psicología, ansiedad, depresión, terapia de pareja, trauma, EMDR, psicoterapia online, psicología para empresas, liderazgo, TCA, trastornos alimentarios, gestión de la ira, control de la ira",
           },
           { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
@@ -99,7 +117,6 @@ export default function Servicios() {
 
       <PageHeader
         title="Servicios de Psicología"
-        // ✨ CORRECCIÓN DE TONO: Subtítulo ajustado para ser más natural y menos técnico
         subtitle="Un enfoque práctico y resolutivo para la terapia individual y la formación de empresas, inspirado en los principios de la aviación."
         backgroundImage="/header-servicios.webp"
       />
