@@ -5,7 +5,7 @@ export default function BackgroundLogo() {
   return (
     <div
       // 🚀 CORRECCIÓN: Cambiado a opacity-10 para que el logo se vea MÁS (10% visible)
-      className="fixed inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none z-0" 
+      className="fixed inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none z-0" 
       aria-hidden="true"
     >
       <Image
