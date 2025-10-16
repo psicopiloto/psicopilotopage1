@@ -35,6 +35,9 @@ export default function Nav() {
           <Link href="/servicios" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Servicios</Link>
           <Link href="/sobre-mi" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Sobre Mí</Link>
           
+          {/* ✨ CAMBIO: Enlace al Blog (Escritorio) */}
+          <Link href="/blog" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Blog</Link>
+          
           {/* CTA Contacto (Botón) */}
           <Link
             href="/contacto"
@@ -84,6 +87,9 @@ export default function Nav() {
           <Link href="/que-es-psicopiloto" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Filosofía</Link>
           <Link href="/servicios" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Servicios</Link>
           <Link href="/sobre-mi" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Sobre Mí</Link>
+          
+          {/* ✨ CAMBIO: Enlace al Blog (Móvil) */}
+          <Link href="/blog" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Blog</Link>
           
           {/* CTA Contacto (Botón móvil) */}
           <Link
