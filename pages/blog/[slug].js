@@ -17,8 +17,8 @@ const ArticleContent = ({ contentHtml }) => (
 );
 
 export default function Post({ postData }) {
-  // Desestructuración de los metadatos y el contenido
-  const { id, title, excerpt, date, author, contentHtml } = postData;
+  // Desestructuración de los metadatos y el contenido (incluyendo las nuevas propiedades de fecha)
+  const { id, title, excerpt, dateDisplay, dateISO, author, contentHtml } = postData;
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
@@ -32,7 +32,8 @@ export default function Post({ postData }) {
           description: excerpt,
           type: 'article',
           article: {
-            publishedTime: new Date(date).toISOString(),
+            // ✨ CORRECCIÓN: Usa el string ISO pre-formateado para evitar RangeError
+            publishedTime: dateISO, 
             author: author,
           },
         }}
@@ -47,7 +48,8 @@ export default function Post({ postData }) {
               {title}
             </h1>
             <p className="text-sm text-psicopiloto-gray-500 font-medium">
-              {date} &middot; Por {author}
+              {/* ✨ CORRECCIÓN: Usa la fecha formateada para mostrar */}
+              {dateDisplay} &middot; Por {author}
             </p>
             <div className="w-16 h-1 bg-psicopiloto-green-500 mx-auto mt-4 rounded"></div>
           </header>
@@ -70,10 +72,10 @@ export default function Post({ postData }) {
 
 // Next.js: Generar los paths dinámicos (SSG)
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs(); // Obtiene todos los slugs de la carpeta _posts
+  const paths = getAllPostSlugs(); 
   return {
     paths,
-    fallback: false, // Cualquier path que no se genere estáticamente resultará en 404
+    fallback: false, 
   };
 }
 
@@ -81,18 +83,36 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug);
   
-  // Formatea la fecha para el componente React
-  const formattedDate = new Date(postData.date).toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // ===================================================================
+  // ✨ CORRECCIÓN CRÍTICA: Manejo seguro de la fecha para evitar RangeError
+  // ===================================================================
+  
+  const dateObj = new Date(postData.date);
+
+  let dateDisplay;
+  let dateISO;
+
+  if (isNaN(dateObj.getTime())) {
+    // Si la fecha no es válida, usamos la fecha actual o una fecha segura de reserva
+    const fallbackDate = new Date();
+    dateDisplay = fallbackDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+    dateISO = fallbackDate.toISOString();
+  } else {
+    // Si la fecha es válida, la formateamos
+    dateDisplay = dateObj.toLocaleDateString('es-ES', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+    dateISO = dateObj.toISOString();
+  }
   
   return {
     props: {
       postData: {
           ...postData,
-          date: formattedDate,
+          dateDisplay, // Fecha legible para el usuario
+          dateISO,     // Fecha ISO para metadatos (crucial)
       },
     },
   };
