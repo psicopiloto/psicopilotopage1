@@ -46,5 +46,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  // ✨ CAMBIO CRÍTICO: Activación del plugin de tipografía para el Markdown (clases 'prose')
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
