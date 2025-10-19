@@ -6,7 +6,7 @@ author: "Jose Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)"
 image: "/header-quees.webp" 
 ---
 
-Soy **José Carlos Rguez. Retamar, Psicólogo con habilitación sanitaria (H.S.)**. Después de 18 años gestionando la presión y el caos en la cabina de un avión de extinción de incendios, entiendo que la supervivencia depende de dos factores: la **evaluación precisa** del peligro y la **aplicación de procedimientos claros**.
+Soy **José Carlos Rguez. Retamar, Psicólogo con habilitación sanitaria (H.S.)**. Después de 18 años gestionando la presión y el estrés en la cabina de un avión de extinción de incendios, entiendo que la supervivencia depende de dos factores: la **evaluación precisa** del peligro y la **aplicación de procedimientos claros**.
 
 En la vida, esa sensación de peligro inminente, difusa e imprevisible, tiene un nombre: **Ansiedad**.
 
