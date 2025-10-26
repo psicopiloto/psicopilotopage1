@@ -12,7 +12,7 @@ export default function SobreMi() {
   const fasesTrayectoria = [
     {
       title: "Fase 1: El inicio – vocación por la psicología",
-      img: "/sobre2.webp",
+      img: "/facu.webp",
       alt: "Jose Carlos Rguez. Retamar estudiando psicología en la Universidad de Granada",
       content: [
         "Me licencié en Psicología por la Universidad de Granada en 2003. Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, aprendiendo la importancia de la escucha y el acompañamiento.",
@@ -36,7 +36,7 @@ export default function SobreMi() {
     },
     {
       title: "Fase 3: El regreso a la psicología – volver a la esencia",
-      img: "/sobre1.webp",
+      img: "/emdr.webp",
       alt: "Psicólogo con habilitación sanitaria, especializado en trauma y EMDR",
       content: [
         "Retomé mi vocación en psicología, habilitándome como <strong>Psicólogo con Habilitación Sanitaria</strong> en 2015 en Madrid y especializándome en psicología aeronáutica, integradora, terapia breve, trauma y <strong>EMDR</strong>.",
@@ -47,7 +47,7 @@ export default function SobreMi() {
     },
     {
       title: "Fase 4: El voluntariado",
-      img: "/sobre2.webp",
+      img: "/voluntariado.webp",
       alt: "Jose Carlos Rguez. Retamar haciendo voluntariado en Amalgama Social",
       content: [
         "El voluntariado ha sido siempre un pilar en mi vida, colaborando con Solidarios para el Desarrollo trabajando con personas mayores y actualmente en Amalgama Social, atendiendo ansiedad, estrés, duelo, autoestima y trauma.",
