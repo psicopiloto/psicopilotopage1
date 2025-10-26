@@ -12,7 +12,7 @@ export default function SobreMi() {
   const fasesTrayectoria = [
     {
       title: "Fase 1: El inicio – vocación por la psicología",
-      img: "/facu.webp",
+      img: "/Facu.webp",
       alt: "Jose Carlos Rguez. Retamar estudiando psicología en la Universidad de Granada",
       content: [
         "Me licencié en Psicología por la Universidad de Granada en 2003. Durante esa etapa trabajé en prácticas con personas en procesos de drogodependencia, aprendiendo la importancia de la escucha y el acompañamiento.",
