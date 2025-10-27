@@ -64,7 +64,7 @@ export default function SobreMi() {
         openGraph={{
           title: "Jose Carlos Rguez. Retamar, Psicólogo y Piloto Militar | Psicopiloto",
           description: "Conoce la trayectoria de Jose Carlos Rguez. Retamar, psicólogo con Habilitación Sanitaria y ex-piloto militar. Liderazgo, gestión de estrés y EMDR.",
-          images: [{ url: "https://www.psicopiloto.com/sobre1.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rguez. Retamar" }],
+          images: [{ url: "https://www.psicopiloto.com/foto-copao.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rguez. Retamar" }],
         }}
       />
       
