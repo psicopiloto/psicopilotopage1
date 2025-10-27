@@ -52,7 +52,7 @@ Es vital suprimir la sintomatología alimentaria.
 
 Debemos dejar de luchar contra las emociones dolorosas.
 
-> **Metáfora del río y el tronco:** La emoción es el río. Tú eres el tronco. No luches contra la corriente, flota y observa hacia dónde te lleva.
+> **Metáfora del río y el tronco:** las emociones son pasajeras, las buenas y las malas, sentada en la orilla del rio ves pasar un tronco llevado por la corriente, lo podrás observar durante un tiempo, pero acabará perdiendose en la lejanía.
 
 * **Integración del Yo:** La clave es **IDENTIFICAR, ACEPTAR e INTEGRAR** los aspectos de la personalidad que no han sido vistos o validados.
 * **Psicoeducación (Marco PAS):** Es fundamental ofrecer una narrativa no culpabilizadora.
