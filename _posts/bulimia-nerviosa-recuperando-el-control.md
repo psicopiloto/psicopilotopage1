@@ -6,7 +6,7 @@ author: "José Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)"
 image: "/header-bulimia.webp" 
 ---
 
-Soy **José Carlos Rguez. Retamar, Psicólogo con Habilitación Sanitaria (H.S.) y Ex-Piloto Militar**. Mi experiencia de dieciocho años como piloto militar y experto en la gestión de crisis me ha enseñado que el caos, ya sea un fallo mecánico o una emergencia, se gestiona con **procedimientos claros y una estructura rígida**. Esta misma disciplina es la que necesitamos aplicar cuando la turbulencia no está en el aire, sino en nuestro mundo interno.
+Soy **José Carlos Rguez. Retamar, Psicólogo con Habilitación Sanitaria (H.S.) y Ex-Piloto Militar**. Mi experiencia de dieciocho años como piloto militar y experto en la gestión de crisis me ha enseñado que el caos, ya sea un fallo mecánico o una emergencia, se gestiona con **procedimientos claros y una estructura definida**. Esta misma disciplina es la que necesitamos aplicar cuando la turbulencia no está en el aire, sino en nuestro mundo interno.
 
 La Bulimia Nerviosa (BN) es un Trastorno de la Conducta Alimentaria (TCA) que se caracteriza por un **defecto de control** sobre la alimentación, el cuerpo y el peso. Es un trastorno mental grave, que tiende a comenzar en la infancia y en la adolescencia, y cuya prevalencia en mujeres se sitúa entre el 1% y el 4.2%.
 
