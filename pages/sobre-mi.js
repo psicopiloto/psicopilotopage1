@@ -7,7 +7,7 @@ import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
-import clsx from 'clsx'; // Importar clsx para gestionar las clases condicionales
+import clsx from 'clsx'; 
 
 export default function SobreMi() {
   const fasesTrayectoria = [
@@ -114,8 +114,11 @@ export default function SobreMi() {
               {/* === CAJA DEL TEXTO === */}
               <div 
                 // ⬇️ MÓVIL: order-1 (Texto va arriba)
-                // ⬇️ DESKTOP: Alterna order-1 o order-2 para que el texto alterne IZQ/DER.
-                className={i % 2 === 0 ? "order-1 md:order-1" : "order-1 md:order-2"}
+                // ⬇️ DESKTOP: Alterna order-2 (derecha) si es par; order-1 (izquierda) si es impar.
+                className={clsx("order-1", {
+                    "md:order-2": i % 2 === 0, // Par (0, 2): Texto a la derecha
+                    "md:order-1": i % 2 !== 0, // Impar (1, 3): Texto a la izquierda
+                })}
               >
                 <h3 id={`fase-title-${i}`} className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
                   {fase.title}
@@ -139,8 +142,11 @@ export default function SobreMi() {
               {/* === CAJA DE LA IMAGEN === */}
               <div 
                 // ⬇️ MÓVIL: order-2 (Imagen va abajo, después del texto)
-                // ⬇️ DESKTOP: Alterna order-2 o order-1 para que la imagen alterne DER/IZQ.
-                className={i % 2 === 0 ? "order-2 md:order-2" : "order-2 md:order-1"}
+                // ⬇️ DESKTOP: Alterna order-1 (izquierda) si es par; order-2 (derecha) si es impar.
+                className={clsx("order-2", {
+                    "md:order-1": i % 2 === 0, // Par (0, 2): Imagen a la izquierda (1, 3)
+                    "md:order-2": i % 2 !== 0, // Impar (1, 3): Imagen a la derecha (2, 4)
+                })}
               >
                 <Image
                   src={fase.img}
