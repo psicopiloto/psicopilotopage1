@@ -7,6 +7,7 @@ import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
+import clsx from 'clsx'; // Importar clsx para gestionar las clases condicionales
 
 export default function SobreMi() {
   const fasesTrayectoria = [
@@ -80,6 +81,8 @@ export default function SobreMi() {
 
       <main className="flex-grow py-16 relative z-10">
         <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/40 p-8 rounded-2xl shadow-lg">
+          
+          {/* INTRODUCCIÓN - ORDEN FIJO */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
@@ -101,22 +104,19 @@ export default function SobreMi() {
             </div>
           </section>
 
+          {/* BUCLE DE LA TRAYECTORIA (SOLUCIÓN ORDEN MÓVIL/DESKTOP) */}
           {fasesTrayectoria.map((fase, i) => (
             <section
               key={i}
-              className="mb-20 grid md:grid-cols-2 gap-12 items-center"
+              className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
               aria-labelledby={`fase-title-${i}`}
             >
-              <div className={i % 2 === 0 ? "md:order-1" : "md:order-2"}>
-                <Image
-                  src={fase.img}
-                  alt={fase.alt}
-                  width={400}
-                  height={300}
-                  className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-                />
-              </div>
-              <div className={i % 2 === 0 ? "md:order-2" : "md:order-1"}>
+              {/* === CAJA DEL TEXTO === */}
+              <div 
+                // ⬇️ MÓVIL: order-1 (Texto va arriba)
+                // ⬇️ DESKTOP: Alterna order-1 o order-2 para que el texto alterne IZQ/DER.
+                className={i % 2 === 0 ? "order-1 md:order-1" : "order-1 md:order-2"}
+              >
                 <h3 id={`fase-title-${i}`} className="text-2xl font-semibold mb-4 text-psicopiloto-green-600">
                   {fase.title}
                 </h3>
@@ -135,9 +135,25 @@ export default function SobreMi() {
                   </ul>
                 )}
               </div>
+              
+              {/* === CAJA DE LA IMAGEN === */}
+              <div 
+                // ⬇️ MÓVIL: order-2 (Imagen va abajo, después del texto)
+                // ⬇️ DESKTOP: Alterna order-2 o order-1 para que la imagen alterne DER/IZQ.
+                className={i % 2 === 0 ? "order-2 md:order-2" : "order-2 md:order-1"}
+              >
+                <Image
+                  src={fase.img}
+                  alt={fase.alt}
+                  width={400}
+                  height={300}
+                  className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+                />
+              </div>
             </section>
           ))}
 
+          {/* SECCIÓN FINAL */}
           <section className="mb-20" aria-labelledby="hoy-psicopiloto-title">
             <h2 id="hoy-psicopiloto-title" className="text-2xl font-semibold mb-4 text-psicopiloto-blue-600">
               Hoy: El Enfoque Psicopiloto
@@ -149,6 +165,7 @@ export default function SobreMi() {
             <p className="mt-4">Porque todos merecemos <strong>volar con seguridad</strong>, también en nuestro propio camino personal.</p>
           </section>
 
+          {/* CTA */}
           <div className="mt-12 text-center">
             <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
           </div>
