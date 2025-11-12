@@ -1,10 +1,3 @@
-Para generar el archivo de publicación del artículo en el blog, necesitamos crear un archivo Markdown (o Mdx si fuese el caso, pero generalmente se usa Markdown plano para el contenido del blog) en el directorio de publicaciones, que contenga el **YAML front matter** con los metadatos necesarios y luego el **cuerpo del artículo**.
-
-Basándonos en la estructura de los archivos `[slug].js` e `index.js`, el slug del artículo debe ser `bulimia-nerviosa-piloto-regulacion-emocional`, la fecha debe ser el día de hoy, y la miniatura debe tener una ruta relativa.
-
-Aquí está el contenido completo del archivo que deberías crear, por ejemplo, en la ruta `posts/bulimia-nerviosa-piloto-regulacion-emocional.md`:
-
-```markdown
 ---
 # Metadatos del YAML Front Matter
 title: Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación
@@ -176,4 +169,3 @@ Si te parece que este enfoque resonó contigo y buscas un abordaje terapéutico 
     </a>
   </div>
 </div>
-```
