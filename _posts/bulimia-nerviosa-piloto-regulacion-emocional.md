@@ -1,7 +1,7 @@
 ---
 # Metadatos del YAML Front Matter - Corregidos para evitar errores de sintaxis
 title: "Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación" 
-date: 2025-11-12 
+date: "2025-11-12" 
 excerpt: "Comprende la Bulimia Nerviosa, un TCA marcado por atracones y comportamientos compensatorios. Analizamos el apego inseguro y la regulación emocional como claves."
 author: "José Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)"
 image: "/header-bulimia.webp" 
