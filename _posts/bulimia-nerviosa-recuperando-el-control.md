@@ -4,6 +4,7 @@ date: "2025-10-27"
 excerpt: "El Psicólogo con Habilitación Sanitaria José Carlos Rguez. Retamar aplica la mentalidad de cabina para analizar la Bulimia Nerviosa, un Trastorno de la Conducta Alimentaria caracterizado por un profundo defecto de control y autocastigo."
 author: "José Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)"
 image: "/header-bulimia.webp" 
+draft: true
 ---
 
 En mi experiencia, ya sea pilotando en situaciones de riesgo o gestionando el estrés en consulta, sé que el caos solo se maneja con **procedimientos claros y una estructura definida**. La clave está en no soltar los mandos.
