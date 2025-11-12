@@ -17,8 +17,8 @@ const ArticleContent = ({ contentHtml }) => (
 );
 
 export default function Post({ postData }) {
-  // Desestructuración de los metadatos y el contenido
-  const { id, title, excerpt, dateDisplay, dateISO, author, contentHtml, image } = postData;
+  // Desestructuración de los metadatos y el contenido (incluyendo las nuevas propiedades de fecha)
+  const { id, title, excerpt, dateDisplay, dateISO, author, contentHtml } = postData;
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
@@ -26,24 +26,16 @@ export default function Post({ postData }) {
         title={`${title} | Blog Psicopiloto`}
         description={excerpt}
         // Canonical URL crucial para el SEO
-        canonical={`https://psicopiloto.com/blog/${id}`}
+        canonical={`https://psicopiloto.com/blog/${id}`} 
         openGraph={{
           title: title,
           description: excerpt,
           type: 'article',
           article: {
-            // Usa el string ISO pre-formateado para evitar RangeError
+            // ✨ CORRECCIÓN: Usa el string ISO pre-formateado para evitar RangeError
             publishedTime: dateISO, 
             author: author,
           },
-          images: [
-            {
-              url: `https://psicopiloto.com${image}`, // Añadir la imagen para OpenGraph
-              width: 1200, 
-              height: 630, 
-              alt: title,
-            },
-          ],
         }}
       />
       <BackgroundLogo />
@@ -56,7 +48,7 @@ export default function Post({ postData }) {
               {title}
             </h1>
             <p className="text-sm text-psicopiloto-gray-500 font-medium">
-              {/* Usa la fecha formateada para mostrar */}
+              {/* ✨ CORRECCIÓN: Usa la fecha formateada para mostrar */}
               {dateDisplay} &middot; Por {author}
             </p>
             <div className="w-16 h-1 bg-psicopiloto-green-500 mx-auto mt-4 rounded"></div>
@@ -64,7 +56,6 @@ export default function Post({ postData }) {
           
           <ArticleContent contentHtml={contentHtml} />
 
-          {/* CTA Principal de la Página de Post (usa el componente AnimatedCTA) */}
           <div className="mt-16 pt-8 border-t border-psicopiloto-gray-300 text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
               ¿Listo para trazar un plan de vuelo para tu bienestar?
@@ -93,20 +84,21 @@ export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug);
   
   // ===================================================================
-  // CORRECCIÓN CRÍTICA: Eliminar el objeto Date no serializable
+  // ✨ CORRECCIÓN CRÍTICA: Manejo seguro de la fecha para evitar RangeError
   // ===================================================================
   
-  // 1. Creamos el objeto Date a partir del string de gray-matter (postData.date)
-  const dateObj = new Date(postData.date); 
+  const dateObj = new Date(postData.date);
 
   let dateDisplay;
   let dateISO;
 
   if (isNaN(dateObj.getTime())) {
+    // Si la fecha no es válida, usamos la fecha actual o una fecha segura de reserva
     const fallbackDate = new Date();
     dateDisplay = fallbackDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
     dateISO = fallbackDate.toISOString();
   } else {
+    // Si la fecha es válida, la formateamos
     dateDisplay = dateObj.toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
@@ -114,19 +106,13 @@ export async function getStaticProps({ params }) {
     });
     dateISO = dateObj.toISOString();
   }
-
-  // 2. PASO CRÍTICO: Eliminamos la propiedad 'date' del objeto para que Next.js no la rechace
-  if (postData.date) {
-     delete postData.date;
-  }
   
   return {
     props: {
       postData: {
-          // Devolvemos el resto de las propiedades que son seguras
-          ...postData, 
-          dateDisplay, 
-          dateISO,     
+          ...postData,
+          dateDisplay, // Fecha legible para el usuario
+          dateISO,     // Fecha ISO para metadatos (crucial)
       },
     },
   };
