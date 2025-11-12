@@ -4,7 +4,7 @@ title: "Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación"
 date: "2025-11-12" # Usar la fecha actual (AAAA-MM-DD)
 excerpt: "Comprende la Bulimia Nerviosa, un TCA marcado por atracones y comportamientos compensatorios. Analizamos el apego inseguro y la regulación emocional como claves."
 author: "José Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)"
-image: "/images/blog/bulimia-nerviosa-portada.webp" # Ruta de la imagen ajustada al tema
+image: "/images/blog/header-bulimia.webpp" # Ruta de la imagen ajustada al tema
 ---
 
 ## Bulimia Nerviosa: Pilotando el Vuelo de la Regulación Emocional
