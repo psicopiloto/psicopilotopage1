@@ -7,7 +7,6 @@ import BackgroundLogo from '../../components/BackgroundLogo';
 import AnimatedCTA from '../../components/AnimatedCTA';
 import parse from 'html-react-parser'; 
 import { getPostData, getAllPostSlugs } from '../../lib/posts';
-import { delete postData.date; } from 'fs'; // Solo para asegurar que delete postData.date; es accesible
 
 // Componente para renderizar el HTML del Markdown, aplicando estilos Tailwind 'prose'
 const ArticleContent = ({ contentHtml }) => (
@@ -65,7 +64,7 @@ export default function Post({ postData }) {
           
           <ArticleContent contentHtml={contentHtml} />
 
-          {/* CTA Principal de la Página de Post */}
+          {/* CTA Principal de la Página de Post (usa el componente AnimatedCTA) */}
           <div className="mt-16 pt-8 border-t border-psicopiloto-gray-300 text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-600">
               ¿Listo para trazar un plan de vuelo para tu bienestar?
@@ -94,7 +93,7 @@ export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug);
   
   // ===================================================================
-  // ✨ CORRECCIÓN CRÍTICA: Eliminar el objeto Date no serializable
+  // CORRECCIÓN CRÍTICA: Eliminar el objeto Date no serializable
   // ===================================================================
   
   // 1. Creamos el objeto Date a partir del string de gray-matter (postData.date)
@@ -104,12 +103,10 @@ export async function getStaticProps({ params }) {
   let dateISO;
 
   if (isNaN(dateObj.getTime())) {
-    // Si la fecha no es válida, usamos la fecha actual o una fecha segura de reserva
     const fallbackDate = new Date();
     dateDisplay = fallbackDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
     dateISO = fallbackDate.toISOString();
   } else {
-    // Si la fecha es válida, la formateamos
     dateDisplay = dateObj.toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
@@ -119,7 +116,6 @@ export async function getStaticProps({ params }) {
   }
 
   // 2. PASO CRÍTICO: Eliminamos la propiedad 'date' del objeto para que Next.js no la rechace
-  //    (ya que gray-matter la convirtió en un objeto Date no serializable)
   if (postData.date) {
      delete postData.date;
   }
@@ -127,7 +123,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       postData: {
-          // Devolvemos el resto de las propiedades que son seguras (string, number, etc.)
+          // Devolvemos el resto de las propiedades que son seguras
           ...postData, 
           dateDisplay, 
           dateISO,     
