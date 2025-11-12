@@ -1,5 +1,5 @@
 ---
-# Corregido: Títulos y extractos entre comillas dobles para evitar error YAML
+# Metadatos del YAML Front Matter - Corregidos para evitar errores de sintaxis
 title: "Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación" 
 date: 2025-11-12 
 excerpt: "Comprende la Bulimia Nerviosa, un TCA marcado por atracones y comportamientos compensatorios. Analizamos el apego inseguro y la regulación emocional como claves."
@@ -125,22 +125,22 @@ La Bulimia Nerviosa es un desafío de alto riesgo que requiere una mirada integr
 Si te parece que este enfoque resonó contigo y buscas un abordaje terapéutico que integre el trauma, el apego y los procesos transdiagnósticos, te invito a explorar más sobre mi perspectiva.
 
 <div class="text-center mt-12 space-y-4">
-    <p class="text-xl font-semibold text-psicopiloto-blue-700">Aprende más sobre mi experiencia integradora y cómo aplicamos estos modelos en la práctica en nuestra página de autoridad:</p>
-    <a href="/sobre-mi" class="inline-block px-8 py-3 text-lg font-bold text-white bg-psicopiloto-green-600 rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition duration-300">
-        Autoridad: ¿Quién es José Carlos?
-    </a>
+    <p class="text-xl font-semibold text-psicopiloto-blue-700">Aprende más sobre mi experiencia integradora y cómo aplicamos estos modelos en la práctica en nuestra página de autoridad:</p>
+    <a href="/sobre-mi" class="inline-block px-8 py-3 text-lg font-bold text-white bg-psicopiloto-green-600 rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition duration-300">
+        Autoridad: ¿Quién es José Carlos?
+    </a>
 
-    <div class="pt-6">
-        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si sientes que la Bulimia Nerviosa está controlando tu vida y necesitas ayuda profesional:</p>
-        <a href="/contacto" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-blue-600 rounded-full shadow-lg hover:bg-psicopiloto-blue-700 transition duration-300">
-            Conversión 1: Contacta y empieza tu tratamiento
-        </a>
-    </div>
-    
-    <div class="pt-6">
-        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si necesitas orientación sobre el proceso terapéutico integrador:</p>
-        <a href="/servicios" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-honey-500 rounded-full shadow-lg hover:bg-psicopiloto-honey-600 transition duration-300">
-            Conversión 2: Servicios de Bulimia Nerviosa
-        </a>
-    </div>
+    <div class="pt-6">
+        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si sientes que la Bulimia Nerviosa está controlando tu vida y necesitas ayuda profesional:</p>
+        <a href="/contacto" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-blue-600 rounded-full shadow-lg hover:bg-psicopiloto-blue-700 transition duration-300">
+            Conversión 1: Contacta y empieza tu tratamiento
+        </a>
+    </div>
+    
+    <div class="pt-6">
+        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si necesitas orientación sobre el proceso terapéutico integrador:</p>
+        <a href="/servicios" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-honey-500 rounded-full shadow-lg hover:bg-psicopiloto-honey-600 transition duration-300">
+            Conversión 2: Servicios de Bulimia Nerviosa
+        </a>
+    </div>
 </div>
