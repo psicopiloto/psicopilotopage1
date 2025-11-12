@@ -1,9 +1,9 @@
 ---
 # Metadatos del YAML Front Matter
-title: "Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación"
-date: "2025-11-12" # Usar la fecha actual (AAAA-MM-DD)
-excerpt: "Comprende la Bulimia Nerviosa, un TCA marcado por atracones y comportamientos compensatorios. Analizamos el apego inseguro y la regulación emocional como claves."
-author: "José Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)"
+title: Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación
+date: 2025-11-12 # Fecha de hoy
+excerpt: Comprende la Bulimia Nerviosa, un TCA marcado por atracones y comportamientos compensatorios. Analizamos el apego inseguro y la regulación emocional como claves.
+author: José Carlos Rguez. Retamar (Psicólogo con Habilitación Sanitaria)
 image: "/header-bulimia.webp" 
 ---
 
@@ -13,14 +13,14 @@ En el ámbito de la psicopatología integradora, encontramos desafíos clínicos
 
 ---
 
-### Bulimia Nerviosa: Definiendo la Bulimia Nerviosa
+## Bulimia Nerviosa: Definiendo la Bulimia Nerviosa
 
 La Bulimia Nerviosa se define por **episodios recurrentes de atracones**, seguidos de **comportamientos compensatorios inapropiados recurrentes** para evitar el aumento de peso.
 
 Los atracones constan de dos hechos principales:
 
-1.  La ingestión, en un período determinado, de una cantidad de alimentos que es **claramente superior** a la que la mayoría de las personas ingerirían en un período similar bajo circunstancias parecidas.
-2.  La sensación de **falta de control** sobre lo que se ingiere durante el episodio, experimentando la sensación de no poder dejar de comer o controlar la cantidad ingerida.
+* La ingestión, en un período determinado, de una cantidad de alimentos que es **claramente superior** a la que la mayoría de las personas ingerirían en un período similar bajo circunstancias parecidas.
+* La sensación de **falta de control** sobre lo que se ingiere durante el episodio, experimentando la sensación de no poder dejar de comer o controlar la cantidad ingerida.
 
 Posteriormente, la persona recurre a comportamientos compensatorios inapropiados para contrarrestar la ingesta excesiva y evitar el aumento de peso. Estos incluyen el **vómito autoprovocado**, el uso de laxantes, diuréticos u otros medicamentos, el ayuno o el ejercicio excesivo.
 
@@ -30,7 +30,7 @@ Un criterio esencial que influye en el mantenimiento de la BN es que la **autoev
 
 ---
 
-### Atracones y Comportamientos Compensatorios: El ciclo de la BN
+## Atracones y Comportamientos Compensatorios: El ciclo de la BN
 
 Desde la perspectiva de la Terapia Breve, el patrón de la bulimia nerviosa se entiende como un **círculo vicioso** de intento de restricción que lleva al atracón, y este, a su vez, se "soluciona" con el vómito o la purga. Entonces, el vómito o el comportamiento compensatorio permite que el siguiente atracón tenga lugar, perpetuando el ciclo.
 
@@ -48,19 +48,19 @@ Desde una perspectiva sistémica, se observa que los familiares a menudo desarro
 
 ---
 
-### La Vulnerabilidad Detrás de la Bulimia Nerviosa: Apego y Regulación Emocional
+## La Vulnerabilidad Detrás de la Bulimia Nerviosa: Apego y Regulación Emocional
 
 En mi experiencia, la alteración en el comportamiento alimentario es a menudo la manifestación visible de un malestar más profundo, actuando la comida y los comportamientos asociados como un mecanismo de supervivencia o una **"anestesia"** ante las dificultades.
 
-#### Apego Inseguro: La base relacional de la Bulimia Nerviosa
+### Apego Inseguro: La base relacional de la Bulimia Nerviosa
 
 La teoría del apego nos ofrece un marco biopsicosocial vital para entender cómo se establecen los patrones relacionales que influyen en los TCA. Los **estilos de apego inseguros** han sido identificados consistentemente como factores de riesgo para el desarrollo y mantenimiento de los trastornos alimentarios.
 
 Las personas con **apego ansioso** adoptan estrategias hiperactivas de apego y de regulación de emociones. En el contexto de la psicopatología, esto aumenta la vulnerabilidad de tres formas:
 
-1.  Regulación de la emoción inadaptada.
-2.  Hipervigilancia a las señales de amenaza y empatía.
-3.  Baja receptividad percibida de los demás (sensación de que el otro es menos comprensivo y receptivo).
+1. Regulación de la emoción inadaptada.
+2. Hipervigilancia a las señales de amenaza y empatía.
+3. Baja receptividad percibida de los demás (sensación de que el otro es menos comprensivo y receptivo).
 
 Esta combinación (afectividad negativa intensificada, hipervigilancia a las amenazas y baja receptividad percibida) constituye una **"tríada oscura"** que media entre el apego ansioso y diversas psicopatologías, incluida la BN.
 
@@ -68,7 +68,7 @@ Incluso el **apego evitativo** se ha asociado a los TCA. Este estilo se organiza
 
 Yo creo que las experiencias tempranas de apego disfuncional, especialmente aquellas caracterizadas por **baja calidez y sobreprotección**, reportadas en estudios sobre BN, configuran un terreno fértil para la BN. Por eso, el trabajo terapéutico debe orientarse a establecer una **"base segura"** en la relación terapéutica, desde la cual el paciente pueda explorar y modificar sus representaciones internas (modelos operativos internos) de las relaciones humanas.
 
-#### Regulación Emocional y la Trampa de los Atracones
+### Regulación Emocional y la Trampa de los Atracones
 
 Los TCA son trastornos multidimensionales generados por la conjunción de factores fisiológicos, cognitivo/emocionales, familiares y socioculturales. La investigación ha demostrado que los pacientes con TCA tienen **dificultades emocionales significativas**, siendo esencial introducir técnicas que faciliten su reconocimiento. De hecho, diversos modelos sugieren que los comportamientos patológicos en la BN sirven como forma de evitar o regular emociones negativas.
 
@@ -90,11 +90,11 @@ El déficit en la **conciencia emocional** al inicio del trastorno, y su agravam
 
 ---
 
-### Imagen Corporal y el Combate del Yo Rechazado
+## Imagen Corporal y el Combate del Yo Rechazado
 
 Desde la perspectiva de la psicopatología integradora, es fundamental mirar lo que hay debajo del trastorno para entender lo que lo mantiene y su origen. La **imagen corporal** se sitúa en el epicentro de los TCA.
 
-#### La Autoevaluación Influida por la Imagen Corporal
+### La Autoevaluación Influida por la Imagen Corporal
 
 La imagen corporal es la representación mental que cada uno construye de su propio cuerpo, incluyendo la percepción, la evaluación del tamaño, y el aspecto emocional asociado a cómo nos sentimos con esa imagen. Una característica central de los TCA es la alteración de la imagen corporal, donde la autoevaluación está exageradamente influida por el peso y la silueta.
 
@@ -106,7 +106,7 @@ En la BN, la persona refiere mucho sufrimiento y agresión hacia el cuerpo. Esto
 
 ---
 
-### Consecuencias Más Allá del Peso: Impulsividad y Autolesión
+## Consecuencias Más Allá del Peso: Impulsividad y Autolesión
 
 La Bulimia Nerviosa, al igual que otros TCA, a menudo se solapa con otras dificultades como el **trauma complejo** y la **disociación estructural de la personalidad**. Los pacientes con BN a menudo presentan conductas de **automutilación e impulsividad**, que son características de este trastorno. La impulsividad, que incluye los atracones de comida, es también un criterio diagnóstico en trastornos como el Trastorno Límite de la Personalidad (TLP).
 
@@ -116,11 +116,11 @@ Por eso, al abordar la BN no podemos limitarnos a los síntomas alimentarios, si
 
 ---
 
-### Hacia una Recuperación Integradora de la Bulimia Nerviosa
+## Hacia una Recuperación Integradora de la Bulimia Nerviosa
 
 Para un abordaje terapéutico eficaz de la BN, se necesita una perspectiva multidisciplinar y multimodal. El tratamiento debe ser intensivo y extensivo. Desde mi enfoque integrador, la intervención se basa en la comprensión de los sistemas de apego, el trauma y los procesos transdiagnósticos.
 
-#### Enfoque Terapéutico Transdiagnóstico
+### Enfoque Terapéutico Transdiagnóstico
 
 Las intervenciones terapéuticas validadas para los TCA incluyen la Terapia Cognitivo-Conductual (TCC), la Psicoterapia Psicodinámica Focal, la Psicoterapia Interpersonal, la Terapia Dialéctico Conductual (DBT), y la Terapia de Aceptación y Compromiso (ACT). Específicamente, la TCC para el atracón y la bulimia nerviosa es un manual de tratamiento exhaustivo reconocido.
 
@@ -137,7 +137,7 @@ El trabajo con el síntoma en BN requiere reencuadrar, comprender la función de
 
 Si te parece, consideremos la Terapia Dialéctico Conductual (DBT), que ha demostrado ser eficaz, ya que aborda directamente la desregulación emocional, enseñando habilidades de afrontamiento. También, el abordaje del **Yo Rechazado** se sitúa como una de las capas más profundas del trastorno, siendo fundamental para la integración de la parte disociativa y la sustitución de la distorsión de la imagen corporal por la aceptación.
 
-#### El Desafío de la Cronicidad y la Base Segura
+### El Desafío de la Cronicidad y la Base Segura
 
 Al igual que en la planificación de un vuelo, donde se evalúan constantemente los riesgos, en el tratamiento de la BN debemos evaluar continuamente el **riesgo físico** (privación de alimentación, métodos de compensación) y el **riesgo de suicidio o autolesiones**. Por eso, la coordinación con el médico y el nutricionista para la realimentación y el estado físico es una condición necesaria, aunque no suficiente, para la recuperación completa del TCA.
 
@@ -149,22 +149,18 @@ Entonces, la recuperación de la Bulimia Nerviosa implica dejar de usar el ciclo
 
 ---
 
-### Conclusión
+## Conclusión
 
 La Bulimia Nerviosa es un desafío de alto riesgo que requiere una mirada integradora, yendo más allá del síntoma de la comida para abordar las bases de la inseguridad en el apego, la distorsión de la imagen corporal (**el yo rechazado**) y las dificultades en la regulación emocional. Así como un piloto debe entender que la turbulencia no siempre es una falla, sino una condición inevitable del entorno, el paciente debe aprender a tolerar la ansiedad y las emociones difíciles sin recurrir a mecanismos de evitación tan destructivos como los atracones y las purgas.
 
 Si te parece que este enfoque resonó contigo y buscas un abordaje terapéutico que integre el trauma, el apego y los procesos transdiagnósticos, te invito a explorar más sobre mi perspectiva.
 
-<div className="text-center mt-12 space-y-4">
-  <p className="text-xl font-semibold text-psicopiloto-blue-700">Aprende más sobre mi experiencia integradora y cómo aplicamos estos modelos en la práctica en nuestra página de autoridad:</p>
-  <a href="/sobre-mi" className="inline-block px-8 py-3 text-lg font-bold text-white bg-psicopiloto-green-600 rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition duration-300">
-    ¿Quién es José Carlos?
-  </a>
+**Aprende más sobre mi experiencia integradora y cómo aplicamos estos modelos en la práctica en nuestra página de autoridad:**
+[Autoridad: ¿Quién es José Carlos?](/sobre-mi)
 
-  <div className="pt-6">
-    <p className="text-xl font-semibold text-psicopiloto-blue-700">Si sientes que la Bulimia Nerviosa está controlando tu vida y necesitas ayuda profesional:</p>
-    <a href="/contacto" className="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-blue-600 rounded-full shadow-lg hover:bg-psicopiloto-blue-700 transition duration-300">
-      Agenda tu primera consulta
-    </a>
-  </div>
-</div>
+**Si sientes que la Bulimia Nerviosa está controlando tu vida y necesitas ayuda profesional:**
+[Conversión 1: Contacta y empieza tu tratamiento](/contacto)
+
+**Si necesitas orientación sobre el proceso terapéutico integrador:**
+[Conversión 2: Servicios de Bulimia Nerviosa](/servicios)
+
