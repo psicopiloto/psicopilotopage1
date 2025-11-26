@@ -23,7 +23,7 @@ export default function SobreMi() {
     },
     {
       title: "Fase 2: La aviación – disciplina, liderazgo y seguridad",
-      img: "/sobre3.webp",
+      img: "/sobre4.webp",
       alt: "Piloto militar en la Academia General del Aire acumulando horas de vuelo y experiencia en aviación",
       content: [
         "Ingresé en la Academia General del Aire en 2007, acumulando más de 2.500 horas de vuelo en aviones como ENAER T-35C Pillán, Aviocar C-212, Canadair CL-215T y CL-415.",
