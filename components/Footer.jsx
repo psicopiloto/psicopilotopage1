@@ -32,7 +32,7 @@ export default function Footer() {
           aria-label="Redes sociales de Psicopiloto"
         >
           <a
-            href="https://www.instagram.com/psicopiloto"
+            href="https://www.instagram.com/psicopi_loto"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
