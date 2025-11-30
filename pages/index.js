@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </section>
         
-        {/*
+      
         // ===================================================================
         // === GUÍA PARA AÑADIR TESTIMONIOS ===
         //
