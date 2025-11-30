@@ -8,29 +8,16 @@ import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
-// ========================================================================
-// DATOS DE LOS TESTIMONIOS REALES
-// ========================================================================
 const testimonialsData = [
   {
     stars: 5,
-    text: "Desde el primer día José Carlos hizo que me sintiera en confianza, en cada sesión me he sentido escuchada, acompañada y comprendida, lo que me ha permitido avanzar realmente en mi proceso. Su forma de trabajar transmite seguridad y cercanía a la vez, y siempre me ha hecho sentir cómoda para hablar con total libertad. Lo recomiendo de todo corazón.",
-    author: "Eva",
+    text: "Aquí va el texto de tu primera reseña real. Bórra este texto de ejemplo y pega el de tu cliente.",
+    author: "Nombre del Cliente 1",
   },
   {
     stars: 5,
-    text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Es una persona maravillosa que se esfuerza en ayudarte a encontrar una solución. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida y a mi cabeza.",
-    author: "Lucía",
-  },
-  {
-    stars: 5,
-    text: "Estoy super agradecida por la ayuda que me ha dado José Carlos. Me encontraba muy frustrada por un problema del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos, ayudándome a salir del agujero. Buena persona y excelente profesional. Lo recomiendo 100%.",
-    author: "Ana",
-  },
-  {
-    stars: 5,
-    text: "Cuando encuentras un buen profesional es algo estupendo. Y cuando se da con un profesional de la psicología como José Carlos es algo que no se puede describir. Al hablar con un psicólogo desnudas tu mente y para ello has de confiar, sentirte a gusto y lo más importante, que te ayude. Eso me pasó con él.",
-    author: "Lola",
+    text: "Aquí va el texto de tu segunda reseña. Si tienes más, puedes copiar y pegar este bloque entero a continuación.",
+    author: "Nombre del Cliente 2",
   },
 ];
 
@@ -95,6 +82,7 @@ export default function Home() {
               </div>
               <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">Autoestima y Liderazgo</h3>
+                {/* ✨ CORRECCIÓN DE TONO: Metáfora suavizada */}
                 <p className="text-psicopiloto-gray-700">Dificultad para poner límites, inseguridad, o un síndrome del impostor. Gana la autoconfianza que necesitas para tomar las riendas de tu vida.</p>
                 <a href="/sobre-mi" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Mi filosofía →</a>
               </div>
@@ -141,31 +129,34 @@ export default function Home() {
           </div>
         </section>
         
-        {/* ✨ SECCIÓN DE TESTIMONIOS (ACTIVADA CON RESEÑAS REALES) */}
+        {/*
+        // ===================================================================
+        // === GUÍA PARA AÑADIR TESTIMONIOS ===
+        //
+        // --> PASO 1: EDITA ESTE BLOQUE CON TUS RESEÑAS REALES
+        // --> PASO 2: BORRA LA LÍNEA DE ABAJO ' {/* ' Y LA LÍNEA FINAL ' * / } ' PARA ACTIVAR LA SECCIÓN
+        // ===================================================================
+        */}
+        {/*
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">Lo que dicen quienes han confiado en mí</h2>
-            {/* Grid ajustado para 4 testimonios (2 columnas) */}
+            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">La confianza de quienes han volado conmigo</h2>
             <div className="grid md:grid-cols-2 gap-8 text-left">
               {testimonialsData.map((testimonial, index) => (
-                <div key={index} className="flex flex-col bg-white/70 p-6 rounded-lg shadow-lg border-l-4 border-psicopiloto-green-500 transition transform hover:-translate-y-1">
+                <div key={index} className="flex flex-col bg-white/70 p-6 rounded-lg shadow-lg border-l-4 border-psicopiloto-green-500">
                   <p className="text-2xl text-yellow-500 mb-2">{'⭐️'.repeat(testimonial.stars)}</p>
-                  <blockquote className="italic text-psicopiloto-gray-700 mb-4 flex-grow text-sm md:text-base leading-relaxed">
-                    "{testimonial.text}"
-                  </blockquote>
+                  <blockquote className="italic text-psicopiloto-gray-700 mb-4 flex-grow">"{testimonial.text}"</blockquote>
                   <p className="font-bold text-right text-psicopiloto-gray-700">— {testimonial.author}</p>
                 </div>
               ))}
             </div>
             <div className="mt-12">
-              <a href={googleReviewsLink} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-white border border-gray-300 text-psicopiloto-gray-700 rounded-lg font-semibold shadow-sm transition hover:bg-gray-50 hover:shadow-md">
-                Ver todas las reseñas en Google
-              </a>
+              <a href={googleReviewsLink} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-white border border-gray-300 text-psicopiloto-gray-700 rounded-lg font-semibold shadow-sm transition hover:bg-gray-50 hover:shadow-md">Ver todas las reseñas en Google</a>
             </div>
           </div>
         </section>
+        */}
 
-        {/* ✨ SECCIÓN DE EMPRESAS (Fondo diferenciado) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Psicopiloto para Empresas</h2>
@@ -189,6 +180,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">La Filosofía Psicopiloto</h3>
+                {/* ✨ CORRECCIÓN DE TONO: Metáfora suavizada */}
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">El objetivo es que recuperes la seguridad y la dirección en tu vida. Mi compromiso es ofrecerte un espacio de confianza, utilizando terapia integradora y EMDR para que recuperes el control de tus emociones.</p>
                 <div className="mt-auto pt-4">
                   <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
