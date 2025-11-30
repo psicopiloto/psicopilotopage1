@@ -41,7 +41,7 @@ export default function Footer() {
             <FaInstagram aria-hidden="true" />
           </a>
           <a
-            href="https://twitter.com/jcrodriguezret"
+            href="https://twitter.com/jcrr78"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-psicopiloto-green-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 rounded"
