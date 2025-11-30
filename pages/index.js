@@ -144,7 +144,7 @@ export default function Home() {
         {/* ✨ SECCIÓN DE TESTIMONIOS (ACTIVADA CON RESEÑAS REALES) */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">La confianza de quienes han volado conmigo</h2>
+            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">Lo que dicen quienes han confiado en mí</h2>
             {/* Grid ajustado para 4 testimonios (2 columnas) */}
             <div className="grid md:grid-cols-2 gap-8 text-left">
               {testimonialsData.map((testimonial, index) => (
