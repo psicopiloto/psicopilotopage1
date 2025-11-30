@@ -167,15 +167,13 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-12">
-              {/* ✨ MEJORA: Botón estilizado como CTA Azul */}
-              <a 
+              {/* ✨ CORRECCIÓN: Botón actualizado para ser igual al resto de CTAs de información */}
+              <AnimatedCTA 
                 href={googleReviewsLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-block px-8 py-4 bg-psicopiloto-blue-600 hover:bg-psicopiloto-blue-700 text-white font-semibold rounded-full shadow-lg transition transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-psicopiloto-blue-300"
-              >
-                Ver todas las reseñas en Google
-              </a>
+                text="Ver todas las reseñas en Google" 
+                color="blue" // ✅ AZUL: Igual que "Conóceme mejor" y "Descubre la filosofía"
+                isExternal={true} // Propiedad para que abra en nueva pestaña (ver nota abajo)
+              />
             </div>
           </div>
         </section>
