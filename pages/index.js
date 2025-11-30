@@ -129,16 +129,15 @@ export default function Home() {
           </div>
         </section>
         
-      
+        {/*
         // ===================================================================
         // === GUÍA PARA AÑADIR TESTIMONIOS ===
         //
         // --> PASO 1: EDITA ESTE BLOQUE CON TUS RESEÑAS REALES
         // --> PASO 2: BORRA LA LÍNEA DE ABAJO ' {/* ' Y LA LÍNEA FINAL ' * / } ' PARA ACTIVAR LA SECCIÓN
         // ===================================================================
-
-
-       
+        */}
+        {/*
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">La confianza de quienes han volado conmigo</h2>
@@ -156,7 +155,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      
+        */}
 
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
