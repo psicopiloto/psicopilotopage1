@@ -69,7 +69,7 @@ export default function Home() {
           cta={{
             href: "/contacto",
             text: "Agenda tu primera cita",
-            color: "green",
+            color: "green", // ✅ VERDE: Acción principal (Contacto)
           }}
         />
 
@@ -109,7 +109,11 @@ export default function Home() {
                 <h2 className="text-3xl font-semibold mb-4 text-psicopiloto-green-600">Un enfoque que te devuelve el control</h2>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-4">Como psicólogo y ex-piloto, sé lo que significa <strong>gestionar la presión, tomar decisiones difíciles</strong> y actuar con seguridad. Aplico esta filosofía a tu proceso terapéutico.</p>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-6">Mi terapia es <strong>integradora</strong>, adaptando las mejores herramientas (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades únicas, para que puedas <strong>recuperar la calma y la claridad</strong>.</p>
-                <AnimatedCTA href="/servicios" text="Descubre mis servicios" color="blue" />
+                <AnimatedCTA 
+                  href="/servicios" 
+                  text="Descubre mis servicios" 
+                  color="honey" // ✅ MIEL: Exploración de Servicios
+                />
               </div>
               <div className="hidden md:block">
                 <Image src="/filosofia.webp" alt="Psicopiloto, uniendo psicología y aviación para un enfoque integrador" width={600} height={400} className="rounded-lg shadow-xl transition-transform duration-300 hover:scale-105" />
@@ -136,16 +140,21 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10">
-              <AnimatedCTA href="/contacto" text="Empieza tu terapia online" color="blue" />
+              <AnimatedCTA 
+                href="/contacto" 
+                text="Empieza tu terapia online" 
+                color="green" // ✅ VERDE: Acción principal
+              />
             </div>
           </div>
         </section>
         
-        {/* ✨ SECCIÓN DE TESTIMONIOS (ACTIVADA CON RESEÑAS REALES) */}
+        {/* SECCIÓN DE TESTIMONIOS */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">Lo que dicen quienes han confiado en mí</h2>
-            {/* Grid ajustado para 4 testimonios (2 columnas) */}
+            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">
+              Lo que dicen quienes han confiado en mí
+            </h2>
             <div className="grid md:grid-cols-2 gap-8 text-left">
               {testimonialsData.map((testimonial, index) => (
                 <div key={index} className="flex flex-col bg-white/70 p-6 rounded-lg shadow-lg border-l-4 border-psicopiloto-green-500 transition transform hover:-translate-y-1">
@@ -158,20 +167,29 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-12">
-              <a href={googleReviewsLink} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-white border border-gray-300 text-psicopiloto-gray-700 rounded-lg font-semibold shadow-sm transition hover:bg-gray-50 hover:shadow-md">
+              {/* ✨ MEJORA: Botón estilizado como CTA Azul */}
+              <a 
+                href={googleReviewsLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-block px-8 py-4 bg-psicopiloto-blue-600 hover:bg-psicopiloto-blue-700 text-white font-semibold rounded-full shadow-lg transition transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-psicopiloto-blue-300"
+              >
                 Ver todas las reseñas en Google
               </a>
             </div>
           </div>
         </section>
 
-        {/* ✨ SECCIÓN DE EMPRESAS (Fondo diferenciado) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Psicopiloto para Empresas</h2>
             <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">Transfiere la mentalidad de cabina (CRM, Liderazgo, Gestión del Estrés) a tu equipo. Mejora la comunicación, toma de decisiones bajo presión y el bienestar de tu organización.</p>
             <div className="md:w-2/3 mx-auto">
-              <AnimatedCTA href="/servicios" text="Ver servicios de consultoría y formación" color="honey" />
+              <AnimatedCTA 
+                href="/servicios" 
+                text="Ver servicios de consultoría y formación" 
+                color="honey" // ✅ MIEL: Exploración de Servicios
+              />
             </div>
           </div>
         </section>
@@ -184,14 +202,22 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">Sobre el Psicólogo</h3>
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">Soy Jose Carlos Rguez. Retamar, psicólogo y ex-piloto militar. Mi experiencia en aviación (gestión de crisis, factores humanos y liderazgo) se integra en la terapia para ofrecerte un enfoque sólido y práctico.</p>
                 <div className="mt-auto pt-4">
-                  <AnimatedCTA href="/sobre-mi" text="Conóceme mejor" color="blue" />
+                  <AnimatedCTA 
+                    href="/sobre-mi" 
+                    text="Conóceme mejor" 
+                    color="blue" // ✅ AZUL: Información
+                  />
                 </div>
               </div>
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">La Filosofía Psicopiloto</h3>
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">El objetivo es que recuperes la seguridad y la dirección en tu vida. Mi compromiso es ofrecerte un espacio de confianza, utilizando terapia integradora y EMDR para que recuperes el control de tus emociones.</p>
                 <div className="mt-auto pt-4">
-                  <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
+                  <AnimatedCTA 
+                    href="/que-es-psicopiloto" 
+                    text="Descubre la filosofía" 
+                    color="blue" // ✅ AZUL: Información
+                  />
                 </div>
               </div>
             </div>
@@ -217,7 +243,11 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8">
-              <AnimatedCTA href="/servicios" text="Descubre todos los servicios" color="honey" />
+              <AnimatedCTA 
+                href="/servicios" 
+                text="Descubre todos los servicios" 
+                color="honey" // ✅ MIEL: Exploración de Servicios
+              />
             </div>
           </div>
         </section>
@@ -235,7 +265,11 @@ export default function Home() {
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">Da el primer paso</h2>
                 <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">Has dado el paso más difícil: llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio seguro y cercano para empezar a sanar tus preocupaciones.</p>
-                <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
+                <AnimatedCTA 
+                  href="/contacto" 
+                  text="Reserva tu primera consulta" 
+                  color="green" // ✅ VERDE: Acción principal
+                />
               </div>
             </div>
           </div>
