@@ -69,7 +69,7 @@ export default function Home() {
           cta={{
             href: "/contacto",
             text: "Agenda tu primera cita",
-            color: "green", // ✅ VERDE: Acción principal (Contacto)
+            color: "green", // ✅ VERDE: Acción principal
           }}
         />
 
@@ -149,35 +149,6 @@ export default function Home() {
           </div>
         </section>
         
-        {/* SECCIÓN DE TESTIMONIOS */}
-        <section className="py-16 bg-psicopiloto-sand-50">
-          <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">
-              Lo que dicen quienes han confiado en mí
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              {testimonialsData.map((testimonial, index) => (
-                <div key={index} className="flex flex-col bg-white/70 p-6 rounded-lg shadow-lg border-l-4 border-psicopiloto-green-500 transition transform hover:-translate-y-1">
-                  <p className="text-2xl text-yellow-500 mb-2">{'⭐️'.repeat(testimonial.stars)}</p>
-                  <blockquote className="italic text-psicopiloto-gray-700 mb-4 flex-grow text-sm md:text-base leading-relaxed">
-                    "{testimonial.text}"
-                  </blockquote>
-                  <p className="font-bold text-right text-psicopiloto-gray-700">— {testimonial.author}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-12">
-              {/* ✨ CORRECCIÓN: Botón actualizado para ser igual al resto de CTAs de información */}
-              <AnimatedCTA 
-                href={googleReviewsLink} 
-                text="Ver todas las reseñas en Google" 
-                color="blue" // ✅ AZUL: Igual que "Conóceme mejor" y "Descubre la filosofía"
-                isExternal={true} // Propiedad para que abra en nueva pestaña (ver nota abajo)
-              />
-            </div>
-          </div>
-        </section>
-
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Psicopiloto para Empresas</h2>
@@ -250,7 +221,35 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 bg-psicopiloto-sand-50 relative overflow-visible">
+        {/* SECCIÓN DE TESTIMONIOS MOVIDA AQUÍ */}
+        <section className="py-16 bg-psicopiloto-sand-50">
+          <div className="container mx-auto max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-12 text-psicopiloto-blue-600">
+              Lo que dicen quienes han confiado en mí
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 text-left">
+              {testimonialsData.map((testimonial, index) => (
+                <div key={index} className="flex flex-col bg-white/70 p-6 rounded-lg shadow-lg border-l-4 border-psicopiloto-green-500 transition transform hover:-translate-y-1">
+                  <p className="text-2xl text-yellow-500 mb-2">{'⭐️'.repeat(testimonial.stars)}</p>
+                  <blockquote className="italic text-psicopiloto-gray-700 mb-4 flex-grow text-sm md:text-base leading-relaxed">
+                    "{testimonial.text}"
+                  </blockquote>
+                  <p className="font-bold text-right text-psicopiloto-gray-700">— {testimonial.author}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12">
+              <AnimatedCTA 
+                href={googleReviewsLink} 
+                text="Ver todas las reseñas en Google" 
+                color="blue" // ✅ AZUL: Información y confianza
+                isExternal={true} 
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
             <Image
               src="/telefono.webp"
@@ -259,7 +258,7 @@ export default function Home() {
               height={400}
               className={`w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl`}
             />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-white rounded-2xl shadow-xl relative z-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20">
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">Da el primer paso</h2>
                 <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">Has dado el paso más difícil: llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio seguro y cercano para empezar a sanar tus preocupaciones.</p>
