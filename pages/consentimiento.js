@@ -28,16 +28,6 @@ export default function Consentimiento() {
     sigCanvas.current.clear();
   };
 
-  // Función auxiliar para convertir la firma (Base64) a archivo (Blob)
-  const dataURLtoBlob = (dataurl) => {
-    let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-    while(n--){
-        u8arr[n] = bstr.charCodeAt(n);
-    }
-    return new Blob([u8arr], {type:mime});
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -52,59 +42,53 @@ export default function Consentimiento() {
 
     setStatus("Enviando documento firmado...");
 
+    // 1. Obtenemos la firma como texto codificado (Base64)
+    // Esto evita el bloqueo de subida de archivos del plan gratuito
+    const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
+
+    // 2. Preparamos los datos en formato JSON simple
+    const dataToSend = {
+      nombre: form.nombre,
+      email: form.email,
+      dni: form.dni,
+      telefono: form.telefono,
+      direccion: form.direccion,
+      cp: form.cp,
+      fecha: form.fecha,
+      documento: "Consentimiento Informado Psicopiloto",
+      _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`,
+      _gotcha: "", // Campo anti-spam
+      firma_codigo: signatureData // La firma va aquí como texto
+    };
+
     try {
-        // 1. Convertimos la firma a un archivo de imagen real
-        const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
-        const signatureBlob = dataURLtoBlob(signatureData);
+      const res = await fetch("https://formspree.io/f/xzzjybkg", { 
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(dataToSend),
+      });
 
-        // 2. Usamos FormData para enviar datos + archivo
-        const formData = new FormData();
-        
-        formData.append("nombre", form.nombre);
-        formData.append("email", form.email);
-        formData.append("dni", form.dni);
-        formData.append("telefono", form.telefono);
-        formData.append("direccion", form.direccion);
-        formData.append("cp", form.cp);
-        formData.append("fecha", form.fecha);
-        formData.append("documento", "Consentimiento Informado Psicopiloto");
-        formData.append("_subject", `Nuevo Consentimiento Firmado: ${form.nombre}`);
-        
-        // Campo anti-spam (honeypot)
-        formData.append("_gotcha", "");
+      const data = await res.json();
 
-        // Archivo adjunto de la firma
-        formData.append("firma_digital", signatureBlob, "firma_paciente.png");
-
-        const res = await fetch("https://formspree.io/f/xzzjybkg", { 
-            method: "POST",
-            headers: { 
-                "Accept": "application/json"
-            },
-            body: formData,
-        });
-
-        const data = await res.json(); // Leemos la respuesta de Formspree
-
-        if (res.ok) {
-            setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
-            // Limpiamos el formulario
-            setForm({ nombre: "", email: "", dni: "", direccion: "", telefono: "", cp: "", fecha: new Date().toISOString().split("T")[0] });
-            setAcepto(false);
-            sigCanvas.current.clear();
+      if (res.ok) {
+        setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
+        setForm({ nombre: "", email: "", dni: "", direccion: "", telefono: "", cp: "", fecha: new Date().toISOString().split("T")[0] });
+        setAcepto(false);
+        sigCanvas.current.clear();
+      } else {
+        console.error("Error Formspree:", data);
+        if (data.error) {
+            setStatus(`❌ Error: ${data.error}`);
+        } else if (data.errors && data.errors.length > 0) {
+            const messages = data.errors.map(err => err.message).join(", ");
+            setStatus(`❌ Error: ${messages}`);
         } else {
-            // Mostramos el error específico que nos devuelve Formspree
-            console.error("Error Formspree:", data);
-            if (data.error) {
-                setStatus(`❌ Error: ${data.error}`);
-            } else if (data.errors && data.errors.length > 0) {
-                // Si hay una lista de errores, los mostramos
-                const messages = data.errors.map(err => err.message).join(", ");
-                setStatus(`❌ Error: ${messages}`);
-            } else {
-                setStatus("❌ Hubo un error al enviar el documento. Por favor, inténtalo de nuevo.");
-            }
+            setStatus("❌ Hubo un error al enviar el documento. Por favor, inténtalo de nuevo.");
         }
+      }
     } catch (err) {
       console.error("Error Red:", err);
       setStatus("❌ Error de red. Comprueba tu conexión.");
@@ -143,7 +127,7 @@ export default function Consentimiento() {
 
                 <h4 className="font-bold mt-4 mb-2">Protección de datos de carácter personal</h4>
                 <p className="mb-4">
-                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>[AQUÍ TU NIF]</strong>.
+                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
                 </p>
                 <p className="mb-4">
                     Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional. Se conservarán durante el período legalmente establecido y no serán cedidos a terceros salvo obligación legal.
@@ -238,7 +222,7 @@ export default function Consentimiento() {
                     </div>
                 </div>
 
-                {/* Input oculto para el honeypot (extra safety, aunque no se envíe en formData loop explícito, está en el DOM) */}
+                {/* Input oculto para el honeypot (extra safety) */}
                 <input type="text" name="_gotcha" style={{ display: 'none' }} />
 
                 {/* CHECKBOX ACEPTACIÓN */}
