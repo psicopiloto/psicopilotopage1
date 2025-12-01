@@ -4,9 +4,7 @@ import { useState, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
-import PageHeader from "../components/PageHeader";
 import SignatureCanvas from "react-signature-canvas";
-import Link from "next/link";
 
 export default function Consentimiento() {
   const [form, setForm] = useState({
@@ -16,12 +14,11 @@ export default function Consentimiento() {
     direccion: "",
     telefono: "",
     cp: "",
-    fecha: new Date().toISOString().split("T")[0], // Fecha de hoy por defecto
+    fecha: new Date().toISOString().split("T")[0],
   });
   const [status, setStatus] = useState("");
   const [acepto, setAcepto] = useState(false);
   
-  // Referencia para el canvas de la firma
   const sigCanvas = useRef({});
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -31,10 +28,19 @@ export default function Consentimiento() {
     sigCanvas.current.clear();
   };
 
+  // ✨ FUNCIÓN AUXILIAR: Convierte el texto Base64 de la firma en un archivo real
+  const dataURLtoBlob = (dataurl) => {
+    let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validaciones básicas
     if (!acepto) {
       setStatus("❌ Debes leer y aceptar las condiciones para continuar.");
       return;
@@ -46,28 +52,36 @@ export default function Consentimiento() {
 
     setStatus("Enviando documento firmado...");
 
-    // Obtenemos la firma como una imagen (String Base64)
+    // 1. Convertimos la firma a un archivo de imagen
     const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
+    const signatureBlob = dataURLtoBlob(signatureData);
 
-    // Preparamos los datos para enviar a Formspree
-    // Nota: Formspree recibirá la firma como un enlace o un adjunto codificado
-    const dataToSend = {
-      ...form,
-      firma: signatureData,
-      documento: "Consentimiento Informado Psicopiloto",
-      _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`
-    };
+    // 2. Usamos FormData en lugar de JSON para poder enviar archivos
+    const formData = new FormData();
+    
+    // Añadimos todos los campos de texto
+    formData.append("nombre", form.nombre);
+    formData.append("email", form.email);
+    formData.append("dni", form.dni);
+    formData.append("telefono", form.telefono);
+    formData.append("direccion", form.direccion);
+    formData.append("cp", form.cp);
+    formData.append("fecha", form.fecha);
+    formData.append("documento", "Consentimiento Informado Psicopiloto");
+    formData.append("_subject", `Nuevo Consentimiento Firmado: ${form.nombre}`);
+
+    // ✨ AÑADIMOS LA FIRMA COMO ARCHIVO ADJUNTO
+    formData.append("firma_digital", signatureBlob, "firma_paciente.png");
 
     try {
-      // ⚠️ IMPORTANTE: Puedes usar el mismo endpoint de contacto o crear uno nuevo en Formspree
-      // para tener los consentimientos separados.
       const res = await fetch("https://formspree.io/f/xzzjybkg", { 
         method: "POST",
+        // ✨ IMPORTANTE: Al usar FormData, NO debemos poner 'Content-Type': 'application/json'
+        // El navegador lo detectará automáticamente como multipart/form-data
         headers: { 
-          "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(dataToSend),
+        body: formData,
       });
 
       if (res.ok) {
@@ -88,12 +102,11 @@ export default function Consentimiento() {
       <NextSeo
         title="Consentimiento Informado | Psicopiloto"
         description="Documento de consentimiento informado para la terapia psicológica online con Jose Carlos Rguez. Retamar."
-        noindex={true} // Recomendación: No indexar esta página en Google, es para clientes ya contactados.
+        noindex={true} 
       />
 
       <Nav />
       
-      {/* Header simplificado para página legal */}
       <div className="bg-white pt-24 pb-8 shadow-sm">
         <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-psicopiloto-blue-600">Consentimiento Informado</h1>
@@ -116,7 +129,7 @@ export default function Consentimiento() {
 
                 <h4 className="font-bold mt-4 mb-2">Protección de datos de carácter personal</h4>
                 <p className="mb-4">
-                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>[74658149-B]</strong>.
+                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
                 </p>
                 <p className="mb-4">
                     Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional. Se conservarán durante el período legalmente establecido y no serán cedidos a terceros salvo obligación legal.
