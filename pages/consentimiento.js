@@ -43,10 +43,9 @@ export default function Consentimiento() {
     setStatus("Enviando documento firmado...");
 
     // 1. Obtenemos la firma como texto codificado (Base64)
-    // Esto evita el bloqueo de subida de archivos del plan gratuito
     const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
 
-    // 2. Preparamos los datos en formato JSON simple
+    // 2. Preparamos los datos
     const dataToSend = {
       nombre: form.nombre,
       email: form.email,
@@ -58,7 +57,7 @@ export default function Consentimiento() {
       documento: "Consentimiento Informado Psicopiloto (Texto Completo)",
       _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`,
       _gotcha: "", // Campo anti-spam
-      firma_codigo: signatureData // La firma va aquí como texto
+      firma_codigo: signatureData 
     };
 
     try {
@@ -113,12 +112,13 @@ export default function Consentimiento() {
       </div>
 
       <main className="flex-grow py-10">
-        <div className="container mx-auto px-4 max-w-4xl">
+        {/* ✨ CAMBIO: Aumentado el ancho máximo a max-w-5xl para aprovechar más pantalla */}
+        <div className="container mx-auto px-4 max-w-5xl">
           
-          {/* CAJA DE TEXTO LEGAL COMPLETO (SIN SCROLL) */}
           <div className="bg-white p-6 md:p-10 rounded-xl shadow-md border border-gray-200 mb-12">
-            {/* ✨ CAMBIO: Eliminadas las clases h-96 y overflow-y-scroll para que se vea entero */}
-            <div className="prose prose-sm md:prose-base text-justify text-psicopiloto-gray-700 mb-8">
+            
+            {/* ✨ CAMBIO: Añadido 'max-w-none' para que el texto ocupe todo el ancho disponible */}
+            <div className="prose prose-sm md:prose-base max-w-none text-justify text-psicopiloto-gray-700 mb-8">
                 <h3 className="text-xl font-bold mb-6 text-psicopiloto-green-600 text-center">CONSENTIMIENTO INFORMADO</h3>
                 <p className="mb-4">Lea y firme el siguiente consentimiento informado sobre la terapia psicológica online.</p>
                 
@@ -129,7 +129,7 @@ export default function Consentimiento() {
 
                 <h4 className="font-bold mt-6 mb-2 text-psicopiloto-blue-600">Estoy informado/a sobre la información relativa a la protección de datos de carácter personal:</h4>
                 <p className="mb-4">
-                    De conformidad con lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>[AQUÍ TU NIF]</strong>.
+                    De conformidad con lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
                 </p>
                 <p className="mb-4">
                     Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional que los justifica. Se conservarán durante todo el período de prescripción de las acciones de responsabilidad y no serán cedidos a terceros.
@@ -232,7 +232,6 @@ export default function Consentimiento() {
                                 className: "sigCanvas w-full h-56 cursor-crosshair"
                             }}
                         />
-                         {/* Botón para borrar firma dentro del canvas */}
                          <button 
                             onClick={clearSignature}
                             className="absolute top-2 right-2 text-xs bg-white border border-gray-300 px-3 py-1 rounded hover:bg-red-50 hover:text-red-600 transition shadow-sm"
