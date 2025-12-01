@@ -42,11 +42,10 @@ export default function Consentimiento() {
 
     setStatus("Enviando documento firmado...");
 
-    // 1. Obtenemos la firma como texto codificado (Base64)
-    // Esto evita el bloqueo de subida de archivos del plan gratuito
+    // 1. Obtenemos la firma como texto (Base64) para evitar bloqueo de archivos
     const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
 
-    // 2. Preparamos los datos en formato JSON simple
+    // 2. Preparamos los datos JSON
     const dataToSend = {
       nombre: form.nombre,
       email: form.email,
@@ -55,10 +54,10 @@ export default function Consentimiento() {
       direccion: form.direccion,
       cp: form.cp,
       fecha: form.fecha,
-      documento: "Consentimiento Informado Psicopiloto",
+      documento: "Consentimiento Informado Psicopiloto (Texto Completo)",
       _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`,
       _gotcha: "", // Campo anti-spam
-      firma_codigo: signatureData // La firma va aquí como texto
+      firma_codigo: signatureData // La firma va aquí
     };
 
     try {
@@ -115,52 +114,66 @@ export default function Consentimiento() {
       <main className="flex-grow py-10">
         <div className="container mx-auto px-4 max-w-4xl">
           
-          {/* CAJA DE TEXTO LEGAL CON SCROLL */}
+          {/* CAJA DE TEXTO LEGAL COMPLETO */}
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 mb-8">
             <div className="prose prose-sm md:prose-base text-justify text-psicopiloto-gray-700 h-96 overflow-y-scroll pr-4 border-b border-gray-100 mb-6 custom-scrollbar">
-                <h3 className="text-lg font-bold mb-4 text-psicopiloto-green-600">Lea atentamente el siguiente consentimiento informado</h3>
+                <h3 className="text-lg font-bold mb-4 text-psicopiloto-green-600">CONSENTIMIENTO INFORMADO</h3>
+                <p className="mb-4">Lea y firme el siguiente consentimiento informado sobre la terapia psicológica online.</p>
                 
                 <p className="mb-4 font-bold">Manifiesto que:</p>
                 <p className="mb-4">
-                    El profesional <strong>Jose Carlos Rguez. Retamar</strong>, psicólogo sanitario colegiado número <strong>AO14457</strong> en el Colegio Oficial de Psicólogos de Andalucía Oriental, ha proporcionado toda la información necesaria, de forma clara, comprensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios que se seguirán para la evaluación psicológica que solicito, aplicándose al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico.
+                    El profesional <strong>Jose Carlos Rguez. Retamar</strong>, psicólogo sanitario colegiado número <strong>AO14457</strong> en el Colegio Oficial de Psicólogos de Andalucía Oriental, ha proporcionado toda la información necesaria, de forma clara, comprensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios que se seguirán para la evaluación psicológica que solicito, a través de las pruebas oportunas, aplicándose al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico y normas de deontología profesional de la Psicología.
                 </p>
 
-                <h4 className="font-bold mt-4 mb-2">Protección de datos de carácter personal</h4>
+                <h4 className="font-bold mt-4 mb-2">Estoy informado/a sobre la información relativa a la protección de datos de carácter personal:</h4>
                 <p className="mb-4">
-                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
+                    De conformidad con lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
                 </p>
                 <p className="mb-4">
-                    Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional. Se conservarán durante el período legalmente establecido y no serán cedidos a terceros salvo obligación legal.
+                    Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional que los justifica. Se conservarán durante todo el período de prescripción de las acciones de responsabilidad y no serán cedidos a terceros.
                 </p>
                 <p className="mb-4">
-                    Puede ejercer sus derechos de acceso, rectificación, supresión, limitación y oposición escribiendo al correo electrónico: <strong>info@psicopiloto.com</strong>.
+                    Usted tiene derecho al acceso, rectificación, supresión, limitación, portabilidad y oposición al tratamiento de sus datos personales, que se ejercerán ante <strong>Jose Carlos Rguez. Retamar</strong> al correo electrónico: <strong>info@psicopiloto.com</strong>. Así mismo, usted puede revocar el consentimiento en cualquier momento.
+                </p>
+                <p className="mb-4">
+                    Que el responsable del fichero, ha adoptado las medidas de seguridad que están a su alcance para proteger la inviolabilidad de sus datos personales en sus instalaciones, sistemas y ficheros. Asimismo, el responsable del fichero garantiza la confidencialidad de los datos personales; éstos sólo podrán ser revelados a las autoridades públicas competentes en caso que le sean requeridos de conformidad con las disposiciones legales y reglamentarias aplicables.
                 </p>
 
-                <h4 className="font-bold mt-4 mb-2">Características de la terapia online</h4>
-                <p className="mb-4">
-                    Las sesiones se realizarán a través de plataformas seguras como <strong>Google Meet</strong> (o Zoom en su defecto), garantizando la privacidad. Entiendo que el medio digital requiere que tanto paciente como terapeuta se comuniquen desde dispositivos seguros y entornos privados.
-                </p>
-                <p className="mb-4">
-                    Existe un compromiso mutuo de <strong>no grabar las sesiones</strong> sin consentimiento previo por escrito.
-                </p>
-                
-                <h4 className="font-bold mt-4 mb-2">Comunicación y Emergencias</h4>
-                <p className="mb-4">
-                    La comunicación entre sesiones (agendar, dudas) se realizará mediante correo electrónico o teléfono/WhatsApp profesional. Entiendo que aplicaciones como WhatsApp no son 100% seguras para transmitir datos clínicos sensibles, por lo que limitaremos su uso a gestión de citas.
-                </p>
-                
-                <h4 className="font-bold mt-4 mb-2">Condiciones de las sesiones</h4>
-                <ul className="list-disc list-inside mb-4 space-y-1">
-                    <li><strong>Puntualidad:</strong> Si el paciente conecta tarde, se utilizará el tiempo restante. Si el retraso es del psicólogo, se cumplirá el tiempo total.</li>
-                    <li><strong>Cancelaciones:</strong> Se requiere un aviso de <strong>24 horas</strong> de antelación. De no hacerlo, se podrá cobrar la sesión, salvo urgencia justificada.</li>
-                    <li><strong>Pago:</strong> Se realizará ANTES de la sesión mediante transferencia bancaria o Bizum.</li>
+                <h4 className="font-bold mt-4 mb-2">Igualmente, he sido informado/a sobre las características especiales de la terapia en modalidad on-line en los siguientes términos:</h4>
+                <ul className="list-disc list-inside mb-4 space-y-2">
+                    <li>La mayoría de estudios concluyen que la psicoterapia online es tan efectiva como la presencial.</li>
+                    <li>Esta forma de terapia no está indicada en casos de pérdida de realidad o si está experimentado pensamientos suicidas u homicidas. En la primera sesión se evaluará si es adecuada su solicitud de servicio de atención psicológica online, asimismo se irá revisando conforme avance la terapia, en caso de ser necesario realizar algunas o todas las sesiones en modalidad presencial y/o derivar a otro servicio.</li>
+                    <li>Las sesiones de psicoterapia se realizarán a través de la plataforma <strong>Google Meet</strong> (o similar segura), que permite trabajar desde un entorno seguro y confidencial y se ajusta a la legislación vigente relativa a la protección de la privacidad. En su defecto, como alternativa podrá utilizarse la plataforma ZOOM.</li>
+                    <li>Existe un compromiso mutuo de no grabar o registrar las sesiones sin el consentimiento previo del otro. Únicamente podrán ser grabadas en caso de acuerdo por escrito entre paciente y psicólogo, protegidas por los medios adecuados y con un uso determinado.</li>
+                    <li>En cuanto a la confidencialidad: ninguna información será comunicada, directa o indirectamente, a un tercero sin su consentimiento informado y por escrito, a menos que lo exija la ley.</li>
+                    <li>Entiendo que el medio digital no es 100% seguro y, tanto paciente como terapeuta, deberán comunicarse a través de un ordenador o dispositivo que sea seguro, es decir, donde la confidencialidad pueda ser garantizada.</li>
+                    <li>Acepta que las sesiones online se llevarán a cabo en un entorno de privacidad en la que, salvo acuerdo explícito de todas las partes, no habrá terceras personas participantes y se garantizará evitar interrupciones.</li>
+                    <li>La comunicación entre sesiones, para agendar sesiones u otras consultas, se realizará mediante correo electrónico o teléfono.</li>
+                    <li>Acepta que los correos electrónicos que le envíe así como la respuesta a los mismos se realizará a través del correo electrónico: <strong>info@psicopiloto.com</strong>.</li>
+                    <li>Entiende que otras cuentas de correo electrónico, o mensajería de uso personal (WhatsApp, Instagram, Telegram…) no es una forma 100% segura de comunicación. Por tanto, se limitará su uso priorizando las opciones seguras propuestas anteriormente.</li>
+                    <li>Entiende que es responsable de salvaguardar cualquier comunicación electrónica que descargue, imprima o acceda y que no reenviará, dará o copiará (total o parcialmente) mensajes de correo electrónico o comunicaciones electrónicas del terapeuta a ninguna otra persona, excepto con su acuerdo previo por escrito.</li>
+                </ul>
+
+                <h4 className="font-bold mt-4 mb-2">Sobre la conexión y aspectos técnicos:</h4>
+                <p className="mb-4">Las sesiones online dependen de la conexión a internet, que puede verse interrumpida, tanto en el profesional como del paciente. Puede ocurrir dos cosas:</p>
+                <ul className="list-disc list-inside mb-4 space-y-2">
+                    <li>La conexión se corta y/o no es fluida. Se podrá acordar mantener la sesión a través de otra plataforma segura de comunicación, o establecer otro momento a fin de tener una óptima comunicación.</li>
+                    <li>La conexión se interrumpe y no es posible retomarla. Se contactará por otro medio previamente establecido por las partes, (audio o texto), a fin únicamente de notificar que no es posible llevar a cabo la sesión y proceder a reagendarla.</li>
+                </ul>
+
+                <h4 className="font-bold mt-4 mb-2">Política de asistencia y pago:</h4>
+                <ul className="list-disc list-inside mb-4 space-y-2">
+                    <li>Entiendo que es importante ser puntual para disfrutar del tiempo completo de la sesión. Si conecto tarde a una sesión, entiendo que utilizaré el tiempo restante en la sesión programada y se me cobrará la tarifa completa por esa sesión. En caso que el retraso sea causa del psicólogo, se cumplirá siempre con el tiempo total de sesión estipulado.</li>
+                    <li>En caso de tener que anular la sesión, se solicita que se haga con <strong>24h de antelación</strong>, de no hacerlo, se cobrará la sesión. Salvo urgencia justificada.</li>
+                    <li>El pago de las sesiones se realizará <strong>ANTES</strong> de la sesión mediante Bizum, transferencia bancaria o tarjeta de crédito (si disponible). Todos los datos están cifrados y protegidos por las entidades bancarias involucradas.</li>
+                    <li>Recibirá la factura de sus sesiones cuando usted lo solicite.</li>
                 </ul>
 
                 <p className="mb-4 font-bold">
-                    Todos estos consentimientos PODRÁN SER REVOCADOS LIBREMENTE en cualquier momento mediante comunicación escrita.
+                    Todos estos consentimientos PODRÁN SER REVOCADOS LIBREMENTE en cualquier momento, tanto por el paciente como por el profesional, mediante comunicación escrita.
                 </p>
                 <p>
-                    Tomando todo ello en consideración, por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con el Psicólogo Jose Carlos Rguez. Retamar (Psicopiloto) para realizar la citada intervención profesional.
+                    Tomando todo ello en consideración, por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con el Psicólogo <strong>Jose Carlos Rguez. Retamar (Psicopiloto)</strong>, colegiado <strong>AO14457</strong> para realizar la citada intervención profesional, y OTORGO mi expreso CONSENTIMIENTO para que realice las indicadas intervenciones, y para que los datos sean incorporados a los ficheros antes mencionados para su tratamiento conforme a los fines especificados.
                 </p>
             </div>
 
@@ -212,7 +225,6 @@ export default function Consentimiento() {
                                 className: "sigCanvas w-full h-48 cursor-crosshair"
                             }}
                         />
-                         {/* Botón para borrar firma dentro del canvas */}
                          <button 
                             onClick={clearSignature}
                             className="absolute top-2 right-2 text-xs bg-white border border-gray-300 px-2 py-1 rounded hover:bg-red-50 hover:text-red-600 transition"
@@ -222,7 +234,7 @@ export default function Consentimiento() {
                     </div>
                 </div>
 
-                {/* Input oculto para el honeypot (extra safety) */}
+                {/* Input oculto anti-spam */}
                 <input type="text" name="_gotcha" style={{ display: 'none' }} />
 
                 {/* CHECKBOX ACEPTACIÓN */}
