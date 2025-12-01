@@ -28,7 +28,6 @@ export default function Consentimiento() {
     sigCanvas.current.clear();
   };
 
-  // ✨ FUNCIÓN AUXILIAR: Convierte el texto Base64 de la firma en un archivo real
   const dataURLtoBlob = (dataurl) => {
     let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
         bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
@@ -52,14 +51,11 @@ export default function Consentimiento() {
 
     setStatus("Enviando documento firmado...");
 
-    // 1. Convertimos la firma a un archivo de imagen
     const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
     const signatureBlob = dataURLtoBlob(signatureData);
 
-    // 2. Usamos FormData en lugar de JSON para poder enviar archivos
     const formData = new FormData();
     
-    // Añadimos todos los campos de texto
     formData.append("nombre", form.nombre);
     formData.append("email", form.email);
     formData.append("dni", form.dni);
@@ -70,19 +66,19 @@ export default function Consentimiento() {
     formData.append("documento", "Consentimiento Informado Psicopiloto");
     formData.append("_subject", `Nuevo Consentimiento Firmado: ${form.nombre}`);
 
-    // ✨ AÑADIMOS LA FIRMA COMO ARCHIVO ADJUNTO
+    // Archivo adjunto
     formData.append("firma_digital", signatureBlob, "firma_paciente.png");
 
     try {
       const res = await fetch("https://formspree.io/f/xzzjybkg", { 
         method: "POST",
-        // ✨ IMPORTANTE: Al usar FormData, NO debemos poner 'Content-Type': 'application/json'
-        // El navegador lo detectará automáticamente como multipart/form-data
         headers: { 
           "Accept": "application/json"
         },
         body: formData,
       });
+
+      const data = await res.json(); // Leemos la respuesta de Formspree
 
       if (res.ok) {
         setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
@@ -90,9 +86,12 @@ export default function Consentimiento() {
         setAcepto(false);
         sigCanvas.current.clear();
       } else {
+        // Mostramos el error real en la consola para depurar
+        console.error("Error Formspree:", data);
         setStatus("❌ Hubo un error al enviar el documento. Por favor, inténtalo de nuevo.");
       }
     } catch (err) {
+      console.error("Error Red:", err);
       setStatus("❌ Error de red. Comprueba tu conexión.");
     }
   };
@@ -117,7 +116,6 @@ export default function Consentimiento() {
       <main className="flex-grow py-10">
         <div className="container mx-auto px-4 max-w-4xl">
           
-          {/* CAJA DE TEXTO LEGAL CON SCROLL */}
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 mb-8">
             <div className="prose prose-sm md:prose-base text-justify text-psicopiloto-gray-700 h-96 overflow-y-scroll pr-4 border-b border-gray-100 mb-6 custom-scrollbar">
                 <h3 className="text-lg font-bold mb-4 text-psicopiloto-green-600">Lea atentamente el siguiente consentimiento informado</h3>
@@ -129,7 +127,7 @@ export default function Consentimiento() {
 
                 <h4 className="font-bold mt-4 mb-2">Protección de datos de carácter personal</h4>
                 <p className="mb-4">
-                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
+                    De conformidad con la Ley Orgánica 3/2018 y el Reglamento (UE) 2016/679, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>[AQUÍ TU NIF]</strong>.
                 </p>
                 <p className="mb-4">
                     Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional. Se conservarán durante el período legalmente establecido y no serán cedidos a terceros salvo obligación legal.
@@ -166,7 +164,6 @@ export default function Consentimiento() {
                 </p>
             </div>
 
-            {/* FORMULARIO DE DATOS */}
             <form onSubmit={handleSubmit} className="space-y-6">
                 <h3 className="text-xl font-semibold text-psicopiloto-blue-600 border-b pb-2">Tus Datos y Firma</h3>
                 
@@ -201,7 +198,6 @@ export default function Consentimiento() {
                     </div>
                 </div>
 
-                {/* CANVAS DE FIRMA */}
                 <div className="mt-8">
                     <label className="block text-sm font-bold mb-2 text-psicopiloto-gray-700">Firma Digital:</label>
                     <p className="text-xs text-gray-500 mb-2">Utiliza el ratón o el dedo en pantalla táctil para firmar dentro del recuadro.</p>
@@ -214,7 +210,6 @@ export default function Consentimiento() {
                                 className: "sigCanvas w-full h-48 cursor-crosshair"
                             }}
                         />
-                         {/* Botón para borrar firma dentro del canvas */}
                          <button 
                             onClick={clearSignature}
                             className="absolute top-2 right-2 text-xs bg-white border border-gray-300 px-2 py-1 rounded hover:bg-red-50 hover:text-red-600 transition"
@@ -224,7 +219,9 @@ export default function Consentimiento() {
                     </div>
                 </div>
 
-                {/* CHECKBOX ACEPTACIÓN */}
+                {/* ✨ CAMBIO: Añadimos el campo trampa 'honeypot' para evitar el bloqueo por spam */}
+                <input type="text" name="_gotcha" style={{ display: 'none' }} />
+
                 <div className="flex items-start gap-3 mt-6 p-4 bg-psicopiloto-green-50 rounded-lg">
                     <input 
                         id="acepto" 
@@ -238,7 +235,6 @@ export default function Consentimiento() {
                     </label>
                 </div>
 
-                {/* BOTÓN ENVIAR */}
                 <div className="text-center pt-4">
                     <button
                         type="submit"
@@ -249,7 +245,6 @@ export default function Consentimiento() {
                     </button>
                 </div>
 
-                {/* MENSAJE DE ESTADO */}
                 {status && (
                     <div className={`mt-4 p-4 rounded text-center ${status.startsWith("✅") ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
                         {status}
