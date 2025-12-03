@@ -57,8 +57,53 @@ export default function Home() {
               seguro para transformar tus preocupaciones y recuperar tu bienestar.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              {/* Bloques de ansiedad, ira/tristeza, autoestima */}
-              {/* ... */}
+              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">
+                  Ansiedad y Estrés
+                </h3>
+                <p className="text-psicopiloto-gray-700">
+                  Preocupación constante, tensión muscular, insomnio y la sensación
+                  de que algo malo va a pasar. Juntos podemos desactivar el "modo alerta".
+                </p>
+                <a
+                  href="/ansiedad"
+                  className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block"
+                >
+                  Saber más sobre ansiedad &gt;
+                </a>
+              </div>
+
+              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">
+                  Ataques de ira, tristeza o soledad
+                </h3>
+                <p className="text-psicopiloto-gray-700">
+                  Recuerdos intrusivos, reacciones exageradas y el peso de experiencias pasadas.
+                  Con la terapia EMDR y un enfoque integrador, es posible sanar.
+                </p>
+                <a
+                  href="/servicios"
+                  className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block"
+                >
+                  Descubre el EMDR &gt;
+                </a>
+              </div>
+
+              <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">
+                  Autoestima y Liderazgo
+                </h3>
+                <p className="text-psicopiloto-gray-700">
+                  Dificultad para poner límites, inseguridad, o un síndrome del impostor.
+                  Gana la autoconfianza que necesitas para tomar las riendas de tu vida.
+                </p>
+                <a
+                  href="/sobre-mi"
+                  className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block"
+                >
+                  Mi filosofía &gt;
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -72,14 +117,14 @@ export default function Home() {
                   Un enfoque que te devuelve el control
                 </h2>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-4">
-                  Como psicólogo y ex-piloto, sé lo que significa gestionar la
-                  presión, tomar decisiones difíciles y actuar con seguridad.
-                  Aplico esta filosofía a tu proceso terapéutico.
+                  Como psicólogo y ex-piloto, sé lo que significa gestionar la presión,
+                  tomar decisiones difíciles y actuar con seguridad. Aplico esta filosofía
+                  a tu proceso terapéutico.
                 </p>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-6">
                   Mi terapia es integradora, adaptando las mejores herramientas
-                  (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades
-                  únicas, para que puedas recuperar la calma y la claridad.
+                  (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades únicas,
+                  para que puedas recuperar la calma y la claridad.
                 </p>
                 <AnimatedCTA
                   href="/servicios"
@@ -101,43 +146,24 @@ export default function Home() {
         </section>
 
         {/* Sección: Terapia online */}
-        {/* ... resto de secciones originales ... */}
-
-        {/* Sección dinámica de reseñas desde Google */}
-        <GoogleReviews />
-
-        {/* Sección: Da el primer paso */}
-        <section className="py-16 bg-white/40 relative overflow-visible">
-          <div className="container mx-auto max-w-5xl relative">
-            <Image
-              src="/telefono.webp"
-              alt="Contacto telefónico para iniciar terapia psicológica online"
-              width={400}
-              height={400}
-              className="w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20">
-              <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
-                <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
-                  Da el primer paso
-                </h2>
-                <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
-                  Has dado el paso más difícil: llegar hasta aquí. Tras una llamada
-                  o un mensaje encontrarás un espacio seguro y cercano para empezar
-                  a sanar tus preocupaciones.
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto px-4 max-w-5xl text-center">
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
+              Terapia online: Comodidad y máxima eficacia
+            </h2>
+            <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">
+              Mi enfoque es la terapia online, dándote la flexibilidad de hacer terapia
+              desde la comodidad de tu casa en Granada, o desde donde tú elijas.
+            </p>
+            <div className="grid md:grid-cols-1 gap-8 text-left max-w-xl mx-auto">
+              <div className="p-8 border-t-4 border-psicopiloto-green-500 bg-white/80 rounded-lg shadow-xl transition transform hover:-translate-y-1">
+                <h3 className="text-2xl font-bold mb-3 text-psicopiloto-gray-700">
+                  Terapia Online (Mi enfoque principal)
+                </h3>
+                <p className="mb-4 text-psicopiloto-gray-500">
+                  Ideal para ahorrar tiempo y costes. Mi experiencia garantiza la misma
+                  calidad y cercanía que la sesión presencial.
                 </p>
-                <AnimatedCTA
-                  href="/contacto"
-                  text="Reserva tu primera consulta"
-                  color="green"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
-  );
-}
+                <ul className="list-disc list-inside space-y-2 text-psicopiloto-gray-500">
+                  <li>Acceso desde cualquier lugar.</li>
+                  <li><strong>Ahorro de tiempo y costes
