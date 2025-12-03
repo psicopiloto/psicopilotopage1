@@ -285,8 +285,29 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sección dinámica de reseñas desde Google */}
-        <GoogleReviews />
+      {/* Sección de reseñas */}
+<section className="py-16 bg-white/40">
+  <div className="container mx-auto max-w-5xl">
+    <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">
+      Opiniones de nuestros clientes
+    </h2>
+    <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">
+      Estas son las reseñas reales de nuestros clientes en Google Maps.
+    </p>
+
+    <div className="w-full h-[450px] rounded-xl overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13352902.856270785!2d-17.434099608939412!3d35.20681646435152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d9f41113de716d%3A0x505ce059488eb0fe!2sPsicopiloto%20-%20Psic%C3%B3logo%20Jose%20Carlos%20Rguez.%20Retamar!5e0!3m2!1ses!2ses!4v1764779702561!5m2!1ses!2ses"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
         {/* Sección: Da el primer paso */}
         <section className="py-16 bg-white/40 relative overflow-visible">
