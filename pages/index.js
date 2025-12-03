@@ -1,6 +1,6 @@
 // pages/index.js
 
-import { useState, useEffect } from "react"; // Importamos useState para el carrusel
+import { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -15,12 +15,12 @@ import Image from "next/image";
 const testimonialsData = [
   {
     stars: 5,
-    text: "Desde el primer día José Carlos hizo que me sintiera en confianza, en cada sesión me he sentido escuchada, acompañada y comprendida. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
+    text: "Desde el primer día José Carlos hizo que me sintiera en confianza. En cada sesión me he sentido escuchada, acompañada y comprendida. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
     author: "Eva",
   },
   {
     stars: 5,
-    text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida.",
+    text: "No tengo palabras suficientes para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida.",
     author: "Lucía",
   },
   {
@@ -36,22 +36,22 @@ const testimonialsData = [
 ];
 
 // ========================================================================
-// COMPONENTE CARRUSEL (Interno)
+// COMPONENTE CARRUSEL (Estilo Google + Letra Grande)
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
 
-  // Detectar tamaño de pantalla para mostrar 1 o 3 reseñas
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      // Ajustamos para que en tablets grandes ya se vean 3, o mantenemos 1 en móvil
+      if (window.innerWidth >= 1024) {
         setItemsPerPage(3);
       } else {
         setItemsPerPage(1);
       }
     };
-    handleResize(); // Ejecutar al inicio
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -68,7 +68,6 @@ const TestimonialCarousel = ({ data }) => {
     );
   };
 
-  // Icono de Google SVG
   const GoogleLogo = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -79,17 +78,17 @@ const TestimonialCarousel = ({ data }) => {
   );
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto px-8 md:px-12">
+    <div className="relative w-full max-w-[1400px] mx-auto px-4 md:px-12">
       
-      {/* HEADER TIPO GOOGLE */}
-      <div className="flex flex-col items-center justify-center mb-8">
-        <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200">
+      {/* HEADER GOOGLE */}
+      <div className="flex flex-col items-center justify-center mb-10">
+        <div className="flex items-center bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200 transform transition hover:scale-105">
           <GoogleLogo />
           <div className="flex flex-col">
-            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Rating</span>
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Valoración Google</span>
             <div className="flex items-center">
-              <span className="font-bold text-gray-800 mr-1">5.0</span>
-              <div className="flex text-yellow-400 text-sm">
+              <span className="font-bold text-gray-800 text-lg mr-2">5.0</span>
+              <div className="flex text-yellow-400 text-lg">
                 {'★'.repeat(5)}
               </div>
             </div>
@@ -97,8 +96,8 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* CONTENEDOR CARRUSEL */}
-      <div className="overflow-hidden relative pb-4">
+      {/* CARRUSEL */}
+      <div className="overflow-hidden relative py-4">
         <div 
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
@@ -106,36 +105,43 @@ const TestimonialCarousel = ({ data }) => {
           {data.map((item, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 px-3 w-full md:w-1/3"
+              className="flex-shrink-0 px-4 w-full lg:w-1/3"
               style={{ flexBasis: itemsPerPage === 1 ? '100%' : '33.333%' }}
             >
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full flex flex-col hover:shadow-lg transition-shadow">
-                <div className="flex items-center mb-3">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">
+              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 h-full flex flex-col hover:shadow-xl transition-shadow relative">
+                
+                {/* Logo G marca de agua */}
+                <div className="absolute top-6 right-6 opacity-20">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-6 h-6"/>
+                </div>
+
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-psicopiloto-green-400 to-psicopiloto-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 shadow-md">
                     {item.author.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800 text-sm">{item.author}</h4>
-                    <span className="text-xs text-gray-400">Hace un mes</span>
-                  </div>
-                  <div className="ml-auto">
-                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-4 h-4 opacity-50"/>
+                    <h4 className="font-bold text-gray-800 text-lg">{item.author}</h4>
+                    <div className="flex text-yellow-400 text-base">
+                        {'★'.repeat(item.stars)}
+                    </div>
                   </div>
                 </div>
-                <div className="text-yellow-400 text-sm mb-2">{'★'.repeat(item.stars)}</div>
-                <p className="text-gray-600 text-sm leading-relaxed italic line-clamp-6">
+                
+                {/* AQUI ESTÁ EL CAMBIO DE TAMAÑO DE TEXTO */}
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed italic font-medium">
                   "{item.text}"
                 </p>
+                
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* BOTONES DE NAVEGACIÓN */}
+      {/* BOTONES */}
       <button 
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-psicopiloto-blue-600 shadow-md hover:bg-gray-50 z-10 focus:outline-none"
+        className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-psicopiloto-blue-600 shadow-lg hover:bg-gray-50 z-10 focus:outline-none transition-transform hover:scale-110"
         aria-label="Anterior"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -145,7 +151,7 @@ const TestimonialCarousel = ({ data }) => {
 
       <button 
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-psicopiloto-blue-600 shadow-md hover:bg-gray-50 z-10 focus:outline-none"
+        className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-psicopiloto-blue-600 shadow-lg hover:bg-gray-50 z-10 focus:outline-none transition-transform hover:scale-110"
         aria-label="Siguiente"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -153,12 +159,12 @@ const TestimonialCarousel = ({ data }) => {
         </svg>
       </button>
 
-      {/* PUNTOS INDICADORES (Opcional, ayuda a saber que hay más) */}
-      <div className="flex justify-center space-x-2 mt-4">
+      {/* INDICADORES */}
+      <div className="flex justify-center space-x-3 mt-8">
         {Array.from({ length: Math.ceil(data.length - (itemsPerPage - 1)) }).map((_, idx) => (
           <div 
             key={idx}
-            className={`h-2 w-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-psicopiloto-blue-600' : 'bg-gray-300'}`}
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-psicopiloto-blue-600 scale-125' : 'bg-gray-300'}`}
           />
         ))}
       </div>
@@ -358,25 +364,24 @@ export default function Home() {
         </section>
 
         {/* ======================================================================== */}
-        {/* SECCIÓN DE TESTIMONIOS (MODIFICADA CON CARRUSEL) */}
+        {/* SECCIÓN DE TESTIMONIOS (CARRUSEL GRANDE ESTILO PSINTONIA) */}
         {/* ======================================================================== */}
-        <section className="py-16 bg-psicopiloto-sand-50 overflow-hidden">
-          <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-3xl font-semibold mb-4 text-psicopiloto-blue-600">
+        <section className="py-20 bg-psicopiloto-sand-50 overflow-hidden">
+          <div className="container mx-auto max-w-full text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-psicopiloto-blue-600">
               Lo que dicen quienes han confiado en mí
             </h2>
-            <p className="text-psicopiloto-gray-500 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-psicopiloto-gray-500 mb-12 max-w-2xl mx-auto">
               La experiencia real de pacientes que han pasado por el proceso terapéutico.
             </p>
 
-            {/* Inserción del nuevo componente Carrusel */}
             <TestimonialCarousel data={testimonialsData} />
 
-            <div className="mt-12">
+            <div className="mt-16">
               <AnimatedCTA 
                 href={googleReviewsLink} 
                 text="Leer más reseñas en Google" 
-                color="blue" // ✅ AZUL: Información y confianza
+                color="blue" 
                 isExternal={true} 
               />
             </div>
