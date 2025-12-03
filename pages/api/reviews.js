@@ -1,6 +1,6 @@
 // pages/api/reviews.js
 export default async function handler(req, res) {
-  const placeId = "TU_PLACE_ID"; // Sustituye por el Place ID de tu negocio
+  const placeId = "0x86d9f41113de716d:0x505ce059488eb0fe"; // Sustituye por el Place ID de tu negocio
   const apiKey = process.env.GOOGLE_API_KEY; // La API Key estará en Vercel
 
   try {
