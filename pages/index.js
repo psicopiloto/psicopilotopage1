@@ -1,6 +1,6 @@
 // pages/index.js
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -36,11 +36,20 @@ const testimonialsData = [
 ];
 
 // ========================================================================
-// COMPONENTE CARRUSEL (Estilo Google + Letra Grande)
+// COMPONENTE CARRUSEL INFINITO (Estilo Rueda + Iniciales)
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const originalLength = data.length;
+  // Triplicamos los datos para crear el efecto de bucle infinito
+  const extendedData = useMemo(() => [...data, ...data, ...data], [data]);
+  
+  // Empezamos en el inicio del segundo set de datos
+  const [currentIndex, setCurrentIndex] = useState(originalLength);
   const [itemsPerPage, setItemsPerPage] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const transitionTimeoutRef = useRef(null);
+  const transitionDurationStr = '500ms';
+  const transitionDurationNum = 500;
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,16 +65,48 @@ const TestimonialCarousel = ({ data }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Lógica del "salto" infinito
+  useEffect(() => {
+    // Limpiamos timeouts anteriores si el usuario hace clic rápido
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+    }
+
+    // Si estamos en el tercer set (muy a la derecha), saltamos atrás al segundo set
+    if (currentIndex >= originalLength * 2) {
+      transitionTimeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false); // Desactivar transición para el salto
+        setCurrentIndex(currentIndex - originalLength);
+      }, transitionDurationNum);
+    }
+    // Si estamos en el primer set (muy a la izquierda), saltamos adelante al segundo set
+    else if (currentIndex < originalLength) {
+      transitionTimeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false); // Desactivar transición para el salto
+        setCurrentIndex(currentIndex + originalLength);
+      }, transitionDurationNum);
+    }
+  }, [currentIndex, originalLength]);
+
+
+  // Reactivar la transición después del salto instantáneo
+  useEffect(() => {
+    if (!isTransitioning) {
+        // Usamos un pequeño timeout para asegurar que el DOM se actualizó sin transición
+        // antes de volver a activarla
+        setTimeout(() => {
+            setIsTransitioning(true);
+        }, 50);
+    }
+  }, [isTransitioning]);
+
+
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 1 > data.length - itemsPerPage ? 0 : prevIndex + 1
-    );
+    setCurrentIndex(prev => prev + 1);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? data.length - itemsPerPage : prevIndex - 1
-    );
+    setCurrentIndex(prev => prev - 1);
   };
 
   const GoogleLogo = () => (
@@ -76,6 +117,9 @@ const TestimonialCarousel = ({ data }) => {
       <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
     </svg>
   );
+
+  // Calcular el índice real para los puntos indicadores
+  const actualIndex = currentIndex % originalLength;
 
   return (
     <div className="relative w-full max-w-[1400px] mx-auto px-4 md:px-12">
@@ -99,10 +143,14 @@ const TestimonialCarousel = ({ data }) => {
       {/* CARRUSEL */}
       <div className="overflow-hidden relative py-4">
         <div 
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
+          className={`flex ${isTransitioning ? `transition-transform ease-out` : ''}`}
+          style={{ 
+            transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
+            transitionDuration: isTransitioning ? transitionDurationStr : '0ms'
+          }}
         >
-          {data.map((item, index) => (
+          {extendedData.map((item, index) => (
+            // Usamos index como key aquí porque los datos están duplicados
             <div 
               key={index} 
               className="flex-shrink-0 px-4 w-full lg:w-1/3"
@@ -116,7 +164,8 @@ const TestimonialCarousel = ({ data }) => {
                 </div>
 
                 <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-br from-psicopiloto-green-400 to-psicopiloto-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 shadow-md">
+                  {/* AVATAR CON INICIAL - Estilo Google estándar (color sólido) */}
+                  <div className="bg-psicopiloto-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 shadow-sm">
                     {item.author.charAt(0)}
                   </div>
                   <div>
@@ -127,7 +176,6 @@ const TestimonialCarousel = ({ data }) => {
                   </div>
                 </div>
                 
-                {/* AQUI ESTÁ EL CAMBIO DE TAMAÑO DE TEXTO */}
                 <p className="text-gray-600 text-lg md:text-xl leading-relaxed italic font-medium">
                   "{item.text}"
                 </p>
@@ -159,12 +207,13 @@ const TestimonialCarousel = ({ data }) => {
         </svg>
       </button>
 
-      {/* INDICADORES */}
+      {/* INDICADORES (Puntos) */}
       <div className="flex justify-center space-x-3 mt-8">
-        {Array.from({ length: Math.ceil(data.length - (itemsPerPage - 1)) }).map((_, idx) => (
+        {data.map((_, idx) => (
           <div 
             key={idx}
-            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-psicopiloto-blue-600 scale-125' : 'bg-gray-300'}`}
+            // Comparamos el índice real (módulo) para activar el punto correcto
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === actualIndex ? 'bg-psicopiloto-blue-600 scale-125' : 'bg-gray-300'}`}
           />
         ))}
       </div>
@@ -364,7 +413,7 @@ export default function Home() {
         </section>
 
         {/* ======================================================================== */}
-        {/* SECCIÓN DE TESTIMONIOS (CARRUSEL GRANDE ESTILO PSINTONIA) */}
+        {/* SECCIÓN DE TESTIMONIOS (CARRUSEL INFINITO ESTILO RUEDA) */}
         {/* ======================================================================== */}
         <section className="py-20 bg-psicopiloto-sand-50 overflow-hidden">
           <div className="container mx-auto max-w-full text-center">
