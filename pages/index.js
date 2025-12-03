@@ -89,7 +89,7 @@ export default function Home() {
                 <a href="/ansiedad" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Saber más sobre ansiedad →</a>
               </div>
               <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
-                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">Trauma y EMDR</h3>
+                <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">Ataques de ira, tristeza o soledad</h3>
                 <p className="text-psicopiloto-gray-700">Recuerdos intrusivos, reacciones exageradas y el peso de experiencias pasadas. Con la terapia EMDR y un enfoque integrador, es posible sanar.</p>
                 <a href="/servicios" className="text-sm text-psicopiloto-blue-600 hover:underline mt-2 inline-block">Descubre el EMDR →</a>
               </div>
