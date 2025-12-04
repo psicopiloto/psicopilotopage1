@@ -149,7 +149,7 @@ export default function Consentimiento() {
                         <strong>Situaciones de crisis:</strong> Esta modalidad <strong>no es apropiada</strong> si está experimentando una crisis aguda, pérdida de realidad o tiene pensamientos suicidas u homicidas activos. Si esto ocurre, debe acudir inmediatamente a un servicio de urgencias presencial.
                     </li>
                     <li>
-                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de plataformas que permiten trabajar desde un entorno seguro y confidencial (como Google Meet, Zoom o PSYPOCKET), ajustándose a la legislación vigente de privacidad.
+                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de plataformas que permiten trabajar desde un entorno seguro y confidencial (como Google Meet, Zoom), ajustándose a la legislación vigente de privacidad.
                     </li>
                     <li>
                         <strong>Entorno del paciente:</strong> Usted se compromete a realizar la sesión en un entorno privado, sin la presencia de terceras personas (salvo acuerdo explícito) y evitando interrupciones.
@@ -193,7 +193,7 @@ export default function Consentimiento() {
                 <ul className="list-disc list-inside space-y-2">
                     <li><strong>Responsable:</strong> Los datos personales se recogerán en el fichero cuyo responsable es <strong>{PROFESIONAL.nombre}</strong> (NIF: {PROFESIONAL.nif}).</li>
                     <li><strong>Finalidad:</strong> Elaboración de documentos clínicos, facturación, seguimiento y funciones profesionales.</li>
-                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito a: <strong>{PROFESIONAL.email}</strong> //o a la dirección postal: {PROFESIONAL.direccion_datos}.</li>
+                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito a: <strong>{PROFESIONAL.email}</strong>.</li> //o a la dirección postal: {PROFESIONAL.direccion_datos}
                     <li><strong>Seguridad:</strong> El responsable garantiza haber adoptado las medidas de seguridad necesarias para proteger la confidencialidad de sus datos.</li>
                 </ul>
 
