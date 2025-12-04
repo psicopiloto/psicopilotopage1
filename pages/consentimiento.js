@@ -14,7 +14,7 @@ const PROFESIONAL = {
   colegiado: "AO14457",
   nif: "74658149-B", // Asegúrate de que este dato sea correcto
   email: "info@psicopiloto.com",
- // direccion_datos: "Carr. de Canillas, 106, Madrid" // Dirección para derechos ARCO
+  direccion_datos: "Carr. de Canillas, 106, Madrid" // Dirección para derechos ARCO
 };
 
 export default function Consentimiento() {
@@ -193,7 +193,7 @@ export default function Consentimiento() {
                 <ul className="list-disc list-inside space-y-2">
                     <li><strong>Responsable:</strong> Los datos personales se recogerán en el fichero cuyo responsable es <strong>{PROFESIONAL.nombre}</strong> (NIF: {PROFESIONAL.nif}).</li>
                     <li><strong>Finalidad:</strong> Elaboración de documentos clínicos, facturación, seguimiento y funciones profesionales.</li>
-                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito a: <strong>{PROFESIONAL.email}</strong>.</li> // o a la dirección postal: {PROFESIONAL.direccion_datos}
+                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito a: <strong>{PROFESIONAL.email}</strong>.</li>   // o a la dirección postal: // {PROFESIONAL.direccion_datos}
                     <li><strong>Seguridad:</strong> El responsable garantiza haber adoptado las medidas de seguridad necesarias para proteger la confidencialidad de sus datos.</li>
                 </ul>
 
