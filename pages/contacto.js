@@ -54,7 +54,6 @@ export default function Contacto() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // ✨ CAMBIO 1: Añadir la cabecera 'Accept' es crucial para envíos AJAX a Formspree
           'Accept': 'application/json'
         },
         body: JSON.stringify(form),
@@ -64,7 +63,6 @@ export default function Contacto() {
         setStatus("✅ ¡Mensaje recibido! Gracias por contactar. Te responderé personalmente en un plazo de 24-48 horas.");
         setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
       } else {
-        // Mejora: Muestra el código de error si falla para tener más pistas
         setStatus(`❌ Error ${res.status}: No se pudo enviar el mensaje. Inténtalo de nuevo.`);
       }
     } catch (err) {
@@ -121,7 +119,6 @@ export default function Contacto() {
                   <label htmlFor="motivo" className="sr-only">Cuéntame brevemente tu motivo de consulta *</label>
                   <textarea id="motivo" required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"></textarea>
                   
-                  {/* ✨ CAMBIO 2: Añadir el campo "honeypot" anti-spam. Es invisible para los usuarios. */}
                   <input type="text" name="_gotcha" style={{ display: 'none' }} />
 
                   <button type="submit" className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors" disabled={status === "Enviando..."}>
@@ -139,11 +136,24 @@ export default function Contacto() {
                 <p>💬 WhatsApp:{" "}<a href="https://wa.me/34676230537" target="_blank" rel="noopener noreferrer" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">Chatea ahora</a></p>
                 <p>✉️ Email:{" "}<a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">info@psicopiloto.com</a></p>
               </div>
+              
               <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:order-3">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita ONLINE directamente</h3>
-                <div className="w-full h-[400px] md:h-[600px] overflow-auto">
-                  <iframe title="Calendario de citas online de Psicopiloto" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true" style={{ border: 0, width: "100%", height: "100%" }} frameBorder="0" loading="lazy"></iframe>
+                
+                {/* AQUÍ ESTÁ EL CAMBIO:
+                   1. Eliminado overflow-auto para que no salga barra de scroll.
+                   2. Cambiado h-[400px] md:h-[600px] por h-[1150px] para asegurar que cabe todo el calendario.
+                */}
+                <div className="w-full h-[1150px]">
+                  <iframe 
+                    title="Calendario de citas online de Psicopiloto" 
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true" 
+                    style={{ border: 0, width: "100%", height: "100%" }} 
+                    frameBorder="0" 
+                    loading="lazy"
+                  ></iframe>
                 </div>
+
               </div>
               <div className="text-sm text-psicopiloto-gray-700 order-3 md:order-2">
                 <p><strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}<a href="/aviso-legal" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700 focus:ring-1 focus:ring-psicopiloto-green-400 rounded">política de privacidad</a>.</p>
