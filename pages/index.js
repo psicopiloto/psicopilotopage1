@@ -91,13 +91,14 @@ const avatarColors = [
 ];
 
 // ========================================================================
-// COMPONENTE TARJETA DE RESEÑA (Réplica exacta Psintonía)
+// COMPONENTE TARJETA DE RESEÑA (Réplica Visual Exacta)
 // ========================================================================
 const ReviewCard = ({ item, avatarColorClass }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeAgoText = timeAgo(item.date);
   
-  const CHAR_LIMIT = 130;
+  // Límite de caracteres para el "Leer más"
+  const CHAR_LIMIT = 140; 
   const shouldTruncate = item.text.length > CHAR_LIMIT;
 
   const toggleReadMore = (e) => {
@@ -106,9 +107,8 @@ const ReviewCard = ({ item, avatarColorClass }) => {
     setIsExpanded(!isExpanded);
   };
 
-  // Icono G de colores
   const ColoredGIcon = () => (
-    <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
@@ -117,42 +117,41 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 
   return (
-    // Estilos de la tarjeta replicados: bordes muy redondeados, sombra sutil, fondo blanco puro
-    <div className="bg-white p-7 rounded-[22px] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1)] border border-transparent flex flex-col relative text-left h-full transition-all duration-300 font-sans">
+    // Diseño exacto: Bordes redondeados 20px, Sombra suave difusa, Padding generoso
+    <div className={`bg-white p-7 rounded-[20px] shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-transparent flex flex-col relative text-left transition-all duration-300 ${isExpanded ? 'h-auto z-10' : 'h-full'}`}>
       
-      {/* ICONO G SUPERIOR DERECHA */}
+      {/* ICONO G (Esquina superior derecha) */}
       <div className="absolute top-6 right-6">
          <ColoredGIcon />
       </div>
 
-      {/* CABECERA: Avatar + Nombre + Fecha */}
-      <div className="flex items-center mb-4 pr-8">
-        {/* Avatar un poco más grande */}
-        <div className={`${avatarColorClass} text-white rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center font-bold text-xl mr-4`}>
+      {/* CABECERA */}
+      <div className="flex items-center mb-1 pr-8">
+        <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-lg mr-3`}>
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          {/* Nombre: Color #333333, Bold, 15px */}
-          <h4 className="font-bold text-[#333333] text-[15px] leading-tight mb-1">{item.author}</h4>
-          {/* Fecha: Gris claro #adadad, 13px */}
-          <span className="text-[13px] text-[#adadad]">{timeAgoText}</span>
+          {/* Nombre en negro suave, bold */}
+          <h4 className="font-bold text-[#222] text-[15px] leading-tight mb-0.5">{item.author}</h4>
+          {/* Fecha en gris claro */}
+          <span className="text-[12px] text-[#888]">{timeAgoText}</span>
         </div>
       </div>
 
-      {/* ESTRELLAS (Debajo de la info de cabecera) */}
-      <div className="flex text-[#fbbc04] text-sm mb-4">
+      {/* ESTRELLAS (Debajo del nombre, no del texto) */}
+      <div className="flex text-[#fbbc04] text-[13px] mb-3 ml-[52px]">
           {'★'.repeat(item.stars)}
       </div>
       
-      {/* TEXTO: Color específico #54595F, interlineado amplio (leading-7) */}
-      <div className="text-[#54595F] text-[15px] leading-7 relative">
+      {/* TEXTO DE LA RESEÑA */}
+      <div className="text-[#444] text-[15px] leading-relaxed relative">
         {shouldTruncate && !isExpanded ? (
           <>
             "{item.text.substring(0, CHAR_LIMIT)}..."
             <button 
               onClick={toggleReadMore}
-              // Enlace "Leer más" en gris que oscurece al hover
-              className="text-[#adadad] hover:text-[#54595F] font-medium ml-1 text-sm focus:outline-none cursor-pointer transition-colors"
+              // Estilo "Leer más" exacto: negro y subrayado, más elegante
+              className="text-black font-medium ml-1 text-sm focus:outline-none cursor-pointer underline decoration-1 underline-offset-2 hover:text-gray-700"
             >
               Leer más
             </button>
@@ -163,7 +162,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
             {shouldTruncate && (
               <button 
                 onClick={toggleReadMore}
-                className="text-[#adadad] hover:text-[#54595F] font-medium ml-1 text-sm focus:outline-none block mt-2 cursor-pointer transition-colors"
+                className="text-black font-medium ml-1 text-sm focus:outline-none block mt-2 cursor-pointer underline decoration-1 underline-offset-2 hover:text-gray-700"
               >
                 Leer menos
               </button>
@@ -180,7 +179,10 @@ const ReviewCard = ({ item, avatarColorClass }) => {
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
-  const extendedData = useMemo(() => [...data, ...data, ...data, ...data], [data]);
+  // Solo duplicamos una vez para asegurar funcionalidad pero manteniendo control
+  // Para un "infinito" real perfecto se necesita lógica más compleja, 
+  // pero con duplicar x3 suele bastar para la ilusión.
+  const extendedData = useMemo(() => [...data, ...data, ...data], [data]);
   
   const [currentIndex, setCurrentIndex] = useState(originalLength);
   const [itemsPerPage, setItemsPerPage] = useState(1);
@@ -195,9 +197,9 @@ const TestimonialCarousel = ({ data }) => {
       if (width >= 1024) {
         setItemsPerPage(3);
       } else if (width >= 768) {
-        setItemsPerPage(2); 
+        setItemsPerPage(2);
       } else {
-        setItemsPerPage(1); 
+        setItemsPerPage(1);
       }
     };
     handleResize();
@@ -245,7 +247,7 @@ const TestimonialCarousel = ({ data }) => {
   );
 
   return (
-    <div className="relative w-full max-w-[1300px] mx-auto px-4 md:px-8">
+    <div className="relative w-full max-w-[1200px] mx-auto px-4 md:px-8">
       
       {/* HEADER GOOGLE RATING */}
       <div className="flex flex-col items-center justify-center mb-10">
@@ -263,9 +265,10 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* ZONA CARRUSEL */}
-      <div className="overflow-hidden relative pb-10 pt-2">
+      {/* CARRUSEL */}
+      <div className="overflow-hidden relative pb-10 pt-4">
         <div 
+          // 'items-start' asegura que si una se expande, las demás no se estiren
           className={`flex items-start ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
           style={{ 
             transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` 
@@ -278,8 +281,7 @@ const TestimonialCarousel = ({ data }) => {
              return (
               <div 
                 key={index} 
-                // Aumentado el padding horizontal para crear el espacio entre tarjetas como en la referencia
-                className="flex-shrink-0 px-4 lg:px-6 w-full"
+                className="flex-shrink-0 px-3 w-full"
                 style={{ flexBasis: `${100 / itemsPerPage}%` }}
               >
                 <ReviewCard item={item} avatarColorClass={avatarColorClass} />
@@ -289,10 +291,10 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* BOTONES FLOTANTES */}
+      {/* BOTONES FLOTANTES (Círculos blancos con sombra suave) */}
       <button 
         onClick={prevSlide}
-        className="hidden md:block absolute -left-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
+        className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-20 hover:bg-gray-50 transition-colors"
         aria-label="Anterior"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -302,7 +304,7 @@ const TestimonialCarousel = ({ data }) => {
 
       <button 
         onClick={nextSlide}
-        className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
+        className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-20 hover:bg-gray-50 transition-colors"
         aria-label="Siguiente"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -311,11 +313,11 @@ const TestimonialCarousel = ({ data }) => {
       </button>
 
       {/* PUNTOS */}
-      <div className="flex justify-center space-x-2.5 mt-4">
+      <div className="flex justify-center space-x-2 mt-4">
         {data.map((_, idx) => (
           <div 
             key={idx}
-            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-[#1a73e8]' : 'bg-[#e0e0e0]'}`}
+            className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-[#1a73e8]' : 'bg-[#e0e0e0]'}`}
           />
         ))}
       </div>
