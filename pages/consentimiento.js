@@ -14,7 +14,7 @@ const PROFESIONAL = {
   colegiado: "AO14457",
   nif: "74658149-B", // Asegúrate de que este dato sea correcto
   email: "info@psicopiloto.com",
-  direccion_datos: "Carr. de Canillas, 106, Madrid" // Dirección para derechos ARCO
+ // direccion_datos: "Carr. de Canillas, 106, Madrid" // Dirección para derechos ARCO
 };
 
 export default function Consentimiento() {
