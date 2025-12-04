@@ -1,6 +1,7 @@
 // pages/index.js
 
 import { useState, useEffect, useMemo, useRef } from "react";
+import Head from "next/head"; // Importamos Head para cargar la fuente Roboto
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -91,14 +92,14 @@ const avatarColors = [
 ];
 
 // ========================================================================
-// COMPONENTE TARJETA DE RESEÑA (Réplica Visual Exacta)
+// COMPONENTE TARJETA DE RESEÑA
 // ========================================================================
 const ReviewCard = ({ item, avatarColorClass }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeAgoText = timeAgo(item.date);
   
-  // Límite de caracteres para el "Leer más"
-  const CHAR_LIMIT = 140; 
+  // Límite ajustado para que visualmente cuadre con tarjetas de tamaño medio
+  const CHAR_LIMIT = 150; 
   const shouldTruncate = item.text.length > CHAR_LIMIT;
 
   const toggleReadMore = (e) => {
@@ -108,7 +109,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   };
 
   const ColoredGIcon = () => (
-    <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
@@ -117,41 +118,44 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 
   return (
-    // Diseño exacto: Bordes redondeados 20px, Sombra suave difusa, Padding generoso
-    <div className={`bg-white p-7 rounded-[20px] shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-transparent flex flex-col relative text-left transition-all duration-300 ${isExpanded ? 'h-auto z-10' : 'h-full'}`}>
+    // Aplicamos font-roboto aquí específicamente
+    <div 
+      className={`bg-white p-6 rounded-[20px] shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-transparent flex flex-col relative text-left transition-all duration-300 font-roboto ${isExpanded ? 'h-auto z-20 absolute top-0 left-0 right-0 shadow-2xl' : 'h-full relative z-0'}`}
+      // Estilo inline para asegurar que si se expande, tenga fondo blanco solido y tape lo de abajo si es necesario
+      style={{ fontFamily: "'Roboto', sans-serif" }} 
+    >
       
-      {/* ICONO G (Esquina superior derecha) */}
+      {/* ICONO G */}
       <div className="absolute top-6 right-6">
          <ColoredGIcon />
       </div>
 
       {/* CABECERA */}
-      <div className="flex items-center mb-1 pr-8">
+      <div className="flex items-center mb-2 pr-8">
         <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-lg mr-3`}>
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          {/* Nombre en negro suave, bold */}
-          <h4 className="font-bold text-[#222] text-[15px] leading-tight mb-0.5">{item.author}</h4>
-          {/* Fecha en gris claro */}
-          <span className="text-[12px] text-[#888]">{timeAgoText}</span>
+          {/* Nombre: Color #202124 (Google Black), Bold, 16px */}
+          <h4 className="font-bold text-[#202124] text-[16px] leading-snug">{item.author}</h4>
+          {/* Fecha: Color #70757a (Google Grey), 12px */}
+          <span className="text-[12px] text-[#70757a]">{timeAgoText}</span>
         </div>
       </div>
 
-      {/* ESTRELLAS (Debajo del nombre, no del texto) */}
-      <div className="flex text-[#fbbc04] text-[13px] mb-3 ml-[52px]">
+      {/* ESTRELLAS */}
+      <div className="flex text-[#fbbc04] text-[14px] mb-3 ml-[52px]">
           {'★'.repeat(item.stars)}
       </div>
       
-      {/* TEXTO DE LA RESEÑA */}
-      <div className="text-[#444] text-[15px] leading-relaxed relative">
+      {/* TEXTO: Color #202124 (Casi negro), 16px (Más grande) */}
+      <div className="text-[#202124] text-[16px] leading-[1.6] relative">
         {shouldTruncate && !isExpanded ? (
           <>
             "{item.text.substring(0, CHAR_LIMIT)}..."
             <button 
               onClick={toggleReadMore}
-              // Estilo "Leer más" exacto: negro y subrayado, más elegante
-              className="text-black font-medium ml-1 text-sm focus:outline-none cursor-pointer underline decoration-1 underline-offset-2 hover:text-gray-700"
+              className="text-[#70757a] hover:text-[#202124] font-medium ml-1 text-[14px] focus:outline-none cursor-pointer"
             >
               Leer más
             </button>
@@ -162,7 +166,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
             {shouldTruncate && (
               <button 
                 onClick={toggleReadMore}
-                className="text-black font-medium ml-1 text-sm focus:outline-none block mt-2 cursor-pointer underline decoration-1 underline-offset-2 hover:text-gray-700"
+                className="text-[#70757a] hover:text-[#202124] font-medium ml-1 text-[14px] focus:outline-none block mt-2 cursor-pointer"
               >
                 Leer menos
               </button>
@@ -179,28 +183,21 @@ const ReviewCard = ({ item, avatarColorClass }) => {
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
-  // Solo duplicamos una vez para asegurar funcionalidad pero manteniendo control
-  // Para un "infinito" real perfecto se necesita lógica más compleja, 
-  // pero con duplicar x3 suele bastar para la ilusión.
-  const extendedData = useMemo(() => [...data, ...data, ...data], [data]);
+  // Duplicamos x4 para asegurar scroll infinito visual
+  const extendedData = useMemo(() => [...data, ...data, ...data, ...data], [data]);
   
   const [currentIndex, setCurrentIndex] = useState(originalLength);
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const transitionTimeoutRef = useRef(null);
-  
   const transitionDuration = 500;
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width >= 1024) {
-        setItemsPerPage(3);
-      } else if (width >= 768) {
-        setItemsPerPage(2);
-      } else {
-        setItemsPerPage(1);
-      }
+      if (width >= 1024) setItemsPerPage(3);
+      else if (width >= 768) setItemsPerPage(2);
+      else setItemsPerPage(1);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -210,15 +207,14 @@ const TestimonialCarousel = ({ data }) => {
   // Efecto infinito
   useEffect(() => {
     if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
-
     const totalItems = extendedData.length;
+    
     if (currentIndex >= totalItems - itemsPerPage) {
       transitionTimeoutRef.current = setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(originalLength);
       }, transitionDuration);
-    } 
-    else if (currentIndex <= 0) {
+    } else if (currentIndex <= 0) {
        transitionTimeoutRef.current = setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(totalItems - itemsPerPage * 2);
@@ -228,9 +224,7 @@ const TestimonialCarousel = ({ data }) => {
 
   useEffect(() => {
     if (!isTransitioning) {
-      requestAnimationFrame(() => {
-          setTimeout(() => setIsTransitioning(true), 50);
-      });
+      requestAnimationFrame(() => setTimeout(() => setIsTransitioning(true), 50));
     }
   }, [isTransitioning]);
 
@@ -247,16 +241,16 @@ const TestimonialCarousel = ({ data }) => {
   );
 
   return (
-    <div className="relative w-full max-w-[1200px] mx-auto px-4 md:px-8">
+    <div className="relative w-full max-w-[1300px] mx-auto px-4 md:px-8">
       
       {/* HEADER GOOGLE RATING */}
       <div className="flex flex-col items-center justify-center mb-10">
         <div className="flex items-center bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-200">
           <GoogleHeaderIcon />
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-0.5">Valoración Google</span>
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-0.5" style={{ fontFamily: "'Roboto', sans-serif" }}>Valoración Google</span>
             <div className="flex items-center leading-none">
-              <span className="font-bold text-gray-800 text-base mr-1.5">5.0</span>
+              <span className="font-bold text-[#202124] text-base mr-1.5" style={{ fontFamily: "'Roboto', sans-serif" }}>5.0</span>
               <div className="flex text-yellow-400 text-sm">
                 {'★'.repeat(5)}
               </div>
@@ -266,13 +260,10 @@ const TestimonialCarousel = ({ data }) => {
       </div>
 
       {/* CARRUSEL */}
-      <div className="overflow-hidden relative pb-10 pt-4">
+      <div className="overflow-hidden relative pb-10 pt-4" style={{ minHeight: '350px' }}>
         <div 
-          // 'items-start' asegura que si una se expande, las demás no se estiren
           className={`flex items-start ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
-          style={{ 
-            transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` 
-          }}
+          style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
         >
           {extendedData.map((item, index) => {
              const originalIndexForColor = index % originalLength;
@@ -281,7 +272,7 @@ const TestimonialCarousel = ({ data }) => {
              return (
               <div 
                 key={index} 
-                className="flex-shrink-0 px-3 w-full"
+                className="flex-shrink-0 px-3 w-full relative"
                 style={{ flexBasis: `${100 / itemsPerPage}%` }}
               >
                 <ReviewCard item={item} avatarColorClass={avatarColorClass} />
@@ -291,34 +282,19 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* BOTONES FLOTANTES (Círculos blancos con sombra suave) */}
-      <button 
-        onClick={prevSlide}
-        className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-20 hover:bg-gray-50 transition-colors"
-        aria-label="Anterior"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
+      {/* BOTONES FLOTANTES */}
+      <button onClick={prevSlide} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-30 hover:bg-gray-50 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
       </button>
 
-      <button 
-        onClick={nextSlide}
-        className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-20 hover:bg-gray-50 transition-colors"
-        aria-label="Siguiente"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+      <button onClick={nextSlide} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-30 hover:bg-gray-50 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
       </button>
 
       {/* PUNTOS */}
       <div className="flex justify-center space-x-2 mt-4">
         {data.map((_, idx) => (
-          <div 
-            key={idx}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-[#1a73e8]' : 'bg-[#e0e0e0]'}`}
-          />
+          <div key={idx} className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-[#1a73e8]' : 'bg-[#e0e0e0]'}`} />
         ))}
       </div>
     </div>
@@ -334,6 +310,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
+      {/* Importamos la fuente ROBOTO directamente en el Head */}
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+      </Head>
+
       <NextSeo
         title="Psicólogo online y presencial en Granada | Psicopiloto"
         description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita."
@@ -341,8 +324,7 @@ export default function Home() {
         additionalMetaTags={[
           {
             name: "keywords",
-            content:
-              "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
+            content: "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psicología integradora, josé carlos rodríguez",
           },
           { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
@@ -361,22 +343,14 @@ export default function Home() {
           title="Psicólogo Online en Granada | Un enfoque práctico para tu bienestar"
           subtitle="Un espacio seguro, cercano y profesional para que recuperes el control, la calma y el sentido en tu vida. Aquí encontrarás escucha, empatía y herramientas prácticas para afrontar tus retos con confianza."
           backgroundImage="/fotoinicio1.webp"
-          cta={{
-            href: "/contacto",
-            text: "Agenda tu primera cita",
-            color: "green", // ✅ VERDE: Acción principal
-          }}
+          cta={{ href: "/contacto", text: "Agenda tu primera cita", color: "green" }}
         />
 
+        {/* RESTO DE SECCIONES IGUAL QUE ANTES... */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">
-              ¿Te sientes así?
-            </h2>
-            <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">
-              La ansiedad no tiene por qué pilotar tu vida. Te ofrezco un espacio
-              seguro para transformar tus preocupaciones y recuperar tu bienestar.
-            </p>
+            <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">¿Te sientes así?</h2>
+            <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">La ansiedad no tiene por qué pilotar tu vida. Te ofrezco un espacio seguro para transformar tus preocupaciones y recuperar tu bienestar.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-psicopiloto-sand-50 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold mb-2 text-psicopiloto-green-500">Ansiedad y Estrés</h3>
@@ -404,11 +378,7 @@ export default function Home() {
                 <h2 className="text-3xl font-semibold mb-4 text-psicopiloto-green-600">Un enfoque que te devuelve el control</h2>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-4">Como psicólogo y ex-piloto, sé lo que significa <strong>gestionar la presión, tomar decisiones difíciles</strong> y actuar con seguridad. Aplico esta filosofía a tu proceso terapéutico.</p>
                 <p className="text-psicopiloto-gray-700 leading-relaxed mb-6">Mi terapia es <strong>integradora</strong>, adaptando las mejores herramientas (Terapia EMDR, cognitivo-conductual, humanista) a tus necesidades únicas, para que puedas <strong>recuperar la calma y la claridad</strong>.</p>
-                <AnimatedCTA 
-                  href="/servicios" 
-                  text="Descubre mis servicios" 
-                  color="honey" // ✅ MIEL: Exploración de Servicios
-                />
+                <AnimatedCTA href="/servicios" text="Descubre mis servicios" color="honey" />
               </div>
               <div className="hidden md:block">
                 <Image src="/filosofia.webp" alt="Psicopiloto, uniendo psicología y aviación para un enfoque integrador" width={600} height={400} className="rounded-lg shadow-xl transition-transform duration-300 hover:scale-105" />
@@ -435,11 +405,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10">
-              <AnimatedCTA 
-                href="/contacto" 
-                text="Empieza tu terapia online" 
-                color="green" // ✅ VERDE: Acción principal
-              />
+              <AnimatedCTA href="/contacto" text="Empieza tu terapia online" color="green" />
             </div>
           </div>
         </section>
@@ -449,11 +415,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">Psicopiloto para Empresas</h2>
             <p className="text-xl text-psicopiloto-gray-500 mb-8 max-w-3xl mx-auto">Transfiere la mentalidad de cabina (CRM, Liderazgo, Gestión del Estrés) a tu equipo. Mejora la comunicación, toma de decisiones bajo presión y el bienestar de tu organización.</p>
             <div className="md:w-2/3 mx-auto">
-              <AnimatedCTA 
-                href="/servicios" 
-                text="Ver servicios de consultoría y formación" 
-                color="honey" // ✅ MIEL: Exploración de Servicios
-              />
+              <AnimatedCTA href="/servicios" text="Ver servicios de consultoría y formación" color="honey" />
             </div>
           </div>
         </section>
@@ -466,22 +428,14 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">Sobre el Psicólogo</h3>
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">Soy Jose Carlos Rguez. Retamar, psicólogo y ex-piloto militar. Mi experiencia en aviación (gestión de crisis, factores humanos y liderazgo) se integra en la terapia para ofrecerte un enfoque sólido y práctico.</p>
                 <div className="mt-auto pt-4">
-                  <AnimatedCTA 
-                    href="/sobre-mi" 
-                    text="Conóceme mejor" 
-                    color="blue" // ✅ AZUL: Información
-                  />
+                  <AnimatedCTA href="/sobre-mi" text="Conóceme mejor" color="blue" />
                 </div>
               </div>
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-semibold mb-3 text-psicopiloto-green-600">La Filosofía Psicopiloto</h3>
                 <p className="leading-relaxed mb-4 text-psicopiloto-gray-700">El objetivo es que recuperes la seguridad y la dirección en tu vida. Mi compromiso es ofrecerte un espacio de confianza, utilizando terapia integradora y EMDR para que recuperes el control de tus emociones.</p>
                 <div className="mt-auto pt-4">
-                  <AnimatedCTA 
-                    href="/que-es-psicopiloto" 
-                    text="Descubre la filosofía" 
-                    color="blue" // ✅ AZUL: Información
-                  />
+                  <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
                 </div>
               </div>
             </div>
@@ -507,58 +461,31 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8">
-              <AnimatedCTA 
-                href="/servicios" 
-                text="Descubre todos los servicios" 
-                color="honey" // ✅ MIEL: Exploración de Servicios
-              />
+              <AnimatedCTA href="/servicios" text="Descubre todos los servicios" color="honey" />
             </div>
           </div>
         </section>
 
-        {/* ======================================================================== */}
-        {/* SECCIÓN DE TESTIMONIOS (FINALES) */}
-        {/* ======================================================================== */}
+        {/* SECCIÓN DE TESTIMONIOS (ROBOTO STYLE) */}
         <section className="py-24 bg-psicopiloto-sand-50 overflow-hidden">
           <div className="container mx-auto max-w-full text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-psicopiloto-blue-600">
-              Lo que dicen quienes han confiado en mí
-            </h2>
-            <p className="text-lg text-psicopiloto-gray-500 mb-16 max-w-2xl mx-auto">
-              La experiencia real de pacientes que han pasado por el proceso terapéutico.
-            </p>
-
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-psicopiloto-blue-600">Lo que dicen quienes han confiado en mí</h2>
+            <p className="text-lg text-psicopiloto-gray-500 mb-16 max-w-2xl mx-auto">La experiencia real de pacientes que han pasado por el proceso terapéutico.</p>
             <TestimonialCarousel data={testimonialsData} />
-
             <div className="mt-20">
-              <AnimatedCTA 
-                href={googleReviewsLink} 
-                text="Leer más reseñas en Google" 
-                color="blue" 
-                isExternal={true} 
-              />
+              <AnimatedCTA href={googleReviewsLink} text="Leer más reseñas en Google" color="blue" isExternal={true} />
             </div>
           </div>
         </section>
 
         <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
-            <Image
-              src="/telefono.webp"
-              alt="Contacto telefónico para iniciar terapia psicológica online"
-              width={400}
-              height={400}
-              className={`w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl`}
-            />
+            <Image src="/telefono.webp" alt="Contacto telefónico" width={400} height={400} className={`w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl`} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20">
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-green-500">Da el primer paso</h2>
                 <p className="leading-relaxed mb-6 text-psicopiloto-gray-500">Has dado el paso más difícil: llegar hasta aquí. Tras una llamada o un mensaje encontrarás un espacio seguro y cercano para empezar a sanar tus preocupaciones.</p>
-                <AnimatedCTA 
-                  href="/contacto" 
-                  text="Reserva tu primera consulta" 
-                  color="green" // ✅ VERDE: Acción principal
-                />
+                <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
               </div>
             </div>
           </div>
