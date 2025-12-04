@@ -10,13 +10,23 @@ import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
 // ========================================================================
-// DATOS DE LOS TESTIMONIOS REALES
+// DATOS DE LOS TESTIMONIOS REALES (Actualizado con las nuevas reseñas)
 // ========================================================================
 const testimonialsData = [
   {
     stars: 5,
     text: "Desde el primer día José Carlos hizo que me sintiera en confianza. En cada sesión me he sentido escuchada, acompañada y comprendida. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
     author: "Eva",
+  },
+  {
+    stars: 5,
+    text: "Desde que empecé a trabajar con Jose Carlos, supe que estaba en las mejores manos. Su enfoque empático y profesional, me han ayudado a entender y superar muchos de mis desafíos personales. Cada sesión es un espacio seguro.",
+    author: "Lolicci",
+  },
+  {
+    stars: 5,
+    text: "Para nosotros fue una experiencia de 10, comprometido y muy profesional. Nos ha ayudado muchísimo a comprender las cosas en una situación muy complicada para nosotros. Estamos muy agradecidos por su atención e implicación.",
+    author: "Eve",
   },
   {
     stars: 5,
@@ -35,7 +45,7 @@ const testimonialsData = [
   },
 ];
 
-// Colores estilo Google para los avatares
+// Colores estilo Google para los avatares (Ahora encajan perfectos con 6 reseñas)
 const avatarColors = [
   "bg-red-500",    // Rojo Google
   "bg-blue-600",   // Azul Google
@@ -158,7 +168,7 @@ const TestimonialCarousel = ({ data }) => {
           }}
         >
           {extendedData.map((item, index) => {
-             // Calculamos qué índice original (0, 1, 2, 3) corresponde a este item duplicado
+             // Calculamos qué índice original (0, 1, 2, 3...) corresponde a este item duplicado
              // para asignar siempre el mismo color al mismo autor.
              const originalIndexForColor = index % originalLength;
              const avatarColorClass = avatarColors[originalIndexForColor % avatarColors.length];
