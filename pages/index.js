@@ -35,8 +35,18 @@ const testimonialsData = [
   },
 ];
 
+// Colores estilo Google para los avatares
+const avatarColors = [
+  "bg-red-500",    // Rojo Google
+  "bg-blue-600",   // Azul Google
+  "bg-green-600",  // Verde Google
+  "bg-yellow-500", // Amarillo Google
+  "bg-purple-600", // Extra
+  "bg-pink-500"    // Extra
+];
+
 // ========================================================================
-// COMPONENTE CARRUSEL INFINITO (Estilo Rueda + Iniciales)
+// COMPONENTE CARRUSEL INFINITO (Ajustado)
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
@@ -48,12 +58,11 @@ const TestimonialCarousel = ({ data }) => {
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const transitionTimeoutRef = useRef(null);
-  const transitionDurationStr = '500ms';
   const transitionDurationNum = 500;
+  const transitionDurationStr = `${transitionDurationNum}ms`;
 
   useEffect(() => {
     const handleResize = () => {
-      // Ajustamos para que en tablets grandes ya se vean 3, o mantenemos 1 en móvil
       if (window.innerWidth >= 1024) {
         setItemsPerPage(3);
       } else {
@@ -67,39 +76,31 @@ const TestimonialCarousel = ({ data }) => {
 
   // Lógica del "salto" infinito
   useEffect(() => {
-    // Limpiamos timeouts anteriores si el usuario hace clic rápido
     if (transitionTimeoutRef.current) {
       clearTimeout(transitionTimeoutRef.current);
     }
 
-    // Si estamos en el tercer set (muy a la derecha), saltamos atrás al segundo set
     if (currentIndex >= originalLength * 2) {
       transitionTimeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false); // Desactivar transición para el salto
+        setIsTransitioning(false); 
         setCurrentIndex(currentIndex - originalLength);
       }, transitionDurationNum);
     }
-    // Si estamos en el primer set (muy a la izquierda), saltamos adelante al segundo set
     else if (currentIndex < originalLength) {
       transitionTimeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false); // Desactivar transición para el salto
+        setIsTransitioning(false); 
         setCurrentIndex(currentIndex + originalLength);
       }, transitionDurationNum);
     }
   }, [currentIndex, originalLength]);
 
-
-  // Reactivar la transición después del salto instantáneo
   useEffect(() => {
     if (!isTransitioning) {
-        // Usamos un pequeño timeout para asegurar que el DOM se actualizó sin transición
-        // antes de volver a activarla
         setTimeout(() => {
             setIsTransitioning(true);
         }, 50);
     }
   }, [isTransitioning]);
-
 
   const nextSlide = () => {
     setCurrentIndex(prev => prev + 1);
@@ -109,7 +110,8 @@ const TestimonialCarousel = ({ data }) => {
     setCurrentIndex(prev => prev - 1);
   };
 
-  const GoogleLogo = () => (
+  // Icono oficial de Google en SVG
+  const GoogleIconFull = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
@@ -118,7 +120,13 @@ const TestimonialCarousel = ({ data }) => {
     </svg>
   );
 
-  // Calcular el índice real para los puntos indicadores
+  // Icono "G" simple para la esquina de la tarjeta
+  const GoogleGMark = () => (
+    <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" fill="#A0AEC0" />
+    </svg>
+  );
+
   const actualIndex = currentIndex % originalLength;
 
   return (
@@ -127,7 +135,7 @@ const TestimonialCarousel = ({ data }) => {
       {/* HEADER GOOGLE */}
       <div className="flex flex-col items-center justify-center mb-10">
         <div className="flex items-center bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200 transform transition hover:scale-105">
-          <GoogleLogo />
+          <GoogleIconFull />
           <div className="flex flex-col">
             <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Valoración Google</span>
             <div className="flex items-center">
@@ -149,40 +157,47 @@ const TestimonialCarousel = ({ data }) => {
             transitionDuration: isTransitioning ? transitionDurationStr : '0ms'
           }}
         >
-          {extendedData.map((item, index) => (
-            // Usamos index como key aquí porque los datos están duplicados
-            <div 
-              key={index} 
-              className="flex-shrink-0 px-4 w-full lg:w-1/3"
-              style={{ flexBasis: itemsPerPage === 1 ? '100%' : '33.333%' }}
-            >
-              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 h-full flex flex-col hover:shadow-xl transition-shadow relative">
-                
-                {/* Logo G marca de agua */}
-                <div className="absolute top-6 right-6 opacity-20">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-6 h-6"/>
-                </div>
+          {extendedData.map((item, index) => {
+             // Calculamos qué índice original (0, 1, 2, 3) corresponde a este item duplicado
+             // para asignar siempre el mismo color al mismo autor.
+             const originalIndexForColor = index % originalLength;
+             const avatarColorClass = avatarColors[originalIndexForColor % avatarColors.length];
 
-                <div className="flex items-center mb-6">
-                  {/* AVATAR CON INICIAL - Estilo Google estándar (color sólido) */}
-                  <div className="bg-psicopiloto-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 shadow-sm">
-                    {item.author.charAt(0)}
+             return (
+              <div 
+                key={index} 
+                className="flex-shrink-0 px-4 w-full lg:w-1/3"
+                style={{ flexBasis: itemsPerPage === 1 ? '100%' : '33.333%' }}
+              >
+                <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col hover:shadow-xl transition-shadow relative">
+                  
+                  {/* ICONO G (SVG INLINE para asegurar que se ve) */}
+                  <div className="absolute top-6 right-6 opacity-30">
+                     <GoogleGMark />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-gray-800 text-lg">{item.author}</h4>
-                    <div className="flex text-yellow-400 text-base">
-                        {'★'.repeat(item.stars)}
+
+                  <div className="flex items-center mb-5">
+                    {/* AVATAR CON COLOR DINÁMICO */}
+                    <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-3 shadow-sm`}>
+                      {item.author.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-800 text-base">{item.author}</h4>
+                      <div className="flex text-yellow-400 text-sm">
+                          {'★'.repeat(item.stars)}
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* TEXTO REDUCIDO Y ELEGANTE */}
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed italic">
+                    "{item.text}"
+                  </p>
+                  
                 </div>
-                
-                <p className="text-gray-600 text-lg md:text-xl leading-relaxed italic font-medium">
-                  "{item.text}"
-                </p>
-                
               </div>
-            </div>
-          ))}
+             );
+          })}
         </div>
       </div>
 
@@ -212,7 +227,6 @@ const TestimonialCarousel = ({ data }) => {
         {data.map((_, idx) => (
           <div 
             key={idx}
-            // Comparamos el índice real (módulo) para activar el punto correcto
             className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === actualIndex ? 'bg-psicopiloto-blue-600 scale-125' : 'bg-gray-300'}`}
           />
         ))}
@@ -413,7 +427,7 @@ export default function Home() {
         </section>
 
         {/* ======================================================================== */}
-        {/* SECCIÓN DE TESTIMONIOS (CARRUSEL INFINITO ESTILO RUEDA) */}
+        {/* SECCIÓN DE TESTIMONIOS (FINALES) */}
         {/* ======================================================================== */}
         <section className="py-20 bg-psicopiloto-sand-50 overflow-hidden">
           <div className="container mx-auto max-w-full text-center">
