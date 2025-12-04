@@ -34,7 +34,7 @@ const timeAgo = (dateString) => {
 };
 
 // ========================================================================
-// DATOS (Solo Nombre, Fecha, Estrellas y Texto)
+// DATOS
 // ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
@@ -82,17 +82,21 @@ const testimonialsData = [
 ];
 
 const avatarColors = [
-  "bg-pink-500", "bg-purple-600", "bg-green-600", "bg-red-500", "bg-yellow-500", "bg-blue-600"
+  "bg-[#d93025]", // Rojo Google exacto
+  "bg-[#1a73e8]", // Azul Google exacto
+  "bg-[#1e8e3e]", // Verde Google exacto
+  "bg-[#f9ab00]", // Amarillo Google exacto
+  "bg-[#e37400]", // Naranja Google
+  "bg-[#a142f4]"  // Morado Google
 ];
 
 // ========================================================================
-// COMPONENTE TARJETA DE RESEÑA (Estilo Psintonía + Leer más aislado)
+// COMPONENTE TARJETA DE RESEÑA (Réplica exacta Psintonía)
 // ========================================================================
 const ReviewCard = ({ item, avatarColorClass }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeAgoText = timeAgo(item.date);
   
-  // Límite de caracteres
   const CHAR_LIMIT = 130;
   const shouldTruncate = item.text.length > CHAR_LIMIT;
 
@@ -104,7 +108,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
 
   // Icono G de colores
   const ColoredGIcon = () => (
-    <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
@@ -113,41 +117,42 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 
   return (
-    // 'h-full' para que todas las tarjetas de la fila tengan la misma altura visual
-    // 'items-start' para asegurar alineación superior
-    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col relative text-left h-full transition-all duration-300">
+    // Estilos de la tarjeta replicados: bordes muy redondeados, sombra sutil, fondo blanco puro
+    <div className="bg-white p-7 rounded-[22px] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1)] border border-transparent flex flex-col relative text-left h-full transition-all duration-300 font-sans">
       
       {/* ICONO G SUPERIOR DERECHA */}
-      <div className="absolute top-5 right-5">
+      <div className="absolute top-6 right-6">
          <ColoredGIcon />
       </div>
 
-      {/* CABECERA: Avatar + Nombre + Estrellas */}
-      <div className="flex items-center mb-3 pr-8">
-        <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-base mr-3`}>
+      {/* CABECERA: Avatar + Nombre + Fecha */}
+      <div className="flex items-center mb-4 pr-8">
+        {/* Avatar un poco más grande */}
+        <div className={`${avatarColorClass} text-white rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center font-bold text-xl mr-4`}>
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          {/* TIPOGRAFÍA NOMBRE: Oscura y Bold, tamaño medio */}
-          <h4 className="font-bold text-gray-900 text-[15px] leading-tight mb-0.5">{item.author}</h4>
-          {/* TIPOGRAFÍA FECHA: Gris claro y pequeña */}
-          <span className="text-[12px] text-gray-400 mb-1">{timeAgoText}</span>
-          <div className="flex text-yellow-400 text-xs">
-              {'★'.repeat(item.stars)}
-          </div>
+          {/* Nombre: Color #333333, Bold, 15px */}
+          <h4 className="font-bold text-[#333333] text-[15px] leading-tight mb-1">{item.author}</h4>
+          {/* Fecha: Gris claro #adadad, 13px */}
+          <span className="text-[13px] text-[#adadad]">{timeAgoText}</span>
         </div>
       </div>
+
+      {/* ESTRELLAS (Debajo de la info de cabecera) */}
+      <div className="flex text-[#fbbc04] text-sm mb-4">
+          {'★'.repeat(item.stars)}
+      </div>
       
-      {/* TEXTO: Tipografía específica para imitar la referencia (Gris #54595F) */}
-      {/* 'flex-grow' ayuda a que el botón leer más se vaya abajo si fuera necesario, 
-          pero aquí queremos que fluya natural */}
-      <div className="text-[#54595F] text-[15px] leading-relaxed relative">
+      {/* TEXTO: Color específico #54595F, interlineado amplio (leading-7) */}
+      <div className="text-[#54595F] text-[15px] leading-7 relative">
         {shouldTruncate && !isExpanded ? (
           <>
             "{item.text.substring(0, CHAR_LIMIT)}..."
             <button 
               onClick={toggleReadMore}
-              className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none cursor-pointer underline decoration-dotted"
+              // Enlace "Leer más" en gris que oscurece al hover
+              className="text-[#adadad] hover:text-[#54595F] font-medium ml-1 text-sm focus:outline-none cursor-pointer transition-colors"
             >
               Leer más
             </button>
@@ -158,7 +163,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
             {shouldTruncate && (
               <button 
                 onClick={toggleReadMore}
-                className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none block mt-2 cursor-pointer"
+                className="text-[#adadad] hover:text-[#54595F] font-medium ml-1 text-sm focus:outline-none block mt-2 cursor-pointer transition-colors"
               >
                 Leer menos
               </button>
@@ -175,7 +180,6 @@ const ReviewCard = ({ item, avatarColorClass }) => {
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
-  // Duplicamos datos para el efecto infinito
   const extendedData = useMemo(() => [...data, ...data, ...data, ...data], [data]);
   
   const [currentIndex, setCurrentIndex] = useState(originalLength);
@@ -191,9 +195,9 @@ const TestimonialCarousel = ({ data }) => {
       if (width >= 1024) {
         setItemsPerPage(3);
       } else if (width >= 768) {
-        setItemsPerPage(2); // Tablet: 2 columnas
+        setItemsPerPage(2); 
       } else {
-        setItemsPerPage(1); // Móvil: 1 columna
+        setItemsPerPage(1); 
       }
     };
     handleResize();
@@ -241,10 +245,10 @@ const TestimonialCarousel = ({ data }) => {
   );
 
   return (
-    <div className="relative w-full max-w-[1200px] mx-auto px-2 md:px-8">
+    <div className="relative w-full max-w-[1300px] mx-auto px-4 md:px-8">
       
       {/* HEADER GOOGLE RATING */}
-      <div className="flex flex-col items-center justify-center mb-8">
+      <div className="flex flex-col items-center justify-center mb-10">
         <div className="flex items-center bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-200">
           <GoogleHeaderIcon />
           <div className="flex flex-col">
@@ -260,7 +264,7 @@ const TestimonialCarousel = ({ data }) => {
       </div>
 
       {/* ZONA CARRUSEL */}
-      <div className="overflow-hidden relative pb-8 pt-2">
+      <div className="overflow-hidden relative pb-10 pt-2">
         <div 
           className={`flex items-start ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
           style={{ 
@@ -274,7 +278,8 @@ const TestimonialCarousel = ({ data }) => {
              return (
               <div 
                 key={index} 
-                className="flex-shrink-0 px-2 md:px-3 w-full"
+                // Aumentado el padding horizontal para crear el espacio entre tarjetas como en la referencia
+                className="flex-shrink-0 px-4 lg:px-6 w-full"
                 style={{ flexBasis: `${100 / itemsPerPage}%` }}
               >
                 <ReviewCard item={item} avatarColorClass={avatarColorClass} />
@@ -287,7 +292,7 @@ const TestimonialCarousel = ({ data }) => {
       {/* BOTONES FLOTANTES */}
       <button 
         onClick={prevSlide}
-        className="hidden md:block absolute -left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
+        className="hidden md:block absolute -left-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
         aria-label="Anterior"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -297,7 +302,7 @@ const TestimonialCarousel = ({ data }) => {
 
       <button 
         onClick={nextSlide}
-        className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
+        className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
         aria-label="Siguiente"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -306,11 +311,11 @@ const TestimonialCarousel = ({ data }) => {
       </button>
 
       {/* PUNTOS */}
-      <div className="flex justify-center space-x-2 mt-2">
+      <div className="flex justify-center space-x-2.5 mt-4">
         {data.map((_, idx) => (
           <div 
             key={idx}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-psicopiloto-blue-600' : 'bg-gray-300'}`}
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-[#1a73e8]' : 'bg-[#e0e0e0]'}`}
           />
         ))}
       </div>
@@ -512,18 +517,18 @@ export default function Home() {
         {/* ======================================================================== */}
         {/* SECCIÓN DE TESTIMONIOS (FINALES) */}
         {/* ======================================================================== */}
-        <section className="py-20 bg-psicopiloto-sand-50 overflow-hidden">
+        <section className="py-24 bg-psicopiloto-sand-50 overflow-hidden">
           <div className="container mx-auto max-w-full text-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-psicopiloto-blue-600">
               Lo que dicen quienes han confiado en mí
             </h2>
-            <p className="text-lg text-psicopiloto-gray-500 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-psicopiloto-gray-500 mb-16 max-w-2xl mx-auto">
               La experiencia real de pacientes que han pasado por el proceso terapéutico.
             </p>
 
             <TestimonialCarousel data={testimonialsData} />
 
-            <div className="mt-16">
+            <div className="mt-20">
               <AnimatedCTA 
                 href={googleReviewsLink} 
                 text="Leer más reseñas en Google" 
