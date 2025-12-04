@@ -215,6 +215,11 @@ export default function Consentimiento() {
                         <input required name="email" value={form.email} onChange={update} type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
 
+                          <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad</label>
+                        <input name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+
                     {/* ⬇️ SECCIÓN DE DIRECCIÓN DEL PACIENTE (OCULTA TEMPORALMENTE)
                       Si en el futuro quieres pedir la dirección para facturas:
                       1. Borra "{/*" al inicio de este bloque
