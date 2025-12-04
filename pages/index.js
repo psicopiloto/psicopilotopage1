@@ -1,7 +1,7 @@
 // pages/index.js
 
 import { useState, useEffect, useMemo, useRef } from "react";
-import Head from "next/head"; // Importamos Head para cargar la fuente Roboto
+import Head from "next/head"; 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -35,7 +35,7 @@ const timeAgo = (dateString) => {
 };
 
 // ========================================================================
-// DATOS
+// DATOS (Reordenados para que Lucía salga primera)
 // ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
@@ -44,6 +44,12 @@ const getPastDate = (daysAgo) => {
 };
 
 const testimonialsData = [
+  {
+    stars: 5,
+    author: "Lucía Alejandre",
+    date: getPastDate(21), 
+    text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Es una persona maravillosa que se esfuerza en ayudarte a encontrar una solución. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida y a mi cabeza.",
+  },
   {
     stars: 5,
     author: "Lolicci lolicci",
@@ -74,21 +80,15 @@ const testimonialsData = [
     date: getPastDate(14),
     text: "Cuando encuentras un buen profesional es algo estupendo. Y cuando se da con un profesional de la psicología como José Carlos es algo que no se puede describir. Al hablar con un psicólogo desnudas tu mente y para ello has de confiar, sentirte a gusto y lo más importante, que te ayude. Eso me pasó con él. Muchas gracias José Carlos.",
   },
-  {
-    stars: 5,
-    author: "Lucía Alejandre",
-    date: getPastDate(21), 
-    text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Es una persona maravillosa que se esfuerza en ayudarte a encontrar una solución. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida y a mi cabeza.",
-  },
 ];
 
 const avatarColors = [
-  "bg-[#d93025]", // Rojo Google exacto
-  "bg-[#1a73e8]", // Azul Google exacto
-  "bg-[#1e8e3e]", // Verde Google exacto
-  "bg-[#f9ab00]", // Amarillo Google exacto
-  "bg-[#e37400]", // Naranja Google
-  "bg-[#a142f4]"  // Morado Google
+  "bg-[#a142f4]", // Lucía (Morado)
+  "bg-[#d93025]", // Lolicci (Rojo)
+  "bg-[#1a73e8]", // Eve (Azul)
+  "bg-[#1e8e3e]", // Ana (Verde)
+  "bg-[#f9ab00]", // Eva Maria (Amarillo)
+  "bg-[#e37400]"  // Lola (Naranja)
 ];
 
 // ========================================================================
@@ -98,7 +98,6 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeAgoText = timeAgo(item.date);
   
-  // Límite ajustado para que visualmente cuadre con tarjetas de tamaño medio
   const CHAR_LIMIT = 150; 
   const shouldTruncate = item.text.length > CHAR_LIMIT;
 
@@ -118,10 +117,8 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 
   return (
-    // Aplicamos font-roboto aquí específicamente
     <div 
       className={`bg-white p-6 rounded-[20px] shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-transparent flex flex-col relative text-left transition-all duration-300 font-roboto ${isExpanded ? 'h-auto z-20 absolute top-0 left-0 right-0 shadow-2xl' : 'h-full relative z-0'}`}
-      // Estilo inline para asegurar que si se expande, tenga fondo blanco solido y tape lo de abajo si es necesario
       style={{ fontFamily: "'Roboto', sans-serif" }} 
     >
       
@@ -136,9 +133,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          {/* Nombre: Color #202124 (Google Black), Bold, 16px */}
           <h4 className="font-bold text-[#202124] text-[16px] leading-snug">{item.author}</h4>
-          {/* Fecha: Color #70757a (Google Grey), 12px */}
           <span className="text-[12px] text-[#70757a]">{timeAgoText}</span>
         </div>
       </div>
@@ -148,7 +143,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
           {'★'.repeat(item.stars)}
       </div>
       
-      {/* TEXTO: Color #202124 (Casi negro), 16px (Más grande) */}
+      {/* TEXTO */}
       <div className="text-[#202124] text-[16px] leading-[1.6] relative">
         {shouldTruncate && !isExpanded ? (
           <>
@@ -179,7 +174,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
 };
 
 // ========================================================================
-// COMPONENTE CARRUSEL
+// COMPONENTE CARRUSEL (Con Swipe + Flechas móviles)
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
@@ -191,6 +186,11 @@ const TestimonialCarousel = ({ data }) => {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const transitionTimeoutRef = useRef(null);
   const transitionDuration = 500;
+
+  // ESTADOS PARA SWIPE TÁCTIL
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 50; 
 
   useEffect(() => {
     const handleResize = () => {
@@ -231,6 +231,21 @@ const TestimonialCarousel = ({ data }) => {
   const nextSlide = () => setCurrentIndex(prev => prev + 1);
   const prevSlide = () => setCurrentIndex(prev => prev - 1);
 
+  // MANEJADORES DE SWIPE
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
+  };
+
   const GoogleHeaderIcon = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -260,7 +275,14 @@ const TestimonialCarousel = ({ data }) => {
       </div>
 
       {/* CARRUSEL */}
-      <div className="overflow-hidden relative pb-10 pt-4" style={{ minHeight: '350px' }}>
+      <div 
+        className="overflow-hidden relative pb-10 pt-4" 
+        style={{ minHeight: '350px' }}
+        // Eventos táctiles añadidos aquí
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         <div 
           className={`flex items-start ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
           style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
@@ -282,12 +304,12 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* BOTONES FLOTANTES */}
-      <button onClick={prevSlide} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-30 hover:bg-gray-50 transition-colors">
+      {/* BOTONES FLOTANTES (Visibles también en móvil ahora) */}
+      <button onClick={prevSlide} className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white text-gray-600 shadow-lg z-30 hover:bg-gray-50 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
       </button>
 
-      <button onClick={nextSlide} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-600 shadow-lg z-30 hover:bg-gray-50 transition-colors">
+      <button onClick={nextSlide} className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white text-gray-600 shadow-lg z-30 hover:bg-gray-50 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
       </button>
 
@@ -310,7 +332,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
-      {/* Importamos la fuente ROBOTO directamente en el Head */}
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
@@ -346,7 +367,6 @@ export default function Home() {
           cta={{ href: "/contacto", text: "Agenda tu primera cita", color: "green" }}
         />
 
-        {/* RESTO DE SECCIONES IGUAL QUE ANTES... */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-semibold mb-6 text-psicopiloto-blue-600">¿Te sientes así?</h2>
@@ -466,7 +486,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN DE TESTIMONIOS (ROBOTO STYLE) */}
+        {/* SECCIÓN DE TESTIMONIOS */}
         <section className="py-24 bg-psicopiloto-sand-50 overflow-hidden">
           <div className="container mx-auto max-w-full text-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-psicopiloto-blue-600">Lo que dicen quienes han confiado en mí</h2>
