@@ -216,8 +216,8 @@ export default function Consentimiento() {
                     </div>
 
                           <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad</label>
-                        <input name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad *</label>
+                        <input required name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
 
                     {/* ⬇️ SECCIÓN DE DIRECCIÓN DEL PACIENTE (OCULTA TEMPORALMENTE)
