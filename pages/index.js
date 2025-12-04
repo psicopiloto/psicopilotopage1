@@ -17,9 +17,7 @@ const timeAgo = (dateString) => {
   const past = new Date(dateString);
   const diffInSeconds = Math.floor((now - past) / 1000);
 
-  const minutes = Math.floor(diffInSeconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
+  const days = Math.floor(diffInSeconds / (3600 * 24));
   const weeks = Math.floor(days / 7);
   const months = Math.floor(days / 30);
   const years = Math.floor(days / 365);
@@ -36,7 +34,7 @@ const timeAgo = (dateString) => {
 };
 
 // ========================================================================
-// DATOS DE LOS TESTIMONIOS (Con Fechas Reales para el cálculo)
+// DATOS (Fechas calculadas para coincidir con tu petición)
 // ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
@@ -49,75 +47,153 @@ const testimonialsData = [
     stars: 5,
     author: "Lolicci lolicci",
     subtitle: "11 reseñas • 0 fotos",
-    date: getPastDate(7), // Hace 7 días
+    date: getPastDate(7), 
     text: "Desde que empecé a trabajar con Jose Carlos, supe que estaba en las mejores manos. Su enfoque empático y profesional, me han ayudado a entender y superar muchos de mis desafíos personales. Cada sesión es un espacio seguro donde puedo expresar mis pensamientos y emociones sin juicios. Gracias a su orientación, he logrado avances significativos en mi bienestar emocional. Lo recomiendo a cualquiera que busque apoyo psicológico de calidad.",
   },
   {
     stars: 5,
     author: "Eve",
     subtitle: "2 reseñas • 0 fotos",
-    date: getPastDate(8), // Hace 1 semana aprox
+    date: getPastDate(8), 
     text: "Para nosotros fue una experiencia de 10, comprometido y muy profesional. Nos ha ayudado muchísimo a comprender las cosas en una situación muy complicada para nosotros. Estamos muy agradecidos por su atención e implicación.",
   },
   {
     stars: 5,
     author: "Ana",
     subtitle: "Local Guide • 31 reseñas • 1 foto",
-    date: getPastDate(9), // Hace 1 semana y pico
+    date: getPastDate(9),
     text: "Estoy super agradecida por la ayuda que me ha dado José Carlos. Me encontraba muy frustrada por un problema del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos, ayudándome a salir del agujero. Buena persona y excelente profesional. Lo recomiendo 100%.",
   },
   {
     stars: 5,
     author: "Eva Maria Figueroa",
     subtitle: "3 reseñas • 0 fotos",
-    date: getPastDate(10), // Hace 1 semana y pico
+    date: getPastDate(10),
     text: "Desde el primer día José Carlos hizo que me sintiera en confianza, en cada sesión me he sentido escuchada, acompañada y comprendida, lo que me ha permitido avanzar realmente en mi proceso. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
   },
   {
     stars: 5,
     author: "Lola y Miguel Ángel",
     subtitle: "Local Guide • 26 reseñas • 0 fotos",
-    date: getPastDate(14), // Hace 2 semanas
+    date: getPastDate(14),
     text: "Cuando encuentras un buen profesional es algo estupendo. Y cuando se da con un profesional de la psicología como José Carlos es algo que no se puede describir. Al hablar con un psicólogo desnudas tu mente y para ello has de confiar, sentirte a gusto y lo más importante, que te ayude. Eso me pasó con él. Muchas gracias José Carlos.",
   },
   {
     stars: 5,
     author: "Lucía Alejandre",
     subtitle: "6 reseñas • 0 fotos",
-    date: getPastDate(21), // Hace 3 semanas
+    date: getPastDate(21), 
     text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Es una persona maravillosa que se esfuerza en ayudarte a encontrar una solución. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida y a mi cabeza.",
   },
 ];
 
 const avatarColors = [
-  "bg-pink-500",   // Lolicci
-  "bg-purple-600", // Eve
-  "bg-green-600",  // Ana
-  "bg-red-500",    // Eva
-  "bg-yellow-500", // Lola
-  "bg-blue-600",   // Lucia
+  "bg-pink-500", "bg-purple-600", "bg-green-600", "bg-red-500", "bg-yellow-500", "bg-blue-600"
 ];
 
 // ========================================================================
-// COMPONENTE CARRUSEL (Estilo Google Completo - Sin etiqueta Nuevo)
+// COMPONENTE TARJETA DE RESEÑA (Con "Leer más")
+// ========================================================================
+const ReviewCard = ({ item, avatarColorClass }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const timeAgoText = timeAgo(item.date);
+  
+  // Límite de caracteres antes de cortar
+  const CHAR_LIMIT = 120;
+  const shouldTruncate = item.text.length > CHAR_LIMIT;
+
+  const toggleReadMore = (e) => {
+    e.stopPropagation(); // Evita que el click afecte al slider
+    setIsExpanded(!isExpanded);
+  };
+
+  // Icono G de colores (Estilo oficial widget)
+  const ColoredGIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+    </svg>
+  );
+
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full flex flex-col relative text-left">
+      
+      {/* ICONO G SUPERIOR DERECHA */}
+      <div className="absolute top-5 right-5">
+         <ColoredGIcon />
+      </div>
+
+      {/* CABECERA: Avatar + Nombre + Estrellas */}
+      <div className="flex items-center mb-3 pr-8">
+        <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-base mr-3`}>
+          {item.author.charAt(0)}
+        </div>
+        <div className="flex flex-col">
+          <h4 className="font-bold text-gray-800 text-sm leading-tight">{item.author}</h4>
+          <span className="text-[11px] text-gray-400 mb-0.5">{timeAgoText}</span>
+          <div className="flex text-yellow-400 text-xs">
+              {'★'.repeat(item.stars)}
+          </div>
+        </div>
+      </div>
+      
+      {/* TEXTO CON LEER MÁS */}
+      <div className="text-gray-600 text-[14px] leading-relaxed relative">
+        {shouldTruncate && !isExpanded ? (
+          <>
+            "{item.text.substring(0, CHAR_LIMIT)}..."
+            <button 
+              onClick={toggleReadMore}
+              className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none"
+            >
+              Leer más
+            </button>
+          </>
+        ) : (
+          <>
+            "{item.text}"
+            {shouldTruncate && (
+              <button 
+                onClick={toggleReadMore}
+                className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none block mt-1"
+              >
+                Leer menos
+              </button>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ========================================================================
+// COMPONENTE CARRUSEL
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
-  const extendedData = useMemo(() => [...data, ...data, ...data], [data]);
+  // Duplicamos datos lo suficiente para el efecto infinito suave
+  const extendedData = useMemo(() => [...data, ...data, ...data, ...data], [data]);
   
   const [currentIndex, setCurrentIndex] = useState(originalLength);
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const transitionTimeoutRef = useRef(null);
-  const transitionDurationNum = 500;
-  const transitionDurationStr = `${transitionDurationNum}ms`;
+  
+  // Configuración de transición
+  const transitionDuration = 500;
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      const width = window.innerWidth;
+      if (width >= 1024) {
         setItemsPerPage(3);
+      } else if (width >= 768) {
+        setItemsPerPage(2); // Tablet: 2 columnas
       } else {
-        setItemsPerPage(1);
+        setItemsPerPage(1); // Móvil: 1 columna
       }
     };
     handleResize();
@@ -125,33 +201,42 @@ const TestimonialCarousel = ({ data }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Efecto infinito: Salto silencioso cuando llega a los bordes
   useEffect(() => {
     if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
 
-    if (currentIndex >= originalLength * 2) {
+    const totalItems = extendedData.length;
+    // Si llegamos muy al final, volvemos al principio (silenciosamente)
+    if (currentIndex >= totalItems - itemsPerPage) {
       transitionTimeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false); 
-        setCurrentIndex(currentIndex - originalLength);
-      }, transitionDurationNum);
+        setIsTransitioning(false);
+        setCurrentIndex(originalLength); // Volver al primer set 'real'
+      }, transitionDuration);
+    } 
+    // Si llegamos muy al principio, vamos al final (silenciosamente)
+    else if (currentIndex <= 0) {
+       transitionTimeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(totalItems - itemsPerPage * 2);
+      }, transitionDuration);
     }
-    else if (currentIndex < originalLength) {
-      transitionTimeoutRef.current = setTimeout(() => {
-        setIsTransitioning(false); 
-        setCurrentIndex(currentIndex + originalLength);
-      }, transitionDurationNum);
-    }
-  }, [currentIndex, originalLength]);
+  }, [currentIndex, itemsPerPage, extendedData.length, originalLength]);
 
+  // Reactivar transición después del salto
   useEffect(() => {
     if (!isTransitioning) {
-        setTimeout(() => setIsTransitioning(true), 50);
+      // Pequeño delay para permitir que el DOM pinte el cambio sin animación
+      requestAnimationFrame(() => {
+          setTimeout(() => setIsTransitioning(true), 50);
+      });
     }
   }, [isTransitioning]);
 
   const nextSlide = () => setCurrentIndex(prev => prev + 1);
   const prevSlide = () => setCurrentIndex(prev => prev - 1);
 
-  const GoogleIconFull = () => (
+  // Icono principal de cabecera
+  const GoogleHeaderIcon = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
@@ -160,26 +245,18 @@ const TestimonialCarousel = ({ data }) => {
     </svg>
   );
 
-  const GoogleGMark = () => (
-    <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-       <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" fill="#A0AEC0" />
-    </svg>
-  );
-
-  const actualIndex = currentIndex % originalLength;
-
   return (
-    <div className="relative w-full max-w-[1400px] mx-auto px-4 md:px-12">
+    <div className="relative w-full max-w-[1200px] mx-auto px-2 md:px-8">
       
-      {/* HEADER GLOBAL */}
-      <div className="flex flex-col items-center justify-center mb-10">
-        <div className="flex items-center bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200 transform transition hover:scale-105">
-          <GoogleIconFull />
+      {/* HEADER GOOGLE RATING */}
+      <div className="flex flex-col items-center justify-center mb-8">
+        <div className="flex items-center bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-200">
+          <GoogleHeaderIcon />
           <div className="flex flex-col">
-            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Valoración Google</span>
-            <div className="flex items-center">
-              <span className="font-bold text-gray-800 text-lg mr-2">5.0</span>
-              <div className="flex text-yellow-400 text-lg">
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-0.5">Valoración Google</span>
+            <div className="flex items-center leading-none">
+              <span className="font-bold text-gray-800 text-base mr-1.5">5.0</span>
+              <div className="flex text-yellow-400 text-sm">
                 {'★'.repeat(5)}
               </div>
             </div>
@@ -187,95 +264,58 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* CARRUSEL */}
-      <div className="overflow-hidden relative py-4">
+      {/* ZONA CARRUSEL */}
+      <div className="overflow-hidden relative pb-8 pt-2">
         <div 
-          className={`flex ${isTransitioning ? `transition-transform ease-out` : ''}`}
+          className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
           style={{ 
-            transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
-            transitionDuration: isTransitioning ? transitionDurationStr : '0ms'
+            transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` 
           }}
         >
           {extendedData.map((item, index) => {
              const originalIndexForColor = index % originalLength;
              const avatarColorClass = avatarColors[originalIndexForColor % avatarColors.length];
              
-             // Calculamos "Hace X días"
-             const timeAgoText = timeAgo(item.date);
-
              return (
               <div 
                 key={index} 
-                className="flex-shrink-0 px-4 w-full lg:w-1/3"
-                style={{ flexBasis: itemsPerPage === 1 ? '100%' : '33.333%' }}
+                className="flex-shrink-0 px-2 md:px-3 w-full"
+                style={{ flexBasis: `${100 / itemsPerPage}%` }}
               >
-                <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col hover:shadow-xl transition-shadow relative">
-                  
-                  {/* ICONO G MARCA DE AGUA */}
-                  <div className="absolute top-6 right-6 opacity-30">
-                     <GoogleGMark />
-                  </div>
-
-                  {/* CABECERA RESEÑA */}
-                  <div className="flex items-start mb-4">
-                    {/* AVATAR */}
-                    <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-lg mr-3 shadow-sm mt-1`}>
-                      {item.author.charAt(0)}
-                    </div>
-                    {/* INFO USUARIO */}
-                    <div className="flex flex-col items-start">
-                      <h4 className="font-bold text-gray-800 text-base">{item.author}</h4>
-                      <span className="text-xs text-gray-400">{item.subtitle}</span>
-                    </div>
-                  </div>
-
-                  {/* INFO RATING Y FECHA */}
-                  <div className="flex items-center mb-4 flex-wrap gap-2">
-                      <div className="flex text-yellow-400 text-sm">
-                          {'★'.repeat(item.stars)}
-                      </div>
-                      <span className="text-xs text-gray-500 font-medium ml-1">{timeAgoText}</span>
-                  </div>
-                  
-                  {/* TEXTO */}
-                  <p className="text-gray-600 text-base leading-relaxed italic">
-                    "{item.text}"
-                  </p>
-                  
-                </div>
+                <ReviewCard item={item} avatarColorClass={avatarColorClass} />
               </div>
              );
           })}
         </div>
       </div>
 
-      {/* BOTONES NAVEGACIÓN */}
+      {/* BOTONES FLOTANTES */}
       <button 
         onClick={prevSlide}
-        className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-psicopiloto-blue-600 shadow-lg hover:bg-gray-50 z-10 focus:outline-none transition-transform hover:scale-110"
+        className="hidden md:block absolute -left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
         aria-label="Anterior"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button 
         onClick={nextSlide}
-        className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-psicopiloto-blue-600 shadow-lg hover:bg-gray-50 z-10 focus:outline-none transition-transform hover:scale-110"
+        className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white text-gray-600 shadow-md hover:bg-gray-50 z-20 focus:outline-none border border-gray-100"
         aria-label="Siguiente"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
-      {/* PUNTOS INDICADORES */}
-      <div className="flex justify-center space-x-3 mt-8">
+      {/* PUNTOS */}
+      <div className="flex justify-center space-x-2 mt-2">
         {data.map((_, idx) => (
           <div 
             key={idx}
-            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === actualIndex ? 'bg-psicopiloto-blue-600 scale-125' : 'bg-gray-300'}`}
+            className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === (currentIndex % originalLength) ? 'bg-psicopiloto-blue-600' : 'bg-gray-300'}`}
           />
         ))}
       </div>
