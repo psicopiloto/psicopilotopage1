@@ -34,7 +34,7 @@ const timeAgo = (dateString) => {
 };
 
 // ========================================================================
-// DATOS (Fechas calculadas para coincidir con tu petición)
+// DATOS (Solo Nombre, Fecha, Estrellas y Texto)
 // ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
@@ -46,42 +46,36 @@ const testimonialsData = [
   {
     stars: 5,
     author: "Lolicci lolicci",
-    subtitle: "11 reseñas • 0 fotos",
     date: getPastDate(7), 
     text: "Desde que empecé a trabajar con Jose Carlos, supe que estaba en las mejores manos. Su enfoque empático y profesional, me han ayudado a entender y superar muchos de mis desafíos personales. Cada sesión es un espacio seguro donde puedo expresar mis pensamientos y emociones sin juicios. Gracias a su orientación, he logrado avances significativos en mi bienestar emocional. Lo recomiendo a cualquiera que busque apoyo psicológico de calidad.",
   },
   {
     stars: 5,
     author: "Eve",
-    subtitle: "2 reseñas • 0 fotos",
     date: getPastDate(8), 
     text: "Para nosotros fue una experiencia de 10, comprometido y muy profesional. Nos ha ayudado muchísimo a comprender las cosas en una situación muy complicada para nosotros. Estamos muy agradecidos por su atención e implicación.",
   },
   {
     stars: 5,
     author: "Ana",
-    subtitle: "Local Guide • 31 reseñas • 1 foto",
     date: getPastDate(9),
     text: "Estoy super agradecida por la ayuda que me ha dado José Carlos. Me encontraba muy frustrada por un problema del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos, ayudándome a salir del agujero. Buena persona y excelente profesional. Lo recomiendo 100%.",
   },
   {
     stars: 5,
     author: "Eva Maria Figueroa",
-    subtitle: "3 reseñas • 0 fotos",
     date: getPastDate(10),
     text: "Desde el primer día José Carlos hizo que me sintiera en confianza, en cada sesión me he sentido escuchada, acompañada y comprendida, lo que me ha permitido avanzar realmente en mi proceso. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
   },
   {
     stars: 5,
     author: "Lola y Miguel Ángel",
-    subtitle: "Local Guide • 26 reseñas • 0 fotos",
     date: getPastDate(14),
     text: "Cuando encuentras un buen profesional es algo estupendo. Y cuando se da con un profesional de la psicología como José Carlos es algo que no se puede describir. Al hablar con un psicólogo desnudas tu mente y para ello has de confiar, sentirte a gusto y lo más importante, que te ayude. Eso me pasó con él. Muchas gracias José Carlos.",
   },
   {
     stars: 5,
     author: "Lucía Alejandre",
-    subtitle: "6 reseñas • 0 fotos",
     date: getPastDate(21), 
     text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Es una persona maravillosa que se esfuerza en ayudarte a encontrar una solución. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida y a mi cabeza.",
   },
@@ -92,22 +86,23 @@ const avatarColors = [
 ];
 
 // ========================================================================
-// COMPONENTE TARJETA DE RESEÑA (Con "Leer más")
+// COMPONENTE TARJETA DE RESEÑA (Estilo Psintonía + Leer más aislado)
 // ========================================================================
 const ReviewCard = ({ item, avatarColorClass }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeAgoText = timeAgo(item.date);
   
-  // Límite de caracteres antes de cortar
-  const CHAR_LIMIT = 120;
+  // Límite de caracteres
+  const CHAR_LIMIT = 130;
   const shouldTruncate = item.text.length > CHAR_LIMIT;
 
   const toggleReadMore = (e) => {
-    e.stopPropagation(); // Evita que el click afecte al slider
+    e.preventDefault(); 
+    e.stopPropagation(); 
     setIsExpanded(!isExpanded);
   };
 
-  // Icono G de colores (Estilo oficial widget)
+  // Icono G de colores
   const ColoredGIcon = () => (
     <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -118,7 +113,9 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full flex flex-col relative text-left">
+    // 'h-full' para que todas las tarjetas de la fila tengan la misma altura visual
+    // 'items-start' para asegurar alineación superior
+    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col relative text-left h-full transition-all duration-300">
       
       {/* ICONO G SUPERIOR DERECHA */}
       <div className="absolute top-5 right-5">
@@ -131,22 +128,26 @@ const ReviewCard = ({ item, avatarColorClass }) => {
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          <h4 className="font-bold text-gray-800 text-sm leading-tight">{item.author}</h4>
-          <span className="text-[11px] text-gray-400 mb-0.5">{timeAgoText}</span>
+          {/* TIPOGRAFÍA NOMBRE: Oscura y Bold, tamaño medio */}
+          <h4 className="font-bold text-gray-900 text-[15px] leading-tight mb-0.5">{item.author}</h4>
+          {/* TIPOGRAFÍA FECHA: Gris claro y pequeña */}
+          <span className="text-[12px] text-gray-400 mb-1">{timeAgoText}</span>
           <div className="flex text-yellow-400 text-xs">
               {'★'.repeat(item.stars)}
           </div>
         </div>
       </div>
       
-      {/* TEXTO CON LEER MÁS */}
-      <div className="text-gray-600 text-[14px] leading-relaxed relative">
+      {/* TEXTO: Tipografía específica para imitar la referencia (Gris #54595F) */}
+      {/* 'flex-grow' ayuda a que el botón leer más se vaya abajo si fuera necesario, 
+          pero aquí queremos que fluya natural */}
+      <div className="text-[#54595F] text-[15px] leading-relaxed relative">
         {shouldTruncate && !isExpanded ? (
           <>
             "{item.text.substring(0, CHAR_LIMIT)}..."
             <button 
               onClick={toggleReadMore}
-              className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none"
+              className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none cursor-pointer underline decoration-dotted"
             >
               Leer más
             </button>
@@ -157,7 +158,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
             {shouldTruncate && (
               <button 
                 onClick={toggleReadMore}
-                className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none block mt-1"
+                className="text-gray-400 hover:text-gray-600 font-medium ml-1 text-sm focus:outline-none block mt-2 cursor-pointer"
               >
                 Leer menos
               </button>
@@ -174,7 +175,7 @@ const ReviewCard = ({ item, avatarColorClass }) => {
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
-  // Duplicamos datos lo suficiente para el efecto infinito suave
+  // Duplicamos datos para el efecto infinito
   const extendedData = useMemo(() => [...data, ...data, ...data, ...data], [data]);
   
   const [currentIndex, setCurrentIndex] = useState(originalLength);
@@ -182,7 +183,6 @@ const TestimonialCarousel = ({ data }) => {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const transitionTimeoutRef = useRef(null);
   
-  // Configuración de transición
   const transitionDuration = 500;
 
   useEffect(() => {
@@ -201,19 +201,17 @@ const TestimonialCarousel = ({ data }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Efecto infinito: Salto silencioso cuando llega a los bordes
+  // Efecto infinito
   useEffect(() => {
     if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
 
     const totalItems = extendedData.length;
-    // Si llegamos muy al final, volvemos al principio (silenciosamente)
     if (currentIndex >= totalItems - itemsPerPage) {
       transitionTimeoutRef.current = setTimeout(() => {
         setIsTransitioning(false);
-        setCurrentIndex(originalLength); // Volver al primer set 'real'
+        setCurrentIndex(originalLength);
       }, transitionDuration);
     } 
-    // Si llegamos muy al principio, vamos al final (silenciosamente)
     else if (currentIndex <= 0) {
        transitionTimeoutRef.current = setTimeout(() => {
         setIsTransitioning(false);
@@ -222,10 +220,8 @@ const TestimonialCarousel = ({ data }) => {
     }
   }, [currentIndex, itemsPerPage, extendedData.length, originalLength]);
 
-  // Reactivar transición después del salto
   useEffect(() => {
     if (!isTransitioning) {
-      // Pequeño delay para permitir que el DOM pinte el cambio sin animación
       requestAnimationFrame(() => {
           setTimeout(() => setIsTransitioning(true), 50);
       });
@@ -235,7 +231,6 @@ const TestimonialCarousel = ({ data }) => {
   const nextSlide = () => setCurrentIndex(prev => prev + 1);
   const prevSlide = () => setCurrentIndex(prev => prev - 1);
 
-  // Icono principal de cabecera
   const GoogleHeaderIcon = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -267,7 +262,7 @@ const TestimonialCarousel = ({ data }) => {
       {/* ZONA CARRUSEL */}
       <div className="overflow-hidden relative pb-8 pt-2">
         <div 
-          className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+          className={`flex items-start ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
           style={{ 
             transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` 
           }}
