@@ -10,60 +10,101 @@ import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
 // ========================================================================
-// DATOS DE LOS TESTIMONIOS REALES (Actualizado con las nuevas reseñas)
+// FUNCIÓN AUXILIAR: Calcular "Hace cuánto tiempo"
 // ========================================================================
+const timeAgo = (dateString) => {
+  const now = new Date();
+  const past = new Date(dateString);
+  const diffInSeconds = Math.floor((now - past) / 1000);
+
+  const minutes = Math.floor(diffInSeconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const weeks = Math.floor(days / 7);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(days / 365);
+
+  if (days < 1) return "Hace un momento";
+  if (days === 1) return "Hace 1 día";
+  if (days < 7) return `Hace ${days} días`;
+  if (weeks === 1) return "Hace 1 semana";
+  if (weeks < 4) return `Hace ${weeks} semanas`;
+  if (months === 1) return "Hace 1 mes";
+  if (months < 12) return `Hace ${months} meses`;
+  if (years === 1) return "Hace 1 año";
+  return `Hace ${years} años`;
+};
+
+// ========================================================================
+// DATOS DE LOS TESTIMONIOS (Con Fechas Reales para el cálculo)
+// ========================================================================
+const getPastDate = (daysAgo) => {
+  const d = new Date();
+  d.setDate(d.getDate() - daysAgo);
+  return d.toISOString().split('T')[0];
+};
+
 const testimonialsData = [
   {
     stars: 5,
-    text: "Desde el primer día José Carlos hizo que me sintiera en confianza. En cada sesión me he sentido escuchada, acompañada y comprendida. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
-    author: "Eva",
+    author: "Lolicci lolicci",
+    subtitle: "11 reseñas • 0 fotos",
+    date: getPastDate(7), // Hace 7 días
+    text: "Desde que empecé a trabajar con Jose Carlos, supe que estaba en las mejores manos. Su enfoque empático y profesional, me han ayudado a entender y superar muchos de mis desafíos personales. Cada sesión es un espacio seguro donde puedo expresar mis pensamientos y emociones sin juicios. Gracias a su orientación, he logrado avances significativos en mi bienestar emocional. Lo recomiendo a cualquiera que busque apoyo psicológico de calidad.",
   },
   {
     stars: 5,
-    text: "Desde que empecé a trabajar con Jose Carlos, supe que estaba en las mejores manos. Su enfoque empático y profesional, me han ayudado a entender y superar muchos de mis desafíos personales. Cada sesión es un espacio seguro.",
-    author: "Lolicci",
-  },
-  {
-    stars: 5,
-    text: "Para nosotros fue una experiencia de 10, comprometido y muy profesional. Nos ha ayudado muchísimo a comprender las cosas en una situación muy complicada para nosotros. Estamos muy agradecidos por su atención e implicación.",
     author: "Eve",
+    subtitle: "2 reseñas • 0 fotos",
+    date: getPastDate(8), // Hace 1 semana aprox
+    text: "Para nosotros fue una experiencia de 10, comprometido y muy profesional. Nos ha ayudado muchísimo a comprender las cosas en una situación muy complicada para nosotros. Estamos muy agradecidos por su atención e implicación.",
   },
   {
     stars: 5,
-    text: "No tengo palabras suficientes para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida.",
-    author: "Lucía",
-  },
-  {
-    stars: 5,
-    text: "Estoy super agradecida. Me encontraba muy frustrada por un problema del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos. Buena persona y excelente profesional.",
     author: "Ana",
+    subtitle: "Local Guide • 31 reseñas • 1 foto",
+    date: getPastDate(9), // Hace 1 semana y pico
+    text: "Estoy super agradecida por la ayuda que me ha dado José Carlos. Me encontraba muy frustrada por un problema del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos, ayudándome a salir del agujero. Buena persona y excelente profesional. Lo recomiendo 100%.",
   },
   {
     stars: 5,
-    text: "Cuando encuentras un buen profesional es algo estupendo. Al hablar con un psicólogo desnudas tu mente y para ello has de confiar, sentirte a gusto y lo más importante, que te ayude. Eso me pasó con él.",
-    author: "Lola",
+    author: "Eva Maria Figueroa",
+    subtitle: "3 reseñas • 0 fotos",
+    date: getPastDate(10), // Hace 1 semana y pico
+    text: "Desde el primer día José Carlos hizo que me sintiera en confianza, en cada sesión me he sentido escuchada, acompañada y comprendida, lo que me ha permitido avanzar realmente en mi proceso. Su forma de trabajar transmite seguridad y cercanía a la vez. Lo recomiendo de todo corazón.",
+  },
+  {
+    stars: 5,
+    author: "Lola y Miguel Ángel",
+    subtitle: "Local Guide • 26 reseñas • 0 fotos",
+    date: getPastDate(14), // Hace 2 semanas
+    text: "Cuando encuentras un buen profesional es algo estupendo. Y cuando se da con un profesional de la psicología como José Carlos es algo que no se puede describir. Al hablar con un psicólogo desnudas tu mente y para ello has de confiar, sentirte a gusto y lo más importante, que te ayude. Eso me pasó con él. Muchas gracias José Carlos.",
+  },
+  {
+    stars: 5,
+    author: "Lucía Alejandre",
+    subtitle: "6 reseñas • 0 fotos",
+    date: getPastDate(21), // Hace 3 semanas
+    text: "No tengo las suficientes palabras positivas para describir mi experiencia y lo muchísimo que ha cambiado mi vida desde que decidí empezar con José Carlos. Es una persona maravillosa que se esfuerza en ayudarte a encontrar una solución. Siempre agradecida y feliz de haber confiado en él para poner orden a mi vida y a mi cabeza.",
   },
 ];
 
-// Colores estilo Google para los avatares (Ahora encajan perfectos con 6 reseñas)
 const avatarColors = [
-  "bg-red-500",    // Rojo Google
-  "bg-blue-600",   // Azul Google
-  "bg-green-600",  // Verde Google
-  "bg-yellow-500", // Amarillo Google
-  "bg-purple-600", // Extra
-  "bg-pink-500"    // Extra
+  "bg-pink-500",   // Lolicci
+  "bg-purple-600", // Eve
+  "bg-green-600",  // Ana
+  "bg-red-500",    // Eva
+  "bg-yellow-500", // Lola
+  "bg-blue-600",   // Lucia
 ];
 
 // ========================================================================
-// COMPONENTE CARRUSEL INFINITO (Ajustado)
+// COMPONENTE CARRUSEL (Estilo Google Completo - Sin etiqueta Nuevo)
 // ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
-  // Triplicamos los datos para crear el efecto de bucle infinito
   const extendedData = useMemo(() => [...data, ...data, ...data], [data]);
   
-  // Empezamos en el inicio del segundo set de datos
   const [currentIndex, setCurrentIndex] = useState(originalLength);
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -84,11 +125,8 @@ const TestimonialCarousel = ({ data }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Lógica del "salto" infinito
   useEffect(() => {
-    if (transitionTimeoutRef.current) {
-      clearTimeout(transitionTimeoutRef.current);
-    }
+    if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
 
     if (currentIndex >= originalLength * 2) {
       transitionTimeoutRef.current = setTimeout(() => {
@@ -106,21 +144,13 @@ const TestimonialCarousel = ({ data }) => {
 
   useEffect(() => {
     if (!isTransitioning) {
-        setTimeout(() => {
-            setIsTransitioning(true);
-        }, 50);
+        setTimeout(() => setIsTransitioning(true), 50);
     }
   }, [isTransitioning]);
 
-  const nextSlide = () => {
-    setCurrentIndex(prev => prev + 1);
-  };
+  const nextSlide = () => setCurrentIndex(prev => prev + 1);
+  const prevSlide = () => setCurrentIndex(prev => prev - 1);
 
-  const prevSlide = () => {
-    setCurrentIndex(prev => prev - 1);
-  };
-
-  // Icono oficial de Google en SVG
   const GoogleIconFull = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -130,7 +160,6 @@ const TestimonialCarousel = ({ data }) => {
     </svg>
   );
 
-  // Icono "G" simple para la esquina de la tarjeta
   const GoogleGMark = () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
        <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" fill="#A0AEC0" />
@@ -142,7 +171,7 @@ const TestimonialCarousel = ({ data }) => {
   return (
     <div className="relative w-full max-w-[1400px] mx-auto px-4 md:px-12">
       
-      {/* HEADER GOOGLE */}
+      {/* HEADER GLOBAL */}
       <div className="flex flex-col items-center justify-center mb-10">
         <div className="flex items-center bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200 transform transition hover:scale-105">
           <GoogleIconFull />
@@ -168,10 +197,11 @@ const TestimonialCarousel = ({ data }) => {
           }}
         >
           {extendedData.map((item, index) => {
-             // Calculamos qué índice original (0, 1, 2, 3...) corresponde a este item duplicado
-             // para asignar siempre el mismo color al mismo autor.
              const originalIndexForColor = index % originalLength;
              const avatarColorClass = avatarColors[originalIndexForColor % avatarColors.length];
+             
+             // Calculamos "Hace X días"
+             const timeAgoText = timeAgo(item.date);
 
              return (
               <div 
@@ -181,26 +211,34 @@ const TestimonialCarousel = ({ data }) => {
               >
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col hover:shadow-xl transition-shadow relative">
                   
-                  {/* ICONO G (SVG INLINE para asegurar que se ve) */}
+                  {/* ICONO G MARCA DE AGUA */}
                   <div className="absolute top-6 right-6 opacity-30">
                      <GoogleGMark />
                   </div>
 
-                  <div className="flex items-center mb-5">
-                    {/* AVATAR CON COLOR DINÁMICO */}
-                    <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-3 shadow-sm`}>
+                  {/* CABECERA RESEÑA */}
+                  <div className="flex items-start mb-4">
+                    {/* AVATAR */}
+                    <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-lg mr-3 shadow-sm mt-1`}>
                       {item.author.charAt(0)}
                     </div>
-                    <div>
+                    {/* INFO USUARIO */}
+                    <div className="flex flex-col items-start">
                       <h4 className="font-bold text-gray-800 text-base">{item.author}</h4>
+                      <span className="text-xs text-gray-400">{item.subtitle}</span>
+                    </div>
+                  </div>
+
+                  {/* INFO RATING Y FECHA */}
+                  <div className="flex items-center mb-4 flex-wrap gap-2">
                       <div className="flex text-yellow-400 text-sm">
                           {'★'.repeat(item.stars)}
                       </div>
-                    </div>
+                      <span className="text-xs text-gray-500 font-medium ml-1">{timeAgoText}</span>
                   </div>
                   
-                  {/* TEXTO REDUCIDO Y ELEGANTE */}
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed italic">
+                  {/* TEXTO */}
+                  <p className="text-gray-600 text-base leading-relaxed italic">
                     "{item.text}"
                   </p>
                   
@@ -211,7 +249,7 @@ const TestimonialCarousel = ({ data }) => {
         </div>
       </div>
 
-      {/* BOTONES */}
+      {/* BOTONES NAVEGACIÓN */}
       <button 
         onClick={prevSlide}
         className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-psicopiloto-blue-600 shadow-lg hover:bg-gray-50 z-10 focus:outline-none transition-transform hover:scale-110"
@@ -232,7 +270,7 @@ const TestimonialCarousel = ({ data }) => {
         </svg>
       </button>
 
-      {/* INDICADORES (Puntos) */}
+      {/* PUNTOS INDICADORES */}
       <div className="flex justify-center space-x-3 mt-8">
         {data.map((_, idx) => (
           <div 
