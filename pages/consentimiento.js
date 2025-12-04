@@ -6,6 +6,17 @@ import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import SignatureCanvas from "react-signature-canvas";
 
+// --- CONFIGURACIÓN DE DATOS DEL PROFESIONAL ---
+// Edita esto aquí para que cambie en todo el documento legal
+const PROFESIONAL = {
+  nombre: "Jose Carlos Rguez. Retamar",
+  marca: "Psicopiloto",
+  colegiado: "AO14457",
+  nif: "74658149-B", // Asegúrate de que este dato sea correcto
+  email: "info@psicopiloto.com",
+  direccion_datos: "Carr. de Canillas, 106, Madrid" // Dirección para derechos ARCO
+};
+
 export default function Consentimiento() {
   const [form, setForm] = useState({
     nombre: "",
@@ -14,8 +25,11 @@ export default function Consentimiento() {
     direccion: "",
     telefono: "",
     cp: "",
+    ciudad: "",
+    pais: "España", // Valor por defecto
     fecha: new Date().toISOString().split("T")[0],
   });
+
   const [status, setStatus] = useState("");
   const [acepto, setAcepto] = useState(false);
   
@@ -47,16 +61,10 @@ export default function Consentimiento() {
 
     // 2. Preparamos los datos
     const dataToSend = {
-      nombre: form.nombre,
-      email: form.email,
-      dni: form.dni,
-      telefono: form.telefono,
-      direccion: form.direccion,
-      cp: form.cp,
-      fecha: form.fecha,
-      documento: "Consentimiento Informado Psicopiloto (Texto Completo)",
+      ...form,
+      documento: "Consentimiento Informado Terapia Online (Versión Actualizada)",
       _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`,
-      _gotcha: "", // Campo anti-spam
+      _gotcha: "", 
       firma_codigo: signatureData 
     };
 
@@ -74,7 +82,10 @@ export default function Consentimiento() {
 
       if (res.ok) {
         setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
-        setForm({ nombre: "", email: "", dni: "", direccion: "", telefono: "", cp: "", fecha: new Date().toISOString().split("T")[0] });
+        setForm({ 
+            nombre: "", email: "", dni: "", direccion: "", telefono: "", cp: "", ciudad: "", pais: "España", 
+            fecha: new Date().toISOString().split("T")[0] 
+        });
         setAcepto(false);
         sigCanvas.current.clear();
       } else {
@@ -98,7 +109,7 @@ export default function Consentimiento() {
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
       <NextSeo
         title="Consentimiento Informado | Psicopiloto"
-        description="Documento de consentimiento informado para la terapia psicológica online con Jose Carlos Rguez. Retamar."
+        description="Documento de consentimiento informado para la terapia psicológica online."
         noindex={true} 
       />
 
@@ -112,137 +123,162 @@ export default function Consentimiento() {
       </div>
 
       <main className="flex-grow py-10">
-        {/* ✨ CAMBIO: Aumentado el ancho máximo a max-w-5xl para aprovechar más pantalla */}
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-4xl">
           
-          <div className="bg-white p-6 md:p-10 rounded-xl shadow-md border border-gray-200 mb-12">
+          {/* --- BLOQUE DE TEXTO LEGAL --- */}
+          <div className="bg-white p-6 md:p-10 rounded-xl shadow-md border border-gray-200 mb-10">
             
-            {/* ✨ CAMBIO: Añadido 'max-w-none' para que el texto ocupe todo el ancho disponible */}
             <div className="prose prose-sm md:prose-base max-w-none text-justify text-psicopiloto-gray-700 mb-8">
-                <h3 className="text-xl font-bold mb-6 text-psicopiloto-green-600 text-center">CONSENTIMIENTO INFORMADO</h3>
-                <p className="mb-4">Lea y firme el siguiente consentimiento informado sobre la terapia psicológica online.</p>
+                <h3 className="text-xl font-bold mb-6 text-psicopiloto-green-600 text-center uppercase border-b pb-4">
+                    Acuerdo de Terapia Psicológica Online
+                </h3>
                 
-                <p className="mb-4 font-bold">Manifiesto que:</p>
-                <p className="mb-4">
-                    El profesional <strong>Jose Carlos Rguez. Retamar</strong>, psicólogo sanitario colegiado número <strong>AO14457</strong> en el Colegio Oficial de Psicólogos de Andalucía Oriental, ha proporcionado toda la información necesaria, de forma clara, comprensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios que se seguirán para la evaluación psicológica que solicito, a través de las pruebas oportunas, aplicándose al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico y normas de deontología profesional de la Psicología.
+                <p>Por favor, lea y firme el siguiente consentimiento informado para realizar terapia online.</p>
+                
+                <p><strong>Manifiesto que:</strong></p>
+                <p>
+                    He recibido de <strong>{PROFESIONAL.nombre} ({PROFESIONAL.marca})</strong>, toda la información necesaria, de forma clara, comprensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios para la evaluación e intervención psicológica que solicito. Se aplica al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico y normas de deontología profesional de la Psicología.
                 </p>
 
-                <h4 className="font-bold mt-6 mb-2 text-psicopiloto-blue-600">Estoy informado/a sobre la información relativa a la protección de datos de carácter personal:</h4>
-                <p className="mb-4">
-                    De conformidad con lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, informamos que los datos personales serán tratados por <strong>Jose Carlos Rguez. Retamar</strong> con NIF: <strong>74658149-B</strong>.
-                </p>
-                <p className="mb-4">
-                    Los datos se recogerán con la única finalidad de elaborar los documentos derivados de esta intervención profesional, su facturación, seguimiento posterior y las funciones propias de la actividad profesional que los justifica. Se conservarán durante todo el período de prescripción de las acciones de responsabilidad y no serán cedidos a terceros.
-                </p>
-                <p className="mb-4">
-                    Usted tiene derecho al acceso, rectificación, supresión, limitación, portabilidad y oposición al tratamiento de sus datos personales, que se ejercerán ante <strong>Jose Carlos Rguez. Retamar</strong> al correo electrónico: <strong>info@psicopiloto.com</strong>. Así mismo, usted puede revocar el consentimiento en cualquier momento.
-                </p>
-                <p className="mb-4">
-                    Que el responsable del fichero, ha adoptado las medidas de seguridad que están a su alcance para proteger la inviolabilidad de sus datos personales en sus instalaciones, sistemas y ficheros. Asimismo, el responsable del fichero garantiza la confidencialidad de los datos personales; éstos sólo podrán ser revelados a las autoridades públicas competentes en caso que le sean requeridos de conformidad con las disposiciones legales y reglamentarias aplicables.
-                </p>
-
-                <h4 className="font-bold mt-6 mb-2 text-psicopiloto-blue-600">Igualmente, he sido informado/a sobre las características especiales de la terapia en modalidad on-line en los siguientes términos:</h4>
-                <ul className="list-disc list-inside mb-4 space-y-2">
-                    <li>La mayoría de estudios concluyen que la psicoterapia online es tan efectiva como la presencial.</li>
-                    <li>Esta forma de terapia no está indicada en casos de pérdida de realidad o si está experimentado pensamientos suicidas u homicidas. En la primera sesión se evaluará si es adecuada su solicitud de servicio de atención psicológica online, asimismo se irá revisando conforme avance la terapia, en caso de ser necesario realizar algunas o todas las sesiones en modalidad presencial y/o derivar a otro servicio.</li>
-                    <li>Las sesiones de psicoterapia se realizarán a través de la plataforma <strong>Google Meet</strong> (o similar segura), que permite trabajar desde un entorno seguro y confidencial y se ajusta a la legislación vigente relativa a la protección de la privacidad. En su defecto, como alternativa podrá utilizarse la plataforma ZOOM.</li>
-                    <li>Existe un compromiso mutuo de no grabar o registrar las sesiones sin el consentimiento previo del otro. Únicamente podrán ser grabadas en caso de acuerdo por escrito entre paciente y psicólogo, protegidas por los medios adecuados y con un uso determinado.</li>
-                    <li>En cuanto a la confidencialidad: ninguna información será comunicada, directa o indirectamente, a un tercero sin su consentimiento informado y por escrito, a menos que lo exija la ley.</li>
-                    <li>Entiendo que el medio digital no es 100% seguro y, tanto paciente como terapeuta, deberán comunicarse a través de un ordenador o dispositivo que sea seguro, es decir, donde la confidencialidad pueda ser garantizada.</li>
-                    <li>Acepta que las sesiones online se llevarán a cabo en un entorno de privacidad en la que, salvo acuerdo explícito de todas las partes, no habrá terceras personas participantes y se garantizará evitar interrupciones.</li>
-                    <li>La comunicación entre sesiones, para agendar sesiones u otras consultas, se realizará mediante correo electrónico o teléfono.</li>
-                    <li>Acepta que los correos electrónicos que le envíe así como la respuesta a los mismos se realizará a través del correo electrónico: <strong>info@psicopiloto.com</strong>.</li>
-                    <li>Entiende que otras cuentas de correo electrónico, o mensajería de uso personal (WhatsApp, Instagram, Telegram…) no es una forma 100% segura de comunicación. Por tanto, se limitará su uso priorizando las opciones seguras propuestas anteriormente.</li>
-                    <li>Entiende que es responsable de salvaguardar cualquier comunicación electrónica que descargue, imprima o acceda y que no reenviará, dará o copiará (total o parcialmente) mensajes de correo electrónico o comunicaciones electrónicas del terapeuta a ninguna otra persona, excepto con su acuerdo previo por escrito.</li>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">1. Características de la Terapia Online</h4>
+                <ul className="list-disc list-inside space-y-2">
+                    <li>
+                        <strong>Diferencias con la presencialidad:</strong> La terapia a distancia difiere de las sesiones presenciales. El contacto puede ser menos cercano y la captación de señales no verbales más difícil. Por ello, se evaluará constantemente si esta modalidad es adecuada para su caso.
+                    </li>
+                    <li>
+                        <strong>Situaciones de crisis:</strong> Esta modalidad <strong>no es apropiada</strong> si está experimentando una crisis aguda, pérdida de realidad o tiene pensamientos suicidas u homicidas activos. Si esto ocurre, debe acudir inmediatamente a un servicio de urgencias presencial.
+                    </li>
+                    <li>
+                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de plataformas que permiten trabajar desde un entorno seguro y confidencial (como Google Meet, Zoom o PSYPOCKET), ajustándose a la legislación vigente de privacidad.
+                    </li>
+                    <li>
+                        <strong>Entorno del paciente:</strong> Usted se compromete a realizar la sesión en un entorno privado, sin la presencia de terceras personas (salvo acuerdo explícito) y evitando interrupciones.
+                    </li>
+                    <li>
+                        <strong>Seguridad digital:</strong> Entiende que cuentas de mensajería personal (WhatsApp, Instagram, Facebook) no son medios 100% seguros para transmitir información clínica sensible. La comunicación principal se realizará por canales cifrados o correo electrónico seguro.
+                    </li>
                 </ul>
 
-                <h4 className="font-bold mt-6 mb-2 text-psicopiloto-blue-600">Sobre la conexión y aspectos técnicos:</h4>
-                <p className="mb-4">Las sesiones online dependen de la conexión a internet, que puede verse interrumpida, tanto en el profesional como del paciente. Puede ocurrir dos cosas:</p>
-                <ul className="list-disc list-inside mb-4 space-y-2">
-                    <li>La conexión se corta y/o no es fluida. Se podrá acordar mantener la sesión a través de otra plataforma segura de comunicación, o establecer otro momento a fin de tener una óptima comunicación.</li>
-                    <li>La conexión se interrumpe y no es posible retomarla. Se contactará por otro medio previamente establecido por las partes, (audio o texto), a fin únicamente de notificar que no es posible llevar a cabo la sesión y proceder a reagendarla.</li>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">2. Confidencialidad y Grabaciones</h4>
+                <ul className="list-disc list-inside space-y-2">
+                    <li>
+                        <strong>Prohibición de grabación:</strong> No se permiten grabaciones de las sesiones (audio o video) por ninguna de las partes, excepto con acuerdo previo por escrito de ambos, protegidas adecuadamente y para un uso terapéutico determinado.
+                    </li>
+                    <li>
+                        <strong>Confidencialidad:</strong> Ninguna información será comunicada a un tercero sin su consentimiento informado y por escrito, a menos que lo exija la ley (riesgo inminente para usted o terceros).
+                    </li>
+                    <li>
+                        <strong>Seguridad de comunicaciones:</strong> Usted es responsable de salvaguardar las comunicaciones electrónicas que descargue o imprima. No reenviará comunicaciones del terapeuta a terceros sin permiso.
+                    </li>
                 </ul>
 
-                <h4 className="font-bold mt-6 mb-2 text-psicopiloto-blue-600">Política de asistencia y pago:</h4>
-                <ul className="list-disc list-inside mb-4 space-y-2">
-                    <li>Entiendo que es importante ser puntual para disfrutar del tiempo completo de la sesión. Si conecto tarde a una sesión, entiendo que utilizaré el tiempo restante en la sesión programada y se me cobrará la tarifa completa por esa sesión. En caso que el retraso sea causa del psicólogo, se cumplirá siempre con el tiempo total de sesión estipulado.</li>
-                    <li>En caso de tener que anular la sesión, se solicita que se haga con <strong>24h de antelación</strong>, de no hacerlo, se cobrará la sesión. Salvo urgencia justificada.</li>
-                    <li>El pago de las sesiones se realizará <strong>ANTES</strong> de la sesión mediante Bizum, transferencia bancaria o tarjeta de crédito (si disponible). Todos los datos están cifrados y protegidos por las entidades bancarias involucradas.</li>
-                    <li>Recibirá la factura de sus sesiones cuando usted lo solicite.</li>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">3. Aspectos Técnicos y Conexión</h4>
+                <p>Las sesiones dependen de la conexión a internet. Si esta falla:</p>
+                <ul className="list-disc list-inside space-y-2">
+                    <li><strong>Conexión no fluida:</strong> Se intentará cambiar de plataforma o establecer otro momento para asegurar una comunicación óptima.</li>
+                    <li><strong>Corte total:</strong> Se contactará por otro medio (teléfono/mensaje) únicamente para notificar la imposibilidad y reagendar la sesión.</li>
                 </ul>
 
-                <div className="bg-psicopiloto-green-50 p-4 rounded-lg border-l-4 border-psicopiloto-green-500 mt-8">
-                    <p className="font-bold text-psicopiloto-green-800">
-                        Todos estos consentimientos PODRÁN SER REVOCADOS LIBREMENTE en cualquier momento, tanto por el paciente como por el profesional, mediante comunicación escrita.
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">4. Honorarios y Cancelaciones</h4>
+                <ul className="list-disc list-inside space-y-2">
+                    <li>El pago se realizará mediante los medios dispuestos por el profesional, con antelación a la sesión para garantizar la reserva.</li>
+                    <li>Si cancela con <strong>menos de 24 horas</strong> de anticipación o no se presenta, se cobrará la tarifa completa de la sesión, salvo causa de fuerza mayor justificada.</li>
+                    <li>Si se conecta tarde, la sesión finalizará a la hora programada originalmente y se cobrará completa.</li>
+                </ul>
+
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">5. Protección de Datos (RGPD)</h4>
+                <p>
+                    En cumplimiento del Reglamento General de Protección de Datos y la Ley Orgánica 3/2018:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                    <li><strong>Responsable:</strong> Los datos personales se recogerán en el fichero cuyo responsable es <strong>{PROFESIONAL.nombre}</strong> (NIF: {PROFESIONAL.nif}).</li>
+                    <li><strong>Finalidad:</strong> Elaboración de documentos clínicos, facturación, seguimiento y funciones profesionales.</li>
+                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito a: <strong>{PROFESIONAL.email}</strong> o a la dirección postal: {PROFESIONAL.direccion_datos}.</li>
+                    <li><strong>Seguridad:</strong> El responsable garantiza haber adoptado las medidas de seguridad necesarias para proteger la confidencialidad de sus datos.</li>
+                </ul>
+
+                <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mt-8 text-sm">
+                    <p>
+                        <strong>REVOCACIÓN:</strong> Este consentimiento PODRÁ SER REVOCADO LIBREMENTE en cualquier momento, tanto por el paciente como por el profesional, de acuerdo con la legislación aplicable.
                     </p>
                 </div>
 
-                <p className="mt-6">
-                    Tomando todo ello en consideración, por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con el Psicólogo <strong>Jose Carlos Rguez. Retamar (Psicopiloto)</strong>, colegiado <strong>AO14457</strong> para realizar la citada intervención profesional, y OTORGO mi expreso CONSENTIMIENTO para que realice las indicadas intervenciones, y para que los datos sean incorporados a los ficheros antes mencionados para su tratamiento conforme a los fines especificados.
+                <p className="mt-6 text-sm">
+                    Tomando todo ello en consideración, por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con <strong>{PROFESIONAL.nombre}</strong> (Colegiado {PROFESIONAL.colegiado}), para realizar la citada intervención profesional, y <strong>OTORGO mi expreso CONSENTIMIENTO</strong> para el tratamiento de mis datos conforme a los fines especificados.
                 </p>
             </div>
 
             <hr className="border-gray-200 mb-8" />
 
-            {/* FORMULARIO DE DATOS */}
+            {/* --- FORMULARIO DE DATOS --- */}
             <form onSubmit={handleSubmit} className="space-y-6">
-                <h3 className="text-2xl font-bold text-center text-psicopiloto-blue-600 mb-6">Tus Datos y Firma</h3>
+                <h3 className="text-2xl font-bold text-center text-psicopiloto-blue-600 mb-6">Sus Datos y Firma</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label className="block text-sm font-medium mb-1">Nombre y Apellidos</label>
-                        <input required name="nombre" value={form.nombre} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Nombre y Apellidos *</label>
+                        <input required name="nombre" value={form.nombre} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="Nombre completo" />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1">DNI / NIE</label>
-                        <input required name="dni" value={form.dni} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium mb-1">Correo electrónico</label>
-                        <input required name="email" value={form.email} onChange={update} type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium mb-1">Teléfono</label>
-                        <input required name="telefono" value={form.telefono} onChange={update} type="tel" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">DNI / NIE / NIF *</label>
+                        <input required name="dni" value={form.dni} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="Documento de identidad" />
                     </div>
                     <div className="md:col-span-2">
-                        <label className="block text-sm font-medium mb-1">Dirección Postal</label>
-                        <input required name="direccion" value={form.direccion} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Dirección Postal Completa *</label>
+                        <input required name="direccion" value={form.direccion} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="Calle, número, piso..." />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1">Código Postal</label>
-                        <input required name="cp" value={form.cp} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad *</label>
+                        <input required name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1">Fecha</label>
-                        <input required name="fecha" value={form.fecha} onChange={update} type="date" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Código Postal *</label>
+                        <input required name="cp" value={form.cp} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">País</label>
+                        <input name="pais" value={form.pais} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Teléfono *</label>
+                        <input required name="telefono" value={form.telefono} onChange={update} type="tel" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+                    <div className="md:col-span-2">
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Correo electrónico *</label>
+                        <input required name="email" value={form.email} onChange={update} type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="ejemplo@correo.com" />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Fecha de la firma *</label>
+                        <input required name="fecha" value={form.fecha} onChange={update} type="date" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                 </div>
 
-                {/* CANVAS DE FIRMA */}
+                {/* --- CANVAS DE FIRMA --- */}
                 <div className="mt-10 bg-gray-50 p-6 rounded-xl border border-gray-200">
                     <label className="block text-lg font-bold mb-2 text-center text-psicopiloto-gray-700">Firma Digital</label>
-                    <p className="text-sm text-gray-500 mb-4 text-center">Utiliza el ratón o el dedo en pantalla táctil para firmar dentro del recuadro blanco.</p>
+                    <p className="text-sm text-gray-500 mb-4 text-center">Utiliza el ratón o el dedo (en móvil/tablet) para firmar dentro del recuadro blanco.</p>
                     
-                    <div className="border-2 border-dashed border-psicopiloto-gray-400 rounded-lg bg-white w-full max-w-md mx-auto overflow-hidden relative shadow-inner">
-                        <SignatureCanvas 
-                            ref={sigCanvas}
-                            penColor="black"
-                            canvasProps={{
-                                className: "sigCanvas w-full h-56 cursor-crosshair"
-                            }}
-                        />
-                         <button 
+                    <div className="relative w-full max-w-md mx-auto">
+                        <div className="border-2 border-dashed border-gray-400 rounded-lg bg-white overflow-hidden shadow-inner">
+                            <SignatureCanvas 
+                                ref={sigCanvas}
+                                penColor="black"
+                                canvasProps={{
+                                    className: "sigCanvas w-full h-56 cursor-crosshair"
+                                }}
+                            />
+                        </div>
+                        <button 
                             onClick={clearSignature}
-                            className="absolute top-2 right-2 text-xs bg-white border border-gray-300 px-3 py-1 rounded hover:bg-red-50 hover:text-red-600 transition shadow-sm"
-                         >
-                            Borrar Firma
-                         </button>
+                            className="mt-2 text-xs text-red-600 hover:text-red-800 underline w-full text-center"
+                        >
+                            Borrar y firmar de nuevo
+                        </button>
                     </div>
                 </div>
 
-                {/* CHECKBOX ACEPTACIÓN */}
-                <div className="flex items-start gap-3 mt-8 p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                {/* --- CHECKBOX ACEPTACIÓN --- */}
+                <div className="flex items-start gap-3 mt-8 p-4 bg-gray-50 border border-gray-200 rounded-lg">
                     <input 
                         id="acepto" 
                         type="checkbox" 
@@ -250,25 +286,25 @@ export default function Consentimiento() {
                         onChange={(e) => setAcepto(e.target.checked)}
                         className="mt-1 w-5 h-5 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-500 cursor-pointer" 
                     />
-                    <label htmlFor="acepto" className="text-sm text-psicopiloto-gray-700 cursor-pointer select-none">
-                        He leído íntegramente el consentimiento informado expuesto arriba, entiendo las condiciones de la terapia online y <strong>acepto el tratamiento de mis datos personales</strong> y las condiciones del servicio.
+                    <label htmlFor="acepto" className="text-sm text-gray-700 cursor-pointer select-none">
+                        Declaro que he leído íntegramente el consentimiento informado expuesto arriba, entiendo las condiciones de la terapia online, he podido plantear mis dudas y <strong>acepto el tratamiento de mis datos personales</strong> y las condiciones del servicio.
                     </label>
                 </div>
 
-                {/* BOTÓN ENVIAR */}
+                {/* --- BOTÓN ENVIAR --- */}
                 <div className="text-center pt-6">
                     <button
                         type="submit"
                         disabled={status.startsWith("Enviando")}
-                        className="px-8 py-4 bg-psicopiloto-green-600 text-white text-lg font-bold rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
+                        className="w-full md:w-auto px-10 py-4 bg-psicopiloto-green-600 text-white text-lg font-bold rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {status.startsWith("Enviando") ? "Procesando..." : "Firmar y Enviar Consentimiento"}
                     </button>
                 </div>
 
-                {/* MENSAJE DE ESTADO */}
+                {/* --- MENSAJE DE ESTADO --- */}
                 {status && (
-                    <div className={`mt-6 p-4 rounded-lg text-center font-medium ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
+                    <div className={`mt-6 p-4 rounded-lg text-center font-medium animate-fade-in ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
                         {status}
                     </div>
                 )}
