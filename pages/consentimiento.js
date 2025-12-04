@@ -7,14 +7,15 @@ import { NextSeo } from "next-seo";
 import SignatureCanvas from "react-signature-canvas";
 
 // --- CONFIGURACIÓN DE DATOS DEL PROFESIONAL ---
-// Edita esto aquí para que cambie en todo el documento legal
 const PROFESIONAL = {
   nombre: "Jose Carlos Rguez. Retamar",
   marca: "Psicopiloto",
   colegiado: "AO14457",
-  nif: "74658149-B", // Asegúrate de que este dato sea correcto
+  nif: "74658149-B", 
   email: "info@psicopiloto.com",
-  direccion_datos: "Carr. de Canillas, 106, Madrid" // Dirección para derechos ARCO
+  // ⬇️ DEJA ESTO VACÍO ("") SI NO TIENES DIRECCIÓN FÍSICA PÚBLICA.
+  // Si en el futuro tienes consulta, escríbela aquí y aparecerá automáticamente en el texto legal.
+  direccion_datos: "" 
 };
 
 export default function Consentimiento() {
@@ -26,7 +27,7 @@ export default function Consentimiento() {
     telefono: "",
     cp: "",
     ciudad: "",
-    pais: "España", // Valor por defecto
+    pais: "España",
     fecha: new Date().toISOString().split("T")[0],
   });
 
@@ -56,13 +57,11 @@ export default function Consentimiento() {
 
     setStatus("Enviando documento firmado...");
 
-    // 1. Obtenemos la firma como texto codificado (Base64)
     const signatureData = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
 
-    // 2. Preparamos los datos
     const dataToSend = {
       ...form,
-      documento: "Consentimiento Informado Terapia Online (Versión Actualizada)",
+      documento: "Consentimiento Informado Terapia Online",
       _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`,
       _gotcha: "", 
       firma_codigo: signatureData 
@@ -82,6 +81,7 @@ export default function Consentimiento() {
 
       if (res.ok) {
         setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
+        // Reseteamos el formulario
         setForm({ 
             nombre: "", email: "", dni: "", direccion: "", telefono: "", cp: "", ciudad: "", pais: "España", 
             fecha: new Date().toISOString().split("T")[0] 
@@ -90,14 +90,7 @@ export default function Consentimiento() {
         sigCanvas.current.clear();
       } else {
         console.error("Error Formspree:", data);
-        if (data.error) {
-            setStatus(`❌ Error: ${data.error}`);
-        } else if (data.errors && data.errors.length > 0) {
-            const messages = data.errors.map(err => err.message).join(", ");
-            setStatus(`❌ Error: ${messages}`);
-        } else {
-            setStatus("❌ Hubo un error al enviar el documento. Por favor, inténtalo de nuevo.");
-        }
+        setStatus("❌ Hubo un error al enviar. Por favor, inténtalo de nuevo.");
       }
     } catch (err) {
       console.error("Error Red:", err);
@@ -125,7 +118,6 @@ export default function Consentimiento() {
       <main className="flex-grow py-10">
         <div className="container mx-auto px-4 max-w-4xl">
           
-          {/* --- BLOQUE DE TEXTO LEGAL --- */}
           <div className="bg-white p-6 md:p-10 rounded-xl shadow-md border border-gray-200 mb-10">
             
             <div className="prose prose-sm md:prose-base max-w-none text-justify text-psicopiloto-gray-700 mb-8">
@@ -149,53 +141,43 @@ export default function Consentimiento() {
                         <strong>Situaciones de crisis:</strong> Esta modalidad <strong>no es apropiada</strong> si está experimentando una crisis aguda, pérdida de realidad o tiene pensamientos suicidas u homicidas activos. Si esto ocurre, debe acudir inmediatamente a un servicio de urgencias presencial.
                     </li>
                     <li>
-                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de plataformas que permiten trabajar desde un entorno seguro y confidencial (como Google Meet, Zoom), ajustándose a la legislación vigente de privacidad.
+                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de plataformas que permiten trabajar desde un entorno seguro y confidencial, ajustándose a la legislación vigente de privacidad.
                     </li>
                     <li>
                         <strong>Entorno del paciente:</strong> Usted se compromete a realizar la sesión en un entorno privado, sin la presencia de terceras personas (salvo acuerdo explícito) y evitando interrupciones.
-                    </li>
-                    <li>
-                        <strong>Seguridad digital:</strong> Entiende que cuentas de mensajería personal (WhatsApp, Instagram, Facebook) no son medios 100% seguros para transmitir información clínica sensible. La comunicación principal se realizará por canales cifrados o correo electrónico seguro.
                     </li>
                 </ul>
 
                 <h4 className="font-bold text-psicopiloto-blue-600 mt-6">2. Confidencialidad y Grabaciones</h4>
                 <ul className="list-disc list-inside space-y-2">
                     <li>
-                        <strong>Prohibición de grabación:</strong> No se permiten grabaciones de las sesiones (audio o video) por ninguna de las partes, excepto con acuerdo previo por escrito de ambos, protegidas adecuadamente y para un uso terapéutico determinado.
+                        <strong>Prohibición de grabación:</strong> No se permiten grabaciones de las sesiones (audio o video) por ninguna de las partes, excepto con acuerdo previo por escrito de ambos.
                     </li>
                     <li>
-                        <strong>Confidencialidad:</strong> Ninguna información será comunicada a un tercero sin su consentimiento informado y por escrito, a menos que lo exija la ley (riesgo inminente para usted o terceros).
-                    </li>
-                    <li>
-                        <strong>Seguridad de comunicaciones:</strong> Usted es responsable de salvaguardar las comunicaciones electrónicas que descargue o imprima. No reenviará comunicaciones del terapeuta a terceros sin permiso.
+                        <strong>Confidencialidad:</strong> Ninguna información será comunicada a un tercero sin su consentimiento informado y por escrito, a menos que lo exija la ley.
                     </li>
                 </ul>
 
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">3. Aspectos Técnicos y Conexión</h4>
-                <p>Las sesiones dependen de la conexión a internet. Si esta falla:</p>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">3. Aspectos Técnicos y Honorarios</h4>
                 <ul className="list-disc list-inside space-y-2">
-                    <li><strong>Conexión no fluida:</strong> Se intentará cambiar de plataforma o establecer otro momento para asegurar una comunicación óptima.</li>
-                    <li><strong>Corte total:</strong> Se contactará por otro medio (teléfono/mensaje) únicamente para notificar la imposibilidad y reagendar la sesión.</li>
+                    <li><strong>Conexión:</strong> Si la conexión falla, se intentará restablecer o se contactará por otro medio para reagendar.</li>
+                    <li><strong>Cancelaciones:</strong> Si cancela con <strong>menos de 24 horas</strong> de anticipación o no se presenta, se podrá cobrar la tarifa completa de la sesión.</li>
                 </ul>
 
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">4. Honorarios y Cancelaciones</h4>
-                <ul className="list-disc list-inside space-y-2">
-                    <li>El pago se realizará mediante los medios dispuestos por el profesional, con antelación a la sesión para garantizar la reserva.</li>
-                    <li>Si cancela con <strong>menos de 24 horas</strong> de anticipación o no se presenta, se cobrará la tarifa completa de la sesión, salvo causa de fuerza mayor justificada.</li>
-                    <li>Si se conecta tarde, la sesión finalizará a la hora programada originalmente y se cobrará completa.</li>
-                </ul>
-
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">5. Protección de Datos (RGPD)</h4>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">4. Protección de Datos (RGPD)</h4>
                 <p>
                     En cumplimiento del Reglamento General de Protección de Datos y la Ley Orgánica 3/2018:
                 </p>
                 <ul className="list-disc list-inside space-y-2">
                     <li><strong>Responsable:</strong> Los datos personales se recogerán en el fichero cuyo responsable es <strong>{PROFESIONAL.nombre}</strong> (NIF: {PROFESIONAL.nif}).</li>
                     <li><strong>Finalidad:</strong> Elaboración de documentos clínicos, facturación, seguimiento y funciones profesionales.</li>
-                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito a: <strong>{PROFESIONAL.email}</strong>.</li>  
-                  // o a la dirección postal: // {PROFESIONAL.direccion_datos}
-                    <li><strong>Seguridad:</strong> El responsable garantiza haber adoptado las medidas de seguridad necesarias para proteger la confidencialidad de sus datos.</li>
+                    <li>
+                        <strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito al correo: <strong>{PROFESIONAL.email}</strong>
+                        {/* ⬇️ LÓGICA: Si hay dirección física, se muestra, si no, se oculta esta frase */}
+                        {PROFESIONAL.direccion_datos && (
+                            <span> o a la dirección postal: <strong>{PROFESIONAL.direccion_datos}</strong></span>
+                        )}.
+                    </li>
                 </ul>
 
                 <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mt-8 text-sm">
@@ -205,7 +187,7 @@ export default function Consentimiento() {
                 </div>
 
                 <p className="mt-6 text-sm">
-                    Tomando todo ello en consideración, por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con <strong>{PROFESIONAL.nombre}</strong> (Colegiado {PROFESIONAL.colegiado}), para realizar la citada intervención profesional, y <strong>OTORGO mi expreso CONSENTIMIENTO</strong> para el tratamiento de mis datos conforme a los fines especificados.
+                    Por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con <strong>{PROFESIONAL.nombre}</strong> (Colegiado {PROFESIONAL.colegiado}), para realizar la citada intervención profesional, y <strong>OTORGO mi expreso CONSENTIMIENTO</strong> para el tratamiento de mis datos conforme a los fines especificados.
                 </p>
             </div>
 
@@ -218,37 +200,43 @@ export default function Consentimiento() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-1">Nombre y Apellidos *</label>
-                        <input required name="nombre" value={form.nombre} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="Nombre completo" />
+                        <input required name="nombre" value={form.nombre} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-1">DNI / NIE / NIF *</label>
-                        <input required name="dni" value={form.dni} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="Documento de identidad" />
-                    </div>
-                    <div className="md:col-span-2">
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Dirección Postal Completa *</label>
-                        <input required name="direccion" value={form.direccion} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="Calle, número, piso..." />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad *</label>
-                        <input required name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Código Postal *</label>
-                        <input required name="cp" value={form.cp} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">País</label>
-                        <input name="pais" value={form.pais} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                        <input required name="dni" value={form.dni} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-1">Teléfono *</label>
                         <input required name="telefono" value={form.telefono} onChange={update} type="tel" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
-                    <div className="md:col-span-2">
+                    <div>
                         <label className="block text-sm font-bold text-gray-700 mb-1">Correo electrónico *</label>
-                        <input required name="email" value={form.email} onChange={update} type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" placeholder="ejemplo@correo.com" />
+                        <input required name="email" value={form.email} onChange={update} type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+
+                    {/* ⬇️ SECCIÓN DE DIRECCIÓN DEL PACIENTE (OCULTA TEMPORALMENTE)
+                      Si en el futuro quieres pedir la dirección para facturas:
+                      1. Borra "{/*" al inicio de este bloque
+                      2. Borra "* /}" al final de este bloque
+                    */}
+                    {/*
+                    <div className="md:col-span-2">
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Dirección Postal Completa</label>
+                        <input name="direccion" value={form.direccion} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                     <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad</label>
+                        <input name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Código Postal</label>
+                        <input name="cp" value={form.cp} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                    </div>
+                    */}
+                    {/* ⬆️ FIN DE LA SECCIÓN OCULTA */}
+
+                    <div className="md:col-span-2">
                         <label className="block text-sm font-bold text-gray-700 mb-1">Fecha de la firma *</label>
                         <input required name="fecha" value={form.fecha} onChange={update} type="date" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
@@ -257,7 +245,7 @@ export default function Consentimiento() {
                 {/* --- CANVAS DE FIRMA --- */}
                 <div className="mt-10 bg-gray-50 p-6 rounded-xl border border-gray-200">
                     <label className="block text-lg font-bold mb-2 text-center text-psicopiloto-gray-700">Firma Digital</label>
-                    <p className="text-sm text-gray-500 mb-4 text-center">Utiliza el ratón o el dedo (en móvil/tablet) para firmar dentro del recuadro blanco.</p>
+                    <p className="text-sm text-gray-500 mb-4 text-center">Utiliza el ratón o el dedo para firmar dentro del recuadro blanco.</p>
                     
                     <div className="relative w-full max-w-md mx-auto">
                         <div className="border-2 border-dashed border-gray-400 rounded-lg bg-white overflow-hidden shadow-inner">
@@ -288,11 +276,10 @@ export default function Consentimiento() {
                         className="mt-1 w-5 h-5 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-500 cursor-pointer" 
                     />
                     <label htmlFor="acepto" className="text-sm text-gray-700 cursor-pointer select-none">
-                        Declaro que he leído íntegramente el consentimiento informado expuesto arriba, entiendo las condiciones de la terapia online, he podido plantear mis dudas y <strong>acepto el tratamiento de mis datos personales</strong> y las condiciones del servicio.
+                        He leído el consentimiento informado, entiendo las condiciones de la terapia online y <strong>acepto el tratamiento de mis datos personales</strong>.
                     </label>
                 </div>
 
-                {/* --- BOTÓN ENVIAR --- */}
                 <div className="text-center pt-6">
                     <button
                         type="submit"
@@ -303,13 +290,11 @@ export default function Consentimiento() {
                     </button>
                 </div>
 
-                {/* --- MENSAJE DE ESTADO --- */}
                 {status && (
                     <div className={`mt-6 p-4 rounded-lg text-center font-medium animate-fade-in ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
                         {status}
                     </div>
                 )}
-
             </form>
           </div>
         </div>
