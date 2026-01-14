@@ -122,21 +122,24 @@ export default function CookiesBanner() {
                 .
               </p>
               <div className="flex gap-2 flex-wrap justify-center">
+                {/* BOTÓN ACEPTAR TODAS (Verde Corporativo) */}
                 <button
                   onClick={acceptAll}
-                  className="px-4 py-2 bg-psicopiloto-green-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 hover:bg-psicopiloto-green-600 transition"
+                  className="px-4 py-2 bg-psicopiloto-green-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 hover:bg-psicopiloto-green-600 transition font-medium"
                 >
                   Aceptar todas
                 </button>
+                {/* BOTÓN RECHAZAR (Verde Corporativo - Igualdad visual) */}
                 <button
                   onClick={rejectAll}
-                  className="px-4 py-2 bg-psicopiloto-gray-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-gray-400 hover:bg-psicopiloto-gray-600 transition"
+                  className="px-4 py-2 bg-psicopiloto-green-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 hover:bg-psicopiloto-green-600 transition font-medium"
                 >
                   Rechazar
                 </button>
+                {/* BOTÓN PERSONALIZAR (Verde Corporativo - Igualdad visual) */}
                 <button
                   onClick={() => setSettingsOpen(true)}
-                  className="px-4 py-2 bg-psicopiloto-blue-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-400 hover:bg-psicopiloto-blue-500 transition"
+                  className="px-4 py-2 bg-psicopiloto-green-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 hover:bg-psicopiloto-green-600 transition font-medium"
                 >
                   Personalizar
                 </button>
@@ -151,38 +154,42 @@ export default function CookiesBanner() {
                   <strong>Necesarias (Técnicas):</strong> siempre activas (imprescindibles para el funcionamiento).
                 </li>
                 <li className="p-2 bg-psicopiloto-gray-700 rounded-lg">
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={analytics}
                       onChange={(e) => setAnalytics(e.target.checked)}
+                      className="accent-psicopiloto-green-500"
                     />
                     Analítica (ej: medir tráfico y rendimiento)
                   </label>
                 </li>
                 <li className="p-2 bg-psicopiloto-gray-700 rounded-lg">
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={marketing}
                       onChange={(e) => setMarketing(e.target.checked)}
+                      className="accent-psicopiloto-green-500"
                     />
                     Marketing (ej: anuncios personalizados y retargeting)
                   </label>
                 </li>
               </ul>
-              <div className="flex gap-2 mt-6">
-                <button
-                  onClick={saveCustom}
-                  className="px-4 py-2 bg-psicopiloto-blue-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-400 hover:bg-psicopiloto-blue-600 transition"
-                >
-                  Guardar configuración
-                </button>
+              <div className="flex gap-2 mt-6 justify-end">
+                {/* BOTÓN VOLVER (Gris neutro, acción secundaria) */}
                 <button
                   onClick={() => setSettingsOpen(false)}
-                  className="px-4 py-2 bg-psicopiloto-gray-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-gray-400 hover:bg-psicopiloto-gray-600 transition"
+                  className="px-4 py-2 bg-psicopiloto-gray-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-gray-400 hover:bg-psicopiloto-gray-400 transition"
                 >
-                  Volver al banner
+                  Volver
+                </button>
+                {/* BOTÓN GUARDAR (Verde Corporativo, acción principal) */}
+                <button
+                  onClick={saveCustom}
+                  className="px-4 py-2 bg-psicopiloto-green-500 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 hover:bg-psicopiloto-green-600 transition font-medium"
+                >
+                  Guardar configuración
                 </button>
               </div>
             </div>
