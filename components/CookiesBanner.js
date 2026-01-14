@@ -1,13 +1,3 @@
-¡Claro que sí! Para darle ese aspecto más "importante" y profesional que se ve en las webs grandes, he realizado los siguientes cambios en el diseño:
-
-1. **Más presencia (Tamaño):** He aumentado el `padding` (espaciado interno) tanto en móviles como en ordenador. Ahora el banner respira mejor y ocupa más espacio visual.
-2. **Botones en línea (Desktop):** He ajustado el *Flexbox* para que, en pantallas grandes (`lg`), los botones se coloquen obligatoriamente uno al lado del otro en una sola fila a la derecha, mientras el texto queda a la izquierda.
-3. **Botones en columna (Móvil):** En móviles, los botones se apilan verticalmente (`flex-col`) y ocupan el ancho completo. Esto es mucho mejor para la usabilidad táctil ("dedo gordo"), evitando clicks por error.
-4. **Tamaño de texto y botones:** He aumentado ligeramente el tamaño de la fuente y el área de clic de los botones para que se vea más moderno.
-
-Aquí tienes el código completo. Copia y reemplaza en `components/CookiesBanner.js`:
-
-```javascript
 // components/CookiesBanner.js
 
 import { useState, useEffect } from "react";
@@ -232,5 +222,3 @@ export default function CookiesBanner() {
     </>
   );
 }
-
-```
