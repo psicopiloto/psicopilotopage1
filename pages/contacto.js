@@ -106,7 +106,7 @@ export default function Contacto() {
 
               <div className="bg-white/70 p-6 rounded-xl shadow-md">
                 <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">Reserva tu primera consulta</h2>
-                <p className="text-psicopiloto-gray-600 mb-6">Completa este formulario y te responderé lo antes posible. Consulta online en Granada y para toda España, adaptada a tu ritmo y necesidades.</p>
+                <p className="text-psicopiloto-gray-600 mb-6">Si es tu primera vez, completa este formulario y te responderé lo antes posible. Primera sesion de valoración gratuita, 30 minutos. Consulta online en Granada y para toda España, adaptada a tu ritmo y necesidades. </p>
                 <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
                   <label htmlFor="nombre" className="sr-only">Nombre completo *</label>
                   <input id="nombre" required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
