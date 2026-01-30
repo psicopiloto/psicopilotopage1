@@ -118,7 +118,7 @@ export default function Contacto() {
                   Desktop: Orden 2 (Sale debajo de contacto).
               */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:order-2">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita ONLINE directamente</h3>
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita ONLINE</h3>
                 <div className="w-full h-[1150px]">
                   <iframe 
                     title="Calendario de citas online de Psicopiloto" 
