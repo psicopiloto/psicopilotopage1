@@ -95,7 +95,7 @@ export default function SobreMi() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/foto-copao.webp"
+                src="/jc-psicopiloto.webp"
                 alt="Retrato de Jose Carlos Rguez. Retamar, psicólogo"
                 width={400}
                 height={500}
