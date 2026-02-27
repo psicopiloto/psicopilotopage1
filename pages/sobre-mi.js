@@ -166,7 +166,10 @@ export default function SobreMi() {
             </h2>
             <p>
               Hoy, en <strong>Psicopiloto</strong>, uno lo aprendido en aviación con la psicología para ofrecer un acompañamiento diferente.
-              Si en la cabina de un avión entrenábamos la mente para afrontar lo inesperado, en la terapia aplico la misma filosofía: ayudarte a ganar <strong>confianza</strong>, manejar la <strong>ansiedad</strong> y recuperar el <strong>control de tu vida</strong>.
+              Mi trabajo terapéutico se apoya en una formación sólida en trauma psicológico, apego y procesos de regulación emocional, entendidos desde una perspectiva integradora. Me he especializado en comprender cómo las experiencias tempranas, los vínculos significativos y los eventos críticos moldean la forma en que pensamos, sentimos y actuamos en el presente.
+En consulta, acompaño a las personas a reconstruir seguridad interna, identificar patrones que se originan en heridas pasadas y desarrollar nuevas formas de relacionarse consigo mismas y con los demás. Trabajo desde modelos basados en la evidencia —incluyendo enfoques centrados en el trauma, la teoría del apego y la integración de técnicas de procesamiento emocional— siempre adaptados a la historia y ritmo de cada persona.
+Mi experiencia en aviación, donde la gestión del estrés, la anticipación y la toma de decisiones bajo presión son esenciales, me permite ofrecer una mirada especialmente sensible a cómo el trauma afecta al cuerpo, la mente y la capacidad de mantener el control en situaciones complejas. Esta combinación me ayuda a crear un espacio terapéutico seguro, claro y orientado a recuperar la confianza, la estabilidad y la capacidad de avanzar.
+                Si en la cabina de un avión entrenábamos la mente para afrontar lo inesperado, en la terapia aplico la misma filosofía: ayudarte a ganar <strong>confianza</strong>, manejar la <strong>ansiedad</strong> y recuperar el <strong>control de tu vida</strong>.
             </p>
             <p className="mt-4">Porque todos merecemos <strong>volar con seguridad</strong>, también en nuestro propio camino personal.</p>
           </section>
