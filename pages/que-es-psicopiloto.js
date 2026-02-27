@@ -36,7 +36,8 @@ export default function QueEsPsicopiloto() {
                 ¿Qué es Psicopiloto?
               </h2>
               <p className="text-psicopiloto-gray-700 leading-relaxed">
-                Psicopiloto es mi proyecto personal, donde fusiono mis dos grandes pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>. Tras más de 18 años como piloto militar, comandante en misiones de alto riesgo e instructor de vuelo, decidí aplicar todo ese conocimiento sobre factores humanos, CRM y gestión de la presión al campo de la psicología.
+                Psicopiloto es mi proyecto personal, donde fusiono mis dos grandes pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>. Psicopiloto es la unión de mi vida en la cabina y mi vida en la consulta: dos mundos distintos que, en realidad, hablan de lo mismo. Durante más de 18 años como piloto militar aprendí a sostener la presión, a decidir cuando todo se acelera y a mantener la calma cuando el cuerpo quiere hacer lo contrario. Hoy pongo esa experiencia al servicio de la psicología, desde una formación profunda en trauma, regulación emocional y vínculos tempranos. Trabajo desde un enfoque integrador que mira a la persona completa: su historia, sus heridas, sus recursos y su manera única de relacionarse con el mundo. Acompaño a reconstruir seguridad interna, a entender por qué ciertos patrones se repiten y a recuperar la capacidad de elegir con claridad. Igual que en vuelo, en la vida cada decisión marca rumbo; mi labor es ayudarte a encontrar el tuyo con más calma, más confianza y más verdad.
+
               </p>
               {/* ✨ CORRECCIÓN: Sintaxis de negrita cambiada de Markdown (**) a HTML (<strong>) */}
               <p className="mt-4 text-psicopiloto-gray-700 leading-relaxed">
