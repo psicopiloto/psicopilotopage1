@@ -39,12 +39,12 @@ export default function QueEsPsicopiloto() {
                 Psicopiloto es mi proyecto personal, donde fusiono mis dos grandes pasiones: la <strong>aviación</strong> y la <strong>psicología</strong>: dos mundos distintos que, 
           en realidad, hablan de lo mismo. Durante más de 18 años como piloto militar aprendí a sostener la presión, a decidir cuando todo se acelera y a mantener la calma cuando el cuerpo quiere hacer lo contrario. Hoy pongo esa 
           experiencia al servicio de la psicología, desde una formación profunda en trauma, regulación emocional y vínculos tempranos. Trabajo desde un enfoque integrador que mira a la persona completa: su historia, sus heridas, 
-            sus recursos y su manera única de relacionarse con el mundo. Acompaño a reconstruir seguridad interna, a entender por qué ciertos patrones se repiten y a recuperar la capacidad de elegir con claridad. Igual que en vuelo, 
-            en la vida cada decisión marca rumbo; mi labor es ayudarte a encontrar el tuyo con más calma, más confianza y más verdad.
+            sus recursos y su manera única de relacionarse con el mundo. 
               </p>
               {/* ✨ CORRECCIÓN: Sintaxis de negrita cambiada de Markdown (**) a HTML (<strong>) */}
               <p className="mt-4 text-psicopiloto-gray-700 leading-relaxed">
-                En la cabina de un avión, cada decisión es crítica. En la vida y en la empresa, también. Mi trabajo es darte las herramientas para <strong>gestionar la presión</strong>, <strong>comunicarte eficazmente</strong> y <strong>tomar decisiones conscientes</strong>.
+                En la cabina de un avión, cada decisión es crítica. En la vida y en la empresa, también. Acompaño a reconstruir seguridad interna, a entender por qué ciertos patrones se repiten y a recuperar la capacidad de elegir con claridad. Igual que en vuelo, 
+            en la vida cada decisión marca rumbo; mi labor es ayudarte a encontrar el tuyo con más calma, más confianza y más verdad.
               </p>
             </div>
             <div>
