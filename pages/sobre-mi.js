@@ -87,10 +87,13 @@ export default function SobreMi() {
             <div>
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
-                Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong> y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y <strong>ex-piloto militar</strong>.
+                Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong> y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y durante muchos años,<strong>piloto militar</strong>.
               </p>
               <p className="mt-4">
-                Mi trayectoria me ha enseñado que, tanto en la cabina como en la vida, la clave para superar cualquier turbulencia es cultivar la <strong>preparación mental</strong>, la <strong>gestión emocional</strong>, la <strong>toma de decisiones bajo presión</strong> y la <strong>humildad</strong>.
+               Esa doble vida me enseñó algo que no aparece en los manuales: que las turbulencias más difíciles no siempre están en el aire, sino dentro de cada persona. En la cabina aprendí a sostener la presión cuando todo se acelera, 
+            a decidir con claridad cuando el cuerpo tiembla y a mantener la humildad incluso en los momentos de mayor control. En la psicología descubrí que esas mismas fuerzas actúan en nuestra historia, 
+            en nuestros vínculos y en las heridas que arrastramos sin darnos cuenta. Hoy trabajo desde esa mirada integradora, uniendo trauma, apego y regulación emocional para ayudar a recuperar seguridad interna, 
+            comprender los patrones que nos bloquean y encontrar un modo de vivir más estable, más consciente y más fiel a uno mismo
               </p>
             </div>
             <div className="flex justify-center">
