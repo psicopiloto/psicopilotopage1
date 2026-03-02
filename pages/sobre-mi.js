@@ -87,7 +87,7 @@ export default function SobreMi() {
             <div>
               <h2 className="text-xl font-semibold mb-4 text-psicopiloto-blue-600">Mi historia: De la cabina al consultorio</h2>
               <p>
-                Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong> y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y durante muchos años,<strong>piloto militar</strong>.
+                Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong> y soy <strong>psicólogo</strong> colegiado nº AO14457 con Habilitación Sanitaria y durante muchos años, <strong>piloto militar</strong>.
               </p>
               <p className="mt-4">
                Esa doble vida me enseñó algo que no aparece en los manuales: que las turbulencias más difíciles no siempre están en el aire, sino dentro de cada persona. En la cabina aprendí a sostener la presión cuando todo se acelera, 
