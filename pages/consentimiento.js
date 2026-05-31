@@ -13,8 +13,6 @@ const PROFESIONAL = {
   colegiado: "AO14457",
   nif: "74658149-B", 
   email: "info@psicopiloto.com",
-  // ⬇️ DEJA ESTO VACÍO ("") SI NO TIENES DIRECCIÓN FÍSICA PÚBLICA.
-  // Si en el futuro tienes consulta, escríbela aquí y aparecerá automáticamente en el texto legal.
   direccion_datos: "" 
 };
 
@@ -23,11 +21,10 @@ export default function Consentimiento() {
     nombre: "",
     email: "",
     dni: "",
-    direccion: "",
     telefono: "",
-    cp: "",
     ciudad: "",
     pais: "España",
+    contacto_emergencia: "", // ✨ NUEVO: Campo clínico-legal obligatorio
     fecha: new Date().toISOString().split("T")[0],
   });
 
@@ -81,9 +78,9 @@ export default function Consentimiento() {
 
       if (res.ok) {
         setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
-        // Reseteamos el formulario
         setForm({ 
-            nombre: "", email: "", dni: "", direccion: "", telefono: "", cp: "", ciudad: "", pais: "España", 
+            nombre: "", email: "", dni: "", telefono: "", ciudad: "", pais: "España", 
+            contacto_emergencia: "",
             fecha: new Date().toISOString().split("T")[0] 
         });
         setAcepto(false);
@@ -122,7 +119,7 @@ export default function Consentimiento() {
             
             <div className="prose prose-sm md:prose-base max-w-none text-justify text-psicopiloto-gray-700 mb-8">
                 <h3 className="text-xl font-bold mb-6 text-psicopiloto-green-600 text-center uppercase border-b pb-4">
-                    Acuerdo de Terapia Psicológica Online
+                    Acuerdo de Terapia Psicológica Online y Protección de Datos
                 </h3>
                 
                 <p>Por favor, lea y firme el siguiente consentimiento informado para realizar terapia online.</p>
@@ -132,62 +129,57 @@ export default function Consentimiento() {
                     He recibido de <strong>{PROFESIONAL.nombre} ({PROFESIONAL.marca})</strong>, toda la información necesaria, de forma clara, comprensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios para la evaluación e intervención psicológica que solicito. Se aplica al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico y normas de deontología profesional de la Psicología.
                 </p>
 
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">1. Características de la Terapia Online</h4>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">1. Características de la Terapia Online y Gestión de Crisis</h4>
                 <ul className="list-disc list-inside space-y-2">
                     <li>
                         <strong>Diferencias con la presencialidad:</strong> La terapia a distancia difiere de las sesiones presenciales. El contacto puede ser menos cercano y la captación de señales no verbales más difícil. Por ello, se evaluará constantemente si esta modalidad es adecuada para su caso.
                     </li>
                     <li>
-                        <strong>Situaciones de crisis:</strong> Esta modalidad <strong>no es apropiada</strong> si está experimentando una crisis aguda, pérdida de realidad o tiene pensamientos suicidas u homicidas activos. Si esto ocurre, debe acudir inmediatamente a un servicio de urgencias presencial.
+                        <strong>Situaciones de crisis y emergencias:</strong> Esta modalidad <strong>no es un servicio de urgencias 24 horas</strong> y no es apropiada si está experimentando una crisis aguda, pérdida de realidad o ideación autolítica activa. El paciente se compromete a facilitar un teléfono de contacto de un familiar o allegado directo para situaciones excepcionales de crisis clínica o de seguridad donde el profesional deba coordinar asistencia en la ubicación física del paciente.
                     </li>
                     <li>
-                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de plataformas que permiten trabajar desde un entorno seguro y confidencial, ajustándose a la legislación vigente de privacidad.
+                        <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de entornos digitales autorizados que garantizan el cifrado de extremo a extremo, cumpliendo estrictamente con los estándares europeos de confidencialidad y secreto médico.
                     </li>
                     <li>
-                        <strong>Entorno del paciente:</strong> Usted se compromete a realizar la sesión en un entorno privado, sin la presencia de terceras personas (salvo acuerdo explícito) y evitando interrupciones.
+                        <strong>Entorno del paciente:</strong> Usted se compromete a realizar la sesión desde un espacio físico completamente privado, garantizando que terceras personas no escuchen el desarrollo de la sesión, protegiendo así su propia intimidad.
                     </li>
                 </ul>
 
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">2. Confidencialidad y Grabaciones</h4>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">2. Confidencialidad y Prohibición de Grabaciones</h4>
                 <ul className="list-disc list-inside space-y-2">
                     <li>
-                        <strong>Prohibición de grabación:</strong> No se permiten grabaciones de las sesiones (audio o video) por ninguna de las partes, excepto con acuerdo previo por escrito de ambos.
+                        <strong>Prohibición estricta de grabación:</strong> Queda <strong>expresamente prohibida la grabación total o parcial (de audio, vídeo o capturas de pantalla)</strong> de las sesiones de terapia por cualquiera de las partes. El incumplimiento de esta cláusula vulnera el derecho a la intimidad, el secreto profesional y los derechos de propiedad intelectual, facultando la resolución inmediata del servicio.
                     </li>
                     <li>
-                        <strong>Confidencialidad:</strong> Ninguna información será comunicada a un tercero sin su consentimiento informado y por escrito, a menos que lo exija la ley.
+                        <strong>Confidencialidad:</strong> Ninguna información derivada de la historia clínica será comunicada a un tercero sin su consentimiento informado y por escrito, a menos que exista un imperativo legal o riesgo grave e inminente para la vida del propio paciente o de terceros.
                     </li>
                 </ul>
 
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">3. Aspectos Técnicos y Honorarios</h4>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">3. Aspectos Económicos y Política de Cancelación</h4>
                 <ul className="list-disc list-inside space-y-2">
-                    <li><strong>Conexión:</strong> Si la conexión falla, se intentará restablecer o se contactará por otro medio para reagendar.</li>
-                    <li><strong>Cancelaciones:</strong> Si cancela con <strong>menos de 24 horas</strong> de anticipación o no se presenta, se podrá cobrar la tarifa completa de la sesión.</li>
+                    <li><strong>Condiciones de conexión:</strong> Si la videollamada falla por motivos técnicos ajenos, se intentará restablecer el contacto telefónicamente de inmediato o se acordará el reajuste del tiempo perdido.</li>
+                    <li><strong>Política estricta de cancelaciones:</strong> Las citas reservadas implican la reserva exclusiva de su tiempo profesional. Si usted cancela o modifica su cita con <strong>menos de 24 horas de antelación</strong>, o no se presenta a la sesión programada, <strong>se devengará la tarifa íntegra de la sesión (60 €)</strong> como coste de disponibilidad, salvo casos excepcionales de fuerza mayor debidamente justificados.</li>
                 </ul>
 
-                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">4. Protección de Datos (RGPD)</h4>
+                <h4 className="font-bold text-psicopiloto-blue-600 mt-6">4. Protección de Datos Personales de Categoría Especial (Salud)</h4>
                 <p>
-                    En cumplimiento del Reglamento General de Protección de Datos y la Ley Orgánica 3/2018:
+                    De conformidad con el Reglamento General de Protección de Datos (UE) 2016/679 y la Ley Orgánica 3/2018 (LOPDGDD):
                 </p>
                 <ul className="list-disc list-inside space-y-2">
-                    <li><strong>Responsable:</strong> Los datos personales se recogerán en el fichero cuyo responsable es <strong>{PROFESIONAL.nombre}</strong> (NIF: {PROFESIONAL.nif}).</li>
-                    <li><strong>Finalidad:</strong> Elaboración de documentos clínicos, facturación, seguimiento y funciones profesionales.</li>
-                    <li>
-                        <strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, cancelación, oposición, olvido, portabilidad y limitación dirigiéndose por escrito al correo: <strong>{PROFESIONAL.email}</strong>
-                        {/* ⬇️ LÓGICA: Si hay dirección física, se muestra, si no, se oculta esta frase */}
-                        {PROFESIONAL.direccion_datos && (
-                            <span> o a la dirección postal: <strong>{PROFESIONAL.direccion_datos}</strong></span>
-                        )}.
-                    </li>
+                    <li><strong>Responsable del Tratamiento:</strong> {PROFESIONAL.nombre} (NIF: {PROFESIONAL.nif}).</li>
+                    <li><strong>Finalidad y Base Legal:</strong> Apertura de la historia clínica digital, seguimiento psicoterapéutico y gestión de facturación. La legitimación para tratar sus datos de salud mental (datos de categoría especial) se basa en su consentimiento explícito firmado en este acto (Art. 9.2.a del RGPD).</li>
+                    <li><strong>Plazo de Conservación:</strong> Los expedientes clínicos se conservarán bloqueados durante el plazo mínimo legal establecido por la normativa sanitaria aplicable en materia de documentación clínica una vez finalizado el tratamiento.</li>
+                    <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación, supresión, oposición, olvido, portabilidad y limitación enviando un correo acompañado de su documento identificativo a: <strong>{PROFESIONAL.email}</strong>{PROFESIONAL.direccion_datos && <span> o a la dirección postal: <strong>{PROFESIONAL.direccion_datos}</strong></span>}. Asimismo, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD).</li>
                 </ul>
 
                 <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mt-8 text-sm">
                     <p>
-                        <strong>REVOCACIÓN:</strong> Este consentimiento PODRÁ SER REVOCADO LIBREMENTE en cualquier momento, tanto por el paciente como por el profesional, de acuerdo con la legislación aplicable.
+                        <strong>REVOCACIÓN:</strong> Este consentimiento podrá ser revocado libremente en cualquier momento por el paciente, lo que conllevará la finalización de la intervención psicoterapéutica al no poder tratarse los datos clínicos esenciales para el seguimiento.
                     </p>
                 </div>
 
                 <p className="mt-6 text-sm">
-                    Por el presente documento, expresamente <strong>AUTORIZO y COMPROMETO</strong>, con <strong>{PROFESIONAL.nombre}</strong> (Colegiado {PROFESIONAL.colegiado}), para realizar la citada intervención profesional, y <strong>OTORGO mi expreso CONSENTIMIENTO</strong> para el tratamiento de mis datos conforme a los fines especificados.
+                    Por el presente documento, expresamente <strong>AUTORIZO y ME COMPROMETO</strong> con <strong>{PROFESIONAL.nombre}</strong> (Colegiado {PROFESIONAL.colegiado}), para realizar la citada intervención profesional, y <strong>OTORGO mi expreso CONSENTIMIENTO</strong> para el tratamiento de mis datos de salud conforme a los fines especificados.
                 </p>
             </div>
 
@@ -207,40 +199,21 @@ export default function Consentimiento() {
                         <input required name="dni" value={form.dni} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                     <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Teléfono *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Teléfono del Paciente *</label>
                         <input required name="telefono" value={form.telefono} onChange={update} type="tel" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-1">Correo electrónico *</label>
                         <input required name="email" value={form.email} onChange={update} type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
-
-                          <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad *</label>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad y País de residencia *</label>
                         <input required name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
-
-                    {/* ⬇️ SECCIÓN DE DIRECCIÓN DEL PACIENTE (OCULTA TEMPORALMENTE)
-                      Si en el futuro quieres pedir la dirección para facturas:
-                      1. Borra "{/*" al inicio de este bloque
-                      2. Borra "* /}" al final de este bloque
-                    */}
-                    {/*
-                    <div className="md:col-span-2">
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Dirección Postal Completa</label>
-                        <input name="direccion" value={form.direccion} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
-                    </div>
                     <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Ciudad</label>
-                        <input name="ciudad" value={form.ciudad} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
+                        <label className="block text-sm font-bold text-gray-700 mb-1">Teléfono Contacto de Emergencia (Familiar/Allegado) *</label>
+                        <input required name="contacto_emergencia" value={form.contacto_emergencia} onChange={update} type="tel" placeholder="Ej: 600000000 - Madre" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
                     </div>
-                    <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-1">Código Postal</label>
-                        <input name="cp" value={form.cp} onChange={update} type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
-                    </div>
-                    */}
-                    {/* ⬆️ FIN DE LA SECCIÓN OCULTA */}
-
                     <div className="md:col-span-2">
                         <label className="block text-sm font-bold text-gray-700 mb-1">Fecha de la firma *</label>
                         <input required name="fecha" value={form.fecha} onChange={update} type="date" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-psicopiloto-green-400 outline-none transition" />
@@ -281,7 +254,7 @@ export default function Consentimiento() {
                         className="mt-1 w-5 h-5 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-500 cursor-pointer" 
                     />
                     <label htmlFor="acepto" className="text-sm text-gray-700 cursor-pointer select-none">
-                        He leído el consentimiento informado, entiendo las condiciones de la terapia online y <strong>acepto el tratamiento de mis datos personales</strong>.
+                        He leído este consentimiento informado, entiendo las condiciones económicas y de cancelación de la terapia online y <strong>otorgo mi consentimiento explícito para el tratamiento de mis datos de salud</strong>.
                     </label>
                 </div>
 
@@ -297,6 +270,8 @@ export default function Consentimiento() {
 
                 {status && (
                     <div className={`mt-6 p-4 rounded-lg text-center font-medium animate-fade-in ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
+                        {status}
+                    </min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
                         {status}
                     </div>
                 )}
