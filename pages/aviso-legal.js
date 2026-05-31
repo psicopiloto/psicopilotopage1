@@ -62,10 +62,10 @@ export default function AvisoLegal() {
             <h2 className="text-2xl font-semibold mb-3 border-b pb-1">1. Titular de la web e Información Obligatoria</h2>
             <p className="space-y-1">
               <strong>Nombre:</strong> Jose Carlos Rguez. Retamar (Psicopiloto) <br />
-              <strong>NIF/DNI:</strong> [Introduce aquí tu DNI con la letra] <br />
+              <strong>NIF/DNI:</strong> 74658149-B <br />
               <strong>Teléfono:</strong> 676 230 537 <br />
               <strong>Correo electrónico:</strong> info@psicopiloto.com <br />
-              <strong>Título oficial:</strong> Licenciado/Graduado en Psicología con habilitación para el ejercicio de actividades sanitarias, expedido en España. <br />
+              <strong>Título oficial:</strong> Licenciado en Psicología con habilitación para el ejercicio de actividades sanitarias, expedido en España. <br />
               <strong>Colegiado:</strong> Nº AO14457 en el Ilustre Colegio Oficial de Psicología de Andalucía Oriental (COPAO).
             </p>
           </section>
