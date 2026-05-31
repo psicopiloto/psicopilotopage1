@@ -15,13 +15,21 @@ export default function Contacto() {
     email: "",
     telefono: "",
     motivo: "",
+    _gotcha: "", // Añadido para que Formspree procese correctamente el filtro antispam
   });
+  const [aceptoPrivacidad, setAceptoPrivacidad] = useState(false);
   const [status, setStatus] = useState("");
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    // VALIDACIÓN DE PRIVACIDAD OBLIGATORIA (RGPD)
+    if (!aceptoPrivacidad) {
+      setStatus("❌ Debes leer y aceptar la política de privacidad para enviar tu consulta.");
+      return;
+    }
 
     // VALIDACIÓN AVANZADA
     if (form.nombre.trim().length < 3) {
@@ -61,7 +69,8 @@ export default function Contacto() {
 
       if (res.ok) {
         setStatus("✅ ¡Mensaje recibido! Gracias por contactar. Te responderé personalmente en un plazo de 24-48 horas.");
-        setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
+        setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "", _gotcha: "" });
+        setAceptoPrivacidad(false);
       } else {
         setStatus(`❌ Error ${res.status}: No se pudo enviar el mensaje. Inténtalo de nuevo.`);
       }
@@ -107,16 +116,10 @@ export default function Contacto() {
               </ul>
             </div>
 
-            {/* CONTENEDOR DERECHO AGRUPADO (Para evitar el espacio vacío en Desktop)
-               Móvil: Ocupa posición 2.
-               Desktop: Columna derecha, ocupa todo el alto necesario (row-span-2 implícito visualmente).
-            */}
+            {/* CONTENEDOR DERECHO AGRUPADO (Para evitar el espacio vacío en Desktop) */}
             <div className="order-2 md:col-start-2 md:row-start-1 md:row-span-2 flex flex-col gap-6">
               
-              {/* CALENDARIO 
-                  Móvil: Orden 1 (Sale antes que contacto).
-                  Desktop: Orden 2 (Sale debajo de contacto).
-              */}
+              {/* CALENDARIO */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:order-2">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita ONLINE</h3>
                 <div className="w-full h-[1150px]">
@@ -130,10 +133,7 @@ export default function Contacto() {
                 </div>
               </div>
 
-              {/* CONTACTO DIRECTO
-                  Móvil: Orden 2 (Sale después del calendario).
-                  Desktop: Orden 1 (Sale arriba del todo).
-              */}
+              {/* CONTACTO DIRECTO */}
               <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2 order-2 md:order-1">
                 <h3 className="text-xl font-semibold text-psicopiloto-green-600">Contacto directo</h3>
                 <p>📞 Teléfono:{" "}<a href="tel:+34676230537" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">676 230 537</a></p>
@@ -146,31 +146,56 @@ export default function Contacto() {
             {/* 3. FORMULARIO (Móvil: 3º | Desktop: Izquierda Abajo) */}
             <div className="bg-white/70 p-6 rounded-xl shadow-md order-3 md:col-start-1">
               <h2 className="text-3xl font-semibold text-psicopiloto-green-600 mb-6">Reserva tu primera consulta</h2>
-              <p className="text-psicopiloto-gray-600 mb-6">Si es tu primera vez, completa este formulario y te responderé lo antes posible. Primera sesion de valoración gratuita, 30 minutos. Consulta online en Granada y para toda España, adaptada a tu ritmo y necesidades. </p>
+              <p className="text-psicopiloto-gray-600 mb-4">Si es tu primera vez, completa este formulario y te responderé lo antes posible. Primera sesión de valoración gratuita (30 minutos).</p>
+              
+              {/* FRASE ESTRATÉGICA DE TARIFAS E INVITACIÓN AL DIÁLOGO VERBAL */}
+              <p className="text-sm bg-psicopiloto-sand-100/50 p-3 rounded-lg text-psicopiloto-gray-700 border-l-4 border-psicopiloto-green-600 mb-6 italic">
+                "Cada proceso clínico online es único y adapto la intervención por completo a tus necesidades particulares. Escríbeme y evaluaremos tu situación para ofrecerte un plan de sesiones y condiciones a tu medida."
+              </p>
+
               <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
                 <label htmlFor="nombre" className="sr-only">Nombre completo *</label>
-                <input id="nombre" required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <label htmlFor="edad" className="sr-only">Edad *</label>
-                <input id="edad" required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <label htmlFor="email" className="sr-only">Email *</label>
-                <input id="email" required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <label htmlFor="telefono" className="sr-only">Teléfono</label>
-                <input id="telefono" name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono (opcional)" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400" />
-                <label htmlFor="motivo" className="sr-only">Cuéntame brevemente tu motivo de consulta *</label>
-                <textarea id="motivo" required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400"></textarea>
+                <input id="nombre" required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 
-                <input type="text" name="_gotcha" style={{ display: 'none' }} />
+                <label htmlFor="edad" className="sr-only">Edad *</label>
+                <input id="edad" required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                
+                <label htmlFor="email" className="sr-only">Email *</label>
+                <input id="email" required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                
+                <label htmlFor="telefono" className="sr-only">Teléfono</label>
+                <input id="telefono" name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono (opcional)" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                
+                <label htmlFor="motivo" className="sr-only">Cuéntame brevemente tu motivo de consulta *</label>
+                <textarea id="motivo" required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente tu motivo de consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white"></textarea>
+                
+                {/* Input oculto antispam correctamente enlazado al state */}
+                <input type="text" name="_gotcha" value={form._gotcha} onChange={update} style={{ display: 'none' }} />
 
-                <button type="submit" className="px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors" disabled={status === "Enviando..."}>
+                {/* CHECKBOX DE PRIVACIDAD OBLIGATORIO (Exigido por la AEPD) */}
+                <div className="flex items-start gap-2 mt-2 p-2 bg-white/50 rounded border border-gray-100">
+                  <input 
+                    id="aceptoPrivacidad" 
+                    type="checkbox" 
+                    checked={aceptoPrivacidad}
+                    onChange={(e) => setAceptoPrivacidad(e.target.checked)}
+                    className="mt-1 w-4 h-4 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-400 cursor-pointer" 
+                  />
+                  <label htmlFor="aceptoPrivacidad" className="text-xs text-psicopiloto-gray-600 cursor-pointer select-none">
+                    He leído y acepto que mis datos sean tratados conforme a la <a href="/politica-privacidad" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700">política de privacidad</a> para gestionar mi solicitud de consulta. *
+                  </label>
+                </div>
+
+                <button type="submit" className="mt-2 px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors shadow-sm disabled:opacity-50" disabled={status === "Enviando..."}>
                   {status === "Enviando..." ? "Enviando..." : "Enviar consulta"}
                 </button>
               </form>
-              {status && <p className={`mt-4 text-sm ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>}
+              {status && <p className={`mt-4 text-sm font-medium ${status.startsWith("✅") ? 'text-psicopiloto-green-600' : 'text-red-600'}`}>{status}</p>}
             </div>
 
-            {/* LEGAL (Móvil: 4º | Desktop: Izquierda Fondo, debajo del formulario) */}
-            <div className="text-sm text-psicopiloto-gray-700 order-4 md:col-start-1">
-              <p><strong>Protección de datos:</strong> Tus datos serán tratados con confidencialidad y solo para responder a tu consulta. Consulta nuestra{" "}<a href="/aviso-legal" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700 focus:ring-1 focus:ring-psicopiloto-green-400 rounded">política de privacidad</a>.</p>
+            {/* LEGAL INFRAESTRUCTURA */}
+            <div className="text-xs text-psicopiloto-gray-500 order-4 md:col-start-1">
+              <p><strong>Información básica sobre protección de datos:</strong> Tus datos de contacto serán tratados con absoluta confidencialidad con el único fin de agendar o resolver tu consulta clínica. Puedes ejercer tus derechos de acceso, rectificación o supresión escribiendo a info@psicopiloto.com.</p>
             </div>
 
           </section>
