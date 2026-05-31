@@ -24,7 +24,7 @@ export default function Consentimiento() {
     telefono: "",
     ciudad: "",
     pais: "España",
-    contacto_emergencia: "", // ✨ NUEVO: Campo clínico-legal obligatorio
+    contacto_emergencia: "", 
     fecha: new Date().toISOString().split("T")[0],
   });
 
@@ -132,7 +132,7 @@ export default function Consentimiento() {
                 <h4 className="font-bold text-psicopiloto-blue-600 mt-6">1. Características de la Terapia Online y Gestión de Crisis</h4>
                 <ul className="list-disc list-inside space-y-2">
                     <li>
-                        <strong>Diferencias con la presencialidad:</strong> La terapia a distancia difiere de las sesiones presenciales. El contacto puede ser menos cercano y la captación de señales no verbales más difícil. Por ello, se evaluará constantemente si esta modalidad es adecuada para su caso.
+                        <strong>Diferencias con la presencialidad:</strong> La terapia a distancia difiere de las sesiones presenciales. El contacto puede ser menos cercano y la captación de señales no verbales más difícil. Por ello, se evaluará constantemente si esta modalid es adecuada para su caso.
                     </li>
                     <li>
                         <strong>Situaciones de crisis y emergencias:</strong> Esta modalidad <strong>no es un servicio de urgencias 24 horas</strong> y no es apropiada si está experimentando una crisis aguda, pérdida de realidad o ideación autolítica activa. El paciente se compromete a facilitar un teléfono de contacto de un familiar o allegado directo para situaciones excepcionales de crisis clínica o de seguridad donde el profesional deba coordinar asistencia en la ubicación física del paciente.
@@ -158,7 +158,7 @@ export default function Consentimiento() {
                 <h4 className="font-bold text-psicopiloto-blue-600 mt-6">3. Aspectos Económicos y Política de Cancelación</h4>
                 <ul className="list-disc list-inside space-y-2">
                     <li><strong>Condiciones de conexión:</strong> Si la videollamada falla por motivos técnicos ajenos, se intentará restablecer el contacto telefónicamente de inmediato o se acordará el reajuste del tiempo perdido.</li>
-                    <li><strong>Política estricta de cancelaciones:</strong> Las citas reservadas implican la reserva exclusiva de su tiempo profesional. Si usted cancela o modifica su cita con <strong>menos de 24 horas de antelación</strong>, o no se presenta a la sesión programada, <strong>se devengará la tarifa íntegra de la sesión (60 €)</strong> como coste de disponibilidad, salvo casos excepcionales de fuerza mayor debidamente justificados.</li>
+                    <li><strong>Política estricta de cancelaciones:</strong> Las citas reservadas implican la reserva exclusiva de su tiempo profesional. Si usted cancela o modifica su cita con <strong>menos de 24 horas de antelación</strong>, o no se presenta a la sesión programada, <strong>se devengará la tarifa íntegra de la sesión</strong> como coste de disponibilidad, salvo casos excepcionales de fuerza mayor debidamente justificados.</li>
                 </ul>
 
                 <h4 className="font-bold text-psicopiloto-blue-600 mt-6">4. Protección de Datos Personales de Categoría Especial (Salud)</h4>
@@ -270,8 +270,6 @@ export default function Consentimiento() {
 
                 {status && (
                     <div className={`mt-6 p-4 rounded-lg text-center font-medium animate-fade-in ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
-                        {status}
-                    </min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
                         {status}
                     </div>
                 )}
