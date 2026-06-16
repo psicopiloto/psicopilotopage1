@@ -1,0 +1,170 @@
+// pages/sobre-mi.js
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import { NextSeo } from "next-seo";
+import PageHeader from "../components/PageHeader";
+import AnimatedCTA from "../components/AnimatedCTA";
+import BackgroundLogo from "../components/BackgroundLogo";
+import Image from "next/image";
+import clsx from 'clsx'; 
+
+export default function SobreMi() {
+  // ✨ TRAYECTORIA REESCRITA: Narrativa humana, empática y de alta autoridad clínica
+  const fasesTrayectoria = [
+    {
+      title: "La Vocación Inicial: Entender la mente humana",
+      img: "/Facu.webp",
+      alt: "Jose Carlos Rguez. Retamar en su etapa de formación en psicología en la Universidad de Granada",
+      content: [
+        "Mi viaje comenzó en la Universidad de Granada, donde me licencié en Psicología en 2003. Desde el principio sentí la necesidad de bajar la teoría a la realidad social: pasé mis primeras prácticas acompañando a personas en procesos complejos de drogodependencia, donde aprendí el valor de la escucha limpia y el respeto absoluto por la historia de cada individuo.",
+        "Durante cuatro años, compaginé mis estudios siendo voluntario con personas mayores en fases iniciales de demencia. Utilizando la Terapia de la Reminiscencia, descubrí cómo el trabajo con las emociones y los recuerdos puede devolver la dignidad y la conexión a un sistema nervioso vulnerable. Esta etapa asentó las bases de mi sensibilidad clínica actual.",
+      ],
+    },
+    {
+      title: "La Cabina Militar: Disciplina y gestión de crisis en el aire",
+      img: "/sobre4.webp",
+      alt: "Piloto comandante militar acumulando experiencia en gestión de crisis y factores humanos",
+      content: [
+        "En 2007 mi vida dio un giro de 180 grados y entré en la Academia General del Aire. He acumulado más de 2.500 horas de vuelo como piloto comandante en misiones de alto riesgo de extinción de incendios forestales en España, Grecia y Portugal. En esa cabina, rodeado de condiciones extremas, la supervivencia dependía de dos cosas: aplicar procedimientos estrictos y mantener una calma mental absoluta cuando el cuerpo te pide entrar en pánico.",
+        "Como instructor de vuelo y simulador, y posteriormente como Jefe de Crew Resource Management (CRM), me especialicé en Factores Humanos. Estudié a fondo cómo el estrés, la fatiga y la sobrecarga cognitiva afectan a la toma de decisiones, entrenando a tripulaciones en Milán y España para gestionar la incertidumbre de forma segura.",
+      ],
+    },
+    {
+      title: "El Regreso a la Esencia: Uniendo dos mundos en Psicopiloto",
+      img: "/emdr.webp",
+      alt: "Psicólogo clínico sanitario especialista en psicoterapia del trauma y reprocesamiento EMDR",
+      content: [
+        "A pesar de la intensidad del vuelo, sabía que mi verdadera misión estaba en la tierra. En 2015 obtuve mi habilitación oficial como <strong>Psicólogo con Habilitación Sanitaria</strong> en Madrid y decidí volcar toda mi experiencia en factores humanos, gestión de crisis y liderazgo en el campo de la psicoterapia profunda.",
+        "Me especialicé en las áreas que dan una respuesta real al sufrimiento estructural: el trauma psicológico, los estilos de apego temprano y el procesamiento emocional a través del protocolo oficial <strong>EMDR</strong>. Tras la campaña de incendios de 2025 —una de las más exigentes de la historia reciente de nuestro país—, en septiembre decidí regresar definitivamente a Granada para volcarme en exclusiva en este proyecto.",
+        "<strong>PSICOPILOTO</strong> no es un nombre comercial; es la unión exacta de mis dos pasiones. En la cabina aprendí a sostener la presión; en la psicología, a sanar las tormentas internas.",
+      ],
+    },
+    {
+      title: "El Compromiso Social: Mantener los pies en la tierra",
+      img: "/voluntariado.webp",
+      alt: "Jose Carlos Rguez. Retamar realizando intervenciones terapéuticas voluntarias",
+      content: [
+        "Para mí, la psicología es un servicio que debe transformar realidades. Por eso, el voluntariado sigue siendo un pilar innegociable en mi vida. He colaborado activamente con Solidarios para el Desarrollo y, actualmente, formo parte del equipo terapéutico de Amalgama Social en Granada, atendiendo a personas que atraviesan situaciones complejas de ansiedad, duelo, trauma y desregulación emocional.",
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
+      {/* 🚀 SEO INTEGRADO: Optimizado para tu nombre de autoridad, EMDR y Granada */}
+      <NextSeo
+        title="Sobre Mí | Jose Carlos Rguez. Retamar"
+        description="Conoce a Jose Carlos Rguez. Retamar, Psicólogo Sanitario y ex-piloto comandante militar. Especializado en terapia integradora, trauma y reprocesamiento EMDR en Granada."
+        canonical="https://psicopiloto.com/sobre-mi"
+        openGraph={{
+          title: "Jose Carlos Rguez. Retamar | Psicólogo Sanitario y Especialista EMDR",
+          description: "De la gestión de crisis en cabina militar a la psicoterapia integradora. Descubre cómo aplico el rigor y el protocolo EMDR para sanar el trauma en Granada.",
+          images: [{ url: "https://www.psicopiloto.com/foto-copao.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rguez. Retamar, fundador de Psicopiloto" }],
+        }}
+      />
+      
+      <BackgroundLogo />
+      <Nav />
+
+      <PageHeader
+        title="Jose Carlos Rguez. Retamar"
+        subtitle="Psicólogo con Habilitación Sanitaria (Col. AO14457). Una trayectoria diseñada para ayudarte a recuperar el control de tu vida."
+        backgroundImage="/header-sobremi.webp"
+      />
+
+      <main className="flex-grow py-16 relative z-10">
+        <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/40 p-8 rounded-2xl shadow-lg">
+          
+          {/* INTRODUCCIÓN DE IMPACTO (STORYTELLING) */}
+          <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl font-bold mb-4 text-psicopiloto-blue-600">¿Por qué un piloto militar decide bajar a la tierra a escuchar el dolor humano?</h2>
+              <p className="text-psicopiloto-gray-700 text-base leading-relaxed">
+                Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong>. Durante casi dos décadas operé en entornos de alta exigencia, gobernando aviones en situaciones críticas de emergencia. Esa experiencia me enseñó algo que no se estudia en las facultades: que las peores turbulencias, las tormentas más devastadoras y los incendios más difíciles de apagar no ocurren ahí arriba, sino **dentro del mundo interno de las personas**.
+              </p>
+              <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4">
+                En una cabina de vuelo aprendes a analizar los sistemas de alarma sin dejarte arrastrar por el pánico. Comprendes que un fallo no se soluciona con parches, sino aplicando un **procedimiento estructurado, riguroso y transparente**. En el ámbito clínico aplico exactamente la misma filosofía. Entiendo el sufrimiento, los síntomas de la ansiedad o los bloqueos no como debilidades, sino como alarmas de tu sistema nervioso que han quedado encendidas tras una experiencia difícil o un trauma pasado. Mi labor es darte el espacio seguro y el método clínico para que aprendas a apagarlas.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/jc-psicopiloto.webp"
+                alt="Retrato profesional de Jose Carlos Rguez. Retamar, Psicólogo con Habilitación Sanitaria especialista en EMDR"
+                width={400}
+                height={500}
+                className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+              />
+            </div>
+          </section>
+
+          {/* BUCLE DINÁMICO DE LA TRAYECTORIA (CON CORRECCIÓN DE ORDEN RESPONSIVE) */}
+          {fasesTrayectoria.map((fase, i) => (
+            <section
+              key={i}
+              className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+              aria-labelledby={`fase-title-${i}`}
+            >
+              {/* BLOQUE DE TEXTO */}
+              <div 
+                className={clsx("order-1", {
+                    "md:order-2": i % 2 === 0, // Páginas pares: texto a la derecha en desktop
+                    "md:order-1": i % 2 !== 0, // Páginas impares: texto a la izquierda en desktop
+                })}
+              >
+                <h3 id={`fase-title-${i}`} className="text-2xl font-bold mb-4 text-psicopiloto-green-600">
+                  {fase.title}
+                </h3>
+                {fase.content.map((p, idx) => (
+                  <p
+                    key={idx}
+                    className="mt-4 text-psicopiloto-gray-700 text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: p }}
+                  />
+                ))}
+              </div>
+              
+              {/* BLOQUE DE IMAGEN */}
+              <div 
+                className={clsx("order-2", {
+                    "md:order-1": i % 2 === 0, // Páginas pares: imagen a la izquierda en desktop
+                    "md:order-2": i % 2 !== 0, // Páginas impares: imagen a la derecha en desktop
+                })}
+              >
+                <Image
+                  src={fase.img}
+                  alt={fase.alt}
+                  width={400}
+                  height={300}
+                  className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+                />
+              </div>
+            </section>
+          ))}
+
+          {/* SECCIÓN DE ENFOQUE CLÍNICO REAL */}
+          <section className="mb-20" aria-labelledby="hoy-psicopiloto-title">
+            <h2 id="hoy-psicopiloto-title" className="text-2xl font-bold mb-4 text-psicopiloto-blue-600">
+              Mi Compromiso Clínico en Consulta
+            </h2>
+            <p className="text-psicopiloto-gray-700 text-base leading-relaxed">
+              En la consulta de <strong>Psicopiloto</strong> no vas a encontrar teorías abstractas ni consejos motivacionales genéricos. Trabajo desde un **enfoque clínico integrador y riguroso**, lo que significa que pongo a tu disposición las mejores herramientas de la psicología científica adaptadas estrictamente a tu ritmo y a tu historia de desarrollo.
+            </p>
+            <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4">
+              Mi formación y mi práctica diaria se centran en el abordaje del trauma psicológico y la reparación de los estilos de apego disfuncionales. Para conseguirlo, utilizo de forma preferente el protocolo oficial de **Reprocesamiento EMDR**, una herramienta neurobiológica de alta eficacia que permite al cerebro asimilar y vaciar la carga emocional de los recuerdos dolorosos. Si en la cabina de un avión entrenábamos de forma metódica para reaccionar ante lo inesperado, en terapia te ofrezco esa misma **estructura, predictibilidad y seguridad** para que dejes de vivir a la defensiva, desactives la ansiedad crónica y recuperes, por fin, el mando absoluto de tu vida.
+            </p>
+            <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4 font-semibold text-psicopiloto-green-600">
+              Porque todos merecemos volar con una base segura. También en nuestro camino personal.
+            </p>
+          </section>
+
+          {/* LLAMADA A LA ACCIÓN */}
+          <div className="mt-12 text-center">
+            <AnimatedCTA href="/contacto" text="Reserva tu sesión de valoración gratuita" color="green" />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
