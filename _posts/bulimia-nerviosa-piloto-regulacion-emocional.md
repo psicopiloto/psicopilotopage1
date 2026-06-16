@@ -1,5 +1,4 @@
 ---
-# Metadatos del YAML Front Matter - Corregidos para evitar errores de sintaxis
 title: "Bulimia Nerviosa: Navegando el Ciclo Atracón-Compensación" 
 date: "2025-11-12" 
 excerpt: "Comprende la Bulimia Nerviosa, un TCA marcado por atracones y comportamientos compensatorios. Analizamos el apego inseguro y la regulación emocional como claves."
@@ -26,7 +25,7 @@ Un criterio esencial que influye en el mantenimiento de la BN es que la **autoev
 
 ---
 
-## Atracones y Comportamientos Compensatorios: El ciclo de la BN
+## Atracones and Comportamientos Compensatorios: El ciclo de la BN
 Desde la perspectiva de la Terapia Breve, el patrón de la bulimia nerviosa se entiende como un **círculo vicioso** de intento de restricción que lleva al atracón, y este, a su vez, se "soluciona" con el vómito o la purga. Entonces, el vómito o el comportamiento compensatorio permite que el siguiente atracón tenga lugar, perpetuando el ciclo.
 
 En este modelo, el síntoma cumple una función importante en la vida de la persona, ya que puede ser una forma de:
@@ -80,7 +79,7 @@ El déficit en la **conciencia emocional** al inicio del trastorno, y su agravam
 Desde la perspectiva de la psicopatología integradora, es fundamental mirar lo que hay debajo del trastorno para entender lo que lo mantiene y su origen. La **imagen corporal** se sitúa en el epicentro de los TCA.
 
 ### La Autoevaluación Influida por la Imagen Corporal
-La imagen corporal es la representación mental que cada uno construye de su propio cuerpo, incluyendo la percepción, la evaluación del tamaño, y el aspecto emocional asociado a cómo nos sentimos con esa imagen. Una característica central de los TCA es la alteración de la imagen corporal, donde la autoevaluación está exageradamente influida por el peso y la silueta.
+La imagen corporal es la representation mental que cada uno construye de su propio cuerpo, incluyendo la percepción, la evaluación del tamaño, y el aspecto emocional asociado a cómo nos sentimos con esa imagen. Una característica central de los TCA es la alteración de la imagen corporal, donde la autoevaluación está exageradamente influida por el peso y la silueta.
 La insatisfacción profunda surge de una **distorsión perceptiva** y de unos objetivos irreales de tamaño y peso. El yo es comparado constantemente con criterios sociales y cánones estéticos familiares. En la BN, la parte del **"yo rechazado"** contribuye a desarrollar e intensificar el circuito de restricción, atracón y vómito.
 El yo rechazado es la imagen de lo que la persona no quiere volver a ser nunca más. Esta parte disociativa, que a menudo se fija en una imagen corporal pasada que avergüenza o preocupa, se interpone entre la imagen real y la imagen que se ve en el espejo, impidiendo la objetividad. Yo creo que la distorsión de la imagen corporal en BN es una **defensa disociativa** que busca evitar lo que el cuerpo transmite, siente o expresa.
 En la BN, la persona refiere mucho sufrimiento y agresión hacia el cuerpo. Esto, en el contexto de TCA más amplios, se relaciona con que el mayor miedo es no tener una apariencia física concreta (normalmente delgada) y que el bienestar emocional dependa de lo comido o de la talla de ropa.
@@ -89,7 +88,7 @@ En la BN, la persona refiere mucho sufrimiento y agresión hacia el cuerpo. Esto
 
 ## Consecuencias Más Allá del Peso: Impulsividad y Autolesión
 La Bulimia Nerviosa, al igual que otros TCA, a menudo se solapa con otras dificultades como el **trauma complejo** y la **disociación estructural de la personalidad**. Los pacientes con BN a menudo presentan conductas de **automutilación e impulsividad**, que son características de este trastorno. La impulsividad, que incluye los atracones de comida, es también un criterio diagnóstico en trastornos como el Trastorno Límite de la Personalidad (TLP).
-La **Terapia Dialéctico-Conductual (DBT)**, originalmente desarrollada para el TLP, ha demostrado ser eficaz en el tratamiento de la bulimia. Esto tiene sentido, ya que la DBT postula que el principal problema subyacente es la **desregulación emocional**, la cual es el resultado de la interacción entre una vulnerabilidad biológica y un ambiente invalidante. Las conductas problemáticas, como los atracones o las autolesiones, pueden verse como una consecuencia de esta desregulación o como un intento de regular la emoción desregulada.
+La **Terapia Dialéctico-Conductual (DBT)**, originalmente desarrollada para el TLP, ha demostrado ser eficaz en el tratamiento de la bulimia. Esto tiene sentido, ya que la DBT postula que el principal problema subyecente es la **desregulación emocional**, la cual es el resultado de la interacción entre una vulnerabilidad biológica y un ambiente invalidante. Las conductas problemáticas, como los atracones o las autolesiones, pueden verse como una consecuencia de esta desregulación o como un intento de regular la emoción desregulada.
 Por eso, al abordar la BN no podemos limitarnos a los síntomas alimentarios, sino que debemos explorar la función que cumplen estas conductas en el manejo de emociones intensas o como respuesta a la hiper-reflexividad y la conciencia intensificada de aspectos subjetivos que resultan patógenos.
 
 ---
@@ -125,22 +124,22 @@ La Bulimia Nerviosa es un desafío de alto riesgo que requiere una mirada integr
 Si te parece que este enfoque resonó contigo y buscas un abordaje terapéutico que integre el trauma, el apego y los procesos transdiagnósticos, te invito a explorar más sobre mi perspectiva.
 
 <div class="text-center mt-12 space-y-4">
-    <p class="text-xl font-semibold text-psicopiloto-blue-700">Aprende más sobre mi experiencia integradora y cómo aplicamos estos modelos en la práctica en nuestra página de autoridad:</p>
-    <a href="/sobre-mi" class="inline-block px-8 py-3 text-lg font-bold text-white bg-psicopiloto-green-600 rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition duration-300">
-        Autoridad: ¿Quién es José Carlos?
-    </a>
+    <p class="text-xl font-semibold text-psicopiloto-blue-700">Aprende más sobre mi trayectoria y cómo aplicamos estos modelos integradores en consulta:</p>
+    <a href="/sobre-mi" class="inline-block px-8 py-3 text-lg font-bold text-white bg-psicopiloto-green-600 rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition duration-300">
+        Conoce más sobre mi enfoque terapéutico
+    </a>
 
-    <div class="pt-6">
-        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si sientes que la Bulimia Nerviosa está controlando tu vida y necesitas ayuda profesional:</p>
-        <a href="/contacto" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-blue-600 rounded-full shadow-lg hover:bg-psicopiloto-blue-700 transition duration-300">
-            Conversión 1: Contacta y empieza tu tratamiento
-        </a>
-    </div>
-    
-    <div class="pt-6">
-        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si necesitas orientación sobre el proceso terapéutico integrador:</p>
-        <a href="/servicios" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-honey-500 rounded-full shadow-lg hover:bg-psicopiloto-honey-600 transition duration-300">
-            Conversión 2: Servicios de Bulimia Nerviosa
-        </a>
-    </div>
+    <div class="pt-6">
+        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si sientes que la Bulimia Nerviosa está controlando tu vida y deseas iniciar un proceso de cambio:</p>
+        <a href="/contacto" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-blue-600 rounded-full shadow-lg hover:bg-psicopiloto-blue-700 transition duration-300">
+            Solicita una sesión de valoración gratuita
+        </a>
+    </div>
+    
+    <div class="pt-6">
+        <p class="text-xl font-semibold text-psicopiloto-blue-700">Si necesitas orientación detallada sobre el tipo de tratamiento o tarifas:</p>
+        <a href="/servicios" class="inline-block px-8 py-3 mt-2 text-lg font-bold text-white bg-psicopiloto-honey-500 rounded-full shadow-lg hover:bg-psicopiloto-honey-600 transition duration-300">
+            Ver servicios y áreas de intervención
+        </a>
+    </div>
 </div>
