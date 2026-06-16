@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
-import BackgroundLogo from "../components/BackgroundLogo"; // 🚀 CORREGIDO: Eliminado el "=" sobrante que causaba el fallo de compilación
+import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
 // ========================================================================
@@ -33,7 +33,7 @@ const timeAgo = (dateString) => {
 };
 
 // ========================================================================
-// DATOS DE TESTIMONIOS (Actualizados con Luna)
+// DATOS DE TESTIMONIOS (CON LUNA PERFECTAMENTE INTEGRADA)
 // ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
@@ -46,7 +46,7 @@ const testimonialsData = [
     stars: 5,
     author: "Luna",
     date: getPastDate(63), // 🚀 9 semanas x 7 días = 63 días atrás
-    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave en mi proceso. Estoy muy agradecido/a por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
+    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave in mi proceso. Estoy muy agradecido/a por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
   },
   {
     stars: 5,
@@ -283,7 +283,7 @@ export default function Home() {
 
       <main className="flex-grow pt-16 relative z-10">
         <PageHeader
-          title="Toma los mandos de tu bienestar emotional"
+          title="Toma los mandos de tu bienestar emocional"
           subtitle="Consulta sanitaria en Granada especializada en Reprocesamiento EMDR y Trauma. Un espacio estructurado para procesar el pasado y recuperar el control de tu presente."
           backgroundImage="/fotoinicio1.webp"
           cta={{ href: "/contacto", text: "Inicia tu plan de vuelo", color: "green" }}
