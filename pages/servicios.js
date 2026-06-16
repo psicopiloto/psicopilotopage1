@@ -51,7 +51,8 @@ export default function Servicios() {
     },
     {
       title: "Depresión y Estado de Ánimo",
-      desc: "La apatía, la tristeza persistentente y la falta de motor vital te hacen sentir que eres un mero espectador de tu propia vida. Diseñaremos un <strong>plan de acción gradual y realista</strong> para recuperar el impulso, reconectar con tus valores y encontrar el sentido y la motivación necesarios para reactivar tu día a día.",
+      /* 🚀 CORRECCIÓN: Eliminada errata de tristeza persistentente */
+      desc: "La apatía, la tristeza permanente y la falta de motor vital te hacen sentir que eres un mero espectador de tu propia vida. Diseñaremos un <strong>plan de acción gradual y realista</strong> para recuperar el impulso, reconectar con tus valores y encontrar el sentido y la motivación necesarios para reactivar tu día a día.",
       cta: "Recupera tu dirección vital",
       icon: <FaSadTear aria-hidden="true" />,
     },
@@ -95,7 +96,7 @@ export default function Servicios() {
         openGraph={{
           url: "https://psicopiloto.com/servicios",
           title: "Servicios de Psicología Integradora y EMDR | Psicopiloto®",
-          description: "Psicoterapia especializada para adultos y parejas. Enfoque centrado en el trauma y protocolo oficial EMDR en Granada.",
+          description: "Psicoterapia specialized para adultos y parejas. Enfoque centrado en el trauma y protocolo oficial EMDR en Granada.",
           images: [
             {
               url: "https://www.psicopiloto.com/header-servicios.webp",
