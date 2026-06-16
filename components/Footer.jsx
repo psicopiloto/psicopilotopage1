@@ -7,11 +7,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-psicopiloto-gray-700 text-white border-t border-psicopiloto-gray-600 font-sans relative z-30">
-      {/* 🚀 Sección Principal del Footer */}
       <div className="container mx-auto px-6 py-12 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          {/* Columna 1: Identidad y Acreditación Sanitaria (E-E-A-T de Google) */}
+          {/* Columna 1: Identidad y Acreditación Sanitaria (E-E-A-T) */}
           <div className="flex flex-col space-y-4">
             <span className="text-xl font-bold tracking-wide text-white">
               Psicopiloto<span className="text-psicopiloto-green-400">.</span>
@@ -29,37 +28,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Columna 2: Mapa de Vuelo (Tratamientos) */}
+          {/* Columna 2: Áreas de Consulta */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-psicopiloto-green-400 mb-4">
               Áreas de Consulta
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">
-                  Trauma y Reprocesamiento EMDR
-                </Link>
-              </li>
-              <li>
-                <Link href="/ansiedad" className="text-gray-300 hover:text-white transition-colors">
-                  Ansiedad, Estrés y Pánico
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">
-                  Gestión de la Ira y Frustración
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">
-                  Terapia y Crisis de Pareja
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">
-                  Factores Humanos y Empresas
-                </Link>
-              </li>
+              <li><Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">Trauma y Reprocesamiento EMDR</Link></li>
+              <li><Link href="/ansiedad" className="text-gray-300 hover:text-white transition-colors">Ansiedad, Estrés y Pánico</Link></li>
+              <li><Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">Gestión de la Ira y Frustración</Link></li>
+              <li><Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">Terapia y Crisis de Pareja</Link></li>
+              <li><Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">Factores Humanos y Empresas</Link></li>
             </ul>
           </div>
 
@@ -69,28 +48,11 @@ export default function Footer() {
               El Proyecto
             </h4>
             <ul className="space-y-2.5 text-sm">
+              <li><Link href="/sobre-mi" className="text-gray-300 hover:text-white transition-colors">Sobre José Carlos</Link></li>
+              <li><Link href="/que-es-psicopiloto" className="text-gray-300 hover:text-white transition-colors">¿Qué es Psicopiloto?</Link></li>
+              <li><Link href="/contacto" className="text-gray-300 hover:text-white transition-colors">Agenda de Citas y Tarifas</Link></li>
               <li>
-                <Link href="/sobre-mi" className="text-gray-300 hover:text-white transition-colors">
-                  Sobre José Carlos
-                </Link>
-              </li>
-              <li>
-                <Link href="/que-es-psicopiloto" className="text-gray-300 hover:text-white transition-colors">
-                  ¿Qué es Psicopiloto?
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacto" className="text-gray-300 hover:text-white transition-colors">
-                  Agenda de Citas y Tarifas
-                </Link>
-              </li>
-              <li>
-                <a 
-                  href="https://share.google/7GKlTrF0YTfa8pGSq" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <a href="https://share.google/7GKlTrF0YTfa8pGSq" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                   Opiniones de Pacientes ★★★★★
                 </a>
               </li>
@@ -111,10 +73,7 @@ export default function Footer() {
                 <FaEnvelope className="text-psicopiloto-green-400 flex-shrink-0" />
                 <a href="mailto:info@psicopiloto.com" className="hover:text-white transition-colors">info@psicopiloto.com</a>
               </li>
-              <li className="flex items-center gap-2">
-                <FaBrowse className="hidden" /> {/* Espaciador estético */}
-                <span className="text-xs text-gray-400">Atención bajo cita previa.</span>
-              </li>
+              <li className="text-xs text-gray-400 pt-1">Atención bajo cita previa.</li>
             </ul>
             <div className="mt-4 pt-3 border-t border-psicopiloto-gray-600">
               <a
@@ -131,7 +90,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 🚀 Franja Inferior: Legales y Copyright (RGPD Compliant) */}
+      {/* Franja Inferior: Legales y Copyright (RGPD Compliant) */}
       <div className="bg-psicopiloto-gray-800 py-6 border-t border-psicopiloto-gray-600 text-xs text-gray-400">
         <div className="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           
@@ -142,6 +101,7 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* 🚀 CORRECCIÓN: Consentimiento eliminado de los enlaces públicos */}
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-medium">
             <Link href="/aviso-legal" className="hover:text-white transition-colors underline decoration-gray-600 hover:decoration-white">
               Aviso Legal y Privacidad
@@ -149,10 +109,6 @@ export default function Footer() {
             <span className="text-gray-600 hidden md:inline">•</span>
             <Link href="/politica-cookies" className="hover:text-white transition-colors underline decoration-gray-600 hover:decoration-white">
               Política de Cookies
-            </Link>
-            <span className="text-gray-600 hidden md:inline">•</span>
-            <Link href="/consentimiento" className="hover:text-white transition-colors underline decoration-gray-600 hover:decoration-white">
-              Consentimiento Informado
             </Link>
           </div>
 
