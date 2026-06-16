@@ -1,8 +1,8 @@
 // next-seo.config.js
 export default {
-  // 🚀 TÍTULO OPTIMIZADO: Funciona como base perfecta para Google, incluyendo tus especialidades y Granada
+  // 🚀 TÍTULO BLINDADO LEGALMENTE: Usamos tu denominación exacta oficial
   titleTemplate: "%s | Psicopiloto® Granada",
-  title: "Psicólogo Especialista en Trauma y EMDR Online y Presencial",
+  title: "Psicólogo con Habilitación Sanitaria Especialista en Trauma y EMDR",
   description:
     "Acompaño tu viaje hacia el bienestar con psicoterapia integradora, EMDR y enfoque basado en factores humanos. Recupera el control y la calma en tu vida.",
 
