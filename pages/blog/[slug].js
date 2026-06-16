@@ -1,38 +1,32 @@
 // pages/blog/[slug].js
-
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import { NextSeo } from 'next-seo';
 import BackgroundLogo from '../../components/BackgroundLogo';
 import AnimatedCTA from '../../components/AnimatedCTA';
-import parse from 'html-react-parser'; 
 import { getPostData, getAllPostSlugs } from '../../lib/posts';
 
-// Componente para renderizar el HTML del Markdown, aplicando estilos Tailwind 'prose'
+// 🚀 CORRECCIÓN: Renderizado nativo y seguro con dangerouslySetInnerHTML (elimina html-react-parser y fallos de compilación)
 const ArticleContent = ({ contentHtml }) => (
-  // El uso de 'prose' de Tailwind aplica automáticamente estilos de tipografía a h1, p, ul, ol, etc.
-  <div className="prose prose-lg max-w-none text-psicopiloto-gray-700 mx-auto">
-    {parse(contentHtml)}
-  </div>
+  <div 
+    className="prose prose-lg max-w-none text-psicopiloto-gray-700 mx-auto"
+    dangerouslySetInnerHTML={{ __html: contentHtml }}
+  />
 );
 
 export default function Post({ postData }) {
-  // Desestructuración de los metadatos y el contenido (incluyendo las nuevas propiedades de fecha)
   const { id, title, excerpt, dateDisplay, dateISO, author, contentHtml } = postData;
-
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title={`${title} | Blog Psicopiloto`}
         description={excerpt}
-        // Canonical URL crucial para el SEO
         canonical={`https://psicopiloto.com/blog/${id}`} 
         openGraph={{
           title: title,
           description: excerpt,
           type: 'article',
           article: {
-            // ✨ CORRECCIÓN: Usa el string ISO pre-formateado para evitar RangeError
             publishedTime: dateISO, 
             author: author,
           },
@@ -48,7 +42,6 @@ export default function Post({ postData }) {
               {title}
             </h1>
             <p className="text-sm text-psicopiloto-gray-500 font-medium">
-              {/* ✨ CORRECCIÓN: Usa la fecha formateada para mostrar */}
               {dateDisplay} &middot; Por {author}
             </p>
             <div className="w-16 h-1 bg-psicopiloto-green-500 mx-auto mt-4 rounded"></div>
@@ -70,35 +63,25 @@ export default function Post({ postData }) {
   );
 }
 
-// Next.js: Generar los paths dinámicos (SSG)
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs(); 
+  const paths = getAllPostSlugs();
   return {
     paths,
     fallback: false, 
   };
 }
 
-// Next.js: Obtener los datos del post (SSG)
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug);
-  
-  // ===================================================================
-  // ✨ CORRECCIÓN CRÍTICA: Manejo seguro de la fecha para evitar RangeError
-  // ===================================================================
-  
   const dateObj = new Date(postData.date);
-
   let dateDisplay;
   let dateISO;
 
   if (isNaN(dateObj.getTime())) {
-    // Si la fecha no es válida, usamos la fecha actual o una fecha segura de reserva
     const fallbackDate = new Date();
     dateDisplay = fallbackDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
     dateISO = fallbackDate.toISOString();
   } else {
-    // Si la fecha es válida, la formateamos
     dateDisplay = dateObj.toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
@@ -111,8 +94,8 @@ export async function getStaticProps({ params }) {
     props: {
       postData: {
           ...postData,
-          dateDisplay, // Fecha legible para el usuario
-          dateISO,     // Fecha ISO para metadatos (crucial)
+          dateDisplay, 
+          dateISO,     
       },
     },
   };
