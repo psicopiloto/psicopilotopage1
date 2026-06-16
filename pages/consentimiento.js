@@ -1,12 +1,10 @@
 // pages/consentimiento.js
-
 import { useState, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import SignatureCanvas from "react-signature-canvas";
 
-// --- CONFIGURACIÓN DE DATOS DEL PROFESIONAL ---
 const PROFESIONAL = {
   nombre: "Jose Carlos Rguez. Retamar",
   marca: "Psicopiloto",
@@ -59,13 +57,12 @@ export default function Consentimiento() {
     const dataToSend = {
       ...form,
       documento: "Consentimiento Informado Terapia Online",
-      _subject: `Nuevo Consentimiento Firmado: ${form.nombre}`,
-      _gotcha: "", 
       firma_codigo: signatureData 
     };
 
     try {
-      const res = await fetch("https://formspree.io/f/xzzjybkg", { 
+      // 🚀 CAMBIO CRÍTICO: Dejamos de usar Formspree y apuntamos a tu propia API con Resend
+      const res = await fetch("/api/contact", { 
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -77,7 +74,7 @@ export default function Consentimiento() {
       const data = await res.json();
 
       if (res.ok) {
-        setStatus("✅ Documento enviado y procesado correctamente. Muchas gracias.");
+        setStatus("✅ Documento enviado y procesado correctamente a través de Resend. Muchas gracias.");
         setForm({ 
             nombre: "", email: "", dni: "", telefono: "", ciudad: "", pais: "España", 
             contacto_emergencia: "",
@@ -86,11 +83,9 @@ export default function Consentimiento() {
         setAcepto(false);
         sigCanvas.current.clear();
       } else {
-        console.error("Error Formspree:", data);
-        setStatus("❌ Hubo un error al enviar. Por favor, inténtalo de nuevo.");
+        setStatus(`❌ Error: ${data.error || "Hubo un problema al procesar el documento."}`);
       }
     } catch (err) {
-      console.error("Error Red:", err);
       setStatus("❌ Error de red. Comprueba tu conexión.");
     }
   };
@@ -126,16 +121,17 @@ export default function Consentimiento() {
                 
                 <p><strong>Manifiesto que:</strong></p>
                 <p>
-                    He recibido de <strong>{PROFESIONAL.nombre} ({PROFESIONAL.marca})</strong>, toda la información necesaria, de forma clara, comprensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios para la evaluación e intervención psicológica que solicito. Se aplica al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico y normas de deontología profesional de la Psicología.
+                    He recibido de <strong>{PROFESIONAL.nombre} ({PROFESIONAL.marca})</strong>, toda la información necesaria, de forma clara, comprehensible y satisfactoria sobre la naturaleza y propósito de los objetivos, procedimientos, temporalidad y honorarios para la evaluación e intervención psicológica que solicito. Se aplica al efecto la obligación de confidencialidad y el resto de los preceptos que rigen en el Código Deontológico y normas de deontología profesional de la Psicología.
                 </p>
 
                 <h4 className="font-bold text-psicopiloto-blue-600 mt-6">1. Características de la Terapia Online y Gestión de Crisis</h4>
                 <ul className="list-disc list-inside space-y-2">
                     <li>
-                        <strong>Diferencias con la presencialidad:</strong> La terapia a distancia difiere de las sesiones presenciales. El contacto puede ser menos cercano y la captación de señales no verbales más difícil. Por ello, se evaluará constantemente si esta modalid es adecuada para su caso.
+                        {/* 🚀 EXPERTO CORRECCIÓN: "modalid" subsanado por "modalidad" */}
+                        <strong>Diferencias con la presencialidad:</strong> La terapia a distancia difiere de las sesiones presenciales. El contacto puede ser menos cercano y la captación de señales no verbales más difícil. Por ello, se evaluará constantemente si esta modalidad es adecuada para su caso.
                     </li>
                     <li>
-                        <strong>Situaciones de crisis y emergencias:</strong> Esta modalidad <strong>no es un servicio de urgencias 24 horas</strong> y no es apropiada si está experimentando una crisis aguda, pérdida de realidad o ideación autolítica activa. El paciente se compromete a facilitar un teléfono de contacto de un familiar o allegado directo para situaciones excepcionales de crisis clínica o de seguridad donde el profesional deba coordinar asistencia en la ubicación física del paciente.
+                        <strong>Situaciones de crisis y emergencias:</strong> Esta misiones <strong>no es un servicio de urgencias 24 horas</strong> y no es apropiada si está experimentando una crisis aguda, pérdida de realidad o ideación autolítica activa. El paciente se compromete a facilitar un teléfono de contacto de un familiar o allegado directo para situaciones excepcionales de crisis clínica o de seguridad donde el profesional deba coordinar asistencia en la ubicación física del paciente.
                     </li>
                     <li>
                         <strong>Plataforma Segura:</strong> Las sesiones se realizarán a través de entornos digitales autorizados que garantizan el cifrado de extremo a extremo, cumpliendo estrictamente con los estándares europeos de confidencialidad y secreto médico.
@@ -185,7 +181,6 @@ export default function Consentimiento() {
 
             <hr className="border-gray-200 mb-8" />
 
-            {/* --- FORMULARIO DE DATOS --- */}
             <form onSubmit={handleSubmit} className="space-y-6">
                 <h3 className="text-2xl font-bold text-center text-psicopiloto-blue-600 mb-6">Sus Datos y Firma</h3>
                 
@@ -220,7 +215,6 @@ export default function Consentimiento() {
                     </div>
                 </div>
 
-                {/* --- CANVAS DE FIRMA --- */}
                 <div className="mt-10 bg-gray-50 p-6 rounded-xl border border-gray-200">
                     <label className="block text-lg font-bold mb-2 text-center text-psicopiloto-gray-700">Firma Digital</label>
                     <p className="text-sm text-gray-500 mb-4 text-center">Utiliza el ratón o el dedo para firmar dentro del recuadro blanco.</p>
@@ -235,41 +229,27 @@ export default function Consentimiento() {
                                 }}
                             />
                         </div>
-                        <button 
-                            onClick={clearSignature}
-                            className="mt-2 text-xs text-red-600 hover:text-red-800 underline w-full text-center"
-                        >
+                        <button onClick={clearSignature} className="mt-2 text-xs text-red-600 hover:text-red-800 underline w-full text-center">
                             Borrar y firmar de nuevo
                         </button>
                     </div>
                 </div>
 
-                {/* --- CHECKBOX ACEPTACIÓN --- */}
                 <div className="flex items-start gap-3 mt-8 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-                    <input 
-                        id="acepto" 
-                        type="checkbox" 
-                        checked={acepto}
-                        onChange={(e) => setAcepto(e.target.checked)}
-                        className="mt-1 w-5 h-5 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-500 cursor-pointer" 
-                    />
+                    <input id="acepto" type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} className="mt-1 w-5 h-5 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-500 cursor-pointer" />
                     <label htmlFor="acepto" className="text-sm text-gray-700 cursor-pointer select-none">
                         He leído este consentimiento informado, entiendo las condiciones económicas y de cancelación de la terapia online y <strong>otorgo mi consentimiento explícito para el tratamiento de mis datos de salud</strong>.
                     </label>
                 </div>
 
                 <div className="text-center pt-6">
-                    <button
-                        type="submit"
-                        disabled={status.startsWith("Enviando")}
-                        className="w-full md:w-auto px-10 py-4 bg-psicopiloto-green-600 text-white text-lg font-bold rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
+                    <button type="submit" disabled={status.startsWith("Enviando")} className="w-full md:w-auto px-10 py-4 bg-psicopiloto-green-600 text-white text-lg font-bold rounded-full shadow-lg hover:bg-psicopiloto-green-700 transition transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed">
                         {status.startsWith("Enviando") ? "Procesando..." : "Firmar y Enviar Consentimiento"}
                     </button>
                 </div>
 
                 {status && (
-                    <div className={`mt-6 p-4 rounded-lg text-center font-medium animate-fade-in ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
+                    <div className={`mt-6 p-4 rounded-lg text-center font-medium ${status.startsWith("✅") ? "bg-green-100 text-green-800 border border-green-200" : "bg-red-100 text-red-800 border border-red-200"}`}>
                         {status}
                     </div>
                 )}
