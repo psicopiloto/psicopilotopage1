@@ -46,7 +46,7 @@ const testimonialsData = [
     stars: 5,
     author: "Luna",
     date: getPastDate(63), // 🚀 9 semanas x 7 días = 63 días atrás
-    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave in mi proceso. Estoy muy agradecido/a por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
+    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave in mi proceso. Estoy muy agradecida por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
   },
   {
     stars: 5,
