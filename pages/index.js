@@ -9,14 +9,10 @@ import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
-// ========================================================================
-// FUNCIÓN AUXILIAR: Calcular "Hace cuánto tiempo"
-// ========================================================================
 const timeAgo = (dateString) => {
   const now = new Date();
   const past = new Date(dateString);
   const diffInSeconds = Math.floor((now - past) / 1000);
-
   const days = Math.floor(diffInSeconds / (3600 * 24));
   const weeks = Math.floor(days / 7);
   const months = Math.floor(days / 30);
@@ -33,9 +29,6 @@ const timeAgo = (dateString) => {
   return `Hace ${years} años`;
 };
 
-// ========================================================================
-// DATOS DE TESTIMONIOS (Se mantienen intactos)
-// ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
   d.setDate(d.getDate() - daysAgo);
@@ -85,13 +78,9 @@ const avatarColors = [
   "bg-[#a142f4]", "bg-[#d93025]", "bg-[#1a73e8]", "bg-[#1e8e3e]", "bg-[#f9ab00]", "bg-[#e37400]"
 ];
 
-// ========================================================================
-// COMPONENTE TARJETA DE RESEÑA
-// ========================================================================
 const ReviewCard = ({ item, avatarColorClass }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeAgoText = timeAgo(item.date);
-  
   const CHAR_LIMIT = 150; 
   const shouldTruncate = item.text.length > CHAR_LIMIT;
 
@@ -142,9 +131,6 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 };
 
-// ========================================================================
-// COMPONENTE CARRUSEL (Se mantiene intacto)
-// ========================================================================
 const TestimonialCarousel = ({ data }) => {
   const originalLength = data.length;
   const extendedData = useMemo(() => [...data, ...data, ...data, ...data], [data]);
@@ -251,9 +237,6 @@ const TestimonialCarousel = ({ data }) => {
   );
 };
 
-// ========================================================================
-// PÁGINA PRINCIPAL (ENFOQUE ABSOLUTO EN TRAUMA Y EMDR)
-// ========================================================================
 export default function Home() {
   const googleReviewsLink = "https://share.google/7GKlTrF0YTfa8pGSq";
 
@@ -265,7 +248,6 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
 
-      {/* 🚀 SEO INTEGRADO CON FOCO EN EMDR Y GRANADA */}
       <NextSeo
         title="Especialista en Trauma y Reprocesamiento EMDR"
         description="Consulta de psicología online y presencial en Granada. Jose Carlos Rguez. es especialista en psicoterapia del trauma y reprocesamiento EMDR para superar bloqueos y ansiedad."
@@ -288,22 +270,19 @@ export default function Home() {
       <Nav />
 
       <main className="flex-grow pt-16 relative z-10">
-        {/* ENCABEZADO: REFUERZO DE EMDR DESDE LA PRIMERA LÍNEA */}
         <PageHeader
           title="Toma los mandos de tu bienestar emocional"
-          subtitle="Consulta de psicología integradora y clínica en Granada especializada en Reprocesamiento EMDR y Trauma. Un espacio estructurado para procesar el pasado y recuperar el control de tu presente."
+          subtitle="Consulta sanitaria en Granada especializada en Reprocesamiento EMDR y Trauma. Un espacio estructurado para procesar el pasado y recuperar el control de tu presente."
           backgroundImage="/fotoinicio1.webp"
           cta={{ href: "/contacto", text: "Inicia tu plan de vuelo", color: "green" }}
         />
 
-        {/* SECCIÓN PRINCIPAL: ¿TE SIENTES ASÍ? (EMDR LIDERANDO LA LISTA) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-bold mb-4 text-psicopiloto-blue-600">¿Sientes que el pasado o la alerta bloquean tu rumbo?</h2>
-            <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">Cuando sufrimos un impacto emocional o vivimos bajo estrés continuado, nuestro sistema nervioso se congestiona. Te acompaño a desbloquearlo con un método clínico claro.</p>
+            <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">Cuando sufrimos un impacto emocional o vivimos bajo estrés continuado, nuestro sistema nervioso se congestiona. Te acompaño a desbloquearlo con un método claro y profesional.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               
-              {/* ⚡ PRIMERA POSICIÓN: EMDR Y TRAUMA */}
               <div className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border-2 border-psicopiloto-green-500/30">
                 <div className="flex items-center mb-3">
                   <span className="bg-psicopiloto-green-500 text-white font-bold text-xs px-2.5 py-1 rounded-full uppercase mr-2 tracking-wider animate-pulse">Especialidad</span>
@@ -320,7 +299,7 @@ export default function Home() {
               </div>
 
               <div className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-gray-100">
-                <h3 className="text-xl font-bold mb-3 text-psicopiloto-blue-600">Autoestima y Vínculos</h3>
+                <h3 className="text-xl font-bold mb-3 text-psicopiloto-blue-600">Autoesteem y Vínculos</h3>
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed">Inseguridad persistente, autoexigencia destructiva o dificultad para poner límites firmes. Analizaremos tu estilo de apego temprano para desmantelar automatismos y ayudarte a liderar tus relaciones desde el autorrespeto.</p>
                 <a href="/sobre-mi" className="text-sm font-semibold text-psicopiloto-blue-600 hover:underline mt-4 inline-block">Conoce mi enfoque de consulta →</a>
               </div>
@@ -329,14 +308,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN MENTALIDAD DE CABINA + CLÍNICA */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-600">Rigor clínico y estructura frente a la tormenta</h2>
-                <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-4">Como psicólogo clínico con habilitación sanitaria y ex-piloto militar de extinción de incendios (18 años de carrera), sé que las crisis no se resuelven con improvisación. En cabina entrenábamos procedimientos estrictos para mantener el control bajo presión extrema; en terapia aplico esa misma **estructura y claridad operativa**.</p>
-                <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-6">Fusiono el protocolo neurobiológico del **EMDR** con enfoques de la teoría del apego y terapia cognitivo-conductual. Trazamos un plan de vuelo transparente, transparente y medible para que comprendas en todo momento en qué fase de tu recuperación te encuentras.</p>
+                <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-600">Rigor y estructura frente a la tormenta</h2>
+                <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-4">Como psicólogo con habilitación sanitaria y ex-piloto militar de extinción de incendios (18 años de carrera), sé que las crisis no se resuelven con improvisación. En cabina entrenábamos procedimientos estrictos para mantener el control bajo presión extrema; en psicoterapia aplico esa misma **estructura y claridad operativa**.</p>
+                <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-6">Fusiono el protocolo neurobiológico del **EMDR** con enfoques de la teoría del apego y psicoterapia integradora. Trazamos un plan de vuelo transparente, transparente y medible para que comprendas en todo momento en qué fase de tu recuperación te encuentras.</p>
                 <AnimatedCTA href="/servicios" text="Explora las áreas de intervención" color="honey" />
               </div>
               <div className="hidden md:block">
@@ -346,20 +324,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN MODALIDAD ONLINE / GRANADA */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
-            <h2 className="text-3xl font-bold mb-4 text-psicopiloto-blue-600">Flexibilidad sin perder cercanía clínica</h2>
-            <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">Tú eliges cómo hacer el camino. Diseñamos un entorno adaptado a tu ritmo de vida garantizando el más estricto secreto médico y confidencialidad.</p>
+            <h2 className="text-3xl font-bold mb-4 text-psicopiloto-blue-600">Flexibilidad sin perder cercanía</h2>
+            <p className="text-xl text-psicopiloto-gray-500 mb-10 max-w-3xl mx-auto">Tú eliges cómo hacer el camino. Diseñamos un entorno adaptado a tu ritmo de vida garantizando la confidencialidad de una consulta de salud autorizada.</p>
             <div className="grid md:grid-cols-1 gap-8 text-left max-w-xl mx-auto">
               <div className="p-8 border-t-4 border-psicopiloto-green-500 bg-white/80 rounded-2xl shadow-xl">
                 <h3 className="text-2xl font-bold mb-3 text-psicopiloto-gray-700">Terapia Online o Presencial en Granada</h3>
                 <p className="mb-4 text-psicopiloto-gray-500">Operamos bajo entornos digitales seguros con cifrado de nivel sanitario. El formato online te permite realizar el reprocesamiento y las sesiones desde un espacio completamente seguro y privado para ti, optimizando tus tiempos semanales.</p>
                 <ul className="list-disc list-inside space-y-2 text-psicopiloto-gray-600 text-base">
-                  <li>Plataformas homologadas con total protección de datos clínicos.</li>
+                  <li>Plataformas homologadas con total protección de datos sanitarios.</li>
                   <li>Evita interrupciones y optimiza tu agenda semanal.</li>
                   <li>Consulta presencial en Granada disponible para sesiones intensivas.</li>
-                  <li>Intervención clínica enfocada a objetivos específicos y medibles.</li>
+                  <li>Intervención psicoterapéutica enfocada a objetivos específicos y medibles.</li>
                 </ul>
               </div>
             </div>
@@ -369,7 +346,6 @@ export default function Home() {
           </div>
         </section>
         
-        {/* SECCIÓN ORGANIZACIONES */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="text-3xl font-bold mb-4 text-psicopiloto-blue-600">Psicopiloto para Organizaciones</h2>
@@ -380,21 +356,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN PERFIL */}
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl font-bold mb-8 text-center text-psicopiloto-blue-600">El origen de la metodología</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 bg-white/70 rounded-2xl shadow-xl">
               <div className="flex flex-col h-full p-4">
                 <h3 className="text-2xl font-bold mb-3 text-psicopiloto-green-600">Trayectoria Sanitaria</h3>
-                <p className="leading-relaxed mb-6 text-psicopiloto-gray-700 text-base">Soy Jose Carlos Rguez. Retamar, psicólogo colegiado nº AO14457. Mi labor terapéutica se centra en la psicopatología integradora del trauma, especializándome en herramientas de procesamiento emocional profundo como el EMDR para desbloquear nudos clínicos complejos.</p>
+                <p className="leading-relaxed mb-6 text-psicopiloto-gray-700 text-base">Soy Jose Carlos Rguez. Retamar, psicólogo con habilitación sanitaria colegiado nº AO14457. Mi labor se asienta sobre el marco regulado del ejercicio sanitario, especializándome en herramientas de procesamiento emocional profundo como el EMDR para deshacer nudos psicoterapéuticos complejos.</p>
                 <div className="mt-auto pt-4">
-                  <AnimatedCTA href="/sobre-mi" text="Conoce mi perfil clínico" color="blue" />
+                  <AnimatedCTA href="/sobre-mi" text="Conoce mi perfil sanitario" color="blue" />
                 </div>
               </div>
               <div className="flex flex-col h-full p-4">
                 <h3 className="text-2xl font-bold mb-3 text-psicopiloto-green-600">La Filosofía Psicopiloto</h3>
-                <p className="leading-relaxed mb-6 text-psicopiloto-gray-700 text-base">Buscamos una meta clara: que recuperes una base interna de seguridad firme para tomar tus propias decisiones. Trabajamos con rigor clínico protegiendo tu intimidad para desactivar automatismos dolorosos.</p>
+                <p className="leading-relaxed mb-6 text-psicopiloto-gray-700 text-base">Buscamos una meta clara: que recuperes una base interna de seguridad firme para tomar tus propias decisiones. Trabajamos con rigor metodológico protegiendo tu intimidad para desactivar automatismos dolorosos.</p>
                 <div className="mt-auto pt-4">
                   <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía de vuelo" color="blue" />
                 </div>
@@ -403,17 +378,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN ÁREAS CLÍNICAS (EMDR VISIBLE AL INICIO) */}
         <section className="py-16 bg-white/40">
           <div className="container mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-bold mb-8 text-psicopiloto-honey-500">Áreas Clínicas de Intervención</h2>
+            <h2 className="text-3xl font-bold mb-8 text-psicopiloto-honey-500">Áreas de Intervención Psicoterapéutica</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 { title: "Trauma y reprocesamiento EMDR", desc: "Abordaje neurobiológico oficial para liberar recuerdos dolorosos, duelos congelados, fobias o vivencias que sabotean tu calma actual." },
-                { title: "Ansiedad, estrés y pánico", desc: "Técnicas de regulación somática y reestructuración cognitiva para frenar la rumiación y desactivar el bucle de alerta." },
+                { title: "Ansiedad, estrés y pánico", desc: "Técnicas de regulación somática y reestructuración de pensamientos para frenar la rumiación y desactivar el bucle de alerta." },
                 { title: "Depresión y estancamiento vital", desc: "Activación conductual estructurada y centrada en tus valores esenciales para salir de la apatía y recuperar el motor interno." },
                 { title: "Seguridad interna y apego", desc: "Trabajo profundo de autoconfianza y asertividad para sanar la baja autoestima y reconfigurar tus patrones relacionales." },
-                { title: "Terapia y crisis de pareja", desc: "Intervención neutral orientada a desenredar los círculos viciosos de comunicación, sanar desencuentros y reconstruir la confianza." },
+                { title: "Terapia y crisis de pareja", desc: "Intervención orientada a desenredar los círculos viciosos de comunicación, sanar desencuentros y reconstruir la confianza." },
                 { title: "Consultoría y Factores Humanos", desc: "Asesoramiento corporativo especializado en gestión del estrés laboral, optimización del liderazgo y cultura organizativa justa." },
               ].map((s, i) => (
                 <div key={i} className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-sm border border-gray-100 transition transform hover:-translate-y-1 hover:shadow-md">
@@ -423,16 +397,15 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-10">
-              <AnimatedCTA href="/servicios" text="Detalles de los servicios clínicos" color="honey" />
+              <AnimatedCTA href="/servicios" text="Detalles de los servicios" color="honey" />
             </div>
           </div>
         </section>
 
-        {/* SECCIÓN DE TESTIMONIOS */}
         <section className="py-24 bg-psicopiloto-sand-50 overflow-hidden">
           <div className="container mx-auto max-w-full text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-psicopiloto-blue-600">La experiencia real de mis pacientes</h2>
-            <p className="text-lg text-psicopiloto-gray-500 mb-16 max-w-2xl mx-auto">Opiniones verificadas de personas que han completado su proceso terapéutico en consulta.</p>
+            <p className="text-lg text-psicopiloto-gray-500 mb-16 max-w-2xl mx-auto">Opiniones verificadas de personas que han completado su proceso en consulta.</p>
             <TestimonialCarousel data={testimonialsData} />
             <div className="mt-20">
               <AnimatedCTA href={googleReviewsLink} text="Leer más reseñas en Google" color="blue" isExternal={true} />
@@ -440,14 +413,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN FINAL - CTA DE VALORACIÓN */}
         <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
             <Image src="/telefono.webp" alt="Llamada a la consulta de Psicopiloto" width={400} height={400} className="w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20 border border-gray-100">
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-500">Da el primer paso hacia la estabilidad</h2>
-                <p className="leading-relaxed mb-6 text-psicopiloto-gray-600 text-base">Escribir o solicitar ayuda suele ser el paso más costoso, y ya estás aquí. Te ofrezco una **primera sesión de valoración gratuita de 30 minutos** para que me cuentes tu situación y tracemos juntos tu plan terapéutico basado en EMDR e integración clínica.</p>
+                <p className="leading-relaxed mb-6 text-psicopiloto-gray-600 text-base">Escribir o solicitar ayuda suele ser el paso más costoso, y ya estás aquí. Te ofrezco una **primera sesión de valoración gratuita de 30 minutos** para que me cuentes tu situación y tracemos juntos tu plan psicoterapéutico basado en EMDR e integración clínica.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
                 </div>
