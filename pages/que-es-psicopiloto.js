@@ -45,7 +45,7 @@ export default function QueEsPsicopiloto() {
                 Psicopiloto es un espacio de intervención psicológica regulado donde fusiono mis dos grandes áreas de experiencia: la <strong>aviación militar</strong> y la <strong>psicoterapia integradora</strong>. Son dos entornos aparentemente distantes que, en realidad, persiguen un mismo objetivo: mantener la estabilidad y el control cuando las condiciones externas se vuelven hostiles.
               </p>
               <p className="mt-4 text-psicopiloto-gray-700 leading-relaxed text-base">
-                Durante más de 18 años como piloto comandante en misiones de emergencia aprendí a sostener la presión, a aplicar procedimientos estrictos cuando todo se acelera y a regular el miedo para tomar decisiones seguras. Hoy pongo todo ese aprendizaje operativo al servicio de tu salud mental, combinándolo con una formación rigurosa en trauma, regulación del sistema nervioso y procesamiento emocional profundo mediante el protocolo oficial <strong>EMDR</strong>.
+                Durante 18 años como piloto comandante en misiones de emergencia aprendí a sostener la presión, a aplicar procedimientos estrictos cuando todo se acelera y a regular el miedo para tomar decisiones seguras. Hoy pongo todo ese aprendizaje operativo al servicio de tu salud mental, combinándolo con una formación rigurosa en trauma, regulación del sistema nervioso y procesamiento emocional profundo mediante el protocolo oficial <strong>EMDR</strong>.
               </p>
             </div>
             <div>
