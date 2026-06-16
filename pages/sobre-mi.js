@@ -44,7 +44,7 @@ export default function SobreMi() {
       img: "/voluntariado.webp",
       alt: "Jose Carlos Rguez. Retamar realizando intervenciones terapéuticas voluntarias",
       content: [
-        "Para mí, la psicología es un servicio que debe transformar realidades. Por eso, el voluntariado sigue siendo un pilar innegociable en mi vida. He colaborado activamente con Solidarios para el Desarrollo y, actualmente, formo parte del equipo terapéutico de Amalgama Social en Granada, atendiendo a personas que atraviesan situaciones complejas de ansiedad, duelo, trauma y desregulación emocional.",
+        "Para mí, la psicología es un servicio que debe transformar realidades. Por eso, el voluntariado sigue siendo un pilar innegociable en mi vida. He colaborado activamente con Solidarios para el Desarrollo y, actualmente, formo parte del equipo terapéutico de Amalgama Social en la modalidad online, atendiendo a personas que atraviesan situaciones complejas de ansiedad, duelo, trauma y desregulación emocional.",
       ],
     },
   ];
