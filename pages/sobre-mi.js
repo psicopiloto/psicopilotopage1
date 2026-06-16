@@ -9,7 +9,7 @@ import Image from "next/image";
 import clsx from 'clsx'; 
 
 export default function SobreMi() {
-  // ✨ TRAYECTORIA REESCRITA: Narrativa humana, empática y de alta autoridad clínica
+  // ✨ TRAYECTORIA REESCRITA: Narrativa humana, empática y de alta autoridad sanitaria (Sin el término "clínico")
   const fasesTrayectoria = [
     {
       title: "La Vocación Inicial: Entender la mente humana",
@@ -17,7 +17,7 @@ export default function SobreMi() {
       alt: "Jose Carlos Rguez. Retamar en su etapa de formación en psicología en la Universidad de Granada",
       content: [
         "Mi viaje comenzó en la Universidad de Granada, donde me licencié en Psicología en 2003. Desde el principio sentí la necesidad de bajar la teoría a la realidad social: pasé mis primeras prácticas acompañando a personas en procesos complejos de drogodependencia, donde aprendí el valor de la escucha limpia y el respeto absoluto por la historia de cada individuo.",
-        "Durante cuatro años, compaginé mis estudios siendo voluntario con personas mayores en fases iniciales de demencia. Utilizando la Terapia de la Reminiscencia, descubrí cómo el trabajo con las emociones y los recuerdos puede devolver la dignidad y la conexión a un sistema nervioso vulnerable. Esta etapa asentó las bases de mi sensibilidad clínica actual.",
+        "Durante cuatro años, compaginé mis estudios siendo voluntario con personas mayores en fases iniciales de demencia. Utilizando la Terapia de la Reminiscencia, descubrí cómo el trabajo con las emociones y los recuerdos puede devolver la dignidad y la conexión a un sistema nervioso vulnerable. Esta etapa asentó las bases de mi sensibilidad en el ámbito de la salud.",
       ],
     },
     {
@@ -32,7 +32,7 @@ export default function SobreMi() {
     {
       title: "El Regreso a la Esencia: Uniendo dos mundos en Psicopiloto",
       img: "/emdr.webp",
-      alt: "Psicólogo clínico sanitario especialista en psicoterapia del trauma y reprocesamiento EMDR",
+      alt: "Psicólogo con habilitación sanitaria especialista en psicoterapia del trauma y reprocesamiento EMDR",
       content: [
         "A pesar de la intensidad del vuelo, sabía que mi verdadera misión estaba en la tierra. En 2015 obtuve mi habilitación oficial como <strong>Psicólogo con Habilitación Sanitaria</strong> en Madrid y decidí volcar toda mi experiencia en factores humanos, gestión de crisis y liderazgo en el campo de la psicoterapia profunda.",
         "Me especialicé en las áreas que dan una respuesta real al sufrimiento estructural: el trauma psicológico, los estilos de apego temprano y el procesamiento emocional a través del protocolo oficial <strong>EMDR</strong>. Tras la campaña de incendios de 2025 —una de las más exigentes de la historia reciente de nuestro país—, en septiembre decidí regresar definitivamente a Granada para volcarme en exclusiva en este proyecto.",
@@ -51,13 +51,13 @@ export default function SobreMi() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
-      {/* 🚀 SEO INTEGRADO: Optimizado para tu nombre de autoridad, EMDR y Granada */}
+      {/* 🚀 SEO INTEGRADO Y SEGURO: Ajustado a tu titulación oficial obligatoria */}
       <NextSeo
         title="Sobre Mí | Jose Carlos Rguez. Retamar"
-        description="Conoce a Jose Carlos Rguez. Retamar, Psicólogo Sanitario y ex-piloto comandante militar. Especializado en terapia integradora, trauma y reprocesamiento EMDR en Granada."
+        description="Conoce a Jose Carlos Rguez. Retamar, Psicólogo con Habilitación Sanitaria y ex-piloto comandante militar. Especializado en terapia integradora, trauma y reprocesamiento EMDR en Granada."
         canonical="https://psicopiloto.com/sobre-mi"
         openGraph={{
-          title: "Jose Carlos Rguez. Retamar | Psicólogo Sanitario y Especialista EMDR",
+          title: "Jose Carlos Rguez. Retamar | Psicólogo con Habilitación Sanitaria y Especialista EMDR",
           description: "De la gestión de crisis en cabina militar a la psicoterapia integradora. Descubre cómo aplico el rigor y el protocolo EMDR para sanar el trauma en Granada.",
           images: [{ url: "https://www.psicopiloto.com/foto-copao.webp", width: 800, height: 600, alt: "Retrato profesional de Jose Carlos Rguez. Retamar, fundador de Psicopiloto" }],
         }}
@@ -75,7 +75,7 @@ export default function SobreMi() {
       <main className="flex-grow py-16 relative z-10">
         <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/40 p-8 rounded-2xl shadow-lg">
           
-          {/* INTRODUCCIÓN DE IMPACTO (STORYTELLING) */}
+          {/* INTRODUCCIÓN DE IMPACTO (CORREGIDA SIN EL TÉRMINO CLÍNICO) */}
           <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl font-bold mb-4 text-psicopiloto-blue-600">¿Por qué un piloto militar decide bajar a la tierra a escuchar el dolor humano?</h2>
@@ -83,7 +83,7 @@ export default function SobreMi() {
                 Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong>. Durante casi dos décadas operé en entornos de alta exigencia, gobernando aviones en situaciones críticas de emergencia. Esa experiencia me enseñó algo que no se estudia en las facultades: que las peores turbulencias, las tormentas más devastadoras y los incendios más difíciles de apagar no ocurren ahí arriba, sino **dentro del mundo interno de las personas**.
               </p>
               <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4">
-                En una cabina de vuelo aprendes a analizar los sistemas de alarma sin dejarte arrastrar por el pánico. Comprendes que un fallo no se soluciona con parches, sino aplicando un **procedimiento estructurado, riguroso y transparente**. En el ámbito clínico aplico exactamente la misma filosofía. Entiendo el sufrimiento, los síntomas de la ansiedad o los bloqueos no como debilidades, sino como alarmas de tu sistema nervioso que han quedado encendidas tras una experiencia difícil o un trauma pasado. Mi labor es darte el espacio seguro y el método clínico para que aprendas a apagarlas.
+                En una cabina de vuelo aprendes a analizar los sistemas de alarma sin dejarte arrastrar por el pánico. Comprendes que un fallo no se soluciona con parches, sino aplicando un **procedimiento estructurado, riguroso y transparente**. En mi práctica psicoterapéutica aplico exactamente la misma filosofía. Entiendo el sufrimiento, los síntomas de la ansiedad o los bloqueos no como debilidades, sino como alarmas de tu sistema nervioso que han quedado encendidas tras una experiencia difícil o un trauma pasado. Mi labor es darte el espacio seguro y el método terapéutico para que aprendas a apagarlas.
               </p>
             </div>
             <div className="flex justify-center">
@@ -97,7 +97,7 @@ export default function SobreMi() {
             </div>
           </section>
 
-          {/* BUCLE DINÁMICO DE LA TRAYECTORIA (CON CORRECCIÓN DE ORDEN RESPONSIVE) */}
+          {/* BUCLE DINÁMICO DE LA TRAYECTORIA */}
           {fasesTrayectoria.map((fase, i) => (
             <section
               key={i}
@@ -107,8 +107,8 @@ export default function SobreMi() {
               {/* BLOQUE DE TEXTO */}
               <div 
                 className={clsx("order-1", {
-                    "md:order-2": i % 2 === 0, // Páginas pares: texto a la derecha en desktop
-                    "md:order-1": i % 2 !== 0, // Páginas impares: texto a la izquierda en desktop
+                    "md:order-2": i % 2 === 0, 
+                    "md:order-1": i % 2 !== 0, 
                 })}
               >
                 <h3 id={`fase-title-${i}`} className="text-2xl font-bold mb-4 text-psicopiloto-green-600">
@@ -126,8 +126,8 @@ export default function SobreMi() {
               {/* BLOQUE DE IMAGEN */}
               <div 
                 className={clsx("order-2", {
-                    "md:order-1": i % 2 === 0, // Páginas pares: imagen a la izquierda en desktop
-                    "md:order-2": i % 2 !== 0, // Páginas impares: imagen a la derecha en desktop
+                    "md:order-1": i % 2 === 0, 
+                    "md:order-2": i % 2 !== 0, 
                 })}
               >
                 <Image
@@ -141,16 +141,16 @@ export default function SobreMi() {
             </section>
           ))}
 
-          {/* SECCIÓN DE ENFOQUE CLÍNICO REAL */}
+          {/* SECCIÓN DE ENFOQUE TERAPÉUTICO (CORREGIDA SIN EL TÉRMINO CLÍNICO) */}
           <section className="mb-20" aria-labelledby="hoy-psicopiloto-title">
             <h2 id="hoy-psicopiloto-title" className="text-2xl font-bold mb-4 text-psicopiloto-blue-600">
-              Mi Compromiso Clínico en Consulta
+              Mi Compromiso en Consulta
             </h2>
             <p className="text-psicopiloto-gray-700 text-base leading-relaxed">
-              En la consulta de <strong>Psicopiloto</strong> no vas a encontrar teorías abstractas ni consejos motivacionales genéricos. Trabajo desde un **enfoque clínico integrador y riguroso**, lo que significa que pongo a tu disposición las mejores herramientas de la psicología científica adaptadas estrictamente a tu ritmo y a tu historia de desarrollo.
+              En la consulta de <strong>Psicopiloto</strong> no vas a encontrar teorías abstractas ni consejos motivacionales genéricos. Trabajo desde un **enfoque terapéutico integrador y riguroso**, lo que significa que pongo a tu disposición las mejores herramientas de la psicología científica adaptadas estrictamente a tu ritmo y a tu historia de desarrollo.
             </p>
             <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4">
-              Mi formación y mi práctica diaria se centran en el abordaje del trauma psicológico y la reparación de los estilos de apego disfuncionales. Para conseguirlo, utilizo de forma preferente el protocolo oficial de **Reprocesamiento EMDR**, una herramienta neurobiológica de alta eficacia que permite al cerebro asimilar y vaciar la carga emocional de los recuerdos dolorosos. Si en la cabina de un avión entrenábamos de forma metódica para reaccionar ante lo inesperado, en terapia te ofrezco esa misma **estructura, predictibilidad y seguridad** para que dejes de vivir a la defensiva, desactives la ansiedad crónica y recuperes, por fin, el mando absoluto de tu vida.
+              Mi formación y mi práctica diaria se centran en el abordaje del trauma psicológico y la reparación de los estilos de apego disfuncionales. Para conseguirlo, utilizo de forma preferente el protocolo oficial de **Reprocesamiento EMDR**, una herramienta neurobiológica de alta eficacia que permite al cerebro asimilar y vaciar la carga emocional de los recuerdos dolorosos. Si en la cabina de un avión entrenábamos de forma metódica para reaccionar ante lo inesperado, en psicoterapia te ofrezco esa misma **estructura, predictibilidad y seguridad** para que dejes de vivir a la defensiva, desactives la ansiedad crónica y recuperes, por fin, el mando absoluto de tu vida.
             </p>
             <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4 font-semibold text-psicopiloto-green-600">
               Porque todos merecemos volar con una base segura. También en nuestro camino personal.
