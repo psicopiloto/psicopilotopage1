@@ -20,9 +20,6 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Faltan campos obligatorios para el consentimiento legal" });
       }
 
-      // 🛠️ PROCESAMIENTO SEGURO DE LA FIRMA PARA RESEND:
-      // El canvas envía el formato: "data:image/png;base64,iVBORw0KGgo..."
-      // Necesitamos limpiar la cabecera y extraer puramente el string en Base64 para que Resend lo entienda como adjunto.
       const base64Data = firma_codigo.split(",")[1];
 
       const { data, error } = await resend.emails.send({
@@ -30,15 +27,15 @@ export default async function handler(req, res) {
         to: [process.env.MAIL_TO],
         subject: `⚖️ LEGAL: Consentimiento Informado Firmado - ${nombre}`,
         replyTo: email,
-        // 🚀 MEJORA: Quitamos la etiqueta <img> rota del cuerpo y avisamos de que está adjunta
+        // 🚀 CORRECCIÓN: Título cambiado a un tono estrictamente formal y sanitario
         html: `
           <div style="font-family: sans-serif; padding: 25px; color: #242c35; max-width: 650px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f9f5f1;">
-            <h2 style="color: #2a8371; border-bottom: 2px solid #2a8371; padding-bottom: 10px; margin-top: 0;">
-              Documento Legal Recibido en Tierra
+            <h2 style="color: #2a8371; border-bottom: 2px solid #2a8371; padding-bottom: 10px; margin-top: 0; font-size: 22px;">
+              Consentimiento Informado Recibido
             </h2>
             <p style="font-size: 15px;">El siguiente paciente ha leído, aceptado y firmado digitalmente el <strong>Consentimiento Informado para Terapia Psicológica Online</strong>.</p>
             
-            <h3 style="color: #377792; margin-top: 20px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px;">Datos de Identificación del Paciente</h3>
+            <h3 style="color: #377792; margin-top: 20px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; font-size: 16px;">Datos de Identificación del Paciente</h3>
             <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
               <tr><td style="padding: 5px 0; font-weight: bold; width: 35%;">Nombre completo:</td><td style="padding: 5px 0;">${nombre}</td></tr>
               <tr><td style="padding: 5px 0; font-weight: bold;">DNI / NIE / NIF:</td><td style="padding: 5px 0;">${dni}</td></tr>
@@ -49,7 +46,7 @@ export default async function handler(req, res) {
               <tr><td style="padding: 5px 0; font-weight: bold;">Fecha declaración:</td><td style="padding: 5px 0;">${fecha}</td></tr>
             </table>
 
-            <h3 style="color: #377792; margin-top: 25px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px;">Declaración de Voluntad</h3>
+            <h3 style="color: #377792; margin-top: 25px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; font-size: 16px;">Declaración de Voluntad</h3>
             <p style="font-size: 13px; color: #4b5563; background-color: #fff; padding: 12px; border-left: 4px solid #2a8371; border-radius: 4px; font-style: italic;">
               "He leído el consentimiento informado, entiendo las condiciones económicas y de cancelación de la terapia online y otorgo mi consentimiento explícito para el tratamiento de mis datos de salud."
             </p>
@@ -61,7 +58,6 @@ export default async function handler(req, res) {
             <p style="font-size: 11px; color: #9ca3af; margin-top: 30px; text-align: right;">Documento sellado digitalmente el ${timestamp}</p>
           </div>
         `,
-        // 🚀 ARREGLO CRÍTICO: Inyectamos la firma como un adjunto nativo descodificado en Base64
         attachments: [
           {
             content: base64Data,
