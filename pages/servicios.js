@@ -18,19 +18,19 @@ import {
 } from "react-icons/fa";
 
 export default function Servicios() {
-  // ✨ TEXTOS OPTIMIZADOS: Enfoque clínico, empático y resolutivo (Copywriting de alta conversión)
+  // ✨ TEXTOS OPTIMIZADOS: Foco absoluto en Trauma y Reprocesamiento EMDR, con un enfoque clínico y resolutivo
   const serviciosPersonas = [
+    {
+      title: "Trauma y Reprocesamiento EMDR", // 🚀 Palabra clave directa en el título de la tarjeta para destacar en este campo
+      desc: "Las vivencias difíciles o los impactos emocionales del pasado mal cicatrizados siguen doliendo en el presente en forma de bloqueos, ansiedad o reacciones automáticas. A través del protocolo oficial <strong>EMDR</strong>, trabajamos de forma neurobiológica sobre tu sistema nervioso para <strong>procesar, liberar y recolocar esas memorias dolorosas</strong> en un lugar seguro, permitiéndote recuperar la calma y avanzar.",
+      cta: "Inicia tu proceso de sanación",
+      icon: <FaHeadSideVirus aria-hidden="true" />,
+    },
     {
       title: "Ansiedad y Estrés",
       desc: "Vivir en 'modo alerta' constante agota el cuerpo, bloquea la mente y te quita el sueño. No se trata de luchar contra la alarma, sino de entender por qué se ha encendido. Te ofrezco <strong>herramientas prácticas y pautas estructuradas</strong> para calmar la activación fisiológica, desactivar los pensamientos catastróficos y recuperar la estabilidad en tu día a día.",
       cta: "Toma los mandos de tu calma",
       icon: <FaBrain aria-hidden="true" />,
-    },
-    {
-      title: "Trauma y Experiencias Difíciles",
-      desc: "Las heridas del pasado mal cicatrizadas siguen doliendo en el presente en forma de bloqueos, recuerdos intrusivos o reacciones que no puedes controlar. Mediante un abordaje integrador y la terapia <strong>EMDR</strong>, trabajaremos directamente sobre tu sistema nervioso para <strong>procesar, liberar y recolocar esas memorias dolorosas</strong> en un lugar seguro, permitiéndote por fin avanzar.",
-      cta: "Inicia tu proceso de sanación",
-      icon: <FaHeadSideVirus aria-hidden="true" />,
     },
     {
       title: "Autoestima y Apego",
@@ -82,28 +82,28 @@ export default function Servicios() {
 
   return (
     <div className="relative min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
-      {/* 🚀 SEO MEJORADO: Título limpio que aprovecha el titleTemplate global */}
+      {/* 🚀 SEO MEJORADO: Título limpio que aprovecha el titleTemplate global con foco en EMDR */}
       <NextSeo
-        title="Servicios de Psicoterapia Integradora"
-        description="Consulta de psicología online y presencial en Granada. Especialista en tratamiento de Ansiedad, Trauma, EMDR, Apego, Gestión de la Ira y consultoría para Empresas."
+        title="Servicios de Psicoterapia Integradora y EMDR"
+        description="Consulta de psicología online y presencial en Granada. Especialista en tratamiento de Trauma, reprocesamiento EMDR, Ansiedad, Gestión de la Ira y consultoría corporativa."
         canonical="https://psicopiloto.com/servicios"
         additionalMetaTags={[
           {
             name: "keywords",
-            content: "psicólogo granada, terapia emdr granada, psicoterapia online, tratamiento ansiedad, especialista en trauma, gestión de la ira, trastornos alimentarios granada, crm empresas factores humanos",
+            content: "terapia emdr granada, psicologo emdr granada, especialista trauma granada, psicoterapia online, tratamiento ansiedad, gestion de la ira, trastornos alimentarios granada",
           },
           { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/servicios",
-          title: "Servicios de Psicología Integradora | Psicopiloto®",
-          description: "Psicoterapia especializada para adultos y parejas. Formación en factores humanos y gestión de crisis para empresas.",
+          title: "Servicios de Psicología Integradora y EMDR | Psicopiloto®",
+          description: "Psicoterapia especializada para adultos y parejas. Enfoque centrado en el trauma y protocolo oficial EMDR en Granada.",
           images: [
             {
               url: "https://www.psicopiloto.com/header-servicios.webp",
               width: 1200,
               height: 630,
-              alt: "Consultorio de psicología integradora y herramientas de intervención",
+              alt: "Consultorio de psicología integradora y herramientas de intervención en trauma",
               type: "image/webp",
             },
           ],
@@ -116,7 +116,7 @@ export default function Servicios() {
 
       <PageHeader
         title="Servicios de Psicología"
-        subtitle="Un enfoque clínico, práctico y estructurado para recuperar el control de tus emociones y pilotar tu vida con seguridad."
+        subtitle="Un enfoque clínico especializado en trauma y EMDR, combinado con la estructura y claridad de la mentalidad de cabina."
         backgroundImage="/header-servicios.webp"
       />
 
@@ -131,7 +131,7 @@ export default function Servicios() {
               Psicoterapia para Adultos y Parejas
             </h2>
             <p className="text-lg text-psicopiloto-gray-500 mt-2 max-w-2xl mx-auto">
-              Cada proceso es único. Adapto las herramientas de la psicología integradora para diseñar un plan de sesiones a la medida de tus necesidades, ya sea online o en mi consulta de Granada.
+              Cada proceso es único. Adapto las herramientas de la psicología integradora para diseñar un plan de vuelo a la medida de tu historia, utilizando el protocolo avanzado EMDR en mi consulta de Granada o de forma online.
             </p>
           </div>
 
