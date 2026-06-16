@@ -1,7 +1,8 @@
 // next-seo.config.js
 export default {
-  // ✨ CAMBIO FINAL: Uso de la frase legalmente precisa "Psicólogo con Habilitación Sanitaria"
-  title: "Psicopiloto | Psicólogo con Habilitación Sanitaria Online en Granada — Terapia, EMDR y Liderazgo",
+  // 🚀 TÍTULO OPTIMIZADO: Funciona como base perfecta para Google, incluyendo tus especialidades y Granada
+  titleTemplate: "%s | Psicopiloto® Granada",
+  title: "Psicólogo Especialista en Trauma y EMDR Online y Presencial",
   description:
     "Acompaño tu viaje hacia el bienestar con psicoterapia integradora, EMDR y enfoque basado en factores humanos. Recupera el control y la calma en tu vida.",
 
@@ -30,6 +31,4 @@ export default {
     site: "@jcrodriguezret",
     cardType: "summary_large_image",
   },
-
-  // El array 'additionalLinkTags' ha sido eliminado correctamente para evitar duplicados.
 };
