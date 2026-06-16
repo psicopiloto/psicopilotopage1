@@ -1,6 +1,5 @@
 // pages/index.js
 import { useState, useEffect, useMemo, useRef } from "react";
-import Head from "next/head"; 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
@@ -9,9 +8,6 @@ import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
 
-// ========================================================================
-// FUNCIÓN AUXILIAR: Calcular "Hace cuánto tiempo"
-// ========================================================================
 const timeAgo = (dateString) => {
   const now = new Date();
   const past = new Date(dateString);
@@ -32,9 +28,6 @@ const timeAgo = (dateString) => {
   return `Hace ${years} años`;
 };
 
-// ========================================================================
-// DATOS DE TESTIMONIOS (CON LUNA PERFECTAMENTE INTEGRADA)
-// ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
   d.setDate(d.getDate() - daysAgo);
@@ -45,8 +38,8 @@ const testimonialsData = [
   {
     stars: 5,
     author: "Luna",
-    date: getPastDate(63), // 🚀 9 semanas x 7 días = 63 días atrás
-    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave in mi proceso. Estoy muy agradecida por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
+    date: getPastDate(63), 
+    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave en mi proceso. Estoy muy agradecida por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
   },
   {
     stars: 5,
@@ -112,14 +105,15 @@ const ReviewCard = ({ item, avatarColorClass }) => {
   );
 
   return (
-    <div className={`bg-white p-6 rounded-[20px] shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-transparent flex flex-col relative text-left transition-all duration-300 font-roboto ${isExpanded ? 'h-auto z-20 absolute top-0 left-0 right-0 shadow-2xl' : 'h-full relative z-0'}`} style={{ fontFamily: "'Roboto', sans-serif" }}>
+    <div className={`bg-white p-6 rounded-[20px] shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-transparent flex flex-col relative text-left transition-all duration-300 ${isExpanded ? 'h-auto z-20 absolute top-0 left-0 right-0 shadow-2xl' : 'h-full relative z-0'}`}>
       <div className="absolute top-6 right-6"><ColoredGIcon /></div>
       <div className="flex items-center mb-2 pr-8">
         <div className={`${avatarColorClass} text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-lg mr-3`}>
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          <h4 className="font-bold text-[#202124] text-[16px] leading-snug">{item.author}</h4>
+          {/* 🚀 SEO CORRECCIÓN: Eliminada etiqueta H4 para mantener jerarquía semántica limpia */}
+          <span className="font-bold text-[#202124] text-[16px] leading-snug">{item.author}</span>
           <span className="text-[12px] text-[#70757a]">{timeAgoText}</span>
         </div>
       </div>
@@ -211,9 +205,9 @@ const TestimonialCarousel = ({ data }) => {
             <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
           </svg>
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-0.5" style={{ fontFamily: "'Roboto', sans-serif" }}>Valoración Google</span>
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-0.5">Valoración Google</span>
             <div className="flex items-center leading-none">
-              <span className="font-bold text-[#202124] text-base mr-1.5" style={{ fontFamily: "'Roboto', sans-serif" }}>5.0</span>
+              <span className="font-bold text-[#202124] text-base mr-1.5">5.0</span>
               <div className="flex text-yellow-400 text-sm">{'★'.repeat(5)}</div>
             </div>
           </div>
@@ -254,27 +248,21 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-      </Head>
-
       <NextSeo
-        title="Especialista en Trauma y Reprocesamiento EMDR"
-        description="Consulta de psicología online y presencial en Granada. Jose Carlos Rguez. es especialista en psicoterapia del trauma y reprocesamiento EMDR para superar bloqueos y ansiedad."
+        title="Psicólogo online y presencial en Granada | Psicopiloto"
+        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita."
         canonical="https://psicopiloto.com/"
         additionalMetaTags={[
           {
             name: "keywords",
-            content: "terapia emdr granada, psicologo emdr granada, especialista trauma granada, psicoterapia trauma online, reprocesamiento emdr, consulta psicologia granada",
+            content: "psicólogo Granada, psicólogo online, terapia ansiedad, depresión, autoestima, trauma, EMDR, terapia de pareja, psychology, josé carlos rodríguez",
           },
           { name: "author", content: "Jose Carlos Rguez. Retamar" },
         ]}
         openGraph={{
           url: "https://psicopiloto.com/",
-          title: "Especialista en Trauma y Reprocesamiento EMDR en Granada | Psicopiloto®",
-          description: "Desbloquea tu sistema nervioso. Psicoterapia integradora y protocolo oficial EMDR en Granada para procesar experiencias difíciles, traumas y ansiedad.",
+          title: "Psicólogo online y presencial en Granada | Psicopiloto",
+          description: "Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita.",
         }}
       />
 
@@ -311,6 +299,7 @@ export default function Home() {
               </div>
 
               <div className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-gray-100">
+                {/* 🚀 CORRECCIÓN: Subsanada errata de Autoesteem */}
                 <h3 className="text-xl font-bold mb-3 text-psicopiloto-blue-600">Autoestima y Vínculos</h3>
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed">Inseguridad permanente, autoexigencia destructiva o dificultad para poner límites firmes. Analizaremos tu estilo de apego temprano para desmantelar automatismos y ayudarte a liderar tus relaciones desde el autorrespeto.</p>
                 <a href="/sobre-mi" className="text-sm font-semibold text-psicopiloto-blue-600 hover:underline mt-4 inline-block">Conoce mi enfoque de consulta →</a>
@@ -325,7 +314,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-600">Rigor y estructura frente a la tormenta</h2>
-                <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-4">Como psicólogo con habilitación sanitaria y ex-piloto militar de extinción de incendios (18 años de carrera), sé que las crisis no se resuelven con improvisación. En cabina entrenábamos procedimientos estrictos para mantener el control bajo presión extrema; en psicoterapia aplico esa misma <strong>estructura y claridad operativa</strong>.</p>
+                <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-4">Como psicólogo con habilitación sanitaria y ex-piloto militar de misiones de emergencia (18 años de carrera), sé que las crisis no se resuelven con improvisación. En cabina entrenábamos procedimientos estrictos para mantener el control bajo presión extrema; en psicoterapia aplico esa misma <strong>estructura y claridad operativa</strong>.</p>
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-6">Fusiono el protocolo neurobiológico del <strong>EMDR</strong> con enfoques de la teoría del apego y psicoterapia integradora. Trazamos un plan de vuelo transparente y medible para que comprendas en todo momento en qué fase de tu recuperación te encuentras.</p>
                 <AnimatedCTA href="/servicios" text="Explora las áreas de intervención" color="honey" />
               </div>
@@ -383,7 +372,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-3 text-psicopiloto-green-600">La Filosofía Psicopiloto</h3>
                 <p className="leading-relaxed mb-6 text-psicopiloto-gray-700 text-base">Buscamos una meta clara: que recuperes una base interna de seguridad firme para tomar tus propias decisiones. Trabajamos con rigor metodológico protegiendo tu intimidad para desactivar automatismos dolorosos.</p>
                 <div className="mt-auto pt-4">
-                  <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía de vuelo" color="blue" />
+                  <AnimatedCTA href="/que-es-psicopiloto" text="Descubre la filosofía" color="blue" />
                 </div>
               </div>
             </div>
@@ -397,12 +386,12 @@ export default function Home() {
               {[
                 { title: "Trauma y reprocesamiento EMDR", desc: "Abordaje neurobiológico oficial para liberar recuerdos dolorosos, duelos congelados, fobias o vivencias que sabotean tu calma actual." },
                 { title: "Ansiedad, estrés y pánico", desc: "Técnicas de regulación somática y reestructuración de pensamientos para frenar la rumiación y desactivar el bucle de alerta." },
-                { title: "Depresión y estancamiento vital", desc: "Activación conductual estructurada y centrada en tus valores esenciales para salir de la apatía y recuperar el motor interno." },
+                { title: "Depresión y estancamiento vital", desc: "Automotivación y activación gradual centrada en tus valores esenciales para salir de la apatía y recuperar el motor interno." },
                 { title: "Seguridad interna y apego", desc: "Trabajo profundo de autoconfianza y asertividad para sanar la baja autoestima y reconfigurar tus patrones relacionales." },
                 { title: "Terapia y crisis de pareja", desc: "Intervención orientada a desenredar los círculos viciosos de comunicación, sanar desencuentros y reconstruir la confianza." },
                 { title: "Consultoría y Factores Humanos", desc: "Asesoramiento corporativo especializado en gestión del estrés laboral, optimización del liderazgo y cultura organizativa justa." },
               ].map((s, i) => (
-                <div key={i} className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-sm border border-gray-100 transition transform hover:-translate-y-1 hover:shadow-md">
+                <div key={i} className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-sm border border-gray-100 transition transform hover:-translate-y-1">
                   <h3 className="font-bold text-xl mb-2 text-psicopiloto-honey-500">{s.title}</h3>
                   <p className="text-psicopiloto-gray-600 text-base leading-relaxed">{s.desc}</p>
                 </div>
