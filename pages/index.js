@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
-import BackgroundLogo = from "../components/BackgroundLogo";
+import BackgroundLogo from "../components/BackgroundLogo"; // 🚀 CORREGIDO: Eliminado el "=" sobrante que causaba el fallo de compilación
 import Image from "next/image";
 
 // ========================================================================
@@ -33,7 +33,7 @@ const timeAgo = (dateString) => {
 };
 
 // ========================================================================
-// DATOS DE TESTIMONIOS (Se mantienen intactos)
+// DATOS DE TESTIMONIOS (Actualizados con Luna)
 // ========================================================================
 const getPastDate = (daysAgo) => {
   const d = new Date();
@@ -42,6 +42,12 @@ const getPastDate = (daysAgo) => {
 };
 
 const testimonialsData = [
+  {
+    stars: 5,
+    author: "Luna",
+    date: getPastDate(63), // 🚀 9 semanas x 7 días = 63 días atrás
+    text: "No es fácil encontrar a alguien con tanta calidad humana y profesionalidad. Desde el primer momento me sentí escuchada y comprendida. Su forma de trabajar transmite confianza y seguridad, y eso ha sido clave en mi proceso. Estoy muy agradecido/a por todo lo que he aprendido y avanzado gracias a su acompañamiento.",
+  },
   {
     stars: 5,
     author: "Lucía Alejandre",
@@ -81,7 +87,7 @@ const testimonialsData = [
 ];
 
 const avatarColors = [
-  "bg-[#a142f4]", "bg-[#d93025]", "bg-[#1a73e8]", "bg-[#1e8e3e]", "bg-[#f9ab00]", "bg-[#e37400]"
+  "bg-[#1a73e8]", "bg-[#a142f4]", "bg-[#d93025]", "bg-[#1e8e3e]", "bg-[#f9ab00]", "bg-[#e37400]", "bg-[#00acc1]"
 ];
 
 const ReviewCard = ({ item, avatarColorClass }) => {
@@ -277,7 +283,7 @@ export default function Home() {
 
       <main className="flex-grow pt-16 relative z-10">
         <PageHeader
-          title="Toma los mandos de tu bienestar emocional"
+          title="Toma los mandos de tu bienestar emotional"
           subtitle="Consulta sanitaria en Granada especializada en Reprocesamiento EMDR y Trauma. Un espacio estructurado para procesar el pasado y recuperar el control de tu presente."
           backgroundImage="/fotoinicio1.webp"
           cta={{ href: "/contacto", text: "Inicia tu plan de vuelo", color: "green" }}
@@ -294,7 +300,6 @@ export default function Home() {
                   <span className="bg-psicopiloto-green-500 text-white font-bold text-xs px-2.5 py-1 rounded-full uppercase mr-2 tracking-wider animate-pulse">Especialidad</span>
                   <h3 className="text-xl font-bold text-psicopiloto-green-600">Trauma y EMDR</h3>
                 </div>
-                {/* 🚀 CORRECCIÓN: Cambiados los asteriscos por la etiqueta HTML strong */}
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed">Bloqueos, recuerdos difíciles que regresan, fobias o reacciones desproporcionadas. A través del protocolo oficial <strong>EMDR</strong>, ayudamos al cerebro a reprocesar y archivar esas memorias traumáticas almacenadas de forma disfuncional para que dejen de doler hoy.</p>
                 <a href="/servicios" className="text-sm font-bold text-psicopiloto-green-600 hover:underline mt-4 inline-block">Ver tratamiento EMDR →</a>
               </div>
@@ -307,7 +312,7 @@ export default function Home() {
 
               <div className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-gray-100">
                 <h3 className="text-xl font-bold mb-3 text-psicopiloto-blue-600">Autoestima y Vínculos</h3>
-                <p className="text-psicopiloto-gray-700 text-base leading-relaxed">Inseguridad persistente, autoexigencia destructiva o dificultad para poner límites firmes. Analizaremos tu estilo de apego temprano para desmantelar automatismos y ayudarte a liderar tus relaciones desde el autorrespeto.</p>
+                <p className="text-psicopiloto-gray-700 text-base leading-relaxed">Inseguridad permanente, autoexigencia destructiva o dificultad para poner límites firmes. Analizaremos tu estilo de apego temprano para desmantelar automatismos y ayudarte a liderar tus relaciones desde el autorrespeto.</p>
                 <a href="/sobre-mi" className="text-sm font-semibold text-psicopiloto-blue-600 hover:underline mt-4 inline-block">Conoce mi enfoque de consulta →</a>
               </div>
 
@@ -320,9 +325,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-600">Rigor y estructura frente a la tormenta</h2>
-                {/* 🚀 CORRECCIÓN: Cambiados los asteriscos por strong en este párrafo */}
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-4">Como psicólogo con habilitación sanitaria y ex-piloto militar de extinción de incendios (18 años de carrera), sé que las crisis no se resuelven con improvisación. En cabina entrenábamos procedimientos estrictos para mantener el control bajo presión extrema; en psicoterapia aplico esa misma <strong>estructura y claridad operativa</strong>.</p>
-                {/* 🚀 CORRECCIÓN: Cambiados los asteriscos por strong en este párrafo */}
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-6">Fusiono el protocolo neurobiológico del <strong>EMDR</strong> con enfoques de la teoría del apego y psicoterapia integradora. Trazamos un plan de vuelo transparente y medible para que comprendas en todo momento en qué fase de tu recuperación te encuentras.</p>
                 <AnimatedCTA href="/servicios" text="Explora las áreas de intervención" color="honey" />
               </div>
@@ -428,7 +431,6 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20 border border-gray-100">
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-500">Da el primer paso hacia la estabilidad</h2>
-                {/* 🚀 CORRECCIÓN: Cambiados los asteriscos por strong en este último bloque */}
                 <p className="leading-relaxed mb-6 text-psicopiloto-gray-600 text-base">Escribir o solicitar ayuda suele ser el paso más costoso, y ya estás aquí. Te ofrezco una <strong>primera sesión de valoración gratuita de 30 minutos</strong> para que me cuentes tu situación y tracemos juntos tu plan psicoterapéutico basado en EMDR e integración clínica.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
