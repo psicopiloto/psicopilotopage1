@@ -18,10 +18,9 @@ import {
 } from "react-icons/fa";
 
 export default function Servicios() {
-  // ✨ TEXTOS OPTIMIZADOS: Foco absoluto en Trauma y Reprocesamiento EMDR, con un enfoque clínico y resolutivo
   const serviciosPersonas = [
     {
-      title: "Trauma y Reprocesamiento EMDR", // 🚀 Palabra clave directa en el título de la tarjeta para destacar en este campo
+      title: "Trauma y Reprocesamiento EMDR", 
       desc: "Las vivencias difíciles o los impactos emocionales del pasado mal cicatrizados siguen doliendo en el presente en forma de bloqueos, ansiedad o reacciones automáticas. A través del protocolo oficial <strong>EMDR</strong>, trabajamos de forma neurobiológica sobre tu sistema nervioso para <strong>procesar, liberar y recolocar esas memorias dolorosas</strong> en un lugar seguro, permitiéndote recuperar la calma y avanzar.",
       cta: "Inicia tu proceso de sanación",
       icon: <FaHeadSideVirus aria-hidden="true" />,
@@ -46,13 +45,13 @@ export default function Servicios() {
     },
     {
       title: "Trastornos Alimentarios (TCA)",
-      desc: "Cuando la relación con la comida y el cuerpo se convierte en una batalla obsesiva de control, restricción o culpa, el sufrimiento es devastador. Trabajaremos de raíz sobre la desregulación emocional y el autorrechazo que sostienen este ciclo disfuncional, ayudándote a <strong>construir un espacio de paz con tu cuerpo</strong> y hábitos sostenibles sin castigo.",
+      desc: "Cuando la relación con la comida y el cuerpo se convierte en una batalla obsesiva de control, restricción o culpa, el sufrimiento es devastador. Trabajaremos de raíz sobre la desregulación emocional y el autorrechazo que sostienen este ciclo disfuncional, ayudándote a <strong>construir un espacio de paz con tu cuerpo</strong> y hábitos saludables sin castigo.",
       cta: "Sana la relación con tu cuerpo",
       icon: <FaBalanceScale aria-hidden="true" />,
     },
     {
       title: "Depresión y Estado de Ánimo",
-      desc: "La apatía, la tristeza persistente y la falta de motor vital te hacen sentir que eres un mero espectador de tu propia vida. Diseñaremos un <strong>plan de acción gradual y realista</strong> para recuperar el impulso, reconectar con tus valores y encontrar el sentido y la motivación necesarios para reactivar tu día a día.",
+      desc: "La apatía, la tristeza persistentente y la falta de motor vital te hacen sentir que eres un mero espectador de tu propia vida. Diseñaremos un <strong>plan de acción gradual y realista</strong> para recuperar el impulso, reconectar con tus valores y encontrar el sentido y la motivación necesarios para reactivar tu día a día.",
       cta: "Recupera tu dirección vital",
       icon: <FaSadTear aria-hidden="true" />,
     },
@@ -82,7 +81,6 @@ export default function Servicios() {
 
   return (
     <div className="relative min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700">
-      {/* 🚀 SEO MEJORADO: Título limpio que aprovecha el titleTemplate global con foco en EMDR */}
       <NextSeo
         title="Servicios de Psicoterapia Integradora y EMDR"
         description="Consulta de psicología online y presencial en Granada. Especialista en tratamiento de Trauma, reprocesamiento EMDR, Ansiedad, Gestión de la Ira y consultoría corporativa."
@@ -116,12 +114,11 @@ export default function Servicios() {
 
       <PageHeader
         title="Servicios de Psicología"
-        subtitle="Un enfoque clínico especializado en trauma y EMDR, combinado con la estructura y claridad de la mentalidad de cabina."
+        subtitle="Un enfoque terapéutico especializado en trauma y EMDR, combinado con la estructura y claridad de la mentalidad de cabina."
         backgroundImage="/header-servicios.webp"
       />
 
       <main className="flex-grow pt-16 relative z-10">
-        {/* SECCIÓN PERSONAS */}
         <section
           className="py-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
           aria-labelledby="servicios-personas-title"
@@ -156,7 +153,6 @@ export default function Servicios() {
 
         <div className="w-24 h-1 bg-gradient-to-r from-psicopiloto-green-400 to-psicopiloto-blue-400 mx-auto my-16 rounded"></div>
 
-        {/* SECCIÓN EMPRESAS */}
         <section
           className="pb-16 container mx-auto max-w-6xl bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-lg"
           aria-labelledby="servicios-empresas-title"
