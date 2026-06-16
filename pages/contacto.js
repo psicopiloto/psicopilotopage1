@@ -7,6 +7,11 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo";
 
+// Forzamos a Next.js a que no intente pre-renderizar esta página como totalmente estática en el servidor, evitando el fallo de compilación
+export const getServerSideProps = async () => {
+  return { props: {} };
+};
+
 export default function Contacto() {
   const [form, setForm] = useState({
     nombre: "",
@@ -54,7 +59,6 @@ export default function Contacto() {
     setStatus("Enviando...");
 
     try {
-      // Hacemos el envío seguro a nuestra API interna local
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
