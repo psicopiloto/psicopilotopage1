@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const timestamp = new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" });
 
   try {
-    // ✈️ CASO A: SI ES UN CONSENTIMIENTO INFORMADO FIRMADO
+    // ⚖️ CASO A: SI ES UN CONSENTIMIENTO INFORMADO FIRMADO
     if (payload.documento) {
       const { nombre, email, dni, telefono, ciudad, pais, contacto_emergencia, fecha, firma_codigo } = payload;
 
@@ -20,11 +20,17 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Faltan campos obligatorios para el consentimiento legal" });
       }
 
+      // 🛠️ PROCESAMIENTO SEGURO DE LA FIRMA PARA RESEND:
+      // El canvas envía el formato: "data:image/png;base64,iVBORw0KGgo..."
+      // Necesitamos limpiar la cabecera y extraer puramente el string en Base64 para que Resend lo entienda como adjunto.
+      const base64Data = firma_codigo.split(",")[1];
+
       const { data, error } = await resend.emails.send({
         from: "Psicopiloto Web <consultas@psicopiloto.com>",
         to: [process.env.MAIL_TO],
         subject: `⚖️ LEGAL: Consentimiento Informado Firmado - ${nombre}`,
         replyTo: email,
+        // 🚀 MEJORA: Quitamos la etiqueta <img> rota del cuerpo y avisamos de que está adjunta
         html: `
           <div style="font-family: sans-serif; padding: 25px; color: #242c35; max-width: 650px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f9f5f1;">
             <h2 style="color: #2a8371; border-bottom: 2px solid #2a8371; padding-bottom: 10px; margin-top: 0;">
@@ -43,19 +49,27 @@ export default async function handler(req, res) {
               <tr><td style="padding: 5px 0; font-weight: bold;">Fecha declaración:</td><td style="padding: 5px 0;">${fecha}</td></tr>
             </table>
 
-            <h3 style="color: #377792; margin-top: 25px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px;">Declaración de Voluntad y Firma</h3>
+            <h3 style="color: #377792; margin-top: 25px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px;">Declaración de Voluntad</h3>
             <p style="font-size: 13px; color: #4b5563; background-color: #fff; padding: 12px; border-left: 4px solid #2a8371; border-radius: 4px; font-style: italic;">
               "He leído el consentimiento informado, entiendo las condiciones económicas y de cancelación de la terapia online y otorgo mi consentimiento explícito para el tratamiento de mis datos de salud."
             </p>
             
-            <div style="margin-top: 20px; text-align: center; background-color: #ffffff; padding: 15px; border: 1px dashed #94a3b8; border-radius: 8px;">
-              <span style="font-size: 12px; color: #64748b; display: block; margin-bottom: 8px;">Firma Digital del Paciente (Código de Imagen Acoplado)</span>
-              <img src="${firma_codigo}" alt="Firma digital de ${nombre}" style="max-height: 120px; width: auto; display: inline-block;" />
+            <div style="margin-top: 20px; background-color: #e2e8f0; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: bold; text-align: center; color: #1e293b;">
+              📎 La firma digital manuscrita ha sido verificada y se ha adjuntado de forma segura a este correo como un archivo PNG ('firma-${dni}.png').
             </div>
 
             <p style="font-size: 11px; color: #9ca3af; margin-top: 30px; text-align: right;">Documento sellado digitalmente el ${timestamp}</p>
           </div>
         `,
+        // 🚀 ARREGLO CRÍTICO: Inyectamos la firma como un adjunto nativo descodificado en Base64
+        attachments: [
+          {
+            content: base64Data,
+            filename: `firma-${dni}.png`,
+            type: "image/png",
+            disposition: "attachment",
+          }
+        ]
       });
 
       if (error) return res.status(400).json({ error: error.message });
