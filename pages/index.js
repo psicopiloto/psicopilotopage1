@@ -63,7 +63,7 @@ const testimonialsData = [
     stars: 5,
     author: "Ana",
     date: getPastDate(9),
-    text: "Estoy super agradecida por la ayuda que me ha dado José Carlos. Me encontraba muy frustrada por un problema del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos, ayudándome a salir del agujero. Buena persona y excelente profesional. Lo recomiendo 100%.",
+    text: "Estoy super agradecida por la ayuda que me ha dado José Carlos. Me encontraba muy frustrada por un problem del que no sabía cómo salir y él, con su eterna paciencia y profesionalidad, ha sabido dar en el clavo con sus consejos, ayudándome a salir del agujero. Buena persona y excelente profesional. Lo recomiendo 100%.",
   },
   {
     stars: 5,
@@ -112,7 +112,6 @@ const ReviewCard = ({ item, avatarColorClass }) => {
           {item.author.charAt(0)}
         </div>
         <div className="flex flex-col">
-          {/* 🚀 SEO CORRECCIÓN: Eliminada etiqueta H4 para mantener jerarquía semántica limpia */}
           <span className="font-bold text-[#202124] text-[16px] leading-snug">{item.author}</span>
           <span className="text-[12px] text-[#70757a]">{timeAgoText}</span>
         </div>
@@ -250,7 +249,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
         title="Psicólogo online y presencial en Granada | Psicopiloto"
-        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depresión o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita."
+        description="Psicólogo online y presencial en Granada. Supera ansiedad, estrés, depression o trauma con el enfoque integral de Psicopiloto. ¡Recupera el control de tu vida! Agenda tu cita."
         canonical="https://psicopiloto.com/"
         additionalMetaTags={[
           {
@@ -299,7 +298,6 @@ export default function Home() {
               </div>
 
               <div className="p-6 bg-psicopiloto-sand-50 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-gray-100">
-                {/* 🚀 CORRECCIÓN: Subsanada errata de Autoesteem */}
                 <h3 className="text-xl font-bold mb-3 text-psicopiloto-blue-600">Autoestima y Vínculos</h3>
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed">Inseguridad permanente, autoexigencia destructiva o dificultad para poner límites firmes. Analizaremos tu estilo de apego temprano para desmantelar automatismos y ayudarte a liderar tus relaciones desde el autorrespeto.</p>
                 <a href="/sobre-mi" className="text-sm font-semibold text-psicopiloto-blue-600 hover:underline mt-4 inline-block">Conoce mi enfoque de consulta →</a>
@@ -312,14 +310,15 @@ export default function Home() {
         <section className="py-16 bg-psicopiloto-sand-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="order-1">
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-600">Rigor y estructura frente a la tormenta</h2>
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-4">Como psicólogo con habilitación sanitaria y ex-piloto militar de misiones de emergencia (18 años de carrera), sé que las crisis no se resuelven con improvisación. En cabina entrenábamos procedimientos estrictos para mantener el control bajo presión extrema; en psicoterapia aplico esa misma <strong>estructura y claridad operativa</strong>.</p>
                 <p className="text-psicopiloto-gray-700 text-base leading-relaxed mb-6">Fusiono el protocolo neurobiológico del <strong>EMDR</strong> con enfoques de la teoría del apego y psicoterapia integradora. Trazamos un plan de vuelo transparente y medible para que comprendas en todo momento en qué fase de tu recuperación te encuentras.</p>
                 <AnimatedCTA href="/servicios" text="Explora las áreas de intervención" color="honey" />
               </div>
-              <div className="hidden md:block">
-                <Image src="/filosofia.webp" alt="Terapia EMDR y trauma en Granada con el método estructurado de Psicopiloto" width={600} height={400} className="rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105" />
+              {/* 🚀 RESPONSIVE CORRECCIÓN: "hidden md:block" eliminado. La foto ahora se apila de forma adaptativa en smartphones */}
+              <div className="w-full mt-6 md:mt-0 order-2">
+                <Image src="/filosofia.webp" alt="Terapia EMDR y trauma en Granada con el método estructurado de Psicopiloto" width={600} height={400} className="rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 w-full h-auto object-cover" />
               </div>
             </div>
           </div>
@@ -416,7 +415,10 @@ export default function Home() {
 
         <section className="py-16 bg-white/40 relative overflow-visible">
           <div className="container mx-auto max-w-5xl relative">
-            <Image src="/telefono.webp" alt="Llamada a la consulta de Psicopiloto" width={400} height={400} className="w-[200px] h-auto mx-auto mb-6 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 md:w-[350px] lg:w-[400px] lg:-left-20 z-30 drop-shadow-xl" />
+            {/* 🚀 RESPONSIVE CORRECCIÓN: Estructura del teléfono flotante adaptada para centrarse perfectamente en smartphones */}
+            <div className="w-full max-w-[200px] md:max-w-[350px] lg:w-[400px] mx-auto mb-6 md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-10 lg:-left-20 z-30 drop-shadow-xl">
+              <Image src="/telefono.webp" alt="Llamada a la consulta de Psicopiloto" width={400} height={400} className="w-full h-auto object-contain" />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center p-8 bg-psicopiloto-sand-50 rounded-2xl shadow-xl relative z-20 border border-gray-100">
               <div className="col-span-1 md:col-start-2 md:col-span-2 text-center md:text-left">
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-500">Da el primer paso hacia la estabilidad</h2>
