@@ -24,18 +24,18 @@ export default function SobreMi() {
       img: "/sobre4.webp",
       alt: "Piloto comandante militar acumulando experiencia en gestión de crisis y factores humanos",
       content: [
-        "En 2007 mi vida dio un giro de 180 grados y entré en la Academia General del Aire. Acumulé más de 2.500 horas de vuelo como piloto comandante en misiones de alto riesgo de extinción de incendios forestales en España, Grecia y Portugal. En esa cabina, rodeado de condiciones extremas, la supervivencia dependía de dos cosas: aplicar procedimientos estrictos y mantener una calma mental absoluta cuando el cuerpo te pide entrar en pánico.",
-        "Como instructor de vuelo y simulador, y posteriormente como Jefe de Crew Resource Management (CRM) y facilitador, me especialicé en Factores Humanos. Estudié a fondo cómo el estrés, la fatiga y la sobrecarga cognitiva afectan a la toma de decisiones, entrenando a tripulaciones en simuladores avanzados en Milán y España para gestionar la incertidumbre de forma segura.",
+        "En 2007 mi vida dio un giro de 180 grados y entré en la Academia General del Aire. He acumulado más de 2.500 horas de vuelo como piloto comandante en misiones de alto riesgo de extinción de incendios forestales en España, Grecia y Portugal. En esa cabina, rodeado de condiciones extremas, la supervivencia dependía de dos cosas: aplicar procedimientos estrictos y mantener una calma mental absoluta cuando el cuerpo te pide entrar en pánico.",
+        "Como instructor de vuelo y simulador, y posteriormente como Jefe de Crew Resource Management (CRM), me especialicé en Factores Humanos. Estudié a fondo cómo el estrés, la fatiga y la sobrecarga cognitiva afectan a la toma de decisiones, entrenando a tripulaciones en simuladores avanzados en Milán y España para gestionar la incertidumbre de forma segura.",
       ],
     },
     {
       title: "El Regreso a la Esencia: Uniendo dos mundos en Psicopiloto",
       img: "/emdr.webp",
-      alt: "Psicólogo con habilitación sanitaria especialista en psicoterapia del trauma y reprocesamiento EMDR",
+      alt: "Psicólogo General Sanitario especialista en psicoterapia del trauma y reprocesamiento EMDR",
       content: [
         "A pesar de la intensidad del vuelo, sabía que mi verdadera misión estaba en tierra. Tras obtener mi habilitación oficial para el ejercicio de la <strong>Psicología General Sanitaria</strong> en 2015, decidí volcar toda mi experiencia en factores humanos, gestión de crisis y liderazgo en el campo de la psicoterapia profunda.",
-        "Consolidé mi formación de postgrado como Experto en Psicopatología Integradora (UDIMA) y Experto Universitario en Intervención en Trauma y EMDR (UNIR). Tras cerrar mi ciclo en el Ejército del Aire en septiembre de 2025, regresé definitivamente a Granada para estructurar una práctica clínica rigurosa que responde al sufrimiento emocional, los trastornos del estado de ánimo y las heridas de apego.",
-        "Hoy divido mi actividad clínica entre la psicoterapia integradora presencial en la <strong>Clínica Médica Medifamilia</strong> en Granada, mi consulta sanitaria online <strong>Psicopiloto</strong> y la evaluación de competencias críticas conductuales (NOTECH) para tripulaciones en <strong>Resource Group</strong>. Además, sigo vinculado a la docencia especializada como profesor titular y tutor de proyectos de investigación (TFE) en el <strong>Colegio Oficial de la Psicología de Madrid</strong>.",
+        "Consolidé mi formación de postgrado como Experto en Psicopatología Integradora (UDIMA) y Experto Universitario en Intervención en Trauma y EMDR (UNIR). En septiembre de 2025 regresé definitivamente a Granada para estructurar una práctica psicoterapéutica rigurosa que responde al sufrimiento emocional, los trastornos de la conducta alimentaria (TCA) y las heridas de apego.",
+        "Hoy divido mi actividad profesional entre la psicoterapia presencial en la <strong>Clínica Médica Medifamilia</strong> en Granada, mi consulta sanitaria online <strong>Psicopiloto</strong> y mi labor dentro del **comité de evaluación psicológica para la selección de pilotos en compañías aéreas internacionales** de la mano de <strong>Resource Group</strong>. Además, sigo vinculado a la docencia especializada como profesor titular y tutor de proyectos de investigación (TFE) en el <strong>Colegio Oficial de la Psicología de Madrid</strong>.",
         "<strong>PSICOPILOTO</strong> es la unión exacta de mis dos pasiones. En la cabina aprendí a sostener la presión; en la psicología, a sanar las tormentas internas.",
       ],
     },
@@ -44,7 +44,7 @@ export default function SobreMi() {
       img: "/voluntariado.webp",
       alt: "Jose Carlos Rguez. Retamar realizando intervenciones terapéuticas voluntarias",
       content: [
-        "Para mí, la psicología es un servicio que debe transformar realidades. Sostengo este compromiso a través del voluntariado activo, ofreciendo psicoterapia integradora online y abordaje con EMDR a personas vulnerables dentro de la organización <strong>Amalgama Social</strong>, tratando duelos, dependencia emocional y secuelas de experiencias traumáticas.",
+        "Para mí, la psicología es un servicio que debe transformar realidades. Sostengo este compromiso a través del voluntariado activo, ofreciendo psicoterapia integradora online y abordaje con EMDR a pacientes en situación de vulnerabilidad dentro de la organización <strong>Amalgama Social</strong>, tratando duelos, dependencia emocional y secuelas de experiencias traumáticas.",
         "Asimismo, colaboro en el área de psico-gerontología con <strong>Granayuda / Edades Granada</strong>, diseñando e implementando programas de estimulación cognitiva para la prevención del deterioro neuropsicológico y demencias, además de brindar acompañamiento psicológico a cuidadores principales expuestos al estrés crónico, el burnout familiar y el duelo.",
       ],
     },
@@ -76,7 +76,7 @@ export default function SobreMi() {
         <div className="container mx-auto px-6 max-w-5xl leading-relaxed bg-white/40 p-8 rounded-2xl shadow-lg">
           
           {/* INTRODUCCIÓN DE IMPACTO */}
-          <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+          <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl font-bold mb-4 text-psicopiloto-blue-600">¿Por qué un piloto militar decide bajar a tierra a escuchar el dolor humano?</h2>
               <p className="text-psicopiloto-gray-700 text-base leading-relaxed">
@@ -86,7 +86,7 @@ export default function SobreMi() {
                 En una cabina de vuelo aprendes a analizar los sistemas de alarma sin dejarte arrastrar por el pánico. Comprendes que un fallo no se soluciona con parches, sino aplicando un <strong>procedimiento estructurado, riguroso y transparente</strong>. En mi práctica psicoterapéutica aplico exactamente la misma filosofía. Entiendo el sufrimiento, los síntomas de la ansiedad o los bloqueos no como debilidades, sino como alarmas de tu sistema nervioso que han quedado encendidas tras una experiencia difícil o un trauma pasado. Mi labor es darte el espacio seguro y el método terapéutico para que aprendas a apagarlas.
               </p>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-6 md:mt-0">
               <Image
                 src="/jc-psicopiloto.webp"
                 alt="Retrato profesional de Jose Carlos Rguez. Retamar, Psicólogo General Sanitario especialista en EMDR"
