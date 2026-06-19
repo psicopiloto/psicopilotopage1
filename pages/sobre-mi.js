@@ -25,7 +25,7 @@ export default function SobreMi() {
       alt: "Piloto comandante militar acumulando experiencia en gestión de crisis y factores humanos",
       content: [
         "En 2007 mi vida dio un giro de 180 grados y entré en la Academia General del Aire. He acumulado más de 2.500 horas de vuelo como piloto comandante en misiones de alto riesgo de extinción de incendios forestales en España, Grecia y Portugal. En esa cabina, rodeado de condiciones extremas, la supervivencia dependía de dos cosas: aplicar procedimientos estrictos y mantener una calma mental absoluta cuando el cuerpo te pide entrar en pánico.",
-        "Como instructor de vuelo y simulador, y posteriormente como Jefe de Crew Resource Management (CRM), me especialicé en Factores Humanos. Estudié a fondo cómo el estrés, la fatiga y la sobrecarga cognitiva afectan a la toma de decisiones, entrenando a tripulaciones en simuladores avanzados en Milán y España para gestionar la incertidumbre de forma segura.",
+        "Como instructor de vuelo y simulador, y posteriormente como Jefe de Crew Resource Management (CRM), mi prioridad absoluta en Factores Humanos era liderar un espacio seguro. Aprendí que la verdadera seguridad en cabina nace de construir un ambiente de confianza absoluta donde cada miembro de la tripulación pueda comunicarse con honestidad y expresar lo que piensa sin el menor miedo a ser juzgado, optimizando la toma de decisiones ante la incertidumbre.",
       ],
     },
     {
@@ -33,10 +33,11 @@ export default function SobreMi() {
       img: "/emdr.webp",
       alt: "Psicólogo General Sanitario especialista en psicoterapia del trauma y reprocesamiento EMDR",
       content: [
-        "A pesar de la intensidad del vuelo, sabía que mi verdadera misión estaba en tierra. Tras obtener mi habilitación oficial para el ejercicio de la <strong>Psicología General Sanitaria</strong> en 2015, decidí volcar toda mi experiencia en factores humanos, gestión de crisis y liderazgo en el campo de la psicoterapia profunda.",
-        "Consolidé mi formación de postgrado como Experto en Psicopatología Integradora (UDIMA) y Experto Universitario en Intervención en Trauma y EMDR (UNIR). En septiembre de 2025 regresé definitivamente a Granada para estructurar una práctica psicoterapéutica rigurosa que responde al sufrimiento emocional, los trastornos de la conducta alimentaria (TCA) y las heridas de apego.",
-        "Hoy divido mi actividad profesional entre la psicoterapia presencial en la <strong>Clínica Médica Medifamilia</strong> en Granada, mi consulta sanitaria online <strong>Psicopiloto</strong> y mi labor dentro del **comité de evaluación psicológica para la selección de pilotos en compañías aéreas internacionales** de la mano de <strong>Resource Group</strong>. Además, sigo vinculado a la docencia especializada como profesor titular y tutor de proyectos de investigación (TFE) en el <strong>Colegio Oficial de la Psicología de Madrid</strong>.",
-        "<strong>PSICOPILOTO</strong> es la unión exacta de mis dos pasiones. En la cabina aprendí a sostener la presión; en la psicología, a sanar las tormentas internas.",
+        "A pesar de la intensidad del vuelo, sabía que mi verdadera misión estaba en tierra. Tras obtener mi habilitación oficial para el ejercicio de la Psicología General Sanitaria en 2015, decidí volcar toda mi experiencia en factores humanos, gestión de crisis y liderazgo en el campo de la psicoterapia profunda.",
+        "Consolidé mi formación de postgrado como Experto en Psicopatología Integradora (UDIMA) y Experto Universitario en Intervención en Trauma y EMDR (UNIR). Tras cerrar mi ciclo operativo en el Ejército del Aire y del Espacio, regresé definitivamente a Granada para estructurar una práctica psicoterapéutica rigurosa que responde al sufrimiento emocional, los trastornos de la conducta alimentaria (TCA) y las heridas de apego.",
+        "Hoy divido mi actividad profesional entre la psicoterapia presencial en la Clínica Médica Medifamilia en Granada, mi consulta sanitaria online Psicopiloto y mi participación como psicólogo experto en el área de CRM y Factores Humanos dentro de comités multidisciplinares para la selección y evaluación de pilotos en compañías aéreas internacionales de la mano de Resource Group. En estos comités, junto a los equipos de operaciones y recursos humanos, aplico evaluaciones basadas en la evidencia (EBT) y el entrenamiento por competencias conforme a los exigentes criterios regulados por las autoridades de aviación civil.",
+        "Además, sigo vinculado a la docencia especializada como profesor titular y tutor de proyectos de investigación (TFE) en el programa de Experto en Psicología Aeronáutica del Colegio Oficial de la Psicología de Madrid.",
+        "PSICOPILOTO es la unión exacta de mis dos pasiones. En la cabina aprendí a sostener la presión; en la psicología, a sanar las tormentas internas.",
       ],
     },
     {
@@ -44,8 +45,8 @@ export default function SobreMi() {
       img: "/voluntariado.webp",
       alt: "Jose Carlos Rguez. Retamar realizando intervenciones terapéuticas voluntarias",
       content: [
-        "Para mí, la psicología es un servicio que debe transformar realidades. Sostengo este compromiso a través del voluntariado activo, ofreciendo psicoterapia integradora online y abordaje con EMDR a pacientes en situación de vulnerabilidad dentro de la organización <strong>Amalgama Social</strong>, tratando duelos, dependencia emocional y secuelas de experiencias traumáticas.",
-        "Asimismo, colaboro en el área de psico-gerontología con <strong>Granayuda / Edades Granada</strong>, diseñando e implementando programas de estimulación cognitiva para la prevención del deterioro neuropsicológico y demencias, además de brindar acompañamiento psicológico a cuidadores principales expuestos al estrés crónico, el burnout familiar y el duelo.",
+        "Para mí, la psicología es un servicio que debe transformar realidades. Sostengo este compromiso a través del voluntariado activo, ofreciendo psicoterapia integradora online y abordaje con EMDR a pacientes en situación de vulnerabilidad dentro de la organización Amalgama Social, tratando duelos, dependencia emocional y secuelas de experiencias traumáticas.",
+        "Asimismo, colaboro en el área de la psico-gerontología con la entidad Granayuda, donde diseño e implemento programas de estimulación cognitiva para la prevención del deterioro neuropsicológico y demencias, además de brindar acompañamiento psicológico y pautas de regulación a cuidadores principales expuestos al estrés crónico, el burnout familiar y el duelo.",
       ],
     },
   ];
@@ -83,7 +84,7 @@ export default function SobreMi() {
                 Mi nombre es <strong>Jose Carlos Rguez. Retamar</strong>. Durante casi dos décadas operé en entornos de alta exigencia, gobernando aviones en misiones críticas de emergencia. Esa experiencia me enseñó algo que no se estudia en las facultades: que las peores turbulencias, las tormentas más devastadoras y los incendios más difíciles de apagar no ocurren ahí arriba, sino <strong>dentro del mundo interno de las personas</strong>.
               </p>
               <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4">
-                En una cabina de vuelo aprendes a analizar los sistemas de alarma sin dejarte arrastrar por el pánico. Comprendes que un fallo no se soluciona con parches, sino aplicando un <strong>procedimiento estructurado, riguroso y transparente</strong>. En mi práctica psicoterapéutica aplico exactamente la misma filosofía. Entiendo el sufrimiento, los síntomas de la ansiedad o los bloqueos no como debilidades, sino como alarmas de tu sistema nervioso que han quedado encendidas tras una experiencia difícil o un trauma pasado. Mi labor es darte el espacio seguro y el método terapéutico para que aprendas a apagarlas.
+                En una cabina de vuelo aprendes a analizar los sistemas de alarma sin dejarte arrastrar por el pánico. Pero la lección más profunda que trasladé a tierra es que la estabilidad real depende de la confianza. Del mismo modo que un vuelo seguro exige una cabina libre de amenazas donde la tripulación pueda hablar con total transparencia, en mi consulta construyo un vínculo clínico idéntico: un espacio de absoluta seguridad donde puedas desnudarte emocionalmente, comprender tus alarmas somáticas y procesar tu historia con la total certeza de que no vas a ser juzgado. Mi labor es darte ese entorno protegido y un procedimiento estructurado para recuperar el rumbo.
               </p>
             </div>
             <div className="flex justify-center mt-6 md:mt-0">
@@ -147,10 +148,10 @@ export default function SobreMi() {
               Mi Compromiso en Consulta
             </h2>
             <p className="text-psicopiloto-gray-700 text-base leading-relaxed">
-              En la consulta de <strong>Psicopiloto</strong> no vas a encontrar teorías abstractas ni consejos motivacionales genéricos. Trabajo desde un <strong>enfoque terapéutico integrador y riguroso</strong>, lo que significa que pongo a tu disposición las mejores herramientas de la psicología científica adaptadas estrictamente a tu ritmo y a tu historia de desarrollo.
+              En la consulta de <strong>Psicopiloto</strong> no vas a encontrar teorías abstractas ni consejos motivacionales genéricos. Trabajo desde un <strong>enfoque psicoterapéutico integrador y riguroso</strong>, lo que significa que pongo a tu disposición las mejores herramientas de la psicología científica adaptadas estrictamente a tu ritmo y a tu historia de desarrollo.
             </p>
             <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4">
-              Mi formación y mi práctica diaria se centran en el abordaje del trauma psicológico, el tratamiento de trastornos de la conducta alimentaria (TCA) y la reparación de los estilos de apego disfuncionales. Para conseguirlo, utilizo de forma preferente el protocolo oficial de <strong>Reprocesamiento EMDR</strong>, una herramienta neurobiológica de alta eficacia que permite al cerebro asimilar y vaciar la carga emocional de los recuerdos dolorosos. Si en la cabina de un avión entrenábamos de forma metódica para reaccionar ante lo inesperado, en psicoterapia te ofrezco esa misma <strong>estructura, predictibilidad y seguridad</strong> para que dejes de vivir a la defensiva, desactives la ansiedad crónica y recuperes, por fin, el mando absoluto de tu vida.
+              Mi formación y mi práctica diaria se centran en el abordaje del trauma psicológico, el tratamiento de trastornos de la conducta alimentaria (TCA) y la reparación de los estilos de apego disfuncionales. Para conseguirlo, utilizo de forma preferente el protocolo oficial de <strong>Reprocesamiento EMDR</strong>, una herramienta neurobiológica de alta eficacia que permite al cerebro asimilar y vaciar la carga emocional de los recuerdos dolorosos. Si en la cabina de un avión entrenábamos de forma metódica para reaccionar ante lo inesperado, en las sesiones te ofrezco esa misma <strong>estructura, predictibilidad y seguridad</strong> para que dejes de vivir a la defensiva, desactives la ansiedad crónica y recuperes, por fin, el mando absoluto de tu vida.
             </p>
             <p className="text-psicopiloto-gray-700 text-base leading-relaxed mt-4 font-semibold text-psicopiloto-green-600">
               Porque todos merecemos volar con una base segura. También en nuestro camino personal.
