@@ -5,7 +5,7 @@ import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
-import { FaLaptop, FaUserAlt, FaRegClock, FaCalendarCheck, FaShieldAlt } from "react-icons/fa";
+import { FaLaptop, FaUserAlt, FaRegClock, FaCalendarCheck, FaComments, FaWifi, FaHeadset, FaLock } from "react-icons/fa";
 
 export default function Tarifas() {
   const planesTarifas = [
@@ -13,9 +13,9 @@ export default function Tarifas() {
       title: "Psicoterapia Individual Online",
       icon: <FaLaptop aria-hidden="true" />,
       subtitle: "Tu consulta desde un espacio privado",
-      price: "70€",
+      price: "50€",
       duration: "55 minutos por sesión",
-      desc: "Intervención psicoterapéutica especializada mediante plataformas homologadas con cifrado de nivel sanitario. Un proceso estructurado y a tu ritmo para abordar la ansiedad, el trauma, el duelo, los trastornos alimentarios (TCA), el control de las emociones o los problemas de apego.",
+      desc: "Intervención psicoterapéutica especializada mediante plataformas homologadas con cifrado de nivel sanitario. Un proceso estructurado y a tu ritmo para abordar la ansiedad, el trauma, el duelo, los trastornos alimentarios (TCA), la gestión de la ira o los problemas de apego.",
       features: [
         "Entorno digital 100% seguro y confidencial",
         "Protocolo avanzado de Reprocesamiento EMDR",
@@ -29,7 +29,7 @@ export default function Tarifas() {
       title: "Psicoterapia Presencial (Granada)",
       icon: <FaUserAlt aria-hidden="true" />,
       subtitle: "Atención directa en entorno médico",
-      price: "70€",
+      price: "55€",
       duration: "55 minutos por sesión",
       desc: "Sesiones presenciales en las instalaciones del centro médico <a href='https://medifamilia.es/' target='_blank' rel='noopener noreferrer' class='font-bold text-psicopiloto-green-600 hover:underline'>Medifamilia</a> en Granada. Un espacio de encuentro físico diseñado para trabajar con total tranquilidad, calidez y un rigor metodológico orientado a tus objetivos vitales.",
       features: [
@@ -52,7 +52,7 @@ export default function Tarifas() {
         openGraph={{
           url: "https://psicopiloto.com/tarifas",
           title: "Sesiones y Tarifas Transparentes | Psicopiloto",
-          description: "Conoce el coste de las sesiones de psicoterapia individual online y presencial. Un método estructurado con objetivos medibles para recuperar tu bienestar.",
+          description: "Conoce el coste de las sesiones de psicoterapia individual online y presencial. Un método de total confianza para recuperar tu bienestar.",
         }}
       />
 
@@ -68,91 +68,209 @@ export default function Tarifas() {
       <main className="flex-grow py-16 relative z-10">
         <div className="container mx-auto px-6 max-w-5xl">
           
-          {/* Bloque Introductorio: El valor del espacio seguro */}
-          <section className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4 text-psicopiloto-blue-600">Un método estructurado, un espacio sin juicios</h2>
-            <p className="text-lg text-psicopiloto-gray-500 leading-relaxed">
-              Iniciar un proceso psicoterapéutico es una inversión en tu salud mental y en tu seguridad interna. Al igual que en la cabina de un avión la prioridad es trazar una ruta predecible y segura, aquí te ofrezco total transparencia en las condiciones de nuestro marco de trabajo, construyendo un vínculo de confianza donde puedas expresarte con total libertad y sin miedo a ser juzgado.
+          {/* 🚀 BLOQUE 1: Primer encuentro gratuito */}
+          <section className="mb-20 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
+              <FaComments className="text-3xl text-psicopiloto-green-600" aria-hidden="true" />
+              <h2 className="text-2xl font-bold text-psicopiloto-gray-700">Primer Encuentro Online (20-30 min)</h2>
+            </div>
+            <p className="text-base text-psicopiloto-gray-600 mb-6 leading-relaxed">
+              Antes de trazar cualquier plan de ruta, realizamos una primera toma de contacto gratuita. En mi etapa en la cabina militar, la base de la seguridad operativa dependía estrictamente de crear un ambiente de confianza absoluta donde la tripulación pudiera comunicarse con honestidad y expresar lo que pensaba sin el menor miedo a ser juzgado. Ese mismo pilar lo traslado a mi práctica psicoterapéutica en tierra.
             </p>
+            <h3 className="font-bold text-psicopiloto-blue-600 mb-4 text-base">¿De qué hablamos en este primer encuentro?</h3>
+            <ol className="space-y-4 text-sm text-psicopiloto-gray-700 pl-2">
+              <li className="flex gap-3 items-start">
+                <span className="font-bold text-psicopiloto-green-600 text-base">1)</span>
+                <span>Es una oportunidad para conocernos cara a cara, establecer una primera toma de contacto y que te asegures de sentirte completamente cómodo o cómoda hablando conmigo, construyendo un entorno clínico seguro, protegido y libre de juicios.</span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span className="font-bold text-psicopiloto-green-600 text-base">2)</span>
+                <span>Me permite obtener una idea general del motivo de consulta o la situación que estás atravesando. Analizaremos tu caso de forma preliminar para valorar si el protocolo de terapia EMDR online es la mejor alternativa metodológica para ti.</span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span className="font-bold text-psicopiloto-green-600 text-base">3)</span>
+                <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frecuencia, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
+              </li>
+            </ol>
+            <div className="mt-8 text-center md:text-left">
+              <AnimatedCTA href="/contacto" text="Reservar valoración gratuita" color="green" className="px-8 py-3 text-base rounded-xl" />
+            </div>
           </section>
 
-          {/* Cuadrícula de Tarifas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16">
-            {planesTarifas.map((plan, i) => (
-              <div 
-                key={i} 
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`text-3xl ${plan.color === 'green' ? 'text-psicopiloto-green-600' : 'text-psicopiloto-blue-600'}`}>
-                    {plan.icon}
+          {/* 🚀 BLOQUE 2: Cuadrícula de Tarifas */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold mb-10 text-center text-psicopiloto-blue-600">Planes de Sesión Transparentes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              {planesTarifas.map((plan, i) => (
+                <div 
+                  key={i} 
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`text-3xl ${plan.color === 'green' ? 'text-psicopiloto-green-600' : 'text-psicopiloto-blue-600'}`}>
+                      {plan.icon}
+                    </div>
+                    <div>
+                      <h3 className={`font-bold text-xl leading-tight ${plan.color === 'green' ? 'text-psicopiloto-green-600' : 'text-psicopiloto-blue-600'}`}>
+                        {plan.title}
+                      </h3>
+                      <p className="text-xs text-gray-400 font-medium mt-0.5">{plan.subtitle}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className={`font-bold text-xl leading-tight ${plan.color === 'green' ? 'text-psicopiloto-green-600' : 'text-psicopiloto-blue-600'}`}>
-                      {plan.title}
-                    </h3>
-                    <p className="text-xs text-gray-400 font-medium mt-0.5">{plan.subtitle}</p>
+
+                  <div className="my-4 pb-4 border-b border-gray-100 flex items-baseline gap-2">
+                    <span className="text-4xl font-extrabold text-psicopiloto-gray-700">{plan.price}</span>
+                    <span className="text-sm text-gray-400 font-medium flex items-center gap-1">
+                      <FaRegClock aria-hidden="true" /> {plan.duration}
+                    </span>
                   </div>
-                </div>
 
-                <div className="my-4 pb-4 border-b border-gray-100 flex items-baseline gap-2">
-                  <span className="text-4xl font-extrabold text-psicopiloto-gray-700">{plan.price}</span>
-                  <span className="text-sm text-gray-400 font-medium flex items-center gap-1">
-                    <FaRegClock aria-hidden="true" /> {plan.duration}
-                  </span>
-                </div>
-
-                <p 
-                  className="text-psicopiloto-gray-600 text-sm leading-relaxed mb-6 flex-grow"
-                  dangerouslySetInnerHTML={{ __html: plan.desc }}
-                />
-
-                <ul className="space-y-2.5 mb-8 text-sm text-psicopiloto-gray-700">
-                  {plan.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className={`flex-shrink-0 mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-white text-[10px] ${plan.color === 'green' ? 'bg-psicopiloto-green-500' : 'bg-psicopiloto-blue-500'}`}>
-                        ✓
-                      </span>
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-auto">
-                  <AnimatedCTA 
-                    href="/contacto" 
-                    text={plan.ctaText} 
-                    color={plan.color} 
-                    className="w-full text-center text-base py-3.5 rounded-xl" 
+                  <p 
+                    className="text-psicopiloto-gray-600 text-sm leading-relaxed mb-6 flex-grow"
+                    dangerouslySetInnerHTML={{ __html: plan.desc }}
                   />
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Sección Informativa: Normas y Políticas de la Cabina */}
+                  <ul className="space-y-2.5 mb-8 text-sm text-psicopiloto-gray-700">
+                    {plan.features.map((feat, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span className={`flex-shrink-0 mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-white text-[10px] ${plan.color === 'green' ? 'bg-psicopiloto-green-500' : 'bg-psicopiloto-blue-500'}`}>
+                          ✓
+                      </span>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto">
+                    <AnimatedCTA 
+                      href="/contacto" 
+                      text={plan.ctaText} 
+                      color={plan.color} 
+                      className="w-full text-center text-base py-3.5 rounded-xl" 
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 🚀 BLOQUE 3: ¿Qué necesitas para hacer Terapia Online? */}
+          <section className="mb-20 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-8 text-center text-psicopiloto-blue-600">¿Qué necesitas para hacer Terapia EMDR Online?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-4 flex flex-col items-center">
+                <FaWifi className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
+                <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Conexión a Internet</h4>
+                <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Estable y fluida para asegurar la calidad de la videollamada durante el procesamiento.</p>
+              </div>
+              <div className="p-4 flex flex-col items-center">
+                <FaHeadset className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
+                <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Auriculares</h4>
+                <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Recomendados para optimizar el audio, aislar el ruido exterior y facilitar la focalización.</p>
+              </div>
+              <div className="p-4 flex flex-col items-center">
+                <FaLock className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
+                <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Espacio Privado</h4>
+                <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Un lugar tranquilo donde estés solo, cómodo y con la total certeza de no ser interrumpido ni escuchado.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 🚀 BLOQUE 4: Preguntas Frecuentes Desplegables */}
+          <section className="mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center text-psicopiloto-blue-600">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              
+              <details className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-base">
+                  <span>¿Cuál es la frecuencia de las sesiones?</span>
+                  <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
+                </summary>
+                <p className="mt-4 text-sm text-psicopiloto-gray-600 leading-relaxed">
+                  Para consolidar avances consistentes y mantener una evolución estable, la pauta de trabajo recomendada al inicio es de carácter semanal. Establecer este intervalo operativo evita la dispersión temporal entre sesiones y optimiza el tiempo de consulta, asegurando que cada encuentro se enfoque en el procesamiento profundo y no en resolver desajustes coyunturales por falta de continuidad.
+                </p>
+              </details>
+
+              <details className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-base">
+                  <span>¿Por qué elegir la intervención en formato online?</span>
+                  <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
+                </summary>
+                <div className="mt-4 text-sm text-psicopiloto-gray-600 leading-relaxed space-y-3">
+                  <p>La modalidad a distancia proporciona un marco operativo de alta eficiencia sin restar un ápice de cercanía o rigor al encuadre psicoterapéutico:</p>
+                  <ul className="list-disc list-inside space-y-1.5 pl-1">
+                    <li><strong>Disponibilidad geográfica:</strong> Permite mantener el acceso a una intervención especializada con independencia de tu lugar de residencia o tus desplazamientos.</li>
+                    <li><strong>Optimización del tiempo:</strong> Facilita la integración de las sesiones en tu rutina diaria al eliminar los tiempos muertos de traslado y esperas.</li>
+                    <li><strong>Seguridad y privacidad:</strong> Favorece la apertura emocional al realizar el procesamiento desde un entorno propio, íntimo y completamente bajo tu control.</li>
+                    <li><strong>Sostenibilidad del proceso:</strong> Protege la continuidad de las sesiones frente a imprevistos laborales, cambios de localización o viajes, consolidando una base de trabajo estable.</li>
+                  </ul>
+                  <p className="pt-2 italic">
+                    En el ámbito del EMDR, los protocolos aplicados de forma online mantienen la misma equivalencia metodológica, rigor y efectividad que el formato presencial. Mi experiencia profesional constata que, al encontrarte en un espacio conocido y seguro para ti, resulta más sencillo regular la activación somática y consolidar el reprocesamiento de las memorias traumáticas.
+                  </p>
+                </div>
+              </details>
+
+              <details className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-base">
+                  <span>¿Cuál es la duración estimada del proceso?</span>
+                  <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
+                </summary>
+                <div className="mt-4 text-sm text-psicopiloto-gray-600 leading-relaxed space-y-2">
+                  <p>La temporalidad del tratamiento está directamente vinculada a la naturaleza de la demanda. Un abordaje focalizado en un impacto emocional o trauma simple puede resolverse de forma ágil en pocas sesiones, mientras que las dinámicas asociadas a heridas de apego complejas o sufrimiento estructural requieren una ruta de trabajo más prolongada.</p>
+                  <p>Cada plan psicoterapéutico es individualizado y responde a objetivos medibles. Mi enfoque está diseñado para ofrecer una intervención resolutiva, por lo que mantendremos el espacio de consulta únicamente durante el periodo estrictamente necesario para consolidar tu autonomía y estabilidad.</p>
+                  <p className="pt-1">La ventaja estructural del Reprocesamiento EMDR es su impacto neurobiológico profundo: una vez que el cerebro procesa y archiva de forma adaptativa las memorias disfuncionales del pasado, los síntomas disminuyen notablemente, minimizando la necesidad de recurrir a intervenciones posteriores por las mismas causas.</p>
+                </div>
+              </details>
+
+              <details className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-base">
+                  <span>¿Qué situaciones quedan excluidas de la consulta online?</span>
+                  <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
+                </summary>
+                <div className="mt-4 text-sm text-psicopiloto-gray-600 leading-relaxed space-y-2">
+                  <p>Por estrictos criterios de seguridad clínica y deontológica, la modalidad a distancia no abarca los siguientes escenarios:</p>
+                  <ul className="list-disc list-inside space-y-1 pl-1">
+                    <li>Atención a menores de edad (la práctica se centra exclusivamente en población adulta).</li>
+                    <li>Ideación autolítica activa o riesgo de conducta suicida inminente.</li>
+                    <li>Patologías de origen neurológico grave o cuadros orgánicos que comprometan la cognición.</li>
+                    <li>Trastornos de la realidad de perfil psicótico o brotes agudos en fase activa.</li>
+                  </ul>
+                  <p className="pt-2 font-semibold text-psicopiloto-gray-700">
+                    En caso de encontrarte ante una crisis de urgencia sanitaria o una situación de riesgo inminente para tu integridad, debes acudir de inmediato a los servicios médicos de urgencia de tu localidad o al centro hospitalario más cercano.
+                  </p>
+                </div>
+              </details>
+
+              <details className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-base">
+                  <span>¿De qué vías de abono dispongo?</span>
+                  <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
+                </summary>
+                <p className="mt-4 text-sm text-psicopiloto-gray-600 leading-relaxed">
+                  Para facilitar la gestión administrativa y mantener la transparencia operativa, las sesiones pueden abonarse cómodamente a través de la plataforma <strong>Bizum</strong> o mediante <strong>transferencia bancaria</strong> directa. Los datos de facturación y plazos se coordinan de manera privada tras formalizar el encuadre inicial en las primeras sesiones.
+                </p>
+              </details>
+
+            </div>
+          </section>
+
+          {/* Condiciones Generales del Marco Operativo */}
           <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm max-w-4xl mx-auto">
             <h3 className="text-xl font-bold mb-4 text-psicopiloto-blue-600 flex items-center gap-2">
               <FaCalendarCheck className="text-psicopiloto-green-500" aria-hidden="true" /> Condiciones de Gestión y Compromiso Operativo
             </h3>
             <div className="space-y-4 text-sm text-psicopiloto-gray-600 leading-relaxed">
               <p>
-                Para garantizar la viabilidad y el rigor del tratamiento, la asignación de las citas se rige bajo un estricto criterio de disponibilidad y respeto por el tiempo profesional mutuo.
+                Para garantizar la viabilidad y el rigor de la intervención, la asignación de las citas se rige bajo un estricto criterio de respeto por el tiempo profesional mutuo.
               </p>
               <ul className="list-disc list-inside space-y-2 pl-2">
                 <li>
-                  <strong>Política de Modificaciones y Cancelaciones:</strong> Las sesiones reservadas implican un compromiso exclusivo de tiempo en la agenda de la consulta. Si necesitas modificar o cancelar una cita, deberás comunicarlo con un mínimo de <strong>24 horas de antelación</strong>. Las cancelaciones o ausencias que se notifiquen fuera de este plazo devengarán el importe íntegro de la sesión como coste de disponibilidad.
+                  <strong>Política de Modificaciones y Cancelaciones:</strong> Las citas reservadas implican la reserva exclusiva de tu tiempo profesional. Si necesitas modificar o cancelar tu cita, deberás comunicarlo con un mínimo de <strong>24 horas de antelación</strong>. Las cancelaciones fuera de este plazo o las ausencias no justificadas devengarán el coste íntegro de la sesión programada.
                 </li>
                 <li>
-                  <strong>Sesión de Valoración Inicial Gratuita:</strong> Si es tu primera vez, puedes solicitar a través del formulario de contacto una sesión de valoración previa de 30 minutos de forma complementaria. Servirá para analizar tu caso, aclarar dudas sobre el método terapéutico y diseñar tu plan psicoterapéutico inicial.
-                </li>
-                <li>
-                  <strong>Garantía de Regulación Sanitaria:</strong> Todas las intervenciones individuales se realizan al amparo del marco regulado de la Psicología General Sanitaria, cumpliendo de forma estricta con el secreto profesional del código deontológico y la confidencialidad en el tratamiento de datos personales de categoría especial.
+                  <strong>Consulta bajo Entorno Seguro:</strong> Toda la actividad presencial se realiza en las instalaciones autorizadas del centro médico de Granada, y la online opera bajo plataformas con estricto cumplimiento de la normativa de protección de datos de salud y secreto profesional en un espacio de total confianza y libre de juicios.
                 </li>
               </ul>
-              <p className="text-xs italic text-gray-400 mt-2">
-                * Nota: Si se requiere la tramitación del Consentimiento Informado digital con firma manuscrita para telepsicología, te facilitaré el enlace de acceso privado tras nuestra primera toma de contacto.
-              </p>
             </div>
           </section>
 
