@@ -304,7 +304,7 @@ export default function Tarifas() {
 
               <details className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-md md:text-lg">
-                  <span>¿De qué vías de abono dispongo?</span>
+                  <span>¿De qué vías de abono dispongo para las sesiones online?</span>
                   <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
                 </summary>
                 <p className="mt-4 text-sm md:text-base text-psicopiloto-gray-600 leading-relaxed text-justify">
