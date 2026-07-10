@@ -187,8 +187,8 @@ export default function Tarifas() {
                 <Image 
                     src="/psicopiloto-online-setup.webp" 
                     alt="Ilustración gráfica que muestra una computadora portátil con gráficos de EMDR, auriculares y un candado de privacidad" 
-                    width={400} 
-                    height={400} 
+                    width={600} 
+                    height={600} 
                     className="rounded-2xl w-full h-auto object-contain max-w-sm" 
                 />
             </div>
