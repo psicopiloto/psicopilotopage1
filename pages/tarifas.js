@@ -105,7 +105,7 @@ export default function Tarifas() {
             </div>
             <div className="md:col-span-2 flex justify-center order-first md:order-last">
                 <Image 
-                    src="/psicopiloto-online-session.webp.webp" 
+                    src="/psicopiloto-online-session.webp" 
                     alt="Laptop y headset preparados en un escritorio tranquilo para una sesión de valoración de Psicopiloto" 
                     width={400} 
                     height={400} 
@@ -181,20 +181,20 @@ export default function Tarifas() {
             </div>
           </section>
 
-          {/* 🚀 BLOQUE 3: ¿Qué necesitas para hacer Terapia Online? */}
-          <section className="mb-20 grid grid-cols-1 md:grid-cols-5 gap-10 items-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
-            <div className="md:col-span-2 flex justify-center">
+          {/* 🚀 BLOQUE 3: ¿Qué necesitas para hacer Terapia Online? (IMAGEN AMPLIADA) */}
+          <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
+            <div className="flex justify-center w-full">
                 <Image 
                     src="/psicopiloto-online-setup.webp" 
                     alt="Ilustración gráfica que muestra una computadora portátil con gráficos de EMDR, auriculares y un candado de privacidad" 
-                    width={600} 
-                    height={600} 
-                    className="rounded-2xl w-full h-auto object-contain max-w-sm" 
+                    width={800} 
+                    height={800} 
+                    className="rounded-2xl w-full h-auto object-contain" 
                 />
             </div>
-            <div className="md:col-span-3">
+            <div className="w-full">
               <h2 className="text-2xl font-bold mb-8 text-center md:text-left text-psicopiloto-blue-600">¿Qué necesitas para hacer Terapia EMDR Online?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left items-start">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center md:text-left items-start">
                 <div className="p-2 flex flex-col items-center md:items-start">
                   <FaWifi className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
                   <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Conexión a Internet</h4>
