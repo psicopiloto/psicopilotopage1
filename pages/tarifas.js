@@ -60,7 +60,7 @@ export default function Tarifas() {
       altImage: "Interior cálido y acogedor de la consulta presencial de Psicopiloto en el centro médico Medifamilia de Granada",
       price: "55€",
       duration: "55 minutos por sesión",
-      desc: "Sesiones presenciales en las instalaciones del centro médico <a href='tel:958599570' class='font-bold text-psicopiloto-green-600 hover:underline'>Medifamilia (958 599 570)</a> en Granada. Un espacio de encuentro físico diseñado para trabajar con total tranquilidad, calidez y un rigor metodológico orientado a tus objetivos vitales.",
+      desc: "Sesiones presenciales en las instalaciones del centro médico <a href='https://medifamilia.es/' target='_blank' rel='noopener noreferrer' class='font-bold text-psicopiloto-green-600 hover:underline'>Medifamilia</a> en Granada. Un espacio de encuentro físico diseñado para trabajar con total tranquilidad, calidez y un rigor metodológico orientado a tus objetivos vitales.",
       features: [
         "Consulta en centro sanitario autorizado",
         "Abordaje integrador de la historia de desarrollo",
@@ -147,10 +147,10 @@ export default function Tarifas() {
             </div>
           </section>
 
-          {/* 🚀 BLOQUE 2: ¿Qué necesitas para hacer Terapia Online? (Contenido de Infografía) */}
+          {/* 🚀 BLOQUE 2: ¿Qué necesitas para hacer Terapia Online? (Contenido gráfico adaptado) */}
           <section className="mb-20 bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-md border border-gray-100 max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center text-psicopiloto-blue-600">
-              ¿Qué necesitas para hacer Terapia Online?
+              ¿Cómo prepararte para tu primera sesión de terapia online?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
               {pasosPreparacion.map((paso, idx) => (
@@ -229,7 +229,7 @@ export default function Tarifas() {
                   <div className="w-full">
                     {plan.fullWidth ? (
                       <AnimatedCTA 
-                        href="tel:958599570" 
+                        href="https://medifamilia.es/" 
                         text={plan.ctaText} 
                         color={plan.color} 
                         className="text-center text-base font-semibold py-3.5 rounded-xl md:w-1/3 mx-auto block" 
