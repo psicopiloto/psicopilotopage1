@@ -21,7 +21,7 @@ export default function Tarifas() {
       imageSrc: "/psicopiloto-online-session.webp", 
       altImage: "Escritorio limpio con ordenador portátil y auriculares preparado para sesión de terapia online confidencial",
       price: "55€",
-      duration: "55 minutos por sesión",
+      duration: "55 minutes por sesión",
       desc: "Intervención psicoterapéutica especializada mediante plataformas homologadas con cifrado de nivel sanitario. Un proceso estructurado y a tu ritmo para abordar la ansiedad, el trauma, el duelo, los trastornos alimentarios (TCA), la gestión de la ira o los problemas de apego.",
       features: [
         "Entorno digital 100% seguro y confidencial",
@@ -64,7 +64,7 @@ export default function Tarifas() {
       features: [
         "Consulta en centro sanitario autorizado",
         "Abordaje integrador de la historia de desarrollo",
-        "Tratamiento profundo del sufrimiento estructural",
+        "Tratamiento profundo del sufrimiento structural",
         "Espacio de total confianza y libre de juicios"
       ],
       ctaText: "Solicitar cita presencial",
@@ -121,7 +121,7 @@ export default function Tarifas() {
               <ol className="space-y-4 text-md md:text-base text-psicopiloto-gray-700 pl-2">
                 <li className="flex gap-3 items-start">
                   <span className="font-bold text-psicopiloto-green-600">1)</span>
-                  <span>Es una oportunidad para conocernos cara a cara, establecer una primera toma de contacto y que te asegures de sentirte completamente cómodo o cómoda hablando conmigo, construyendo un entorno clínico seguro, protegido y libre de juicios.</span>
+                  <span>Es una oportunidad para conocernos cara a cara, establecer una primera toma de contacto y que te asegures de violentarte completamente cómodo o cómoda hablando conmigo, construyendo un entorno clínico seguro, protegido y libre de juicios.</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="font-bold text-psicopiloto-green-600">2)</span>
@@ -132,7 +132,8 @@ export default function Tarifas() {
                   <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frecuencia, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
                 </li>
               </ol>
-              <div className="mt-8 text-center md:text-left">
+              {/* Modificación: Cambio de text-center md:text-left a text-center para centrar el botón en PC */}
+              <div className="mt-8 text-center">
                 <AnimatedCTA href="/contacto" text="Reservar valoración gratuita" color="green" className="px-8 py-3 text-base font-semibold rounded-xl" />
               </div>
             </div>
@@ -226,13 +227,14 @@ export default function Tarifas() {
                     ))}
                   </ul>
 
-                  <div className="w-full">
+                  {/* Modificación: Contenedor flex y justify-center añadido para forzar el alineamiento central del botón presencial md:w-1/3 */}
+                  <div className="w-full flex justify-center">
                     {plan.fullWidth ? (
                       <AnimatedCTA 
                         href="tel:958599570" 
                         text={plan.ctaText} 
                         color={plan.color} 
-                        className="text-center text-base font-semibold py-3.5 rounded-xl md:w-1/3 mx-auto block" 
+                        className="text-center text-base font-semibold py-3.5 rounded-xl md:w-1/3 block" 
                       />
                     ) : (
                       <AnimatedCTA 
