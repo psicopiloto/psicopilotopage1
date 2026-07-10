@@ -105,7 +105,7 @@ export default function Tarifas() {
             </div>
             <div className="md:col-span-2 flex justify-center order-first md:order-last">
                 <Image 
-                    src="/psicopiloto-online-session-header.webp" 
+                    src="/psicopiloto-online-session.webp.webp" 
                     alt="Laptop y headset preparados en un escritorio tranquilo para una sesión de valoración de Psicopiloto" 
                     width={400} 
                     height={400} 
