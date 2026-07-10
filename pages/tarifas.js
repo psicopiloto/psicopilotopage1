@@ -15,7 +15,7 @@ export default function Tarifas() {
       icon: <FaLaptop aria-hidden="true" />,
       subtitle: "Tu consulta desde un espacio privado",
       imageSrc: "/psicopiloto-online-session.webp", 
-      altImage: "Escritorio limpio con laptop y headset preparado para sesión de terapia online confidencial",
+      altImage: "Escritorio limpio con laptop and headset preparado para sesión de terapia online confidencial",
       price: "50€",
       duration: "55 minutos por sesión",
       desc: "Intervención psicoterapéutica especializada mediante plataformas homologadas con cifrado de nivel sanitario. Un proceso estructurado y a tu ritmo para abordar la ansiedad, el trauma, el duelo, los trastornos alimentarios (TCA), la gestión de la ira o los problemas de apego.",
@@ -96,7 +96,7 @@ export default function Tarifas() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="font-bold text-psicopiloto-green-600">3)</span>
-                  <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frecuencia, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
+                  <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frequency, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
                 </li>
               </ol>
               <div className="mt-8 text-center md:text-left">
@@ -114,7 +114,40 @@ export default function Tarifas() {
             </div>
           </section>
 
-          {/* 🚀 BLOQUE 2: Cuadrícula de Tarifas */}
+          {/* 🚀 BLOQUE 2 (Anterior Bloque 3): ¿Qué necesitas para hacer Terapia Online? */}
+          <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
+            <div className="flex justify-center w-full">
+                <Image 
+                    src="/psicopiloto-online-setup.webp" 
+                    alt="Ilustración gráfica que muestra una computadora portátil con gráficos de EMDR, auriculares y un candado de privacidad" 
+                    width={800} 
+                    height={800} 
+                    className="rounded-2xl w-full h-auto object-contain" 
+                />
+            </div>
+            <div className="w-full">
+              <h2 className="text-2xl font-bold mb-8 text-center md:text-left text-psicopiloto-blue-600">¿Qué necesitas para hacer Terapia EMDR Online?</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center md:text-left items-start">
+                <div className="p-2 flex flex-col items-center md:items-start">
+                  <FaWifi className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
+                  <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Conexión a Internet</h4>
+                  <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Estable y fluida para asegurar la calidad de la videollamada durante el procesamiento.</p>
+                </div>
+                <div className="p-2 flex flex-col items-center md:items-start">
+                  <FaHeadset className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
+                  <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Auriculares</h4>
+                  <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Recomendados para optimizar el audio, aislar el ruido exterior y facilitar la focalización.</p>
+                </div>
+                <div className="p-2 flex flex-col items-center md:items-start">
+                  <FaLock className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
+                  <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Espacio Privado</h4>
+                  <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Un lugar tranquilo donde estés solo, cómodo y con la total certeza de no ser interrumpido ni escuchado.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 🚀 BLOQUE 3 (Anterior Bloque 2): Cuadrícula de Tarifas */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold mb-10 text-center text-psicopiloto-blue-600">Planes de Sesión Transparentes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -178,39 +211,6 @@ export default function Tarifas() {
                   </div>
                 </div>
               ))}
-            </div>
-          </section>
-
-          {/* 🚀 BLOQUE 3: ¿Qué necesitas para hacer Terapia Online? (IMAGEN AMPLIADA) */}
-          <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
-            <div className="flex justify-center w-full">
-                <Image 
-                    src="/psicopiloto-online-setup.webp" 
-                    alt="Ilustración gráfica que muestra una computadora portátil con gráficos de EMDR, auriculares y un candado de privacidad" 
-                    width={800} 
-                    height={800} 
-                    className="rounded-2xl w-full h-auto object-contain" 
-                />
-            </div>
-            <div className="w-full">
-              <h2 className="text-2xl font-bold mb-8 text-center md:text-left text-psicopiloto-blue-600">¿Qué necesitas para hacer Terapia EMDR Online?</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center md:text-left items-start">
-                <div className="p-2 flex flex-col items-center md:items-start">
-                  <FaWifi className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
-                  <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Conexión a Internet</h4>
-                  <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Estable y fluida para asegurar la calidad de la videollamada durante el procesamiento.</p>
-                </div>
-                <div className="p-2 flex flex-col items-center md:items-start">
-                  <FaHeadset className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
-                  <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Auriculares</h4>
-                  <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Recomendados para optimizar el audio, aislar el ruido exterior y facilitar la focalización.</p>
-                </div>
-                <div className="p-2 flex flex-col items-center md:items-start">
-                  <FaLock className="text-3xl text-psicopiloto-green-500 mb-3" aria-hidden="true" />
-                  <h4 className="font-bold text-sm text-psicopiloto-gray-700 mb-1">Espacio Privado</h4>
-                  <p className="text-xs text-psicopiloto-gray-500 leading-relaxed">Un lugar tranquilo donde estés solo, cómodo y con la total certeza de no ser interrumpido ni escuchado.</p>
-                </div>
-              </div>
             </div>
           </section>
 
