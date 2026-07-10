@@ -6,7 +6,7 @@ import PageHeader from "../components/PageHeader";
 import AnimatedCTA from "../components/AnimatedCTA";
 import BackgroundLogo from "../components/BackgroundLogo";
 import Image from "next/image";
-import { FaLaptop, FaUserAlt, FaRegClock, FaCalendarCheck, FaComments, FaWifi, FaHeadset, FaLock } from "react-icons/fa";
+import { FaLaptop, FaUserAlt, FaRegClock, FaCalendarCheck, FaComments, FaWifi, FaHeadset, FaLock, FaBoxes } from "react-icons/fa";
 
 export default function Tarifas() {
   const planesTarifas = [
@@ -16,7 +16,7 @@ export default function Tarifas() {
       subtitle: "Tu consulta desde un espacio privado",
       imageSrc: "/psicopiloto-online-session.webp", 
       altImage: "Escritorio limpio con ordenador portátil y auriculares preparado para sesión de terapia online confidencial",
-      price: "50€",
+      price: "55€",
       duration: "55 minutos por sesión",
       desc: "Intervención psicoterapéutica especializada mediante plataformas homologadas con cifrado de nivel sanitario. Un proceso estructurado y a tu ritmo para abordar la ansiedad, el trauma, el duelo, los trastornos alimentarios (TCA), la gestión de la ira o los problemas de apego.",
       features: [
@@ -26,6 +26,24 @@ export default function Tarifas() {
         "Sin costes ni tiempos de desplazamiento"
       ],
       ctaText: "Iniciar terapia online",
+      color: "green"
+    },
+    {
+      title: "Bono Psicoterapia Online",
+      icon: <FaBoxes aria-hidden="true" />,
+      subtitle: "Planificación y continuidad garantizada",
+      imageSrc: "/psicopiloto-online-setup.webp", 
+      altImage: "Materiales y herramientas digitales estructuradas para el seguimiento del bono de terapia online",
+      price: "250€",
+      duration: "Bono de 5 sesiones (55 min cada una)",
+      desc: "Un formato diseñado para asegurar la regularidad y el compromiso operativo que requiere el procesamiento psicoterapéutico profundo. Optimiza la planificación de tus vuelos y tus sesiones semanales con una tarifa preferente y un plan de ruta establecido.",
+      features: [
+        "Pack cerrado de 5 sesiones individuales",
+        "Ahorro optimizado en el coste por consulta",
+        "Preferencia en la reserva de franjas horarias",
+        "Ideal para procesos de reprocesamiento EMDR estructurados"
+      ],
+      ctaText: "Adquirir bono online",
       color: "green"
     },
     {
@@ -237,19 +255,18 @@ export default function Tarifas() {
               </div>
           </section>
 
-          {/* 🚀 BLOQUE 5: Preguntas Frecuentes Desplegables (Comportamiento Acordeón Nactivo) */}
+          {/* 🚀 BLOQUE 5: Preguntas Frecuentes Desplegables */}
           <section className="mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center text-psicopiloto-blue-600">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               
-              {/* ✨ Se añade 'name="faq-acordeon"' a todos los bloques details para activar el comportamiento de panel único */}
               <details name="faq-acordeon" className="group bg-white/80 rounded-xl p-5 shadow-sm border border-gray-100 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex items-center justify-between font-bold text-psicopiloto-gray-700 cursor-pointer list-none select-none text-md md:text-lg">
                   <span>¿Cuál es la frecuencia de las sesiones?</span>
                   <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
                 </summary>
                 <p className="mt-4 text-md md:text-base text-psicopiloto-gray-600 leading-relaxed text-justify">
-                  Para consolidar avances consistentes y mantener una evolución estable, la pauta de trabajo recomendada al inicio es de carácter semanal. Establecer este intervalo operativo evita la dispersión temporal entre sesiones y optimiza el tiempo de consulta, asegurando que cada encuentro se enfoque en el procesamiento profundo y no en resolver desajustes coyunturales por falta de continuidad.
+                  Para consolidar avances consistentes y mantener una evolución estable, la pauta de trabajo recomendada al inicio es de carácter semanal. Establecer este intervalo operativo evita la disposición temporal entre sesiones y optimiza el tiempo de consulta, asegurando que cada encuentro se enfoque en el procesamiento profundo y no en resolver desajustes coyunturales por falta de continuidad.
                 </p>
               </details>
 
