@@ -14,7 +14,7 @@ export default function Tarifas() {
       title: "Psicoterapia Individual Online",
       icon: <FaLaptop aria-hidden="true" />,
       subtitle: "Tu consulta desde un espacio privado",
-      imageSrc: "/psicopiloto-online-session-header.webp", 
+      imageSrc: "/psicopiloto-online-session.webp", 
       altImage: "Escritorio limpio con laptop y headset preparado para sesión de terapia online confidencial",
       price: "50€",
       duration: "55 minutos por sesión",
@@ -79,7 +79,7 @@ export default function Tarifas() {
             <div className="md:col-span-3">
               <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
                 <FaComments className="text-3xl text-psicopiloto-green-600" aria-hidden="true" />
-                <h2 className="text-2xl font-bold text-psicopiloto-gray-700">Primer Encuentro Online (20-30 min)</h2>
+                <h2 className="text-2xl font-bold text-psicopiloto-gray-700">Primer Encuentro Online gratuito (20-30 min)</h2>
               </div>
               <p className="text-md md:text-base text-psicopiloto-gray-600 mb-6 leading-relaxed">
                 Antes de trazar cualquier plan de ruta, realizamos una primera toma de contacto gratuita. En mi etapa en la cabina militar, la base de la seguridad operativa dependía estrictamente de crear un ambiente de confianza absoluta donde la tripulación pudiera comunicarse con honestidad y expresar lo que pensaba sin el menor miedo a ser juzgado. Ese mismo pilar lo traslado a mi práctica psicoterapéutica en tierra.
