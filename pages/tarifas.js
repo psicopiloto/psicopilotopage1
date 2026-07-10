@@ -60,7 +60,7 @@ export default function Tarifas() {
       altImage: "Interior cálido y acogedor de la consulta presencial de Psicopiloto en el centro médico Medifamilia de Granada",
       price: "55€",
       duration: "55 minutos por sesión",
-      desc: "Sesiones presenciales en las instalaciones del centro médico <a href='https://medifamilia.es/' target='_blank' rel='noopener noreferrer' class='font-bold text-psicopiloto-green-600 hover:underline'>Medifamilia</a> en Granada. Un espacio de encuentro físico diseñado para trabajar con total tranquilidad, calidez y un rigor metodológico orientado a tus objetivos vitales.",
+      desc: "Sesiones presenciales en las instalaciones del centro médico <a href='tel:958599570' class='font-bold text-psicopiloto-green-600 hover:underline'>Medifamilia (958 599 570)</a> en Granada. Un espacio de encuentro físico diseñado para trabajar con total tranquilidad, calidez y un rigor metodológico orientado a tus objetivos vitales.",
       features: [
         "Consulta en centro sanitario autorizado",
         "Abordaje integrador de la historia de desarrollo",
@@ -139,7 +139,7 @@ export default function Tarifas() {
             <div className="md:col-span-2 flex justify-center order-first md:order-last">
                 <Image 
                   src="/psicopiloto-online-session.webp" 
-                  alt="Ordenador portátil y auriculares preparados en un escritorio tranquilo para una sesión de valoración de Psicopiloto" 
+                  alt="Ordenador portátil and auriculares preparados en un escritorio tranquilo para una sesión de valoración de Psicopiloto" 
                   width={400} 
                   height={400} 
                   className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-sm" 
@@ -159,7 +159,6 @@ export default function Tarifas() {
                     {paso.icon}
                   </div>
                   <div className="flex gap-4 items-center">
-                    <span className="text-xl font-bold text-psicopiloto-blue-600/30">{idx + 1}</span>
                     <p className="text-base md:text-lg font-medium text-psicopiloto-gray-700 leading-tight">
                       {paso.text}
                     </p>
@@ -227,13 +226,22 @@ export default function Tarifas() {
                     ))}
                   </ul>
 
-                  <div className="mt-auto">
-                    <AnimatedCTA 
-                      href="/contacto" 
-                      text={plan.ctaText} 
-                      color={plan.color} 
-                      className={`text-center text-base font-semibold py-3.5 rounded-xl ${plan.fullWidth ? 'md:w-1/3 mx-auto block' : 'w-full'}`} 
-                    />
+                  <div className="w-full">
+                    {plan.fullWidth ? (
+                      <AnimatedCTA 
+                        href="tel:958599570" 
+                        text={plan.ctaText} 
+                        color={plan.color} 
+                        className="text-center text-base font-semibold py-3.5 rounded-xl md:w-1/3 mx-auto block" 
+                      />
+                    ) : (
+                      <AnimatedCTA 
+                        href="/contacto" 
+                        text={plan.ctaText} 
+                        color={plan.color} 
+                        className="text-center text-base font-semibold py-3.5 rounded-xl w-full block" 
+                      />
+                    )}
                   </div>
                 </div>
               ))}
@@ -333,7 +341,7 @@ export default function Tarifas() {
                   <span>¿De qué vías de abono dispongo para las sesiones online?</span>
                   <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
                 </summary>
-                <p className="mt-4 text-md md:text-base text-psicopiloto-gray-600 leading-relaxed text-justify">
+                <p className="mt-4 text-sm md:text-base text-psicopiloto-gray-600 leading-relaxed text-justify">
                   Para facilitar la gestión administrativa y mantener la transparencia operativa, las sesiones pueden abonarse cómodamente a través de la plataforma <strong>Bizum</strong> o mediante <strong>transferencia bancaria</strong> directa. Los datos de facturación y plazos se coordinan de manera privada tras formalizar el encuadre inicial en las primeras sesiones.
                 </p>
               </details>
