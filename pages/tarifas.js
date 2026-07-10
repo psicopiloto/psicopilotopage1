@@ -15,7 +15,7 @@ export default function Tarifas() {
       icon: <FaLaptop aria-hidden="true" />,
       subtitle: "Tu consulta desde un espacio privado",
       imageSrc: "/psicopiloto-online-session.webp", 
-      altImage: "Escritorio limpio con laptop and headset preparado para sesión de terapia online confidencial",
+      altImage: "Escritorio limpio con ordenador portátil y auriculares preparado para sesión de terapia online confidencial",
       price: "50€",
       duration: "55 minutos por sesión",
       desc: "Intervención psicoterapéutica especializada mediante plataformas homologadas con cifrado de nivel sanitario. Un proceso estructurado y a tu ritmo para abordar la ansiedad, el trauma, el duelo, los trastornos alimentarios (TCA), la gestión de la ira o los problemas de apego.",
@@ -96,7 +96,7 @@ export default function Tarifas() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="font-bold text-psicopiloto-green-600">3)</span>
-                  <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frequency, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
+                  <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frecuencia, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
                 </li>
               </ol>
               <div className="mt-8 text-center md:text-left">
@@ -106,7 +106,7 @@ export default function Tarifas() {
             <div className="md:col-span-2 flex justify-center order-first md:order-last">
                 <Image 
                     src="/psicopiloto-online-session.webp" 
-                    alt="Laptop y headset preparados en un escritorio tranquilo para una sesión de valoración de Psicopiloto" 
+                    alt="Ordenador portátil y auriculares preparados en un escritorio tranquilo para una sesión de valoración de Psicopiloto" 
                     width={400} 
                     height={400} 
                     className="rounded-2xl shadow-lg w-full h-auto object-cover max-w-sm" 
@@ -114,7 +114,7 @@ export default function Tarifas() {
             </div>
           </section>
 
-          {/* 🚀 BLOQUE 2 (Anterior Bloque 3): ¿Qué necesitas para hacer Terapia Online? */}
+          {/* 🚀 BLOQUE 2: ¿Qué necesitas para hacer Terapia Online? */}
           <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100 max-w-4xl mx-auto">
             <div className="flex justify-center w-full">
                 <Image 
@@ -147,7 +147,7 @@ export default function Tarifas() {
             </div>
           </section>
 
-          {/* 🚀 BLOQUE 3 (Anterior Bloque 2): Cuadrícula de Tarifas */}
+          {/* 🚀 BLOQUE 3: Cuadrícula de Tarifas */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold mb-10 text-center text-psicopiloto-blue-600">Planes de Sesión Transparentes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -289,7 +289,7 @@ export default function Tarifas() {
                   <span className="transition group-open:rotate-180 text-psicopiloto-green-600 text-lg">▼</span>
                 </summary>
                 <div className="mt-4 text-md md:text-base text-psicopiloto-gray-600 leading-relaxed space-y-3 text-justify">
-                  <p>Por estrictos criterios de seguridad clínica y deontológica, la modalid a distancia no abarca los siguientes escenarios:</p>
+                  <p>Por estrictos criterios de seguridad clínica y deontológica, la modalidad a distancia no abarca los siguientes escenarios:</p>
                   <ul className="list-disc list-inside space-y-2 pl-1">
                     <li>Atención a menores de edad (la práctica se centra exclusivamente en población adulta).</li>
                     <li>Ideación autolítica activa o riesgo de conducta suicida inminente.</li>
