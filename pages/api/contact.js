@@ -27,7 +27,6 @@ export default async function handler(req, res) {
         to: [process.env.MAIL_TO],
         subject: `⚖️ LEGAL: Consentimiento Informado Firmado - ${nombre}`,
         replyTo: email,
-        // 🚀 CORRECCIÓN: Título cambiado a un tono estrictamente formal y sanitario
         html: `
           <div style="font-family: sans-serif; padding: 25px; color: #242c35; max-width: 650px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f9f5f1;">
             <h2 style="color: #2a8371; border-bottom: 2px solid #2a8371; padding-bottom: 10px; margin-top: 0; font-size: 22px;">
@@ -72,25 +71,32 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
 
-    // ✈️ CASO B: SI ES UNA CONSULTA ESTÁNDAR DESDE EL FORMULARIO DE LA HOME
-    const { nombre, edad, email, telefono, motivo } = payload;
+    // ✈️ CASO B: SI ES UNA CONSULTA ESTÁNDAR O SOLICITUD DE BONO
+    const { nombre, edad, email, telefono, motivo, descubierto, asuntoPersonalizado } = payload;
 
     if (!nombre || !email || !motivo) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
 
-    const { data, error } = await resend.emails.send({
+    // Determinar variables según el tipo de origen del formulario
+    const esBono = asuntoPersonalizado === "Solicitud de bono de 5 sesiones";
+    const subjectInterno = esBono ? `🎟️ SOLICITUD: Bono 5 Sesiones - ${nombre}` : `✈️ Nueva consulta web de ${nombre}`;
+    const tituloHtmlInterno = esBono ? "Solicitud de bono de 5 sesiones" : "Nueva consulta desde la web";
+
+    // 1️⃣ PRIMER ENVÍO: Notificación interna hacia ti (Psicopiloto)
+    const envioInterno = await resend.emails.send({
       from: "Psicopiloto Web <consultas@psicopiloto.com>",
       to: [process.env.MAIL_TO],
-      subject: `✈️ Nueva consulta web de ${nombre}`,
+      subject: subjectInterno,
       replyTo: email,
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee; border-radius: 8px;">
-          <h2 style="color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 10px;">Nueva consulta desde la web</h2>
+          <h2 style="color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 10px;">${tituloHtmlInterno}</h2>
           <p><strong>Nombre del paciente:</strong> ${nombre}</p>
           <p><strong>Edad:</strong> ${edad || "No especificada"}</p>
           <p><strong>Email de contacto:</strong> <a href="mailto:${email}">${email}</a></p>
           <p><strong>Teléfono:</strong> ${telefono || "No especificado"}</p>
+          <p><strong>¿Cómo nos conoció?:</strong> ${descubierto || "No especificado"}</p>
           <h3 style="color: #4b5563; margin-top: 20px;">Motivo de la consulta:</h3>
           <div style="background-color: #f9fafb; padding: 15px; border-left: 4px solid #0d9488; border-radius: 4px; white-space: pre-wrap;">${motivo}</div>
           <p style="font-size: 11px; color: #9ca3af; margin-top: 30px; text-align: right;">Enviado el ${timestamp}</p>
@@ -98,7 +104,42 @@ export default async function handler(req, res) {
       `,
     });
 
-    if (error) return res.status(400).json({ error: error.message });
+    if (envioInterno.error) return res.status(400).json({ error: envioInterno.error.message });
+
+    // 2️⃣ SEGUNDO ENVÍO: Mensaje de confirmación estética automático para el PACIENTE
+    let subjectPaciente = "Confirmación de solicitud de consulta - Psicopiloto";
+    let cuerpoPacienteHtml = `
+      <p>Hola <strong>${nombre}</strong>,</p>
+      <p>Este es un mensaje automático para confirmarte que he recibido correctamente tus datos para fijar nuestra primera sesión de valoración gratuita.</p>
+      <p>Personalmente revisaré los detalles que me has facilitado y me pondré en contacto contigo en un plazo de <strong>24-48 horas</strong> mediante correo electrónico o teléfono para establecer el día y la hora de nuestro encuentro online.</p>
+    `;
+
+    if (esBono) {
+      subjectPaciente = "Confirmación de solicitud de Bono 5 Sesiones - Psicopiloto";
+      cuerpoPacienteHtml = `
+        <p>Hola <strong>${nombre}</strong>,</p>
+        <p>Este es un mensaje automático para confirmarte que he recibido correctamente tu solicitud de alta para el <strong>Bono de 5 Sesiones de Psicoterapia Online</strong>.</p>
+        <p>Como mi prioridad operativa es garantizar la seguridad y viabilidad clínica del proceso, me pondré en contacto contigo de manera personal en un plazo de <strong>24-48 horas</strong> para formalizar el encuadre sanitario y facilitarte de forma segura los números correspondientes para realizar el pago mediante Bizum o transferencia bancaria.</p>
+      `;
+    }
+
+    await resend.emails.send({
+      from: "Jose Carlos - Psicopiloto <consultas@psicopiloto.com>",
+      to: [email],
+      subject: subjectPaciente,
+      html: `
+        <div style="font-family: sans-serif; padding: 25px; color: #374151; max-width: 600px; border: 1px solid #e5e7eb; border-radius: 12px; background-color: #ffffff;">
+          <div style="margin-bottom: 20px;">
+            ${cuerpoPacienteHtml}
+          </div>
+          <p style="margin-bottom: 25px;">Gracias por dar este paso y depositar tu confianza en mi práctica clínica.</p>
+          <div style="border-top: 1px solid #f3f4f6; pt: 20px; margin-top: 20px;">
+            <img src="https://www.psicopiloto.com/firma-email.jpg" alt="Firma Jose Carlos Rguez. Retamar - Psicólogo Sanitario" style="width: 100%; max-width: 450px; height: auto; display: block;" />
+          </div>
+        </div>
+      `,
+    });
+
     return res.status(200).json({ ok: true });
 
   } catch (err) {
