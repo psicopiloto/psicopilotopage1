@@ -134,7 +134,7 @@ export default function Tarifas() {
               </ol>
               {/* Modificación: Cambio de text-center md:text-left a text-center para centrar el botón en PC */}
               <div className="mt-8 text-center">
-                <AnimatedCTA href="/contacto" text="Reservar valoración gratuita" color="green" className="px-8 py-3 text-base font-semibold rounded-xl" />
+                <AnimatedCTA href="/valoracion-gratuita" text="Reservar valoración gratuita" color="green" className="px-8 py-3 text-base font-semibold rounded-xl" />
               </div>
             </div>
             <div className="md:col-span-2 flex justify-center order-first md:order-last">
