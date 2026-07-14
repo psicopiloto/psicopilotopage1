@@ -48,7 +48,8 @@ export default function ValoracionGratuita() {
       setStatus("❌ Por favor, introduce un email con un formato válido.");
       return;
     }
-    if (form.telefono && !/^[6789]\d{8}$/.test(form.telefono.replace(/\s/g, ''))) {
+    // Modificación: El campo teléfono ahora es estrictamente obligatorio para el envío
+    if (!form.telefono || !/^[6789]\d{8}$/.test(form.telefono.replace(/\s/g, ''))) {
       setStatus("❌ Por favor, introduce un número de teléfono español válido (9 dígitos).");
       return;
     }
@@ -158,7 +159,8 @@ export default function ValoracionGratuita() {
                 <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono (opcional)" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                {/* Modificación: Propiedad required añadida y marcador visual actualizado a obligatorio */}
+                <input required name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 
                 <select name="descubierto" value={form.descubierto} onChange={update} className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white text-psicopiloto-gray-500 text-sm cursor-pointer">
                   <option value="" disabled>¿Cómo me has conocido? (Opcional)</option>
