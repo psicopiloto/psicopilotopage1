@@ -33,6 +33,7 @@ export default function Nav() {
           <Link href="/" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Inicio</Link>
           <Link href="/que-es-psicopiloto" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Filosofía</Link>
           <Link href="/servicios" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Servicios</Link>
+          <Link href="/tarifas" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Tarifas</Link>
           <Link href="/sobre-mi" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Sobre Mí</Link>
           <Link href="/blog" className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Blog</Link>
           
@@ -83,6 +84,7 @@ export default function Nav() {
           <Link href="/" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Inicio</Link>
           <Link href="/que-es-psicopiloto" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Filosofía</Link>
           <Link href="/servicios" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Servicios</Link>
+          <Link href="/tarifas" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Tarifas</Link>
           <Link href="/sobre-mi" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Sobre Mí</Link>
           <Link href="/blog" onClick={() => setOpen(false)} className="py-1 hover:text-psicopiloto-blue-600 focus:outline-none focus:ring-2 focus:ring-psicopiloto-blue-500 rounded px-1">Blog</Link>
           
