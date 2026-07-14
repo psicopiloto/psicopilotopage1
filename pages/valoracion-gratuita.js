@@ -1,4 +1,4 @@
-// pages/valoracion-gratuita.js
+// pages/contacto.js
 import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -6,19 +6,18 @@ import { useState } from "react";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/PageHeader";
 import BackgroundLogo from "../components/BackgroundLogo";
-import { FaLaptop, FaRoute, FaShieldAlt, FaRegClock, FaCheckCircle } from "react-icons/fa";
 
 export const getServerSideProps = async () => {
   return { props: {} };
 };
 
-export default function ValoracionGratuita() {
+export default function Contacto() {
   const [form, setForm] = useState({
     nombre: "",
     edad: "",
     email: "",
     telefono: "",
-    descubierto: "",
+    descubierto: "", // ✨ Campo añadido
     motivo: "",
   });
   const [aceptoPrivacidad, setAceptoPrivacidad] = useState(false);
@@ -87,18 +86,18 @@ export default function ValoracionGratuita() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-psicopiloto-sand-50 text-psicopiloto-gray-700 relative">
       <NextSeo
-        title="Sesión de Valoración Gratuita | Psicopiloto"
-        description="Solicita tu primera toma de contacto de 30 minutos sin coste. Analizaremos tu situación clínica de forma confidencial antes de iniciar tu terapia."
-        canonical="https://www.psicopiloto.com/valoracion-gratuita"
+        title="Contacto | Consulta de Psicología Sanitaria en Granada"
+        description="Inicia tu proceso de psicoterapia presencial en Granada o de forma online. Agenda tu sesión de valoración gratuita o contacta directamente por WhatsApp."
+        canonical="https://www.psicopiloto.com/contacto"
       />
 
       <BackgroundLogo />
       <Nav />
 
       <PageHeader
-        title="Tu primera toma de contacto"
-        subtitle="Un espacio de 30 minutos sin coste ni compromiso para evaluar tu caso, resolver tus dudas operativas y trazar un plan de ruta inicial."
-        backgroundImage="/header-servicios.webp"
+        title="Establece tu plan de vuelo"
+        subtitle="Rellena el formulario de consulta, agenda tu sesión online o contacta de forma directa. El primer paso para recuperar el rumbo se da en tierra."
+        backgroundImage="/header-contacto.webp"
       />
 
       <main className="flex-grow pt-16 relative z-10">
@@ -106,130 +105,122 @@ export default function ValoracionGratuita() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start">
             
-            {/* 🚀 BLOQUE 1: Texto persuasivo e inspiración clínica (Móvil: 1º | PC: Izquierda Superior) */}
-            <div className="bg-white/70 p-6 md:p-8 rounded-xl shadow-md order-1 md:col-start-1 md:row-start-1">
-              <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-6 border-b border-gray-100 pb-2">
-                ¿Por qué realizamos una sesión de valoración?
-              </h2>
-              <p className="text-base text-psicopiloto-gray-700 leading-relaxed text-justify">
-                Iniciar un proceso terapéutico es una decisión crucial que requiere seguridad y compatibilidad. Esta primera consulta gratuita de 30 minutos nos permite conocernos cara a cara y asegurar que te sientes en un entorno seguro y protegido. Además, me servirá para realizar una evaluación preliminar de tu motivo de consulta y verificar si las intervenciones online y el protocolo EMDR son las herramientas metodológicas más eficaces para ti.
-              </p>
-
-              <h3 className="text-xl font-semibold text-psicopiloto-green-600 mt-8 mb-4">
-                Ventajas de la Psicoterapia Online
-              </h3>
+            {/* 🚀 CONTENEDOR MODIFICADO: Agrupa el Bloque 1 y el Bloque 2 para que en ordenador queden juntos de forma compacta y simétrica */}
+            <div className="space-y-6 order-1 md:col-start-1 md:row-start-1 md:row-span-2 flex flex-col gap-6">
               
-              <div className="space-y-4">
-                <div className="flex gap-4 items-start">
-                  <FaShieldAlt className="text-xl text-psicopiloto-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-base text-psicopiloto-gray-700">Privacidad y Regulación Somática</h4>
-                    <p className="text-sm text-psicopiloto-gray-600 text-justify">Realizar el procesamiento desde tu propio entorno o un espacio privado que controlas facilita la apertura emocional y ayuda a regular la activación del sistema nervioso de forma más natural.</p>
-                  </div>
-                </div>
+              {/* 🚀 BLOQUE 1: Texto de impacto filosófico */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4">
+                  El control de tu presente empieza con una decisión segura
+                </h2>
+                <p className="text-base text-psicopiloto-gray-700 leading-relaxed">
+                  Solicitar ayuda o iniciar una psicoterapia suele ser el paso más complejo, pero también el que cambia el rumbo de tu historia. En mi consulta no vas a encontrar parches temporales; te ofrezco un espacio de trabajo estructurado, predecible y con objetivos claros para procesar el trauma, regular la ansiedad crónica y desactivar el estado de alerta constante.
+                </p>
+                <br />
+                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-3">
+                  ¿Qué construiremos en las sesiones?
+                </h3>
+                <ul className="list-none text-psicopiloto-gray-700 space-y-3 text-base">
+                  <li>
+                    <strong>🎯 Dirección clara:</strong> Trazaremos un plan de ruta transparente basado en la evidencia, donde sabrás en todo momento en qué fase te encuentras.
+                  </li>
+                  <li>
+                    <strong>🧠 Procesamiento profundo:</strong> Utilizaremos el protocolo avanzado EMDR para liberar los bloqueos emocionales y las memorias del pasado que te sobrecargan hoy.
+                  </li>
+                  <li>
+                    <strong>🛡️ Entorno seguro:</strong> Una consulta con habilitación sanitaria, con confidencialidad absoluta, adaptada a tus ritmos tanto de forma online como presencial en Granada.
+                  </li>
+                </ul>
+              </div>
 
-                <div className="flex gap-4 items-start">
-                  <FaRoute className="text-xl text-psicopiloto-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-base text-psicopiloto-gray-700">Continuidad del Plan de Vuelo</h4>
-                    <p className="text-sm text-psicopiloto-gray-600 text-justify">Elimina las barreras geográficas, los desplazamientos y los tiempos de espera. Mantiene la constancia semanal del tratamiento aunque viajes por motivos laborales o personales, algo indispensable en el reprocesamiento de traumas.</p>
-                  </div>
-                </div>
+              {/* 🚀 BLOQUE 2: Formulario de valoración */}
+              <div className="bg-white/70 p-6 rounded-xl shadow-md">
+                <h2 className="text-3xl font-bold text-psicopiloto-green-600 mb-4">Reserva tu valoración gratuita</h2>
+                <p className="text-psicopiloto-gray-600 mb-4 text-base">Si deseas iniciar tu proceso psicoterapéutico, rellena el formulario. Te responderé personalmente en un plazo de 24-48 horas para fijar nuestra primera sesión de valoración gratuita (30 minutos).</p>
+                
+                <p className="text-sm bg-psicopiloto-sand-100/50 p-3 rounded-lg text-psicopiloto-gray-700 border-l-4 border-psicopiloto-green-600 mb-6 italic">
+                  "Cada historia requiere un abordaje a medida. Escríbeme de forma confidencial y analizaremos tu situación para diseñar un plan estructurado y seguro, adaptado por completo a tus necesidades particulares."
+                </p>
 
-                <div className="flex gap-4 items-start">
-                  <FaLaptop className="text-xl text-psicopiloto-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-base text-psicopiloto-gray-700">Eficacia Científica Equivalente</h4>
-                    <p className="text-sm text-psicopiloto-gray-600 text-justify">La telepsicología aplicada mediante plataformas sanitarias cifradas cuenta con la misma validez, rigor y efectividad clínica que el formato presencial tradicional.</p>
+                <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
+                  <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                  <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                  <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                  {/* Modificación: Propiedad required añadida y marcador visual actualizado a obligatorio */}
+                  <input required name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                  
+                  {/* ✨ Desplegable incorporado */}
+                  <select name="descubierto" value={form.descubierto} onChange={update} className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white text-psicopiloto-gray-500 text-sm cursor-pointer">
+                    <option value="" disabled>¿Cómo me has conocido? (Opcional)</option>
+                    <option value="Google / Buscadores">Buscando en Google</option>
+                    <option value="Redes Sociales">Redes Sociales</option>
+                    <option value="Recomendación">Recomendación de un conocido o profesional</option>
+                    <option value="Colegio Profesional / Directorios">Doctoralia / Directorios de psicología</option>
+                    <option value="Otros">Otros motivos</option>
+                  </select>
+
+                  <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente qué te ocurre o qué te gustaría trabajar en consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white"></textarea>
+
+                  <div className="flex items-start gap-2 mt-2 p-2 bg-white/50 rounded border border-gray-100">
+                    <input 
+                      id="aceptoPrivacidad" 
+                      type="checkbox" 
+                      checked={aceptoPrivacidad}
+                      onChange={(e) => setAceptoPrivacidad(e.target.checked)}
+                      className="mt-1 w-4 h-4 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-400 cursor-pointer" 
+                    />
+                    <label htmlFor="aceptoPrivacidad" className="text-xs text-psicopiloto-gray-600 cursor-pointer select-none">
+                      He leído y acepto que mis datos sean tratados conforme a la <a href="/aviso-legal#proteccion-datos" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700">política de privacidad</a> para gestionar mi solicitud de consulta. *
+                    </label>
                   </div>
-                </div>
+
+                  <button 
+                    type="submit" 
+                    className="mt-2 px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed" 
+                    disabled={status === "Enviando..."}
+                  >
+                    {status === "Enviando..." ? "Enviando..." : "Enviar consulta"}
+                  </button>
+                </form>
+                
+                {status && (
+                  <p 
+                    role="alert" 
+                    className={`mt-4 text-sm font-medium ${
+                      status === "Enviando..." ? "text-psicopiloto-gray-500 animate-pulse" : status.startsWith("✅") ? "text-psicopiloto-green-600" : "text-red-600"
+                    }`}
+                  >
+                    {status}
+                  </p>
+                )}
+              </div>
+
+            </div>
+
+            {/* 🚀 BLOQUE 3: Agenda online (Móvil: 3º | PC: Derecha Superior) */}
+            <div className="bg-white/70 p-6 rounded-xl shadow-md order-3 md:col-start-2 md:row-start-1">
+              <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita online</h3>
+              <div className="w-full h-[1150px]">
+                <iframe 
+                  title="Calendario de citas online de Psicopiloto" 
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true" 
+                  style={{ border: 0, width: "100%", height: "100%" }} 
+                  frameBorder="0" 
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
 
-            {/* 🚀 BLOQUE 2: Formulario idéntico al de contacto (Móvil: 2º | PC: Derecha Superior/Inferior) */}
-            <div className="bg-white/70 p-6 rounded-xl shadow-md order-2 md:col-start-2 md:row-start-1 md:row-span-2">
-              <h2 className="text-3xl font-bold text-psicopiloto-green-600 mb-4">Solicita tu valoración gratuita</h2>
-              <p className="text-psicopiloto-gray-600 mb-4 text-base">Rellena el formulario de forma confidencial. Revisaré tu caso personalmente y me pondré en contacto contigo en un plazo de 24-48 horas para fijar el día y la hora de nuestro primer encuentro online.</p>
-              
-              <p className="text-sm bg-psicopiloto-sand-100/50 p-3 rounded-lg text-psicopiloto-gray-700 border-l-4 border-psicopiloto-green-600 mb-6 italic">
-                "Este primer paso nos servirá para analizar tu situación de manera preliminar y comprobar si el protocolo EMDR online se adapta a lo que necesitas para recuperar el equilibrio."
-              </p>
-
-              <form onSubmit={handleSubmit} className="grid gap-4" aria-label="Formulario de contacto para primera consulta">
-                <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                {/* Modificación: Propiedad required añadida y marcador visual actualizado a obligatorio */}
-                <input required name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                
-                <select name="descubierto" value={form.descubierto} onChange={update} className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white text-psicopiloto-gray-500 text-sm cursor-pointer">
-                  <option value="" disabled>¿Cómo me has conocido? (Opcional)</option>
-                  <option value="Google / Buscadores">Buscando en Google</option>
-                  <option value="Redes Sociales">Redes Sociales</option>
-                  <option value="Recomendación">Recomendación de un conocido o profesional</option>
-                  <option value="Colegio Profesional / Directorios">Doctoralia / Directorios de psicología</option>
-                  <option value="Otros">Otros motivos</option>
-                </select>
-
-                <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente qué te ocurre o qué te gustaría trabajar en consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white"></textarea>
-
-                <div className="flex items-start gap-2 mt-2 p-2 bg-white/50 rounded border border-gray-100">
-                  <input 
-                    id="aceptoPrivacidad" 
-                    type="checkbox" 
-                    checked={aceptoPrivacidad}
-                    onChange={(e) => setAceptoPrivacidad(e.target.checked)}
-                    className="mt-1 w-4 h-4 text-psicopiloto-green-600 rounded focus:ring-psicopiloto-green-400 cursor-pointer" 
-                  />
-                  <label htmlFor="aceptoPrivacidad" className="text-xs text-psicopiloto-gray-600 cursor-pointer select-none">
-                    He leído y acepto que mis datos sean tratados conforme a la <a href="/aviso-legal#proteccion-datos" className="text-psicopiloto-green-600 underline hover:text-psicopiloto-green-700">política de privacidad</a> para gestionar mi solicitud de consulta. *
-                  </label>
-                </div>
-
-                <button 
-                  type="submit" 
-                  className="mt-2 px-6 py-3 bg-psicopiloto-green-600 hover:bg-psicopiloto-green-700 text-white rounded-lg font-semibold transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed" 
-                  disabled={status === "Enviando..."}
-                >
-                  {status === "Enviando..." ? "Enviando..." : "Enviar consulta"}
-                </button>
-              </form>
-              
-              {status && (
-                <p 
-                  role="alert" 
-                  className={`mt-4 text-sm font-medium ${
-                    status === "Enviando..." ? "text-psicopiloto-gray-500 animate-pulse" : status.startsWith("✅") ? "text-psicopiloto-green-600" : "text-red-600"
-                  }`}
-                >
-                  {status}
-                </p>
-              )}
+            {/* 🚀 BLOQUE 4: Contacto directo (Móvil: 4º | PC: Derecha Inferior) */}
+            <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2 order-4 md:col-start-2 md:row-start-2">
+              <h3 className="text-xl font-semibold text-psicopiloto-green-600">Contacto directo</h3>
+              <p>📞 Teléfono: <a href="tel:+34676230537" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">676 230 537</a></p>
+              <p>💬 WhatsApp: <a href="https://wa.me/34676230537" target="_blank" rel="noopener noreferrer" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">Chatea ahora</a></p>
+              <p>✉️ Email: <a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">info@psicopiloto.com</a></p>
             </div>
 
-            {/* 🚀 BLOQUE 3: Recordatorio e información técnica (Móvil: 3º | PC: Izquierda Inferior) */}
-            <div className="bg-white/70 p-6 rounded-xl shadow-md order-3 md:col-start-1 md:row-start-2 space-y-4">
-              <h3 className="text-lg font-semibold text-psicopiloto-gray-700 flex items-center gap-2">
-                <FaRegClock className="text-psicopiloto-green-600" /> Cuestiones operativas de la sesión
-              </h3>
-              <ul className="space-y-2 text-sm text-psicopiloto-gray-600 pl-1">
-                <li className="flex items-start gap-2">
-                  <FaCheckCircle className="text-psicopiloto-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Duración:</strong> El encuentro tendrá un límite estricto de 20-30 minutos para garantizar la agilidad operativa.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <FaCheckCircle className="text-psicopiloto-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Plataforma:</strong> Se realizará por videollamada cifrada de nivel sanitario. Te enviaré el enlace a tu correo.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <FaCheckCircle className="text-psicopiloto-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Puntualidad:</strong> Al igual que en la cabina de un avión, el respeto por los tiempos programados garantiza la seguridad del proceso mutuo.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Bloque Legal (Pie de página general) */}
-            <div className="text-xs text-psicopiloto-gray-500 order-4 md:col-start-1 md:col-span-2 mt-4">
+            {/* Bloque Legal (Pie de página del Formulario) */}
+            <div className="text-xs text-psicopiloto-gray-500 order-5 md:col-start-1">
               <p><strong>Información básica sobre protección de datos:</strong> Tus datos de contacto serán tratados con absoluta confidencialidad con el único fin de agendar o resolver tu consulta sanitaria autorizada. Puedes ejercer tus derechos de acceso, rectificación o supresión escribiendo a info@psicopiloto.com.</p>
             </div>
 
