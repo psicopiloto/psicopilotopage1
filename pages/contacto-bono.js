@@ -116,8 +116,9 @@ export default function ContactoBono() {
               <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4">
                 Compromiso y Continuidad en tu Proceso
               </h2>
+              {/* Corrección: Cambiados los asteriscos de Markdown por etiquetas strong de HTML */}
               <p className="text-base text-psicopiloto-gray-700 leading-relaxed">
-                Has seleccionado el **Bono de Psicoterapia Online (250€)**. Este formato está diseñado específicamente para proteger la regularidad semanal que requiere el reprocesamiento profundo mediante el protocolo EMDR, optimizando la planificación de tus sesiones sin interrupciones temporales.
+                Has seleccionado el <strong>Bono de Psicoterapia Online (250€)</strong>. Este formato está diseñado específicamente para proteger la regularidad semanal que requiere el reprocesamiento profundo mediante el protocolo EMDR, optimizando la planificación de tus sesiones sin interrupciones temporales.
               </p>
               <br />
               <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-3">
@@ -145,8 +146,8 @@ export default function ContactoBono() {
                 <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                {/* Modificación: Propiedad required aplicada y cambio a Teléfono completo obligatorio * */}
-                <input required name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                {/* Corrección: Quitado "completo" del placeholder para unificar el diseño */}
+                <input required name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 
                 <select name="descubierto" value={form.descubierto} onChange={update} className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white text-psicopiloto-gray-500 text-sm cursor-pointer">
                   <option value="" disabled>¿Cómo me has conocido? (Opcional)</option>
