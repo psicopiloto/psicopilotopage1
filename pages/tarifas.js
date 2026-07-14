@@ -26,12 +26,13 @@ export default function Tarifas() {
       features: [
         "Entorno digital 100% seguro y confidencial",
         "Protocolo avanzado de Reprocesamiento EMDR",
-        "Herramientas de regulación somática y checklists prácticos",
+        "Herramientas de regulación somática and checklists prácticos",
         "Sin costes ni tiempos de desplazamiento"
       ],
       ctaText: "Iniciar terapia online",
       color: "green",
-      fullWidth: false
+      fullWidth: false,
+      ctaHref: "/contacto" // Apuesta a la página de contacto general
     },
     {
       title: "Bono Psicoterapia Online",
@@ -50,7 +51,8 @@ export default function Tarifas() {
       ],
       ctaText: "Adquirir bono online",
       color: "green",
-      fullWidth: false
+      fullWidth: false,
+      ctaHref: "/contacto-bono" // ✨ Modificado: Apunta exactamente a tu nueva página de reserva del bono
     },
     {
       title: "Psicoterapia Presencial (Granada)",
@@ -69,7 +71,8 @@ export default function Tarifas() {
       ],
       ctaText: "Solicitar cita presencial",
       color: "blue",
-      fullWidth: true // Provoca que ocupe las dos columnas en pantallas medianas/grandes
+      fullWidth: true, // Provoca que ocupe las dos columnas en pantallas medianas/grandes
+      ctaHref: "tel:958599570" // Inicia la llamada directa
     }
   ];
 
@@ -132,7 +135,6 @@ export default function Tarifas() {
                   <span>Puedes aclarar todas tus dudas operativas respecto al funcionamiento de las sesiones, la frecuencia, los honorarios o la confidencialidad sanitaria antes de tomar una decisión.</span>
                 </li>
               </ol>
-              {/* Modificación: Cambio de text-center md:text-left a text-center para centrar el botón en PC */}
               <div className="mt-8 text-center">
                 <AnimatedCTA href="/valoracion-gratuita" text="Reservar valoración gratuita" color="green" className="px-8 py-3 text-base font-semibold rounded-xl" />
               </div>
@@ -227,18 +229,17 @@ export default function Tarifas() {
                     ))}
                   </ul>
 
-                  {/* Modificación: Contenedor flex y justify-center añadido para forzar el alineamiento central del botón presencial md:w-1/3 */}
                   <div className="w-full flex justify-center">
                     {plan.fullWidth ? (
                       <AnimatedCTA 
-                        href="tel:958599570" 
+                        href={plan.ctaHref} 
                         text={plan.ctaText} 
                         color={plan.color} 
                         className="text-center text-base font-semibold py-3.5 rounded-xl md:w-1/3 block" 
                       />
                     ) : (
                       <AnimatedCTA 
-                        href="/contacto" 
+                        href={plan.ctaHref} 
                         text={plan.ctaText} 
                         color={plan.color} 
                         className="text-center text-base font-semibold py-3.5 rounded-xl w-full block" 
@@ -297,7 +298,7 @@ export default function Tarifas() {
                   <p>La telepsicología aporta ventajas operativas clave sin perder el rigor ni la cercanía del formato tradicional:</p>
                   <ul className="list-disc list-inside space-y-2 pl-1">
                     <li><strong>Disponibilidad geográfica:</strong> Permite mantener el acceso a una intervención especializada con independencia de tu lugar de residencia o tus desplazamientos.</li>
-                    <li><strong>Optimización del tiempo:</strong> Facilita la integración de las sesiones en tu rutina diaria al eliminar los tiempos muertos de traslado y esperas.</li>
+                    <li><strong>Optimización del tiempo:</strong> Facilita la integración de las sesiones in tu rutina diaria al eliminar los tiempos muertos de traslado y esperas.</li>
                     <li><strong>Seguridad y privacidad:</strong> Favorece la apertura emocional al realizar el procesamiento desde un entorno propio, íntimo y completamente bajo tu control.</li>
                     <li><strong>Sostenibilidad del proceso:</strong> Protege la continuidad de las sesiones frente a imprevistos laborales, cambios de localización o viajes, consolidando una base de trabajo estable.</li>
                   </ul>
