@@ -424,7 +424,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold mb-4 text-psicopiloto-green-500">Da el primer paso hacia la estabilidad</h2>
                 <p className="leading-relaxed mb-6 text-psicopiloto-gray-600 text-base">Escribir o solicitar ayuda suele ser el paso más costoso, y ya estás aquí. Te ofrezco una <strong>primera sesión de valoración gratuita de 30 minutos</strong> para que me cuentes tu situación y tracemos juntos tu plan psicoterapéutico basado en EMDR e integración clínica.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <AnimatedCTA href="/contacto" text="Reserva tu primera consulta" color="green" />
+                  <AnimatedCTA href="/valoracion-gratuita" text="Reserva tu primera consulta" color="green" />
                 </div>
               </div>
             </div>
