@@ -147,7 +147,7 @@ export default function ValoracionGratuita() {
 
             {/* 🚀 BLOQUE 2: Formulario idéntico al de contacto (Móvil: 2º | PC: Derecha Superior/Inferior) */}
             <div className="bg-white/70 p-6 rounded-xl shadow-md order-2 md:col-start-2 md:row-start-1 md:row-span-2">
-              <h2 className="text-3xl font-bold text-psicopiloto-green-600 mb-4">Solicita tu valoración</h2>
+              <h2 className="text-3xl font-bold text-psicopiloto-green-600 mb-4">Solicita tu valoración gratuita</h2>
               <p className="text-psicopiloto-gray-600 mb-4 text-base">Rellena el formulario de forma confidencial. Revisaré tu caso personalmente y me pondré en contacto contigo en un plazo de 24-48 horas para fijar el día y la hora de nuestro primer encuentro online.</p>
               
               <p className="text-sm bg-psicopiloto-sand-100/50 p-3 rounded-lg text-psicopiloto-gray-700 border-l-4 border-psicopiloto-green-600 mb-6 italic">
