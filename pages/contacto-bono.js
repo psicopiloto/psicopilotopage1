@@ -48,7 +48,8 @@ export default function ContactoBono() {
       setStatus("❌ Por favor, introduce un email con un formato válido.");
       return;
     }
-    if (form.telefono && !/^[6789]\d{8}$/.test(form.telefono.replace(/\s/g, ''))) {
+    // Modificación: Validación estricta obligatoria para el número de teléfono
+    if (!form.telefono || !/^[6789]\d{8}$/.test(form.telefono.replace(/\s/g, ''))) {
       setStatus("❌ Por favor, introduce un número de teléfono español válido (9 dígitos).");
       return;
     }
@@ -66,7 +67,11 @@ export default function ContactoBono() {
           "Content-Type": "application/json",
           'Accept': 'application/json'
         },
-        body: JSON.stringify(form),
+        // Modificación: Inyección del asunto personalizado al cuerpo de datos para la API
+        body: JSON.stringify({
+          ...form,
+          asuntoPersonalizado: "Solicitud de bono de 5 sesiones"
+        }),
       });
 
       const data = await res.json();
@@ -140,7 +145,8 @@ export default function ContactoBono() {
                 <input required name="nombre" value={form.nombre} onChange={update} placeholder="Nombre completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
-                <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono (opcional)" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                {/* Modificación: Propiedad required aplicada y cambio a Teléfono completo obligatorio * */}
+                <input required name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono completo *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 
                 <select name="descubierto" value={form.descubierto} onChange={update} className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white text-psicopiloto-gray-500 text-sm cursor-pointer">
                   <option value="" disabled>¿Cómo me has conocido? (Opcional)</option>
