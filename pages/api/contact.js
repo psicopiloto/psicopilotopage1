@@ -71,17 +71,23 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
 
-    // ✈️ CASO B: SI ES UNA CONSULTA ESTÁNDAR O SOLICITUD DE BONO
+    // ✈️ CASO B: FORMULARIOS DE CONSULTA GENERAL O DE ADQUISICIÓN DE BONO
     const { nombre, edad, email, telefono, motivo, descubierto, asuntoPersonalizado } = payload;
 
     if (!nombre || !email || !motivo) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
 
-    // Determinar variables según el tipo de origen del formulario
     const esBono = asuntoPersonalizado === "Solicitud de bono de 5 sesiones";
-    const subjectInterno = esBono ? `🎟️ SOLICITUD: Bono 5 Sesiones - ${nombre}` : `✈️ Nueva consulta web de ${nombre}`;
-    const tituloHtmlInterno = esBono ? "Solicitud de bono de 5 sesiones" : "Nueva consulta desde la web";
+    
+    // Modificación: Si no es el formulario del bono, por defecto siempre se trata como una solicitud de valoración gratuita
+    const subjectInterno = esBono 
+      ? `🎟️ SOLICITUD: Bono 5 Sesiones - ${nombre}` 
+      : `⏳ VALORACIÓN: Cita Gratuita - ${nombre}`;
+      
+    const tituloHtmlInterno = esBono 
+      ? "Solicitud de bono de 5 sesiones" 
+      : "Solicitud de reserva de valoración gratuita";
 
     // 1️⃣ PRIMER ENVÍO: Notificación interna hacia ti (Psicopiloto)
     const envioInterno = await resend.emails.send({
@@ -106,7 +112,7 @@ export default async function handler(req, res) {
 
     if (envioInterno.error) return res.status(400).json({ error: envioInterno.error.message });
 
-    // 2️⃣ SEGUNDO ENVÍO: Mensaje de confirmación estética automático para el PACIENTE
+    // 2️⃣ SEGUNDO ENVÍO: Mensaje de confirmación automático para el PACIENTE
     let subjectPaciente = "Confirmación de solicitud de consulta - Psicopiloto";
     let cuerpoPacienteHtml = `
       <p>Hola <strong>${nombre}</strong>,</p>
