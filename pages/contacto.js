@@ -17,6 +17,7 @@ export default function Contacto() {
     edad: "",
     email: "",
     telefono: "",
+    descubierto: "", // ✨ Campo añadido
     motivo: "",
   });
   const [aceptoPrivacidad, setAceptoPrivacidad] = useState(false);
@@ -71,7 +72,7 @@ export default function Contacto() {
 
       if (res.ok && data.ok) {
         setStatus("✅ ¡Mensaje recibido! Gracias por contactar. Te responderé personalmente en un plazo de 24-48 horas.");
-        setForm({ nombre: "", edad: "", email: "", telefono: "", motivo: "" });
+        setForm({ nombre: "", edad: "", email: "", telefono: "", descubierto: "", motivo: "" });
         setAceptoPrivacidad(false);
       } else {
         setStatus(`❌ Error: ${data.error || "No se pudo procesar el envío."}`);
@@ -103,8 +104,8 @@ export default function Contacto() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start">
             
-            {/* 🚀 TEXTO REHECHO: Bloque de impacto basado en tu filosofía */}
-            <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:col-start-1">
+            {/* 🚀 BLOQUE 1: Texto de impacto filosófico (Móvil: 1º | PC: Izquierda Superior) */}
+            <div className="bg-white/70 p-6 rounded-xl shadow-md order-1 md:col-start-1 md:row-start-1">
               <h2 className="text-2xl font-bold text-psicopiloto-blue-600 mb-4">
                 El control de tu presente empieza con una decisión segura
               </h2>
@@ -128,33 +129,8 @@ export default function Contacto() {
               </ul>
             </div>
 
-            {/* BLOQUE DERECHO: AGENDAR Y CONTACTO */}
-            <div className="order-2 md:col-start-2 md:row-start-1 md:row-span-2 flex flex-col gap-6">
-              
-              <div className="bg-white/70 p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita online</h3>
-                <div className="w-full h-[1150px]">
-                  <iframe 
-                    title="Calendario de citas online de Psicopiloto" 
-                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true" 
-                    style={{ border: 0, width: "100%", height: "100%" }} 
-                    frameBorder="0" 
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
-
-              <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2">
-                <h3 className="text-xl font-semibold text-psicopiloto-green-600">Contacto directo</h3>
-                <p>📞 Teléfono: <a href="tel:+34676230537" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">676 230 537</a></p>
-                <p>💬 WhatsApp: <a href="https://wa.me/34676230537" target="_blank" rel="noopener noreferrer" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">Chatea ahora</a></p>
-                <p>✉️ Email: <a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">info@psicopiloto.com</a></p>
-              </div>
-
-            </div>
-
-            {/* BLOQUE FORMULARIO REHECHO */}
-            <div className="bg-white/70 p-6 rounded-xl shadow-md order-3 md:col-start-1">
+            {/* 🚀 BLOQUE 2: Formulario de valoración (Móvil: 2º | PC: Izquierda Inferior) */}
+            <div className="bg-white/70 p-6 rounded-xl shadow-md order-2 md:col-start-1 md:row-start-2">
               <h2 className="text-3xl font-bold text-psicopiloto-green-600 mb-4">Reserva tu valoración gratuita</h2>
               <p className="text-psicopiloto-gray-600 mb-4 text-base">Si deseas iniciar tu proceso psicoterapéutico, rellena el formulario. Te responderé personalmente en un plazo de 24-48 horas para fijar nuestra primera sesión de valoración gratuita (30 minutos).</p>
               
@@ -167,6 +143,17 @@ export default function Contacto() {
                 <input required name="edad" value={form.edad} onChange={update} type="number" placeholder="Edad *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input required name="email" value={form.email} onChange={update} type="email" placeholder="Email *" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
                 <input name="telefono" value={form.telefono} onChange={update} placeholder="Teléfono (opcional)" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white" />
+                
+                {/* ✨ Desplegable incorporado */}
+                <select name="descubierto" value={form.descubierto} onChange={update} className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white text-psicopiloto-gray-500 text-sm cursor-pointer">
+                  <option value="" disabled>¿Cómo me has conocido? (Opcional)</option>
+                  <option value="Google / Buscadores">Buscando en Google</option>
+                  <option value="Redes Sociales">Redes Sociales</option>
+                  <option value="Recomendación">Recomendación de un conocido o profesional</option>
+                  <option value="Colegio Profesional / Directorios">Doctoralia / Directorios de psicología</option>
+                  <option value="Otros">Otros motivos</option>
+                </select>
+
                 <textarea required name="motivo" value={form.motivo} onChange={update} placeholder="Cuéntame brevemente qué te ocurre o qué te gustaría trabajar en consulta *" rows="5" className="p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-psicopiloto-green-400 bg-white"></textarea>
 
                 <div className="flex items-start gap-2 mt-2 p-2 bg-white/50 rounded border border-gray-100">
@@ -203,7 +190,30 @@ export default function Contacto() {
               )}
             </div>
 
-            <div className="text-xs text-psicopiloto-gray-500 order-4 md:col-start-1">
+            {/* 🚀 BLOQUE 3: Agenda online (Móvil: 3º | PC: Derecha Superior) */}
+            <div className="bg-white/70 p-6 rounded-xl shadow-md order-3 md:col-start-2 md:row-start-1">
+              <h3 className="text-xl font-semibold text-psicopiloto-green-600 mb-4">Agenda tu cita online</h3>
+              <div className="w-full h-[1150px]">
+                <iframe 
+                  title="Calendario de citas online de Psicopiloto" 
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TLXLFOovykq6hop3UczOKvHCWc8oPtXbRNyrBby0asXzyaYPZu5ngp4vhB-bn0vPjE0qhEuSR?gv=true" 
+                  style={{ border: 0, width: "100%", height: "100%" }} 
+                  frameBorder="0" 
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* 🚀 BLOQUE 4: Contacto directo (Móvil: 4º | PC: Derecha Inferior) */}
+            <div className="bg-white/70 p-6 rounded-xl shadow-md space-y-2 order-4 md:col-start-2 md:row-start-2">
+              <h3 className="text-xl font-semibold text-psicopiloto-green-600">Contacto directo</h3>
+              <p>📞 Teléfono: <a href="tel:+34676230537" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">676 230 537</a></p>
+              <p>💬 WhatsApp: <a href="https://wa.me/34676230537" target="_blank" rel="noopener noreferrer" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">Chatea ahora</a></p>
+              <p>✉️ Email: <a href="mailto:info@psicopiloto.com" className="underline text-psicopiloto-green-600 hover:text-psicopiloto-green-700 focus:outline-none focus:ring-1 focus:ring-psicopiloto-green-400 rounded">info@psicopiloto.com</a></p>
+            </div>
+
+            {/* Bloque Legal (Pie de página del Formulario) */}
+            <div className="text-xs text-psicopiloto-gray-500 order-5 md:col-start-1">
               <p><strong>Información básica sobre protección de datos:</strong> Tus datos de contacto serán tratados con absoluta confidencialidad con el único fin de agendar o resolver tu consulta sanitaria autorizada. Puedes ejercer tus derechos de acceso, rectificación o supresión escribiendo a info@psicopiloto.com.</p>
             </div>
 
